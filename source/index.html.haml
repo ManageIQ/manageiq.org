@@ -1,23 +1,159 @@
 ---
-pageable: true
+pageable: false
 ---
 
 - content_for :head do
   %link(href="/blog/feed.xml" rel="alternate" title="Atom feed" type="application/atom+xml")
 
-- if defined? page_number && page_number < 2
+%section.row
+  %section.col-md-12
 
-  -# First-page only stuff here
-  -# (If a blog is included below, then it may paginate)
+    .page-header
+      %h2 Power-up your cloud and VMs
+      %h3 manage, automate, and optimize — private and public
 
-.row
 
-  %section.blog-posts
+%section.row
 
-    %section.container
+  %section.col-md-6
 
-      %h2
-        = data.site.name
-        News
+    :markdown
+      ## Your virtual machines, your terms
 
+      Currently have your virtual machines scattered between RHEV,
+      oVirt, vSphere, Amazon EC2, and/or OpenStack? Control them all,
+      completely from one end of the VM lifecycle to the other, in
+      your browser, using the fully-open virtual machine command
+      center: **ManageIQ**.
+
+
+  %section.col-md-6
+
+    :markdown
+      ## Configured to your needs
+
+      Automate and deeply customise the lifecycle of your VMs;
+      establish policies and rules related to:
+
+      * Self-service provisioning
+      * Workflow processes
+      * Capacity and Usage
+      * Quota enforcement
+
+
+%section.row
+  %section.col-md-12.features
+
+    .feature-item
+      :markdown
+        ## Open Source
+        Available under the terms of the GPL and Apache licenses,
+        ManageIQ is the community project that powers Red Hat®
+        CloudForms™
+
+    .feature-item
+      :markdown
+        ## Cloud-friendly
+        Leverage public cloud providers — Amazon Web Services and
+        Windows Azure are supported. Or roll your own with OpenStack,
+        vSphere, or others.
+
+    .feature-item
+      :markdown
+        ## Mix & match
+        Use your preferred mix of OpenStack, Amazon, and existing
+        virtual infrastructure. ManageIQ is the software to make it
+        simply seamless, putting you in control.
+
+    .feature-item
+      :markdown
+        ## Control it all
+        Easily manage capacity, performance, configuration, and your
+        entire virtual infrastructure.
+
+        Take advantage of self-service provisioning and chargeback.
+
+    .feature-item
+      :markdown
+        ## A vibrant community
+        Aroma crema cappuccino, iced sit a percolator. Filter café au
+        lait extraction americano.
+
+        French press, coffee cream flavour café au lait mocha.
+        Aeropress, in acerbic robust so fair trade.
+
+
+%section.row.blog-section
+  %section.col-md-8
+
+    %section.blog-posts
+
+      %h2 From the blog…
       = partial :blog_posts, locals: locals
+
+
+  %section.col-md-4
+    %section.blog-archive
+      %h2 Recent posts
+      %ol
+        %li Lorem ipsum dolor sit amet
+        %li Consectetur adipiscing elit
+        %li Eget porttitor lorem
+
+
+%section.row
+
+  %section.col-md-5
+    :markdown
+      ## Get started...
+      If you're interested in more effectively managing your virtual
+      machines and cloud landscape — good news! ManageIQ is quick and
+      easy to get up and running.
+
+      We provide a self-contained appliance you can quickly spin up on
+      your own infrastructure.
+
+
+  %section.col-md-7
+    :markdown
+      ## 1. Download
+      Version 1.0.2
+
+      214 Megabytes
+
+
+      ## 2. _???_
+      Something magical happens, most likely with a very short
+      description of what how to add and boot up things.
+
+      ## 3. Sucess!
+      You're now running ManageIQ.
+
+
+%section.row
+
+  %section.col-md-4
+    :markdown
+      ## Get configured!
+      When ManageIQ is up and running, be sure to read:
+
+      * effectively managing your VMs
+      * what other people are doing
+      * useful add-ons
+
+  %section.col-md-4
+    :markdown
+      ## Join the community!
+      Talk with the developers or others in the community:
+
+      * ManageIQ on StackOverflow
+      * @manageiq on Twitter
+      * Mailing lists
+      * IRC (#manageiq on irc.Freenode.net)
+
+  %section.col-md-4
+    :markdown
+      ## Get supported!
+      All the code produced in the ManageIQ project gets funneled into
+      Red Hat CloudForms. If you're looking to pay for support, be
+      sure to check it out.
