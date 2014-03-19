@@ -1,6 +1,6 @@
-name: Springboard for Middleman
-subhead: Static site construction kit
-domain: yourdomain.org
+name: ManageIQ
+#subhead:
+domain: manageiq.org
 
 # Be sure to set up and install Juvia before enabling!
 #has_comments: true
@@ -40,9 +40,13 @@ logo: logo.png
 # To have page-specific tags added, please add a YAML list to "tags:"
 # in that page's frontmatter block (the part at the top between ---)
 keywords:
-  - Middleman
-  - Springboard
-  - Static site
+  - ManageIQ
+  - Virtual Machine
+  - Cloud
+  - Open Source
+  - Free Software
+  - Red Hat
+  - CloudForms
 
 ##
 # Deployment: OpenShift
