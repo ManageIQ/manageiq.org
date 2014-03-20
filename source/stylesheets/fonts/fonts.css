@@ -1,1 +1,38 @@
-/* Place your font info and files here */
+/*@import url(http://fonts.googleapis.com/css?family=Cabin:400,500|Source+Sans+Pro:400,400italic,600,600italic);*/
+
+@font-face {
+  font-family: 'Cabin';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Cabin Regular'), local('Cabin-Regular'), url(https://themes.googleusercontent.com/static/fonts/cabin/v5/JEgmtEDzc-IH8jBshQXrYA.woff) format('woff');
+}
+@font-face {
+  font-family: 'Cabin';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Cabin Medium'), local('Cabin-Medium'), url(https://themes.googleusercontent.com/static/fonts/cabin/v5/km2iCywk7CnC11BE8pBNVPesZW2xOQ-xsNqO47m55DA.woff) format('woff');
+}
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Source Sans Pro'), local('SourceSansPro-Regular'), url(https://themes.googleusercontent.com/static/fonts/sourcesanspro/v7/ODelI1aHBYDBqgeIAH2zlBM0YzuT7MdOe03otPbuUS0.woff) format('woff');
+}
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Source Sans Pro Semibold'), local('SourceSansPro-Semibold'), url(https://themes.googleusercontent.com/static/fonts/sourcesanspro/v7/toadOcfmlt9b38dHJxOBGJ6-ys_j0H4QL65VLqzI3wI.woff) format('woff');
+}
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Source Sans Pro Italic'), local('SourceSansPro-It'), url(https://themes.googleusercontent.com/static/fonts/sourcesanspro/v7/M2Jd71oPJhLKp0zdtTvoMzNrcjQuD0pTu1za2FULaMs.woff) format('woff');
+}
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: italic;
+  font-weight: 600;
+  src: local('Source Sans Pro Semibold Italic'), local('SourceSansPro-SemiboldIt'), url(https://themes.googleusercontent.com/static/fonts/sourcesanspro/v7/fpTVHK8qsXbIeTHTrnQH6PULlOK_XQENnt2ryrY843E.woff) format('woff');
+}
