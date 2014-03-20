@@ -4,3 +4,115 @@ header.masthead
   nav
     max-width: 50%
     margin: 0 auto
+
+
+body
+  box-sizing: border-box
+  color: #333
+  font-family: Source Sans Pro, sans-serif
+  font-size: 14pt //1.75em
+  text-rendering: optimizeLegibility
+  -moz-text-rendering: optimizeLegibility
+  -webkit-text-rendering: optimizeLegibility
+  -blink-text-rendering: optimizeLegibility
+
+
+h1,h2,h3,h4,h5
+  font-family: Cabin, sans-serif
+  font-weight: 500
+
+
+.page-header
+  text-align: center
+
+  h2
+    font-size: 48pt
+
+  h3
+    font-weight: normal
+    opacity: 0.5
+    font-size: 24pt
+
+
+section
+  .row
+    padding: 2em 4em
+
+  &.features
+    background: #e6e6e6
+    border-top: 1px solid #b8b8b8
+
+  &.blog-area
+    background: #ededed
+    border-top: 1px solid #bebebe
+
+  &.get-started
+    $content-padding: 24pt
+    background: #2e4a66
+    border-top: #203448
+
+    .steps
+      padding-left: $content-padding
+
+      h2
+        margin-left: $content-padding * -1
+
+    .download-button
+      font-size: inherit
+      color: rgba(white, 0.8)
+      padding:
+        left: 3ex
+        right: 3ex
+      border-radius: 1ex
+
+  &.next-steps
+    background: #2e3436
+    border-top: #202526
+
+
+  // Fonts for inverted sections
+  &.get-started,
+  &.next-steps
+    color: rgba(white, 0.6)
+
+    h2
+      color: rgba(white, 0.8)
+
+    a
+      color: white
+
+      &.hover
+        text-decoration: underline
+
+
+body > footer
+  background-color: black
+  color: rgba(white, 0.8)
+  padding: 2em
+  font-size: 75%
+
+
+.features
+
+  .feature-item
+    padding-left: 48px
+    font-size: 90%
+
+  h2
+    font-size: 120%
+
+  .icon
+    position: absolute
+    top: 0.4em
+    left: 4px
+    font-size: 32px
+    opacity: 0.5
+
+
+#content.container
+  max-width: 100%
+
+
+.row
+  max-width: 70em
+  margin: auto
