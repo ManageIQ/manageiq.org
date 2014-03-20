@@ -9,8 +9,8 @@ header.masthead
 body
   box-sizing: border-box
   color: #333
-  font-family: Source Sans Pro, sans-serif
-  font-size: 14pt //1.75em
+  //font-family: Source Sans Pro, sans-serif
+  font-size: 16px //1.75em
   text-rendering: optimizeLegibility
   -moz-text-rendering: optimizeLegibility
   -webkit-text-rendering: optimizeLegibility
@@ -18,25 +18,55 @@ body
 
 
 h1,h2,h3,h4,h5
-  font-family: Cabin, sans-serif
-  font-weight: 500
+  //font-family: Cabin, sans-serif
+  //font-weight: 500
 
+
+.masthead
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+
+  .hgroup
+    float: left
+
+  h1 > a
+    display: block
+    float: left
+    padding: 6px 24px
+
+  nav
+    float: right
 
 .page-header
+  margin: 0
+  padding-top: 12em
+  padding-bottom: 4em
+  background: #fff url(/images/header-paintedcandy.jpg) 40% 62%
+  background-size: cover
+
+  text-shadow: 0 0 15px white
+
   text-align: center
 
   h2
     font-size: 48pt
 
   h3
+    margin-top: 0
     font-weight: normal
     opacity: 0.5
     font-size: 24pt
 
 
-section
+.content > section
   .row
-    padding: 2em 4em
+    padding: 3em 3em
+
+  &.overview
+    background: white
+    border-top: 1px solid #b8b8b8
 
   &.features
     background: #e6e6e6
@@ -94,19 +124,43 @@ body > footer
 
 .features
 
+  .row
+
+  .col-xs-12
+
   .feature-item
+    position: relative
     padding-left: 48px
-    font-size: 90%
+    //font-size: 90%
+    background: url(/images/q-glyph.png) no-repeat 2px 12px
+
+    /* Hacks to ensure that the features flow properly (regardless of content size)
+
+    @media screen and (max-width: 767px)
+      &
+        clear: both
+        overflow: hidden
+
+    @media screen and (min-width: 1200px)
+      &:nth-child(4),
+      &:nth-child(7) // Future proofing
+        clear: both
+
+    @media screen and (max-width: 1199px) and (min-width: 769px)
+      &:nth-child(odd)
+        clear: both
+
 
   h2
-    font-size: 120%
+    font-size: 130%
 
   .icon
     position: absolute
-    top: 0.4em
-    left: 4px
-    font-size: 32px
-    opacity: 0.5
+    top: 16px
+    left: 8px
+    font-size: 22px
+    opacity: 0.6
+    color: white
 
 
 #content.container
