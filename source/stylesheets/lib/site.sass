@@ -1,11 +1,3 @@
-header.masthead
-  text-align: center
-
-  nav
-    max-width: 50%
-    margin: 0 auto
-
-
 body
   box-sizing: border-box
   color: #333
@@ -21,6 +13,8 @@ h1,h2,h3,h4,h5
   //font-family: Cabin, sans-serif
   //font-weight: 500
 
+pre
+  font-size: inherit
 
 .masthead
   position: absolute
@@ -37,7 +31,35 @@ h1,h2,h3,h4,h5
     padding: 6px 24px
 
   nav
+    // See _bootstrap-custom.sass for bootstrap-related changes
+    // (padding, color, etc.)
     float: right
+    font-family: $headings-font-family
+    font-size: 22pt
+    font-weight: 500
+    text-transform: lowercase
+    width: auto
+
+    li
+      $nav-active-border: 9px
+
+      &.active
+        border-top: $nav-active-border solid rgba(#204a87, 0.25)
+
+        a
+          position: relative
+          top: -$nav-active-border
+
+      &:not(.active)
+
+        &:hover
+          border-top: $nav-active-border solid rgba(#204a87, 0.1)
+
+          a
+            position: relative
+            top: -$nav-active-border
+
+
 
 .page-header
   margin: 0
@@ -119,7 +141,10 @@ body > footer
   background-color: black
   color: rgba(white, 0.8)
   padding: 2em
-  font-size: 75%
+  font-size: 13px
+
+.last-modified
+  display: none
 
 
 .features
