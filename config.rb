@@ -41,10 +41,11 @@ set :markdown_engine, :redcarpet
 # (Use ':asciidoc' for AsciiDoctor-powered blocks in HAML)
 Haml::Filters.register_tilt_filter "AsciiDoc"
 
+set :asciidoc_attributes, %w(source-highlighter=coderay imagesdir=images)
+
 set :asciidoctor,
   :toc => true,
   :numbered => true
-
 
 # Set directories
 set :css_dir, 'stylesheets'
@@ -229,10 +230,11 @@ configure :build do
   # set :http_path, "/Content/images/"
 
   # Favicon PNG should be 144×144 and in source/images/favicon_base.png
-  activate :favicon_maker,
-    favicon_maker_input_dir: "source/images",
-    favicon_maker_output_dir: "build/images",
-    favicon_maker_base_image: "favicon_base.png"
+  # Note: If you activate this, you'll need ImageMagick installed
+  #activate :favicon_maker,
+    #favicon_maker_input_dir: "source/images",
+    #favicon_maker_output_dir: "build/images",
+    #favicon_maker_base_image: "favicon_base.png"
 end
 
 
