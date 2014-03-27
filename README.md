@@ -1,7 +1,4 @@
-# Middleman-Springboard
-
-Springboard is a starter-pack for Middleman, for quickly whipping together
-static-based websites.
+# ManageIQ website
 
 To get started, you need to have Ruby and Ruby Gems installed, as well
 as "bundler".
@@ -13,8 +10,8 @@ as "bundler".
 
 ```
 sudo yum install -y ruby-devel rubygems-devel gcc-c++ curl-devel rubygem-bundler
-git clone GIT_URL_HERE PROJECT_NAME
-cd PROJECT_NAME
+git clone git@gitlab.osas.lab.eng.rdu2.redhat.com:osas/manageiq-site.git
+cd manageiq-site
 bundle install
 ```
 
