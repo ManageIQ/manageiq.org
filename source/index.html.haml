@@ -91,81 +91,6 @@ page_classes: front-page
           French press, coffee cream flavour café au lait mocha.
           Aeropress, in acerbic robust so fair trade.
 
-
-%section.features
-  .row
-
-    .feature-item.col-lg-4.col-sm-6
-      .icon.glyphicon.glyphicon-eye-open
-      :markdown
-
-        ## Open Source
-        Available under the terms of
-        [the GPL and Apache licenses](#FIXME-licensing-link),
-        ManageIQ is the community project that powers
-        [Red Hat® CloudForms](https://redhat.com/products/cloud-computing/cloudforms/).
-
-    .feature-item.col-lg-4.col-sm-6
-      .icon.glyphicon.glyphicon-cloud
-      :markdown
-
-        ## Cloud-friendly
-        Leverage public cloud providers — Amazon Web Services and
-        Windows Azure are supported. Or roll your own with OpenStack,
-        vSphere, or others.
-
-    .feature-item.col-lg-4.col-sm-6
-      /.icon.glyphicon.glyphicon-eye-close
-      .icon.glyphicon.glyphicon-adjust
-      :markdown
-
-        ## Mix & match
-        Use your preferred mix of OpenStack, Amazon, and existing
-        virtual infrastructure. ManageIQ is the software to make it
-        simply seamless, putting you in control.
-
-    .feature-item.col-lg-4.col-sm-6
-      .icon.glyphicon.glyphicon-fire
-      :markdown
-
-        ## Control it all
-        Easily manage capacity, performance, configuration, and your
-        entire virtual infrastructure.
-
-        Take advantage of self-service provisioning and chargeback.
-
-    .feature-item.col-lg-4.col-sm-6
-      .icon.glyphicon.glyphicon-star
-      :markdown
-
-        ## A vibrant community
-        Aroma crema cappuccino, iced sit a percolator. Filter café au
-        lait extraction americano.
-
-        French press, coffee cream flavour café au lait mocha.
-        Aeropress, in acerbic robust so fair trade.
-
-
-%section.blog-area
-  .row
-
-    %section.col-md-8
-
-      %section.blog-posts
-
-        %h2 From the blog…
-        = partial :blog_posts, locals: locals
-
-
-    %section.col-md-4
-      %section.blog-archive
-        %h2 Recent posts
-        %ol
-          %li Lorem ipsum dolor sit amet
-          %li Consectetur adipiscing elit
-          %li Eget porttitor lorem
-
-
 %section.get-started
   .row
 
@@ -198,6 +123,27 @@ page_classes: front-page
 
         ## 3. Sucess!
         You're now running ManageIQ.
+
+
+
+%section.blog-area
+  .row
+
+    %section.col-md-8
+
+      %section.blog-posts
+
+        %h2 From the blog…
+        = partial :blog_posts, locals: locals
+
+
+    %section.col-md-4
+      %section.blog-archive
+        %h2 Recent posts
+        %ol
+          %li Lorem ipsum dolor sit amet
+          %li Consectetur adipiscing elit
+          %li Eget porttitor lorem
 
 
 %section.next-steps
