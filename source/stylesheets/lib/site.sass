@@ -28,9 +28,14 @@ body.front-page
 
 
 .masthead
+  @extend .row
 
   .hgroup
-    float: left
+    //float: left
+    @extend .col-lg-3
+
+  #access
+    @extend .col-lg-9
 
   h1 > a
     display: block
