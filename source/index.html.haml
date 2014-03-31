@@ -17,21 +17,21 @@ page_classes: front-page
 %section.overview
   .row
 
-    %section.col-md-6
+    %section.col-md-5
 
       :markdown
         ## Virtual machines, on your terms
 
         Currently have your virtual machines scattered between RHEV,
-        oVirt, vSphere, Amazon EC2, and/or OpenStack? Control them all,
+        oVirt, vSphere, Amazon EC2, and/or OpenStack?
+
+        Control everything,
         completely from one end of the VM lifecycle to the other, in
         your browser, using the fully-open virtual machine command
         center: **ManageIQ**.
 
 
-    %section.col-md-6
-
-      :markdown
+      -#:markdown
         ## Configured to your needs
 
         Automate and deeply customise the lifecycle of your VMs;
@@ -43,79 +43,53 @@ page_classes: front-page
         * Quota enforcement
 
 
-%section.features
-  .row
+    %section.features.col-md-7
 
-    .feature-item.col-lg-4.col-sm-6
-      .icon.glyphicon.glyphicon-eye-open
-      :markdown
+      .feature-item.col-lg-6.col-sm-6
+        .icon.glyphicon.glyphicon-eye-open
+        :markdown
 
-        ## Open Source
-        Available under the terms of
-        [the GPL and Apache licenses](#FIXME-licensing-link),
-        ManageIQ is the community project that powers
-        [Red Hat® CloudForms](https://redhat.com/products/cloud-computing/cloudforms/).
+          ## Open Source
+          ManageIQ is
+          [the GPL + Apache licensed](#FIXME-licensing-link),
+          project that powers
+          [Red Hat® CloudForms](https://redhat.com/products/cloud-computing/cloudforms/).
 
-    .feature-item.col-lg-4.col-sm-6
-      .icon.glyphicon.glyphicon-cloud
-      :markdown
+      .feature-item.col-lg-6.col-sm-6
+        /.icon.glyphicon.glyphicon-eye-close
+        .icon.glyphicon.glyphicon-adjust
+        :markdown
 
-        ## Cloud-friendly
-        Leverage public cloud providers — Amazon Web Services and
-        Windows Azure are supported. Or roll your own with OpenStack,
-        vSphere, or others.
+          ## Mix & match
+          Use your preferred mix of OpenStack, Amazon, and existing
+          virtual infrastructure.
 
-    .feature-item.col-lg-4.col-sm-6
-      /.icon.glyphicon.glyphicon-eye-close
-      .icon.glyphicon.glyphicon-adjust
-      :markdown
+      .feature-item.col-lg-6.col-sm-6
+        .icon.glyphicon.glyphicon-cloud
+        :markdown
 
-        ## Mix & match
-        Use your preferred mix of OpenStack, Amazon, and existing
-        virtual infrastructure. ManageIQ is the software to make it
-        simply seamless, putting you in control.
+          ## Cloud-friendly
+          Amazon Web Services and Windows Azure are supported. Or roll
+          your own with OpenStack, vSphere, or others.
 
-    .feature-item.col-lg-4.col-sm-6
-      .icon.glyphicon.glyphicon-fire
-      :markdown
+      .feature-item.col-lg-6.col-sm-6
+        .icon.glyphicon.glyphicon-fire
+        :markdown
 
-        ## Control it all
-        Easily manage capacity, performance, configuration, and your
-        entire virtual infrastructure.
+          ## Manage it all
+          Easily manage your entire virtual infrastructure
+          Use self-service provisioning and chargeback.
 
-        Take advantage of self-service provisioning and chargeback.
+      -#.feature-item.col-lg-6.col-sm-6
+        .icon.glyphicon.glyphicon-star
+        :markdown
 
-    .feature-item.col-lg-4.col-sm-6
-      .icon.glyphicon.glyphicon-star
-      :markdown
+          ## A vibrant community
+          Aroma crema cappuccino, iced sit a percolator. Filter café au
+          lait extraction americano.
 
-        ## A vibrant community
-        Aroma crema cappuccino, iced sit a percolator. Filter café au
-        lait extraction americano.
-
-        French press, coffee cream flavour café au lait mocha.
-        Aeropress, in acerbic robust so fair trade.
-
-
-%section.blog-area
-  .row
-
-    %section.col-md-8
-
-      %section.blog-posts
-
-        %h2 From the blog…
-        = partial :blog_posts, locals: locals
-
-
-    %section.col-md-4
-      %section.blog-archive
-        %h2 Recent posts
-        %ol
-          %li Lorem ipsum dolor sit amet
-          %li Consectetur adipiscing elit
-          %li Eget porttitor lorem
-
+          French press, coffee cream flavour café au lait mocha.
+          Aeropress, in acerbic robust so fair trade.
 
 %section.get-started
   .row
@@ -149,6 +123,27 @@ page_classes: front-page
 
         ## 3. Sucess!
         You're now running ManageIQ.
+
+
+
+%section.blog-area
+  .row
+
+    %section.col-md-8
+
+      %section.blog-posts
+
+        %h2 From the blog…
+        = partial :blog_posts, locals: locals
+
+
+    %section.col-md-4
+      %section.blog-archive
+        %h2 Recent posts
+        %ol
+          %li Lorem ipsum dolor sit amet
+          %li Consectetur adipiscing elit
+          %li Eget porttitor lorem
 
 
 %section.next-steps
