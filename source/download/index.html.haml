@@ -3,6 +3,54 @@
   .col-md-12
     :markdown
 
-      ## Download text
+      ## WIP Overview
 
-      Download page goes here
+      1. Download images (need to help user decide between OVA, AMI,
+      QCOW2 for running on vSphere, AWS, OpenStack or oVirt/RHEV)
+        - This needs to be grouped by target, not format. The format is
+        an implementation detail. Once a target is selected, the
+        appropriate format is displayed.
+        - Perhaps group by targets internal vs. external?
+
+      2. Deploy images to your VI (careful to specify resource settings
+      for VMs, memory & disk especially)
+        - Assume a stand-alone install, with an internal database
+        - Assume that VI is configured correctly for launching VMs (DHCP, etc)
+
+      3. Open dashboard (default username & password)
+
+      4. Add infrastructure provider (instructions for the provider they
+      downloaded images for, ideally, since we can assume they have that
+      already)
+
+
+      ## Thoughts
+
+      Display an very high-level overview of steps with links/buttons to
+      pick the target. Then, there will be a more detailed page
+      (generated from the same source, but only showing the relevant
+      information for a format, so that there's only one source material
+      to keep in sync with the rest).
+
+      What is VI? Virtual Infrastructure? We should try to refrain from
+      jargon, unless it is necessary. If it is a phrase that's common or
+      expected, then we should definitely define it the first time it is
+      used. This goes for the whole site, especially for introductory
+      text such as the front page or download page.
+
+      Instead of assuming, we should guide the person setting up the
+      machine with succinct explantory text and make use of a screenshot
+      where it would be benefitical.
+
+      Ater finishing, we should provide some quick start links of tasks
+      that are most common after installation and setup.
+
+      Timing for installation should only begin once the image is
+      downloaded. The download size should be reduced to an aboslute
+      minimum. Network infrastructure is out of our control, but size
+      and location (mirrors, torrents, etc.) will directly affect
+      download speed. So, we should reduce the file size and provide
+      fast ways to download (ensure there is a good mirror network and
+      think about providing torrents).
+
+
