@@ -3,6 +3,82 @@
   .col-md-12
     :markdown
 
-      ## Download text
+      ## Download and install ManageIQ
 
-      Download page goes here
+      Getting started with ManageIQ is as simple as following these four
+      steps, you'll ne up and running in under 30 minutes.
+
+      ### Requirements
+
+      To run ManageIQ,  you will need a supported infrastructure provider to
+      deploy to. ManageIQ can currently be deployed to VMware vSphere, oVirt,
+      Red Hat Enterprise Virtualization, OpenStack and Amazon EC2.
+
+      ### Step 1: Download ManageIQ appliance
+
+      If you cannot pass the URL directly to your cloud infrastructure,
+      download the latest stable version of ManageIQ for your preferred
+      deployment platform:
+
+      * [ManageIQ on OpenStack]
+        (http://manageiq.org/downloads/ManageIQ-stable-openstack.qc2) (QCOW2 
+        disk image)
+      * [ManageIQ on oVirt or Red Hat Enterprise Virtualization]
+        (http://manageiq.org/downloads/ManageIQ-stable-ovirt.ova)
+      * [ManageIQ on Amazon EC2]
+        (http://manageiq.org/downloads/ManageIQ-stable-ec2.ami) (AMI file)
+      * [ManageIQ on VMware vSphere]
+        (http://manageiq.org/downloads/ManageIQ-stable-vsphere.ova) (OVF
+        template)
+
+      ### Step 2: Deploy your appliance
+
+      * *oVirt*: <pre>engine-image-uploader -e myexportdomain -v -m upload ManageIQ-stable-ovirt.ova</pre>
+      * *Red Hat Enterprise Virtualization*: <pre>rhevm-image-uploader -e myexportdomain -v -m upload ManageIQ-stable-ovirt.ova</pre>
+      * *OpenStack*: <pre>glance image-create --name "ManageIQ-stable" --is-public True --disk-format qcow2 --file http://manageiq.org/downloads/ManageIQ-stable-openstack.qc2</pre>
+      * *Amazon EC2*: TODO
+      * *VMware vSphere*: In the vSphere Client, select File → Deploy OVF
+        Template. The Deploy OVF Template wizard appear, follow the
+        instructions to upload the template
+
+      ### Step 3: First connection and configuration
+
+      * Create a new virtual machine friom the ManageIQ template. ManageIQ
+        needs a minimum of 6GB RAM and 45GB persistent disk
+      * Log into the ManageIQ dashboard by connecting to the new running VM
+        with a web browser (Mozilla Firefox 16 or later, Internet Explorer 8
+        or later, Google Chrome, and any other modern web browser should work).
+        The initial username and password is <pre>admin/smartvm</pre>
+      * There are a number of settings in "Advanced settings" which
+        administrators need to change when starting ManageIQ for the first time.
+        Among the most common are:
+      ** Time and date settings
+      ** DHCP configuration
+      ** Hostname
+      ** Admin password
+
+      ### Step 4: Add an infrastructure provider
+
+      Now that you are up and running, you can connect your first
+      infrastructure provider and start gathering data about what is running
+      there.
+
+      To add a new provider, navigate to Infrastructure->Providers, click the
+      configuration icon (TODO: include icon here), and "+" to add a new
+      provider.
+
+      * Select your infrastructure provider from the drop-down
+      * If you have multiple zones, select the appropriate one in the drop-down
+      * Type in a username and password, and click "Validate"
+
+      You can also auto-discover providers available on your local network by
+      clicking on the "radar" symbol (TODO: Include logo here). Check the
+      infrastructure type, and a subnet range of IP addresses to search, and
+      ManageIQ will prompt you to add new providers automatically.
+
+      ## What's next?
+
+      Now you can learn how to extend your cloud platform (link), and automate
+      some common tasks (link). Or browse our existing extensions to choose one
+      which fits your needs (link).
+
