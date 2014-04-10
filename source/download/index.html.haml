@@ -6,7 +6,7 @@
       ## Download and install ManageIQ
 
       Getting started with ManageIQ is as simple as following these four
-      steps, you'll ne up and running in under 30 minutes.
+      steps, you'll be up and running in under 30 minutes.
 
       ### Requirements
 
@@ -33,11 +33,11 @@
 
       ### Step 2: Deploy your appliance
 
-      * *oVirt*: <pre>engine-image-uploader -e myexportdomain -v -m upload ManageIQ-stable-ovirt.ova</pre>
-      * *Red Hat Enterprise Virtualization*: <pre>rhevm-image-uploader -e myexportdomain -v -m upload ManageIQ-stable-ovirt.ova</pre>
-      * *OpenStack*: <pre>glance image-create --name "ManageIQ-stable" --is-public True --disk-format qcow2 --file http://manageiq.org/downloads/ManageIQ-stable-openstack.qc2</pre>
+      * *oVirt*: `engine-image-uploader -e myexportdomain -v -m upload ManageIQ-stable-ovirt.ova`
+      * *Red Hat Enterprise Virtualization*: `rhevm-image-uploader -e myexportdomain -v -m upload ManageIQ-stable-ovirt.ova`
+      * *OpenStack*: `glance image-create --name "ManageIQ-stable" --is-public True --disk-format qcow2 --file http://manageiq.org/downloads/ManageIQ-stable-openstack.qc2`
       * *Amazon EC2*: TODO
-      * *VMware vSphere*: In the vSphere Client, select File → Deploy OVF
+      * *VMware vSphere*: In the vSphere Client, select File -> Deploy OVF
         Template. The Deploy OVF Template wizard appear, follow the
         instructions to upload the template
 
@@ -48,14 +48,14 @@
       * Log into the ManageIQ dashboard by connecting to the new running VM
         with a web browser (Mozilla Firefox 16 or later, Internet Explorer 8
         or later, Google Chrome, and any other modern web browser should work).
-        The initial username and password is <pre>admin/smartvm</pre>
+        The initial username and password is `admin/smartvm`
       * There are a number of settings in "Advanced settings" which
         administrators need to change when starting ManageIQ for the first time.
         Among the most common are:
-      ** Time and date settings
-      ** DHCP configuration
-      ** Hostname
-      ** Admin password
+        * Time and date settings
+        * DHCP configuration
+        * Hostname
+        * Admin password
 
       ### Step 4: Add an infrastructure provider
 
@@ -81,4 +81,28 @@
       Now you can learn how to extend your cloud platform (link), and automate
       some common tasks (link). Or browse our existing extensions to choose one
       which fits your needs (link).
+
+
+      ## Thoughts from Garrett
+
+      Display an very high-level overview of steps with links/buttons to
+      pick the target. Then, there will be a more detailed page
+      (generated from the same source, but only showing the relevant
+      information for a format, so that there's only one source material
+      to keep in sync with the rest).
+
+      Instead of assuming, we should guide the person setting up the
+      machine with succinct explantory text and make use of a screenshot
+      where it would be benefitical.
+
+      Ater finishing, we should provide some quick start links of tasks
+      that are most common after installation and setup.
+
+      Timing for installation should only begin once the image is
+      downloaded. The download size should be reduced to an aboslute
+      minimum. Network infrastructure is out of our control, but size
+      and location (mirrors, torrents, etc.) will directly affect
+      download speed. So, we should reduce the file size and provide
+      fast ways to download (ensure there is a good mirror network and
+      think about providing torrents).
 
