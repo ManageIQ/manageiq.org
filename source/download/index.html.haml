@@ -14,34 +14,56 @@
       deploy to. ManageIQ can currently be deployed to VMware vSphere, oVirt,
       Red Hat Enterprise Virtualization, OpenStack and Amazon EC2.
 
-      ### Step 1: Download ManageIQ appliance
 
-      If you cannot pass the URL directly to your cloud infrastructure,
-      download the latest stable version of ManageIQ for your preferred
-      deployment platform:
+      ### Step 1: Deploy your appliance
 
-      * [ManageIQ on OpenStack]
-        (http://manageiq.org/downloads/ManageIQ-stable-openstack.qc2) (QCOW2 
-        disk image)
+      #### oVirt
+
       * [ManageIQ on oVirt or Red Hat Enterprise Virtualization]
         (http://manageiq.org/downloads/ManageIQ-stable-ovirt.ova)
+
+      `engine-image-uploader -e myexportdomain -v -m upload ManageIQ-stable-ovirt.ova`
+
+
+      #### Red Hat Enterprise Virtualization
+
+      * [ManageIQ on oVirt or Red Hat Enterprise Virtualization]
+        (http://manageiq.org/downloads/ManageIQ-stable-ovirt.ova)
+
+      `rhevm-image-uploader -e myexportdomain -v -m upload ManageIQ-stable-ovirt.ova`
+
+
+      #### OpenStack
+
+      * [ManageIQ on OpenStack]
+        (http://manageiq.org/downloads/ManageIQ-stable-openstack.qc2) (QCOW2
+        disk image)
+
+      ```glance image-create --name "ManageIQ-stable" \
+      --is-public True --disk-format qcow2 \
+      --file http://manageiq.org/downloads/ManageIQ-stable-openstack.qc2
+      ```
+
+
+      #### Amazon EC2
+
       * [ManageIQ on Amazon EC2]
         (http://manageiq.org/downloads/ManageIQ-stable-ec2.ami) (AMI file)
+
+      **FIXME**: TODO
+
+      #### VMware vSphere
+
       * [ManageIQ on VMware vSphere]
         (http://manageiq.org/downloads/ManageIQ-stable-vsphere.ova) (OVF
         template)
 
-      ### Step 2: Deploy your appliance
+      In the vSphere Client, select File -> Deploy OVF Template. The
+      Deploy OVF Template wizard appear, follow the instructions to
+      upload the template
 
-      * *oVirt*: `engine-image-uploader -e myexportdomain -v -m upload ManageIQ-stable-ovirt.ova`
-      * *Red Hat Enterprise Virtualization*: `rhevm-image-uploader -e myexportdomain -v -m upload ManageIQ-stable-ovirt.ova`
-      * *OpenStack*: `glance image-create --name "ManageIQ-stable" --is-public True --disk-format qcow2 --file http://manageiq.org/downloads/ManageIQ-stable-openstack.qc2`
-      * *Amazon EC2*: TODO
-      * *VMware vSphere*: In the vSphere Client, select File -> Deploy OVF
-        Template. The Deploy OVF Template wizard appear, follow the
-        instructions to upload the template
 
-      ### Step 3: First connection and configuration
+      ### Step 2: First connection and configuration
 
       * Create a new virtual machine friom the ManageIQ template. ManageIQ
         needs a minimum of 6GB RAM and 45GB persistent disk
@@ -57,7 +79,8 @@
         * Hostname
         * Admin password
 
-      ### Step 4: Add an infrastructure provider
+
+      ### Step 3: Add an infrastructure provider
 
       Now that you are up and running, you can connect your first
       infrastructure provider and start gathering data about what is running
