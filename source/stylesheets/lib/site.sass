@@ -15,8 +15,6 @@ h1, h2, h3, h4, h5, h6
   margin: auto
 
 
-body.front-page
-
 .masthead
   /* Accommodate the front-page-only photograph
   position: absolute
@@ -24,11 +22,16 @@ body.front-page
   left: 0
   right: 0
 
+  @media print
+    nav
+      display: none
+
 
 body:not(.front-page)
 
-  #page-wrap
-    padding-top: 7em
+  @media screen
+    #page-wrap
+      padding-top: 7em
 
   #content
     max-width: 70em
