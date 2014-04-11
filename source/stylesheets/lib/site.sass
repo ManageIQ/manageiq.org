@@ -7,21 +7,53 @@ body
   -webkit-text-rendering: optimizeLegibility
   -blink-text-rendering: optimizeLegibility
 
-h1,h2,h3,h4,h5
+h1, h2, h3, h4, h5, h6
   font-weight: 500
 
-pre
-  font-size: inherit
+.row
+  max-width: 80em
+  margin: auto
 
 
 body.front-page
 
-  .masthead
-    /* Accommodate the front-page-only photograph
-    position: absolute
-    top: 0
-    left: 0
-    right: 0
+.masthead
+  /* Accommodate the front-page-only photograph
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+
+
+body:not(.front-page)
+
+  #page-wrap
+    padding-top: 7em
+
+  #content
+    max-width: 70em
+
+  h2, h3, h4, h5, h6
+    padding: 1em 0 0.25em
+
+  h2
+    font-size: 250%
+
+  h3
+    font-size: 175%
+
+  h4
+    font-size: 150%
+
+  h5
+    font-size: 125%
+
+  h6
+    font-size: 110%
+
+
+pre
+  font-size: inherit
 
 
 .masthead
@@ -203,11 +235,6 @@ body > footer
 #content.container
   max-width: 100%
   padding: 0
-
-
-.row
-  max-width: 80em
-  margin: auto
 
 
 .source-md,
