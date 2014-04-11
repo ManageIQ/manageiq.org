@@ -1,138 +1,178 @@
+-# To add additional deployment types, please edit data/deploy_types.yml
+
 .row
 
   .col-md-12
+
     :markdown
 
       ## Download and install ManageIQ
 
-      Getting started with ManageIQ is as simple as following these four
-      steps, you'll be up and running in under 30 minutes.
+      Getting started with ManageIQ is as simple as following three
+      steps.You'll be up and running in under 30 minutes.
 
-      ### Requirements
+    - unless defined? deploy_type
 
-      To run ManageIQ,  you will need a supported infrastructure provider to
-      deploy to. ManageIQ can currently be deployed to VMware vSphere, oVirt,
-      Red Hat Enterprise Virtualization, OpenStack and Amazon EC2.
+      :markdown
 
+        First, you need to select the option that most closely matches
+        your infrastructure.
 
-      ### Step 1: Deploy your appliance
+      -#%ul
+        - data.deploy_types.each do |dlabel, dname|
+          %li= link_to dname, "#{dlabel}/"
 
-      #### oVirt
+      .row
 
-      * [ManageIQ on oVirt or Red Hat Enterprise Virtualization]
-        (http://manageiq.org/downloads/ManageIQ-stable-ovirt.ova)
+        - data.deploy_types.each do |dlabel, dname|
+          .col-md-4.col-sm-6
+            %h5= link_to dname, "/download/#{dlabel}/"
 
-      `engine-image-uploader -e myexportdomain -v -m upload ManageIQ-stable-ovirt.ova`
+      -#:markdown
+        ### Requirements
 
-
-      #### Red Hat Enterprise Virtualization
-
-      * [ManageIQ on oVirt or Red Hat Enterprise Virtualization]
-        (http://manageiq.org/downloads/ManageIQ-stable-ovirt.ova)
-
-      `rhevm-image-uploader -e myexportdomain -v -m upload ManageIQ-stable-ovirt.ova`
-
-
-      #### OpenStack
-
-      * [ManageIQ on OpenStack]
-        (http://manageiq.org/downloads/ManageIQ-stable-openstack.qc2) (QCOW2
-        disk image)
-
-      ```glance image-create --name "ManageIQ-stable" \
-      --is-public True --disk-format qcow2 \
-      --file http://manageiq.org/downloads/ManageIQ-stable-openstack.qc2
-      ```
+        To run ManageIQ,  you will need a supported infrastructure provider to
+        deploy to. ManageIQ can currently be deployed to VMware vSphere, oVirt,
+        Red Hat Enterprise Virtualization, OpenStack and Amazon EC2.
 
 
-      #### Amazon EC2
+    - if defined? deploy_type
 
-      * [ManageIQ on Amazon EC2]
-        (http://manageiq.org/downloads/ManageIQ-stable-ec2.ami) (AMI file)
+      %p
+        = "You're currently viewing instructions for #{deploy_name}."
 
-      **FIXME**: TODO
+        If this isn't what you want, please select another deploy target:
 
-      #### VMware vSphere
-
-      * [ManageIQ on VMware vSphere]
-        (http://manageiq.org/downloads/ManageIQ-stable-vsphere.ova) (OVF
-        template)
-
-      In the vSphere Client, select File -> Deploy OVF Template. The
-      Deploy OVF Template wizard appear, follow the instructions to
-      upload the template
+      %ul
+        - data.deploy_types.reject {|d| d == deploy_type}.each do |dlabel, dname|
+          %li= link_to dname, "/download/#{dlabel}/"
 
 
-      ### Step 2: First connection and configuration
+      :markdown
+        ### Step 1: Deploy your appliance
 
-      * Create a new virtual machine friom the ManageIQ template. ManageIQ
-        needs a minimum of 6GB RAM and 45GB persistent disk
-      * Log into the ManageIQ dashboard by connecting to the new running VM
-        with a web browser (Mozilla Firefox 16 or later, Internet Explorer 8
-        or later, Google Chrome, and any other modern web browser should work).
-        The initial username and password is `admin/smartvm`
-      * There are a number of settings in "Advanced settings" which
-        administrators need to change when starting ManageIQ for the first time.
-        Among the most common are:
-        * Time and date settings
-        * DHCP configuration
-        * Hostname
-        * Admin password
+      - case deploy_type
+
+        - when 'ovirt'
+          :markdown
+            * [ManageIQ on oVirt or Red Hat Enterprise Virtualization]
+              (http://manageiq.org/downloads/ManageIQ-stable-ovirt.ova)
+
+            `engine-image-uploader -e myexportdomain -v -m upload ManageIQ-stable-ovirt.ova`
 
 
-      ### Step 3: Add an infrastructure provider
+        - when 'rhev'
+          :markdown
+            * [ManageIQ on oVirt or Red Hat Enterprise Virtualization]
+              (http://manageiq.org/downloads/ManageIQ-stable-ovirt.ova)
 
-      Now that you are up and running, you can connect your first
-      infrastructure provider and start gathering data about what is running
-      there.
-
-      To add a new provider, navigate to Infrastructure->Providers, click the
-      configuration icon (TODO: include icon here), and "+" to add a new
-      provider.
-
-      * Select your infrastructure provider from the drop-down
-      * If you have multiple zones, select the appropriate one in the drop-down
-      * Type in a username and password, and click "Validate"
-
-      You can also auto-discover providers available on your local network by
-      clicking on the "radar" symbol (TODO: Include logo here). Check the
-      infrastructure type, and a subnet range of IP addresses to search, and
-      ManageIQ will prompt you to add new providers automatically.
-
-      ## What's next?
-
-      Now you can learn how to extend your cloud platform (link), and automate
-      some common tasks (link). Or browse our existing extensions to choose one
-      which fits your needs (link).
+            `rhevm-image-uploader -e myexportdomain -v -m upload ManageIQ-stable-ovirt.ova`
 
 
-      ## Thoughts from Garrett
+        - when 'openstack'
+          :markdown
+            * [ManageIQ on OpenStack]
+              (http://manageiq.org/downloads/ManageIQ-stable-openstack.qc2) (QCOW2
+              disk image)
 
-      Display an very high-level overview of steps with links/buttons to
-      pick the target. Then, there will be a more detailed page
-      (generated from the same source, but only showing the relevant
-      information for a format, so that there's only one source material
-      to keep in sync with the rest).
+            ```glance image-create --name "ManageIQ-stable" \
+            --is-public True --disk-format qcow2 \
+            --file http://manageiq.org/downloads/ManageIQ-stable-openstack.qc2
+            ```
 
-      What is VI? Virtual Infrastructure? We should try to refrain from
-      jargon, unless it is necessary. If it is a phrase that's common or
-      expected, then we should definitely define it the first time it is
-      used. This goes for the whole site, especially for introductory
-      text such as the front page or download page.
+        - when 'amazon'
+          :markdown
+            * [ManageIQ on Amazon EC2]
+              (http://manageiq.org/downloads/ManageIQ-stable-ec2.ami) (AMI file)
 
-      Instead of assuming, we should guide the person setting up the
-      machine with succinct explantory text and make use of a screenshot
-      where it would be benefitical.
+            **FIXME**: TODO
 
-      Ater finishing, we should provide some quick start links of tasks
-      that are most common after installation and setup.
+        - when 'vmware'
+          :markdown
+            * [ManageIQ on VMware vSphere]
+              (http://manageiq.org/downloads/ManageIQ-stable-vsphere.ova) (OVF
+              template)
 
-      Timing for installation should only begin once the image is
-      downloaded. The download size should be reduced to an aboslute
-      minimum. Network infrastructure is out of our control, but size
-      and location (mirrors, torrents, etc.) will directly affect
-      download speed. So, we should reduce the file size and provide
-      fast ways to download (ensure there is a good mirror network and
-      think about providing torrents).
+            In the vSphere Client, select File -> Deploy OVF Template. The
+            Deploy OVF Template wizard appear, follow the instructions to
+            upload the template
+
+
+      :markdown
+        ### Step 2: First connection and configuration
+
+        * Create a new virtual machine friom the ManageIQ template. ManageIQ
+          needs a minimum of 6GB RAM and 45GB persistent disk
+
+        * Log into the ManageIQ dashboard by connecting to the new running VM
+          with a web browser (Mozilla Firefox 16 or later, Internet Explorer 8
+          or later, Google Chrome, and any other modern web browser should work).
+          The initial username and password is `admin`/`smartvm`
+
+        * There are a number of settings in "Advanced settings" which
+          administrators need to change when starting ManageIQ for the first time.
+          Among the most common are:
+          * Time and date settings
+          * DHCP configuration
+          * Hostname
+          * Admin password
+
+
+        ### Step 3: Add an infrastructure provider
+
+        Now that you are up and running, you can connect your first
+        infrastructure provider and start gathering data about what is running
+        there.
+
+        To add a new provider, navigate to Infrastructure->Providers, click the
+        configuration icon (TODO: include icon here), and "+" to add a new
+        provider.
+
+        * Select your infrastructure provider from the drop-down
+        * If you have multiple zones, select the appropriate one in the drop-down
+        * Type in a username and password, and click "Validate"
+
+        You can also auto-discover providers available on your local network by
+        clicking on the "radar" symbol (TODO: Include logo here). Check the
+        infrastructure type, and a subnet range of IP addresses to search, and
+        ManageIQ will prompt you to add new providers automatically.
+
+        ## What's next?
+
+        Now you can learn how to extend your cloud platform (link), and automate
+        some common tasks (link). Or browse our existing extensions to choose one
+        which fits your needs (link).
+
+
+    %div(style="color:#999;margin-top:5em;border-top:1px dashed #ddd")
+      :markdown
+        ## Thoughts from Garrett
+
+        Display an very high-level overview of steps with links/buttons to
+        pick the target. Then, there will be a more detailed page
+        (generated from the same source, but only showing the relevant
+        information for a format, so that there's only one source material
+        to keep in sync with the rest).
+
+        What is VI? Virtual Infrastructure? We should try to refrain from
+        jargon, unless it is necessary. If it is a phrase that's common or
+        expected, then we should definitely define it the first time it is
+        used. This goes for the whole site, especially for introductory
+        text such as the front page or download page.
+
+        Instead of assuming, we should guide the person setting up the
+        machine with succinct explantory text and make use of a screenshot
+        where it would be benefitical.
+
+        Ater finishing, we should provide some quick start links of tasks
+        that are most common after installation and setup.
+
+        Timing for installation should only begin once the image is
+        downloaded. The download size should be reduced to an aboslute
+        minimum. Network infrastructure is out of our control, but size
+        and location (mirrors, torrents, etc.) will directly affect
+        download speed. So, we should reduce the file size and provide
+        fast ways to download (ensure there is a good mirror network and
+        think about providing torrents).
 
 

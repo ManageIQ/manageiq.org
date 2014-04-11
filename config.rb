@@ -139,6 +139,10 @@ page "/.htacces.html", :directory_index => false
 
 proxy "/.htaccess", "/.htaccess.html", :locals => {}, :ignore => true
 
+data.deploy_types.each do |deploy_type, deploy_name|
+  proxy "/download/#{deploy_type}.html", "/download/index.html", locals: {deploy_type: deploy_type, deploy_name: deploy_name}
+end
+
 ready do
   # Add author pages
   sitemap.resources.group_by {|p| p.data["author"]}.each do |author, pages|
