@@ -4,50 +4,38 @@
 
   .col-md-12
 
+
+
+    - if defined? deploy_type
+      .alert.alert-warning.hidden-print
+        %strong= "You're currently viewing instructions for #{deploy_name}."
+        If this isn't what you want, please select another deploy target:
+
+        .row
+          - data.deploy_types.reject {|d| d == deploy_type}.each do |dlabel, dname|
+            .col-sm-5= link_to dname, "/download/#{dlabel}/", {class: "alert-link"}
+    %h2
+      Download and install ManageIQ
+      - if defined? deploy_type
+        = "for #{deploy_name}"
+
     :markdown
-
-      ## Download and install ManageIQ
-
       Getting started with ManageIQ is as simple as following three
-      steps.You'll be up and running in under 30 minutes.
+      steps. You'll be up and running in under 30 minutes.
 
     - unless defined? deploy_type
 
       :markdown
-
-        First, you need to select the option that most closely matches
-        your infrastructure.
-
-      -#%ul
-        - data.deploy_types.each do |dlabel, dname|
-          %li= link_to dname, "#{dlabel}/"
+        Please select the option that most closely matches
+        your infrastructure to see optimal installation instructions.
 
       .row
-
         - data.deploy_types.each do |dlabel, dname|
           .col-md-4.col-sm-6
             %h5= link_to dname, "/download/#{dlabel}/"
 
-      -#:markdown
-        ### Requirements
-
-        To run ManageIQ,  you will need a supported infrastructure provider to
-        deploy to. ManageIQ can currently be deployed to VMware vSphere, oVirt,
-        Red Hat Enterprise Virtualization, OpenStack and Amazon EC2.
-
 
     - if defined? deploy_type
-
-      %p
-        = "You're currently viewing instructions for #{deploy_name}."
-
-        If this isn't what you want, please select another deploy target:
-
-      %ul
-        - data.deploy_types.reject {|d| d == deploy_type}.each do |dlabel, dname|
-          %li= link_to dname, "/download/#{dlabel}/"
-
-
       :markdown
         ### Step 1: Deploy your appliance
 
@@ -142,37 +130,3 @@
         Now you can learn how to extend your cloud platform (link), and automate
         some common tasks (link). Or browse our existing extensions to choose one
         which fits your needs (link).
-
-
-    %div(style="color:#999;margin-top:5em;border-top:1px dashed #ddd")
-      :markdown
-        ## Thoughts from Garrett
-
-        Display an very high-level overview of steps with links/buttons to
-        pick the target. Then, there will be a more detailed page
-        (generated from the same source, but only showing the relevant
-        information for a format, so that there's only one source material
-        to keep in sync with the rest).
-
-        What is VI? Virtual Infrastructure? We should try to refrain from
-        jargon, unless it is necessary. If it is a phrase that's common or
-        expected, then we should definitely define it the first time it is
-        used. This goes for the whole site, especially for introductory
-        text such as the front page or download page.
-
-        Instead of assuming, we should guide the person setting up the
-        machine with succinct explantory text and make use of a screenshot
-        where it would be benefitical.
-
-        Ater finishing, we should provide some quick start links of tasks
-        that are most common after installation and setup.
-
-        Timing for installation should only begin once the image is
-        downloaded. The download size should be reduced to an aboslute
-        minimum. Network infrastructure is out of our control, but size
-        and location (mirrors, torrents, etc.) will directly affect
-        download speed. So, we should reduce the file size and provide
-        fast ways to download (ensure there is a good mirror network and
-        think about providing torrents).
-
-
