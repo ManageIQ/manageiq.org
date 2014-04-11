@@ -50,17 +50,29 @@
   src: local('Cabin Bold Italic'), local('Cabin-BoldItalic'), url('Cabin-BoldItalic.woff') format('woff');
 }
 
-/** Droid Sans: Used for body text **/
+/** Noto Sans: Used for body text **/
 
 @font-face {
-  font-family: 'Droid Sans';
+  font-family: 'Noto Sans';
   font-style: normal;
   font-weight: 400;
-  src: local('Droid Sans'), local('DroidSans-Regular'), url('DroidSans-Regular.woff') format('woff');
+  src: local('Noto Sans'), local('NotoSans-Regular'), url('NotoSans-Regular.woff') format('woff');
 }
 @font-face {
-  font-family: 'Droid Sans';
+  font-family: 'Noto Sans';
   font-style: normal;
   font-weight: 600;
-  src: local('Droid Sans Bold'), local('DroidSans-Bold'), url('DroidSans-Bold.woff') format('woff');
+  src: local('Noto Sans Bold'), local('NotoSans-Bold'), url('NotoSans-Bold.woff') format('woff');
+}
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Noto Sans'), local('NotoSans-Italic'), url('NotoSans-Italic.woff') format('woff');
+}
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: italic;
+  font-weight: 600;
+  src: local('Noto Sans BoldItalic'), local('NotoSans-BoldItalic'), url('NotoSans-BoldItalic.woff') format('woff');
 }
