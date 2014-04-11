@@ -53,53 +53,134 @@ body:not(.front-page)
     font-size: 110%
 
 
+  @media screen and (max-width: 1023px)
+    #page-wrap
+      padding-top: 12em
+
+
 pre
   font-size: inherit
 
 
 .masthead
   @extend .row
+  z-index: 100
 
   .hgroup
-    //float: left
     @extend .col-lg-3
 
   #access
     @extend .col-lg-9
 
   h1 > a
-    display: block
-    float: left
     padding: 6px 24px
 
   nav
     // See _bootstrap-custom.sass for bootstrap-related changes
     // (padding, color, etc.)
-    float: right
     font-family: $headings-font-family
     font-size: 22pt
     font-weight: 500
     text-transform: lowercase
-    width: auto
 
-    li
-      $nav-active-border: 9px
+  @media screen and (max-width: 1199px)
+    h1 > a
+      padding-right: 0
 
-      &.active
-        border-top: $nav-active-border solid rgba(#204a87, 0.25)
+    nav
+      //font-size: 20pt
+      padding-left: 0
+      padding-right: 0
 
-        a
-          position: relative
-          top: -$nav-active-border
+      /*a
+        padding-top: 1.75ex
 
-      &:not(.active)
+  @media screen and (max-width: 799px)
+    nav
+      font-size: 18pt
 
-        &:hover
-          border-top: $nav-active-border solid rgba(#204a87, 0.1)
+  @media screen and (min-width: 1024px)
+    .hgroup
+      float: left
+
+    h1 > a
+      display: block
+      float: left
+
+    nav
+      float: right
+      width: auto
+
+      li
+        $nav-active-border: 9px
+
+        &.active
+          border-top: $nav-active-border solid rgba(#204a87, 0.25)
 
           a
             position: relative
             top: -$nav-active-border
+
+        &:not(.active)
+
+          &:hover
+            border-top: $nav-active-border solid rgba(#204a87, 0.1)
+
+            a
+              position: relative
+              top: -$nav-active-border
+
+  @media screen and (max-width: 1023px)
+    .hgroup
+      float: none
+
+    h1 > a
+      margin: 0 auto
+      text-align: center
+      display: block
+
+    @media (min-width: 640px)
+
+      #access
+        padding: 0
+
+      nav
+        float: none
+        margin: 0 auto
+        clear: both
+        width: 100%
+        display: table
+
+        li
+          display: table-cell
+          float: none
+          width: 5%
+          text-align: center
+
+          a
+            width: 100%
+            display: block
+            //padding-left: 0
+            //padding-right: 0
+
+
+    @media (max-width: 639px)
+
+      nav
+        float: none
+        text-align: center
+
+        ul, li
+          display: inline
+          float: none
+          padding: 0
+
+        a
+          display: inline-block
+          padding-top: 0.5ex
+          padding-bottom: 0.5ex
+
+
 
 
 .page-header
