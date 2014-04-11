@@ -14,6 +14,8 @@
         .row
           - data.deploy_types.reject {|d| d == deploy_type}.each do |dlabel, dname|
             .col-sm-5= link_to dname, "/download/#{dlabel}/", {class: "alert-link"}
+
+
     %h2
       Download and install ManageIQ
       - if defined? deploy_type
@@ -37,32 +39,35 @@
 
     - if defined? deploy_type
       :markdown
-        ### Step 1: Deploy your appliance
+        ### Step 1: Download & deploy your appliance
 
       - case deploy_type
 
         - when 'ovirt'
           :markdown
-            * [ManageIQ on oVirt or Red Hat Enterprise Virtualization]
-              (http://manageiq.org/downloads/ManageIQ-stable-ovirt.ova)
+            [Download ManageIQ for oVirt]
+            (http://manageiq.org/downloads/ManageIQ-stable-ovirt.ova) to
+            your local computer.
 
+            When the file has finished downloading, please upload it to
+            your RHEV instance by running the following command locally:
             `engine-image-uploader -e myexportdomain -v -m upload ManageIQ-stable-ovirt.ova`
 
 
         - when 'rhev'
           :markdown
-            * [ManageIQ on oVirt or Red Hat Enterprise Virtualization]
-              (http://manageiq.org/downloads/ManageIQ-stable-ovirt.ova)
+            [Download ManageIQ for Red Hat Enterprise Virtualization]
+            (http://manageiq.org/downloads/ManageIQ-stable-ovirt.ova) to
+            your local computer.
 
+            When the file has finished downloading, please upload it to
+            your RHEV instance by running the following command locally:
             `rhevm-image-uploader -e myexportdomain -v -m upload ManageIQ-stable-ovirt.ova`
 
 
         - when 'openstack'
           :markdown
-            * [ManageIQ on OpenStack]
-              (http://manageiq.org/downloads/ManageIQ-stable-openstack.qc2) (QCOW2
-              disk image)
-
+            Download ManageIQ directly to OpenStack by running this command:
             ```glance image-create --name "ManageIQ-stable" \
             --is-public True --disk-format qcow2 \
             --file http://manageiq.org/downloads/ManageIQ-stable-openstack.qc2
@@ -70,16 +75,16 @@
 
         - when 'amazon'
           :markdown
-            * [ManageIQ on Amazon EC2]
-              (http://manageiq.org/downloads/ManageIQ-stable-ec2.ami) (AMI file)
+            [Download ManageIQ for Amazon EC2]
+            (http://manageiq.org/downloads/ManageIQ-stable-ec2.ami) (AMI file)
 
             **FIXME**: TODO
 
         - when 'vmware'
           :markdown
-            * [ManageIQ on VMware vSphere]
-              (http://manageiq.org/downloads/ManageIQ-stable-vsphere.ova) (OVF
-              template)
+            [Download ManageIQ for VMware vSphere]
+            (http://manageiq.org/downloads/ManageIQ-stable-vsphere.ova) to
+            your local computer.
 
             In the vSphere Client, select File -> Deploy OVF Template. The
             Deploy OVF Template wizard appear, follow the instructions to
