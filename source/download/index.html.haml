@@ -4,13 +4,27 @@ page_classes: header-page
 ---
 -# To add additional deployment types, please edit data/deploy_types.yml
 
-.row
+%section.page-header
+  .row
+    %section.col-md-12
 
-  .col-md-12
+      %h2{class: (defined? deploy_type) ? "with-type" : "without-type"}
+        Download and install ManageIQ
+        - if defined? deploy_type
+          for
+          %span.product-name
+            = deploy_name
+
+      :markdown
+        Getting started with ManageIQ is as simple as following three
+        steps. You'll be up and running in under 30 minutes.
 
 
-    - if defined? deploy_type
-      .alert.alert-warning.hidden-print
+- if defined? deploy_type
+  %section.page-tip
+    .row
+      %section.col-md-12
+
         %strong= "You're currently viewing instructions for #{deploy_name}."
         If this isn't what you want, please select another deploy target:
 
@@ -20,131 +34,126 @@ page_classes: header-page
             .col-sm-5= link_to dtext, "/download/#{dlabel}/", {class: "alert-link"}
 
 
-    %h2
-      Download and install ManageIQ
+%section
+  .row
+    %section.col-md-12
+
+      - unless defined? deploy_type
+
+        :markdown
+          Please select the option that most closely matches
+          your infrastructure to see optimal installation instructions.
+
+        .row
+          - data.deploy_types.each do |dlabel, dname|
+            - dtext = "<i class='download-arrow'></i>#{dname}"
+            .col-md-4.col-sm-6
+              %h5= link_to dtext, "/download/#{dlabel}/"
+
+
       - if defined? deploy_type
-        = "for #{deploy_name}"
+        :markdown
+          ### Step 1: Download & deploy your appliance
 
-    :markdown
-      Getting started with ManageIQ is as simple as following three
-      steps. You'll be up and running in under 30 minutes.
+        - case deploy_type
 
-    - unless defined? deploy_type
+          - when 'ovirt'
+            :markdown
+              [<i class="download-icon"></i>Download ManageIQ for oVirt]
+              (http://manageiq.org/downloads/ManageIQ-stable-ovirt.ova) to
+              your local computer.
 
-      :markdown
-        Please select the option that most closely matches
-        your infrastructure to see optimal installation instructions.
+              When the file has finished downloading, please upload it to
+              your RHEV instance by running the following command locally:
 
-      .row
-        - data.deploy_types.each do |dlabel, dname|
-          - dtext = "<i class='download-arrow'></i>#{dname}"
-          .col-md-4.col-sm-6
-            %h5= link_to dtext, "/download/#{dlabel}/"
-
-
-    - if defined? deploy_type
-      :markdown
-        ### Step 1: Download & deploy your appliance
-
-      - case deploy_type
-
-        - when 'ovirt'
-          :markdown
-            [<i class="download-icon"></i>Download ManageIQ for oVirt]
-            (http://manageiq.org/downloads/ManageIQ-stable-ovirt.ova) to
-            your local computer.
-
-            When the file has finished downloading, please upload it to
-            your RHEV instance by running the following command locally:
-
-            <pre>
-            engine-image-uploader -e myexportdomain -v -m upload ManageIQ-stable-ovirt.ova
-            </pre>
+              <pre>
+              engine-image-uploader -e myexportdomain -v -m upload ManageIQ-stable-ovirt.ova
+              </pre>
 
 
-        - when 'rhev'
-          :markdown
-            [<i class="download-icon"></i>Download ManageIQ for Red Hat Enterprise Virtualization]
-            (http://manageiq.org/downloads/ManageIQ-stable-ovirt.ova)
-            to your local computer.
+          - when 'rhev'
+            :markdown
+              [<i class="download-icon"></i>Download ManageIQ for Red Hat Enterprise Virtualization]
+              (http://manageiq.org/downloads/ManageIQ-stable-ovirt.ova)
+              to your local computer.
 
-            When the file has finished downloading, please upload it to
-            your RHEV instance by running the following command locally:
+              When the file has finished downloading, please upload it to
+              your RHEV instance by running the following command locally:
 
-            <pre>
-            rhevm-image-uploader -e myexportdomain -v -m upload ManageIQ-stable-ovirt.ova
-            </pre>
-
-
-        - when 'openstack'
-          :markdown
-            Download ManageIQ directly to OpenStack by running this command:
-
-            <pre>
-            glance image-create --name "ManageIQ-stable" \
-            --is-public True --disk-format qcow2 \
-            --file http://manageiq.org/downloads/ManageIQ-stable-openstack.qc2
-            </pre>
-
-        - when 'amazon'
-          :markdown
-            [<i class="download-icon"></i>Download ManageIQ for Amazon EC2]
-            (http://manageiq.org/downloads/ManageIQ-stable-ec2.ami) (AMI file)
-
-            **FIXME**: TODO
-
-        - when 'vmware'
-          :markdown
-            [<i class="download-icon"></i>Download ManageIQ for VMware vSphere]
-            (http://manageiq.org/downloads/ManageIQ-stable-vsphere.ova) to
-            your local computer.
-
-            In the vSphere Client, select File -> Deploy OVF Template. The
-            Deploy OVF Template wizard appear, follow the instructions to
-            upload the template
+              <pre>
+              rhevm-image-uploader -e myexportdomain -v -m upload ManageIQ-stable-ovirt.ova
+              </pre>
 
 
-      :markdown
-        ### Step 2: First connection and configuration
+          - when 'openstack'
+            :markdown
+              Download ManageIQ directly to OpenStack by running this command:
 
-        * Create a new virtual machine friom the ManageIQ template. ManageIQ
-          needs a minimum of 6GB RAM and 45GB persistent disk
+              <pre>
+              glance image-create --name "ManageIQ-stable" \
+              --is-public True --disk-format qcow2 \
+              --file http://manageiq.org/downloads/ManageIQ-stable-openstack.qc2
+              </pre>
 
-        * Log into the ManageIQ dashboard by connecting to the new running VM
-          with a web browser (Mozilla Firefox 16 or later, Internet Explorer 8
-          or later, Google Chrome, and any other modern web browser should work).
-          The initial username and password is `admin`/`smartvm`
+          - when 'amazon'
+            :markdown
+              [<i class="download-icon"></i>Download ManageIQ for Amazon EC2]
+              (http://manageiq.org/downloads/ManageIQ-stable-ec2.ami) (AMI file)
 
-        * There are a number of settings in "Advanced settings" which
-          administrators need to change when starting ManageIQ for the first time.
-          Among the most common are:
-          * Time and date settings
-          * DHCP configuration
-          * Hostname
-          * Admin password
+              **FIXME**: TODO
+
+          - when 'vmware'
+            :markdown
+              [<i class="download-icon"></i>Download ManageIQ for VMware vSphere]
+              (http://manageiq.org/downloads/ManageIQ-stable-vsphere.ova) to
+              your local computer.
+
+              In the vSphere Client, select File -> Deploy OVF Template. The
+              Deploy OVF Template wizard appear, follow the instructions to
+              upload the template
 
 
-        ### Step 3: Add an infrastructure provider
+        :markdown
+          ### Step 2: First connection and configuration
 
-        Now that you are up and running, you can connect your first
-        infrastructure provider and start gathering data about what is running
-        there.
+          * Create a new virtual machine friom the ManageIQ template. ManageIQ
+            needs a minimum of 6GB RAM and 45GB persistent disk
 
-        To add a new provider, navigate to Infrastructure->Providers, click the
-        configuration icon (TODO: include icon here), and "+" to add a new
-        provider.
+          * Log into the ManageIQ dashboard by connecting to the new running VM
+            with a web browser (Mozilla Firefox 16 or later, Internet Explorer 8
+            or later, Google Chrome, and any other modern web browser should work).
+            The initial username and password is `admin`/`smartvm`
 
-        * Select your infrastructure provider from the drop-down
-        * If you have multiple zones, select the appropriate one in the drop-down
-        * Type in a username and password, and click "Validate"
+          * There are a number of settings in "Advanced settings" which
+            administrators need to change when starting ManageIQ for the first time.
+            Among the most common are:
+            * Time and date settings
+            * DHCP configuration
+            * Hostname
+            * Admin password
 
-        You can also auto-discover providers available on your local network by
-        clicking on the "radar" symbol (TODO: Include logo here). Check the
-        infrastructure type, and a subnet range of IP addresses to search, and
-        ManageIQ will prompt you to add new providers automatically.
 
-        ## What's next?
+          ### Step 3: Add an infrastructure provider
 
-        Now you can learn how to extend your cloud platform (link), and automate
-        some common tasks (link). Or browse our existing extensions to choose one
-        which fits your needs (link).
+          Now that you are up and running, you can connect your first
+          infrastructure provider and start gathering data about what is running
+          there.
+
+          To add a new provider, navigate to Infrastructure->Providers, click the
+          configuration icon (TODO: include icon here), and "+" to add a new
+          provider.
+
+          * Select your infrastructure provider from the drop-down
+          * If you have multiple zones, select the appropriate one in the drop-down
+          * Type in a username and password, and click "Validate"
+
+          You can also auto-discover providers available on your local network by
+          clicking on the "radar" symbol (TODO: Include logo here). Check the
+          infrastructure type, and a subnet range of IP addresses to search, and
+          ManageIQ will prompt you to add new providers automatically.
+
+          ## What's next?
+
+          Now you can learn how to extend your cloud platform (link), and automate
+          some common tasks (link). Or browse our existing extensions to choose one
+          which fits your needs (link).

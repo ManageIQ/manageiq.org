@@ -16,7 +16,7 @@ h1, h2, h3, h4, h5, h6
 
 
 .masthead
-  /* Accommodate the front-page-only photograph
+  /* Accommodate the header-page-only photograph
   position: absolute
   top: 0
   left: 0
@@ -27,7 +27,7 @@ h1, h2, h3, h4, h5, h6
       display: none
 
 
-body:not(.front-page)
+body:not(.header-page)
 
   @media screen
     #page-wrap
@@ -35,6 +35,15 @@ body:not(.front-page)
 
   #content
     max-width: 70em
+
+  @media screen and (max-width: 1023px)
+    #page-wrap
+      padding-top: 12em
+
+
+body:not(.front-page)
+
+  #content
     padding-bottom: 5em
 
   h2, h3, h4, h5, h6
@@ -55,10 +64,6 @@ body:not(.front-page)
   h6
     font-size: 110%
 
-
-  @media screen and (max-width: 1023px)
-    #page-wrap
-      padding-top: 12em
 
 
 pre, code
@@ -95,12 +100,8 @@ pre, code
       padding-right: 0
 
     nav
-      //font-size: 20pt
       padding-left: 0
       padding-right: 0
-
-      /*a
-        padding-top: 1.75ex
 
   @media screen and (max-width: 799px)
     nav
@@ -167,9 +168,6 @@ pre, code
           a
             width: 100%
             display: block
-            //padding-left: 0
-            //padding-right: 0
-
 
     @media (max-width: 639px)
 
@@ -188,22 +186,25 @@ pre, code
           padding-bottom: 0.5ex
 
 
-
-
 .page-header
-  margin: 0
-  padding-top: 12em
-  padding-bottom: 4em
-  background: #d2dfef url(/images/header-paintedcandy.jpg) 42% 55%
-  background-size: cover
+  background: #d2dfef
+  background-size: 50%
   border-bottom: 1px solid rgba(0,0,0,0.25)
-
-  text-shadow: 0 0 15px white
-
+  margin: 0
+  padding: 5em 0 1em
   text-align: center
 
   h2
-    font-size: 48pt
+    font-size: 48pt !important
+    margin: 0 auto
+
+    &.with-type
+      font-size: 28pt !important
+
+      .product-name
+        font-weight: 900
+        display: block
+        font-size: 46pt
 
   h3
     margin-top: 0
@@ -211,21 +212,42 @@ pre, code
     opacity: 0.5
     font-size: 24pt
 
+  h2 + p
+    padding-top: 1em
+
+  p
+    font-size: 16pt
+    max-width: 70ex
+    margin: 0 auto
+    text-align: left
+
+
+body.front-page
+
+  .page-header
+    background: #d2dfef url(/images/header-paintedcandy.jpg) 42% 55%
+    padding-bottom: 4em
+    padding-top: 12em
+    text-shadow: 0 0 15px white
+
+    h2
+      padding: 0
+
+body:not(.front-page)
+
+  .page-header
 
 .content > section
   .row
     padding: 3em 3em
 
   &.overview
-    //background: white
-    //border-top: 1px solid #b8b8b8
 
   &.features
     background: #e6e6e6
     border-top: 1px solid #b8b8b8
 
   &.blog-area
-    //background: white
     border-top: 1px solid #bebebe
 
   &.get-started
@@ -299,27 +321,7 @@ body > footer
   .feature-item
     position: relative
     padding-left: 48px
-    //font-size: 90%
     background: url(/images/q-glyph.svg) no-repeat 2px 12px
-
-    /* Hacks to ensure that the features flow properly (regardless of content size)
-
-  /*
-
-    @media screen and (max-width: 767px)
-      &
-        clear: both
-        overflow: hidden
-
-    @media screen and (min-width: 1200px)
-      &:nth-child(4),
-      &:nth-child(7) // Future proofing
-        clear: both
-
-    @media screen and (max-width: 1199px) and (min-width: 769px)
-      &:nth-child(odd)
-        clear: both
-
 
   h2
     color: #999
@@ -360,6 +362,15 @@ body > footer
 a .glyphicon:first-child
   /* Add a space after all icons in links
   margin-right: 0.75ex
+
+.page-tip
+  @extend .alert
+  @extend .alert-warning
+  @extend .hidden-print
+
+  .row
+    padding-top: 1em !important
+    padding-bottom: 1em !important
 
 pre
   padding: 1ex 2ex
