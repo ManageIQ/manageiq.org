@@ -233,12 +233,6 @@ pre, code
     background: #e1e9f4
     border-top: 1px solid #b4bac3
 
-    .steps
-      padding-left: $content-padding
-
-      h2
-        margin-left: $content-padding * -1
-
     .choices
       ul, li
         list-style: none
@@ -246,11 +240,18 @@ pre, code
 
       li
         @extend .col-sm-6
-        font-size: 120%
+        font-size: 140%
 
         a
           display: block
-          padding: 0 1ex 1ex 0
+          padding: 0 1ex 0.5ex 0
+
+      @media screen and (max-width: 991px)
+        &
+          padding-top: 1em
+
+        li a
+          padding-left: 0
 
     .download-button
       font-size: inherit
