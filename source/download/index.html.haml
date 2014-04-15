@@ -13,7 +13,8 @@
 
         .row
           - data.deploy_types.reject {|d| d == deploy_type}.each do |dlabel, dname|
-            .col-sm-5= link_to dname, "/download/#{dlabel}/", {class: "alert-link"}
+            - dtext = "<i class='download-arrow'></i>#{dname}"
+            .col-sm-5= link_to dtext, "/download/#{dlabel}/", {class: "alert-link"}
 
 
     %h2
@@ -33,8 +34,9 @@
 
       .row
         - data.deploy_types.each do |dlabel, dname|
+          - dtext = "<i class='download-arrow'></i>#{dname}"
           .col-md-4.col-sm-6
-            %h5= link_to dname, "/download/#{dlabel}/"
+            %h5= link_to dtext, "/download/#{dlabel}/"
 
 
     - if defined? deploy_type
@@ -45,7 +47,7 @@
 
         - when 'ovirt'
           :markdown
-            [Download ManageIQ for oVirt]
+            [<i class="download-icon"></i>Download ManageIQ for oVirt]
             (http://manageiq.org/downloads/ManageIQ-stable-ovirt.ova) to
             your local computer.
 
@@ -56,9 +58,9 @@
 
         - when 'rhev'
           :markdown
-            [Download ManageIQ for Red Hat Enterprise Virtualization]
-            (http://manageiq.org/downloads/ManageIQ-stable-ovirt.ova) to
-            your local computer.
+            [<i class="download-icon"></i>Download ManageIQ for Red Hat Enterprise Virtualization]
+            (http://manageiq.org/downloads/ManageIQ-stable-ovirt.ova)
+            to your local computer.
 
             When the file has finished downloading, please upload it to
             your RHEV instance by running the following command locally:
@@ -75,14 +77,14 @@
 
         - when 'amazon'
           :markdown
-            [Download ManageIQ for Amazon EC2]
+            [<i class="download-icon"></i>Download ManageIQ for Amazon EC2]
             (http://manageiq.org/downloads/ManageIQ-stable-ec2.ami) (AMI file)
 
             **FIXME**: TODO
 
         - when 'vmware'
           :markdown
-            [Download ManageIQ for VMware vSphere]
+            [<i class="download-icon"></i>Download ManageIQ for VMware vSphere]
             (http://manageiq.org/downloads/ManageIQ-stable-vsphere.ova) to
             your local computer.
 
