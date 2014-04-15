@@ -196,6 +196,7 @@ pre, code
   padding-bottom: 4em
   background: #d2dfef url(/images/header-paintedcandy.jpg) 42% 55%
   background-size: cover
+  border-bottom: 1px solid rgba(0,0,0,0.25)
 
   text-shadow: 0 0 15px white
 
@@ -216,27 +217,40 @@ pre, code
     padding: 3em 3em
 
   &.overview
-    background: white
-    border-top: 1px solid #b8b8b8
+    //background: white
+    //border-top: 1px solid #b8b8b8
 
   &.features
     background: #e6e6e6
     border-top: 1px solid #b8b8b8
 
   &.blog-area
-    background: #ededed
+    //background: white
     border-top: 1px solid #bebebe
 
   &.get-started
     $content-padding: 24pt
-    background: #2e4a66
-    border-top: #203448
+    background: #e1e9f4
+    border-top: 1px solid #b4bac3
 
     .steps
       padding-left: $content-padding
 
       h2
         margin-left: $content-padding * -1
+
+    .choices
+      ul, li
+        list-style: none
+        margin: 0
+
+      li
+        @extend .col-sm-6
+        font-size: 120%
+
+        a
+          display: block
+          padding: 0 1ex 1ex 0
 
     .download-button
       font-size: inherit
@@ -252,7 +266,6 @@ pre, code
 
 
   // Fonts for inverted sections
-  &.get-started,
   &.next-steps
     color: rgba(white, 0.6)
 
@@ -341,6 +354,7 @@ body > footer
 .download-arrow
   @extend .glyphicon
   @extend .glyphicon-chevron-right
+  opacity: 0.5
 
 a .glyphicon:first-child
   /* Add a space after all icons in links

@@ -94,9 +94,12 @@ page_classes: front-page
 %section.get-started
   .row
 
+    %section.col-md-12
+      :markdown
+        ## Get started now
+
     %section.col-md-5
       :markdown
-        ## Get started...
         If you're interested in more effectively managing your virtual
         machines and cloud landscape — good news! ManageIQ is quick and
         easy to get up and running.
@@ -105,24 +108,12 @@ page_classes: front-page
         your own infrastructure.
 
 
-    %section.col-md-7.steps
-      %h2 1. Download
+    %section.col-md-7.choices
+      %ul
+        - data.deploy_types.each do |dlabel, dname|
+          - dtext = "<i class='download-arrow'></i>#{dname}"
+          %li= link_to dtext, "/download/#{dlabel}/"
 
-      =link_to "Download ManageIQ", "#page-to-download-here", class: "download-button btn btn-success"
-
-      .description
-        Version 1.0.2
-      .size
-        214 Megabytes
-
-
-      :markdown
-        ## 2. _???_
-        Something magical happens, most likely with a very short
-        description of what how to add and boot up things.
-
-        ## 3. Success!
-        You're now running ManageIQ.
 
 
 
