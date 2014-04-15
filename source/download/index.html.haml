@@ -5,7 +5,6 @@
   .col-md-12
 
 
-
     - if defined? deploy_type
       .alert.alert-warning.hidden-print
         %strong= "You're currently viewing instructions for #{deploy_name}."
@@ -53,7 +52,10 @@
 
             When the file has finished downloading, please upload it to
             your RHEV instance by running the following command locally:
-            `engine-image-uploader -e myexportdomain -v -m upload ManageIQ-stable-ovirt.ova`
+
+            <pre>
+            engine-image-uploader -e myexportdomain -v -m upload ManageIQ-stable-ovirt.ova
+            </pre>
 
 
         - when 'rhev'
@@ -64,16 +66,21 @@
 
             When the file has finished downloading, please upload it to
             your RHEV instance by running the following command locally:
-            `rhevm-image-uploader -e myexportdomain -v -m upload ManageIQ-stable-ovirt.ova`
+
+            <pre>
+            rhevm-image-uploader -e myexportdomain -v -m upload ManageIQ-stable-ovirt.ova
+            </pre>
 
 
         - when 'openstack'
           :markdown
             Download ManageIQ directly to OpenStack by running this command:
-            ```glance image-create --name "ManageIQ-stable" \
+
+            <pre>
+            glance image-create --name "ManageIQ-stable" \
             --is-public True --disk-format qcow2 \
             --file http://manageiq.org/downloads/ManageIQ-stable-openstack.qc2
-            ```
+            </pre>
 
         - when 'amazon'
           :markdown
