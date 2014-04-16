@@ -34,7 +34,7 @@ page_classes: header-page
             .col-sm-5= link_to dtext, "/download/#{dlabel}/", {class: "alert-link"}
 
 
-%section
+%section.installation-steps
   .row
     %section.col-md-12
 
@@ -53,7 +53,7 @@ page_classes: header-page
 
       - if defined? deploy_type
         :markdown
-          ### Step 1: Download & deploy your appliance
+          ### Step 1: **Download & deploy your appliance**
 
         - case deploy_type
 
@@ -114,7 +114,7 @@ page_classes: header-page
 
 
         :markdown
-          ### Step 2: First connection and configuration
+          ### Step 2: **First connection and configuration**
 
           * Create a new virtual machine friom the ManageIQ template. ManageIQ
             needs a minimum of 6GB RAM and 45GB persistent disk
@@ -133,7 +133,7 @@ page_classes: header-page
             * Admin password
 
 
-          ### Step 3: Add an infrastructure provider
+          ### Step 3: **Add an infrastructure provider**
 
           Now that you are up and running, you can connect your first
           infrastructure provider and start gathering data about what is running
