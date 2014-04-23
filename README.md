@@ -6,24 +6,21 @@ as "bundler".
 
 ## Initial setup
 
-### Fedora, RHEL, & CentOS
+### Step 1: Check it out
 
-```
-sudo yum install -y ruby-devel rubygems-devel gcc-c++ curl-devel rubygem-bundler
-git clone git@gitlab.osas.lab.eng.rdu2.redhat.com:osas/manageiq-site.git
-cd manageiq-site
-bundle install
-```
+Check out this this git repository by running:
+`git clone git@gitlab.osas.lab.eng.rdu2.redhat.com:osas/manageiq-site.git`
 
+### Step 2: Set it up
+
+Make sure you have `sudo` rights on your computer running Fedora, RHEL,
+or CentOS.
+
+Once you do, simply run `./setup.sh`.
 
 ## Running a local server
 
-1. Start a local Middleman server that uses local gems by typing
-   `bundle exec middleman server`
-
-   (Note: 'server' is optional, but it helps if you're going through
-   command-history in bash or zsh with control-r, versus other middleman
-   commands like `console`, `build`, or `deploy`)
+1. Type `./run-server.sh`
 
 2. Next, browse to <http://0.0.0.0:4567>
 
@@ -32,11 +29,6 @@ bundle install
    When you edit files (pages, layouts, CSS, etc.), the site will
    dyanmically update in development mode. (There's no need to refresh
    the page, unless you get a Ruby error.)
-
-
-## Updating
-
-When there are new gems in `Gemfile`, just run `bundle` again.
 
 
 ## Customizing your site
