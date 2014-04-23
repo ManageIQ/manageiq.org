@@ -21,7 +21,7 @@ or CentOS.
 
 Once you do, simply run `./setup.sh`.
 
-## Step 3 to ∞: Runn a local server
+## Step 3 to ∞: Run a local server
 
 1. Type `./run-server.sh`
 
