@@ -41,8 +41,9 @@ page_classes: header-page
       - unless defined? deploy_type
 
         :markdown
-          Please select the option that most closely matches
-          your infrastructure to see optimal installation instructions.
+          Please select the option that most closely matches your
+          infrastructure to see instructions for your optimal
+          installation.
 
         .row
           - data.deploy_types.each do |dlabel, dname|
