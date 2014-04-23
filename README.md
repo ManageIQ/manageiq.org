@@ -1,12 +1,6 @@
 # ManageIQ website
 
-To get started, you need to have Ruby and Ruby Gems installed, as well
-as "bundler".
-
-
-## Initial setup
-
-### Step 1: Check it out
+## Step 1: Check it out
 
 Check out this this git repository by running:
 `git clone git@gitlab.osas.lab.eng.rdu2.redhat.com:osas/manageiq-site.git`
@@ -14,14 +8,14 @@ Check out this this git repository by running:
 When the git clone is done, run `cd manageiq-site` to change to the
 checked out directory.
 
-### Step 2: Set it up
+## Step 2: Set it up
 
 Make sure you have `sudo` rights on your computer running Fedora, RHEL,
 or CentOS.
 
 Once you do, simply run `./setup.sh`.
 
-## Step 3 to ∞: Run a local server
+## Step 3: Run a local server
 
 1. Type `./run-server.sh`
 
@@ -32,6 +26,10 @@ Once you do, simply run `./setup.sh`.
    When you edit files (pages, layouts, CSS, etc.), the site will
    dyanmically update in development mode. (There's no need to refresh
    the page, unless you get a Ruby error.)
+
+Since it's already set up at this point, all you need to do is repeat
+change to the correct directory and run step 3 every time you want to
+start the server.
 
 
 ## Customizing your site
