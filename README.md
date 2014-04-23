@@ -11,6 +11,9 @@ as "bundler".
 Check out this this git repository by running:
 `git clone git@gitlab.osas.lab.eng.rdu2.redhat.com:osas/manageiq-site.git`
 
+When the git clone is done, run `cd manageiq-site` to change to the
+checked out directory.
+
 ### Step 2: Set it up
 
 Make sure you have `sudo` rights on your computer running Fedora, RHEL,
@@ -18,7 +21,7 @@ or CentOS.
 
 Once you do, simply run `./setup.sh`.
 
-## Running a local server
+## Step 3 to ∞: Runn a local server
 
 1. Type `./run-server.sh`
 
