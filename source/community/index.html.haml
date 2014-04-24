@@ -2,9 +2,22 @@
 title: Community
 ---
 
+:ruby
+
+  def dummy_text paragraphs = 2, sentences = 3
+    text = ''
+
+    rand(1..paragraphs).times do
+      text += lorem.sentences(rand(1..sentences)) + '.'
+    end
+
+    text
+  end
+
+
 .row
 
-  .col-md-12
+  %section.col-md-12
     :markdown
 
       ## Get involved
@@ -20,6 +33,16 @@ title: Community
       * [Generating an image from source](build)
       * [Submit a patch](patches)
 
+
+  %section.col-md-12
+    %h2 Developing ManageIQ
+
+    %p Stuff for developers.
+    = dummy_text
+
+
+  %section.col-md-12
+    :markdown
       ## Governance
 
       The ManageIQ project is a meritocracy. We practice open and transparent
@@ -38,3 +61,10 @@ title: Community
       the [ManageIQ Licensing FAQ](licensing_faq).
 
 
+  %section.col-md-12
+    %h2 License
+
+    %p Friendly license here.
+    = dummy_text 5,5
+
+    %p= link_to "» Read the full license"
