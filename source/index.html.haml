@@ -114,7 +114,20 @@ page_classes: front-page header-page
           %li= link_to dtext, "/download/#{dlabel}/"
 
 
+%section.communication
+  .row
 
+    %section.talk-back.col-md-6
+      :markdown
+        ### Feeling chatty?
+        Talk with the developers in our forum.
+      =lorem.sentences 4
+
+    %section.ask-questions.col-md-6
+      :markdown
+        ### Having issues?
+        Ask a question in our Q&A forum.
+      =lorem.sentences 4
 
 %section.blog-area
   .row
@@ -139,7 +152,7 @@ page_classes: front-page header-page
 %section.next-steps
   .row
 
-    %section.col-md-4
+    -#%section.col-md-4
       :markdown
         ## Get configured
         When ManageIQ is up and running, be sure to read:
@@ -157,6 +170,11 @@ page_classes: front-page header-page
         * [@manageiq](http://twitter.com/manageiq) on Twitter
         * [Mailing lists](#FIXME-link-to-lists)
         * [IRC](#FIXME-link-to-doc-on-irc) (#manageiq on irc.Freenode.net)
+
+    %section.col-md-4
+      %h2= lorem.words(3).capitalize
+      %p= lorem.sentences(1) + '.'
+      %p= lorem.sentences(2) + '.'
 
     %section.col-md-4
       :markdown
