@@ -234,26 +234,32 @@ body.front-page
     h2
       padding: 0
 
-body:not(.front-page)
+.content > section:not(.page-header)
 
-  .page-header
+  // Add borders to the top of the sections (which are not the header)
+  .row
+    border-top: 1px solid #ddd
 
 .content > section
+
   .row
     padding: 3em 3em
 
+  &.overview,
+  &.get-started,
+  &.next-steps
+    .row
+      border: none
+
   &.overview
+    background: #f8f8f8
 
   &.features
-    background: #e6e6e6
-    border-top: 1px solid #b8b8b8
 
   &.blog-area
-    border-top: 1px solid #ddd
 
   &.get-started
     $content-padding: 24pt
-    background: #ecf0f8
     border-top: 1px solid #bdc0c6
 
     .choices
@@ -285,8 +291,6 @@ body:not(.front-page)
       border-radius: 1ex
 
   &.communication
-    background: #f6f6f6
-    border-top: 1px solid #c5c5c5
 
   &.next-steps
     background: #2e3436
