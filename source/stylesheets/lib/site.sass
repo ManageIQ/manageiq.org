@@ -1,3 +1,5 @@
+$bg-header-color: mix(#d2dfef, white, 60)
+
 body
   box-sizing: border-box
   color: #333
@@ -88,8 +90,8 @@ pre, code
     // See _bootstrap-custom.sass for bootstrap-related changes
     // (padding, color, etc.)
     font-family: $headings-font-family
-    font-size: 22pt
-    font-weight: 500
+    font-size: 18pt
+    font-weight: 400
     text-transform: lowercase
 
     a
@@ -105,7 +107,7 @@ pre, code
 
   @media screen and (max-width: 799px)
     nav
-      font-size: 18pt
+      //font-size: 18pt
 
   @media screen and (min-width: 1024px)
     .hgroup
@@ -120,10 +122,12 @@ pre, code
       width: auto
 
       li
-        $nav-active-border: 9px
+        $nav-active-border: 10px
+        $nav-bar-color: #204a87
+
 
         &.active
-          border-top: $nav-active-border solid rgba(#204a87, 0.25)
+          border-top: $nav-active-border solid rgba($nav-bar-color, 0.25)
 
           a
             position: relative
@@ -132,7 +136,7 @@ pre, code
         &:not(.active)
 
           &:hover
-            border-top: $nav-active-border solid rgba(#204a87, 0.1)
+            border-top: $nav-active-border solid rgba($nav-bar-color, 0.1)
 
             a
               position: relative
@@ -187,11 +191,11 @@ pre, code
 
 
 .page-header
-  background: #d2dfef
+  background: $bg-header-color
   background-size: 50%
   border-bottom: 1px solid rgba(0,0,0,0.25)
   margin: 0
-  padding: 5em 0 1em
+  padding: 4em 0 1em
   text-align: center
 
   h2
@@ -225,25 +229,28 @@ pre, code
 body.front-page
 
   .page-header
-    background: #d2dfef url(/images/header-paintedcandy.jpg) 42% 55%
+    background: $bg-header-color url(/images/header-paintedcandy.jpg) 42% 55%
     background-size: cover
-    padding-bottom: 6em
-    padding-top: 16em
+    padding: 11em 0 5em
     text-shadow: 0 0 15px white
 
     h2
       padding: 0
 
-.content > section:not(.page-header)
+.front-page .content > section:not(.page-header)
 
   // Add borders to the top of the sections (which are not the header)
   .row
     border-top: 1px solid #ddd
 
+
 .content > section
 
   .row
     padding: 3em 3em
+
+
+.front-page .content > section
 
   &.overview,
   &.get-started,
@@ -322,10 +329,6 @@ body > footer
 
 
 .features
-
-  .row
-
-  .col-xs-12
 
   .feature-item
     position: relative
