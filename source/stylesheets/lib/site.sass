@@ -76,6 +76,8 @@ pre, code
 .masthead
   @extend .row
   z-index: 100
+  margin: 0 auto
+  text-align: center
 
   .hgroup
     @extend .col-lg-3
@@ -83,8 +85,10 @@ pre, code
   #access
     @extend .col-lg-9
 
-  h1 > a
+  .logo
     padding: 6px 24px
+    max-width: 100%
+    height: auto
 
   nav
     // See _bootstrap-custom.sass for bootstrap-related changes
@@ -190,6 +194,8 @@ pre, code
           padding-bottom: 0.5ex
 
 
+@import compass/css3/images
+
 .page-header
   background: $bg-header-color
   background-size: 50%
@@ -199,8 +205,9 @@ pre, code
   text-align: center
 
   h2
-    font-size: 48pt !important
-    margin: 0 auto
+    font-size: 32pt !important
+    margin: 0.5em auto 0
+    opacity: 0.7
 
     &.with-type
       font-size: 28pt !important
@@ -214,7 +221,7 @@ pre, code
     margin-top: 1ex
     font-weight: normal
     opacity: 0.5
-    font-size: 24pt
+    font-size: 20pt
 
   h2 + p
     padding-top: 1em
@@ -231,7 +238,8 @@ body.front-page
   .page-header
     background: $bg-header-color url(/images/header-paintedcandy.jpg) 42% 55%
     background-size: cover
-    padding: 11em 0 5em
+    //padding: 11em 0 5em
+    padding: 10em 0 2em
     text-shadow: 0 0 15px white
 
     h2

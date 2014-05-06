@@ -187,3 +187,19 @@ page_classes: front-page header-page
         All the code produced in the ManageIQ project gets funneled into
         [Red Hat® CloudForms](https://redhat.com/products/cloud-computing/cloudforms/).
         If you're looking to [pay for support](#FIXME-paid-support-link), be sure to check it out.
+
+%section.social-area
+  :ruby
+    social = {
+      twitter: "http://twitter.com/ManageIQ",
+      facebook: "foo",
+      "google-plus" => "foo"
+    }
+
+  .row
+
+    %section.col-md-12
+      - social.each do |service, url|
+        %a{href:url}
+          %i{class:"fa fa-#{service}"}
+          = "#{service}".titlecase
