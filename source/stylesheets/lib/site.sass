@@ -3,7 +3,7 @@ $bg-header-color: mix(#d2dfef, white, 60)
 body
   box-sizing: border-box
   color: #333
-  font-size: 11.5pt //1.75em
+  //font-size: 11.5pt //1.75em
   text-rendering: optimizeLegibility
   -moz-text-rendering: optimizeLegibility
   -webkit-text-rendering: optimizeLegibility
@@ -12,10 +12,12 @@ body
 h1, h2, h3, h4, h5, h6
   font-weight: 500
 
-.row
+.content > section > .row
   max-width: 80em
   margin: auto
 
+  .row
+    max-width: auto
 
 .masthead
   /* Accommodate the header-page-only photograph
@@ -269,10 +271,6 @@ body.front-page
   &.overview
     background: #f8f8f8
 
-  &.features
-
-  &.blog-area
-
   &.get-started
     $content-padding: 24pt
     border-top: 1px solid #bdc0c6
@@ -304,8 +302,6 @@ body.front-page
         left: 3ex
         right: 3ex
       border-radius: 1ex
-
-  &.communication
 
   &.next-steps
     background: #2e3436
