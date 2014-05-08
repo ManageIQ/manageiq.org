@@ -291,6 +291,41 @@ body.front-page
   &.overview
     background: #f8f8f8
 
+  &.overview-basic
+    ul
+      padding-bottom: 1ex
+      overflow: hidden
+      //@extend .row
+
+      li
+        @extend .col-md-6
+        padding: 1.25ex 0 1.5ex
+        list-style: none
+        position: relative
+        padding-right: 5em
+        padding-left: 9px
+        //font-size: 110%
+        color: #888
+
+        &:before
+          @extend .fa
+          //@extend .fa-arrow-right
+          //@extend .fa-caret-right
+          //@extend .fa-angle-double-right
+          //@extend .fa-angle-right
+          //@extend .fa-thumbs-o-up
+          //@extend .fa-hand-o-right
+          //@extend .fa-star
+          //@extend .fa-check-square-o
+          @extend .fa-check-square-o
+          position: absolute
+          left: -22px
+          top: 1.1ex
+          font-size: 22px
+          //opacity: 0.4
+          //color: mix(yellow, orange, 60)
+          color: mix(green, #aaa, 30)
+
   &.get-started
     $content-padding: 24pt
     border-top: 1px solid #bdc0c6
