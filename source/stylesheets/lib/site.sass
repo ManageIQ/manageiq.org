@@ -294,21 +294,21 @@ body.front-page
 
   &.overview-basic
 
-    .row
+    .row:first-child
       border-top: none
 
       h2
         font-size: 275%
 
       h2,
-      p
+      h2+p
         text-align: center
 
-      p+p
-        margin-top: 3em
+      p+p,
+      ul+p
+        margin-top: 2em
 
     ul
-      padding-bottom: 1ex
       overflow: hidden
       //@extend .row
 
