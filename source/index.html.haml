@@ -199,7 +199,10 @@ page_classes: front-page header-page
   .row
 
     %section.col-md-12
+      %span.join-us
+        Join us on
+
       - social.each do |service, url|
-        %a{href:url}
+        %a{href:url, class:"social-#{service}"}
           %i{class:"fa fa-#{service}"}
           = "#{service}".titlecase

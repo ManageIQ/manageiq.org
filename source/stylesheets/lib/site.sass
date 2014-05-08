@@ -92,6 +92,12 @@ pre, code
     max-width: 100%
     height: auto
 
+    &.is-svg
+      width: 600px
+
+  h1
+    float: none
+
   nav
     // See _bootstrap-custom.sass for bootstrap-related changes
     // (padding, color, etc.)
@@ -206,10 +212,13 @@ pre, code
   padding: 4em 0 1em
   text-align: center
 
+  h2, h3
+    color: black
+
   h2
-    font-size: 32pt !important
+    font-size: 29.5pt !important
     margin: 0.5em auto 0
-    opacity: 0.7
+    opacity: 0.5
 
     &.with-type
       font-size: 28pt !important
@@ -220,10 +229,10 @@ pre, code
         font-size: 46pt
 
   h3
-    margin-top: 1ex
+    margin-top: 0.75ex
     font-weight: normal
-    opacity: 0.5
-    font-size: 20pt
+    opacity: 0.3
+    font-size: 18.36pt
 
   h2 + p
     padding-top: 1em
@@ -253,11 +262,17 @@ body.front-page
   .row
     border-top: 1px solid #ddd
 
+    .row
+      border: none
+
 
 .content > section
 
   .row
     padding: 3em 3em
+
+    .row
+      padding: none
 
 
 .front-page .content > section
@@ -400,3 +415,35 @@ pre
     strong
       color: #333
       font-weight: 600
+
+
+.email-address
+  width: 16em
+
+
+.blog-area
+  margin-bottom: 4em
+
+
+.social-area
+  text-align: center
+  color: #bbb
+  background-color: #555
+  border: 0
+
+  .join-us
+    margin-right: 1ex
+
+  a
+    padding: 1ex
+    color: #eee
+    text-decoration: none
+
+    &:hover
+      color: #fff
+      text-shadow: 0 0 9px rgba(white, 0.75)
+
+    i
+      margin-right: 0.125ex
+      font-size: 32px
+      vertical-align: middle
