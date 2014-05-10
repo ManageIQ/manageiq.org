@@ -192,15 +192,15 @@ page_classes: front-page header-page
   :ruby
     social = {
       twitter: "http://twitter.com/ManageIQ",
-      facebook: "foo",
-      "google-plus" => "foo"
+      #facebook: "foo",
+      #"google-plus" => "foo"
     }
 
   .row
 
     %section.col-md-12
       %span.join-us
-        Join us on
+        Follow us on
 
       - social.each do |service, url|
         %a{href:url, class:"social-#{service}"}
