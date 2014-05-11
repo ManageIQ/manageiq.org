@@ -31,6 +31,9 @@ gem "middleman-blog"
 
 gem 'middleman-deploy'
 
+# Piwik tracker
+gem 'middleman-piwik'
+
 # Thumbnailer
 #gem "middleman-thumbnailer", github: "nhemsley/middleman-thumbnailer"
 

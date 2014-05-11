@@ -178,6 +178,10 @@ activate :site_helpers
 require 'lib/blog_helpers.rb'
 activate :blog_helpers
 
+activate :piwik do |f|
+    f.id = 1
+    f.domain = 'piwik.manageiq.org'
+end
 
 ###
 # Development-only configuration
