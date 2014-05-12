@@ -13,7 +13,8 @@ body
 h1, h2, h3, h4, h5, h6
   font-weight: 500
 
-.content > section > .row
+.content > section > .row,
+footer .row
   max-width: 80em
   margin: auto
 
@@ -272,7 +273,8 @@ body.front-page
       border: none
 
 
-.content > section
+.content > section,
+footer section
 
   .row
     padding: 3em 3em
@@ -390,7 +392,7 @@ body.front-page
         text-decoration: underline
 
 
-body > footer
+body > #footer
   background-color: black
   color: rgba(white, 0.8)
   padding: 1em
@@ -428,8 +430,12 @@ body > footer
 
 .source-md,
 .source-markdown
+
+  #page-wrap
+    overflow-x: hidden
+
   #page
-    //@extend .row
+    @extend .row
 
   #content
     @extend .col-md-12
@@ -479,18 +485,37 @@ pre
 
 
 .social-area
-  text-align: center
+  margin-top: 1em
   color: #bbb
   background-color: #555
   border: 0
 
-  .join-us
-    margin-right: 1ex
+  .row
+    padding: 2em
+
+  .left-side,
+  .right-side
+    @extend .col-sm-5
+
+  .left-side
+    @extend .col-sm-offset-1
+
+  .right-side
+    text-align: right
+
+
+  .join-us,
+  .follow-us,
+  .contact-us
+    margin-right: 0.5ex
+
+  section
 
   a
     padding: 1ex
     color: #eee
     text-decoration: none
+    white-space: nowrap
 
     &:hover
       color: #fff
