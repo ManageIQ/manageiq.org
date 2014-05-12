@@ -49,11 +49,11 @@ body:not(.header-page)
 body:not(.front-page)
 
   .logo
-    max-width: 312px
-    margin: 0
+    max-width: 342px
+    margin: 32px
 
   #content
-    padding-bottom: 5em
+    padding: 70px 0 5em
 
     h2, h3, h4, h5, h6
       padding: 1em 0 0.25em
@@ -429,7 +429,7 @@ body > footer
 .source-md,
 .source-markdown
   #page
-    @extend .row
+    //@extend .row
 
   #content
     @extend .col-md-12
@@ -536,6 +536,15 @@ pre
       @extend %responsive-image
 
     &:not(:hover)
-      transition: 1s all
       @extend %grayscale
       opacity: 0.4
+      transition: 1s all
+
+
+.more-link
+  &.view-article
+    display: none
+
+
+#blog-comments
+  display: none
