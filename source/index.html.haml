@@ -188,6 +188,32 @@ page_classes: front-page header-page
         [Red Hat® CloudForms](https://redhat.com/products/cloud-computing/cloudforms/).
         If you're looking to [pay for support](#FIXME-paid-support-link), be sure to check it out.
 
+%section.partners-area
+
+  :ruby
+
+    # Partner names must match SVG files
+    partners = {
+      Red_Hat:             [190, "http://redhat.com/"],
+      Autotrader_Group:    [310, "http://www.autotradergroup.com/"],
+      Booz_Allen_Hamilton: [300, "http://boozallen.com/"],
+      CHEF:                [160, "http://getchef.com/"],
+      CiRBA:               [160, "http://cirba.com/"],
+    }
+
+  .row
+
+    %section.col-md-10.col-md-offset-1
+
+      %h2 Founding Community Partners
+
+      %ul.partners
+        - partners.each do |partner, val|
+          %li
+            %a.partner{href:val[1], class:partner}
+              %img{src:"/images/partners/#{partner}.svg", width:val[0], alt:partner}
+
+
 %section.social-area
   :ruby
     social = {

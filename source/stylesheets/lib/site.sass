@@ -500,3 +500,42 @@ pre
       margin-right: 0.125ex
       font-size: 32px
       vertical-align: middle
+
+.partners-area
+  overflow: hidden
+  text-align: center
+
+  h2
+    font-size: 175%
+    opacity: 0.75
+
+  .partners
+    display: block
+    margin: 1em 0 0
+    overflow: hidden
+    padding: 0
+
+    @media screen and (min-width: 800px)
+      padding: 0 1em
+
+    &, & li
+      list-style: none
+
+    li
+      display: inline
+      margin: 0
+      padding: 0
+
+  .partner
+    display: inline-block
+    padding: 18px 24px
+    vertical-align: middle
+    transition: 400ms all
+
+    &, & img
+      @extend %responsive-image
+
+    &:not(:hover)
+      transition: 1s all
+      @extend %grayscale
+      opacity: 0.4
