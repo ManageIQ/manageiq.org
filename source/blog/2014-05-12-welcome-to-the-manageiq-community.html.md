@@ -9,7 +9,7 @@ We are gearing up for an open source release in the coming weeks, and
 you're probably curious what all the fuss is about. What you'll find
 here is some introductory information and ways to sign up for news and,
 eventually, pre-release code as we get closer to the project launch.
-Read Red Hat's press release here – it will give you the background
+Read Red Hat's [press release here](http://www.redhat.com/about/news/press-archive/2014/5/red-hat-announces-manageiq-community-for-open-source-cloud-management) – it will give you the background
 information you need.
 
 ### Founding Community Members
