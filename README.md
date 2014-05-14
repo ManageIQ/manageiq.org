@@ -3,9 +3,9 @@
 ## Step 1: Check it out
 
 Check out this this git repository by running:
-`git clone git@gitlab.osas.lab.eng.rdu2.redhat.com:osas/manageiq-site.git`
+`git clone git@github.com:ManageIQ/manageiq.org.git`
 
-When the git clone is done, run `cd manageiq-site` to change to the
+When the git clone is done, run `cd manageiq.org` to change to the
 checked out directory.
 
 ## Step 2: Set it up
