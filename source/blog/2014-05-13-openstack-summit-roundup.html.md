@@ -1,5 +1,5 @@
 ---
-title: Welcome to the ManageIQ Community!
+title: OpenStack Summit Roundup
 date: 2014-05-13 14:20 UTC
 tags: [openstack summit, openstack, news]
 author: johnmark
