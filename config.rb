@@ -180,7 +180,7 @@ activate :blog_helpers
 
 activate :piwik do |f|
     f.id = 1
-    f.domain = 'piwik.manageiq.org'
+    f.domain = 'analytics.manageiq.org'
 end
 
 ###

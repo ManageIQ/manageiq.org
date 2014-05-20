@@ -6,7 +6,7 @@ domain: manageiq.org
 #has_comments: true
 
 # Optional logo. If commented out, it will not be used.
-logo: logo.png
+logo: logo.svg
 
 # optional, set to true if your site uses SSL by default
 #ssl: true
@@ -19,7 +19,7 @@ logo: logo.png
 #founding_year: 2013 # Defaults to current year if commented
 
 # Manual copyright string, to override the automatic one
-#copyright: "&copy; 2013 YOUR_NAME_HERE"
+copyright: "&copy; 2014 ManageIQ. Sponsored by Red Hat, Inc."
 
 
 # Optional footer links
