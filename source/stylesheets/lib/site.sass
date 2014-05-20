@@ -98,15 +98,19 @@ pre, code
     float: none
 
     a
-      padding: 0 32px
 
   .logo
     max-width: 100%
     height: auto
+    margin: 0 32px
 
     &.is-svg
       /* The SVG is viewboxed, so we should set the size
       width: 200px
+
+      @media screen and (max-width:1023px)
+        width: 300px
+        margin: 20px 0 0
 
   nav
     // See _bootstrap-custom.sass for bootstrap-related changes
