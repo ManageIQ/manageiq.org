@@ -1,3 +1,30 @@
+%footer#subfooter
+  %section.social-area
+    :ruby
+      social = {
+        twitter: "http://twitter.com/ManageIQ",
+        #facebook: "foo",
+        #"google-plus" => "foo"
+      }
+
+    .row
+
+      %section.left-side
+        %span.join-us
+          Follow us on
+
+        - social.each do |service, url|
+          %a{href:url, class:"social-#{service}"}
+            %i{class:"fa fa-#{service}"}
+            = "#{service}".titlecase
+
+      %section.right-side
+        %span.contact-us
+          Contact us
+        %a(href="mailto:contact@manageiq.org")
+          %i.fa.fa-envelope
+          via email
+
 %footer#footer.text-center
 
   %hr.visible-print

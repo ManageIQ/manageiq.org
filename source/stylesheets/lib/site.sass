@@ -1,6 +1,7 @@
 $bg-header-color: mix(#d2dfef, white, 60)
 
 body
+  border-top: 10px solid darken($bg-header-color, 15)
   box-sizing: border-box
   color: #333
   font-size: 11.5pt //1.75em
@@ -12,10 +13,14 @@ body
 h1, h2, h3, h4, h5, h6
   font-weight: 500
 
-.row
+.masthead,
+.content > section > .row,
+footer .row
   max-width: 80em
   margin: auto
 
+  .row
+    max-width: auto
 
 .masthead
   /* Accommodate the header-page-only photograph
@@ -45,8 +50,12 @@ body:not(.header-page)
 
 body:not(.front-page)
 
+  .logo
+    //max-width: 342px
+    //margin: 32px
+
   #content
-    padding-bottom: 5em
+    //padding: 70px 0 5em
 
     h2, h3, h4, h5, h6
       padding: 1em 0 0.25em
@@ -76,6 +85,8 @@ pre, code
 .masthead
   @extend .row
   z-index: 100
+  margin: 0 auto
+  text-align: center
 
   .hgroup
     @extend .col-lg-3
@@ -83,8 +94,23 @@ pre, code
   #access
     @extend .col-lg-9
 
-  h1 > a
-    padding: 6px 24px
+  h1
+    float: none
+
+    a
+
+  .logo
+    max-width: 100%
+    height: auto
+    margin: 0 32px
+
+    &.is-svg
+      /* The SVG is viewboxed, so we should set the size
+      width: 200px
+
+      @media screen and (max-width:1023px)
+        width: 300px
+        margin: 20px 0 0
 
   nav
     // See _bootstrap-custom.sass for bootstrap-related changes
@@ -190,17 +216,23 @@ pre, code
           padding-bottom: 0.5ex
 
 
+@import compass/css3/images
+
 .page-header
   background: $bg-header-color
-  background-size: 50%
+  background-size: cover
   border-bottom: 1px solid rgba(0,0,0,0.25)
   margin: 0
   padding: 4em 0 1em
   text-align: center
 
+  h2, h3
+    color: black
+
   h2
-    font-size: 48pt !important
+    font-size: 42pt !important
     margin: 0 auto
+    opacity: 0.75
 
     &.with-type
       font-size: 28pt !important
@@ -211,10 +243,11 @@ pre, code
         font-size: 46pt
 
   h3
-    margin-top: 1ex
+    margin-top: 0.75ex
     font-weight: normal
-    opacity: 0.5
-    font-size: 24pt
+    opacity: 0.3
+    font-size: 26pt
+    letter-spacing: -0.01ex
 
   h2 + p
     padding-top: 1em
@@ -225,13 +258,30 @@ pre, code
     margin: 0 auto
     text-align: left
 
+  @media screen and (max-width: 1023px)
+
+    .row
+      position: relative
+      padding-top: 5em !important
+
+    h2
+      font-size: 2.5em !important
+
+    h3
+      font-size: 1.6em
+
+  @media (max-width: 639px)
+    .row
+      padding-top: 6em !important
+
 
 body.front-page
 
   .page-header
     background: $bg-header-color url(/images/header-paintedcandy.jpg) 42% 55%
     background-size: cover
-    padding: 11em 0 5em
+    //padding: 11em 0 5em
+    padding: 10em 0 2em
     text-shadow: 0 0 15px white
 
     h2
@@ -243,11 +293,22 @@ body.front-page
   .row
     border-top: 1px solid #ddd
 
+    .row
+      border: none
 
-.content > section
+
+.content > section,
+footer section
 
   .row
-    padding: 3em 3em
+    padding: 3em
+
+    .row
+      padding: none
+
+  @media screen and (max-width: 799px)
+    .row
+      padding: 5% 1ex
 
 
 .front-page .content > section
@@ -261,9 +322,52 @@ body.front-page
   &.overview
     background: #f8f8f8
 
-  &.features
+  &.overview-basic
 
-  &.blog-area
+    .row:first-child
+      border-top: none
+
+      h2
+        font-size: 275%
+
+      h2,
+      h2+p
+        text-align: center
+
+      p+p,
+      ul+p
+        margin-top: 2em
+
+    ul
+      overflow: hidden
+      //@extend .row
+
+      li
+        @extend .col-md-6
+        padding: 1.25ex 1.5em 1.5ex
+        list-style: none
+        position: relative
+        //font-size: 110%
+        color: #888
+
+        &:before
+          @extend .fa
+          //@extend .fa-arrow-right
+          //@extend .fa-caret-right
+          //@extend .fa-angle-double-right
+          //@extend .fa-angle-right
+          //@extend .fa-thumbs-o-up
+          //@extend .fa-hand-o-right
+          //@extend .fa-star
+          //@extend .fa-check-square-o
+          @extend .fa-check-square-o
+          position: absolute
+          left: -10px
+          top: 1.1ex
+          font-size: 22px
+          //opacity: 0.4
+          //color: mix(yellow, orange, 60)
+          color: mix(green, #aaa, 30)
 
   &.get-started
     $content-padding: 24pt
@@ -297,8 +401,6 @@ body.front-page
         right: 3ex
       border-radius: 1ex
 
-  &.communication
-
   &.next-steps
     background: #2e3436
     border-top: 1px solid #202526
@@ -318,10 +420,10 @@ body.front-page
         text-decoration: underline
 
 
-body > footer
+body > #footer
   background-color: black
   color: rgba(white, 0.8)
-  padding: 2em
+  padding: 1em
   font-size: 13px
 
 .last-modified
@@ -356,6 +458,10 @@ body > footer
 
 .source-md,
 .source-markdown
+
+  #page-wrap
+    overflow-x: hidden
+
   #page
     @extend .row
 
@@ -396,3 +502,101 @@ pre
     strong
       color: #333
       font-weight: 600
+
+
+.email-address
+  width: 16em
+
+
+.blog-area
+  margin-bottom: 4em
+
+
+.social-area
+  margin-top: 1em
+  color: #bbb
+  background-color: #555
+  border: 0
+
+  .row
+    padding: 2em
+
+  .left-side,
+  .right-side
+    @extend .col-sm-5
+
+  .left-side
+    @extend .col-sm-offset-1
+
+  .right-side
+    text-align: right
+
+
+  .join-us,
+  .follow-us,
+  .contact-us
+    margin-right: 0.5ex
+
+  a
+    padding: 1ex
+    color: #eee
+    text-decoration: none
+    white-space: nowrap
+    transition: 400ms all
+
+    &:hover
+      color: #fff
+      text-shadow: 0 0 9px rgba(white, 0.75)
+
+    i
+      margin-right: 0.125ex
+      font-size: 32px
+      vertical-align: middle
+
+.partners-area
+  overflow: hidden
+  text-align: center
+
+  h2
+    font-size: 175%
+    opacity: 0.75
+
+  .partners
+    display: block
+    margin: 1em 0 0
+    overflow: hidden
+    padding: 0
+
+    @media screen and (min-width: 800px)
+      padding: 0 1em
+
+    &, & li
+      list-style: none
+
+    li
+      display: inline
+      margin: 0
+      padding: 0
+
+  .partner
+    display: inline-block
+    padding: 18px 24px
+    vertical-align: middle
+    transition: 400ms all
+
+    &, & img
+      @extend %responsive-image
+
+    &:not(:hover)
+      @extend %grayscale
+      opacity: 0.4
+      transition: 1s all
+
+
+.more-link
+  &.view-article
+    display: none
+
+
+#blog-comments
+  display: none
