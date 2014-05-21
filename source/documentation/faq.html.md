@@ -98,7 +98,7 @@ ManageIQ adds to your existing virtualization and cloud platforms.
 
 OpenStack/oVirt/CloudStack/VMware vSphere are tools designed to
 operationally deploy and manage virtual and cloud infrastructures.
-ManageIQ is a Cloud Management Platform CMP) designed to augment cloud
+ManageIQ is a Cloud Management Platform (CMP) designed to augment cloud
 and virtual infrastructures with higher-order managment services, cloud
 brokering and automation capabilities. These management services include
 policy-based governance , workload optimization, life-cycle management,
