@@ -205,7 +205,7 @@ for VM creation in your platform, and you think that this might be
 useful to others, you can export these rule-sets, and distribute them on
 github. (instructions for sending link)[Send us the link to your
 repository], and we will include it in the collection of community
-modules available in (/marketplace)[the marketplace].
+modules available in [the marketplace](/marketplace).
 
 Of course, you can help providing use cases and need for IaaS and
 automation on your environment, and
