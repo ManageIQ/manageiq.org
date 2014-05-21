@@ -33,6 +33,7 @@ set :markdown,
   smartypants: true,
   strikethrough: true,
   superscript: true,
+  with_toc_data: true,
   tables: true
 
 set :markdown_engine, :redcarpet
