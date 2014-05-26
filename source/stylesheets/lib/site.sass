@@ -297,8 +297,7 @@ body.front-page
       border: none
 
 
-.content > section,
-footer section
+.content > section
 
   .row
     padding: 3em
@@ -420,12 +419,6 @@ footer section
         text-decoration: underline
 
 
-body > #footer
-  background-color: black
-  color: rgba(white, 0.8)
-  padding: 1em
-  font-size: 13px
-
 .last-modified
   display: none
 
@@ -519,14 +512,14 @@ pre
   border: 0
 
   .row
-    padding: 2em
+    padding: 2em 3em
 
   .left-side,
   .right-side
-    @extend .col-sm-5
+    @extend .col-sm-6
 
   .left-side
-    @extend .col-sm-offset-1
+    //@extend .col-sm-offset-1
 
   .right-side
     text-align: right
@@ -549,8 +542,8 @@ pre
       text-shadow: 0 0 9px rgba(white, 0.75)
 
     i
-      margin-right: 0.125ex
-      font-size: 32px
+      margin: -3px 0.25ex 0 0
+      font-size: 24px
       vertical-align: middle
 
 .partners-area
@@ -607,3 +600,36 @@ q
 
   &:after
     content: "”"
+
+
+#footer
+  background-color: black
+  color: rgba(white, 0.8)
+  padding: 1.5em
+
+  section.footer-area
+    text-align: center
+
+  .copyright,
+  .hosting-provider
+    //@extend .col-md-4
+    font-size: 13px
+    display: inline
+    padding: 0 1em
+
+  .copyright
+    //@extend .col-md-offset-2
+
+  .hosting-provider
+    //text-align: right
+    //float: right
+
+    a
+      vertical-align: middle
+      display: inline
+      padding: 0 0 6px 0.5ex
+
+    img
+      width: 100px
+      position: relative
+      top: -2px
