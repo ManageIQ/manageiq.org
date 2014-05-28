@@ -1,4 +1,4 @@
-.row
+.meet-the-team.row
 
   .col-md-12
     :markdown
@@ -11,16 +11,16 @@
       ManageIQ has a number of maintainers who set the direction and help
       prioritize features.
 
-      ### Oleg Barenboim
 
-      Oleg is the creator of ManageIQ, and the leader of the ManageIQ
-      engineering team.
-
-      * Github: [chessbyte](https://github.com/chessbyte)
-      * Twitter: [chessbyte](https://twitter.com/chessbyte)
-
-      ### Add other key people here
-
-      All the publicly visible ManageIQ developers (and that should be
-      everyone) should be listed here with a brief bio - and as new people
-      come in, we should add them aggressively here.
+    .team-list
+      - data.team.each do |person, val|
+        - unless val.nil?
+          %section.person
+            %h3.name= person
+            %p.bio= val.bio
+            %ul
+              - {GitHub: 'github', Freenode: 'freenode', Twitter: 'twitter'}.each do |name, key|
+                - if val.has_key? key
+                  %li(class=key)
+                    = "#{name}:"
+                    = val[key]
