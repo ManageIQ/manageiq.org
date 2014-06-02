@@ -29,7 +29,7 @@ A cloud management platform enables common management tasks on top of your virtu
 * metering and billing for chargeback and showback
 * ability to provision new instances and applications for an application
   catalog or from image templates
-* Integration points with existing systems management, service catalogs
+* integration points with existing systems management, service catalogs
   and configuration management software
 * the ability to control and automate the placement and provisioning of
   new instances based on business and security policies
@@ -150,7 +150,7 @@ and cloud platforms. These images are built with CentOS 6.5.
 **FIXME**
 
 
-## Does ManageIQ support docker?
+## Does ManageIQ support Docker?
 
 There are plans to add support for the deployment and automation of
 Docker images, and the provisioning of images with Chef, Puppet, Ansible
