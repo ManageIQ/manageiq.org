@@ -55,7 +55,7 @@ body:not(.front-page)
     //margin: 32px
 
   #content
-    //padding: 70px 0 5em
+    padding-bottom: 10rem
 
     h2, h3, h4, h5, h6
       padding: 1em 0 0.25em
@@ -74,7 +74,6 @@ body:not(.front-page)
 
     h6
       font-size: 110%
-
 
 
 pre, code
@@ -672,6 +671,9 @@ q
   margin: 2em 0 4em
 
 #export
+  margin-top: 5rem
+  // Undo #content bottom padding
+  margin-bottom: -10rem
 
   .row
     border-top: 1px solid #999
