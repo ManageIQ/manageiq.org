@@ -28,7 +28,7 @@
         - unless val.nil?
           %section.person
             %h3.name= person
-            %p.bio= val.bio
+            %p.bio= markdown_to_html val.bio
             %ul
               - {GitHub: 'github', Freenode: 'freenode', Twitter: 'twitter'}.each do |name, key|
                 - if val.has_key? key
