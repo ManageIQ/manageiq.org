@@ -240,3 +240,17 @@ in the future.
 The ManageIQ source code is distributed under a dual Apache v2/GPL v2
 license. For more information on project licensing and the reasons
 behind it, please read our [licensing FAQ](/community/licensing).
+
+
+{::comment} List of terms {:/comment}
+
+*[AL]: Apache License
+*[AMI]: Amazon Machine Image
+*[CMP]: Cloud Management Platform
+*[FOSS]: Free and Open Source Software
+*[GPL]: GNU Public License
+*[IT]: Information Technology
+*[meritocracy]: based on individual ability or achivement
+*[OSI]: Open Source Initiative
+*[Q&A]: Question and Answer
+*[VM]: Virtual Machine
