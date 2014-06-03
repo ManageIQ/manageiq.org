@@ -53,6 +53,9 @@ gem "builder", "~> 3.0"
 # Better JSON lib
 gem "oj"
 
+# Random color generation (with seed support)
+gem "color-generator"
+
 
 #####
 # Bootstrap
