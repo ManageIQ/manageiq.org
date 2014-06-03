@@ -9,6 +9,35 @@
 -#
 -###
 
+:ruby
+  require 'color-generator'
+
+  def gravatar_fetch key
+    # Support passing emails as well as a MD5 digest
+    g_hash = key.match /@/ ? Digest::MD5.hexdigest(key) : key
+    g_json = open("http://gravatar.com/#{g_hash}.json").read rescue nil
+
+    Oj.load g_json if g_json
+  end
+
+  def gravatar_pic key
+    profile = gravatar_fetch key
+
+    image_tag profile['entry'][0]['thumbnailUrl'] if profile
+  end
+
+  def color_from_string str
+    str_seed = Digest::MD5.hexdigest(str).to_i(16)
+    #ColorGenerator.new(saturation: 0.2, value: 0.98, seed: str_seed).create_hex
+    ColorGenerator.new(saturation: 0.95, lightness: 0.85, seed: str_seed).create_hex
+  end
+
+  services = {
+    GitHub: 'https://github.com/%s',
+    Twitter: 'https://twitter.com/%s',
+    Freenode: 'http://webchat.freenode.net/?channels=%23manageiq&uio=Mj10cnVlJjk9dHJ1ZSYxMT0yMDUmMTI9dHJ1ZSYxND1mYWxzZQ3f'
+  }
+
 .meet-the-team.row
 
   .col-md-12
@@ -26,12 +55,35 @@
     .team-list
       - data.team.each do |person, val|
         - unless val.nil?
-          %section.person
+
+          - bgcolor = val.has_key? :color ? val[:color] : "##{color_from_string person.downcase}"
+          - bgcolor = "##{color_from_string person.downcase}"
+
+          %section.person(style="border-color:#{bgcolor}")
             %h3.name= person
+
+            -#
+              - if val.gravatar
+                .avatar= gravatar_pic val.gravatar
+
+              - else
+                .avatar-letter(style="background:#{bgcolor}")
+                  = person.split.map {|name| name[0]}.join
+
             %p.bio= markdown_to_html val.bio
+
             %ul
-              - {GitHub: 'github', Freenode: 'freenode', Twitter: 'twitter'}.each do |name, key|
-                - if val.has_key? key
-                  %li(class=key)
-                    = "#{name}:"
-                    = val[key]
+              - services.each do |service, link|
+                - lower = service.downcase.to_s
+
+                - if val.has_key? lower
+
+                  %li(class="#{lower}")
+                    - label = "<span class='label'>on #{service}</span>"
+
+                    - if link
+                      - icon = "<i class='icon fa fa-#{lower}'></i>"
+                      = link_to "#{icon}#{val[lower]} #{label}", link.gsub(/%s/, val[lower])
+
+                    - else
+                      = "#{val[lower]} #{label}"
