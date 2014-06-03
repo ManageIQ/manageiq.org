@@ -18,6 +18,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.7.0)
+    color-generator (0.0.4)
     columnize (0.3.6)
     commonjs (0.2.7)
     compass (0.12.3)
@@ -183,6 +184,7 @@ DEPENDENCIES
   asciidoctor
   bootstrap-sass (= 3.0.0)
   builder (~> 3.0)
+  color-generator
   font-awesome-middleman
   less
   middleman (~> 3.2)
