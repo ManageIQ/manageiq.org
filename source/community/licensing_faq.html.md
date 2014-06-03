@@ -1,4 +1,8 @@
 ## Licensing and governance FAQ
+{:.no_toc}
+
+* This will be replaced with the TOC list
+{:toc}
 
 ### What is the license for code contributed to ManageIQ?
 
@@ -70,3 +74,12 @@ under the ALv2 for all subsequent releases.
 Extensions to the core ManageIQ marketplace must be licensed under an
 OSI approved license if they want to be distributed through the ManageIQ
 marketplace.
+
+
+{::comment} List of terms {:/comment}
+
+*[meritocracy]: based on individual ability or achivement
+*[OSI]: Open Source Initiative
+*[FOSS]: Free and Open Source Software
+*[GPL]: GNU Public License
+*[AL]: Apache License

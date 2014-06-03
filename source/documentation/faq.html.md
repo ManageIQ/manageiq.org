@@ -3,7 +3,10 @@ title: Frequently Asked Questions (FAQ)
 ---
 
 # Frequently Asked Questions (FAQ)
+{:.no_toc}
 
+1. TOC goes here
+{:toc .toc}
 
 ## What is ManageIQ?
 
@@ -26,7 +29,7 @@ A cloud management platform enables common management tasks on top of your virtu
 * metering and billing for chargeback and showback
 * ability to provision new instances and applications for an application
   catalog or from image templates
-* Integration points with existing systems management, service catalogs
+* integration points with existing systems management, service catalogs
   and configuration management software
 * the ability to control and automate the placement and provisioning of
   new instances based on business and security policies
@@ -147,7 +150,7 @@ and cloud platforms. These images are built with CentOS 6.5.
 **FIXME**
 
 
-## Does ManageIQ support docker?
+## Does ManageIQ support Docker?
 
 There are plans to add support for the deployment and automation of
 Docker images, and the provisioning of images with Chef, Puppet, Ansible
@@ -237,3 +240,17 @@ in the future.
 The ManageIQ source code is distributed under a dual Apache v2/GPL v2
 license. For more information on project licensing and the reasons
 behind it, please read our [licensing FAQ](/community/licensing).
+
+
+{::comment} List of terms {:/comment}
+
+*[AL]: Apache License
+*[AMI]: Amazon Machine Image
+*[CMP]: Cloud Management Platform
+*[FOSS]: Free and Open Source Software
+*[GPL]: GNU Public License
+*[IT]: Information Technology
+*[meritocracy]: based on individual ability or achivement
+*[OSI]: Open Source Initiative
+*[Q&A]: Question and Answer
+*[VM]: Virtual Machine
