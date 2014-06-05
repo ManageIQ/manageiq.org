@@ -65,10 +65,10 @@ page_classes: header-page
               your local computer.
 
               When the file has finished downloading, please upload it to
-              your RHEV instance by running the following command locally:
+              your oVirt instance by running the following command locally:
 
               <pre>
-              engine-image-uploader -e myexportdomain -v -m upload ManageIQ-stable-ovirt.ova
+              engine-image-uploader -e your-export-domain --engine=your-engine-host upload ManageIQ-stable-ovirt.ova
               </pre>
 
 
@@ -91,9 +91,10 @@ page_classes: header-page
               Download ManageIQ directly to OpenStack by running this command:
 
               <pre>
+              curl -O http://manageiq.org/downloads/ManageIQ-stable-openstack.qc2 && \
               glance image-create --name "ManageIQ-stable" \
               --is-public True --disk-format qcow2 \
-              --file http://manageiq.org/downloads/ManageIQ-stable-openstack.qc2
+              --container-format=bare --file ManageIQ-stable-openstack.qc2
               </pre>
 
           - when 'amazon'
