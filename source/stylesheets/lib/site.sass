@@ -783,3 +783,21 @@ q
     font-size: 24px
     vertical-align: middle
     padding: 0 0.5rem 0 0
+
+.toc-wrap
+  column-gap: 7ex
+  -moz-column-gap: 7ex
+
+  @media screen and (min-width: 641px)
+    column-count: 2
+    -moz-column-count: 2
+
+  @media screen and (min-width: 1025px)
+    column-count: 3
+    -moz-column-count: 3
+
+  li
+    color: #999
+
+    + li
+      margin-top: 0.5ex
