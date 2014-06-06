@@ -54,6 +54,8 @@
 
       .copyright
         = data.site.copyright || "&copy; #{year_string} #{data.site.owner || data.site.name}"
+        - if data.site.legal
+          = link_to data.site.legal.text, data.site.legal.link, {class: 'legal'}
 
       - if data.site.github
         .edit-this-page
