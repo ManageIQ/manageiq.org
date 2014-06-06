@@ -589,15 +589,15 @@ Console uses **Virtual Thumbnails** to describe virtual machines and templates. 
 4.  Bottom right quadrant: Number of Snapshots for this Virtual Machine
 
 |Icon|Description|
-|:---|:----------|
-|![](doc/quickstart/2138.png)|Template: Virtual Template|
-|![](doc/quickstart/2139.png)|Retired: Virtual Machine has been retired|
-|![](doc/quickstart/2140.png)|Archived: Virtual Machine has no Host or Datastore associated with it.|
-|![](doc/quickstart/2141.png)|Orphaned: Virtual Machine has no Host but does have a Datastore associated with it.|
-|![](doc/quickstart/2142.png)|Disconnected: Virtual Machine is disconnected.|
-|![](doc/quickstart/2143.png)|On: Virtual Machine is powered on.|
-|![](doc/quickstart/2144.png)|Off: Virtual Machine is powered off.|
-|![](doc/quickstart/2145.png)|Suspended: Virtual Machine has been suspended.|
+|:--:|:----------|
+|![](doc/quickstart/2138.png)|**Template**: Virtual Template|
+|![](doc/quickstart/2139.png)|**Retired**: Virtual Machine has been retired|
+|![](doc/quickstart/2140.png)|**Archived**: Virtual Machine has no Host or Datastore associated with it.|
+|![](doc/quickstart/2141.png)|**Orphaned**: Virtual Machine has no Host but does have a Datastore associated with it.|
+|![](doc/quickstart/2142.png)|**Disconnected**: Virtual Machine is disconnected.|
+|![](doc/quickstart/2143.png)|**On**: Virtual Machine is powered on.|
+|![](doc/quickstart/2144.png)|**Off**: Virtual Machine is powered off.|
+|![](doc/quickstart/2145.png)|**Suspended**: Virtual Machine has been suspended.|
 
 
 The **Virtual Machines** page has three accordions organizing your virtual machines and templates in different ways. All of these accordions share a set of common controls
