@@ -27,7 +27,7 @@ Console uses virtual thumbnails to describe providers. Each thumbnail contains f
 
 
 |Icon|Description|
-|:---|:----------|
+|:--:|:----------|
 |![](doc/quickstart/2190.png)|Validated: Valid authentication credentials have been added.|
 |![](doc/quickstart/2191.png)|Invalid: Authentication credentials are invalid.|
 |![](doc/quickstart/2192.png)|Unknown: Authentication status is unknown or no credentials have been entered.|
@@ -155,7 +155,7 @@ After adding or sorting your hosts, click on one to examine it more closely and 
 4.  Bottom right quadrant: Authentication status
 
 |Icon|Description|
-|:---|:----------|
+|:--:|:----------|
 |![](doc/quickstart/2190.png)|Validated: Valid authentication credentials have been added.|
 |![](doc/quickstart/2191.png)|Invalid: Authentication credentials are invalid.|
 |![](doc/quickstart/2192.png)|Unknown: Authentication status is unknown or no credentials have been entered.|
