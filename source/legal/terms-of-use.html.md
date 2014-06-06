@@ -6,7 +6,7 @@
 
 ## General Information
 
-Please read these ManageIQ website terms of use ("Terms") carefully because they apply to your use of the ManageIQ website ([https://openstack.redhat.com/](https://openstack.redhat.com/)) ("Website"). The Terms form a binding legal agreement between you and Red Hat, Inc. ("Red Hat") concerning your use of the Website.
+Please read these ManageIQ website terms of use ("Terms") carefully because they apply to your use of the ManageIQ website ([https://manageiq.org/](https://manageiq.org/)) ("Website"). The Terms form a binding legal agreement between you and Red Hat, Inc. ("Red Hat") concerning your use of the Website.
 
 ## Your Agreement to the Terms
 
