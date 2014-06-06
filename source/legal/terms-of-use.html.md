@@ -1,8 +1,9 @@
 # Terms of use
 {: .no_toc}
 
-* TOC_here
+1. TOC_here
 {:toc}
+{: .toc-wrap}
 
 ## General Information
 
