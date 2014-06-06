@@ -892,8 +892,8 @@ Execution of SmartState Analysis on virtual machines within a VMware environment
 1.  Download VDDK 5.5 (`VMware-vix-disklib-5.5.0-1284542.x86_64.tar.gz`{: .filename} at the time of this writing) from the VMware website.
 
     **Note**
-
     If you do not already have a login ID to VMware, then you will need to create one. At the time of this writing, the file can be found by navigating to **Downloads** → **All Downloads, Drivers & Tools** → **VMware vSphere** → **Drivers & Tools**. Expand **Automation Tools and SDKs**, and select **vSphere Virtual Disk Development Kit 5.5**. Alternatively, find the file by searching for it using the **Search** on the VMware site.
+    {: .notice-note}
 
 2.  Download and copy the `VMware-vix-disklib-5.5.0-1284542.x86_64.tar.gz`{: .filename} file to the `/root`{.filename} directory of the appliance.
 3.  Start an SSH session into the appliance.
