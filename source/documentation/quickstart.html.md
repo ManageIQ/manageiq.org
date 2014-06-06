@@ -24,30 +24,12 @@ Console uses virtual thumbnails to describe providers. Each thumbnail contains f
 3.  Top right quadrant: For future use
 4.  Bottom right quadrant: Authentication status
 
-<table>
-<col width="25%" />
-<col width="75%" />
-<thead>
-<tr class="header">
-<th align="left">Icon</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><img src="images/2190.png" /></td>
-<td align="left">Validated: Valid authentication credentials have been added.</td>
-</tr>
-<tr class="even">
-<td align="left"><img src="images/2191.png" /></td>
-<td align="left">Invalid: Authentication credentials are invalid.</td>
-</tr>
-<tr class="odd">
-<td align="left"><img src="images/2192.png" /></td>
-<td align="left">Unknown: Authentication status is unknown or no credentials have been entered.</td>
-</tr>
-</tbody>
-</table>
+
+|Icon|Description|
+|:---|:----------|
+|![](doc/quickstart/2190.png)|Validated: Valid authentication credentials have been added.|
+|![](doc/quickstart/2191.png)|Invalid: Authentication credentials are invalid.|
+|![](doc/quickstart/2192.png)|Unknown: Authentication status is unknown or no credentials have been entered.|
 
 
 ### Adding a Provider
@@ -171,30 +153,11 @@ After adding or sorting your hosts, click on one to examine it more closely and 
 3.  Top right quadrant: Power state of host
 4.  Bottom right quadrant: Authentication status
 
-<table>
-<col width="25%" />
-<col width="75%" />
-<thead>
-<tr class="header">
-<th align="left">Icon</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><img src="images/2190.png" /></td>
-<td align="left">Validated: Valid authentication credentials have been added.</td>
-</tr>
-<tr class="even">
-<td align="left"><img src="images/2191.png" /></td>
-<td align="left">Invalid: Authentication credentials are invalid</td>
-</tr>
-<tr class="odd">
-<td align="left"><img src="images/2192.png" /></td>
-<td align="left">Unknown: Authentication status is unknown or no credentials have been entered.</td>
-</tr>
-</tbody>
-</table>
+|Icon|Description|
+|:---|:----------|
+|![](doc/quickstart/2190.png)|Validated: Valid authentication credentials have been added.|
+|![](doc/quickstart/2191.png)|Invalid: Authentication credentials are invalid.|
+|![](doc/quickstart/2192.png)|Unknown: Authentication status is unknown or no credentials have been entered.|
 
 
 ### Requirements for Provisioning a Host
@@ -410,47 +373,43 @@ Add a customization template to provide Kickstart files for the initial loading 
 
 **Table 5.1. Customization Script Additions**
 
-<table>
-<col width="22%" />
-<col width="56%" />
-<thead>
-<tr class="header">
-<th align="left">Customization Type</th>
-<th align="left">Reason to Include</th>
-<th align="left">Script entries</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">Kickstart</td>
-<td align="left">Takes the values from the <strong>Customize</strong> tab in <strong>Provisioning Dialog</strong> and substitutes them into the script.</td>
-<td align="left"><pre class="programlisting"><code>#Configure Networking based on values from provisioning dialog
-&lt;% if evm[:addr_mode].first == &#39;static&#39; %&gt;
-  &lt;% network_string = &quot;network --onboot yes --device=eth0 --bootproto=static --noipv6&quot; %&gt;
-  &lt;% [&quot;ip&quot;, :ip_addr, &quot;netmask&quot;, :subnet_mask, &quot;gateway&quot;, :gateway, &quot;hostname&quot;, :hostname, &quot;nameserver&quot;, :dns_servers].each_slice(2) do |ks_key, evm_key| %&gt;
-    &lt;% network_string &lt;&lt; &quot; --#{ks_key} #{evm[evm_key]}&quot; unless evm[evm_key].blank? %&gt;
-  &lt;% end %&gt;
-&lt;%= network_string %&gt;
-&lt;% else %&gt;
-network --device=eth0 --bootproto=dhcp
-&lt;% end %&gt;
-</code></pre></td>
-</tr>
-<tr class="even">
-<td align="left">Kickstart</td>
-<td align="left">Encrypts the root password from the <strong>Customize</strong> tab in the <strong>Provisioning Dialog</strong>.</td>
-<td align="left"><pre class="programlisting"><code>rootpw  --iscrypted &lt;%= MiqPassword.md5crypt(evm[:root_password]) %&gt;
-</code></pre></td>
-</tr>
-<tr class="odd">
-<td align="left">Kickstart</td>
-<td align="left">Sends status of the provision back to ManageIQ Management Engine for display in the ManageIQ Management Engine Console.</td>
-<td align="left"><pre class="programlisting"><code># Callback to EVM during post-install
-wget --no-check-certificate &lt;%= evm[:callback_url_on_post_install] %&gt;
-</code></pre></td>
-</tr>
-</tbody>
-</table>
+|Customization Type|Reason to Include|
+|:-----------------|:----------------|
+|Kickstart|Takes the values from the **Customize** tab in **Provisioning Dialog** and substitutes them into the script.|
+
+``` erb
+# Configure Networking based on values from provisioning dialog
+<% if evm[:addr_mode].first == 'static' %>
+  <% network_string = "network --onboot yes --device=eth0 --bootproto=static --noipv6" %>
+  <% ["ip", :ip_addr, "netmask", :subnet_mask, "gateway", :gateway, "hostname", :hostname, "nameserver", :dns_servers].each_slice(2) do |ks_key, evm_key| %>
+    <% network_string << " --#{ks_key} #{evm[evm_key]}" unless evm[evm_key].blank? %>
+  <% end %>
+<%= network_string %>
+<% else %>
+  network --device=eth0 --bootproto=dhcp
+<% end %>
+```
+
+---
+
+|Customization Type|Reason to Include|
+|:-----------------|:----------------|
+|Kickstart|Encrypts the root password from the **Customize** tab in the **Provisioning Dialog**.|
+
+``` erb
+rootpw  --iscrypted <%= MiqPassword.md5crypt(evm[:root_password]) %>
+```
+
+---
+
+|Customization Type|Reason to Include|
+|:-----------------|:----------------|
+|Kickstart|Sends status of the provision back to ManageIQ Management Engine for display in the ManageIQ Management Engine Console.|
+
+``` erb
+# Callback to EVM during post-install
+wget --no-check-certificate <%= evm[:callback_url_on_post_install] %>
+```
 
 
 ##### Adding a Customization Template
@@ -628,50 +587,17 @@ Console uses **Virtual Thumbnails** to describe virtual machines and templates. 
 3.  Top right quadrant: Power state of Virtual Machine or Status icon
 4.  Bottom right quadrant: Number of Snapshots for this Virtual Machine
 
-<table>
-<col width="25%" />
-<col width="75%" />
-<thead>
-<tr class="header">
-<th align="left">Icon</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><img src="images/2138.png" /></td>
-<td align="left">Template: Virtual Template</td>
-</tr>
-<tr class="even">
-<td align="left"><img src="images/2139.png" /></td>
-<td align="left">Retired: Virtual Machine has been retired</td>
-</tr>
-<tr class="odd">
-<td align="left"><img src="images/2140.png" /></td>
-<td align="left">Archived: Virtual Machine has no Host or Datastore associated with it.</td>
-</tr>
-<tr class="even">
-<td align="left"><img src="images/2141.png" /></td>
-<td align="left">Orphaned: Virtual Machine has no Host but does have a Datastore associated with it.</td>
-</tr>
-<tr class="odd">
-<td align="left"><img src="images/2142.png" /></td>
-<td align="left">Disconnected: Virtual Machine is disconnected.</td>
-</tr>
-<tr class="even">
-<td align="left"><img src="images/2143.png" /></td>
-<td align="left">On: Virtual Machine is powered on.</td>
-</tr>
-<tr class="odd">
-<td align="left"><img src="images/2144.png" /></td>
-<td align="left">Off: Virtual Machine is powered off.</td>
-</tr>
-<tr class="even">
-<td align="left"><img src="images/2145.png" /></td>
-<td align="left">Suspended: Virtual Machine has been suspended.</td>
-</tr>
-</tbody>
-</table>
+|Icon|Description|
+|:---|:----------|
+|![](doc/quickstart/2138.png)|Template: Virtual Template|
+|![](doc/quickstart/2139.png)|Retired: Virtual Machine has been retired|
+|![](doc/quickstart/2140.png)|Archived: Virtual Machine has no Host or Datastore associated with it.|
+|![](doc/quickstart/2141.png)|Orphaned: Virtual Machine has no Host but does have a Datastore associated with it.|
+|![](doc/quickstart/2142.png)|Disconnected: Virtual Machine is disconnected.|
+|![](doc/quickstart/2143.png)|On: Virtual Machine is powered on.|
+|![](doc/quickstart/2144.png)|Off: Virtual Machine is powered off.|
+|![](doc/quickstart/2145.png)|Suspended: Virtual Machine has been suspended.|
+
 
 The **Virtual Machines** page has three accordions organizing your virtual machines and templates in different ways. All of these accordions share a set of common controls
 
