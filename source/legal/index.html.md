@@ -8,7 +8,7 @@ Red Hat and the Shadowman logo are trademarks of Red Hat, Inc., registered in th
 
 ## Privacy policy
 
-At Red Hat, your privacy is important to us. By joining the ManageIQ community, you will be giving us some personal information, including your name and an email address. For members of the ManageIQ community, we are committed to the [Red Hat privacy policy](http://www.redhat.com/footer/privacy-policy.html).
+By joining the ManageIQ community, you will be giving us some personal information, including your name and an email address. For members of the ManageIQ community, we are committed to the [Red Hat privacy policy](http://www.redhat.com/footer/privacy-policy.html).
 
 ## Terms of use
 
