@@ -10,8 +10,8 @@
 A provider is a server with software to manage multiple virtual machines that reside on multiple hosts. The **Providers** page, found under the Infrastructure tab, displays all discovered or added providers in your enterprise.
 
 **Note**
-
 Any applied filters will be in effect on this page.
+{: .notice-note}
 
 Use the **Providers** taskbar to manage the existence of your providers and to initiate a refresh of them. These buttons are used to manage multiple providers at one time. To manage one provider, click on that item in the main area of the screen.
 
@@ -54,8 +54,8 @@ Result:
 ManageIQ Management Engine adds a new provider. Use this provider for virtual machine provisioning.
 
 **Note**
-
 To obtain historical Capacity and Utilization (C & U) data for Red Hat Enterprise Virtualization Manager, you will need to add credentials for the Red Hat C & U Database. Once discovered, and set up for C & U in ManageIQ Management Engine, you can use ManageIQ Management Engine to collect C & U from this point forward. For further information, refer to *Chapter 4. Data Collection Setup and Reports Installation* in the *Red Hat Enterprise Virtualization 3.1 Installation Guide*.
+{: .notice-note}
 
 
 ### Discovering Providers
@@ -114,8 +114,8 @@ Result:
 The provider settings are updated and the changes take effect immediately.
 
 **Note**
-
 To obtain historical Capacity and Utilization (C & U) data for Red Hat Enterprise Virtualization Manager, you will need to add credentials for the Red Hat C & U Database. Once discovered, and set up for C & U in ManageIQ Management Engine, you can use ManageIQ Management Engine to collect C & U from this point forward. For further information, refer to *Chapter 4. Data Collection Setup and Reports Installation* in the *Red Hat Enterprise Virtualization 3.1 Installation Guide*.
+{: .notice-note}
 
 
 ### Refreshing Providers
@@ -139,8 +139,8 @@ The chosen providers are refreshed.
 The **Hosts** page under **Infrastructure** displays the hosts discovered in your enterprise environment.
 
 **Note**
-
 Any applied filters will be in effect here.
+{: .notice-note}
 
 ![](doc/quickstart/2212.png)
 
@@ -208,8 +208,8 @@ Result:
 The PXE server is added to ManageIQ Management Engine.
 
 **Note**
-
 Next, create PXE Image types to associate with the customization templates and to specify if the image type is for a virtual machine, a host, or both.
+{: .notice-note}
 
 
 ##### Creating System Image Types for PXE
@@ -239,8 +239,8 @@ Result:
 System image types are added.
 
 **Note**
-
 After creating the System Image Types, assign the types to each image on your PXE servers. To do this, you will select each image on the PXE server and identify its type.
+{: .notice-note}
 
 
 ##### Setting the PXE Image Type for a PXE Image
@@ -340,8 +340,8 @@ Result:
 The system image types are added.
 
 **Note**
-
 After creating the system image types, assign the types to each image on your ISO servers. To do this, you will select each image on the ISO server and identify its type.
+{: .notice-note}
 
 
 ##### Setting the Image Type for an ISO Image
@@ -435,8 +435,8 @@ Result:
 The customization template is added.
 
 **Note**
-
 The default dialogs show all possible parameters for provisioning. To limit the options shown, see *Customizing Provisioning Dialogs*.
+{: .notice-note}
 
 
 #### IPMI Hosts
@@ -456,8 +456,8 @@ Use the following procedure to discover the management interface for any IPMI ho
 4.  Optionally, in **IPMI Credentials**, type in a **User ID** and **Password**.
 
     **Note**
-
     You can also add IPMI credentials after the host has been discovered. See *Adding IPMI Credentials to a Discovered Host*.
+    {: .notice-note}
 
 5.  In **Subnet Range**, type in a range of IP addresses. For quickest results, use the actual IP address in both fields.
 6.  Click **Discover**.
@@ -467,8 +467,8 @@ Result:
 The IPMI host discovery is initiated.
 
 **Note**
-
 After the host is discovered, you can add credentials for IPMI.
+{: .notice-note}
 
 
 ##### Adding IPMI Credentials to a Discovered Host
@@ -520,8 +520,8 @@ The IPMI host is added to the ManageIQ Management Engine environment; an operati
 After setting up the IPMI and PXE environments, you are ready to provision a host. Currently, you can only provision in the cluster where the template is located or you can create a template in each cluster and let a ManageIQ Management Engine Automate method automatically switch the selected template in the provision object.
 
 **Important**
-
 A customization template with host-specific script additions is required. Ensure especially that the customization template contains the post-installation callback to enable discovery in ManageIQ Management Engine.
+{: .notice-important}
 
 **Procedure 5.18. To provision a host**
 
@@ -639,8 +639,8 @@ Users provision virtual machines through various methods. One method is to provi
     In **Request Information**, type in at least a **First Name** and **Last Name** and an email address. This email is used to send the requester status emails during the provisioning process for items such as auto-approval, quota, provision complete, retirement, request pending approval, and request denied. The other information is optional. If the ManageIQ Management Engine server is configured to use LDAP, you can use the **Look Up** button to populate the other fields based on the email address.
 
     **Note**
-
     Parameters with a \* next to the label are required to submit the provisioning request. To change the required parameters, see *Customizing Provisioning Dialogs*.
+    {: .notice-note}
 
 6.  Click the **Purpose** tab to select the appropriate tags for the provisioned virtual machines.
 7.  Click the **Catalog** tab to select the template to provision from. This tab is context sensitive based on provider.
@@ -691,8 +691,8 @@ Users provision virtual machines through various methods. One method is to provi
     1.  To use a customer specification from the Provider, click **Specification**. To select an appropriate template, a list will be provided in the custom specification area. The values that are honored by ManageIQ Management Engine will display.
 
         **Note**
-
         Any values in the specification that do not show in the ManageIQ Management Engine console's request dialogs will not be used by ManageIQ Management Engine. For example, for Windows operating systems, if you have any run once values in the specification, they will not be used in creating the new virtual machines. Currently, for a Windows operating system, ManageIQ Management Engine honors the unattended GUI, identification, workgroup information, user data, windows options, and server license. If more than one network card is specified, only the first will be used.
+        {: .notice-note}
 
         ![](doc/quickstart/2337.png)
 
@@ -772,8 +772,8 @@ The requested action is initiated.
 Analyze a virtual machine to collect metadata such as user accounts, applications, software patches, and other internal information. If ManageIQ Management Engine is not set up for automatic analysis, perform a manual analysis of a virtual machine. To perform a SmartState analysis, ManageIQ Management Engine requires a running SmartProxy with visibility to the virtual machine's storage location. If the virtual machine is associated with a host or provider, ensure the virtual machine is registered with that system to be properly analyzed; the server requires this information since a snapshot might be created.
 
 **Note**
-
 SmartState Analysis of a virtual machine requires access to its host. To perform a successful analysis, edit the virtual machine's host and enter the host's authentication credentials.
+{: .notice-note}
 
 **Procedure 5.22. To Analyze Multiple Virtual Machines Or Templates**
 
@@ -814,8 +814,8 @@ Note the following requirements when performing a SmartState Analysis on Red Hat
     3.  Select the server that relates to this instance of the ManageIQ Management Engine Appliance.
 
 **Important**
-
 If you attach a DirectLUN disk after configuring the ManageIQ Management Engine Database, access the Appliance in a terminal and run `pvscan`{: .command} to detect the DirectLUN disk. Alternatively, in ManageIQ Management Engine 5.2.1, you can restart the Appliance to detect the disk automatically.
+{: .notice-important}
 
 
 ##### SmartState Analysis on Red Hat Enterprise Virtualization Manager 3.0 - Storage Support Notes
@@ -1017,8 +1017,8 @@ Edit information about a provider such as the name, IP address, and login creden
 4.  Edit the **Basic Information**. This varies depending on the **Type** of provider.
 
     **Note**
-
     The **Type** value is unchangeable. To use a different cloud provider, create a new one.
+    {: .notice-note}
 
 5.  Fill out the **Credentials** by typing in a **User ID**, **Password**, and a verification of this password (**Verify Password**).
     -   If selecting an **Amazon EC2**, generate an **Access Key** in the **Security Credentials** of your Amazon AWS account. The **Access Key ID** acts as your **User ID**, and your **Secret Access Key** acts as your **Password**.
@@ -1070,8 +1070,8 @@ Users provision instances from images stored on their cloud provider. This proce
 5.  On the **Request** tab, enter information about this provisioning request. In **Request Information**, type in at least a first and last name and an email address. This email is used to send the requester status emails during the provisioning process for items such as auto-approval, quota, provision complete, retirement, request pending approval, and request denied. The other information is optional. If the ManageIQ Management Engine Server is configured to use LDAP, you can use the **Look Up** button to populate the other fields based on the email address.
 
     **Note**
-
     Parameters with a \* next to the label are required to submit the provisioning request. To change the required parameters, see *Customizing Provisioning Dialogs*.
+    {: .notice-note}
 
 6.  Click the **Purpose** tab to select the appropriate tags for the provisioned instance.
 7.  Click the **Catalog** tab for basic instance options.
