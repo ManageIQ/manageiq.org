@@ -482,15 +482,20 @@ body.front-page
     @extend .col-md-12
 
 .download-icon
-  @extend .glyphicon
-  @extend .glyphicon-download-alt
+  @extend .fa
+  @extend .fa-download
+
+.download-link
+  &:before
+    @extend .download-icon
+    margin-right: 0.75ex
 
 .download-arrow
-  @extend .glyphicon
-  @extend .glyphicon-chevron-right
+  @extend .fa
+  @extend .fa-chevron-right
   opacity: 0.5
 
-a .glyphicon:first-child
+a .fa:first-child
   /* Add a space after all icons in links
   margin-right: 0.75ex
 
