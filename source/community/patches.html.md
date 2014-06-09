@@ -22,8 +22,9 @@ git fetch upstream
   keep the `master` branch of your fork in sync with upstream. When you make
   changes, to commit them as a new branch, use:
 ```
+git checkout -b [branchname]
 git add [changed_file]
-git commit -b [branchname]
+git commit
 ```
 * Ensure that you are not accidentally pushing "work in progress" branches by
   setting the push policy to simple rather than mirrored:
@@ -49,14 +50,18 @@ git rebase master
 * When you are ready to submit your work for review, push your branch to
   github:
 ```
-git push origin [branchname]:[branchname]
+git push -u origin [branchname](:[remote branchname] if name needs to change)
 ```
-* In github.com/[username]/manageiq, seelct the commits you would like to push
+* In github.com/[username]/manageiq, select the branch you would like to push
   to upstream, and click on "Submit a pull request". Add a description of the
   change you're making, and why, and track the progress of the pull request in
   [the upstream repository](https://github.com/ManageIQ/manageiq)
 
 Congratulations: You've submitted a pull request!
+
+Usually, pull requests will get feedback, and it is a good idea to integrate
+that into your patch. The easiest way to do this is to update your local
+branch, commit and push a new version to `origin/[branchname]`.
 
 [ManageIQ Coding Style and Standards](https://github.com/ManageIQ/guides/blob/master/coding_style_and_standards.md)
 
