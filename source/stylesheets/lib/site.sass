@@ -439,12 +439,29 @@ body.front-page
     font-weight: 500
 
   .icon
+    @extend .fa
     position: absolute
-    top: 16px
-    left: 8px
+    top: 18px
+    left: 0
     font-size: 22px
-    //opacity: 0.6
-    color: white
+    text-align: center
+    width: 38px
+    color: rgba(white, 0.95)
+
+    &.open-source
+      @extend .fa-eye
+
+    &.hybrid-infra
+      top: 19px
+      @extend .fa-adjust
+
+    &.virtual-lab
+      top: 19px
+      @extend .fa-magic
+
+    &.private-cloud
+      left: 0.5px
+      @extend .fa-cloud
 
 
 #content.container
