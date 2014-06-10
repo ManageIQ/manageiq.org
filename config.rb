@@ -184,7 +184,8 @@ end
 #
 configure :development do
   puts "\nUpdating git submodules..."
-  puts `git submodule foreach git pull -qf origin master`
+  puts `git submodule init`
+  puts `git submodule foreach "git pull -qf origin master"`
   puts "\n"
 
   activate :livereload
@@ -199,7 +200,8 @@ end
 # Build-specific configuration
 configure :build do
   puts "\nUpdating git submodules..."
-  puts `git submodule foreach git pull -qf origin master`
+  puts `git submodule init`
+  puts `git submodule foreach "git pull -qf origin master"`
   puts "\n"
 
   ## Ignore Gimp source files
