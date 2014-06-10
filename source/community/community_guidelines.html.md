@@ -2,7 +2,7 @@
 
 To ensure that the ManageIQ community is a fun and productive place to learn,
 share, and work with the ManageIQ cloud management platform, we have some
-guidelines for how we expect our community members to behave. Please be
+guidelines for how we expect our community members to behave. Be
 respectful of your fellow ManageIQ community members, whether they are
 using or developing the platform.
 
@@ -25,7 +25,7 @@ share knowledge and solve cloud management problems. Please help your
 fellow users with questions as much as you are able to do so, and share as
 much detailed information as you can when asking and answering questions.
 
-Please do stay on topic - developer topics on [Talk](http://talk.manageiq.org)
+Try to stay on topic - developer topics on [Talk](http://talk.manageiq.org)
 should be in the "Developers" category, topics related to using and
 customizing ManageIQ should be in the "Users" category. The best place to
 get an answer to a question is in [Ask](http://ask.manageiq.org).
@@ -54,12 +54,13 @@ and will be dealt with.
 
 ### [Talk](http://talk.manageiq.org) and [Ask](http://ask.manageiq.org)
 
-* Please search before asking - your question may have been asked before,
-  and even if the answer is out of date, adding a new comment there may
-  result in an improved or updated answer for everyone.
-* Ask smart questions - a good question shows your work, describes what you
-  have tried and what has not worked, and helps people answer your question
-  better and more quickly.
+* Search for your problem before asking for help - your question may have
+  been asked before, and even if the answer is out of date, adding a new
+  comment there may result in an improved or updated answer for everyone.
+* [Ask smart questions](http://www.catb.org/esr/faqs/smart-questions.html) -
+  a good question shows your work, describes what you have tried and what
+  has not worked, and helps people answer your question better and more
+  quickly.
 
 ### IRC
 
@@ -67,16 +68,16 @@ and will be dealt with.
   a question will not be around when you ask. Please be patient after asking
   a question, and keep the channel open. You may get your answer some time
   later.
-* Please do not copy & paste multiple lines of text into IRC. Use a paste
+* Do not copy & paste multiple lines of text into IRC. Use a paste
   service like [fpaste](http://fpaste.org) instead.
-* Please avoid private messages to people you do not know well. Some people
+* Avoid private messages to people you do not know well. Some people
   do not like them, and it benefits the community to have questions asked
   and answered in channel instead.
 
 ### Issues
 
-* Please create a different issue for each problem you want to report.
-* Please search before reporting an issue - many issues have been reported
+* Create a different issue for each problem you want to report.
+* Search before reporting an issue - many issues have been reported
   in the past, and may already have been fixed or a workaround documented.
 * What makes a good issue report is a good, descriptive description, a
   detailed description of how you encountered the issue, and information on
