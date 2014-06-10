@@ -16,7 +16,7 @@ Any applied filters will be in effect on this page.
 
 Use the **Providers** taskbar to manage the existence of your providers and to initiate a refresh of them. These buttons are used to manage multiple providers at one time. To manage one provider, click on that item in the main area of the screen.
 
-Console uses virtual thumbnails to describe providers. Each thumbnail contains four quadrants by default. This allows a user to glance at a provider for a quick view of its number of hosts and authentication status.
+The Console uses virtual thumbnails to describe providers. Each thumbnail contains four quadrants by default. This allows a user to glance at a provider for a quick view of its number of hosts and authentication status.
 
 ![](doc/quickstart/2189.png)
 
