@@ -33,11 +33,33 @@ The ManageIQ Console uses virtual thumbnails to describe providers. Each thumbna
 |![](doc/quickstart/2192.png)|Unknown: Authentication status is unknown or no credentials have been entered.|
 
 
+### Discovering Providers
+
+After initial creation of a ManageIQ environment, discover the providers in your environment. To do this, use ManageIQ's ability to discover using a range of IP addresses.
+
+**Procedure 5.1. To Discover Providers by Subnet Range**
+
+1.  Navigate to **Infrastructure** → **Providers**.
+2.  Click ![](doc/quickstart/1847.png) **(Configuration)**, then click ![](doc/quickstart/2119.png) **(Discover Infrastructure Providers)**.
+3.  Check the type of provider to discover.
+
+    ![](doc/quickstart/2195.png)
+
+4.  Type in a **Subnet Range** of IP addresses staring with a **From Address** and ending with a **To Address**. The cursor automatically advances as you complete each octet.
+
+    ![](doc/quickstart/2196.png)
+
+5.  Click **Start** to confirm the discovery process.
+
+Result:
+
+The server searches for computers running supported providers. When available, the new providers display. These providers are named using a Hostname and IP address. To make them identifiable, edit the basic information for each provider.
+
 ### Adding a Provider
 
-After initial installation and creation of a ManageIQ environment, add providers to the appliance with the following procedure.
+If you are not able to use ManageIQ's discovery process, you can add providers to the appliance with the following procedure.
 
-**Procedure 5.1. To Add a Provider**
+**Procedure 5.2. To Add a Provider**
 
 1.  Navigate to **Infrastructure** → **Providers**.
 2.  Click ![](doc/quickstart/1847.png) **(Configuration)**, then click ![](doc/quickstart/1848.png) **(Add a New Infrastructure Provider)**.
@@ -57,30 +79,6 @@ ManageIQ adds a new provider. Use this provider for virtual machine provisioning
 **Note**
 To obtain historical Capacity and Utilization (C & U) data for Red Hat Enterprise Virtualization Manager, you will need to add credentials for the Red Hat C & U Database. Once discovered, and set up for C & U in ManageIQ, you can use ManageIQ to collect C & U from this point forward. For further information, refer to *Chapter 4. Data Collection Setup and Reports Installation* in the *Red Hat Enterprise Virtualization 3.1 Installation Guide*.
 {: .notice-note}
-
-
-### Discovering Providers
-
-After initial creation of a ManageIQ environment, discover the providers in your environment. To do this, use ManageIQ's ability to discover using a range of IP addresses.
-
-**Procedure 5.2. To Discover Providers by Subnet Range**
-
-1.  Navigate to **Infrastructure** → **Providers**.
-2.  Click ![](doc/quickstart/1847.png) **(Configuration)**, then click ![](doc/quickstart/2119.png) **(Discover Infrastructure Providers)**.
-3.  Check the type of provider to discover.
-
-    ![](doc/quickstart/2195.png)
-
-4.  Type in a **Subnet Range** of IP addresses staring with a **From Address** and ending with a **To Address**. The cursor automatically advances as you complete each octet.
-
-    ![](doc/quickstart/2196.png)
-
-5.  Click **Start** to confirm the discovery process.
-
-Result:
-
-The server searches for computers running supported providers. When available, the new providers display. These providers are named using a Hostname and IP address. To make them identifiable, edit the basic information for each provider.
-
 
 ### Editing Provider Information
 
