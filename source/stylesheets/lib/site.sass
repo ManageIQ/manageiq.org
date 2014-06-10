@@ -466,7 +466,8 @@ body.front-page
 
 #content.container
   max-width: 100%
-  padding: 0
+  margin: 0 auto
+  float: none
   width: 100%
 
 
@@ -481,6 +482,12 @@ body.front-page
 
   #content
     @extend .col-md-12
+    padding: 0 3em
+
+    @media screen and (min-width: 70em)
+      // Ensure that padding is only needed when the column is not
+      // restricted (it's used when it's needed to add a gutter)
+      padding: 0
 
 .download-icon
   @extend .fa
