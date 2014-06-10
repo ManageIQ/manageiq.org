@@ -153,7 +153,7 @@ Note the following additional requirements if you are performing ISO and PXE pro
 
 **Kickstart file on custom ISO**:  RHEV-M does not currently overwrite the filesystem on the ISO, so we need to leverage the kickstart in the ISO to source the content that was written to the floppy.  This kickstart example uses the %pre section to mount the floppy disk, write partitioning information and include the ks.cfg file from the root of the floppy that will contain the rest of the customized content.
 
-~~~
+~~~yml
 ### Pre Install Scripts
 %pre
 
@@ -178,7 +178,7 @@ echo 'logvol swap --fstype=swap --name=lv_swap --vgname=vg_rhtest --grow --size=
 
 **Kickstart**:  Takes the values from the Customize tab in Provisioning Dialog and substitutes them into the script.
 
-~~~
+~~~yml
 #Configure Networking based on values from provisioning dialog
 <% if evm[:addr_mode].first == 'static' %>
   <% network_string = "network --onboot yes --device=eth0 --bootproto=static --noipv6" %>
@@ -193,26 +193,26 @@ network --device=eth0 --bootproto=dhcp
 
 **Kickstart**:  Sets the root password to an encrypted value that kickstart can use.  Sourced from the Customize tab in the Provisioning Dialog.
 
-~~~
+~~~yml
 rootpw  --iscrypted <%= MiqPassword.md5crypt(evm[:root_password]) %>
 ~~~
 
 **Kickstart**:  Sends status of the provision back to CloudForms Management Engine Server for display in the CloudForms Management Engine Console.
 
-~~~
+~~~shell
 # Callback to CFME during post-install
 wget --no-check-certificate <%= evm[:callback_url_on_post_install] %>
 ~~~
 
 **Sysprep**:  Encrypts the root password from the Customize tab in the Provisioning Dialog.  The Value for the AdministratorPasword line must be inserted to use the password from the Provision Dialog and encrypt it.
 
-~~~
+~~~xml
 <UserAccounts>
-                <AdministratorPassword>
-                    <Value><%= MiqPassword.sysprep_crypt(evm[:root_password]) %></Value>
-                    <PlainText>false</PlainText>
-                </AdministratorPassword>
-            </UserAccounts>
+  <AdministratorPassword>
+    <Value><%= MiqPassword.sysprep_crypt(evm[:root_password]) %></Value>
+    <PlainText>false</PlainText>
+  </AdministratorPassword>
+</UserAccounts>
 ~~~
 
 ###To add a Customization Template # {#CreateCusomtizationTemplate}
