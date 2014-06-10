@@ -16,7 +16,7 @@ Any applied filters will be in effect on this page.
 
 Use the **Providers** taskbar to manage the existence of your providers and to initiate a refresh of them. These buttons are used to manage multiple providers at one time. To manage one provider, click on that item in the main area of the screen.
 
-The Console uses virtual thumbnails to describe providers. Each thumbnail contains four quadrants by default. This allows a user to glance at a provider for a quick view of its number of hosts and authentication status.
+The ManageIQ Console uses virtual thumbnails to describe providers. Each thumbnail contains four quadrants by default. This allows a user to glance at a provider for a quick view of its number of hosts and authentication status.
 
 ![](doc/quickstart/2189.png)
 
@@ -35,7 +35,7 @@ The Console uses virtual thumbnails to describe providers. Each thumbnail contai
 
 ### Adding a Provider
 
-After initial installation and creation of a ManageIQ Management Engine environment, add providers to the appliance with the following procedure.
+After initial installation and creation of a ManageIQ environment, add providers to the appliance with the following procedure.
 
 **Procedure 5.1. To Add a Provider**
 
@@ -52,16 +52,16 @@ After initial installation and creation of a ManageIQ Management Engine environm
 
 Result:
 
-ManageIQ Management Engine adds a new provider. Use this provider for virtual machine provisioning.
+ManageIQ adds a new provider. Use this provider for virtual machine provisioning.
 
 **Note**
-To obtain historical Capacity and Utilization (C & U) data for Red Hat Enterprise Virtualization Manager, you will need to add credentials for the Red Hat C & U Database. Once discovered, and set up for C & U in ManageIQ Management Engine, you can use ManageIQ Management Engine to collect C & U from this point forward. For further information, refer to *Chapter 4. Data Collection Setup and Reports Installation* in the *Red Hat Enterprise Virtualization 3.1 Installation Guide*.
+To obtain historical Capacity and Utilization (C & U) data for Red Hat Enterprise Virtualization Manager, you will need to add credentials for the Red Hat C & U Database. Once discovered, and set up for C & U in ManageIQ, you can use ManageIQ to collect C & U from this point forward. For further information, refer to *Chapter 4. Data Collection Setup and Reports Installation* in the *Red Hat Enterprise Virtualization 3.1 Installation Guide*.
 {: .notice-note}
 
 
 ### Discovering Providers
 
-After initial creation of a ManageIQ Management Engine environment, discover the providers in your environment. To do this, use ManageIQ Management Engine's ability to discover using a range of IP addresses.
+After initial creation of a ManageIQ environment, discover the providers in your environment. To do this, use ManageIQ's ability to discover using a range of IP addresses.
 
 **Procedure 5.2. To Discover Providers by Subnet Range**
 
@@ -97,7 +97,7 @@ Edit information about a provider such as the name, IP address, and login creden
     -   Use **IP Address** to set the IP address for communication with the provider.
     -   You cannot change the **Type** of provider.
     -   Edit the **API Port** if your provider uses a non-standard port for access.
-    -   Use **Zone** to isolate traffic and provide load balancing capabilities. Specify the **Zone** this ManageIQ Management Engine Appliance is a member. At startup, the zone is set to **Default**.
+    -   Use **Zone** to isolate traffic and provide load balancing capabilities. Specify the **Zone** this ManageIQ Appliance is a member of. At startup, the zone is set to **Default**.
 
 5.  Use **Credentials** to provide login credentials required for the provider.
 
@@ -115,7 +115,7 @@ Result:
 The provider settings are updated and the changes take effect immediately.
 
 **Note**
-To obtain historical Capacity and Utilization (C & U) data for Red Hat Enterprise Virtualization Manager, you will need to add credentials for the Red Hat C & U Database. Once discovered, and set up for C & U in ManageIQ Management Engine, you can use ManageIQ Management Engine to collect C & U from this point forward. For further information, refer to *Chapter 4. Data Collection Setup and Reports Installation* in the *Red Hat Enterprise Virtualization 3.1 Installation Guide*.
+To obtain historical Capacity and Utilization (C & U) data for Red Hat Enterprise Virtualization Manager, you will need to add credentials for the Red Hat C & U Database. Once discovered, and set up for C & U in ManageIQ, you can use ManageIQ to collect C & U from this point forward. For further information, refer to *Chapter 4. Data Collection Setup and Reports Installation* in the *Red Hat Enterprise Virtualization 3.1 Installation Guide*.
 {: .notice-note}
 
 
@@ -163,20 +163,20 @@ After adding or sorting your hosts, click on one to examine it more closely and 
 
 ### Requirements for Provisioning a Host
 
-ManageIQ Management Engine can provision hosts using PXE and Intelligent Platform Management Interface (IPMI) technologies. To do this, complete the following steps before you provision your first host.
+ManageIQ can provision hosts using PXE and Intelligent Platform Management Interface (IPMI) technologies. To do this, complete the following steps before you provision your first host.
 
 **Procedure 5.5. To Provision a Host**
 
-1.  Make a PXE server accessible to the ManageIQ Management Engine server.
+1.  Make a PXE server accessible to the ManageIQ server.
 2.  Create a customization template for hosts. This customization template must contain host-specific additions, documented in the *Customization Templates for Host Provisioning* section.
 3.  Create system image types for the host.
 4.  Associate images with the image types.
-5.  Enable IPMI on provisioning hosts and add them to the ManageIQ Management Engine Infrastructure.
+5.  Enable IPMI on provisioning hosts and add them to the ManageIQ Infrastructure.
 
 
 #### PXE Provisioning
 
-PXE is a boot method that allows you to load files from across a network link. ManageIQ Management Engine uses it for files required for provisioning virtual machines. PXE can be used for provisioning for either Red Hat Enterprise Virtualization Manager or VMware.
+PXE is a boot method that allows you to load files from across a network link. ManageIQ uses it for files required for provisioning virtual machines. PXE can be used for provisioning for either Red Hat Enterprise Virtualization Manager or VMware.
 
 -   Connect to the **PXE Server**.
 -   Create a **System Image Type**.
@@ -186,7 +186,7 @@ PXE is a boot method that allows you to load files from across a network link. M
 
 ##### Connecting to a PXE Server
 
-The following procedure connects to a PXE server and adds its details to ManageIQ Management Engine.
+The following procedure connects to a PXE server and adds its details to ManageIQ.
 
 **Procedure 5.6. To connect to a PXE server**
 
@@ -197,7 +197,7 @@ The following procedure connects to a PXE server and adds its details to ManageI
     ![](doc/quickstart/2316.png)
 
 4.  For **Depot Type**, select either **Network File System** (NFS) or **Samba**. The fields to enter in the dialog depend on the **Depot Type**.
-    -   For NFS, type in the **URI**, **Access URL**, **PXE Directory**, **Windows Images Directory** and **Customization Directory**. When you provision, ManageIQ Management Engine writes a text file to the **PXE Directory**. The file is named after the MAC address of the NIC that is assigned to the virtual machine. It contains where to get the kernel and initrd image. This file is removed after a successful provision. The **Windows Images Directory** is where the files are located on your NFS for the provisioning of Windows operating systems. The **Customization Directory** is where your Kickstart and Sysprep files are located.
+    -   For NFS, type in the **URI**, **Access URL**, **PXE Directory**, **Windows Images Directory** and **Customization Directory**. When you provision, ManageIQ writes a text file to the **PXE Directory**. The file is named after the MAC address of the NIC that is assigned to the virtual machine. It contains where to get the kernel and initrd image. This file is removed after a successful provision. The **Windows Images Directory** is where the files are located on your NFS for the provisioning of Windows operating systems. The **Customization Directory** is where your Kickstart and Sysprep files are located.
     -   If using a **Depot Type** of **Samba**, you will not need **Access URL**, but you will need a **User ID**, and **Password**, in addition to the items required for NFS.
 
 5.  For **PXE Image Menus**, type the **filename** for the PXE Boot menu.
@@ -206,7 +206,7 @@ The following procedure connects to a PXE server and adds its details to ManageI
 
 Result:
 
-The PXE server is added to ManageIQ Management Engine.
+The PXE server is added to the ManageIQ database.
 
 **Note**
 Next, create PXE Image types to associate with the customization templates and to specify if the image type is for a virtual machine, a host, or both.
@@ -268,7 +268,7 @@ The image type is saved.
 
 #### ISO Provisioning
 
-ManageIQ Management Engine also allows ISO provisioning from **Red Hat Enterprise Virtualization Manager** datastores. To use this feature, you will need to do the following before creating a provision request.
+ManageIQ also allows ISO provisioning from **Red Hat Enterprise Virtualization Manager** datastores. To use this feature, you will need to do the following before creating a provision request.
 
 **Procedure 5.9. To prepare for an ISO provision request**
 
@@ -297,12 +297,12 @@ The following procedure adds an ISO Datastore from your Red Hat Enterprise Virtu
 
 Result:
 
-The ISO datastore is added to ManageIQ Management Engine.
+The ISO datastore is added to ManageIQ.
 
 
 ##### Refreshing an ISO Datastore
 
-The following procedure refreshes the chosen ISO datastore and updates ManageIQ Management Engine with available ISOs.
+The following procedure refreshes the chosen ISO datastore and updates ManageIQ with available ISOs.
 
 **Procedure 5.11. To refresh the ISO datastore**
 
@@ -367,7 +367,7 @@ The image type is saved.
 
 #### Customization Templates for Host Provisioning
 
-Add a customization template to provide Kickstart files for the initial loading of the operating system. There are certain sections to use to allow for interactions with the provisioning dialogs provided by ManageIQ Management Engine.
+Add a customization template to provide Kickstart files for the initial loading of the operating system. There are certain sections to use to allow for interactions with the provisioning dialogs provided by ManageIQ.
 
 
 ##### Customization Script Additions
@@ -405,7 +405,7 @@ rootpw  --iscrypted <%= MiqPassword.md5crypt(evm[:root_password]) %>
 
 |Customization Type|Reason to Include|
 |:-----------------|:----------------|
-|Kickstart|Sends status of the provision back to ManageIQ Management Engine for display in the ManageIQ Management Engine Console.|
+|Kickstart|Sends status of the provision back to ManageIQ for display in the ManageIQ Console.|
 
 ``` erb
 # Callback to EVM during post-install
@@ -415,7 +415,7 @@ wget --no-check-certificate <%= evm[:callback_url_on_post_install] %>
 
 ##### Adding a Customization Template
 
-The following procedure adds a customization template to ManageIQ Management Engine.
+The following procedure adds a customization template to ManageIQ.
 
 **Procedure 5.14. To add a customization template**
 
@@ -428,7 +428,7 @@ The following procedure adds a customization template to ManageIQ Management Eng
 
 5.  Select the **Image Type** dropdown. This list should include the PXE image types you created.
 6.  In **Type**, select **Kickstart** or **Cloudinit** for Linux based systems, and **Sysprep** for Windows based system.
-7.  In the **Script** area, either paste the script from another source or type the script directly into the ManageIQ Management Engine interface.
+7.  In the **Script** area, either paste the script from another source or type the script directly into the ManageIQ interface.
 8.  Click **Add**.
 
 Result:
@@ -442,7 +442,7 @@ The default dialogs show all possible parameters for provisioning. To limit the 
 
 #### IPMI Hosts
 
-There are two ways to get the Intelligent Platform Management Interface (IPMI) Host into the VMDB. You can either use the ManageIQ Management Engine's discovery process or add the host using its IP address and credentials.
+There are two ways to get the Intelligent Platform Management Interface (IPMI) Host into the VMDB. You can either use the ManageIQ's discovery process or add the host using its IP address and credentials.
 
 
 ##### Discovering the Management Interface for an IPMI Host
@@ -513,15 +513,15 @@ This procedure shows you how to add a management interface for an IPMI host.
 
 Result:
 
-The IPMI host is added to the ManageIQ Management Engine environment; an operating system can now be provisioned onto it.
+The IPMI host is added to the ManageIQ environment; an operating system can now be provisioned onto it.
 
 
 ### Provisioning a Host
 
-After setting up the IPMI and PXE environments, you are ready to provision a host. Currently, you can only provision in the cluster where the template is located or you can create a template in each cluster and let a ManageIQ Management Engine Automate method automatically switch the selected template in the provision object.
+After setting up the IPMI and PXE environments, you are ready to provision a host. Currently, you can only provision in the cluster where the template is located or you can create a template in each cluster and let a ManageIQ Automate method automatically switch the selected template in the provision object.
 
 **Important**
-A customization template with host-specific script additions is required. Ensure especially that the customization template contains the post-installation callback to enable discovery in ManageIQ Management Engine.
+A customization template with host-specific script additions is required. Ensure especially that the customization template contains the post-installation callback to enable discovery in ManageIQ.
 {: .notice-important}
 
 **Procedure 5.18. To provision a host**
@@ -529,7 +529,7 @@ A customization template with host-specific script additions is required. Ensure
 1.  Navigate to **Infrastructure** → **Hosts**.
 2.  Select a host with IPMI enabled.
 3.  Click ![](doc/quickstart/2007.png) **(Lifecycle)**, then ![](doc/quickstart/1848.png) **(Provision Hosts)**.
-4.  In **Request Information**, type in at least a **First Name** and **Last Name** and an email address. This email is used to send the requester status emails during the provisioning. The other information is optional. If the ManageIQ Management Engine server is configured to use LDAP, you can use the **Look Up** button to populate the other fields based on the email address.
+4.  In **Request Information**, type in at least a **First Name** and **Last Name** and an email address. This email is used to send the requester status emails during the provisioning. The other information is optional. If the ManageIQ server is configured to use LDAP, you can use the **Look Up** button to populate the other fields based on the email address.
 
     ![](doc/quickstart/2341.png)
 
@@ -562,7 +562,7 @@ The provisioning request is sent for approval. For the provisioning to begin, a 
 
 ## Virtual Machines
 
-The heterogeneous virtual machine container and guest support combined with the ability to analyze information inside the virtual machine - such as disk space, patch level or installed applications - provides in-depth information across the virtual environment. This rich set of information enables ManageIQ Management Engine users to improve problem resolution times and effectively manage virtual machines.
+The heterogeneous virtual machine container and guest support combined with the ability to analyze information inside the virtual machine - such as disk space, patch level or installed applications - provides in-depth information across the virtual environment. This rich set of information enables ManageIQ users to improve problem resolution times and effectively manage virtual machines.
 
 The **Virtual Machines** pages display all virtual machines that were discovered by your Server. Note that if you have applied a filter to a user, it will be in effect here. The **Virtual Machines** taskbar is a menu driven set of buttons that provide access to functions related to virtual machines.
 
@@ -618,7 +618,7 @@ Through the console, you are able to view your virtual machines in multiple ways
 
 ### Provisioning
 
-When a virtual machine or cloud instance is provisioned, it goes through multiple phases. First, the request must be made. The request includes ownership information, tags, virtual hardware requirements, the operating system, and any customization of the request. Second, the request must go through an approval phase, either automatic or manual. Finally, the request is executed. This part of provisioning consists of pre-processing and post-processing. Pre-processing acquires IP addresses for the user, creates CMDB instances, and creates the virtual machine or instance based on information in the request. Post-processing activates the CMDB instance and emails the user. The steps for provisioning may be modified at any time using ManageIQ Management Engine.
+When a virtual machine or cloud instance is provisioned, it goes through multiple phases. First, the request must be made. The request includes ownership information, tags, virtual hardware requirements, the operating system, and any customization of the request. Second, the request must go through an approval phase, either automatic or manual. Finally, the request is executed. This part of provisioning consists of pre-processing and post-processing. Pre-processing acquires IP addresses for the user, creates CMDB instances, and creates the virtual machine or instance based on information in the request. Post-processing activates the CMDB instance and emails the user. The steps for provisioning may be modified at any time using ManageIQ.
 
 ![](doc/quickstart/2314.png)
 
@@ -637,7 +637,7 @@ Users provision virtual machines through various methods. One method is to provi
 
     ![](doc/quickstart/2326.png)
 
-    In **Request Information**, type in at least a **First Name** and **Last Name** and an email address. This email is used to send the requester status emails during the provisioning process for items such as auto-approval, quota, provision complete, retirement, request pending approval, and request denied. The other information is optional. If the ManageIQ Management Engine server is configured to use LDAP, you can use the **Look Up** button to populate the other fields based on the email address.
+    In **Request Information**, type in at least a **First Name** and **Last Name** and an email address. This email is used to send the requester status emails during the provisioning process for items such as auto-approval, quota, provision complete, retirement, request pending approval, and request denied. The other information is optional. If the ManageIQ server is configured to use LDAP, you can use the **Look Up** button to populate the other fields based on the email address.
 
     **Note**
     Parameters with a \* next to the label are required to submit the provisioning request. To change the required parameters, see *Customizing Provisioning Dialogs*.
@@ -667,8 +667,8 @@ Users provision virtual machines through various methods. One method is to provi
     4.  Use **VM Naming** to specify a **VM Name** and **VM Description**. When provisioning multiple virtual machines, a number will be appended to the **VM Name**.
 
 10. Click the **Environment** tab to decide where you want the new virtual machines to reside.
-    1.  If provisioning from a template on VMware, you can either let ManageIQ Management Engine decide for you by checking **Choose Automatically**, or select a specific cluster, resource pool, folder, host, and datastore.
-    2.  If provisioning from a template on Red Hat, you can either let ManageIQ Management Engine decide for you by checking **Choose Automatically**, or select a datacenter, cluster, host and datastore.
+    1.  If provisioning from a template on VMware, you can either let ManageIQ decide for you by checking **Choose Automatically**, or select a specific cluster, resource pool, folder, host, and datastore.
+    2.  If provisioning from a template on Red Hat, you can either let ManageIQ decide for you by checking **Choose Automatically**, or select a datacenter, cluster, host and datastore.
 
 11. Click the **Hardware** tab to set hardware options.
 
@@ -689,10 +689,10 @@ Users provision virtual machines through various methods. One method is to provi
 
     ![](doc/quickstart/2336.png)
 
-    1.  To use a customer specification from the Provider, click **Specification**. To select an appropriate template, a list will be provided in the custom specification area. The values that are honored by ManageIQ Management Engine will display.
+    1.  To use a customer specification from the Provider, click **Specification**. To select an appropriate template, a list will be provided in the custom specification area. The values that are honored by ManageIQ will display.
 
         **Note**
-        Any values in the specification that do not show in the ManageIQ Management Engine console's request dialogs will not be used by ManageIQ Management Engine. For example, for Windows operating systems, if you have any run once values in the specification, they will not be used in creating the new virtual machines. Currently, for a Windows operating system, ManageIQ Management Engine honors the unattended GUI, identification, workgroup information, user data, windows options, and server license. If more than one network card is specified, only the first will be used.
+        Any values in the specification that do not show in the ManageIQ console's request dialogs will not be used by ManageIQ. For example, for Windows operating systems, if you have any run once values in the specification, they will not be used in creating the new virtual machines. Currently, for a Windows operating system, ManageIQ honors the unattended GUI, identification, workgroup information, user data, windows options, and server license. If more than one network card is specified, only the first will be used.
         {: .notice-note}
 
         ![](doc/quickstart/2337.png)
@@ -722,7 +722,7 @@ The provisioning request is sent for approval. For the provisioning to begin, a 
 
 #### Approving a Provisioning Request
 
-After a user creates provisioning request, administrators have the ability to approve the request and allow ManageIQ Management Engine to complete virtual machine or instance creation.
+After a user creates provisioning request, administrators have the ability to approve the request and allow ManageIQ to complete virtual machine or instance creation.
 
 **Procedure 5.20. To approve a provisioning request**
 
@@ -738,7 +738,7 @@ The provision request is sent for completion.
 
 ### Controlling Virtual Machines
 
-You can start, stop, and suspend a virtual machine through the ManageIQ Management Engine console. To do this, the following requirements must be met:
+You can start, stop, and suspend a virtual machine through the ManageIQ console. To do this, the following requirements must be met:
 
 -   The virtual machine must be discovered.
 -   The virtual machine must be registered to a host and have a SmartProxy associated with it. It may not be on a repository.
@@ -746,7 +746,7 @@ You can start, stop, and suspend a virtual machine through the ManageIQ Manageme
 
 #### Controlling the Power State of Virtual Machines
 
-Start, stop, and suspend any number of virtual machines through the ManageIQ Management Engine console using the following procedure.
+Start, stop, and suspend any number of virtual machines through the ManageIQ Console using the following procedure.
 
 **Procedure 5.21. To control the power state of virtual machines**
 
@@ -770,7 +770,7 @@ The requested action is initiated.
 
 ### Analyzing Virtual Machines and Templates
 
-Analyze a virtual machine to collect metadata such as user accounts, applications, software patches, and other internal information. If ManageIQ Management Engine is not set up for automatic analysis, perform a manual analysis of a virtual machine. To perform a SmartState analysis, ManageIQ Management Engine requires a running SmartProxy with visibility to the virtual machine's storage location. If the virtual machine is associated with a host or provider, ensure the virtual machine is registered with that system to be properly analyzed; the server requires this information since a snapshot might be created.
+Analyze a virtual machine to collect metadata such as user accounts, applications, software patches, and other internal information. If ManageIQ is not set up for automatic analysis, perform a manual analysis of a virtual machine. To perform a SmartState analysis, ManageIQ requires a running SmartProxy with visibility to the virtual machine's storage location. If the virtual machine is associated with a host or provider, ensure the virtual machine is registered with that system to be properly analyzed; the server requires this information since a snapshot might be created.
 
 **Note**
 SmartState Analysis of a virtual machine requires access to its host. To perform a successful analysis, edit the virtual machine's host and enter the host's authentication credentials.
@@ -798,24 +798,24 @@ Note the following requirements when performing a SmartState Analysis on Red Hat
 
 **NFS**
 
--   The ManageIQ Management Engine Server requires a mount to the NFS Datastore.
+-   The ManageIQ Server requires a mount to the NFS Datastore.
 
 **iSCSI / FCP**
 
 -   Cluster must use full Red Hat Enterprise Linux (not Red Hat Enterprise Virtualization Hypervisor) Hosts.
 -   CFME VM leverages the DirectLUN Disk to connect to each Storage Domain LUN.
--   A ManageIQ Management Engine Appliance *must* reside in each Datacenter with the iSCSI / FCP storage type.
--   Each ManageIQ Management Engine Appliance performing Smart State Analysis requires a *sharable*, *non-bootable* DirectLUN attached for each iSCSI/FCP storage domain. Only one DirectLUN for each storage domain may be mounted at a time.
+-   A ManageIQ Appliance *must* reside in each Datacenter with the iSCSI / FCP storage type.
+-   Each ManageIQ Appliance performing Smart State Analysis requires a *sharable*, *non-bootable* DirectLUN attached for each iSCSI/FCP storage domain. Only one DirectLUN for each storage domain may be mounted at a time.
 
 **Other Notes**
 
--   **Set Server Relationship** - This is required to allow the VM SmartState Analysis job to determine what datacenter a ManageIQ Management Engine Appliance is running in and therefore identify what storage it has access to in a RHEV environment.
-    1.  After setting up a ManageIQ Management Engine Appliance and performing a refresh of the Provider, find the ManageIQ Management Engine Appliance in the **Virtual Machine** accordion list and view its summary screen.
+-   **Set Server Relationship** - This is required to allow the VM SmartState Analysis job to determine what datacenter a ManageIQ Appliance is running in and therefore identify what storage it has access to in a RHEV environment.
+    1.  After setting up a ManageIQ Appliance and performing a refresh of the Provider, find the ManageIQ Appliance in the **Virtual Machine** accordion list and view its summary screen.
     2.  Click **Configuration** → **Edit Server Relationship**.
-    3.  Select the server that relates to this instance of the ManageIQ Management Engine Appliance.
+    3.  Select the server that relates to this instance of the ManageIQ Appliance.
 
 **Important**
-If you attach a DirectLUN disk after configuring the ManageIQ Management Engine Database, access the Appliance in a terminal and run `pvscan`{: .command} to detect the DirectLUN disk. Alternatively, in ManageIQ Management Engine 5.2.1, you can restart the Appliance to detect the disk automatically.
+If you attach a DirectLUN disk after configuring the ManageIQ Database, access the Appliance in a terminal and run `pvscan`{: .command} to detect the DirectLUN disk. Alternatively, you can restart the Appliance to detect the disk automatically.
 {: .notice-important}
 
 
@@ -823,9 +823,9 @@ If you attach a DirectLUN disk after configuring the ManageIQ Management Engine 
 
 There are two additional steps required to perform a SmartState Analysis on Red Hat Enterprise Virtualization Manager 3.0 using iSCSI or FCP storage. NFS storage does not have these requirements.
 
-1.  Enable DirectLUN support for the host and ManageIQ Management Engine Appliance that performs the analysis.
+1.  Enable DirectLUN support for the host and ManageIQ Appliance that performs the analysis.
     -   Enable DirectLUN on host.
-    -   Enable DirectLUN on the ManageIQ Management Engine Appliance. To do this, edit the desired Red Hat Enterprise Virtualization storage and get the LUNID value. Then, on the ManageIQ Management Engine Appliance virtual machine in the Red Hat Enterprise Virtualization user interface, right-click and select **Edit**+**Custom Properties** and enter the following in the **Custom Properties** edit box:
+    -   Enable DirectLUN on the ManageIQ Appliance. To do this, edit the desired Red Hat Enterprise Virtualization storage and get the LUNID value. Then, on the ManageIQ Appliance virtual machine in the Red Hat Enterprise Virtualization user interface, right-click and select **Edit**+**Custom Properties** and enter the following in the **Custom Properties** edit box:
 
         ```
         directlun=<LUN ID>:readonly
@@ -839,19 +839,19 @@ There are two additional steps required to perform a SmartState Analysis on Red 
 
         **Note**
 
-        The ManageIQ Management Engine Appliance must reside in the same data center as the storage you are trying to connect. If you have multiple data centers with iSCSI or FCP storage, you need a ManageIQ Management Engine Appliance in each data center to support virtual machine scanning.
+        The ManageIQ Appliance must reside in the same data center as the storage you are trying to connect. If you have multiple data centers with iSCSI or FCP storage, you need a ManageIQ Appliance in each data center to support virtual machine scanning.
 
-2.  Set Server Relationship - This is required to allow the virtual machine SmartState analysis job to determine which data center a ManageIQ Management Engine Appliance is running and therefore identify what storage it has access to in a Red Hat Enterprise Virtualization environment.
-    1.  After setting up a ManageIQ Management Engine Appliance and performing a refresh of the Provider, find the ManageIQ Management Engine Appliance in the **Virtual Machine** accordion list and view its summary screen.
+2.  Set Server Relationship - This is required to allow the virtual machine SmartState analysis job to determine which data center a ManageIQ Appliance is running and therefore identify what storage it has access to in a Red Hat Enterprise Virtualization environment.
+    1.  After setting up a ManageIQ Appliance and performing a refresh of the Provider, find the ManageIQ Appliance in the **Virtual Machine** accordion list and view its summary screen.
     2.  Click ![](doc/quickstart/1847.png) **(Configuration)**, and then ![](doc/quickstart/2146.png) **(Edit Server Relationship)**
-    3.  Select the server that relates to this instance of the ManageIQ Management Engine Appliance.
+    3.  Select the server that relates to this instance of the ManageIQ Appliance.
 
 
 ##### Upgrades from Red Hat Enterprise Virtualization Manager 3.0 to 3.1
 
-Environments upgrading from Red Hat Enterprise Virtualization Manager 3.0 to 3.1 might encounter issues regarding SSL communications with ManageIQ Management Engine. This issue occurs from version 3.1 due to Apache being used as a front end to handle the SSL requests. The upgrade to 3.1 does not reconfigure the Management System for this. [^[2]^](#ftn.idm50354888)
+Environments upgrading from Red Hat Enterprise Virtualization Manager 3.0 to 3.1 might encounter issues regarding SSL communications with ManageIQ. This issue occurs from version 3.1 due to Apache being used as a front end to handle the SSL requests. The upgrade to 3.1 does not reconfigure the Provider for this. [^[2]^](#ftn.idm50354888)
 
-A change to the Red Hat Enterprise Virtualization Manager configuration allows ManageIQ Management Engine to use SSL to connect rather than the current TLS.
+A change to the Red Hat Enterprise Virtualization Manager configuration allows ManageIQ to use SSL to connect rather than the current TLS.
 
 1.  Log into the Red Hat Enterprise Virtualization Manager server's terminal as the `root`{: .literal} user.
 2.  Modify the `/usr/share/ovirt-engine/service/engine-service.xml.in`{: .filename} file.
@@ -874,20 +874,20 @@ A change to the Red Hat Enterprise Virtualization Manager configuration allows M
 5.  Save the file.
 6.  Restart the Red Hat Enterprise Virtualization Manager server.
 
-In addition, set the **Server Relationship** for ManageIQ Management Engine.
+In addition, set the **Server Relationship** for ManageIQ.
 
-1.  Select the ManageIQ Management Server's virtual machine from **Services** → **Virtual Machines**.
-2.  Go to **Configuration** → **Edit Server Relationship** and select the appropriate ManageIQ Management Engine Server.
+1.  Select the ManageIQ Provider's virtual machine from **Services** → **Virtual Machines**.
+2.  Go to **Configuration** → **Edit Server Relationship** and select the appropriate ManageIQ Server.
 
 
 #### VMware vSphere Prerequisites
 
 
-##### Installing VMware VDDK on ManageIQ Management Engine
+##### Installing VMware VDDK on ManageIQ
 
-Execution of SmartState Analysis on virtual machines within a VMware environment requires the Virtual Disk Development Kit (VDDK). ManageIQ Management Engine supports VDDK 5.5.
+Execution of SmartState Analysis on virtual machines within a VMware environment requires the Virtual Disk Development Kit (VDDK). ManageIQ supports VDDK 5.5.
 
-**Procedure 5.23. To install the VDDK on a ManageIQ Management Engine Appliance**
+**Procedure 5.23. To install the VDDK on a ManageIQ Appliance**
 
 1.  Download VDDK 5.5 (`VMware-vix-disklib-5.5.0-1284542.x86_64.tar.gz`{: .filename} at the time of this writing) from the VMware website.
 
@@ -926,7 +926,7 @@ Execution of SmartState Analysis on virtual machines within a VMware environment
     --the VMware team
     ```
 
-6.  Run `ldconfig`{: .command} in order for ManageIQ Management Engine to find the newly installed VDDK library.
+6.  Run `ldconfig`{: .command} in order for ManageIQ to find the newly installed VDDK library.
 
     **Note**
 
@@ -936,11 +936,11 @@ Execution of SmartState Analysis on virtual machines within a VMware environment
     # ldconfig -p | grep vix
     ```
 
-7.  Restart the ManageIQ Management Engine Appliance.
+7.  Restart the ManageIQ Appliance.
 
 Result:
 
-The VDDK is now installed on the ManageIQ Management Engine Appliance. This enables use of the SmartState Analysis Server Role on the appliance.
+The VDDK is now installed on the ManageIQ Appliance. This enables use of the SmartState Analysis Server Role on the appliance.
 
 * * * * *
 
@@ -953,7 +953,7 @@ Cloud computing provides a set of pooled resources used to create a set of scala
 
 For example, a user might use an instance to store a web server. During peak times of use, the user provisions more cloud resources to maintain the performance of the server. During quiet times, the user reduces the consumption of cloud resources. As a result, the user only uses and pays for the resources used.
 
-ManageIQ Management Engine offers a set of tools for viewing and maintaining cloud providers and their associated resources. Supported cloud providers include:
+ManageIQ offers a set of tools for viewing and maintaining cloud providers and their associated resources. Supported cloud providers include:
 
 -   Amazon EC2 (public cloud)
 -   OpenStack (private cloud)
@@ -961,7 +961,7 @@ ManageIQ Management Engine offers a set of tools for viewing and maintaining clo
 
 ### Adding a Cloud Provider
 
-After initial installation and creation of a ManageIQ Management Engine environment, add cloud providers with the following procedure.
+After initial installation and creation of a ManageIQ environment, add cloud providers with the following procedure.
 
 **Procedure 6.1. To Add a Cloud Provider**
 
@@ -987,12 +987,12 @@ After initial installation and creation of a ManageIQ Management Engine environm
 
 Result:
 
-ManageIQ Management Engine adds a new cloud provider. Use this cloud provider for instance provisioning.
+ManageIQ adds a new cloud provider. Use this cloud provider for instance provisioning.
 
 
 ### Discovering Amazon EC2 Cloud Providers
 
-ManageIQ Management Engine provides the ability to discover cloud providers associated with a particular set of Amazon EC2 account details.
+ManageIQ provides the ability to discover cloud providers associated with a particular set of Amazon EC2 account details.
 
 **Procedure 6.2. To Discover an Amazon Ec2 Cloud Provider**
 
@@ -1003,7 +1003,7 @@ ManageIQ Management Engine provides the ability to discover cloud providers asso
 
 Result:
 
-The Amazon EC2 providers discovery begins. ManageIQ Management Engine adds all cloud providers associated with the chosen account.
+The Amazon EC2 providers discovery begins. ManageIQ adds all cloud providers associated with the chosen account.
 
 
 ### Editing a Cloud Provider
@@ -1031,7 +1031,7 @@ Edit information about a provider such as the name, IP address, and login creden
 
 Result:
 
-ManageIQ Management Engine saves the modified provider details.
+ManageIQ saves the modified provider details.
 
 
 ### Refreshing Cloud Providers
@@ -1047,12 +1047,12 @@ Refresh a cloud provider to find other resources related to it. Ensure the chose
 
 Result:
 
-ManageIQ Management Engine refreshes the details for the chosen cloud providers.
+ManageIQ refreshes the details for the chosen cloud providers.
 
 
 ## Provisioning Instances
 
-Cloud instances follow the same process (Request, Approval, Deployment) as a standard virtual machine from virtualization infrastructure. First, a user makes a request for instances and specifies the image, tags, availability zone and hardware profile flavor. Second, the request goes through the approval phase. Finally, ManageIQ Management Engine executes the request.
+Cloud instances follow the same process (Request, Approval, Deployment) as a standard virtual machine from virtualization infrastructure. First, a user makes a request for instances and specifies the image, tags, availability zone and hardware profile flavor. Second, the request goes through the approval phase. Finally, ManageIQ executes the request.
 
 
 ### Provisioning Instance
@@ -1068,7 +1068,7 @@ Users provision instances from images stored on their cloud provider. This proce
 2.  Click ![](doc/quickstart/2007.png) (**Lifecycle**), then click ![](doc/quickstart/1848.png) **(Provision Instances)**.
 3.  Select an image from the list presented.
 4.  Click **Continue**.
-5.  On the **Request** tab, enter information about this provisioning request. In **Request Information**, type in at least a first and last name and an email address. This email is used to send the requester status emails during the provisioning process for items such as auto-approval, quota, provision complete, retirement, request pending approval, and request denied. The other information is optional. If the ManageIQ Management Engine Server is configured to use LDAP, you can use the **Look Up** button to populate the other fields based on the email address.
+5.  On the **Request** tab, enter information about this provisioning request. In **Request Information**, type in at least a first and last name and an email address. This email is used to send the requester status emails during the provisioning process for items such as auto-approval, quota, provision complete, retirement, request pending approval, and request denied. The other information is optional. If the ManageIQ Server is configured to use LDAP, you can use the **Look Up** button to populate the other fields based on the email address.
 
     **Note**
     Parameters with a \* next to the label are required to submit the provisioning request. To change the required parameters, see *Customizing Provisioning Dialogs*.
@@ -1107,7 +1107,7 @@ The provisioning request is sent for approval. For the provisioning to begin, a 
 
 #### Approving a Provisioning Request
 
-After a user creates provisioning request, administrators have the ability to approve the request and allow ManageIQ Management Engine to complete virtual machine or instance creation.
+After a user creates provisioning request, administrators have the ability to approve the request and allow ManageIQ to complete virtual machine or instance creation.
 
 **Procedure 6.6. To approve a provisioning request**
 
@@ -1126,7 +1126,7 @@ The provision request is sent for completion.
 
 #### Controlling the Power State of an Instance
 
-Start, stop, and suspend an instance through the ManageIQ Management Engine console using the following procedure.
+Start, stop, and suspend an instance through the ManageIQ Console using the following procedure.
 
 **Procedure 6.7. To control the power state of a instance**
 
