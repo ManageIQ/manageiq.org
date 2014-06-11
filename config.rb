@@ -190,13 +190,15 @@ end
 # (Used for imported Markdown documentation in the dev git module)
 helpers do
   alias_method :_link_to, :link_to
+
   def link_to(*args, &block)
+    dev_root = 'documentation/development'
     url_index = block_given? ? 0 : 1
     url = args[url_index]
 
-    if current_page.path.match('documentation/development')
+    if current_page.path.match(dev_root)
       if url.respond_to?('gsub') && url.respond_to?('match') && !url.match(/^http/)
-        args[url_index].gsub!(/\.md$/, "")
+        args[url_index] = "/#{dev_root}/" + url.gsub(/\.md$/, "")
       end
     end
 
