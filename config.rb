@@ -192,7 +192,14 @@ helpers do
   alias_method :_link_to, :link_to
   def link_to(*args, &block)
     url_index = block_given? ? 0 : 1
-    args[url_index].gsub!(/\.md$/, "") unless args[url_index].match(/^http/)
+    url = args[url_index]
+
+    if current_page.path.match('documentation/development')
+      if url.respond_to?('gsub') && url.respond_to?('match') && !url.match(/^http/)
+        args[url_index].gsub!(/\.md$/, "")
+      end
+    end
+
     _link_to(*args, &block)
   end
 end
