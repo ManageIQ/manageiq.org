@@ -85,7 +85,7 @@ Information on the other settings can be found in the *Settings and Operations G
 ##Collecting C & U Data
 1.  Go to **Configure-Configuration-Settings-Zones-Servers**.
 2.  Enable all C & U Roles from the **Server Roles** section.
-3.  Click **Save*.  (It will take a few minutes for the roles to start).
+3.  Click **Save**.  (It will take a few minutes for the roles to start).
 4.  Go to **Configure-Configuration-Settings-Region-C & U Collection**.
 5.  For *Cloud Providers*, check **Collect for All Clusters**.
 6.  For *Infrastructure Providers*, check the required Clusters and Datastores.
@@ -95,6 +95,5 @@ Information on the other settings can be found in the *Settings and Operations G
 1.  Go to **Cloud Intelligence-Reports-Reports**.
 2.  Using the tree, navigate to the type of report you want.
 3.  Click on the report.
-4.  Go to **Configure-Configuration-Settings-Region-C & U Collection**.
 5.  Click **Queue**. (The report will be queued for creation.)
-6.  View the report under **Saved Reports**.
+6.  When the generation is complete, view the report under **Saved Reports**.
