@@ -178,6 +178,23 @@ activate :piwik do |f|
     f.domain = 'analytics.manageiq.org'
 end
 
+
+###
+# Monkey patches
+###
+
+# Monkeypatch Middleman's link_to to remove .md from local files
+# (Used for imported Markdown documentation in the dev git module)
+helpers do
+  alias_method :_link_to, :link_to
+  def link_to(*args, &block)
+    url_index = block_given? ? 0 : 1
+    args[url_index].gsub!(/\.md$/, "") unless args[url_index].match(/^http/)
+    _link_to(*args, &block)
+  end
+end
+
+
 ###
 # Development-only configuration
 ###
