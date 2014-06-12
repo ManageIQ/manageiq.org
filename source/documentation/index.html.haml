@@ -34,10 +34,20 @@ title: Documentation
             %li= link_to lorem.sentence
 
       .col-md-6
-        %h3 Quick cloud tips
-        %ol
-          - 10.times do
-            %li= link_to lorem.sentence
+        :ruby
+          # The top tasks links are auto-generated. To edit the links,
+          # edit the headers in the top-tasks file.
+          tasks_filename = "top-tasks"
+          tasks_md = File.read "#{root}/source/documentation/#{tasks_filename}.html.md"
+          headings = Nokogiri::HTML(markdown_to_html(tasks_md)).css('h2')
+
+        :markdown
+          ### Top tasks
+
+        - if headings
+          %ol
+            - headings.each do |heading|
+              %li= link_to heading.content, "#{tasks_filename}/##{heading.attr('id')}"
 
 
   %section.col-md-12

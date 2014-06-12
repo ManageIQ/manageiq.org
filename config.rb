@@ -195,10 +195,11 @@ helpers do
     dev_root = 'documentation/development'
     url_index = block_given? ? 0 : 1
     url = args[url_index]
+    current_path = '/' + current_page.path.gsub(/[^\/]*$/, '')
 
-    if current_page.path.match(dev_root)
+    if current_path.match(dev_root)
       if url.respond_to?('gsub') && url.respond_to?('match') && !url.match(/^http/)
-        args[url_index] = "/#{dev_root}/" + url.gsub(/\.md$/, "")
+        args[url_index] = current_path + url.gsub(/\.md$/, "")
       end
     end
 
