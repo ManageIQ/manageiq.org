@@ -60,7 +60,7 @@
         - if data.site.legal
           = link_to data.site.legal.text, data.site.legal.link, {class: 'legal'}
 
-      - if data.site.github
+      - if data.site.github && !current_page.path.match(/documentation\/development/)
         .edit-this-page
           - icon = '<i class="icon fa fa-pencil"></i>'
           - source_file = current_page.source_file.sub(root, '')
