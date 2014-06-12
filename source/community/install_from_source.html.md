@@ -37,10 +37,11 @@ Details on installing an image using a quickstart file are available from
     ```
 
 5.  ManageIQ prerequisites are git, libxml2 and libxslt (including headers),
-    postgresql, and memcached. On RHEL and CentOS, install these packages:
+    postgresql, and memcached. sudo should be upgraded to the latest version.
+    On RHEL and CentOS, install these packages:
 
     ```bash
-    yum -y install git libxml2-devel libxslt libxslt-devel
+    yum -y install git libxml2-devel libxslt libxslt-devel sudo
     yum -y install postgresql-server postgresql-devel memcached
     ```
 
@@ -53,19 +54,23 @@ Details on installing an image using a quickstart file are available from
 
 7. To configure Postgres:
 
-   1. Edit `/var/lib/pgsql/data/pg_hba.conf`, comment out everything and add
+   1. Initialize the database:
+      ```bash
+      service postgresql initdb
+      ````
+   2. Edit `/var/lib/pgsql/data/pg_hba.conf`, comment out everything and add
       the following line: 
 
       ````
       local all all trust
       ````
 
-   2. Edit `/var/lib/pgsql/data/postgresql.conf` and add `listening_address '*'`
+   3. Edit `/var/lib/pgsql/data/postgresql.conf` and add 
+      `listening_address '*'`
 
-   3. Initialize and start the database:
+   3. Start the database:
 
       ```bash
-      service postgresql initdb
       service postgresql start
       ````
 
@@ -80,8 +85,8 @@ Details on installing an image using a quickstart file are available from
       psql -c "alter database vmdb_development owner to evm"
       ```
 
-8.  As user miqbuilder, set up the ManageIQ Ruby development environment. We rely
-    on bundler 1.3.5, if your distribution has a newer version of Bundler,
+8.  As user miqbuilder, set up the ManageIQ Ruby development environment. We
+    rely on bundler 1.3.5, if your distribution has a newer version of Bundler,
     remove it:
 
     ```bash
@@ -105,7 +110,7 @@ Details on installing an image using a quickstart file are available from
     ```
 
 10. Ensure that ManageIQ is connecting to the right database. Edit the
-    `config/database.yml` file.  Add the `evm` user for the 
+    `config/database.yml` file.  Add the `evm` user for the
     `vmdb_develeopment` database.
 
     ```
