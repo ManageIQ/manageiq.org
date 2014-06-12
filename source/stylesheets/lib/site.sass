@@ -868,7 +868,7 @@ q
 
 .video-responsive
   // Size of the video in units (not percentage, sadly)
-  $video-size: 500px //45rem
+  $video-size: 560px //45rem
   // Magic number to divide the width by to generate the proper ratio
   $video-aspect: 1.8
   // Space needed for text on the side, relative to the video
@@ -877,7 +877,7 @@ q
 
   max-width: 100%
   width: $video-size
-  height: $video-size / $video-aspect
+  height: ceil($video-size / $video-aspect)
 
   /* Scale based on viewport width if there's not enough space
      for text on the side
