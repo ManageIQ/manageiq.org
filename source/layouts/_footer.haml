@@ -2,9 +2,10 @@
   %section.social-area
     :ruby
       social = {
-        twitter: "http://twitter.com/ManageIQ",
-        facebook: "http://facebook.com/ManageIQ",
-        github: "https://github.com/ManageIQ/",
+        Twitter: "http://twitter.com/ManageIQ",
+        Facebook: "http://facebook.com/ManageIQ",
+        GitHub: "https://github.com/ManageIQ/",
+        YouTube: "",
         #linkedin: "",
         #"google-plus" => "foo"
       }
@@ -16,9 +17,10 @@
           Follow us on
 
         - social.each do |service, url|
-          %a{href:url, class:"social-#{service}"}
-            %i{class:"fa fa-#{service}"}
-            = "#{service}".titlecase
+          - lower = service.downcase
+          %a{href:url, class:"social-#{lower}"}
+            %i{class:"fa fa-#{lower}"}
+            = "#{service}"
 
       %section.right-side
         %span.contact-us
