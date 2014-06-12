@@ -6,7 +6,7 @@ title: Internet Relay Chat (IRC)
 
 The ManageIQ development team uses Internet Relay Chat (IRC) for real-time communication, in the `#manageiq` channel on `irc.freenode.net`.
 
-If you are new to IRC, you can learn more about using it at [IRC help](http://www.irchelp.org/). For guidelines on communicating on IRC, please read the appropriate section in [our community guidelines](community_guidelines). Further suggestions can be found on [Freenode's channel guidelines](http://freenode.net/channel_guidelines.shtml).
+If you are new to IRC, you can learn more about using it at [IRC help](http://www.irchelp.org/). For guidelines on communicating on IRC, please read the appropriate section in [our community guidelines](/community/community_guidelines). Further suggestions can be found on [Freenode's channel guidelines](http://freenode.net/channel_guidelines.shtml).
 
 ## Connecting to IRC
 
