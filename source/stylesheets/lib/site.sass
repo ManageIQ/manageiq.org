@@ -12,6 +12,7 @@ body
 
 h1, h2, h3, h4, h5, h6
   font-weight: 500
+  clear: both
 
 img
   max-width: 100%
@@ -858,3 +859,46 @@ q
   &.level-5
     li li li li li li
       display: none
+
+
+.video
+  border: 1px solid #333
+  border-radius: 1px
+  background-color: #999
+
+.video-responsive
+  // Size of the video in units (not percentage, sadly)
+  $video-size: 560px //45rem
+  // Magic number to divide the width by to generate the proper ratio
+  $video-aspect: 1.8
+  // Space needed for text on the side, relative to the video
+  // (That is, the width of the page should be THIS * VIDEO WIDTH)
+  $video-textspace: 1.75
+
+  max-width: 100%
+  width: $video-size
+  height: ceil($video-size / $video-aspect)
+
+  /* Scale based on viewport width if there's not enough space
+     for text on the side
+  @media screen and (max-width: ($video-size * $video-textspace) - 1)
+    width: calc(100vw)
+    height: calc(100vw / #{$video-aspect})
+    margin-bottom: 1rem
+
+  // Rules to extend responsiveness for right-side videos
+  @at-root .video-side-right
+    @extend .video-responsive
+
+    /* Only float when there's enough space for the text on the left
+    @media screen and (min-width: $video-size * $video-textspace)
+      float: right
+      margin-left: 1rem
+
+  // Rules to extend responsiveness for left-side videos
+  @at-root .video-side-left
+    @extend .video-responsive
+
+    @media screen and (min-width: $video-size * $video-textspace)
+      float: left
+      margin-right: 1rem
