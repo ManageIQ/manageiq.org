@@ -902,3 +902,24 @@ q
     @media screen and (min-width: $video-size * $video-textspace)
       float: left
       margin-right: 1rem
+
+
+=keyframes($name)
+  @-webkit-keyframes #{$name}
+    @content
+  @-moz-keyframes #{$name}
+    @content
+  @-ms-keyframes #{$name}
+    @content
+  @keyframes #{$name}
+    @content
+
++keyframes(fade-from-yellow)
+  0%
+    background: #ff9
+
+  100%
+    background: transparent
+
+\:target
+  +animation(fade-from-yellow 5s ease-out)
