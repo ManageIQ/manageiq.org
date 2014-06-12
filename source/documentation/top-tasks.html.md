@@ -7,7 +7,7 @@
 
 ##Discover VMware Providers
 
-<iframe width="560" height="315" src="//www.youtube-nocookie.com/embed/A30qJOp-AGY" frameborder="0" allowfullscreen class="video video-side-right"></iframe>
+<iframe src="//www.youtube-nocookie.com/embed/A30qJOp-AGY" allowfullscreen="true" class="video video-side-right"></iframe>
 
 1.  Go to **Infrastructure - Providers**.
 2.  Click **Configuration - Discover**
@@ -20,7 +20,7 @@
 
 ##Discover RHEV-M Providers
 
-<iframe width="560" height="315" src="//www.youtube-nocookie.com/embed/piYrBn4DYrw" frameborder="0" allowfullscreen class="video video-side-right"></iframe>
+<iframe src="//www.youtube-nocookie.com/embed/piYrBn4DYrw" allowfullscreen="true" class="video video-side-right"></iframe>
 
 1.  Go to **Infrastructure - Providers**.
 2.  Click **Configuration - Discover**
@@ -34,7 +34,7 @@
 
 ## Add Host Credentials
 
-<iframe width="560" height="315" src="//www.youtube-nocookie.com/embed/gyBkw3cxy2E" frameborder="0" allowfullscreen class="video video-side-right"></iframe>
+<iframe src="//www.youtube-nocookie.com/embed/gyBkw3cxy2E" allowfullscreen="true" class="video video-side-right"></iframe>
 
 (Required to do SmartState Analysis on Virtual Machines on any Infrastructure Provider)
 
@@ -48,7 +48,7 @@
 
 ##Edit Server Settings
 
-<iframe width="560" height="315" src="//www.youtube-nocookie.com/embed/W6xIh8cyYS4" frameborder="0" allowfullscreen class="video video-side-right"></iframe>
+<iframe src="//www.youtube-nocookie.com/embed/W6xIh8cyYS4" allowfullscreen="true" class="video video-side-right"></iframe>
 
 1.  Go to **Configure-Configuration-Settings-Zones-Servers**.
 2.  Click on your ManageIQ Appliance.
@@ -88,7 +88,7 @@ Information on the other settings can be found in the *Settings and Operations G
 
 ##Add Red Hat OpenStack Providers
 
-<iframe width="560" height="315" src="//www.youtube-nocookie.com/embed/d3XHPzXAiuw" frameborder="0" allowfullscreen class="video video-side-right"></iframe>
+<iframe src="//www.youtube-nocookie.com/embed/d3XHPzXAiuw" allowfullscreen="true" class="video video-side-right"></iframe>
 
 1.  Go to **Cloud - Providers**.
 2.  Click **Configuration - Add**.
@@ -110,7 +110,7 @@ Information on the other settings can be found in the *Settings and Operations G
 
 ##Collecting Capacity and Utilizatsion (C&U) Data
 
-<iframe width="560" height="315" src="//www.youtube-nocookie.com/embed/dmqdJc1EPP0" frameborder="0" allowfullscreen class="video video-side-right"></iframe>
+<iframe src="//www.youtube-nocookie.com/embed/dmqdJc1EPP0" allowfullscreen="true" class="video video-side-right"></iframe>
 
 1.  Go to **Configure-Configuration-Settings-Zones-Servers**.
 2.  Enable all C & U Roles from the **Server Roles** section.
