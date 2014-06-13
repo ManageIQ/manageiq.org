@@ -101,8 +101,6 @@ pre, code
   h1
     float: none
 
-    a
-
   .logo
     max-width: 100%
     height: auto
@@ -428,41 +426,60 @@ body.front-page
   display: none
 
 
-.features
+.overview
+  $overview-header-main: 3.25rem
+  $overview-header-sub: 2rem
+  $icon-offset-v: $overview-header-sub + ($overview-header-main - $overview-header-sub) / 2
+  $icon-size: 22px
+  $icon-background-size: 48px
+
+  .intro
+
+    h2
+      margin-bottom: 1rem
+      padding: 0
+      font-size: $overview-header-main
+      padding: 0
+
+  .features
+
+    h2
+      color: #999
+      font-size: 140%
+      font-size: $overview-header-sub
+      font-weight: 500
+      padding-top: $overview-header-main - $overview-header-sub
 
   .feature-item
     position: relative
-    padding-left: 48px
-    background: url(/images/q-glyph.svg) no-repeat 2px 12px
-
-  h2
-    color: #999
-    font-size: 140%
-    font-weight: 500
+    padding-left: $icon-background-size
+    background: url(/images/q-glyph.svg) no-repeat 0.3rem $icon-offset-v
 
   .icon
     @extend .fa
     position: absolute
-    top: 18px
-    left: 0
-    font-size: 22px
+    top: calc(#{$icon-offset-v} + #{($icon-background-size - $icon-size) / 4})
+    left: 0.12rem
+    font-size: $icon-size
     text-align: center
     width: 38px
     color: rgba(white, 0.95)
 
+    /* Note: Some micro-adjustments are needed as we're working with a
+       3rd-party icon font (font-awesome)
+
     &.open-source
       @extend .fa-eye
+      margin-top: -0.5px // Micro-adjustment
 
     &.hybrid-infra
-      top: 19px
       @extend .fa-adjust
 
     &.virtual-lab
-      top: 19px
       @extend .fa-magic
+      margin-top: 1px // Micro-adjustment
 
     &.private-cloud
-      left: 0.5px
       @extend .fa-cloud
 
 
