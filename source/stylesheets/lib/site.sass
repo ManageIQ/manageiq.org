@@ -976,3 +976,29 @@ q
 
 \:target
   +animation(fade-from-yellow 5s ease-out)
+
+
+.fixme
+  color: #c00
+  background-color: #fee
+  position: relative
+  border: 1px solid rgba(#c00,0.25)
+  border-radius: 2px
+  padding-bottom: 2ex
+
+  @at-root p.fixme
+    padding: 1ex 2ex
+
+  &:before
+    pointer-events: none
+    content: "FIXME"
+    font-size: 8rem
+    opacity: 0.125
+    transform: rotate(350deg)
+    -moz-transform: rotate(350deg)
+    -webkit-transform: rotate(350deg)
+    position: absolute
+    left: 0
+    right: 0
+    top: calc(50% - 5rem)
+    text-align: center

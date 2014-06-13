@@ -60,78 +60,92 @@ page_classes: header-page
 
           - when 'ovirt'
             :markdown
-              [Download ManageIQ for oVirt](http://manageiq.org/downloads/ManageIQ-stable-ovirt.ova){: .download-link}
-              to your local computer.
+              1.  [Download ManageIQ for oVirt](http://manageiq.org/downloads/ManageIQ-stable-ovirt.ova){: .download-link}
+                  to your local computer.
 
-              When the file has finished downloading, upload it to
-              an export domain on your oVirt instance by running the
-              following command locally:
+              2.  When the file has finished downloading, upload it to
+                  an export domain on your oVirt instance by running the
+                  following command locally:
 
-              <pre>
-              engine-image-uploader -e $YOUR_EXPORT_DOMAIN --engine=$YOUR_ENGINE_HOST upload ManageIQ-stable-ovirt.ova
-              </pre>
-              Navigate to the "Template Import" tab of your export
-              domain in your oVirt admin console, and import the
-              ManageIQ image template you uploaded.
+                  ~~~bash
+                  engine-image-uploader -e $YOUR_EXPORT_DOMAIN --engine=$YOUR_ENGINE_HOST upload -v -m ManageIQ-stable-ovirt.ova
+                  ~~~
+
+              3.  Navigate to the "Template Import" tab of your export
+                  domain in your oVirt admin console, and import the
+                  ManageIQ image template you uploaded.
+
+              4.  Create a new virtual machine from the ManageIQ
+                  template, and start the VM.
 
 
           - when 'rhev'
             :markdown
-              [Download ManageIQ for Red Hat Enterprise Virtualization](http://manageiq.org/downloads/ManageIQ-stable-ovirt.ova){: .download-link}
-              to your local computer.
+              1.  [Download ManageIQ for Red Hat Enterprise Virtualization](http://manageiq.org/downloads/ManageIQ-stable-ovirt.ova){: .download-link}
+                  to your local computer.
 
-              When the file has finished downloading, upload it to
-              an export domain on your RHEV instance by running the
-              following command locally:
+              2.  When the file has finished downloading, upload it to an
+                  export domain on your RHEV instance by running the
+                  following command locally:
 
-              <pre>
-              rhevm-image-uploader -e $YOUR_EXPORT_DOMAIN --engine=$YOUR_RHEVM_HOST upload ManageIQ-stable-ovirt.ova
-              </pre>
+                  ~~~bash
+                  rhevm-image-uploader -e $YOUR_EXPORT_DOMAIN --engine=$YOUR_RHEVM_HOST upload -v -m ManageIQ-stable-ovirt.ova
+                  ~~~
+
+              3.  Navigate to the "Template Import" tab of your export
+                  domain in your RHEV-M console, and import the
+                  ManageIQ image template you uploaded.
+
+              4.  Create a new virtual machine from the ManageIQ
+                  template, and start the VM.
 
 
           - when 'openstack'
             :markdown
-              Download ManageIQ directly to OpenStack by running
-              this command:
+              1.  Download ManageIQ directly to OpenStack by running
+                  this command:
 
-              <pre>
-              curl -O http://manageiq.org/downloads/ManageIQ-stable-openstack.qc2 && \
-              glance image-create --name "ManageIQ-stable" \
-              --is-public True --disk-format qcow2 \
-              --container-format=bare --file ManageIQ-stable-openstack.qc2
-              </pre>
+                  ~~~bash
+                  curl -O http://manageiq.org/downloads/ManageIQ-stable-openstack.qc2 && \
+                  glance image-create --name "ManageIQ-stable" \
+                  --is-public True --disk-format qcow2 \
+                  --container-format=bare --file ManageIQ-stable-openstack.qc2
+                  ~~~
+
+              2.  Launch a new instance from the ManageIQ image. ManageIQ needs a
+                  minimum of 6GB RAM and a 45GB persistent disk, so choose or create
+                  an instance flavor accordingly.
 
           - when 'vmware'
             :markdown
-              [Download ManageIQ for VMware vSphere](http://manageiq.org/downloads/ManageIQ-stable-vsphere.ova){: .download-link}
-              to your local computer.
+              1.  From the vSphere client, click File → Deploy OVF Template
+                  (or Actions → Deploy OVF Template from the vSphere Web client).
 
-              In the vSphere Client, select File -> Deploy OVF Template.
-              The Deploy OVF Template wizard appear, follow the
-              instructions to upload the template.
+              2.  Enter `http://manageiq.org/downloads/ManageIQ-stable-vsphere.ova`
+                  in the URL field of the resulting dialog window, and select
+                  the location, host and storage you wish to use for the ManageIQ VM.
+
+              3.  Check the box "Power on after deployment" to start the VM
+                  once the deployment is complete.
 
 
         :markdown
           ### Step 2: **First connection and configuration**
 
-          * Create a new virtual machine from the ManageIQ template. ManageIQ
-            needs a minimum of 6GB RAM and 45GB persistent disk.
+          1.  Log into the ManageIQ dashboard by connecting to the new running VM
+              with a web browser, or access the console of your virtual machine.
+              The initial username and password is `admin`/`smartvm`.
 
-          * Log into the ManageIQ dashboard by connecting to the new running VM
-            with a web browser, or access the console of your virtual machine.
-            The initial username and password is `admin`/`smartvm`.
+          2.  There are a number of basic settings, located under
+              "Configure → Configuration" in the web interface, or under
+              "Advanced setting" in the VM console, that you may wish to
+              change when starting ManageIQ for the first time. Among the
+              most common are:
 
-          * There are a number of basic settings, located under 
-            "Configure -> Configuration" in the web interface, or under
-            "Advanced setting" in the VM console, that you may wish to change 
-            when starting ManageIQ for the first time.
-            Among the most common are:
               * Time and date settings
               * DHCP configuration
               * Hostname
               * Admin password
-
-
 
 
           ### Step 3: **Add an infrastructure or cloud provider**
@@ -141,61 +155,46 @@ page_classes: header-page
           about what is running there.
 
           To add a new infrastructure provider (Microsoft SCVMM, RHEV,
-          oVirt or vSphere), navigate to Infrastructure -> Providers.
+          oVirt or vSphere), navigate to Infrastructure → Providers.
           To add a new cloud provider (OpenStack, Amazon EC2), navigate
-          to Clouds -> Providers.
+          to Clouds → Providers.
 
-          Next, click the configuration icon (TODO: include icon here),
-          and "+" to add a new provider.           
+          Next, click the configuration icon (**TODO**: include icon here),
+          and "+" to add a new provider.
 
           * Select your provider type from the drop-down.
-          * If you have multiple zones, select the appropriate one in 
+          * If you have multiple zones, select the appropriate one in
             the drop-down.
           * Type in the username and password of a user with administrative
-            privileges over the provider, click "Validate," and then click 
-            "Add" to add the provider. 
+            privileges over the provider, click "Validate," and then click
+            "Add" to add the provider.
 
           You can also auto-discover providers available on your local network
-          by clicking on the "radar" symbol (TODO: Include logo here). Check
+          by clicking on the "radar" symbol (**TODO**: Include logo here). Check
           the provider type, provide a subnet range of IP addresses to search,
           and ManageIQ will prompt you to add new providers automatically.
 
-          Repeat the process above for the additional Cloud or Infrastructure 
+          Repeat the process above for the additional Cloud or Infrastructure
           providers you wish to manage.
-
-          Consult the [quickstart guide](/documentation/quickstart) for more 
-          detailed information on configuring providers,and on provisioning 
-          virtual machines and cloud instances. 
 
 
           ## What's next?
 
-          **FIXME: This is all very rough. Please overhaul the concepts and content.**
+          ### Consult the docs
 
-          ### Get integrated
-
-          * [enforcing security policies](#FIXME-link)
-          * [managing and empowering users](#FIXME-link)
-          * [effectively use events and alerts](#FIXME-link)
-
-
-          ### Automate some common tasks
-
-          [Some text here about automating common tasks]
-
-          ### Extend your cloud platform
-
-          [Browse the extensions in the market]
-
-          [Highlight a few important / commonly used extensions?]
-
+          * The [quickstart guide](/documentation/quickstart) contains more
+          detailed information on configuring providers,and on provisioning
+          virtual machines and cloud instances.
+          * Much of the information in the downstream
+          [Cloudforms 3.0 docs](https://access.redhat.com/site/documentation/en-US/CloudForms/) applies to ManageIQ.
 
           ### Join the community
           Talk with the developers or others in the community:
 
-          * [get involved](/community)
+          * [Get Involved](/community)
           * [@manageiq](http://twitter.com/manageiq) on Twitter
           * [User forum](http://talk.manageiq.org)
+          * [Ask a question](http://ask.manageiq.org)
           * [Join us on IRC](http://www.ircbeginner.com/) (#manageiq on irc.Freenode.net)
 
 
