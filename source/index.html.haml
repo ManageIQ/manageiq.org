@@ -94,29 +94,6 @@ blog_summary_length: 700
           %li= link_to dtext, "/download/#{dlabel}/"
 
 
-%section.communication
-  .row
-
-    %section.talk-back.col-md-6
-      :markdown
-        ### Want to talk?
-        Talk with ManageIQ developers and users in
-        [our forum](http://talk.manageiq.org).
-
-        We love to hear how people are using our software. Jump in and talk
-        to the developers, help other users of ManageIQ, or get help yourself
-        if you are getting started.
-
-    %section.ask-questions.col-md-6
-      :markdown
-        ### Having issues?
-        Ask a question in [our Q&A forum](http://ask.manageiq.org).
-
-        The awesome ManageIQ community provides help on our Q&A forum and
-        knowledge base. It's a great place to go to look for solutions to your
-        ManageIQ problems - if your question hasn't been asked before, someone
-        here will have the answer.
-
 %section.blog-area
   .row
 
@@ -138,6 +115,32 @@ blog_summary_length: 700
           %ol
             - blog.articles.drop(current_page.data.per_page).take(10).each do |article|
               %li= link_to article.title, article.url
+
+
+%section.communication
+  .row
+
+    %section.talk-back.col-md-6
+      :markdown
+        ### Let’s talk
+        We love to hear how people are using our software. Jump in and
+        talk to the developers, share tips and tricks, talk about how
+        you’re using ManageIQ, and read all about other people's experiences.
+
+        [>> Talk in the forum with people using and developing ManageIQ](http://talk.manageiq.org).
+
+
+    %section.ask-questions.col-md-6
+      :markdown
+        ### Solve issues
+        The ManageIQ community provides help on our Q&A knowledge base.
+        It’s a great place to go to look for solutions to your ManageIQ
+        problems---if your question hasn’t been asked before, someone
+        here will likely know the answer.
+
+        [>> Ask a question or look for an answer on the Q&A site](http://ask.manageiq.org).
+
+        *[Q&A]: Questions and Answers
 
 
 %section.partners-area
