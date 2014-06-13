@@ -74,7 +74,7 @@ Information on the other settings can be found in the *Settings and Operations G
 
 1.  Requirements
     *  NFS: The CloudForms Management Engine Server must be able to mount the NFS Datastore
-    *  iSCSI / FCP: The ManageIQ VM will leverage the Direct LUN Disk to connect to each Storage Domain LUN. A CloudForms Management Engine Appliance MUST reside in each Datacenter with the iSCSI / FCP storage type. On each CloudForms Management Engine Appliance that will be performing Smart State Analysis a â€˜sharableâ€™, â€˜non-bootableâ€™ Direct LUN disk must be attached for each iSCSI/FCP storage domain.
+    *  iSCSI / FCP: The ManageIQ VM will leverage the Direct LUN Disk to connect to each Storage Domain LUN. A CloudForms Management Engine Appliance MUST reside in each Datacenter with the iSCSI / FCP storage type. On each CloudForms Management Engine Appliance that will be performing Smart State Analysis a "sharable", "non-bootable" Direct LUN disk must be attached for each iSCSI/FCP storage domain.
 
      *Important Note*: If the Direct LUN disk is attached after the ManageIQ Database is configured, console into the Appliance and run pvscan so the Direct LUN disk is detected. You can also accomplish this by restarting the ManageIQ Appliance. Note: Only one VM can be connected to a LUN at any time.
 
