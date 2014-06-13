@@ -70,6 +70,8 @@ Information on the other settings can be found in the *Settings and Operations G
 
 ##Run SmartState Analysis on RHEV-M Virtual Machines
 
+<iframe src="//www.youtube-nocookie.com/embed/xRMP8M4JHzs" allowfullscreen="true" class="video video-side-right"></iframe>
+
 1.  Requirements
     *  NFS: The CloudForms Management Engine Server must be able to mount the NFS Datastore
     *  iSCSI / FCP: The ManageIQ VM will leverage the Direct LUN Disk to connect to each Storage Domain LUN. A CloudForms Management Engine Appliance MUST reside in each Datacenter with the iSCSI / FCP storage type. On each CloudForms Management Engine Appliance that will be performing Smart State Analysis a â€˜sharableâ€™, â€˜non-bootableâ€™ Direct LUN disk must be attached for each iSCSI/FCP storage domain.
@@ -122,6 +124,8 @@ Information on the other settings can be found in the *Settings and Operations G
 
 
 ##Generate a Report
+
+<iframe src="//www.youtube-nocookie.com/embed/2_79u4xYdxs" allowfullscreen="true" class="video video-side-right"></iframe>
 
 1.  Go to **Cloud Intelligence-Reports-Reports**.
 2.  Using the tree, navigate to the type of report you want.
