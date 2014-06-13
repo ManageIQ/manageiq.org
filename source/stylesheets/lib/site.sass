@@ -483,6 +483,38 @@ body.front-page
       @extend .fa-cloud
 
 
+section.communication
+  $communication-icon-size: 5rem
+  $communication-icon-width: 8rem
+  $communication-approx-header-height: 2.5rem
+
+  h2
+    line-height: $communication-approx-header-height
+
+  .talk-back,
+  .ask-questions
+    padding-left: $communication-icon-width
+    position: relative
+
+    &:before
+      @extend .fa
+      font-size: $communication-icon-size
+      position: absolute
+      top: ($communication-icon-size - $communication-approx-header-height) / 2
+      left: 0
+      width: $communication-icon-width
+      text-align: center
+      opacity: 0.25
+
+  .talk-back
+    &:before
+      @extend .fa-comments
+      @extend .fa-flip-horizontal
+
+  .ask-questions
+    &:before
+      @extend .fa-question-circle
+
 #content.container
   max-width: 100%
   margin: 0 auto
