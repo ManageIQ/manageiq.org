@@ -9,27 +9,27 @@
 
 <iframe src="//www.youtube-nocookie.com/embed/A30qJOp-AGY" allowfullscreen="true" class="video video-side-right"></iframe>
 
-1.  Go to **Infrastructure - Providers**.
-2.  Click **Configuration - Discover**
+1.  Go to **Infrastructure** → **Providers**.
+2.  Click **Configuration** → **Discover**
 2.  Click **VMware vCenter** and put in the IP Range.
 3.  Wait a few minutes and refresh the browser page.
-3.  Click the new Provider, then click **Configure - Edit this Provider**.
+3.  Click the new Provider, then click **Configure** → **Edit this Provider**.
 3.  Add and validate the credentials.
-3.  Click **Configure - Refresh Relationships**.
+3.  Click **Configure** → **Refresh Relationships**.
 
 
 ##Discover RHEV-M Providers
 
 <iframe src="//www.youtube-nocookie.com/embed/piYrBn4DYrw" allowfullscreen="true" class="video video-side-right"></iframe>
 
-1.  Go to **Infrastructure - Providers**.
-2.  Click **Configuration - Discover**
+1.  Go to **Infrastructure** → **Providers**.
+2.  Click **Configuration** → **Discover**
 2.  Click **RHEVM** and put in the IP Range.
 3.  Wait a few minutes and refresh the browser page.
-2.  Click the new Provider, then click **Configure - Edit this Provider**.
+2.  Click the new Provider, then click **Configure** → **Edit this Provider**.
 3.  Add and validate the credentials for the Provider and for the C & U Database.
 3.  Click **Save**.
-3.  Click **Configure - Refresh Relationships**.
+3.  Click **Configure** → **Refresh Relationships**.
 
 
 ## Add Host Credentials
@@ -38,12 +38,12 @@
 
 (Required to do SmartState Analysis on Virtual Machines on any Infrastructure Provider)
 
-1.  Go to **Infrastructure - Hosts**.
+1.  Go to **Infrastructure** → **Hosts**.
 2.  Click on the Host to edit.
-3.  Click **Configuration - Edit this Host**.
+3.  Click **Configuration** → **Edit this Host**.
 4.  Add the Host's Credentials, then click **Validate**.
 5.  Click **Save**.
-6.  Click **Configuration - Perform SmartState Analysis**.
+6.  Click **Configuration** → **Perform SmartState Analysis**.
 
 
 ##Edit Server Settings
@@ -63,9 +63,9 @@ Information on the other settings can be found in the *Settings and Operations G
 1.  Fulfill the Requirements (install VMware vddk on Appliance).
 2.  Confirm that credentials are valid for the Hosts.
 3.  Confirm that SmartProxy Server Role is enabled and running.
-3.  From **Infrastructure - Virtual Machines**, click on a Virtual Machine.
-4.  Click **Configure - Perform SmartState Analysis**.
-4.  Optional - schedule SmartState Analysis.  See GUIDE LINK.
+3.  From **Infrastructure** → **Virtual Machines**, click on a Virtual Machine.
+4.  Click **Configure** → **Perform SmartState Analysis**.
+4.  Optional** → **schedule SmartState Analysis.  See GUIDE LINK.
 
 
 ##Run SmartState Analysis on RHEV-M Virtual Machines
@@ -81,33 +81,33 @@ Information on the other settings can be found in the *Settings and Operations G
 2.  Set Server Relationship
     *  Perform a Refresh on the Provider where the ManageIQ resides.
     *  Select the ManageIQ Appliance.
-    *  Click **Configuration - Edit Server Relationship**.
+    *  Click **Configuration** → **Edit Server Relationship**.
     *  Select the ManageIQ Appliance from the drop down.
 
-3.  From **Infrastructure - Virtual Machines**, click on a Virtual Machine.
-4.  Click **Configure - Perform SmartState Analysis**.
+3.  From **Infrastructure** → **Virtual Machines**, click on a Virtual Machine.
+4.  Click **Configure** → **Perform SmartState Analysis**.
 
 
 ##Add Red Hat OpenStack Providers
 
 <iframe src="//www.youtube-nocookie.com/embed/d3XHPzXAiuw" allowfullscreen="true" class="video video-side-right"></iframe>
 
-1.  Go to **Cloud - Providers**.
-2.  Click **Configuration - Add**.
+1.  Go to **Cloud** → **Providers**.
+2.  Click **Configuration** → **Add**.
 2.  For **Type**, select **OpenStack**.
 3.  Type in the **Host Name** and **IP Address**.
 3.  Add and validate the credentials (must be admin user for the Admin Tenant).
 3.  Click **Save**.
-3.  Click **Configure - Refresh Relationships**.
+3.  Click **Configure** → **Refresh Relationships**.
 
 
 ##Discover Amazon EC2 Providers
 
-1.  Go to **Cloud - Providers**.
-2.  Click **Configuration - Discover**.
+1.  Go to **Cloud** → **Providers**.
+2.  Click **Configuration** → **Discover**.
 3.  Type in the **User Name** and **Password**.
 3.  Click **Start**.  ManageIQ will adds all cloud providers associated with this account.
-3.  Click **Configure - Refresh Relationships**.
+3.  Click **Configure** → **Refresh Relationships**.
 
 
 ##Collecting Capacity and Utilization (C&U) Data
