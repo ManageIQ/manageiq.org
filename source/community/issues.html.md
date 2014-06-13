@@ -10,6 +10,7 @@ welcome contributions and proposed changes for all of them.
 * [Report a security issue](/community/security_issue)
 * [Report an issue with the website](https://github.com/ManageIQ/manageiq.org/issues/new)
 
-
+For more on github issues and how to get the most out of them, check out the
+[github issues guide](https://guides.github.com/features/issues/)
 
 
