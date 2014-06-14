@@ -150,32 +150,18 @@ page_classes: header-page
 
           ### Step 3: **Add an infrastructure or cloud provider**
 
-          Now that you are up and running, you can connect your first
-          infrastructure or cloud provider and start gathering data
-          about what is running there.
+          Now that your ManageIQ Appliance is up and running, it's time to connect up
+          with your Providers (Cloud or Infrastructure) and gather data about them.
 
-          To add a new infrastructure provider (Microsoft SCVMM, RHEV,
-          oVirt or vSphere), navigate to Infrastructure → Providers.
+          To discover a new infrastructure provider (Microsoft SCVMM, RHEV,
+          oVirt, or vSphere), navigate to Infrastructure → Providers. Click
+          Configuration → Discover, select the type and enter an IP Range.
           To add a new cloud provider (OpenStack, Amazon EC2), navigate
-          to Clouds → Providers.
+          to Clouds → Providers. Click Configuration → Discover, select the type and
+          enter an IP Range.
 
-          Next, click the configuration icon (**TODO**: include icon here),
-          and "+" to add a new provider.
+          
 
-          * Select your provider type from the drop-down.
-          * If you have multiple zones, select the appropriate one in
-            the drop-down.
-          * Type in the username and password of a user with administrative
-            privileges over the provider, click "Validate," and then click
-            "Add" to add the provider.
-
-          You can also auto-discover providers available on your local network
-          by clicking on the "radar" symbol (**TODO**: Include logo here). Check
-          the provider type, provide a subnet range of IP addresses to search,
-          and ManageIQ will prompt you to add new providers automatically.
-
-          Repeat the process above for the additional Cloud or Infrastructure
-          providers you wish to manage.
 
 
           ## What's next?
@@ -186,7 +172,8 @@ page_classes: header-page
           detailed information on configuring providers,and on provisioning
           virtual machines and cloud instances.
           * Much of the information in the downstream
-          [Cloudforms 3.0 docs](https://access.redhat.com/site/documentation/en-US/CloudForms/) applies to ManageIQ.
+          [Cloudforms 3.0 docs](https://access.redhat.com/site/documentation/en-US/CloudForms/)
+          applies to ManageIQ.
 
           ### Join the community
           Talk with the developers or others in the community:
