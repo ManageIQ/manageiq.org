@@ -35,17 +35,11 @@ title: Documentation
         :ruby
           # The top tasks links are auto-generated. To edit the links,
           # edit the headers in the top-tasks file.
-          tasks_filename = "top-tasks"
-          tasks_md = File.read "#{root}/source/documentation/#{tasks_filename}.html.md"
-          headings = Nokogiri::HTML(markdown_to_html(tasks_md)).css('h2')
 
         :markdown
           ### Top tasks
 
-        - if headings
-          %ol
-            - headings.each do |heading|
-              %li= link_to heading.content, "#{tasks_filename}/##{heading.attr('id')}"
+        = doc_toc "top-tasks"
 
 
   %section.col-md-12
