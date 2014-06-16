@@ -52,7 +52,7 @@ Details on installing an image using a quickstart file are available from
     chkconfig memcached on
     ````
 
-7. To configure Postgres:
+7. Configure Postgres
 
    1. Initialize the database:
 
