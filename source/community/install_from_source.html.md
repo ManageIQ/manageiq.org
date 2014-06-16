@@ -1,4 +1,4 @@
-## Installing ManageIQ from source
+## Install ManageIQ from source
 
 To get started developing ManageIQ, or to deploy on an OS other than CentOS
 or Red Hat Enterprise Linux (RHEL), there are a few steps to get started.
