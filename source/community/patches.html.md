@@ -82,3 +82,4 @@ branch, commit and push a new version to `origin/[branchname]`.
 [ManageIQ Coding Style and Standards](/documentation/development/coding_style_and_standards)
 
 * TODO: [ManageIQ Continuous Integration](CI server view)
+{:.fixme}
