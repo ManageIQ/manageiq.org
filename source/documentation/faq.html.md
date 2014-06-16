@@ -206,7 +206,7 @@ other users of ManageIQ.
 For example, if you create a set of scripts to enforce an approval chain
 for VM creation in your platform, and you think that this might be
 useful to others, you can export these rule-sets, and distribute them on
-github. (instructions for sending link)[Send us the link to your
+GitHub. (instructions for sending link)[Send us the link to your
 repository], and we will include it in the collection of community
 modules available in [the marketplace](/marketplace).
 

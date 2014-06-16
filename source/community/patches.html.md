@@ -7,7 +7,7 @@ additions should be discussed on the [developer
 forum](http://talk.manageiq.org) and any member of the maintainer team
 can accept and integrate a patch
 
-For those new to github, the basic process for submitting a pull request is:
+For those new to GitHub, the basic process for submitting a pull request is:
 
 1.  On github.com, fork [the manageiq
     repository](https://github.com/ManageIQ/manageiq) into your own namespace
@@ -59,7 +59,7 @@ For those new to github, the basic process for submitting a pull request is:
     {: .notice-note}
 
 5.  When you are ready to submit your work for review, push your branch to
-    github:
+    GitHub:
 
     ```shell
     git push -u origin [branchname](:[remote branchname] if name needs to change)
