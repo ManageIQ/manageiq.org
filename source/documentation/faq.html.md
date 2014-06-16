@@ -148,6 +148,7 @@ and cloud platforms. These images are built with CentOS 6.5.
 ## Does ManageIQ integrate with Chef, Puppet, CFEngine, Foreman, SaltStack, Ansible?
 
 **FIXME**
+{:.fixme}
 
 
 ## Does ManageIQ support Docker?
@@ -189,6 +190,7 @@ the foreseeable future.
 ## Who is using ManageIQ?
 
 **FIXME**: TBD (perhaps to be dropped?)
+{:.fixme}
 
 
 ## How do you pronounce ManageIQ?
