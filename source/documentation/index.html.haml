@@ -22,30 +22,29 @@ title: Documentation
 
     .row
 
-      .col-md-6
+      .col-md-4
         :markdown
-          ### First use walkthrough
-
-          * [Getting Started](getting-started)
+          ### Get Started!
 
           Jump right in to ManageIQ by
           [discovering infrastructure and cloud providers](getting-started#discovering-providers),
           [viewing details about your Virtual Machines](getting-started#virtual-machines),
           and [provisioning Virtual Machines](getting-started#virtual-machines).
 
+          [>> Read all of **Getting Started**](getting-started)
+
+      .col-md-8
+        :markdown
+          ### Top tasks
+
           Then, dig into the User Guides and check out [Top Tasks](top-tasks) for
           even more ways to use ManageIQ to control your cloud and
           infrastructure.
 
-      .col-md-6
-        :ruby
-          # The top tasks links are auto-generated. To edit the links,
-          # edit the headers in the top-tasks file.
+        -# Note: The top tasks links are auto-generated.
+        -# To edit the links, edit the headers in the `top-tasks.html.md` file.
 
-        :markdown
-          ### Top tasks
-
-        = doc_toc "top-tasks"
+        = doc_toc "top-tasks", "two-columns"
 
 
   %section.col-md-12
