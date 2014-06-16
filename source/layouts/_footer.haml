@@ -13,30 +13,35 @@
     .row
 
       %section.left-side
-        %span.join-us
-          Follow us on
+        #follow-us.follow-us
 
-        - social.each do |service, url|
-          - lower = service.downcase
-          %a{href:url, class:"social-#{lower}"}
-            %i{class:"fa fa-#{lower}"}
-            = "#{service}"
+          %span.follow-us-text
+            Follow:
+
+          - social.each do |service, url|
+            - lower = service.downcase
+            %a(href="#{url}" class="social-#{lower}" title="Follow us on #{service}" data-toggle="tooltip")
+              %i(class="fa fa-#{lower}")
+              %span.label= "#{service}"
 
       %section.right-side
-        %span.contact-us
-          Contact us via
-        %a(href="mailto:contact@manageiq.org")
-          %i.fa.fa-envelope
-          email
-        %a(href="/community/irc/")
-          %i.fa.fa-irc
-          IRC
-        %a(href="http://talk.manageiq.org/")
-          %i.fa.fa-comments.fa-flip-horizontal
-          forum
-        %a(href="http://ask.manageiq.org/")
-          %i.fa.fa-question-circle
-          Q&amp;A
+        .contact-us
+
+          %span.contact-us-text
+            Contact:
+
+          %a(href="mailto:contact@manageiq.org")
+            %i.fa.fa-envelope
+            %span.label email
+          %a(href="/community/irc/")
+            %i.fa.fa-irc
+            %span.label IRC
+          %a(href="http://talk.manageiq.org/")
+            %i.fa.fa-comments.fa-flip-horizontal
+            %span.label forum
+          %a(href="http://ask.manageiq.org/")
+            %i.fa.fa-question-circle
+            %span.label Q&amp;A
 
 %footer#footer
 
