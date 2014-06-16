@@ -1,4 +1,4 @@
-## Installing ManageIQ from source
+## Install ManageIQ from source
 
 To get started developing ManageIQ, or to deploy on an OS other than CentOS
 or Red Hat Enterprise Linux (RHEL), there are a few steps to get started.
@@ -8,23 +8,24 @@ file](https://github.com/ManageIQ/manageiq/blob/master/build/kickstarts/base.ks.
 Details on installing an image using a quickstart file are available from
 [the Kickstart page on Fedora](http://fedoraproject.org/wiki/Anaconda/Kickstart).
 
-1.  For RHEL, make sure you have the following channel enabled:
+{:.steps}
+1.  For RHEL, make sure you have `rhel-6-server-rpms` channel enabled.
 
     ```
-    rhel-6-server-rpms
+    rhn-channel --add --channel=rhel-6-server-rpms --user=(your RHN login) --passord=(password)
     ```
 
 2.  As root, add the miqbuilder user
 
-    ``` bash
+    ```bash
     useradd miqbuilder
     passwd miqbuilder
     ```
 
 3.  For both RHEL and CentOS, download and install the epel (Extra Packages
     for Enterprise Linux) package
-   
-    ```
+
+    ```bash
     wget http://mirror.nexcess.net/epel/6/i386/epel-release-6-8.noarch.rpm
     yum -y install epel-release-6-8.noarch.rpm
     ```
@@ -32,7 +33,7 @@ Details on installing an image using a quickstart file are available from
 4.  `miqbuilder` should be set to use `sudo`. Add the following line to
     /etc/sudoers with the command `visudo`:
 
-    ```
+    ```bash
     miqbuilder ALL=(ALL) ALL
     ```
 
@@ -52,20 +53,22 @@ Details on installing an image using a quickstart file are available from
     chkconfig memcached on
     ````
 
-7. To configure Postgres:
+7. Configure Postgres
 
    1. Initialize the database:
+
       ```bash
       service postgresql initdb
       ````
-   2. Edit `/var/lib/pgsql/data/pg_hba.conf`, comment out everything and add
-      the following line: 
 
-      ````
+   2. Edit `/var/lib/pgsql/data/pg_hba.conf`, comment out everything and add
+      the following line:
+
+      ````bash
       local all all trust
       ````
 
-   3. Edit `/var/lib/pgsql/data/postgresql.conf` and add 
+   3. Edit `/var/lib/pgsql/data/postgresql.conf` and add
       `listening_address '*'`
 
    3. Start the database:
@@ -118,5 +121,5 @@ Details on installing an image using a quickstart file are available from
     bin/rake evm:start
     ```
 
-You should now be able to access the ManageIQ console at `<IP_ADDRESS>:3000`,
-if you set the listening_addresses '*' in `/var/lib/pgsql/data/postgres.conf`
+You should now be able to access the ManageIQ console at **\<IP_ADDRESS\>:3000**,
+if you set `listening_addresses '*'` in `/var/lib/pgsql/data/postgres.conf`.
