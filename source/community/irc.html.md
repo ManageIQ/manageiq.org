@@ -10,7 +10,7 @@ communication, in the `#manageiq` channel on `irc.freenode.net`.
 If you are new to IRC, you can learn more about using it at [IRC
 help](http://www.irchelp.org/). For guidelines on communicating on IRC,
 please read the appropriate section in [our community
-guidelines](/community/community_guidelines/#irc). Further suggestions
+guidelines](/community/community-guidelines/#irc). Further suggestions
 can be found on [Freenode's channel
 guidelines](http://freenode.net/channel_guidelines.shtml).
 
