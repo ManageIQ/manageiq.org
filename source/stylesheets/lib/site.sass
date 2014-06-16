@@ -1033,3 +1033,19 @@ dl
 
   dd + dd
     margin-top: 1rem
+
+
+.two-columns
+
+  @media screen and (min-width: 50rem)
+    &
+      -moz-columns: 2
+      columns: 2
+      -moz-column-gap: 6ex
+      column-gap: 6ex
+
+
+      /* A hack to be sure items stay in columns
+      li a
+        display: inline-block
+        vertical-align: top
