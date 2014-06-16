@@ -177,4 +177,4 @@ blog_summary_length: 700
         - partners.each do |partner, val|
           %li
             %a.partner{href:val[1], class:partner}
-              %img{src:"/images/partners/#{partner}.svg", width:val[0], alt:partner}
+              %img{src:"/images/partners/#{partner}.svg", width:val[0], alt:partner.to_s.gsub(/_/, ' ')}
