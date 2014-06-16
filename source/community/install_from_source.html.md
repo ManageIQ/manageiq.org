@@ -8,10 +8,10 @@ file](https://github.com/ManageIQ/manageiq/blob/master/build/kickstarts/base.ks.
 Details on installing an image using a quickstart file are available from
 [the Kickstart page on Fedora](http://fedoraproject.org/wiki/Anaconda/Kickstart).
 
-1.  For RHEL, make sure you have the following channel enabled:
+1.  For RHEL, make sure you have `rhel-6-server-rpms` channel enabled.
 
     ```
-    rhel-6-server-rpms
+    rhn-channel --add --channel=rhel-6-server-rpms --user=(your RHN login) --passord=(password)
     ```
 
 2.  As root, add the miqbuilder user
