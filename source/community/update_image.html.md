@@ -2,7 +2,7 @@
 ## Updating your ManageIQ image
 
 The ManageIQ image you have downloaded and deployed contains a copy of the
-source code cloned from github.
+source code cloned from GitHub.
 
 To update the application to the latest revision, you can follow these
 simple steps:
@@ -13,7 +13,7 @@ simple steps:
    application is in `/var/www/miq/vmdb` - updating the application is as
    simple as running `git pull` - you now have the latest ManageIQ source code.
 
-To propose a pull request, you can now fork ManageIQ on github, and push to
+To propose a pull request, you can now fork ManageIQ on GitHub, and push to
 your fork before proposing:
 
 ```
