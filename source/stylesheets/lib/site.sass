@@ -657,17 +657,13 @@ pre
   text-align: center
 
   h2
-    font-size: 175%
+    font-size: 2.75rem
     opacity: 0.75
 
   .partners
     display: block
-    margin: 1em 0 0
     overflow: hidden
     padding: 0
-
-    @media screen and (min-width: 800px)
-      padding: 0 1em
 
     &, & li
       list-style: none
@@ -679,12 +675,15 @@ pre
 
   .partner
     display: inline-block
-    padding: 18px 24px
+    padding: 22px 22px 0
     vertical-align: middle
-    transition: 400ms all
+    transition: 600ms all
 
     &, & img
       @extend %responsive-image
+
+    &:hover
+      transition: 400ms all
 
     &:not(:hover)
       @extend %grayscale
