@@ -1,4 +1,4 @@
-# ManageIQ Quickstart
+# Getting Started with ManageIQ
 {: .no_toc}
 
 1. TOC goes here
@@ -18,7 +18,7 @@ Use the **Providers** taskbar to manage the existence of your providers and to i
 
 The ManageIQ Console uses virtual thumbnails to describe providers. Each thumbnail contains four quadrants by default. This allows a user to glance at a provider for a quick view of its number of hosts and authentication status.
 
-![](doc/quickstart/2189.png)
+![](doc/getting-started/2189.png)
 
 1.  Top left quadrant: Number of hosts
 2.  Bottom left quadrant: Management system software
@@ -28,9 +28,9 @@ The ManageIQ Console uses virtual thumbnails to describe providers. Each thumbna
 
 |Icon|Description|
 |:--:|:----------|
-|![](doc/quickstart/2190.png)|Validated: Valid authentication credentials have been added.|
-|![](doc/quickstart/2191.png)|Invalid: Authentication credentials are invalid.|
-|![](doc/quickstart/2192.png)|Unknown: Authentication status is unknown or no credentials have been entered.|
+|![](doc/getting-started/2190.png)|Validated: Valid authentication credentials have been added.|
+|![](doc/getting-started/2191.png)|Invalid: Authentication credentials are invalid.|
+|![](doc/getting-started/2192.png)|Unknown: Authentication status is unknown or no credentials have been entered.|
 
 
 ### Discovering Providers
@@ -40,14 +40,14 @@ After initial creation of a ManageIQ environment, discover the providers in your
 **Procedure 5.1. To Discover Providers by Subnet Range**
 
 1.  Navigate to **Infrastructure** → **Providers**.
-2.  Click ![](doc/quickstart/1847.png) **(Configuration)**, then click ![](doc/quickstart/2119.png) **(Discover Infrastructure Providers)**.
+2.  Click ![](doc/getting-started/1847.png) **(Configuration)**, then click ![](doc/getting-started/2119.png) **(Discover Infrastructure Providers)**.
 3.  Check the type of provider to discover.
 
-    ![](doc/quickstart/2195.png)
+    ![](doc/getting-started/2195.png)
 
 4.  Type in a **Subnet Range** of IP addresses staring with a **From Address** and ending with a **To Address**. The cursor automatically advances as you complete each octet.
 
-    ![](doc/quickstart/2196.png)
+    ![](doc/getting-started/2196.png)
 
 5.  Click **Start** to confirm the discovery process.
 
@@ -62,7 +62,7 @@ If you are not able to use ManageIQ's discovery process, you can add providers t
 **Procedure 5.2. To Add a Provider**
 
 1.  Navigate to **Infrastructure** → **Providers**.
-2.  Click ![](doc/quickstart/1847.png) **(Configuration)**, then click ![](doc/quickstart/1848.png) **(Add a New Infrastructure Provider)**.
+2.  Click ![](doc/getting-started/1847.png) **(Configuration)**, then click ![](doc/getting-started/1848.png) **(Add a New Infrastructure Provider)**.
 3.  Type in the **Name** of the provider to add. The **Name** is how the device is labeled in the console.
 4.  Select the **Type** of provider: **Red Hat Enterprise Virtualization Manager** or **VMware vCenter**.
 5.  Type in the **Host Name**, and **IP Address** of the provider to add.
@@ -88,7 +88,7 @@ Edit information about a provider such as the name, IP address, and login creden
 
 1.  Navigate to **Infrastructure** → **Providers**.
 2.  Click the provider to edit.
-3.  Click ![](doc/quickstart/1847.png) **(Configuration)**, and then ![](doc/quickstart/1851.png) **(Edit Selected Infrastructure Provider)**.
+3.  Click ![](doc/getting-started/1847.png) **(Configuration)**, and then ![](doc/getting-started/1851.png) **(Edit Selected Infrastructure Provider)**.
 4.  In **Basic Info**, edit the following:
     -   Use **Name** to set an easily identifiable name for the provider.
     -   Use **Host Name** to specify the hostname for the device.
@@ -99,7 +99,7 @@ Edit information about a provider such as the name, IP address, and login creden
 
 5.  Use **Credentials** to provide login credentials required for the provider.
 
-    ![](doc/quickstart/2198.png)
+    ![](doc/getting-started/2198.png)
 
     -   Use **User ID** to specify a login name.
     -   Use **Password** to specify the password for the **User ID**.
@@ -125,7 +125,7 @@ Refresh a provider to find other resources related to it. Use **Refresh** after 
 
 1.  Navigate to **Infrastructure** → **Providers**.
 2.  Check the providers to refresh.
-3.  Click ![](doc/quickstart/1847.png) **(Configuration)**, and then ![](doc/quickstart/2003.png) **(Refresh Relationships and Power States)**.
+3.  Click ![](doc/getting-started/1847.png) **(Configuration)**, and then ![](doc/getting-started/2003.png) **(Refresh Relationships and Power States)**.
 4.  Click **OK** to confirm the refresh.
 
 Result:
@@ -141,11 +141,11 @@ The **Hosts** page under **Infrastructure** displays the hosts discovered in you
 Any applied filters will be in effect here.
 {: .notice-note}
 
-![](doc/quickstart/2212.png)
+![](doc/getting-started/2212.png)
 
 After adding or sorting your hosts, click on one to examine it more closely and see its virtual machines, SmartProxy settings, and properties.
 
-![](doc/quickstart/2222.png)
+![](doc/getting-started/2222.png)
 
 1.  Top left quadrant: Number of virtual machines on this host
 2.  Bottom left quadrant: Virtual machine software
@@ -154,9 +154,9 @@ After adding or sorting your hosts, click on one to examine it more closely and 
 
 |Icon|Description|
 |:--:|:----------|
-|![](doc/quickstart/2190.png)|Validated: Valid authentication credentials have been added.|
-|![](doc/quickstart/2191.png)|Invalid: Authentication credentials are invalid.|
-|![](doc/quickstart/2192.png)|Unknown: Authentication status is unknown or no credentials have been entered.|
+|![](doc/getting-started/2190.png)|Validated: Valid authentication credentials have been added.|
+|![](doc/getting-started/2191.png)|Invalid: Authentication credentials are invalid.|
+|![](doc/getting-started/2192.png)|Unknown: Authentication status is unknown or no credentials have been entered.|
 
 
 ### Requirements for Provisioning a Host
@@ -189,10 +189,10 @@ The following procedure connects to a PXE server and adds its details to ManageI
 **Procedure 5.6. To connect to a PXE server**
 
 1.  Navigate to **Infrastructure** → **PXE**.
-2.  Click ![](doc/quickstart/1847.png) (**Configuration**), then ![](doc/quickstart/1848.png) (**Add a New PXE Server**).
+2.  Click ![](doc/getting-started/1847.png) (**Configuration**), then ![](doc/getting-started/1848.png) (**Add a New PXE Server**).
 3.  In **Basic Information**, type a **Name** that will be meaningful in your environment.
 
-    ![](doc/quickstart/2316.png)
+    ![](doc/getting-started/2316.png)
 
 4.  For **Depot Type**, select either **Network File System** (NFS) or **Samba**. The fields to enter in the dialog depend on the **Depot Type**.
     -   For NFS, type in the **URI**, **Access URL**, **PXE Directory**, **Windows Images Directory** and **Customization Directory**. When you provision, ManageIQ writes a text file to the **PXE Directory**. The file is named after the MAC address of the NIC that is assigned to the virtual machine. It contains where to get the kernel and initrd image. This file is removed after a successful provision. The **Windows Images Directory** is where the files are located on your NFS for the provisioning of Windows operating systems. The **Customization Directory** is where your Kickstart and Sysprep files are located.
@@ -200,7 +200,7 @@ The following procedure connects to a PXE server and adds its details to ManageI
 
 5.  For **PXE Image Menus**, type the **filename** for the PXE Boot menu.
 6.  Click **Add**.
-7.  Select the new PXE server from the tree on the left, and click ![](doc/quickstart/1847.png) (**Configuration**), then ![](doc/quickstart/2003.png) (**Refresh**) to see your existing images.
+7.  Select the new PXE server from the tree on the left, and click ![](doc/getting-started/1847.png) (**Configuration**), then ![](doc/getting-started/2003.png) (**Refresh**) to see your existing images.
 
 Result:
 
@@ -220,12 +220,12 @@ The following procedure creates a system image type for PXE servers.
 1.  Navigate to **Infrastructure** → **PXE**.
 2.  Click the **System Image Types** accordion.
 
-    ![](doc/quickstart/2318.png)
+    ![](doc/getting-started/2318.png)
 
-3.  Click ![](doc/quickstart/1847.png) **Configuration**, then ![](doc/quickstart/1848.png) **(Add a new System Image Type)**.
+3.  Click ![](doc/getting-started/1847.png) **Configuration**, then ![](doc/getting-started/1848.png) **(Add a new System Image Type)**.
 4.  In **Basic Information**, type in a **Name** and select a **Type**.
 
-    ![](doc/quickstart/2317.png)
+    ![](doc/getting-started/2317.png)
 
     -   Use **Host** if you want this image type to only apply to hosts.
     -   Use **Vm** if you want this image type to only apply to virtual machines.
@@ -250,14 +250,14 @@ The following procedure sets the image type for a chosen PXE image.
 
 1.  Navigate to **Infrastructure** → **PXE**.
 2.  Click the **PXE Servers** accordion and select the image that you want to set a type for.
-3.  Click ![](doc/quickstart/1847.png) **(Configuration)**, then ![](doc/quickstart/1851.png) **(Edit this PXE Image)**.
+3.  Click ![](doc/getting-started/1847.png) **(Configuration)**, then ![](doc/getting-started/1851.png) **(Edit this PXE Image)**.
 4.  From the **Basic Information** area, select the correct type. If this PXE image will be used as the **Windows Boot Environment**, check **Windows Boot Environment**. At the time of this writing, only one PXE Image can be identified as the **Windows Boot Environment**. Therefore, checking one as the **Windows Boot Environment**, will remove that from any other PXE image with that check.
 
-    ![](doc/quickstart/2319.png)
+    ![](doc/getting-started/2319.png)
 
 5.  Click **Save**.
 
-    ![](doc/quickstart/2320.png)
+    ![](doc/getting-started/2320.png)
 
 Result:
 
@@ -289,7 +289,7 @@ The following procedure adds an ISO Datastore from your Red Hat Enterprise Virtu
 
 1.  Navigate to **Infrastructure** → **PXE**.
 2.  Click the **ISO Datastores** accordion.
-3.  Click ![](doc/quickstart/1847.png) **(Configuration)**, ![](doc/quickstart/1848.png) **(Add a new ISO Datastore)**.
+3.  Click ![](doc/getting-started/1847.png) **(Configuration)**, ![](doc/getting-started/1848.png) **(Add a new ISO Datastore)**.
 4.  Select the **Red Hat Enterprise Virtualization Manager** Provider hosting the ISO Datastore.
 5.  Click **Add**.
 
@@ -306,7 +306,7 @@ The following procedure refreshes the chosen ISO datastore and updates ManageIQ 
 
 1.  Navigate to **Infrastructure** → **PXE**.
 2.  Click the **ISO Datastores** accordion, and select an ISO datastore.
-3.  Click ![](doc/quickstart/1847.png) **(Configuration)**, then click ![](doc/quickstart/2003.png) **(Refresh)**.
+3.  Click ![](doc/getting-started/1847.png) **(Configuration)**, then click ![](doc/getting-started/2003.png) **(Refresh)**.
 
 Result:
 
@@ -321,10 +321,10 @@ The following procedure creates a system image type for ISO Servers.
 
 1.  Navigate to **Infrastructure** → **PXE**.
 2.  Click the **System Image Types** accordion.
-3.  Click ![](doc/quickstart/1847.png) **(Configuration)**, then ![](doc/quickstart/1848.png) **(Add a new System Image Type)**.
+3.  Click ![](doc/getting-started/1847.png) **(Configuration)**, then ![](doc/getting-started/1848.png) **(Add a new System Image Type)**.
 4.  In **Basic Information**, type in a **Name** and select a **Type**.
 
-    ![](doc/quickstart/2317.png)
+    ![](doc/getting-started/2317.png)
 
     -   Use **Host** if you want this image type to only apply to hosts.
     -   Use **Vm** if you want this image type to only apply to virtual machines.
@@ -332,7 +332,7 @@ The following procedure creates a system image type for ISO Servers.
 
 5.  Click **Add**.
 
-    ![](doc/quickstart/2322.png)
+    ![](doc/getting-started/2322.png)
 
 Result:
 
@@ -351,10 +351,10 @@ The following procedure sets the image type for an ISO image.
 
 1.  Navigate to **Infrastructure** → **PXE**.
 2.  Click the **PXE Servers** accordion, and select the image that you want to set a type for.
-3.  Click ![](doc/quickstart/1847.png) **(Configuration)**, then ![](doc/quickstart/1851.png) **(Edit this ISO Image)**.
+3.  Click ![](doc/getting-started/1847.png) **(Configuration)**, then ![](doc/getting-started/1851.png) **(Edit this ISO Image)**.
 4.  From the **Basic Information** area, select the correct **Type**.
 
-    ![](doc/quickstart/2323.png)
+    ![](doc/getting-started/2323.png)
 
 5.  Click **Save**.
 
@@ -419,10 +419,10 @@ The following procedure adds a customization template to ManageIQ.
 
 1.  Navigate to **Infrastructure** → **PXE**.
 2.  Click the **Customization Templates** accordion.
-3.  Click ![](doc/quickstart/1847.png) **(Configuration)**, then ![](doc/quickstart/1848.png) **(Add a New Customization Template)**.
+3.  Click ![](doc/getting-started/1847.png) **(Configuration)**, then ![](doc/getting-started/1848.png) **(Add a New Customization Template)**.
 4.  In **Basic Information**, type in a **Name** and **Description**.
 
-    ![](doc/quickstart/2325.png)
+    ![](doc/getting-started/2325.png)
 
 5.  Select the **Image Type** dropdown. This list should include the PXE image types you created.
 6.  In **Type**, select **Kickstart** or **Cloudinit** for Linux based systems, and **Sysprep** for Windows based system.
@@ -450,7 +450,7 @@ Use the following procedure to discover the management interface for any IPMI ho
 **Procedure 5.15. To discover the management interface for a IPMI host**
 
 1.  Navigate to **Infrastructure** → **Hosts**.
-2.  Click ![](doc/quickstart/1847.png) **(Configuration)**, then ![](doc/quickstart/2119.png) **(Discover Hosts)**.
+2.  Click ![](doc/getting-started/1847.png) **(Configuration)**, then ![](doc/getting-started/2119.png) **(Discover Hosts)**.
 3.  In **Discover**, check **IPMI**.
 4.  Optionally, in **IPMI Credentials**, type in a **User ID** and **Password**.
 
@@ -478,7 +478,7 @@ After discovering an IPMI host, add the credentials using the following procedur
 
 1.  Navigate to **Infrastructure** → **Hosts**.
 2.  Click on the host you want to edit.
-3.  Click ![](doc/quickstart/1847.png) **(Configuration)**, and then ![](doc/quickstart/1851.png) **(Edit this Host)**.
+3.  Click ![](doc/getting-started/1847.png) **(Configuration)**, and then ![](doc/getting-started/1851.png) **(Edit this Host)**.
 4.  In the **Credentials** area, **IPMI** tab, type in the IPMI credentials
     1.  Use **User ID** to specify a login ID.
     2.  Use **Password** to specify the password for the user ID.
@@ -499,7 +499,7 @@ This procedure shows you how to add a management interface for an IPMI host.
 **Procedure 5.17. Add the management interface for the IPMI host**
 
 1.  Navigate to **Infrastructure** → **Hosts**.
-2.  Click ![](doc/quickstart/1847.png) **(Configuration)**, then ![](doc/quickstart/1848.png) **(Add a New Host)**.
+2.  Click ![](doc/getting-started/1847.png) **(Configuration)**, then ![](doc/getting-started/1848.png) **(Add a New Host)**.
 3.  In **Basic Information**, type in a **Name** and the **IPMI IP address**.
 4.  In the **Credentials** area, under **IPMI** tab, type in the IPMI credentials
     1.  Use **User ID** to specify a login ID.
@@ -526,14 +526,14 @@ A customization template with host-specific script additions is required. Ensure
 
 1.  Navigate to **Infrastructure** → **Hosts**.
 2.  Select a host with IPMI enabled.
-3.  Click ![](doc/quickstart/2007.png) **(Lifecycle)**, then ![](doc/quickstart/1848.png) **(Provision Hosts)**.
+3.  Click ![](doc/getting-started/2007.png) **(Lifecycle)**, then ![](doc/getting-started/1848.png) **(Provision Hosts)**.
 4.  In **Request Information**, type in at least a **First Name** and **Last Name** and an email address. This email is used to send the requester status emails during the provisioning. The other information is optional. If the ManageIQ server is configured to use LDAP, you can use the **Look Up** button to populate the other fields based on the email address.
 
-    ![](doc/quickstart/2341.png)
+    ![](doc/getting-started/2341.png)
 
 5.  On the **Purpose** page, select the appropriate tags for the provisioned host.
 
-    ![](doc/quickstart/2342.png)
+    ![](doc/getting-started/2342.png)
 
 6.  On the **Catalog** page, select the hosts to provision.
     -   In the **Host** area, select the hosts you want to provision
@@ -546,7 +546,7 @@ A customization template with host-specific script additions is required. Ensure
 
 8.  On the **Schedule** page, decide if you want the provisioning to begin as soon as it is approved, or at a specific time.
 
-    ![](doc/quickstart/2343.png)
+    ![](doc/getting-started/2343.png)
 
     -   In **Schedule Info**, choose if you want the provisioning to begin as soon as it is approved, or at a specific time. If you select **Schedule**, you will be prompted to enter a date and time.
     -   Check **Stateless** if you do not want the files deleted after the provision completes. A stateless provision does not write to the disk so it will need the PXE files on the next boot.
@@ -564,7 +564,7 @@ The heterogeneous virtual machine container and guest support combined with the 
 
 The **Virtual Machines** pages display all virtual machines that were discovered by your Server. Note that if you have applied a filter to a user, it will be in effect here. The **Virtual Machines** taskbar is a menu driven set of buttons that provide access to functions related to virtual machines.
 
-![](doc/quickstart/2124.png)
+![](doc/getting-started/2124.png)
 
 1.  History button
 2.  Refresh screen button
@@ -579,7 +579,7 @@ The **Virtual Machines** pages display all virtual machines that were discovered
 
 Console uses **Virtual Thumbnails** to describe virtual machines and templates. Each thumbnail contains four quadrants by default. This allows you to glance at a virtual machine for a quick view of its contents.
 
-![](doc/quickstart/2137.png)
+![](doc/getting-started/2137.png)
 
 1.  Top left quadrant: Operating system of the Virtual Machine
 2.  Bottom left quadrant: Virtual Machine Hosts software
@@ -588,14 +588,14 @@ Console uses **Virtual Thumbnails** to describe virtual machines and templates. 
 
 |Icon|Description|
 |:--:|:----------|
-|![](doc/quickstart/2138.png)|**Template**: Virtual Template|
-|![](doc/quickstart/2139.png)|**Retired**: Virtual Machine has been retired|
-|![](doc/quickstart/2140.png)|**Archived**: Virtual Machine has no Host or Datastore associated with it.|
-|![](doc/quickstart/2141.png)|**Orphaned**: Virtual Machine has no Host but does have a Datastore associated with it.|
-|![](doc/quickstart/2142.png)|**Disconnected**: Virtual Machine is disconnected.|
-|![](doc/quickstart/2143.png)|**On**: Virtual Machine is powered on.|
-|![](doc/quickstart/2144.png)|**Off**: Virtual Machine is powered off.|
-|![](doc/quickstart/2145.png)|**Suspended**: Virtual Machine has been suspended.|
+|![](doc/getting-started/2138.png)|**Template**: Virtual Template|
+|![](doc/getting-started/2139.png)|**Retired**: Virtual Machine has been retired|
+|![](doc/getting-started/2140.png)|**Archived**: Virtual Machine has no Host or Datastore associated with it.|
+|![](doc/getting-started/2141.png)|**Orphaned**: Virtual Machine has no Host but does have a Datastore associated with it.|
+|![](doc/getting-started/2142.png)|**Disconnected**: Virtual Machine is disconnected.|
+|![](doc/getting-started/2143.png)|**On**: Virtual Machine is powered on.|
+|![](doc/getting-started/2144.png)|**Off**: Virtual Machine is powered off.|
+|![](doc/getting-started/2145.png)|**Suspended**: Virtual Machine has been suspended.|
 
 
 The **Virtual Machines** page has three accordions organizing your virtual machines and templates in different ways. All of these accordions share a set of common controls
@@ -618,7 +618,7 @@ Through the console, you are able to view your virtual machines in multiple ways
 
 When a virtual machine or cloud instance is provisioned, it goes through multiple phases. First, the request must be made. The request includes ownership information, tags, virtual hardware requirements, the operating system, and any customization of the request. Second, the request must go through an approval phase, either automatic or manual. Finally, the request is executed. This part of provisioning consists of pre-processing and post-processing. Pre-processing acquires IP addresses for the user, creates CMDB instances, and creates the virtual machine or instance based on information in the request. Post-processing activates the CMDB instance and emails the user. The steps for provisioning may be modified at any time using ManageIQ.
 
-![](doc/quickstart/2314.png)
+![](doc/getting-started/2314.png)
 
 
 #### Provisioning a Virtual Machine from a Template
@@ -628,12 +628,12 @@ Users provision virtual machines through various methods. One method is to provi
 **Procedure 5.19. To provision a virtual machine from a template**
 
 1.  Navigate to **Infrastructure** → **Virtual Machines**.
-2.  Click ![](doc/quickstart/2007.png) **(Lifecycle)**, and then ![](doc/quickstart/1848.png) **(Provision)**.
+2.  Click ![](doc/getting-started/2007.png) **(Lifecycle)**, and then ![](doc/getting-started/1848.png) **(Provision)**.
 3.  Select a template from the list presented.
 4.  Click **Continue**.
 5.  On the **Request** tab, enter information about this provisioning request.
 
-    ![](doc/quickstart/2326.png)
+    ![](doc/getting-started/2326.png)
 
     In **Request Information**, type in at least a **First Name** and **Last Name** and an email address. This email is used to send the requester status emails during the provisioning process for items such as auto-approval, quota, provision complete, retirement, request pending approval, and request denied. The other information is optional. If the ManageIQ server is configured to use LDAP, you can use the **Look Up** button to populate the other fields based on the email address.
 
@@ -646,7 +646,7 @@ Users provision virtual machines through various methods. One method is to provi
 8.  For templates on VMware providers:
     1.  For **Provision Type**, select **NetApp**, **VMware**, or **PXE**.
 
-        ![](doc/quickstart/2328.png)
+        ![](doc/getting-started/2328.png)
 
         1.  If **VMware** is selected, check **Linked Clone** if you want to create a linked clone to the virtual machine instead of a full clone. Since a snapshot is required to create a linked clone, this box is only enabled if a snapshot is present. Select the snapshot you want to use for the linked clone.
         2.  If **PXE** is selected, select a PXE **Server** and **Image** to use for provisioning
@@ -670,7 +670,7 @@ Users provision virtual machines through various methods. One method is to provi
 
 11. Click the **Hardware** tab to set hardware options.
 
-    ![](doc/quickstart/2330.png)
+    ![](doc/getting-started/2330.png)
 
     1.  In **VM Hardware**, set the number of CPUs, amount of memory, and disk format: thin, pre-allocated/thick or same as the provisioning template (default).
     2.  For VMware provisioning, set the **VM Limits** of CPU and memory the virtual machine can use.
@@ -678,14 +678,14 @@ Users provision virtual machines through various methods. One method is to provi
 
 12. Click **Network** to set the vLan adapter. Additional networking settings that are internal to the operating system appear on the Customize tab.
 
-    ![](doc/quickstart/2335.png)
+    ![](doc/getting-started/2335.png)
 
     1.  In **Network Adapter Information**, select the **vLan**.
 
 13. Click **Customize** to select how you might want to customize the operating system of the new virtual machine. These options vary based on the *operating system* of the template.
 14. For Windows provisioning:
 
-    ![](doc/quickstart/2336.png)
+    ![](doc/getting-started/2336.png)
 
     1.  To use a customer specification from the Provider, click **Specification**. To select an appropriate template, a list will be provided in the custom specification area. The values that are honored by ManageIQ will display.
 
@@ -693,7 +693,7 @@ Users provision virtual machines through various methods. One method is to provi
         Any values in the specification that do not show in the ManageIQ console's request dialogs will not be used by ManageIQ. For example, for Windows operating systems, if you have any run once values in the specification, they will not be used in creating the new virtual machines. Currently, for a Windows operating system, ManageIQ honors the unattended GUI, identification, workgroup information, user data, windows options, and server license. If more than one network card is specified, only the first will be used.
         {: .notice-note}
 
-        ![](doc/quickstart/2337.png)
+        ![](doc/getting-started/2337.png)
 
         To modify the specification, check **Override Specification Values**.
 
@@ -709,7 +709,7 @@ Users provision virtual machines through various methods. One method is to provi
     1.  In **Schedule Info**, choose if you want the provisioning to begin as soon as it is approved, or at a specific time. If you select **Schedule**, you will be prompted to enter a date and time.
     2.  In **Lifespan**, select if you want to power on the virtual machines after they are created, and if you want to set a retirement date. If you select a retirement period, you will be prompted for when you want a retirement warning.
 
-        ![](doc/quickstart/2338.png)
+        ![](doc/getting-started/2338.png)
 
 17. Click **Submit**.
 
@@ -727,7 +727,7 @@ After a user creates provisioning request, administrators have the ability to ap
 1.  Navigate to **Services** → **Requests**.
 2.  Click on the request you want to approve.
 3.  Type in a **Reason** for the approval.
-4.  Click ![](doc/quickstart/1852.png) **(Approve this request)**.
+4.  Click ![](doc/getting-started/1852.png) **(Approve this request)**.
 
 Result:
 
@@ -750,14 +750,14 @@ Start, stop, and suspend any number of virtual machines through the ManageIQ Con
 
 1.  Navigate to **Infrastructure** → **Virtual Machines**.
 2.  Check the virtual machines that you want to change the power state for.
-3.  Click ![](doc/quickstart/1998.png) (**Power Operations**). Note that the only operations that will be available are the ones that apply to the virtual machines' current power state.
+3.  Click ![](doc/getting-started/1998.png) (**Power Operations**). Note that the only operations that will be available are the ones that apply to the virtual machines' current power state.
 4.  Click the button for the power operation you want.
-    1.  Click ![](doc/quickstart/1999.png) (**Power On**) to start the selected virtual machines.
-    2.  Click ![](doc/quickstart/2000.png) (**Power Off**) to stop the selected virtual machines.
-    3.  Click ![](doc/quickstart/2004.png) (**Suspend**) to suspend the selected virtual machines.
-    4.  Click ![](doc/quickstart/2001.png) (**Reset**) to stop the selected virtual machines
-    5.  Click ![](doc/quickstart/2002.png) (**Shutdown Guest**) to stop the guest operating system.
-    6.  Click ![](doc/quickstart/2003.png) (**Restart Guest**) to restart the guest operating system.
+    1.  Click ![](doc/getting-started/1999.png) (**Power On**) to start the selected virtual machines.
+    2.  Click ![](doc/getting-started/2000.png) (**Power Off**) to stop the selected virtual machines.
+    3.  Click ![](doc/getting-started/2004.png) (**Suspend**) to suspend the selected virtual machines.
+    4.  Click ![](doc/getting-started/2001.png) (**Reset**) to stop the selected virtual machines
+    5.  Click ![](doc/getting-started/2002.png) (**Shutdown Guest**) to stop the guest operating system.
+    6.  Click ![](doc/getting-started/2003.png) (**Restart Guest**) to restart the guest operating system.
 
 5.  Click **OK** to confirm the choice you selected.
 
@@ -779,7 +779,7 @@ SmartState Analysis of a virtual machine requires access to its host. To perform
 1.  Navigate to **Infrastructure** → **Virtual Machines**.
 2.  Click the accordion for the items to analyze.
 3.  Check the **Virtual Machines** and **Templates** to analyze.
-4.  Click ![](doc/quickstart/1847.png) **(Configuration)**, and then ![](doc/quickstart/2147.png) **(Perform SmartState Analysis)** on the taskbar.
+4.  Click ![](doc/getting-started/1847.png) **(Configuration)**, and then ![](doc/getting-started/2147.png) **(Perform SmartState Analysis)** on the taskbar.
 5.  Click **OK** to confirm.
 
 Result:
@@ -841,7 +841,7 @@ There are two additional steps required to perform a SmartState Analysis on Red 
 
 2.  Set Server Relationship - This is required to allow the virtual machine SmartState analysis job to determine which data center a ManageIQ Appliance is running and therefore identify what storage it has access to in a Red Hat Enterprise Virtualization environment.
     1.  After setting up a ManageIQ Appliance and performing a refresh of the Provider, find the ManageIQ Appliance in the **Virtual Machine** accordion list and view its summary screen.
-    2.  Click ![](doc/quickstart/1847.png) **(Configuration)**, and then ![](doc/quickstart/2146.png) **(Edit Server Relationship)**
+    2.  Click ![](doc/getting-started/1847.png) **(Configuration)**, and then ![](doc/getting-started/2146.png) **(Edit Server Relationship)**
     3.  Select the server that relates to this instance of the ManageIQ Appliance.
 
 
@@ -964,7 +964,7 @@ After initial installation and creation of a ManageIQ environment, add cloud pro
 **Procedure 6.1. To Add a Cloud Provider**
 
 1.  Navigate to **Clouds** → **Providers**.
-2.  Click ![](doc/quickstart/1847.png) **(Configuration)**, then click ![](doc/quickstart/1848.png) **(Add a New Cloud Provider)**.
+2.  Click ![](doc/getting-started/1847.png) **(Configuration)**, then click ![](doc/getting-started/1848.png) **(Add a New Cloud Provider)**.
 3.  Enter a **Name** for the provider.
 4.  Select the **Type** of cloud provider.
     -   If selecting an **Amazon EC2**, select an **Amazon Region**.
@@ -995,7 +995,7 @@ ManageIQ provides the ability to discover cloud providers associated with a part
 **Procedure 6.2. To Discover an Amazon Ec2 Cloud Provider**
 
 1.  Navigate to **Clouds** → **Providers**.
-2.  Click ![](doc/quickstart/1847.png) **(Configuration)**, then click ![](doc/quickstart/2119.png) **(Discover Cloud Providers)**.
+2.  Click ![](doc/getting-started/1847.png) **(Configuration)**, then click ![](doc/getting-started/2119.png) **(Discover Cloud Providers)**.
 3.  Enter your Amazon EC2 **User ID** and **Password**. Reenter your password in the **Verify Password** field.
 4.  Click **Start**.
 
@@ -1012,7 +1012,7 @@ Edit information about a provider such as the name, IP address, and login creden
 
 1.  Navigate to **Clouds** → **Providers**.
 2.  Click the cloud provider to edit.
-3.  Click ![](doc/quickstart/1847.png) **(Configuration)**, and then ![](doc/quickstart/1851.png) **(Edit Selected Cloud Provider)**.
+3.  Click ![](doc/getting-started/1847.png) **(Configuration)**, and then ![](doc/getting-started/1851.png) **(Edit Selected Cloud Provider)**.
 4.  Edit the **Basic Information**. This varies depending on the **Type** of provider.
 
     **Note**
@@ -1040,7 +1040,7 @@ Refresh a cloud provider to find other resources related to it. Ensure the chose
 
 1.  Navigate to **Clouds** → **Providers**.
 2.  Select the checkboxes for the cloud providers to refresh.
-3.  Click ![](doc/quickstart/1847.png) **(Configuration)**, and then ![](doc/quickstart/2003.png) **(Refresh Relationships and Power States)**.
+3.  Click ![](doc/getting-started/1847.png) **(Configuration)**, and then ![](doc/getting-started/2003.png) **(Refresh Relationships and Power States)**.
 4.  Click **OK** to confirm the refresh.
 
 Result:
@@ -1063,7 +1063,7 @@ Users provision instances from images stored on their cloud provider. This proce
 **Procedure 6.5. To provision an instance from an image**
 
 1.  Navigate to **Clouds** → **Instances**.
-2.  Click ![](doc/quickstart/2007.png) (**Lifecycle**), then click ![](doc/quickstart/1848.png) **(Provision Instances)**.
+2.  Click ![](doc/getting-started/2007.png) (**Lifecycle**), then click ![](doc/getting-started/1848.png) **(Provision Instances)**.
 3.  Select an image from the list presented.
 4.  Click **Continue**.
 5.  On the **Request** tab, enter information about this provisioning request. In **Request Information**, type in at least a first and last name and an email address. This email is used to send the requester status emails during the provisioning process for items such as auto-approval, quota, provision complete, retirement, request pending approval, and request denied. The other information is optional. If the ManageIQ Server is configured to use LDAP, you can use the **Look Up** button to populate the other fields based on the email address.
@@ -1112,7 +1112,7 @@ After a user creates provisioning request, administrators have the ability to ap
 1.  Navigate to **Services** → **Requests**.
 2.  Click on the request you want to approve.
 3.  Type in a **Reason** for the approval.
-4.  Click ![](doc/quickstart/1852.png) **(Approve this request)**.
+4.  Click ![](doc/getting-started/1852.png) **(Approve this request)**.
 
 Result:
 
@@ -1131,12 +1131,12 @@ Start, stop, and suspend an instance through the ManageIQ Console using the foll
 1.  Navigate to **Cloud** → **Instance**.
 2.  Click the instance to change the power state.
 3.  Click **Power Operations**, then click the button for the desired power operation.
-    1.  Click ![](doc/quickstart/1999.png) (**Power On**) to start the selected instances.
-    2.  Click ![](doc/quickstart/2000.png) (**Power Off**) to stop the selected instances.
-    3.  Click ![](doc/quickstart/2004.png) (**Suspend**) to suspend the selected instances.
-    4.  Click ![](doc/quickstart/2001.png) (**Reset**) to stop the selected instances.
-    5.  Click ![](doc/quickstart/2002.png) (**Stop Guest**) to stop the guest operating system.
-    6.  Click ![](doc/quickstart/2003.png) (**Restart Guest**) to restart the guest operating system.
+    1.  Click ![](doc/getting-started/1999.png) (**Power On**) to start the selected instances.
+    2.  Click ![](doc/getting-started/2000.png) (**Power Off**) to stop the selected instances.
+    3.  Click ![](doc/getting-started/2004.png) (**Suspend**) to suspend the selected instances.
+    4.  Click ![](doc/getting-started/2001.png) (**Reset**) to stop the selected instances.
+    5.  Click ![](doc/getting-started/2002.png) (**Stop Guest**) to stop the guest operating system.
+    6.  Click ![](doc/getting-started/2003.png) (**Restart Guest**) to restart the guest operating system.
 
 4.  Click **OK** to confirm the choice you selected.
 
