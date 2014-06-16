@@ -16,7 +16,7 @@ Details on installing an image using a quickstart file are available from
 
 2.  As root, add the miqbuilder user
 
-    ``` bash
+    ```bash
     useradd miqbuilder
     passwd miqbuilder
     ```
@@ -24,7 +24,7 @@ Details on installing an image using a quickstart file are available from
 3.  For both RHEL and CentOS, download and install the epel (Extra Packages
     for Enterprise Linux) package
 
-    ```
+    ```bash
     wget http://mirror.nexcess.net/epel/6/i386/epel-release-6-8.noarch.rpm
     yum -y install epel-release-6-8.noarch.rpm
     ```
@@ -32,7 +32,7 @@ Details on installing an image using a quickstart file are available from
 4.  `miqbuilder` should be set to use `sudo`. Add the following line to
     /etc/sudoers with the command `visudo`:
 
-    ```
+    ```bash
     miqbuilder ALL=(ALL) ALL
     ```
 
@@ -55,13 +55,15 @@ Details on installing an image using a quickstart file are available from
 7. To configure Postgres:
 
    1. Initialize the database:
+
       ```bash
       service postgresql initdb
       ````
+
    2. Edit `/var/lib/pgsql/data/pg_hba.conf`, comment out everything and add
       the following line:
 
-      ````
+      ````bash
       local all all trust
       ````
 
