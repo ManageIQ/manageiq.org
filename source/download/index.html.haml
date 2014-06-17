@@ -30,8 +30,7 @@ page_classes: header-page
 
         .row
           - data.deploy_types.reject {|d| d == deploy_type}.each do |dlabel, dname|
-            - dtext = "<i class='download-arrow'></i>#{dname}"
-            .col-sm-5= link_to dtext, "/download/#{dlabel}/", {class: "alert-link"}
+            .col-sm-5= link_to dname, "/download/#{dlabel}/", {class: "download-choice alert-link"}
 
 
 %section.installation-steps
@@ -47,9 +46,8 @@ page_classes: header-page
 
         .row
           - data.deploy_types.each do |dlabel, dname|
-            - dtext = "<i class='download-arrow'></i>#{dname}"
             .col-md-4.col-sm-6
-              %h5= link_to dtext, "/download/#{dlabel}/"
+              %h5= link_to dname, "/download/#{dlabel}/", class: "download-choice"
 
 
       - if defined? deploy_type

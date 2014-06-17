@@ -541,19 +541,28 @@ section.communication
       // restricted (it's used when it's needed to add a gutter)
       padding: 0
 
+
 .download-icon
   @extend .fa
   @extend .fa-download
+
 
 .download-link
   &:before
     @extend .download-icon
     margin-right: 0.75ex
 
-.download-arrow
-  @extend .fa
-  @extend .fa-chevron-right
-  opacity: 0.5
+
+.download-choice
+  $download-icon-with-space: 1.25ex
+  text-indent: -$download-icon-with-space
+
+  &:before
+    @extend .fa
+    @extend .fa-arrow-right
+    opacity: 0.35
+    width: $download-icon-with-space
+
 
 a .fa:first-child
   /* Add a space after all icons in links

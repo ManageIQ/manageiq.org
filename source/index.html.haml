@@ -97,8 +97,7 @@ blog_summary_length: 700
     %section.col-md-7.choices
       %ul
         - data.deploy_types.each do |dlabel, dname|
-          - dtext = "<i class='download-arrow'></i>#{dname}"
-          %li= link_to dtext, "/download/#{dlabel}/"
+          %li= link_to dname, "/download/#{dlabel}/", class: "download-choice"
 
 
 %section.blog-area
