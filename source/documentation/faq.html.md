@@ -240,7 +240,7 @@ in the future.
 
 The ManageIQ source code is distributed under a dual Apache v2/GPL v2
 license. For more information on project licensing and the reasons
-behind it, please read our [licensing FAQ](/community/licensing).
+behind it, please read our [licensing FAQ](/community/licensing-faq/).
 
 
 {::comment} List of terms {:/comment}
