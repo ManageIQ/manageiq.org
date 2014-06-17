@@ -86,8 +86,8 @@ problems arise that ManageIQ can help you solve as an administrator:
 
 If you are an infrastructure or systems administrator who is managing
 traditional virtualization infrastructure like VMware vSphere, Red
-Hat Enterprise Virtualization or oVirt and private cloud infrastructure
-like OpenStack, or public cloud infrastructure like Amazon Web Services,
+Hat Enterprise Virtualization, or oVirt; private cloud infrastructure
+like OpenStack; or public cloud infrastructure like Amazon Web Services,
 ManageIQ can help you manage all those environments, scale your
 organization's IT infrastructure, control costs, and enforce business
 processes to keep you safe and ensure that your IT organization delivers
