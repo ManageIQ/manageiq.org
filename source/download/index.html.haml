@@ -106,10 +106,10 @@ page_classes: header-page
                   this command:
 
                   ~~~bash
-                  curl -O http://manageiq.org/download/manageiq-devel-openstack.qc2 && \
+                  curl -O http://manageiq.org/download/manageiq-openstack-devel.qc2 && \
                   glance image-create --name "ManageIQ-devel" \
                   --is-public True --disk-format qcow2 \
-                  --container-format=bare --file manageiq-devel-openstack.qc2
+                  --container-format=bare --file manageiq-openstack-devel.qc2
                   ~~~
 
               2.  Launch a new instance from the ManageIQ image. ManageIQ needs a
