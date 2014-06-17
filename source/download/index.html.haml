@@ -60,7 +60,7 @@ page_classes: header-page
 
           - when 'ovirt'
             :markdown
-              1.  [Download ManageIQ for oVirt](http://manageiq.org/downloads/ManageIQ-stable-ovirt.ova){: .download-link}
+              1.  [Download ManageIQ for oVirt](http://manageiq.org/downloads/ManageIQ-devel-ovirt.ova){: .download-link}
                   to your local computer.
 
               2.  When the file has finished downloading, upload it to
@@ -68,7 +68,7 @@ page_classes: header-page
                   following command locally:
 
                   ~~~bash
-                  engine-image-uploader -e $YOUR_EXPORT_DOMAIN --engine=$YOUR_ENGINE_HOST upload -v -m ManageIQ-stable-ovirt.ova
+                  engine-image-uploader -e $YOUR_EXPORT_DOMAIN --engine=$YOUR_ENGINE_HOST upload -v -m ManageIQ-devel-ovirt.ova
                   ~~~
 
               3.  Navigate to the "Template Import" tab of your export
@@ -81,7 +81,7 @@ page_classes: header-page
 
           - when 'rhev'
             :markdown
-              1.  [Download ManageIQ for Red Hat Enterprise Virtualization](http://manageiq.org/downloads/ManageIQ-stable-ovirt.ova){: .download-link}
+              1.  [Download ManageIQ for Red Hat Enterprise Virtualization](http://manageiq.org/downloads/ManageIQ-devel-ovirt.ova){: .download-link}
                   to your local computer.
 
               2.  When the file has finished downloading, upload it to an
@@ -89,7 +89,7 @@ page_classes: header-page
                   following command locally:
 
                   ~~~bash
-                  rhevm-image-uploader -e $YOUR_EXPORT_DOMAIN --engine=$YOUR_RHEVM_HOST upload -v -m ManageIQ-stable-ovirt.ova
+                  rhevm-image-uploader -e $YOUR_EXPORT_DOMAIN --engine=$YOUR_RHEVM_HOST upload -v -m ManageIQ-devel-ovirt.ova
                   ~~~
 
               3.  Navigate to the "Template Import" tab of your export
@@ -106,10 +106,10 @@ page_classes: header-page
                   this command:
 
                   ~~~bash
-                  curl -O http://manageiq.org/downloads/ManageIQ-stable-openstack.qc2 && \
-                  glance image-create --name "ManageIQ-stable" \
+                  curl -O http://manageiq.org/downloads/ManageIQ-devel-openstack.qc2 && \
+                  glance image-create --name "ManageIQ-devel" \
                   --is-public True --disk-format qcow2 \
-                  --container-format=bare --file ManageIQ-stable-openstack.qc2
+                  --container-format=bare --file ManageIQ-devel-openstack.qc2
                   ~~~
 
               2.  Launch a new instance from the ManageIQ image. ManageIQ needs a
@@ -121,7 +121,7 @@ page_classes: header-page
               1.  From the vSphere client, click File → Deploy OVF Template
                   (or Actions → Deploy OVF Template from the vSphere Web client).
 
-              2.  Enter `http://manageiq.org/downloads/ManageIQ-stable-vsphere.ova`
+              2.  Enter `http://manageiq.org/downloads/ManageIQ-devel-vsphere.ova`
                   in the URL field of the resulting dialog window, and select
                   the location, host and storage you wish to use for the ManageIQ VM.
 
