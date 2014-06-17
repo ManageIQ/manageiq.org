@@ -75,7 +75,7 @@ problems arise that ManageIQ can help you solve as an administrator:
 
 * **Optimize workload allocation** - determine "best fit" or "best use"
   for workloads, assigning them to traditional virtual infrastructure
-  or to cloud based infrastructures as system requirements and
+  or to cloud-based infrastructures as system requirements and
   business needs dictate. As your legacy applications are adapted to
   run stateless in the cloud, you will need to move them gradually to
   your private cloud, or mix elastic infrastructure and traditional
