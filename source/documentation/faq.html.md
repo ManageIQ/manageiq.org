@@ -11,7 +11,7 @@ title: Frequently Asked Questions (FAQ)
 ## What is ManageIQ?
 
 ManageIQ is a cloud management platform (CMP) that adds additional capabilities
-to your existing virtualization, private cloud and hybrid cloud infrastructure.
+to your existing virtualization, private cloud, and hybrid cloud infrastructure.
 ManageIQ provides scaleable self-service interfaces, provisions virtual system
 images, enables metering and billing, and provides workload optimization
 through established policies.
@@ -50,26 +50,26 @@ problems arise that ManageIQ can help you solve as an administrator:
   visible in a unified view with your on-premise workloads.
 
 * **Ensure that virtual resources respect IT business or security
-  processes**. This becomes a challenge, especially with self-service
-  capabilities. For example, ManageIQ can ensure that all operating
-  systems have had the latest security patches applied, or that
-  instance types match resource needs in a cloud application.
+  processes**.  Self-service capabilities have created new challenges
+  for adherence to compliance policies.  ManageIQ can confirm that all
+  operating  systems have had the latest security patches applied, or 
+  that instance types match resource needs in a cloud application.
 
-* **Manage VM lifecycles**: specifying what happens to user data and
-  applications when a service is retired, ensuring that license
-  entitlements can be reused after old services are shut down.
+* **Manage VM lifecycles**: Use ManageIQ to specify what happens 
+  to user data and applications when a service is retired, making sure
+  that license entitlements can be reused after old services are shut down.
 
 * **Provide autonomy to users of your IT infrastructure** through
   self-service provisioning, quota enforcement, and granular
   permissions.
 
-* **Intelligently manage VM placement** - to ensure that clusters are
-  balanced across virtual hosts, that high-availability VMs are not
+* **Intelligently manage VM placement** to make sure that clusters are
+  balanced across virtual hosts, and that high-availability VMs are not
   running on the same host or in the same rack.
 
-* **Support capacity management and planning** - ensuring that you have
+* **Support capacity management and planning** - check that you have
   sufficient infrastructure and resources to match your current
-  workloads, and ability to assess usage trends over time to plan for
+  workloads with the ability to assess usage trends over time to plan for
   on-premise and off-premise resource expansion and overflow to public
   clouds.
 
