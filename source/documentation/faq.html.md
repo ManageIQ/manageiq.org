@@ -60,7 +60,7 @@ problems arise that ManageIQ can help you solve as an administrator:
   entitlements can be reused after old services are shut down.
 
 * **Provide autonomy to users of your IT infrastructure** through
-  self-service provisioning, quota enforcement and granular
+  self-service provisioning, quota enforcement, and granular
   permissions
 
 * **Intelligently manage VM placement** - to ensure that clusters are
