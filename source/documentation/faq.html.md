@@ -42,7 +42,7 @@ problems arise that ManageIQ can help you solve as an administrator:
 
 * **Get better situational awareness of what's happening inside your
   datacenter** by providing a single pane of glass view of your
-  virtual resources, and allows you to track and control resources
+  virtual resources, allowing you to track and control resources
   running in the public cloud
 
 * **Help you rein in your "shadow IT"** for workloads allocated to
