@@ -144,12 +144,6 @@ deliver a set of pre-built image appliances for various virtualization
 and cloud platforms. These images are built with CentOS 6.5.
 
 
-## Does ManageIQ integrate with Chef, Puppet, CFEngine, Foreman, SaltStack, Ansible?
-
-**FIXME**
-{:.fixme}
-
-
 ## Does ManageIQ support Docker?
 
 There are plans to add support for the deployment and automation of
@@ -184,12 +178,6 @@ ManageIQ is provided as bootable images in various formats, including
 AMIs for use on Amazon Web Services. However, there are no plans to
 provide a hosted offering based on the open source ManageIQ project in
 the foreseeable future.
-
-
-## Who is using ManageIQ?
-
-**FIXME**: TBD (perhaps to be dropped?)
-{:.fixme}
 
 
 ## How do you pronounce ManageIQ?
