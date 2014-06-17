@@ -7,7 +7,7 @@ welcome contributions and proposed changes for all of them.
 
 * [Report a bug in ManageIQ](https://github.com/ManageIQ/manageiq/issues/new?labels=bug)
 * [Request an enhancement](https://github.com/ManageIQ/manageiq/issues/new?labels=enhancement)
-* [Report a security issue](/community/security_issue)
+* [Report a security issue](/community/security-issue)
 * [Report an issue with the website](https://github.com/ManageIQ/manageiq.org/issues/new)
 
 For more on github issues and how to get the most out of them, check out the
