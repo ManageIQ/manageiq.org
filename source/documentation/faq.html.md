@@ -10,12 +10,11 @@ title: Frequently Asked Questions (FAQ)
 
 ## What is ManageIQ?
 
-ManageIQ is a cloud management platform (CMP) which adds additional
-capabilities to your existing virtualization, private cloud and hybrid
-cloud infrastructure. ManageIQ cloud management provides scaleable
-self-service interfaces, provisions virtual system images, enables
-metering and billing, and provides workload optimization through
-established policies.
+ManageIQ is a cloud management platform (CMP) that adds additional capabilities
+to your existing virtualization, private cloud and hybrid cloud infrastructure.
+ManageIQ provides scaleable self-service interfaces, provisions virtual system
+images, enables metering and billing, and provides workload optimization
+through established policies.
 
 
 ## What is a cloud management platform?
@@ -43,8 +42,8 @@ problems arise that ManageIQ can help you solve as an administrator:
 
 * **Get better situational awareness of what's happening inside your
   datacenter** by providing a single pane of glass view of your
-  virtual resources, and allows you to track and control resources
-  running in the public cloud
+  virtual resources, allowing you to track and control resources
+  running in the public cloud.
 
 * **Help you rein in your "shadow IT"** for workloads allocated to
   Amazon and other external cloud providers, making those workloads
@@ -61,12 +60,12 @@ problems arise that ManageIQ can help you solve as an administrator:
   entitlements can be reused after old services are shut down.
 
 * **Provide autonomy to users of your IT infrastructure** through
-  self-service provisioning, quota enforcement and granular
-  permissions
+  self-service provisioning, quota enforcement, and granular
+  permissions.
 
 * **Intelligently manage VM placement** - to ensure that clusters are
   balanced across virtual hosts, that high-availability VMs are not
-  running on the same host or in the same rack
+  running on the same host or in the same rack.
 
 * **Support capacity management and planning** - ensuring that you have
   sufficient infrastructure and resources to match your current
@@ -76,39 +75,39 @@ problems arise that ManageIQ can help you solve as an administrator:
 
 * **Optimize workload allocation** - determine "best fit" or "best use"
   for workloads, assigning them to traditional virtual infrastructure
-  or to cloud based infrastructures as system requirements and
+  or to cloud-based infrastructures as system requirements and
   business needs dictate. As your legacy applications are adapted to
   run stateless in the cloud, you will need to move them gradually to
   your private cloud, or mix elastic infrastructure and traditional
-  scale-up virtual resources in the same application
+  scale-up virtual resources in the same application.
 
 
 ## Who should care about ManageIQ &mdash; and why?
 
 If you are an infrastructure or systems administrator who is managing
-both traditional virtualization infrastructure like VMware vSphere, Red
-Hat Enterprise Virtualization or oVirt and private cloud infrastructure
-like OpenStack, or public cloud infrastructure like Amazon Web Services,
+traditional virtualization infrastructure like VMware vSphere, Red
+Hat Enterprise Virtualization, or oVirt; private cloud infrastructure
+like OpenStack; or public cloud infrastructure like Amazon Web Services,
 ManageIQ can help you manage all those environments, scale your
 organization's IT infrastructure, control costs, and enforce business
 processes to keep you safe and ensure that your IT organization delivers
 a high quality of service.
 
 
-## Does this compete with OpenStack/oVirt/CloudStack/VMware vSphere?
+## Does this compete with OpenStack, oVirt, CloudStack, or VMware vSphere?
 
-ManageIQ adds to your existing virtualization and cloud platforms.
+OpenStack, oVirt, CloudStack, and VMware vSphere are tools designed to
+operationally deploy and manage both virtual and cloud infrastructures.
 
-OpenStack/oVirt/CloudStack/VMware vSphere are tools designed to
-operationally deploy and manage virtual and cloud infrastructures.
-ManageIQ is a Cloud Management Platform (CMP) designed to augment cloud
-and virtual infrastructures with higher-order managment services, cloud
-brokering and automation capabilities. These management services include
-policy-based governance , workload optimization, life-cycle management,
-self-service provisioning with service catalogs, chargeback/showback
-capacity & utilization management and planning and change
-& configuration management.
+ManageIQ is a Cloud Management Platform (CMP) that augments the above-mentioned
+cloud and virtual infrastructures with higher-order managment services, cloud
+brokering, and automation capabilities. Management services provided by
+ManageIQ include policy-based governance, workload optimization, self-service
+provisioning with service catalogs, chargeback/showback capacity and
+utilization, planning and change configuration, and complete lifecycle control.
 
+Put simply: ManageIQ does not compete with the services, but helps to enhance
+all of the mentioned services at a higher-level.
 
 
 ## How is this different from Scalr/Enstratius/Rightscale/etc.?
@@ -241,7 +240,7 @@ in the future.
 
 The ManageIQ source code is distributed under a dual Apache v2/GPL v2
 license. For more information on project licensing and the reasons
-behind it, please read our [licensing FAQ](/community/licensing).
+behind it, please read our [licensing FAQ](/community/licensing-faq/).
 
 
 {::comment} List of terms {:/comment}
