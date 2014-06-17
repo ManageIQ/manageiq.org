@@ -174,10 +174,9 @@ For more information on all of the ways you can contribute, check out
 
 ## Is ManageIQ available as a hosted service on Amazon Web Services, GCE, Rackspace?
 
-ManageIQ is provided as bootable images in various formats, including
-AMIs for use on Amazon Web Services. However, there are no plans to
-provide a hosted offering based on the open source ManageIQ project in
-the foreseeable future.
+ManageIQ is provided as bootable images in various formats. However, 
+there are no plans to provide a hosted offering based on the open source
+ManageIQ project in the foreseeable future.
 
 
 ## How do you pronounce ManageIQ?
