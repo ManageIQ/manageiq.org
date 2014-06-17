@@ -10,12 +10,11 @@ title: Frequently Asked Questions (FAQ)
 
 ## What is ManageIQ?
 
-ManageIQ is a cloud management platform (CMP) which adds additional
-capabilities to your existing virtualization, private cloud and hybrid
-cloud infrastructure. ManageIQ cloud management provides scaleable
-self-service interfaces, provisions virtual system images, enables
-metering and billing, and provides workload optimization through
-established policies.
+ManageIQ is a cloud management platform (CMP) that adds additional capabilities
+to your existing virtualization, private cloud and hybrid cloud infrastructure.
+ManageIQ provides scaleable self-service interfaces, provisions virtual system
+images, enables metering and billing, and provides workload optimization
+through established policies.
 
 
 ## What is a cloud management platform?
