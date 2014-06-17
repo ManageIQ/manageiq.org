@@ -222,7 +222,7 @@ pre, code
 @import compass/css3/images
 
 .page-header
-  background: $bg-header-color
+  @include background(linear-gradient(top, $bg-header-color 85%, darken($bg-header-color, 4)))
   background-size: cover
   border-bottom: 1px solid rgba(0,0,0,0.25)
   margin: 0 -15px
