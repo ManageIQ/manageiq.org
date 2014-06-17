@@ -82,7 +82,7 @@ problems arise that ManageIQ can help you solve as an administrator:
   scale-up virtual resources in the same application.
 
 
-## Who should care about ManageIQ &mdash; and why?
+## Should I be using ManageIQ &mdash; and why?
 
 If you are an infrastructure or systems administrator who is managing
 traditional virtualization infrastructure like VMware vSphere, Red
@@ -112,7 +112,7 @@ all of the mentioned services at a higher-level.
 
 ## How is this different from Scalr/Enstratius/Rightscale/etc.?
 
-ManageIQ is the first open source, community developed hybrid cloud
+ManageIQ is the first open source, community-developed, hybrid cloud
 management platform. With its focus on both private OpenStack based
 clouds and traditional virtualization, we believe that ManageIQ fills
 a need for an enterprise-ready cloud management platform for the open
