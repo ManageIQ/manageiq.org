@@ -94,20 +94,20 @@ processes to keep you safe and ensure that your IT organization delivers
 a high quality of service.
 
 
-## Does this compete with OpenStack/oVirt/CloudStack/VMware vSphere?
+## Does this compete with OpenStack, oVirt, CloudStack, or VMware vSphere?
 
-ManageIQ adds to your existing virtualization and cloud platforms.
+OpenStack, oVirt, CloudStack, and VMware vSphere are tools designed to
+operationally deploy and manage both virtual and cloud infrastructures.
 
-OpenStack/oVirt/CloudStack/VMware vSphere are tools designed to
-operationally deploy and manage virtual and cloud infrastructures.
-ManageIQ is a Cloud Management Platform (CMP) designed to augment cloud
-and virtual infrastructures with higher-order managment services, cloud
-brokering and automation capabilities. These management services include
-policy-based governance , workload optimization, life-cycle management,
-self-service provisioning with service catalogs, chargeback/showback
-capacity & utilization management and planning and change
-& configuration management.
+ManageIQ is a Cloud Management Platform (CMP) that augments the above-mentioned
+cloud and virtual infrastructures with higher-order managment services, cloud
+brokering, and automation capabilities. Management services provided by
+ManageIQ include policy-based governance, workload optimization, self-service
+provisioning with service catalogs, chargeback/showback capacity and
+utilization, planning and change configuration, and complete lifecycle control.
 
+Put simply: ManageIQ does not compete with the services, but helps to enhance
+all of the mentioned services at a higher-level.
 
 
 ## How is this different from Scalr/Enstratius/Rightscale/etc.?
