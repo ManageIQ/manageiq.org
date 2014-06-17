@@ -38,8 +38,8 @@ For those new to GitHub, the basic process for submitting a pull request is:
     git config --global push.default simple
     ```
 
-4.  Ensure your work is always going to apply cleanly to the tip of master
-    upstream by merging often and pushing back to your fork, and rebasing your
+4.  Ensure your work is always going to apply cleanly to the tip of upstream's
+    master by merging often and pushing back to your fork, and rebasing your
     branch to the tip of master:
 
     ```shell
@@ -49,20 +49,20 @@ For those new to GitHub, the basic process for submitting a pull request is:
     # Sync forked master branch with upstream master
     git push
     # Replay local branch on top of new master, fixing any merge conflicts
-    git checkout [branchname]
+    git checkout [topicbranchname]
     git rebase master
     ```
 
     When you have finished your work, consider reworking your branch to make
-    changes easier to review upstream. Use `git rebase -i` to reorder, squash or
-    delete small commits on your branch to make something nice and clean.
+    changes easier to review upstream. Use `git rebase -i` to reorder, squash
+    or delete small commits on your branch to make your patch nice and clean.
     {: .notice-note}
 
 5.  When you are ready to submit your work for review, push your branch to
     GitHub:
 
     ```shell
-    git push -u origin [branchname](:[remote branchname] if name needs to change)
+    git push -u origin [topicbranchname](:[remote branchname] if name needs to change)
     ```
 
 6.  In github.com/[username]/manageiq, select the branch you would like to push
@@ -77,7 +77,7 @@ For those new to GitHub, the basic process for submitting a pull request is:
 
 Usually, pull requests will get feedback, and it is a good idea to integrate
 that into your patch. The easiest way to do this is to update your local
-branch, commit and push a new version to `origin/[branchname]`.
+branch, commit and push a new version to `origin/[topicbranchname]`.
 
 [ManageIQ Coding Style and Standards](/documentation/development/coding_style_and_standards)
 
