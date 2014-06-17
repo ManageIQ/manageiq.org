@@ -43,7 +43,7 @@ problems arise that ManageIQ can help you solve as an administrator:
 * **Get better situational awareness of what's happening inside your
   datacenter** by providing a single pane of glass view of your
   virtual resources, allowing you to track and control resources
-  running in the public cloud
+  running in the public cloud.
 
 * **Help you rein in your "shadow IT"** for workloads allocated to
   Amazon and other external cloud providers, making those workloads
@@ -61,11 +61,11 @@ problems arise that ManageIQ can help you solve as an administrator:
 
 * **Provide autonomy to users of your IT infrastructure** through
   self-service provisioning, quota enforcement, and granular
-  permissions
+  permissions.
 
 * **Intelligently manage VM placement** - to ensure that clusters are
   balanced across virtual hosts, that high-availability VMs are not
-  running on the same host or in the same rack
+  running on the same host or in the same rack.
 
 * **Support capacity management and planning** - ensuring that you have
   sufficient infrastructure and resources to match your current
@@ -79,7 +79,7 @@ problems arise that ManageIQ can help you solve as an administrator:
   business needs dictate. As your legacy applications are adapted to
   run stateless in the cloud, you will need to move them gradually to
   your private cloud, or mix elastic infrastructure and traditional
-  scale-up virtual resources in the same application
+  scale-up virtual resources in the same application.
 
 
 ## Who should care about ManageIQ &mdash; and why?
