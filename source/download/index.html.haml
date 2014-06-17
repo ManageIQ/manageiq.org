@@ -1,6 +1,6 @@
 ---
 title: Download and install
-page_classes: header-page
+page_classes: header-page download-page
 ---
 -# To add additional deployment types, please edit data/deploy_types.yml
 
@@ -25,12 +25,16 @@ page_classes: header-page
     .row
       %section.col-md-12
 
-        %strong= "You're currently viewing instructions for #{deploy_name}."
-        If this isn't what you want, please select another deploy target:
+        .download-selection-secondary
 
-        .row
-          - data.deploy_types.reject {|d| d == deploy_type}.each do |dlabel, dname|
-            .col-sm-5= link_to dname, "/download/#{dlabel}/", {class: "download-choice alert-link"}
+          .side-left
+            %strong= "You&lsquo;re currently viewing instructions for <em>#{deploy_name}</em>."
+            If this isn&lsquo;t what you want, please select another deploy target:
+
+          .side-right
+            .download-options
+              - data.deploy_types.reject {|d| d == deploy_type}.each do |dlabel, dname|
+                .download-option= link_to dname, "/download/#{dlabel}/", {class: "download-choice alert-link"}
 
 
 %section.installation-steps
@@ -39,15 +43,17 @@ page_classes: header-page
 
       - unless defined? deploy_type
 
-        :markdown
-          Please select the option that most closely matches your
-          infrastructure to see instructions for your optimal
-          installation.
+        .download-selection-primary
 
-        .row
-          - data.deploy_types.each do |dlabel, dname|
-            .col-md-4.col-sm-6
-              %h5= link_to dname, "/download/#{dlabel}/", class: "download-choice"
+          .intro
+            :markdown
+              Please select the option that most closely matches your
+              infrastructure to see instructions for your optimal
+              installation.
+
+          .row.download-options
+            - data.deploy_types.each do |dlabel, dname|
+              .download-option= link_to dname, "/download/#{dlabel}/", class: "download-choice"
 
 
       - if defined? deploy_type

@@ -257,7 +257,7 @@ pre, code
 
   p
     font-size: 16pt
-    max-width: 70ex
+    max-width: 84rem
     margin: 0 auto
     text-align: left
 
@@ -298,6 +298,92 @@ body.front-page
 
     .row
       border: none
+
+
+body.download-page
+
+  @at-root .page-tip
+    //@extend .alert
+    //@extend .alert-warning
+    @extend .hidden-print
+
+    border-bottom: 1px solid #e0ca85
+    background: #fef6dc
+    color: rgba(black, 0.5)
+    padding: 2ex 0
+
+    .row
+      padding-top: 0 !important
+      padding-bottom: 0 !important
+
+    strong
+      display: block
+
+  .download-options
+    margin: 0 auto
+
+  .download-option
+    float: left
+    min-width: 50%
+
+    a
+      margin-left: 6ex
+
+  .download-selection-primary
+
+    .intro
+      font-size: 1.8rem
+      max-width: 84rem
+      margin: 0 auto
+
+    .download-options
+      padding-top: 1.5rem
+      max-width: 84rem
+
+    .download-option
+
+      @media screen and (max-width: 40rem)
+        width: 100%
+
+      a
+        font-family: $headings-font-family
+        font-size: 2.125rem
+        padding: 1ex 0
+        display: block
+
+  .download-selection-secondary
+
+    em
+      font-style: normal
+      white-space: nowrap
+
+    $download-doc-switcher-text: 45rem
+
+    .side-left
+      width: $download-doc-switcher-text
+      width: 50%
+      float: left
+
+    .side-right
+      float: right
+      width: calc(100% - $download-doc-switcher-text)
+      width: 50%
+      overflow: hidden
+
+    .download-option
+
+      a
+        padding: 0
+        font: inherit
+        font-weight: normal
+        color: #e39549
+        margin-left: 3ex
+
+        &:before
+          font-size: 1.75ex
+          vertical-align: baseline
+          padding: 0
+          margin: 0
 
 
 .content > section
@@ -567,15 +653,6 @@ section.communication
 a .fa:first-child
   /* Add a space after all icons in links
   margin-right: 0.5ex
-
-.page-tip
-  @extend .alert
-  @extend .alert-warning
-  @extend .hidden-print
-
-  .row
-    padding-top: 1em !important
-    padding-bottom: 1em !important
 
 pre
   padding: 1ex 2ex
