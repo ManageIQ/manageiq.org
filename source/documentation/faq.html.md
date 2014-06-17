@@ -85,7 +85,7 @@ problems arise that ManageIQ can help you solve as an administrator:
 ## Who should care about ManageIQ &mdash; and why?
 
 If you are an infrastructure or systems administrator who is managing
-both traditional virtualization infrastructure like VMware vSphere, Red
+traditional virtualization infrastructure like VMware vSphere, Red
 Hat Enterprise Virtualization or oVirt and private cloud infrastructure
 like OpenStack, or public cloud infrastructure like Amazon Web Services,
 ManageIQ can help you manage all those environments, scale your
