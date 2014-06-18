@@ -56,7 +56,7 @@
 
     .team-list
       - data.team.each do |person, val|
-        - unless val.nil?
+        - if val.any? && val.has_key?('bio') ## Don't display empty info
 
           - bgcolor = val.has_key? :color ? val[:color] : "##{color_from_string person.downcase}"
           - bgcolor = "##{color_from_string person.downcase}"
