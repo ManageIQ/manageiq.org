@@ -1,0 +1,81 @@
+---
+title: Logo and fonts
+page_classes: logo-and-fonts
+---
+
+.intro
+  :markdown
+
+    ## ManageIQ logo & fonts
+
+    ManageIQ logo redesigned by [Garrett LeSage](http://garrettlesage.com/)
+    using [Inkscape](http://inkscape.org/).
+
+    ---
+
+%section.logos
+  :ruby
+    def i_path type, ext, mod = ''
+      "/images/logo/manageiq-logo-#{type}#{mod.empty? ? "" : "-#{mod}"}.#{ext}"
+    end
+
+    orientations = [
+      {type: "horizontal", width: "100%", string: ""},
+      {type: "vertical", width: "70%", string: "vertical"}
+    ]
+
+  -# Generate ALL the iterations of the logo!
+
+  - ["standard","inverse","bw"].each do |type|
+    - displaytype = type.match(/bw/) ? "Black and white" : type.titlecase
+
+    .row(class="logo-#{type}")
+
+      - orientations.each do |orientation|
+        .col-sm-6.logo-orientation(class="logo-#{orientation[:type]}")
+
+          %h3= "#{displaytype}#{orientation[:string].empty? ? '' : ' - ' + orientation[:string]}"
+
+          - default_link = i_path(type, "pdf", orientation[:string])
+
+          .logo-example
+            - link_to default_link, {download: default_link.split("/").last} do
+              ~ image_tag i_path(type, "svg", orientation[:string]), {width: orientation[:width]}
+
+          .logo-links
+            - ["pdf", "svg", "png"].each do |ext|
+              - file_path = i_path(type, ext, orientation[:string])
+              = link_to "Download #{ext.upcase}", i_path(type, ext, orientation[:string]), {download: file_path.split("/").last, class: "logo-type-#{ext}"}
+
+%hr
+
+%section.fonts-info
+  .row
+    .col-md-12
+      %h2 Fonts
+
+    .col-md-6
+      :markdown
+        ### **Cabin** --- headlines
+
+        * The type in the logo is based on Cabin, a free font under the OTF
+        * Cabin is also the ManageIQ headline font for documents
+
+        Homepage|<http://impallari.com/cabin/>
+        ZIP|[cabin-font-v1.5.zip @ impallari.com](http://impallari.com/media/releases/cabin-font-v1.5.zip)
+        License|[SIL Open Font License (OFL)](http://scripts.sil.org/OFL)
+
+    .col-md-6
+      :markdown
+        ### **Noto Sans** --- body text
+
+        * Body text should be rendered in Noto Sans. It is sans-serif and has an
+          unambigious uppercase "I" with serifed flanges (which is rare for
+          a sans-serif typeface).
+        * Whenever possible, Noto Sans should be used for body text (long
+          stretches of text), as it makes the IQ in ManageIQ obvious, and
+          prevents a person unfamiliar with the project from reading "MANAGELQ"
+
+        Homepage|<https://code.google.com/p/noto/>
+        ZIP|[NotoFonts-hinted-2013-08-11.zip @ Google Code](https://code.google.com/p/noto/downloads/detail?name=NotoFonts-hinted-2013-04-11.zip&can=1)
+        License|[Apache 2.0](http://apache.org/licenses/)
