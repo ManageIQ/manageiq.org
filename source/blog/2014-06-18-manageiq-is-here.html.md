@@ -25,6 +25,7 @@ Here are many of the resources available to you now:
 - [Watch videos about ManageIQ](https://youtube.com/user/ManageIQVideo)
 - [Ask questions of ManageIQ experts](http://ask.manageiq.org/)
 - [Discuss ManageIQ with the developers and others using the software](http://talk.manageiq.org/)
+- [Download the ManageIQ logo](/logo/)
 
 Stay tuned for more&mdash;the excitement has just begun!
 
