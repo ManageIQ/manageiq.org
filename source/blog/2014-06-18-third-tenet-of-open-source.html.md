@@ -22,7 +22,7 @@ From the blog post:
 
 That last bit is pretty important. Most communities identify their audience as "developers" and "users". With ManageIQ, there's a slight difference:
 
-"ManageIQ includes a policy and orchestration engine for integrating into and automating a wide variety of platforms. We are excited to see what administrators and operators might contribute in the form of workflows and integration points to the ManageIQ community."
+>ManageIQ includes a policy and orchestration engine for integrating into and automating a wide variety of platforms. We are excited to see what administrators and operators might contribute in the form of workflows and integration points to the ManageIQ community.
 
 Read the [full blog post](http://tentenet.net/2014/06/19/the-third-tenet-of-open-source-open-source-requires-commitment-welcome-manageiq/).
 
