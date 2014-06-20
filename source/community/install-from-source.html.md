@@ -12,7 +12,7 @@ Details on installing an image using a quickstart file are available from
 1.  For RHEL, make sure you have `rhel-6-server-rpms` channel enabled.
 
     ```
-    rhn-channel --add --channel=rhel-6-server-rpms --user=(your RHN login) --passord=(password)
+    rhn-channel --add --channel=rhel-6-server-rpms --user=(your RHN login) --password=(password)
     ```
 
 2.  As root, add the miqbuilder user
@@ -114,7 +114,7 @@ Details on installing an image using a quickstart file are available from
 
 10. Ensure that ManageIQ is connecting to the right database. Edit the
     `config/database.yml` file.  Add the `evm` user for the
-    `vmdb_develeopment` database.
+    `vmdb_development` database.
 
     ```
     bin/rake db:migrate
