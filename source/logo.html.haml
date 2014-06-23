@@ -39,7 +39,7 @@ page_classes: logo-and-fonts
           - default_link = i_path(type, "pdf", orientation[:string])
 
           .logo-example
-            - link_to default_link, {download: default_link.split("/").last} do
+            ~ link_to default_link, {download: default_link.split("/").last} do
               ~ image_tag i_path(type, "svg", orientation[:string]), {width: orientation[:width]}
 
           .logo-links
