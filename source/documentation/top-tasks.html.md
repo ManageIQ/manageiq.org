@@ -1,11 +1,11 @@
-#Top Tasks to Get Your Hands Dirty
+# Top Tasks to Get Your Hands Dirty
 {: .no_toc}
 
 1. TOC Goes here
 {:toc}
 
 
-##Discover VMware Providers
+## Discover VMware Providers
 
 <iframe src="//www.youtube-nocookie.com/embed/A30qJOp-AGY" allowfullscreen="true" class="video video-side-right"></iframe>
 
@@ -18,7 +18,7 @@
 3.  Click **Configure** → **Refresh Relationships**.
 
 
-##Discover RHEV-M Providers
+## Discover RHEV-M Providers
 
 <iframe src="//www.youtube-nocookie.com/embed/piYrBn4DYrw" allowfullscreen="true" class="video video-side-right"></iframe>
 
@@ -46,7 +46,7 @@
 6.  Click **Configuration** → **Perform SmartState Analysis**.
 
 
-##Edit Server Settings
+## Edit Server Settings
 
 <iframe src="//www.youtube-nocookie.com/embed/W6xIh8cyYS4" allowfullscreen="true" class="video video-side-right"></iframe>
 
@@ -58,7 +58,7 @@
 Information on the other settings can be found in the *Settings and Operations Guide*.
 
 
-##Run SmartState Analysis on VMware Virtual Machines
+## Run SmartState Analysis on VMware Virtual Machines
 
 1.  Fulfill the Requirements (install VMware vddk on Appliance).
 2.  Confirm that credentials are valid for the Hosts.
@@ -68,7 +68,7 @@ Information on the other settings can be found in the *Settings and Operations G
 4.  Optional** → **schedule SmartState Analysis.  See GUIDE LINK.
 
 
-##Run SmartState Analysis on RHEV-M Virtual Machines
+## Run SmartState Analysis on RHEV-M Virtual Machines
 
 <iframe src="//www.youtube-nocookie.com/embed/xRMP8M4JHzs" allowfullscreen="true" class="video video-side-right"></iframe>
 
@@ -88,7 +88,7 @@ Information on the other settings can be found in the *Settings and Operations G
 4.  Click **Configure** → **Perform SmartState Analysis**.
 
 
-##Add Red Hat OpenStack Providers
+## Add Red Hat OpenStack Providers
 
 <iframe src="//www.youtube-nocookie.com/embed/d3XHPzXAiuw" allowfullscreen="true" class="video video-side-right"></iframe>
 
@@ -101,7 +101,7 @@ Information on the other settings can be found in the *Settings and Operations G
 3.  Click **Configure** → **Refresh Relationships**.
 
 
-##Discover Amazon EC2 Providers
+## Discover Amazon EC2 Providers
 
 1.  Go to **Cloud** → **Providers**.
 2.  Click **Configuration** → **Discover**.
@@ -110,7 +110,7 @@ Information on the other settings can be found in the *Settings and Operations G
 3.  Click **Configure** → **Refresh Relationships**.
 
 
-##Collecting Capacity and Utilization (C&U) Data
+## Collecting Capacity and Utilization (C&U) Data
 
 <iframe src="//www.youtube-nocookie.com/embed/dmqdJc1EPP0" allowfullscreen="true" class="video video-side-right"></iframe>
 
@@ -123,7 +123,7 @@ Information on the other settings can be found in the *Settings and Operations G
 7.  Click **Save**.  It will take some time for the data to collect and process.
 
 
-##Generate a Report
+## Generate a Report
 
 <iframe src="//www.youtube-nocookie.com/embed/2_79u4xYdxs" allowfullscreen="true" class="video video-side-right"></iframe>
 
