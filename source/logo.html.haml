@@ -26,12 +26,16 @@ page_classes: logo-and-fonts
 
   -# Generate ALL the iterations of the logo!
 
-  - ["standard","inverse","bw"].each do |type|
+  - ["standard","inverse","bw", "glyph"].each do |type|
     - displaytype = type.match(/bw/) ? "Black and white" : type.titlecase
 
     .row(class="logo-#{type}")
 
       - orientations.each do |orientation|
+        - next if type == "glyph" && orientation[:type] == "vertical"
+
+        - image_width = type == "glyph" ? "42%" : orientation[:width]
+
         .col-sm-6.logo-orientation(class="logo-#{orientation[:type]}")
 
           %h3= "#{displaytype}#{orientation[:string].empty? ? '' : ' - ' + orientation[:string]}"
@@ -40,7 +44,7 @@ page_classes: logo-and-fonts
 
           .logo-example
             ~ link_to default_link, {download: default_link.split("/").last} do
-              ~ image_tag i_path(type, "svg", orientation[:string]), {width: orientation[:width]}
+              ~ image_tag i_path(type, "svg", orientation[:string]), {width: image_width}
 
           .logo-links
             - ["pdf", "svg", "png"].each do |ext|
