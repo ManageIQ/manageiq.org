@@ -78,7 +78,7 @@ marketplace.
 
 {::comment} List of terms {:/comment}
 
-*[meritocracy]: based on individual ability or achivement
+*[meritocracy]: based on individual ability or achievement
 *[OSI]: Open Source Initiative
 *[FOSS]: Free and Open Source Software
 *[GPL]: GNU Public License

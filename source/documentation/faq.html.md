@@ -100,7 +100,7 @@ OpenStack, oVirt, CloudStack, and VMware vSphere are tools designed to
 operationally deploy and manage both virtual and cloud infrastructures.
 
 ManageIQ is a Cloud Management Platform (CMP) that augments the above-mentioned
-cloud and virtual infrastructures with higher-order managment services, cloud
+cloud and virtual infrastructures with higher-order management services, cloud
 brokering, and automation capabilities. Management services provided by
 ManageIQ include policy-based governance, workload optimization, self-service
 provisioning with service catalogs, chargeback/showback capacity and
@@ -123,7 +123,7 @@ hybrid cloud.
 
 The Red Hat CloudForms product is built on top of the ManageIQ open
 source project. In addition to providing subscriptions ensuring updates
-throughout a supported lifecycle of [N] years and Red Hat's reknowned
+throughout a supported lifecycle of [N] years and Red Hat's renowned
 service, CloudForms also comes with a supported ecosystem of partners
 offering commercially supported integration into 3rd party products and
 platforms; and a network of resellers ready to provide certified
@@ -238,7 +238,7 @@ behind it, please read our [licensing FAQ](/community/licensing-faq/).
 *[FOSS]: Free and Open Source Software
 *[GPL]: GNU Public License
 *[IT]: Information Technology
-*[meritocracy]: based on individual ability or achivement
+*[meritocracy]: based on individual ability or achievement
 *[OSI]: Open Source Initiative
 *[Q&A]: Question and Answer
 *[VM]: Virtual Machine
