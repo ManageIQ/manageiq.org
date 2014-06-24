@@ -121,5 +121,4 @@ Details on installing an image using a quickstart file are available from
     bin/rake evm:start
     ```
 
-You should now be able to access the ManageIQ console at **\<IP_ADDRESS\>:3000**,
-if you set `listening_addresses '*'` in `/var/lib/pgsql/data/postgres.conf`.
+You should now be able to access the ManageIQ console at **\<IP_ADDRESS\>:3000**.
