@@ -90,12 +90,12 @@ Details on installing an image using a quickstart file are available from
 
 8.  As user miqbuilder, set up the ManageIQ Ruby development environment. We
     rely on bundler 1.3.5, if your distribution has a newer version of Bundler,
-    remove it:
+    remove it (meaning that last line here for uninstall is optional):
 
     ```bash
     su - miqbuilder
     curl -sSL https://get.rvm.io | bash -s stable
-    rvm install 1.9.3
+    sudo rvm install 1.9.3
     gem install bundler -v '1.3.5'
     gem uninstall -i /home/cfmebuilder/.rvm/gems/ruby-1.9.3-p547@global bundler -v '1.6.2'
     ```
