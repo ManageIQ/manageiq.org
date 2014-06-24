@@ -69,7 +69,7 @@ Details on installing an image using a quickstart file are available from
       ````
 
    3. Edit `/var/lib/pgsql/data/postgresql.conf` and add
-      listen_addresses='*'
+      `listen_addresses='*'`
 
    3. Start the database:
 
