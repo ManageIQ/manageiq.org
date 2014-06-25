@@ -59,10 +59,6 @@ class SiteHelpers < Middleman::Extension
       end
     end
 
-    def markdown_to_html content
-      Tilt['markdown'].new { content.strip }.render if content
-    end
-
     # Convert a Nokogiri fragment's H2s to a linked table of contents
     def h2_to_toc nokogiri_fragment, filename
       capture_haml do
