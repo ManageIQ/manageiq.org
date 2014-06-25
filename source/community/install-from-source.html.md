@@ -43,7 +43,7 @@ Details on installing an image using a quickstart file are available from
 
     ```bash
     yum -y install git libxml2-devel libxslt libxslt-devel sudo
-    yum -y install postgresql-server postgresql-devel memcached
+    yum -y install postgresql-server postgresql-devel memcached ruby-devel
     ```
 
 6.  Start memcached
