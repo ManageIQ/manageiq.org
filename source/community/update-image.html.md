@@ -26,4 +26,4 @@ git checkout -b [my_branch]
 git push -u origin [my_branch]
 ```
 
-See our guide to [submitting patches](patches) for more details.
+See our guide to [submitting patches](/community/patches) for more details.
