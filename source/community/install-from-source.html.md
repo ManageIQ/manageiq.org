@@ -84,8 +84,8 @@ Details on installing an image using a quickstart file are available from
       ```bash
       su - postgres
       for i in test production development;do createdb vmdb_$i;done
-      psql -c "create role evm login password 'smartvm'"
-      psql -c "alter database vmdb_development owner to evm"
+      psql -c "create role root login password 'smartvm'"
+      psql -c "alter database vmdb_development owner to root"
       ```
 
 8.  As user miqbuilder, set up the ManageIQ Ruby development environment. We
@@ -113,7 +113,7 @@ Details on installing an image using a quickstart file are available from
     ```
 
 10. Ensure that ManageIQ is connecting to the right database. Edit the
-    `config/database.yml` file.  Add the `evm` user for the
+    `config/database.yml` file.  Add the `root` user for the
     `vmdb_development` database.
 
     ```
