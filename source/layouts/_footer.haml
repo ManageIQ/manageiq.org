@@ -1,5 +1,5 @@
 %footer#subfooter
-  %section.social-area
+  %section.subfooter-communication
     :ruby
       social = {
         Twitter: "http://twitter.com/ManageIQ",
@@ -13,15 +13,15 @@
     .row
 
       %section.left-side
-        #follow-us.follow-us
+        #follow.follow
 
-          %span.follow-us-text
+          %span.follow-text
             Follow:
 
           - social.each do |service, url|
             - lower = service.downcase
-            %a(href="#{url}" class="social-#{lower}" title="Follow us on #{service}" data-toggle="tooltip")
-              %i(class="fa fa-#{lower}")
+            - abbr = service.to_s.gsub(/[a-z]/, '').downcase # work-around adblock
+            %a(href="#{url}" class="ext-#{abbr}" title="#{service}" data-toggle="tooltip")
               %span.label= "#{service}"
 
       %section.right-side
