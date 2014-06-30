@@ -694,7 +694,7 @@ pre
     margin-top: 1rem
 
 
-.social-area
+.subfooter-communication
   margin-top: 1em
   color: #bbb
   background-color: #555
@@ -714,11 +714,11 @@ pre
     text-align: right
 
 
-  .follow-us-text,
+  .follow-text,
   .contact-us-text
     display: none
 
-  .follow-us,
+  .follow,
   .contact-us
     margin-right: 0.5ex
 
@@ -733,12 +733,15 @@ pre
       color: #fff
       text-shadow: 0 0 9px rgba(white, 0.75)
 
-    i
+
+    // icons
+    &:before
+      font-size: 24px
       margin: -3px 0 0 0
       font-size: 24px
       vertical-align: middle
 
-  .follow-us
+  .follow
 
     .label
       display: none
@@ -916,7 +919,8 @@ q
       vertical-align: middle
 
   .github,
-  .twitter
+  .twitter,
+  .tweet
     .label
       display: none
 
@@ -1171,3 +1175,27 @@ a.pdf
     opacity: 0.5
     font-size: 8px
     vertical-align: top
+
+
+/* Aliased social sites to work-around ad-block's aggressive matching
+a
+  &.ext-t:before
+    @extend .fa
+    @extend .fa-twitter
+
+  &.ext-yt:before
+    @extend .fa
+    @extend .fa-youtube
+
+  &.ext-f:before
+    @extend .fa
+    @extend .fa-facebook
+
+  &.ext-gh:before
+    @extend .fa
+    @extend .fa-github
+
+/* Adblock is aggressive about blocking all things twitter...
+   so we're adding an alias here
+.fa-tweet
+  @extend .fa-twitter

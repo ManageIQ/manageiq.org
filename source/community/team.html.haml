@@ -81,12 +81,13 @@
                 - lower = service.downcase.to_s
 
                 - if val.has_key? lower
+                  - alt = service[/Twitter/] ? 'tweet' : lower # work-around adblock
 
-                  %li(class="#{lower}")
+                  %li(class="#{alt}")
                     - label = "<span class='label'>on #{service}</span>"
 
                     - if link
-                      - icon = "<i class='icon fa fa-#{lower}'></i>"
+                      - icon = "<i class='icon fa fa-#{alt}'></i>"
                       = link_to "#{icon}#{val[lower]} #{label}", link.gsub(/%s/, val[lower])
 
                     - else
