@@ -919,7 +919,8 @@ q
       vertical-align: middle
 
   .github,
-  .twitter
+  .twitter,
+  .tweet
     .label
       display: none
 
@@ -1193,3 +1194,8 @@ a
   &.ext-gh:before
     @extend .fa
     @extend .fa-github
+
+/* Adblock is aggressive about blocking all things twitter...
+   so we're adding an alias here
+.fa-tweet
+  @extend .fa-twitter
