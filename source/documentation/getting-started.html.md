@@ -20,6 +20,7 @@ The ManageIQ Console uses virtual thumbnails to describe providers. Each thumbna
 
 ![](doc/getting-started/2189.png)
 
+{:type="lower-alpha"}
 1.  Top left quadrant: Number of hosts
 2.  Bottom left quadrant: Management system software
 3.  Top right quadrant: For future use
@@ -147,6 +148,7 @@ After adding or sorting your hosts, click on one to examine it more closely and 
 
 ![](doc/getting-started/2222.png)
 
+{:type="lower-alpha"}
 1.  Top left quadrant: Number of virtual machines on this host
 2.  Bottom left quadrant: Virtual machine software
 3.  Top right quadrant: Power state of host
@@ -581,6 +583,7 @@ Console uses **Virtual Thumbnails** to describe virtual machines and templates. 
 
 ![](doc/getting-started/2137.png)
 
+{:type="lower-alpha"}
 1.  Top left quadrant: Operating system of the Virtual Machine
 2.  Bottom left quadrant: Virtual Machine Hosts software
 3.  Top right quadrant: Power state of Virtual Machine or Status icon
