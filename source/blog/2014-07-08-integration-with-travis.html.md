@@ -1,6 +1,6 @@
 ---
 title: Integration with Travis CI 
-date: 2014-06-18 14:55 UTC
+date: 2014-07-08 14:55 UTC
 author: chessbytes
 tags:
   - Travis CI
