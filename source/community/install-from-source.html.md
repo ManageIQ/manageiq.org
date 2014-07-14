@@ -78,8 +78,8 @@ Details on installing an image using a quickstart file are available from
       ````
 
    4. Log in as postgres, and generate test, production and development
-      databases and the evm user.  Then assign the development database
-      `vmdb_development` to `evm`
+      databases and the root user.  Then assign the development database
+      `vmdb_development` to `root`
 
       ```bash
       su - postgres
