@@ -20,6 +20,10 @@ page_classes: header-page download-page
         steps. You'll be up and running in under 30 minutes.
 
 
+-########################################################################
+-# Selected-target banner / switcher
+-########################################################################
+
 - if defined? deploy_type
   %section.page-tip
     .row
@@ -41,6 +45,10 @@ page_classes: header-page download-page
   .row
     %section.col-md-12
 
+      -##################################################################
+      -# Initial splash page (choose your adventure)
+      -##################################################################
+
       - unless defined? deploy_type
 
         .download-selection-primary
@@ -55,6 +63,9 @@ page_classes: header-page download-page
             - data.deploy_types.each do |dlabel, dname|
               .download-option= link_to dname, "/download/#{dlabel}/", class: "download-choice"
 
+      -##################################################################
+      -# Sub-pages (actual content)
+      -##################################################################
 
       - if defined? deploy_type
         :markdown
@@ -182,6 +193,10 @@ page_classes: header-page download-page
               4. Enter an IP Range
 
 
+        -################################################################
+        -# Next steps
+        -################################################################
+
         .next-steps
           %hr
 
@@ -222,6 +237,9 @@ page_classes: header-page download-page
               If you're looking for a supported ManageIQ-based product, be sure to check it out.
 
 
+-########################################################################
+-# Disclaimer (legal stuff)
+-########################################################################
 
 - if defined? deploy_type
   %section#export.export-notice
