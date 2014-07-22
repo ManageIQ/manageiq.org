@@ -4,6 +4,25 @@ page_classes: header-page download-page
 ---
 -# To add additional deployment types, please edit data/deploy_types.yml
 
+
+-########################################################################
+-# Ruby helper functions
+-########################################################################
+
+:ruby
+  def build_filename type, ext, dev_type = "devel"
+    "manageiq-#{type}-#{dev_type}.#{ext}"
+  end
+
+  def build_url type, ext, dev_type = "devel"
+    "http://manageiq.org/download/#{build_filename type, ext, dev_type}"
+  end
+
+
+-########################################################################
+-# Page header
+-########################################################################
+
 %section.page-header
   .row
     %section.col-md-12
@@ -63,6 +82,7 @@ page_classes: header-page download-page
             - data.deploy_types.each do |dlabel, dname|
               .download-option= link_to dname, "/download/#{dlabel}/", class: "download-choice"
 
+
       -##################################################################
       -# Sub-pages (actual content)
       -##################################################################
@@ -75,7 +95,7 @@ page_classes: header-page download-page
 
           - when 'ovirt'
             :markdown
-              1.  [Download ManageIQ for oVirt](http://manageiq.org/download/manageiq-ovirt-devel.ova){: .download-link}
+              1.  [Download ManageIQ for oVirt](#{build_url "ovirt", "ova"}){: .download-link}
                   to your local computer.
 
               2.  When the file has finished downloading, upload it to
@@ -96,7 +116,7 @@ page_classes: header-page download-page
 
           - when 'rhev'
             :markdown
-              1.  [Download ManageIQ for Red Hat Enterprise Virtualization](http://manageiq.org/download/manageiq-ovirt-devel.ova){: .download-link}
+              1.  [Download ManageIQ for Red Hat Enterprise Virtualization](#{build_url "ovirt", "ova"}){: .download-link}
                   to your local computer.
 
               2.  When the file has finished downloading, upload it to an
@@ -121,10 +141,10 @@ page_classes: header-page download-page
                   this command:
 
                   ~~~bash
-                  curl -O http://manageiq.org/download/manageiq-openstack-devel.qc2 && \
+                  curl -O #{build_url "openstack", "qc2"} && \
                   glance image-create --name "ManageIQ-devel" \
                   --is-public True --disk-format qcow2 \
-                  --container-format=bare --file manageiq-openstack-devel.qc2
+                  --container-format=bare --file #{build_filename "openstack", "qc2"}
                   ~~~
 
               2.  Launch a new instance from the ManageIQ image. ManageIQ needs a
@@ -136,7 +156,7 @@ page_classes: header-page download-page
               1.  From the vSphere client, click File → Deploy OVF Template
                   (or Actions → Deploy OVF Template from the vSphere Web client).
 
-              2.  Enter `http://manageiq.org/download/manageiq-vsphere-devel.ova`
+              2.  Enter `#{build_url "vsphere", "ova"}`
                   in the URL field of the resulting dialog window, and select
                   the location, host and storage you wish to use for the ManageIQ VM.
 
