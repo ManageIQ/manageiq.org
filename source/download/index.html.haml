@@ -10,12 +10,14 @@ page_classes: header-page download-page
 -########################################################################
 
 :ruby
-  def build_filename type, ext, dev_type = "devel"
-    "manageiq-#{type}-#{dev_type}.#{ext}"
+  @build_type = defined?(build_type) ? build_type : "stable"
+
+  def build_filename type, ext
+    "manageiq-#{type}-#{@build_type}.#{ext}"
   end
 
-  def build_url type, ext, dev_type = "devel"
-    "http://manageiq.org/download/#{build_filename type, ext, dev_type}"
+  def build_url type, ext
+    "http://manageiq.org/download/#{build_filename type, ext}"
   end
 
 
@@ -43,6 +45,17 @@ page_classes: header-page download-page
 -# Selected-target banner / switcher
 -########################################################################
 
+- unless @build_type == "stable"
+  %section.page-warning
+    .row
+      %section.col-md-12
+        - stable_url = current_page.url.gsub("#{@build_type}/", '')
+
+        :markdown
+          **Warning**: These are instructions for a **#{@build_type} build**. Things will be unstable, and may break.
+          If you're looking for adventure, please proceed. Otherwise, [view instructions for the current release instead](#{stable_url}).
+
+
 - if defined? deploy_type
   %section.page-tip
     .row
@@ -51,14 +64,13 @@ page_classes: header-page download-page
         .download-selection-secondary
 
           .side-left
-            %strong= "You&lsquo;re currently viewing instructions for <em>#{deploy_name}</em>."
+            %strong.block= "You&lsquo;re currently viewing instructions for <em>#{deploy_name}</em>."
             If this isn&lsquo;t what you want, please select another deploy target:
 
           .side-right
             .download-options
               - data.deploy_types.reject {|d| d == deploy_type}.each do |dlabel, dname|
-                .download-option= link_to dname, "/download/#{dlabel}/", {class: "download-choice alert-link"}
-
+                .download-option= link_to dname, "../#{dlabel}/", {class: "download-choice alert-link"}
 
 %section.installation-steps
   .row
@@ -80,7 +92,17 @@ page_classes: header-page download-page
 
           .row.download-options
             - data.deploy_types.each do |dlabel, dname|
-              .download-option= link_to dname, "/download/#{dlabel}/", class: "download-choice"
+              .download-option= link_to dname, "#{dlabel}/", class: "download-choice"
+
+
+          - unless @build_type.match /beta|devel/
+
+            .row
+              .col-md-10.col-md-offset-1
+                %h3 Like living on the edge?
+
+                %p=link_to "Switch to beta build mode...", "/download/beta/"
+                %p=link_to "Switch to development snapshot mode...", "/download/devel/"
 
 
       -##################################################################

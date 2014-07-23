@@ -301,14 +301,19 @@ body.front-page
 
 
 body.download-page
+  $tip-color: #fef6dc
+  $tip-border-color: #e0ca85
+  $warn-shift: -20
+  $warn-color: adjust-hue($tip-color, $warn-shift)
+  $warn-border-color: adjust-hue($tip-border-color, $warn-shift)
+  $download-link-color: #e39549
+  $warn-link-color: adjust-hue($download-link-color, $warn-shift)
 
   @at-root .page-tip
-    //@extend .alert
-    //@extend .alert-warning
     @extend .hidden-print
 
-    border-bottom: 1px solid #e0ca85
-    background: #fef6dc
+    border-bottom: 1px solid $tip-border-color
+    background: $tip-color
     color: rgba(black, 0.5)
     padding: 2ex 0
 
@@ -316,7 +321,7 @@ body.download-page
       padding-top: 0 !important
       padding-bottom: 0 !important
 
-    strong
+    strong.block
       display: block
 
   .download-options
@@ -328,6 +333,28 @@ body.download-page
 
     a
       margin-left: 6ex
+
+  @at-root .page-warning
+    @extend .page-tip
+    background: $warn-color
+    border-color: $warn-border-color
+    padding-left: 96px
+    padding-bottom: 1ex
+    position: relative
+
+    &:before
+      @extend .fa
+      @extend .fa-warning
+      color: $warn-link-color
+      opacity: 0.75
+      font-size: 48px
+      position: absolute
+      top: 50%
+      margin-top: -24px
+
+
+    a
+      color: $warn-link-color
 
   .download-selection-primary
 
@@ -376,7 +403,7 @@ body.download-page
         padding: 0
         font: inherit
         font-weight: normal
-        color: #e39549
+        color: $download-link-color
         margin-left: 3ex
 
         &:before
