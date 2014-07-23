@@ -21,7 +21,7 @@ Questions should be asked at [ManageIQ's Q&A site, Ask.ManageIQ.org](http://ask.
 {: .alert.alert-warning}
 
 On Windows or Linux, most developers use dedicated IRC software such as
-[HexChat](http://hexchat.readthedocs.org/en/lates/getting_started.html),
+[HexChat](http://hexchat.readthedocs.org/en/latest/getting_started.html),
 [X-Chat](http://xchat.org/docs/start/),
 [Konversation](http://docs.kde.org/development/en/extragear-network/konversation/using-kapp.html),
 or [irssi](http://quadpoint.org/articles/irssi/). For MacOS X,
