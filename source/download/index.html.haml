@@ -50,9 +50,10 @@ page_classes: header-page download-page
     .row
       %section.col-md-12
         - stable_url = current_page.url.gsub("#{@build_type}/", '')
+        - build_name = (build_type == "devel") ? "development snapshot" : "beta build"
 
         :markdown
-          **Warning**: These are instructions for a **#{@build_type} build**. Things will be unstable, and may break.
+          **Warning**: These are instructions for a **#{build_name}**. Things will be unstable, and may break.
           If you're looking for adventure, please proceed. Otherwise, [view instructions for the current release instead](#{stable_url}).
 
 
@@ -101,8 +102,11 @@ page_classes: header-page download-page
               .col-md-10.col-md-offset-1
                 %h3 Like living on the edge?
 
-                %p=link_to "Switch to beta build mode...", "/download/beta/"
-                %p=link_to "Switch to development snapshot mode...", "/download/devel/"
+              .col-md-5.col-md-offset-1
+                =link_to "Switch to beta build mode...", "/download/beta/", class: "download-mode-beta"
+
+              .col-md-5
+                =link_to "Switch to development snapshot mode...", "/download/devel/", class: "download-mode-devel"
 
 
       -##################################################################

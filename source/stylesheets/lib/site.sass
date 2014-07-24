@@ -413,6 +413,26 @@ body.download-page
           margin: 0
 
 
+.download-mode-beta,
+.download-mode-devel
+  //@extend .btn
+  //@extend .btn-default
+
+  &:before
+    @extend .fa
+    margin-right: 0.5ex
+    font-size: 32px
+    vertical-align: middle
+    opacity: 0.5
+
+
+.download-mode-beta:before
+  @extend .fa-wrench
+
+.download-mode-devel:before
+  @extend .fa-bug
+
+
 .content > section
   margin: 0 -15px
 
