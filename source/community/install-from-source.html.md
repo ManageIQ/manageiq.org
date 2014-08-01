@@ -95,7 +95,7 @@ Details on installing an image using a quickstart file are available from
     ```bash
     su - miqbuilder
     curl -sSL https://get.rvm.io | bash -s stable
-    sudo rvm install 1.9.3
+    rvm install 1.9.3
     gem install bundler -v '1.3.5'
     gem uninstall -i /home/cfmebuilder/.rvm/gems/ruby-1.9.3-p547@global bundler -v '1.6.2'
     ```
