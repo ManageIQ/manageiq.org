@@ -117,6 +117,7 @@ Details on installing an image using a quickstart file are available from
     `vmdb_development` database.
 
     ```
+    cp config/database.pg.yml config/database.yml
     bin/rake db:migrate
     bin/rake evm:start
     ```
