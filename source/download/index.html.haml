@@ -13,7 +13,11 @@ page_classes: header-page download-page
   @build_type = defined?(build_type) ? build_type : "stable"
 
   def build_filename type, ext
-    "manageiq-#{type}-#{@build_type}.#{ext}"
+    if @build_type=="stable"
+      "manageiq-#{type}-anand-1-rc1.#{ext}"
+    else
+      "manageiq-#{type}-#{@build_type}.#{ext}"
+    end
   end
 
   def build_url type, ext
@@ -45,16 +49,18 @@ page_classes: header-page download-page
 -# Selected-target banner / switcher
 -########################################################################
 
-- unless @build_type == "stable"
+- if defined? build_type
+
   %section.page-warning
     .row
       %section.col-md-12
         - stable_url = current_page.url.gsub("#{@build_type}/", '')
-        - build_name = (build_type == "devel") ? "development snapshot" : "beta build"
+        - build_name = (build_type == "devel") ? "development snapshot" : "anand release candidate"
 
         :markdown
-          **Warning**: These are instructions for a **#{build_name}**. Things will be unstable, and may break.
-          If you're looking for adventure, please proceed. Otherwise, [view instructions for the current release instead](#{stable_url}).
+          **Warning**: These are instructions for the **#{build_name}**. Things may be unstable, and may break.
+          If you're looking for adventure, please proceed.
+-# Otherwise, [view instructions for the current release instead](#{stable_url}).
 
 
 - if defined? deploy_type
@@ -103,10 +109,10 @@ page_classes: header-page download-page
                 %h3 Like living on the edge?
 
               .col-md-5.col-md-offset-1
-                =link_to "Switch to beta build mode...", "/download/beta/", class: "download-mode-beta"
+                =link_to "Switch to developer snapshot mode...", "/download/devel/", class: "download-mode-rc"
 
               .col-md-5
-                =link_to "Switch to development snapshot mode...", "/download/devel/", class: "download-mode-devel"
+                -#=link_to "Switch to development snapshot mode...", "/download/devel/", class: "download-mode-devel"
 
 
       -##################################################################
@@ -129,7 +135,7 @@ page_classes: header-page download-page
                   following command locally:
 
                   ~~~bash
-                  engine-image-uploader -e $YOUR_EXPORT_DOMAIN --engine=$YOUR_ENGINE_HOST upload -v -m manageiq-ovirt-devel.ova
+                  engine-image-uploader -e $YOUR_EXPORT_DOMAIN --engine=$YOUR_ENGINE_HOST upload -v -m #{build_filename "ovirt", "ova"}
                   ~~~
 
               3.  Navigate to the "Template Import" tab of your export
@@ -150,7 +156,7 @@ page_classes: header-page download-page
                   following command locally:
 
                   ~~~bash
-                  rhevm-image-uploader -e $YOUR_EXPORT_DOMAIN --engine=$YOUR_RHEVM_HOST upload -v -m manageiq-ovirt-devel.ova
+                  rhevm-image-uploader -e $YOUR_EXPORT_DOMAIN --engine=$YOUR_RHEVM_HOST upload -v -m #{build_filename "ovirt", "ova"}
                   ~~~
 
               3.  Navigate to the "Template Import" tab of your export
@@ -167,7 +173,7 @@ page_classes: header-page download-page
                   this command:
 
                   ~~~bash
-                  curl -O #{build_url "openstack", "qc2"} && \
+                  curl -O -L #{build_url "openstack", "qc2"} && \
                   glance image-create --name "ManageIQ-devel" \
                   --is-public True --disk-format qcow2 \
                   --container-format=bare --file #{build_filename "openstack", "qc2"}
