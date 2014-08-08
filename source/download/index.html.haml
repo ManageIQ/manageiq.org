@@ -110,7 +110,7 @@ page_classes: header-page download-page
                   this command:
 
                   ~~~bash
-                  curl -O http://manageiq.org/download/manageiq-openstack-devel.qc2 && \
+                  curl -L -O http://manageiq.org/download/manageiq-openstack-devel.qc2 && \
                   glance image-create --name "ManageIQ-devel" \
                   --is-public True --disk-format qcow2 \
                   --container-format=bare --file manageiq-openstack-devel.qc2
