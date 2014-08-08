@@ -138,8 +138,12 @@ proxy "/documentation/development/index.html", "/documentation/development/READM
 proxy "/.htaccess", "/.htaccess.html", :locals => {}, :ignore => true
 
 data.deploy_types.each do |deploy_type, deploy_name|
-  proxy "/download/#{deploy_type}.html", "/download/index.html", locals: {deploy_type: deploy_type, deploy_name: deploy_name}
+  proxy "/download/#{deploy_type}.html", "/download/index.html", locals: {deploy_type: deploy_type, deploy_name: deploy_name, build_type: "stable"}
+  proxy "/download/devel/#{deploy_type}.html", "/download/index.html", locals: {deploy_type: deploy_type, deploy_name: deploy_name, build_type: "devel"}
+  proxy "/download/rc/#{deploy_type}.html", "/download/index.html", locals: {deploy_type: deploy_type, deploy_name: deploy_name, build_type: "rc"}
 end
+proxy "/download/devel.html", "/download/index.html", locals: {build_type: "devel"}
+proxy "/download/rc.html", "/download/index.html", locals: {build_type: "rc"}
 
 ready do
   # Add author pages
