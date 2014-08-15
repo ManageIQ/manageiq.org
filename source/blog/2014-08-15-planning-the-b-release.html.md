@@ -9,9 +9,10 @@ tags:
 ---
 
 Now that the [Anand release](http://manageiq.org/download/) is almost out the door, it's the right time to turn our attention to the next release. Since we're going alphabetically by chess world champions, we have a few [choices](http://simple.wikipedia.org/wiki/List_of_World_Chess_Champions):
-  - Paolo **Boi** - 1575 - Kingdom of Sicily (If we want to go way back in history)
-  - Mikhail **Botvinnik** - 1948, 1958, 1961 - Soviet Union (Russia)
-  - Elisabeth **Bykova** - 1953-1956 - Soviet Union (Russia)
+
+- Paolo **Boi** - 1575 - Kingdom of Sicily (If we want to go way back in history)
+- Mikhail **Botvinnik** - 1948, 1958, 1961 - Soviet Union (Russia)
+- Elisabeth **Bykova** - 1953-1956 - Soviet Union (Russia)
 
 Vote for your choice in the [talk comments](http://talk.manageiq.org/). If you don't like any of the available choices, add one. They must have been a chess grandmaster, although we are biased towards world champions.
 
