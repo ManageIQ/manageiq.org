@@ -16,3 +16,6 @@ And we have some very special news about that last bit: Booz Allen Hamilton, alo
 This is a special time for the ManageIQ community. The first release is very soon under our belts, and the next will be the first one fully developed in the [open source way](http://www.theopensourceway.org/). If you care about how the ManageIQ community is governed, this will be a chance to plan one aspect of the community that's just as important as the code. The design summit will be your chance to define what the ManageIQ Community will become.
 
 To respond to the call for participation, [submit an abstract today](http://talk.manageiq.org/category/abstracts). We want to hear from all parties: community members, partners, users, developers and customers.
+
+For developers who want to propose new features for the next release, [submit your blueprints](http://talk.manageiq.org/category/developers/blueprints), and we will discuss them at the design summit.
+
