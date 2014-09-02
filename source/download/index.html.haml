@@ -50,7 +50,7 @@ page_classes: header-page download-page
     .row
       %section.col-md-12
         - stable_url = current_page.url.gsub("#{@build_type}/", '')
-        - build_name = (build_type == "devel") ? "development snapshot" : "anand release"
+        - build_name = (build_type == "devel") ? "nightly build" : "anand release"
 
         :markdown
           **Warning**: These are instructions for the **#{build_name}**. Things may be unstable, and may break.
@@ -104,10 +104,7 @@ page_classes: header-page download-page
                 %h3 Like living on the edge?
 
               .col-md-5.col-md-offset-1
-                =link_to "Download the nightly build for testing only...", "/download/devel/", class: "download-mode-rc"
-
-              .col-md-5
-                -#=link_to "Switch to development snapshot mode...", "/download/devel/", class: "download-mode-devel"
+                =link_to "Download the nightly build for testing only...", "/download/devel/", class: "download-mode-devel"
 
 
       -##################################################################
