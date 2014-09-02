@@ -179,12 +179,6 @@ there are no plans to provide a hosted offering based on the open source
 ManageIQ project in the foreseeable future.
 
 
-## How do you pronounce ManageIQ?
-
-It is pronounced "Manage Eye Queue". The IQ part of the name stands for
-"intelligence quotient".
-
-
 ## Can I get involved with the community if I'm not a developer?
 
 A key component of the ManageIQ community is the ability to adapt the
