@@ -17,7 +17,7 @@ guidelines](http://freenode.net/channel_guidelines.shtml).
 ## Connecting to IRC
 
 <i class="icon fa fa-warning"></i>
-Questions should be asked at [ManageIQ's Q&A site, Ask.ManageIQ.org](http://ask.manageiq.org/).
+Questions should be asked at [ManageIQ's interactive forum, Talk.ManageIQ.org](http://talk.manageiq.org/).
 {: .alert.alert-warning}
 
 On Windows or Linux, most developers use dedicated IRC software such as

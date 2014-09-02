@@ -52,7 +52,7 @@ and will be dealt with.
 
 ## Specific Guidelines
 
-### [Talk](http://talk.manageiq.org) and [Ask](http://ask.manageiq.org)
+### [Talk](http://talk.manageiq.org)
 
 * Search for your problem before asking for help - your question may have
   been asked before, and even if the answer is out of date, adding a new

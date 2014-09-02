@@ -13,11 +13,7 @@ page_classes: header-page download-page
   @build_type = defined?(build_type) ? build_type : "stable"
 
   def build_filename type, ext
-    if @build_type=="stable"
-      "manageiq-#{type}-anand-1-rc1.#{ext}"
-    else
-      "manageiq-#{type}-#{@build_type}.#{ext}"
-    end
+    "manageiq-#{type}-#{@build_type}.#{ext}"
   end
 
   def build_url type, ext
@@ -49,18 +45,17 @@ page_classes: header-page download-page
 -# Selected-target banner / switcher
 -########################################################################
 
-- if defined? build_type
-
+- unless @build_type == "stable"
   %section.page-warning
     .row
       %section.col-md-12
         - stable_url = current_page.url.gsub("#{@build_type}/", '')
-        - build_name = (build_type == "devel") ? "development snapshot" : "anand release candidate"
+        - build_name = (build_type == "devel") ? "development snapshot" : "anand release"
 
         :markdown
           **Warning**: These are instructions for the **#{build_name}**. Things may be unstable, and may break.
           If you're looking for adventure, please proceed.
--# Otherwise, [view instructions for the current release instead](#{stable_url}).
+          Otherwise, [view instructions for the current release instead](#{stable_url}).
 
 
 - if defined? deploy_type
