@@ -10,7 +10,7 @@ tags:
 
 [Download ManageIQ Anand](http://manageiq.org/download)
 
-We're naming ManageIQ releases after chess grandmasters. Read about [Viswanathan_Anand](http://en.wikipedia.org/wiki/Viswanathan_Anand), this release's namesake. 
+We're naming ManageIQ releases after chess grandmasters. Read about [Viswanathan Anand](http://en.wikipedia.org/wiki/Viswanathan_Anand), this release's namesake. 
 
 One of the great things about launching new communities is all of the first landmarks and milestones reached in a short period of time:
 
