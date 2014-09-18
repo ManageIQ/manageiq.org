@@ -8,10 +8,11 @@ tags:
 - bug squashing
 ---
 
-We just finished up the Sprint 12 demo, ended September 9. View the sprint demo below -
-<iframe width="560" height="315" src="//www.youtube.com/embed/M5NITPIlA38" frameborder="0" allowfullscreen></iframe>
+We just finished up the Sprint 12 demo, ended September 9.
 
-If you want to go over the highlights of what is in the sprint demo, I'm posting the notes below -
+<iframe width="640" height="360" src="//www.youtube.com/embed/M5NITPIlA38" frameborder="0" allowfullscreen></iframe>
+
+If you want to read the highlights of the sprint demo, notes are posted below:
 
 ## Sprint 12 Demo Highlights
 
@@ -24,33 +25,37 @@ If you want to go over the highlights of what is in the sprint demo, I'm posting
 - Fleecing
 
 
-Sprints
+### Sprints
+
 - 3 weeks long each ending on a Monday
 - GitHub Milestone per Sprint
 - GitHub Milestone called Roadmap
 
-Sprint 12 Ended Sept 8
+### Sprint 12 Ended Sept 8
+
 - [links to sprint issues](https://github.com/ManageIQ/manageiq/issues?q=milestone%3A%22Sprint+12+Ending+Sept+9%2C+2014%22)
 - Over 90 Pull Requests Merged!
 - 63 issues labeled as â€œbugâ€
 - 15 issues labeled as â€œapplianceâ€
 - 22 issues labeled as â€œenhancementâ€
 
-User Interface
+### User Interface
+
 - Form Buttons (css based)
 - Patternfly modified Bootstrap
 
 
-Automate
+### Automate
+
 - EMS Refresh (Amazon virtualization type)
 - Exposed cloud relationship in service models
 - Persistent state data through retries
 - Automate Model changes
 - High level rubyrep changes
 
-Amazon Virtualization Type
+### Amazon Virtualization Type
 
-Service Models: Cloud Relationship
+### Service Models: Cloud Relationship
     class Flavor
         expose :ext_management_system
         expose :vms
@@ -98,7 +103,8 @@ Service Models: Cloud Relationship
         expose :security_groups
     end
 
-###Persistent state data through retries
+### Persistent state data through retries
+
 - New automate methods for state machine methods:
   - state_var_exist?(var_name)
   - set_state_var(var_name, value)
@@ -114,11 +120,13 @@ Example:
         $evm.set_state_var(â€œtest_dataâ€, 1)
     end
 
-###Automate Model changes
+### Automate Model changes
+
 -  Auto-placement run from a state machine step for Cloud and Infrastructure provisioning
 -  Added common "Finished" step to all Automate state machine classes
 
 Added eligible_* and set_* methods for cloud resources to provision task service model
+
 -  eligible_availability_zones
 -  eligible_cloud_networks
 -  eligible_cloud_subnets
@@ -131,15 +139,18 @@ Added eligible_* and set_* methods for cloud resources to provision task service
 ### Automate changes
 
 Console
+
 -  Config temp disk for OpenStack Fleecing
 -  Key generation
 
 Security
+
 -  CertMonger Integration
 -  IPA Research for Single Sign-On
 -  Appliance
 
-###Appliance
+### Appliance
+
 -  Ruby 2.0 changes (compatible with 1.9.3)
 -  Logrotate now rotates our logs!
 -  Gem upgrades for bugs/enhancements
@@ -148,14 +159,17 @@ Security
 -  net-ping
 -  Added/labelled issues for ruby2.x/rails4.x
 
-###REST API
+### REST API
+
 - Update for Authentication
   - With External Authentication (httpd) enabled against an IPA Server
   - fixed bug in the REST API and Appliance Console to honor the external credentials like the Web UI when targeting the /api entrypoint
 
 
-###VM Fleecing
+### VM Fleecing
+
 XFS Filesystem Support
+
 - Work in Progress
   - see PR - https://github.com/ManageIQ/manageiq/pull/490
 - Most of the code is complete
