@@ -9,11 +9,11 @@ tags:
 - extending manageiq
 ---
 
-John Hardy and Brad Ascar stopped by the studio to talk about their talks at the upcoming [ManageIQ Design Summit on October 7 & 8 in Mahwah, NJ](http://miqdevsummit14.eventbrite.com/)
+John Hardy and Brad Ascar stopped by the studio to discuss their talks at the upcoming [ManageIQ Design Summit on October 7 & 8 in Mahwah, NJ](http://miqdevsummit14.eventbrite.com/)
 
 <iframe width="640" height="360" src="//www.youtube.com/embed/riRz18yqwfI" frameborder="0" allowfullscreen></iframe>
 
-John and Brad's upcoming talks at design summit:
+John and Brad's upcoming talks:
 
 - Fisher Price: My First State Machine - John Hardy
 - Navigating the ManageIQ Object Model - Brad Ascar
