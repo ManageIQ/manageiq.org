@@ -12,4 +12,4 @@ Aaron Patterson joined us from Russia on this fun podcast, covering many topics,
 
 <iframe width="640" height="360" src="//www.youtube.com/embed/rGvd2J1GDKQ" frameborder="0" allowfullscreen></iframe>
 
-You can see and lots of other smart people at the upcoming [ManageIQ Design Summit](http://miqdevsummit14.eventbrite.com/) on October 7 & 8 in Mahwah, New Jersey.
+You can see Aaron and lots of other smart people at the upcoming [ManageIQ Design Summit](http://miqdevsummit14.eventbrite.com/) on October 7 & 8 in Mahwah, New Jersey.
