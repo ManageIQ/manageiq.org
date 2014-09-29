@@ -93,3 +93,11 @@ gem "kramdown"
 gem 'open-uri-cached'
 
 gem 'font-awesome-middleman'
+
+gem 'chronic'
+
+# Command line parser
+gem "slop"
+
+# XDG launcher
+gem "launchy"
