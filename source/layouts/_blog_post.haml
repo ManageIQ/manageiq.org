@@ -11,7 +11,7 @@
   article_view = (article.url == current_page.url)
   summarize ||= summarize
   tags = article.data.tags
-  tags = tags.parse_csv.map{|s| s.strip} if tags.class == String
+  tags = tags.parse_csv.map{|s| s.strip} if tags.is_a?(String) && !tags.empty?
 
   def author_data item
     data.authors[item] if defined? data.authors[item]
@@ -118,7 +118,7 @@
 
 
   %footer.post-meta
-    - if tags
+    - if tags.is_a? Array
       .tags
         Tags:
 
