@@ -16,4 +16,4 @@ Jarid and Nirmal brought their late night act to the podcast, talking up their c
 
 <iframe width="640" height="360" src="//www.youtube.com/embed/Xp708MUvRss" frameborder="0" allowfullscreen></iframe>
 
-<a href="http://boozallen.com/" target="_blank">Booz Allen Hamilton</a> is a founding member of the ManageIQ community and is doing some amazing things, integration-wise - look for some great sessions from them at the [design summit](http://miqdevsummit14.eventbrite.com/) discussing their upcoming open source release.
+<a href="http://boozallen.com/" target="_blank">Booz Allen Hamilton</a> is a founding member of the ManageIQ community, a co-sponsor of the [design summit](http://miqdevsummit14.eventbrite.com/), and is doing some amazing things, integration-wise, with ManageIQ. Look for some great sessions from them next week discussing their upcoming open source release.
