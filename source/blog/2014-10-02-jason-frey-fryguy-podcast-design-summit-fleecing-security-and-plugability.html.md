@@ -1,5 +1,5 @@
 ---
-title: 'Jason Frey Podcast - Design Summit, Fleecing, Security, and Plugability'
+title: Jason Frey Podcast - Design Summit, Fleecing, Security, and Plugability
 author: johnmark
 date: 2014-10-02 15:44:09
 tags: design summit, fleecing, shellshock, heartbleed, fryguy
