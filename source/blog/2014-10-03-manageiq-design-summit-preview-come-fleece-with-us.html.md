@@ -36,7 +36,7 @@ The design track will consist of developers plotting out the next release - and 
 
 **Modularization Direction and Roadmap - Oleg and Jason Frey**
 
-As of now, ManageIQ is a single monolithic release, but that may not be the case in future releases. 
+As of now, ManageIQ is a single monolithic release, but that may not be the case in future releases. You can hear about some of this in [Jason's podcast](http://youtu.be/9tmckVK-328). 
 
 **Heat/CloudFormation Integration - Greg McCullough, Bill Wei**
 
@@ -52,7 +52,7 @@ Jarid and Nirmal talk about how to integrate future versions of their cloud brok
 
 **Upgrading to Ruby 2.x / Upgrading to Rails 4.x - Joe Rafaniello, Aaron Patterson**
 
-These are actually two separate sessions separated by lunch. ManageIQ is a Rails application, but it is built on outdated Ruby and Rails architectures. Time to figure out how to upgrade them.
+These are actually two separate sessions separated by lunch. ManageIQ is a Rails application, but it is built on outdated Ruby and Rails architectures. Time to figure out how to upgrade them. Aaron gave us a preview of what the work entails [in his podcast](http://youtu.be/rGvd2J1GDKQ). 
 
 **Hacking Room**
 
