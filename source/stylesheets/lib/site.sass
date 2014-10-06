@@ -1,7 +1,10 @@
 $bg-header-color: mix(#d2dfef, white, 60)
 
-body
+body:not(.admin)
   border-top: 10px solid darken($bg-header-color, 15)
+  overflow: auto
+
+body
   box-sizing: border-box
   color: #333
   font-size: 11.5pt //1.75em
@@ -41,19 +44,22 @@ footer .row
 
 body:not(.header-page)
 
+  #content
+    max-width: 70em
+
+
+body:not(.header-page):not(.admin)
+
   @media screen
     #page-wrap
       padding-top: 7em
-
-  #content
-    max-width: 70em
 
   @media screen and (max-width: 1023px)
     #page-wrap
       padding-top: 12em
 
 
-body:not(.front-page)
+body:not(.front-page):not(.admin)
 
   .logo
     //max-width: 342px
