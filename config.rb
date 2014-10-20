@@ -211,6 +211,8 @@ helpers do
   end
 end
 
+require 'lib/monkeypatch_blog_date.rb'
+
 
 ###
 # Development-only configuration
