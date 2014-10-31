@@ -87,20 +87,23 @@ class SiteHelpers < Middleman::Extension
 
     # Pull in a Markdown document's ToC or generate one based on H2s
     def doc_toc source_filename, someclass = ''
-      current_dir = current_page.source_file.sub(/[^\/]*$/, '')
-      tasks_md = File.read "#{current_dir}/#{source_filename}.html.md"
-      doc = Nokogiri::HTML(markdown_to_html(tasks_md))
-      toc = doc.css('#markdown-toc').attr(:id, '')
+      begin
+        current_dir = current_page.source_file.sub(/[^\/]*$/, '')
+        tasks_md = File.read "#{current_dir}/#{source_filename}.html.md"
+        doc = Nokogiri::HTML(markdown_to_html(tasks_md))
+        toc = doc.css('#markdown-toc').attr(:id, '')
 
-      # Rewrite all links in the ToC (only done if ToC exists)
-      toc.css('li a').each do |link|
-        link[:href] = "#{source_filename}/#{link[:href]}"
+        # Rewrite all links in the ToC (only done if ToC exists)
+        toc.css('li a').each do |link|
+          link[:href] = "#{source_filename}/#{link[:href]}"
+        end
+
+        # ToC: Either in-page or (otherwise) generated
+        toc = toc.any? ? toc : h2_to_toc(doc, source_filename)
+
+        toc.attr(:class, "toc-interpage #{someclass}")
+      rescue
       end
-
-      # ToC: Either in-page or (otherwise) generated
-      toc = toc.any? ? toc : h2_to_toc(doc, source_filename)
-
-      toc.attr(:class, "toc-interpage #{someclass}")
     end
 
   end
