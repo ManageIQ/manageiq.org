@@ -1,5 +1,4 @@
 ---
-title: Download and install
 page_classes: header-page download-page
 ---
 -# To add additional deployment types, please edit data/deploy_types.yml
@@ -28,15 +27,15 @@ page_classes: header-page download-page
 %section.page-header
   .row
     %section.col-md-12
-
-      %h2{class: (defined? deploy_type) ? "with-type" : "without-type"}
-        Download and install ManageIQ
-        - if defined? deploy_type
-          for
-          %span.product-name
-            = deploy_name
+      :ruby
+        subheader_type = @build_type == "stable" ? "" : "-#{@build_type}"
+        header_string = "Download and install ManageIQ#{subheader_type}"
+        subheader_string = defined?(deploy_name) ? "for <span class='product-name'>#{deploy_name}</span>" : ""
 
       :markdown
+        ## #{header_string} #{subheader_string}
+        {:.#{(defined? deploy_type) ? "with-type" : "without-type"}}
+
         Getting started with ManageIQ is as simple as following three
         steps. You'll be up and running in under 30 minutes.
 
