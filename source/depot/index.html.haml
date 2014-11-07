@@ -1,0 +1,20 @@
+- require "#{root}/source/depot/extensions-info.rb"
+
+- extensions_info.each do |name, extension|
+
+  %pre= extension.to_yaml
+
+  %h2
+    =# link_to extension['name'].titlecase, extension['src_url']
+    = link_to extension['name'].titlecase, "extension/#{name}/"
+  .author
+    by
+    = ([extension['author']] + extension['collaborator']).to_sentence
+  .tags
+    = extension['tags'].join(', ')
+
+  .description
+    = markdown_to_html extension['description']
+
+
+-#%pre= info.to_yaml
