@@ -92,10 +92,15 @@ Details on installing an image using a quickstart file are available from
 
     ```bash
     su - miqbuilder
-    curl -sSL https://get.rvm.io | bash -s stable
+    \curl -sSL https://get.rvm.io | bash -s stable
     rvm install 2.0.0
     gem install bundler -v "~>1.3"
     ```
+
+    Note: You can install the development version of rvm by using:
+    `\curl -sSL https://get.rvm.io | bash`
+
+    See the [rvm website](http://rvm.io/rvm/install) for more information on installing rvm.
 
     Note: The bundler version needs to match the [version constraint specified in the lib/Gemfile](https://github.com/ManageIQ/manageiq/blob/43eb6a63e220e0274068549708644edce78485f4/lib/Gemfile#L3)
 
