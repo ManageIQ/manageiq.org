@@ -1,0 +1,75 @@
+:ruby
+  depot_dir = "#{root}/source/depot"
+  repo_dir = "#{depot_dir}/extension"
+  extension_dir = "#{repo_dir}/#{extension_name}"
+
+  require "#{depot_dir}/extensions-info.rb"
+
+  extension = extensions_info[extension_name]
+
+  begin
+    content = Nokogiri::HTML markdown_to_html open("#{extension_dir}/content.md").read
+
+    # Strip the H1 if it matches the extension name
+    if content.css('h1').text.gsub(/[\W_\-]/, '').downcase == extension_name.gsub(/[\W_\-]/, '').downcase
+      content.css('h1').remove
+    end
+  rescue # Just in case...
+    content = 'No summary available.'
+  end
+
+
+-##########################
+
+- if extension && extension['name']
+
+  %h2= extension['name']
+
+  .author
+    by
+    = ([extension['author']] + extension['collaborator']).to_sentence
+
+  .date
+    Last updated:
+    = pretty_date extension['date'].to_date
+
+  .tags
+    = extension['tags'].join(', ')
+
+  .dependencies
+    = extension['dependencies'].join(', ')
+
+  .version
+    Current version:
+    = extension['version']
+
+  .miq-releases
+    Available for:
+    - versions = extension['miq_ver'] + ['bsomething']
+
+    =# extension['miq_ver'].join(', ')
+    = versions.join(', ')
+
+  .previous-versions
+    FIXME: Previous version stuff here
+    :ruby
+      git = "git -C #{repo_dir}"
+      original_commit = `#{git} log --oneline source/ceph-faq.md | tail -n 1 | cut -f1 -d ' '`
+      branches = `#{git} branch --contains #{original_commit}`.split(/\W+/).reject{|x| x.empty?}
+
+    %pre= branches & versions
+
+  - scripts = Dir["#{extension_dir}/scripts/*"]
+
+  - if scripts.count > 0
+    .scripts
+      Scripts:
+      %ul
+        - scripts.each do |script|
+          %li= link_to script.split('/').last, script.gsub(/.*depot\/ext/, '/depot/ext')
+
+  %hr
+
+  = content
+
+  %pre= extension.to_yaml
