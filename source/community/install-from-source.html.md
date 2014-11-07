@@ -22,12 +22,11 @@ Details on installing an image using a quickstart file are available from
     passwd miqbuilder
     ```
 
-3.  For both RHEL and CentOS, download and install the epel (Extra Packages
+3.  (Optional) For both RHEL and CentOS, download and install the epel (Extra Packages
     for Enterprise Linux) package
 
     ```bash
-    wget http://mirror.nexcess.net/epel/6/i386/epel-release-6-8.noarch.rpm
-    yum -y install epel-release-6-8.noarch.rpm
+    yum -y install http://dl.fedoraproject.org/pub/epel/6Server/x86_64/epel-release-6-8.noarch.rpm
     ```
 
 4.  `miqbuilder` should be set to use `sudo`. Add the following line to
