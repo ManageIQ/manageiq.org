@@ -208,7 +208,7 @@ helpers do
     url = args[url_index]
     current_path = '/' + current_page.path.gsub(/[^\/]*$/, '')
 
-    if current_path.match(dev_root)
+    if current_page.url.match(dev_root)
       if url.respond_to?('gsub') && url.respond_to?('match') && !url.match(/^http|^#/)
         args[url_index] = current_path + url.gsub(/\.md$/, "")
       end
