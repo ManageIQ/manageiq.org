@@ -93,6 +93,14 @@
 
       page_date = defined?(page.date) ? page.date.to_s : nil
 
+      # Evil global variable hack to store page's path
+      # used by ManageIQ's monkeypatched link_to
+      # (see config.rb)
+      #
+      # This side-steps page.render reporting the current_page
+      # as search-results.json
+      $current_path = page.path
+
       page_id = pages.length
       page_content = defined?(page.body) ? page.body : page.render({layout: false}).sub(page_title, '')
 

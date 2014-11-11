@@ -203,12 +203,22 @@ helpers do
   alias_method :_link_to, :link_to
 
   def link_to(*args, &block)
-    dev_root = 'documentation/development'
+    dev_root = /^documentation\/development/
     url_index = block_given? ? 0 : 1
     url = args[url_index]
-    current_path = '/' + current_page.path.gsub(/[^\/]*$/, '')
 
-    if current_page.url.match(dev_root)
+    current_path = if current_page.path.match(/\.json$/)
+       # Evil global variable, defined in:
+       # - lib/site_helpers.rb and
+       # - source/search-results.json.haml
+       $current_path
+     else
+       current_page.path
+     end
+
+    if current_path.match(dev_root)
+      current_path = '/' + current_path.gsub(/[^\/]*$/, '')
+
       if url.respond_to?('gsub') && url.respond_to?('match') && !url.match(/^http|^#/)
         args[url_index] = current_path + url.gsub(/\.md$/, "")
       end
