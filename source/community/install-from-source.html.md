@@ -22,12 +22,11 @@ Details on installing an image using a quickstart file are available from
     passwd miqbuilder
     ```
 
-3.  For both RHEL and CentOS, download and install the epel (Extra Packages
+3.  (Optional) For both RHEL and CentOS, download and install the epel (Extra Packages
     for Enterprise Linux) package
 
     ```bash
-    wget http://mirror.nexcess.net/epel/6/i386/epel-release-6-8.noarch.rpm
-    yum -y install epel-release-6-8.noarch.rpm
+    yum -y install http://dl.fedoraproject.org/pub/epel/6Server/x86_64/epel-release-6-8.noarch.rpm
     ```
 
 4.  `miqbuilder` should be set to use `sudo`. Add the following line to
@@ -88,17 +87,21 @@ Details on installing an image using a quickstart file are available from
       psql -c "alter database vmdb_development owner to root"
       ```
 
-8.  As user miqbuilder, set up the ManageIQ Ruby development environment. We
-    rely on bundler 1.3.5, if your distribution has a newer version of Bundler,
-    remove it (meaning that last line here for uninstall is optional):
+8.  As user miqbuilder, set up the ManageIQ Ruby development environment.
 
     ```bash
     su - miqbuilder
-    curl -sSL https://get.rvm.io | bash -s stable
-    rvm install 1.9.3
-    gem install bundler -v '1.3.5'
-    gem uninstall -i /home/miqbuilder/.rvm/gems/ruby-1.9.3-p547@global bundler -v '1.6.2'
+    \curl -sSL https://get.rvm.io | bash -s stable
+    rvm install 2.0.0
+    gem install bundler -v "~>1.3"
     ```
+
+    Note: You can install the development version of rvm by using:
+    `\curl -sSL https://get.rvm.io | bash`
+
+    See the [rvm website](http://rvm.io/rvm/install) for more information on installing rvm.
+
+    Note: The bundler version needs to match the [version constraint specified in the lib/Gemfile](https://github.com/ManageIQ/manageiq/blob/43eb6a63e220e0274068549708644edce78485f4/lib/Gemfile#L3)
 
 9.  Clone the ManageIQ repo and install dependencies:
 
