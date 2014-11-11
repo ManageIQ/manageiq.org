@@ -41,6 +41,11 @@ class SiteHelpers < Middleman::Extension
     # or peek into the page to find the H1,
     # or fallback to a filename-based-title
     def discover_title(page = current_page)
+      # Evil global variable hack to store page's path
+      # used by ManageIQ's monkeypatched link_to
+      # (see config.rb)
+      $current_path = page.path
+
       return page.data.title unless page.data.title.nil?
 
       page.render({layout: false}).match(/<h[1-2][^>]*>(.*?)<\/h[1-2]>/) do |m|
