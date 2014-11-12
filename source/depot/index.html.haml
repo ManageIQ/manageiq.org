@@ -12,21 +12,56 @@ page_classes: "depot depot-index"
   Filter by:
   = tags_list ["all"] + all_tags, "all"
 
-- extensions_info.each do |name, extension|
+#extension-list.extensions
+  - extensions_info.each do |name, extension|
 
-  .title
-    %h2
-      =# link_to extension['name'].titlecase, extension['src_url']
-      = link_to extension['name'].titlecase, "extension/#{name}/"
+    .extension
 
-  .author
-    by
-    = ([extension['author']] + extension['collaborator']).to_sentence
+      .title
+        %h2
+          =# link_to extension['name'].titlecase, extension['src_url']
+          = link_to extension['name'].titlecase, "extension/#{name}/"
 
-  .tags= tags_list extension['tags']
+      .author
+        by
+        = ([extension['author']] + extension['collaborator']).to_sentence
 
-  .description
-    = markdown_to_html extension['description']
+      .tags= tags_list extension['tags']
+
+      .description
+        = markdown_to_html extension['description']
+
+      -#%pre= extension.to_yaml
 
 
-  %pre= extension.to_yaml
+- content_for :tail do
+  :coffee
+    $extensions = $('#extension-list .extension')
+
+
+    highlightActiveTag = (tag = "all")->
+      $('.tags-filter a').each (i,e)->
+        $(e).toggleClass('active', $(e).text().trim() == tag)
+
+
+    showTag = ->
+      tag = window.location.hash.split('/')[1]
+
+      highlightActiveTag(tag)
+
+      if tag == 'all' or tag == undefined
+        $extensions.show()
+      else
+        # Show or hide, depending on if a tag matches
+        for extension in $extensions
+          matches = $('.tags a', extension).filter((i,t)-> $(t).text().trim() == tag).length > 0
+
+          $(extension).toggle(matches)
+
+
+    $ ->
+
+      $(window).on 'hashchange', showTag
+
+      do showTag
+
