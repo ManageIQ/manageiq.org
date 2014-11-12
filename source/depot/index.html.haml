@@ -1,3 +1,7 @@
+---
+page_classes: "depot depot-index"
+---
+
 :ruby
   require "#{root}/source/depot/extensions-info.rb"
 
@@ -19,7 +23,7 @@
     by
     = ([extension['author']] + extension['collaborator']).to_sentence
 
-  = tags_list extension['tags']
+  .tags= tags_list extension['tags']
 
   .description
     = markdown_to_html extension['description']

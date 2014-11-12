@@ -37,7 +37,7 @@ def tags_list tags, default_tag = '', uri_prefix = ''
   return if tags.empty?
 
   capture_haml do
-    haml_tag "div", {class: "tags"} do
+    haml_tag "div", {class: "tags-list"} do
       haml_tag "ul" do
 
         tags.each do |tag|
