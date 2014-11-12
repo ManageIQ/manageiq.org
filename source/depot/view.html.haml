@@ -23,7 +23,9 @@
 
 - if extension && extension['name']
 
-  %h2= extension['name']
+  .title
+    %h2= extension['name']
+    .version= extension['version']
 
   .author
     by
@@ -34,30 +36,10 @@
     = pretty_date extension['date'].to_date
 
   .tags
-    = extension['tags'].join(', ')
+    = tags_list extension['tags']
 
   .dependencies
     = extension['dependencies'].join(', ')
-
-  .version
-    Current version:
-    = extension['version']
-
-  .miq-releases
-    Available for:
-    - versions = extension['miq_ver'] + ['bsomething']
-
-    =# extension['miq_ver'].join(', ')
-    = versions.join(', ')
-
-  .previous-versions
-    FIXME: Previous version stuff here
-    :ruby
-      git = "git -C #{repo_dir}"
-      original_commit = `#{git} log --oneline source/ceph-faq.md | tail -n 1 | cut -f1 -d ' '`
-      branches = `#{git} branch --contains #{original_commit}`.split(/\W+/).reject{|x| x.empty?}
-
-    %pre= branches & versions
 
   - scripts = Dir["#{extension_dir}/scripts/*"]
 
@@ -67,6 +49,20 @@
       %ul
         - scripts.each do |script|
           %li= link_to script.split('/').last, script.gsub(/.*depot\/ext/, '/depot/ext')
+
+  :ruby
+    versions = extension['miq_ver'] + ['bsomething']
+    git = "git -C #{repo_dir}"
+    original_commit = `#{git} log --oneline #{extension_dir} | tail -n 1 | cut -f1 -d ' '`
+    branches = `#{git} branch --contains #{original_commit}`.split(/\W+/).reject{|x| x.empty?}
+    branch_versions = branches & versions
+
+  - if branch_versions.count > 0
+    .previous-versions
+      Also available for previous ManageIQ releases:
+      %ul
+        - branch_versions.each do |ver|
+          %li= link_to ver, extension['src_url'].gsub(/tree\/master/, "tree/#{ver}")
 
   %hr
 

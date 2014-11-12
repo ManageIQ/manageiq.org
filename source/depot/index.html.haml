@@ -1,20 +1,28 @@
-- require "#{root}/source/depot/extensions-info.rb"
+:ruby
+  require "#{root}/source/depot/extensions-info.rb"
+
+  all_tags = extensions_info.dup.map {|n, e| e['tags']}.flatten.sort.uniq
+
+
+.tags-filter
+  Filter by:
+  = tags_list ["all"] + all_tags, "all"
 
 - extensions_info.each do |name, extension|
 
-  %pre= extension.to_yaml
+  .title
+    %h2
+      =# link_to extension['name'].titlecase, extension['src_url']
+      = link_to extension['name'].titlecase, "extension/#{name}/"
 
-  %h2
-    =# link_to extension['name'].titlecase, extension['src_url']
-    = link_to extension['name'].titlecase, "extension/#{name}/"
   .author
     by
     = ([extension['author']] + extension['collaborator']).to_sentence
-  .tags
-    = extension['tags'].join(', ')
+
+  = tags_list extension['tags']
 
   .description
     = markdown_to_html extension['description']
 
 
--#%pre= info.to_yaml
+  %pre= extension.to_yaml
