@@ -3,14 +3,21 @@ page_classes: "depot depot-view"
 ---
 
 :ruby
+  # Repo-related directories
   depot_dir = "#{root}/source/depot"
   repo_dir = "#{depot_dir}/extension"
   extension_dir = "#{repo_dir}/#{extension_name}"
 
+  # Common depot-related code
   require "#{depot_dir}/extensions-info.rb"
-
   extension = extensions_info[extension_name]
 
+  # Git-related information
+  git = "git -C #{repo_dir}"
+  first_commit = `#{git} log --oneline #{extension_dir} | tail -n 1 | cut -f1 -d ' '`
+  modified_time = IO.popen(%w[git log --pretty=format:%ai] + [extension_dir]).read.split(/\n/).first.to_time rescue nil
+
+  # Content grabber
   begin
     content = Nokogiri::HTML markdown_to_html open("#{extension_dir}/content.md").read
 
@@ -48,7 +55,7 @@ page_classes: "depot depot-view"
 
       .date
         Last updated:
-        = pretty_date extension['date'].to_date
+        = pretty_date(modified_time || extension['date'])
 
     .col-sm-6
       .tags= tags_list extension['tags'], '', '/depot/'
@@ -75,9 +82,7 @@ page_classes: "depot depot-view"
 
     :ruby
       versions = extension['miq_ver'] + ['bsomething']
-      git = "git -C #{repo_dir}"
-      original_commit = `#{git} log --oneline #{extension_dir} | tail -n 1 | cut -f1 -d ' '`
-      branches = `#{git} branch --contains #{original_commit}`.split(/\W+/).reject{|x| x.empty?}
+      branches = `#{git} branch --contains #{first_commit}`.split(/\W+/).reject{|x| x.empty?}
       branch_versions = branches & versions
 
     - if branch_versions.count > 0
