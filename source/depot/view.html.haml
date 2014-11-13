@@ -27,53 +27,72 @@ page_classes: "depot depot-view"
 
 - if extension && extension['name']
 
-  .title
-    %h2= "Extension: #{extension['name']}"
-    .version= extension['version']
+  .row
+    .col-sm-12
 
-  .author
-    by
-    = ([extension['author']] + extension['collaborator']).to_sentence
+      .title
+        %h2
+          Extension:
+          = extension['name']
 
-  .date
-    Last updated:
-    = pretty_date extension['date'].to_date
+        - if extension['version']
+          .version= extension['version']
 
-  .tags
-    Tags:
-    = tags_list extension['tags'], '', '/depot/'
+  .row
 
-  .dependencies
-    = extension['dependencies'].join(', ')
+    .col-sm-6
 
-  - scripts = Dir["#{extension_dir}/scripts/*"]
+      .author
+        by
+        = ([extension['author']] + extension['collaborator']).to_sentence
 
-  - if scripts.count > 0
-    .scripts
-      Scripts:
-      %ul
-        - scripts.each do |script|
-          %li= link_to script.split('/').last, script.gsub(/.*depot\/ext/, '/depot/ext')
+      .date
+        Last updated:
+        = pretty_date extension['date'].to_date
 
-  :ruby
-    versions = extension['miq_ver'] + ['bsomething']
-    git = "git -C #{repo_dir}"
-    original_commit = `#{git} log --oneline #{extension_dir} | tail -n 1 | cut -f1 -d ' '`
-    branches = `#{git} branch --contains #{original_commit}`.split(/\W+/).reject{|x| x.empty?}
-    branch_versions = branches & versions
+    .col-sm-6
+      .tags= tags_list extension['tags'], '', '/depot/'
 
-  - if branch_versions.count > 0
-    .previous-versions
-      Also available for previous ManageIQ releases:
-      %ul
-        - branch_versions.each do |ver|
-          %li= link_to ver, extension['src_url'].gsub(/tree\/master/, "tree/#{ver}")
+      .dependencies
+        Requires:
+        = extension['dependencies'].join(', ')
+
+  -#.row
+    .col-sm-12
+      = extension['description']
+
+  .row
+    - scripts = Dir["#{extension_dir}/scripts/*"]
+
+    - if scripts.count > 0
+      .col-sm-6
+
+        .scripts
+          Scripts:
+          %ul
+            - scripts.each do |script|
+              %li= link_to script.split('/').last, script.gsub(/.*depot\/ext/, '/depot/ext')
+
+    :ruby
+      versions = extension['miq_ver'] + ['bsomething']
+      git = "git -C #{repo_dir}"
+      original_commit = `#{git} log --oneline #{extension_dir} | tail -n 1 | cut -f1 -d ' '`
+      branches = `#{git} branch --contains #{original_commit}`.split(/\W+/).reject{|x| x.empty?}
+      branch_versions = branches & versions
+
+    - if branch_versions.count > 0
+      .col-sm-6
+        .previous-versions
+          Also available for previous ManageIQ releases:
+          %ul
+            - branch_versions.each do |ver|
+              %li= link_to ver, extension['src_url'].gsub(/tree\/master/, "tree/#{ver}")
 
   %hr
 
   = content
 
-  %pre= extension.to_yaml
+  -#%pre= extension.to_yaml
 
 
 - content_for :head do
