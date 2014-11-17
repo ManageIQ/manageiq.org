@@ -90,11 +90,14 @@ blog_summary_length: 700
     - if blog_archives > 0
       %section.col-md-4
         %section.blog-archive
+          - blog_url = "#{blog.options[:prefix]}#{blog.options[:page_link]}/".sub(':num', '2')
 
           %h2 Recent archives
           %ol
             - blog.articles.drop(current_page.data.per_page).take(10).each do |article|
               %li= link_to article.title, article.url
+
+          = link_to "&raquo; View older posts", blog_url, class: "more-link"
 
 
 %section.get-started
