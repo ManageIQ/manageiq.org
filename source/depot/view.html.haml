@@ -34,70 +34,77 @@ page_classes: "depot depot-view"
 
 - if extension && extension['name']
 
-  .row
-    .col-sm-12
+  .extension
+    .row
+      .col-sm-12
 
-      .title
-        %h2
-          Extension:
-          = extension['name']
+        .title
+          %h2
+            Extension:
+            = extension['name']
 
-        - if extension['version']
-          .version= extension['version']
+          - if extension['version']
+            .version= extension['version']
 
-  .row
+    .row
 
-    .col-sm-6
+      .left.col-sm-4
+        .author= "by #{([extension['author']] + extension['collaborator']).to_sentence}"
 
-      .author
-        by
-        = ([extension['author']] + extension['collaborator']).to_sentence
+      .center.col-sm-4
+        - if extension['dependencies'].length > 0
+          .dependencies
+            Requires:
+            = extension['dependencies'].join(', ')
 
-      .date
-        Last updated:
-        = pretty_date(modified_time || extension['date'])
+      .right.col-sm-4
+        .date
+          Last updated:
+          = pretty_date(modified_time || extension['date'])
 
-    .col-sm-6
-      .tags= tags_list extension['tags'], '', '/depot/'
 
-      .dependencies
-        Requires:
-        = extension['dependencies'].join(', ')
+    - if extension['description']
+      .row
+        .col-sm-12
+          .description
+            = extension['description']
 
-  -#.row
-    .col-sm-12
-      = extension['description']
 
-  .row
-    - scripts = Dir["#{extension_dir}/scripts/*"]
+    .row
+      .col-sm-4
+        .tags
+          Tags:
+          = tags_list extension['tags'], '', '/depot/'
 
-    - if scripts.count > 0
-      .col-sm-6
 
-        .scripts
-          Scripts:
-          %ul
-            - scripts.each do |script|
-              %li= link_to script.split('/').last, script.gsub(/.*depot\/ext/, '/depot/ext')
+      - scripts = Dir["#{extension_dir}/scripts/*"]
+      .col-sm-4
+        - if scripts.count > 0
+          .scripts
+            Scripts:
+            %ul
+              - scripts.each do |script|
+                %li= link_to script.split('/').last, script.gsub(/.*depot\/ext/, '/depot/ext')
 
-    :ruby
-      versions = extension['miq_ver'] + ['bsomething']
-      branches = `#{git} branch --contains #{first_commit}`.split(/\W+/).reject{|x| x.empty?}
-      branch_versions = branches & versions
+      :ruby
+        versions = extension['miq_ver'] + ['bsomething']
+        branches = `#{git} branch --contains #{first_commit}`.split(/\W+/).reject{|x| x.empty?}
+        branch_versions = branches & versions
 
-    - if branch_versions.count > 0
-      .col-sm-6
-        .previous-versions
-          Also available for previous ManageIQ releases:
-          %ul
-            - branch_versions.each do |ver|
-              %li= link_to ver, extension['src_url'].gsub(/tree\/master/, "tree/#{ver}")
+      - if branch_versions.count > 0
+        .col-sm-4
+          .previous-versions
+            Also available for previous ManageIQ releases:
+            %ul
+              - branch_versions.each do |ver|
+                %li= link_to ver, extension['src_url'].gsub(/tree\/master/, "tree/#{ver}")
 
-  %hr
 
-  = content
+    %hr
 
-  -#%pre= extension.to_yaml
+    = content
+
+    -#%pre= extension.to_yaml
 
 
 - content_for :head do

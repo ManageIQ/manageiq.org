@@ -9,7 +9,7 @@ page_classes: "depot depot-index"
 
 
 .tags-filter
-  Filter by:
+  Show:
   = tags_list ["all"] + all_tags, "all"
 
 #extension-list.extensions
@@ -17,21 +17,17 @@ page_classes: "depot depot-index"
 
     .extension
 
-      .title
-        %h2
-          =# link_to extension['name'].titlecase, extension['src_url']
-          = link_to extension['name'].titlecase, "extension/#{name}/"
+      .row
+        .title.col-sm-6
+          %h2= link_to extension['name'].titlecase, "extension/#{name}/"
 
-      .author
-        by
-        = ([extension['author']] + extension['collaborator']).to_sentence
+        .tags.col-sm-6
+          = tags_list extension['tags']
 
-      .tags= tags_list extension['tags']
-
-      .description
-        = markdown_to_html extension['description']
-
-      -#%pre= extension.to_yaml
+      .row
+        .col-sm-12
+          .author= "by #{([extension['author']] + extension['collaborator']).to_sentence}"
+          .description= markdown_to_html extension['description']
 
 
 - content_for :tail do

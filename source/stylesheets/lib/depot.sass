@@ -17,17 +17,45 @@
       padding: 0.25ex 1ex
       display: inline-block
       background: #eee
+      border-radius: 3px
 
       &.active
         background: #cef
 
 
   .extension
-    .title
-      float: left
+    clear: both
+    overflow: hidden
+    margin-bottom: 5rem
+
+    .title,
     .tags
-      float: right
+      line-height: 3rem
+      display: block
+
+    .author,
+    .date,
+    .dependencies
+      color: #999
+      margin-bottom: 1ex
 
 
   hr
     clear: both
+
+
+.depot-index
+
+  .extension
+
+    h2
+      font-size: 3rem !important
+
+    .tags ul
+      float: right
+
+
+.depot-view
+
+  .description
+    padding: 1rem 0 2rem
