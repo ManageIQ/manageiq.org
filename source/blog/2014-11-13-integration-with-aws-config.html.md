@@ -1,8 +1,8 @@
 ---
 title: ManageIQ Integrates with Amazon AWS Config Service
 author: chessbyte
-date: 2014-11-12 20:38:20.000000000 Z
-tags: manageiq aws
+date: 2014-11-13 20:38:20.000000000 Z
+tags: manageiq, aws
 comments: true
 published: true
 ---
