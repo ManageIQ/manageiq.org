@@ -1,3 +1,7 @@
 [submodule "source/documentation/development"]
 	path = source/documentation/development
 	url = https://github.com/ManageIQ/guides.git
+[submodule "source/depot/extension"]
+        path = source/depot/extension
+        url = https://github.com/ManageIQ/manageiq_depot.git
+
