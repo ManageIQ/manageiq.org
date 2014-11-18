@@ -4,29 +4,23 @@
       display: inline
 
   .tags-filter
-    margin: 2em 0 3em
+    margin: 0 0 5ex
 
   .tags-list
-
     &, ul, li
       display: inline
       margin: 0
       padding: 0
 
     li a
-      padding: 0.25ex 1ex
       display: inline-block
-      background: #eee
-      border-radius: 3px
-
-      &.active
-        background: #cef
-
+      margin: 0
+      padding: 0.25ex 0.5ex
 
   .extension
     clear: both
-    overflow: hidden
     margin-bottom: 5rem
+    overflow: hidden
 
     .title,
     .tags
@@ -55,7 +49,42 @@
       float: right
 
 
+  .tags-filter
+    background: #f8f8f8
+    border-radius: 6px
+    padding: 0 2ex
+
+    ul
+      margin-left: 1ex
+
+    li a
+      $line-size: 6px
+      $padding-x: 2ex
+      $padding-y: 1ex
+      //background: #eee
+      //border-radius: 3px
+      padding: $padding-y $padding-x
+
+      &.active
+        background: lighten(#2a6496, 57%)
+        color: #555
+        border-top: $line-size solid lighten(#2a6496, 35%)
+        padding-top: calc(#{$padding-y} - #{$line-size})
+
+
+
+
 .depot-view
 
   .description
     padding: 1rem 0 2rem
+
+  .tags
+    margin-bottom: 4ex
+
+  .scripts,
+  .previous-versions
+    ul
+      padding: 0 0 0 3ex
+      margin: 0
+      color: #ccc

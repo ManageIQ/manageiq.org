@@ -59,7 +59,7 @@ page_classes: "depot depot-view"
 
       .right.col-sm-4
         .date
-          Last updated:
+          Updated:
           = pretty_date(modified_time || extension['date'])
 
 
@@ -71,7 +71,7 @@ page_classes: "depot depot-view"
 
 
     .row
-      .col-sm-4
+      .col-sm-12
         .tags
           Tags:
           = tags_list extension['tags'], '', '/depot/'
