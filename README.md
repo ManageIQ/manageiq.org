@@ -10,11 +10,23 @@ checked out directory.
 
 ## Step 2: Set it up
 
-Make sure you have `sudo` rights on your computer running Fedora, RHEL,
-or CentOS.
+**Fedora, RHEL,or CentOS:**  
+* Make sure you have `sudo` rights on your computer running.
+* Once you do, simply run `./setup.sh`.
 
-Once you do, simply run `./setup.sh`.
+**Macintosh:**
 
+1.  Install Ruby.
+2.  Run the following to install brew and bundler. Then, run bundler.
+  
+  ```
+  ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
+  mkdir -p ~/Library/LaunchAgents
+  brew doctor  
+  brew update
+  sudo gem install bundler 
+  bundle install 
+  
 ## Step 3: Run a local server
 
 1. Type `./run-server.sh`
