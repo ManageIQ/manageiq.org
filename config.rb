@@ -197,11 +197,12 @@ end
 # Monkey patches
 ###
 
-# Monkeypatch Middleman's link_to to remove .md from local files
-# (Used for imported Markdown documentation in the dev git module)
 helpers do
   alias_method :_link_to, :link_to
+  alias_method :_image_tag, :image_tag
 
+  # Monkeypatch Middleman's link_to to remove .md from local files
+  # (Used for imported Markdown documentation in the dev git module)
   def link_to(*args, &block)
     dev_root = /^documentation\/development/
     url_index = block_given? ? 0 : 1
@@ -225,6 +226,17 @@ helpers do
     end
 
     _link_to(*args, &block)
+  end
+
+  # Support images with a relative path in subrepos
+  def image_tag(path, params={})
+    current_path = "/#{File.split(current_page.path).first}"
+
+    if current_path.match(/depot\/extension|documentation\/development/)
+      path = "#{current_path}/#{path}"
+    end
+
+    _image_tag(path, params)
   end
 end
 
