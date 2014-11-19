@@ -228,12 +228,13 @@ helpers do
     _link_to(*args, &block)
   end
 
-  # Support images with a relative path in subrepos
+  # Support local images first and fall-back on site-wide images
   def image_tag(path, params={})
-    current_path = "/#{File.split(current_page.path).first}"
+    current_path = "#{File.split(current_page.path).first}"
+    full_file = File.join(root, source, current_path, path.split('?').first)
 
-    if current_path.match(/depot\/extension|documentation\/development/)
-      path = "#{current_path}/#{path}"
+    if path !~ /^(http|\/)/ and File.exists? full_file
+      path = "/#{current_path}/#{path}"
     end
 
     _image_tag(path, params)
