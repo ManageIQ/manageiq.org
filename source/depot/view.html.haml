@@ -40,7 +40,7 @@ page_classes: "depot depot-view"
 
         .title
           %h2
-            Extension:
+            %span.hidden Extension:
             = extension['name']
 
           - if extension['version']
@@ -73,15 +73,15 @@ page_classes: "depot depot-view"
     .row
       .col-sm-12
         .tags
-          Tags:
+          %span.label Tags:
           = tags_list extension['tags'], '', '/depot/'
 
 
       - scripts = Dir["#{extension_dir}/scripts/*"]
-      .col-sm-4
+      .col-sm-6
         - if scripts.count > 0
           .scripts
-            Scripts:
+            %span.label Scripts:
             %ul
               - scripts.each do |script|
                 %li= link_to script.split('/').last, script.gsub(/.*depot\/ext/, '/depot/ext')
@@ -100,11 +100,9 @@ page_classes: "depot depot-view"
                 %li= link_to ver, extension['src_url'].gsub(/tree\/master/, "tree/#{ver}")
 
 
-    %hr
+    %hr.content-split
 
     = content
-
-    -#%pre= extension.to_yaml
 
 
 - content_for :head do
