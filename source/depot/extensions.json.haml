@@ -1,30 +1,10 @@
+---
+layout: false
+---
+
 :ruby
-  path = "source/depot/extension"
-  info = {}
+  require "#{root}/source/depot/extensions-info.rb"
 
-  extensions = Dir["#{path}/*/"].map {|e| e.split('/').last}
+  all_tags = extensions_info.dup.map {|n, e| e['tags']}.flatten.sort.uniq
 
-  # Read YML/YAML metadata and normalize
-  extensions.each do |ext|
-    filename = Dir["#{root}/#{path}/#{ext}/metadata.y*ml"].first
-
-    ext_data = YAML.load_file filename
-
-    ## Normalization
-
-    # Remove single line breaks (hard line wrapping),
-    # preserving double (and more) returns
-    # ...also strip off white space on the ends
-    ext_data['description'].to_s.gsub!(/(\S)\n(\S)/, '\1 \2').to_s.strip!
-
-    # Convert miq_ver, collaborator, tags, and dependencies into arrays
-    ext_data['miq_ver'] = ext_data['miq_ver'].split(/[,\s]+/)
-    ext_data['collaborator'] = ext_data['collaborator'].split(/[,\s]+/)
-    ext_data['tags'] = ext_data['tags'].split(/[,\s]+/)
-    ext_data['dependencies'] = ext_data['dependencies'].split(/,\s*/)
-
-    # Add to info array
-    info[ext] = ext_data
-  end
-
-= info.to_json
+= {extensions: extensions_info, tags: all_tags}.to_json
