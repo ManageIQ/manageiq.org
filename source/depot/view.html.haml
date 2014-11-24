@@ -33,7 +33,6 @@ page_classes: "depot depot-view"
 -##########################
 
 - if extension && extension['name']
-
   .extension
     .row
       .col-sm-12
@@ -44,7 +43,8 @@ page_classes: "depot depot-view"
             = extension['name']
 
           - if extension['version']
-            .version= extension['version']
+            %span.hidden Version:
+            %span.version= extension['version']
 
     .row
 

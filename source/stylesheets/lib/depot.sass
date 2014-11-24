@@ -15,21 +15,25 @@
       padding: 0.25ex 0.5ex
 
   .extension
-    clear: both
-    margin-bottom: 5rem
-    overflow: hidden
 
     .title,
+    .title h2,
+    .version,
     .tags
       line-height: 3rem
-      display: block
+      display: inline-block
+
+      .version
+        opacity: 0.5
+        padding-left: 1ex
+        font-size: 2.75rem
+        font-style: italic
 
     .author,
     .date,
     .dependencies
       color: #999
       margin-bottom: 1ex
-
 
   hr
     clear: both
@@ -39,12 +43,22 @@
 
   .title
     h2
-      display: inline
+      display: inline !important
+      font-size: 3rem !important
+      margin: 0
+      padding: 0
+
+    .version
+      font-size: 2.125rem !important
 
   .extension
+    border-left: 2ex solid red
+    box-sizing: border-box
+    clear: both
+    margin: 0 0 2em
+    overflow: hidden
+    padding: 1ex 0 1ex 2ex
 
-    h2
-      font-size: 3rem !important
 
     .tags ul
       float: right
@@ -76,19 +90,6 @@
 
 
 .depot-view
-
-  .title
-    h2, .version
-      display: inline-block
-
-    a,
-    .version
-      font-size: 2.75rem
-
-    .version
-      opacity: 0.7
-      padding-left: 1ex
-      font-style: italic
 
   .description
     padding: 1rem 0 2rem

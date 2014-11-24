@@ -17,6 +17,11 @@ page_classes: "depot depot-index"
 
   all_tags = extensions_info.dup.map {|n, e| e['tags']}.flatten.sort.uniq
 
+  def color_from_string str
+    str_seed = Digest::MD5.hexdigest(str).to_i(16)
+    ColorGenerator.new(saturation: 0.95, lightness: 0.85, seed: str_seed).create_hex
+  end
+
 
 .tags-filter
   Type:
@@ -25,11 +30,19 @@ page_classes: "depot depot-index"
 #extension-list.extensions
   - extensions_info.each do |name, extension|
 
-    .extension
+    .extension(style="border-color:#{extension['color']}")
 
       .row
         .title.col-sm-6
-          %h2= link_to extension['name'].titlecase, "extension/#{name}/"
+          -#%h2= link_to extension['name'].titlecase, "extension/#{name}/"
+          .title
+            %h2
+              = link_to extension['name'].titlecase, "extension/#{name}/"
+
+            - if extension['version']
+              %span.hidden Version:
+              %span.version= extension['version']
+
 
         .tags.col-sm-6
           = tags_list extension['tags']
