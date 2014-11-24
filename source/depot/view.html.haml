@@ -66,16 +66,15 @@ page_classes: "depot depot-view"
           = "by #{authors.to_sentence}"
 
 
-      .right.col-sm-3
+      .right.col-sm-6
         - if extension['dependencies'].length > 0
-          .dependencies
+          %span.dependencies
             Requires:
             = extension['dependencies'].join(', ')
 
-      .right.col-sm-3
         - updated = modified_time || extension['date']
 
-        .date
+        %span.updated
           Updated:
           %time.timeago{datetime: updated.to_time.iso8601}
             = pretty_date(updated)
