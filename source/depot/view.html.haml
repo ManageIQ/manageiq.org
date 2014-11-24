@@ -83,8 +83,7 @@ page_classes: "depot depot-view"
     - if extension['description']
       .row
         .col-sm-12
-          .description
-            = extension['description']
+          .description= markdown_to_html extension['description']
 
 
     .row
