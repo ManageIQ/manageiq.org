@@ -1,3 +1,10 @@
+require 'color-generator'
+
+def color_from_string str
+  str_seed = Digest::MD5.hexdigest(str).to_i(16)
+  ColorGenerator.new(saturation: 0.95, lightness: 0.85, seed: str_seed).create_hex
+end
+
 def extensions_info
   return $extensions_info if defined?($extensions_info)
 
@@ -24,6 +31,7 @@ def extensions_info
     ext_data['collaborator'] = ext_data['collaborator'].split(/[,\s]+/)
     ext_data['tags'] = ext_data['tags'].downcase.split(/[,\s]+/).sort.uniq
     ext_data['dependencies'] = ext_data['dependencies'].split(/,\s*/)
+    ext_data['color'] = "##{color_from_string(ext_data['name'])}"
 
     # Add to info array
     info[ext] = ext_data
