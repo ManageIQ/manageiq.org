@@ -15,7 +15,7 @@ page_classes: "depot depot-view"
   # Git-related information
   git = "git -C #{repo_dir}"
   first_commit = `#{git} log --oneline #{extension_dir} | tail -n 1 | cut -f1 -d ' '`
-  modified_time = IO.popen(%w[git log --pretty=format:%ai] + [extension_dir] + ["*"]).read.split(/\n/).first.to_time rescue nil
+  modified_time = IO.popen("git -C #{repo_dir} log --pretty=format:%ai #{extension_name}").read.split(/\n/).sort.last.to_time
 
   # Content grabber
   begin
