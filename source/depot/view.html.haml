@@ -46,21 +46,39 @@ page_classes: "depot depot-view"
             %span.hidden Version:
             %span.version= extension['version']
 
-    .row
+    .meta.row
 
-      .left.col-sm-4
-        .author= "by #{([extension['author']] + extension['collaborator']).to_sentence}"
+      .left.col-sm-6
+        -#.author= "by #{([extension['author']] + extension['collaborator']).to_sentence}"
+        .authors
+          - author_size = 24
+          - authors = []
 
-      .center.col-sm-4
+          - ([extension['author']] + extension['collaborator']).each do |author|
+            - html = capture_haml do
+              %span.author
+                = link_to user_info(author)['html_url'], {target: "_blank", title: "View '#{author}' on GitHub"} do
+                  = image_tag user_info(author)['avatar_url'] + "&s=#{author_size}", {width: author_size, height: author_size}
+                  = user_info(author)['name'] || author.titlecase
+
+            - authors.push html.gsub(/>\s+</, '><').gsub(/\n/, '')
+
+          = "by #{authors.to_sentence}"
+
+
+      .right.col-sm-3
         - if extension['dependencies'].length > 0
           .dependencies
             Requires:
             = extension['dependencies'].join(', ')
 
-      .right.col-sm-4
+      .right.col-sm-3
+        - updated = modified_time || extension['date']
+
         .date
           Updated:
-          = pretty_date(modified_time || extension['date'])
+          %time.timeago{datetime: updated.to_time.iso8601}
+            = pretty_date(updated)
 
 
     - if extension['description']

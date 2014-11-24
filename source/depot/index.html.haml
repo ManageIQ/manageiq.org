@@ -49,7 +49,12 @@ page_classes: "depot depot-index"
 
       .row
         .col-sm-12
-          .author= "by #{([extension['author']] + extension['collaborator']).to_sentence}"
+          .authors
+            - authors = ([extension['author']] + extension['collaborator']).map do |author|
+              - user_info(author)['name'] || author.titlecase
+
+            = "by #{authors.to_sentence}"
+
           .description= markdown_to_html extension['description']
 
 

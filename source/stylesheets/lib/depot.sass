@@ -29,11 +29,21 @@
         font-size: 2.75rem
         font-style: italic
 
-    .author,
+    .authors,
     .date,
     .dependencies
       color: #999
       margin-bottom: 1ex
+
+    .authors
+      a
+        display: inline-block
+        white-space: nowrap
+        padding-left: 0.5ex
+
+      img
+        margin-right: 0.5ex
+        vertical-align: middle
 
   hr
     clear: both
@@ -52,17 +62,15 @@
       font-size: 2.125rem !important
 
   .extension
-    border-left: 2ex solid red
+    border-left: 2ex solid transparent
     box-sizing: border-box
     clear: both
     margin: 0 0 2em
     overflow: hidden
     padding: 1ex 0 1ex 2ex
 
-
     .tags ul
       float: right
-
 
   .tags-filter
     background: #f8f8f8
@@ -90,9 +98,11 @@
 
 
 .depot-view
+  .meta
+    line-height: 32px
 
   .description
-    padding: 1rem 0 2rem
+    padding: 2rem 0 3rem
 
   .extension
     .label,

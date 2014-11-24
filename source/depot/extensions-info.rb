@@ -5,6 +5,17 @@ def color_from_string str
   ColorGenerator.new(saturation: 0.95, lightness: 0.85, seed: str_seed).create_hex
 end
 
+
+def user_info github_user
+  $github_users ||= {}
+
+  return $github_users[github_user] if $github_users[github_user]
+
+  data = open("https://api.github.com/users/#{github_user}").read
+  $github_users[github_user] = JSON.parse(data)
+end
+
+
 def extensions_info
   return $extensions_info if defined?($extensions_info)
 
@@ -31,7 +42,7 @@ def extensions_info
     ext_data['collaborator'] = ext_data['collaborator'].split(/[,\s]+/)
     ext_data['tags'] = ext_data['tags'].downcase.split(/[,\s]+/).sort.uniq
     ext_data['dependencies'] = ext_data['dependencies'].split(/,\s*/)
-    ext_data['color'] = "##{color_from_string(ext_data['name'])}"
+    ext_data['color'] = "##{color_from_string(ext_data['name'].parameterize)}"
 
     # Add to info array
     info[ext] = ext_data
