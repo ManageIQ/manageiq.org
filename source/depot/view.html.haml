@@ -121,5 +121,6 @@ page_classes: "depot depot-view"
     = content
 
 
-- content_for :head do
-  :sass
+- content_for :tail do
+  :coffee
+    $ -> do $("time.timeago").timeago
