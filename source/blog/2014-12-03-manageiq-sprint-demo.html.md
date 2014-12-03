@@ -17,9 +17,9 @@ Today's topics:
 * I18N Progress (D. Clarizio) 
 * Cloud Orchestration (G. McCullough) 
 * Automate Enhancements (G. McCullough) 
-* Default LDAP Group for Authentication(G. McCullough) 
-* AWS Events (G. Blomquist) 
+* Default LDAP Group for Authentication (G. McCullough) 
+* Amazon Events (G. Blomquist) 
 * Technical Debt - SmartProxy, Rails Backports (J. Rafaniello) 
 * IPv6 Communications (J. Rafaniello) 
 * Rest API Enhancements (A. Bellotti) 
-* Fleecing Tests
+* Fleecing Tests (R. Oliveri) 
