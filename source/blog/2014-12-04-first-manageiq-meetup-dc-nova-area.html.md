@@ -3,11 +3,11 @@ title: First ManageIQ Meetup in DC/NOVA Area
 author: johnmark
 date: 2014-12-04 13:46:53 UTC
 tags: meetup, community, dc, nova
-published: false
 comments: true
+published: true
 ---
 
-[Booz Allen Hamilton](http://boozallen.com) is hosting the first ManageIQ meetup. Learn about the latest features under [development in Botvinnik](/blog/2014/12/sprint-16-report-video/) as well as how Booz Allen extended ManageIQ with the [Jellyfish cloud broker project](http://booz-allen-hamilton.github.io/projectjellyfish/). 
+Join us at the [Booz Allen Hamilton](http://boozallen.com) offices in Herndon, VA for the first ManageIQ meetup. Learn about the latest features under [development in Botvinnik](/blog/2014/12/sprint-16-report-video/) as well as how Booz Allen extended ManageIQ with the [Jellyfish cloud broker project](http://booz-allen-hamilton.github.io/projectjellyfish/). 
 
 RSVP below:
 
