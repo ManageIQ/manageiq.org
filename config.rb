@@ -158,6 +158,13 @@ ready do
   end
   proxy "/blog/feed.xml", "feed.xml", :ignore => true
   proxy "/blog/tag/index.html", "tag.html", :ignore => true
+
+  # Remap extensions to the extension viewer
+  sitemap.resources.group_by {|p| p.url.match(/^\/depot\/extension\/.*\/$/)}.each do |url, pages|
+    next if url.to_s.match /README/
+    name = url.to_s.split('/')[3]
+    proxy "/depot/extension/#{name}/index.html", "depot/view.html", locals: {extension_name: name}, ignore: true
+  end
 end
 
 
@@ -190,11 +197,12 @@ end
 # Monkey patches
 ###
 
-# Monkeypatch Middleman's link_to to remove .md from local files
-# (Used for imported Markdown documentation in the dev git module)
 helpers do
   alias_method :_link_to, :link_to
+  alias_method :_image_tag, :image_tag
 
+  # Monkeypatch Middleman's link_to to remove .md from local files
+  # (Used for imported Markdown documentation in the dev git module)
   def link_to(*args, &block)
     dev_root = /^documentation\/development/
     url_index = block_given? ? 0 : 1
@@ -218,6 +226,18 @@ helpers do
     end
 
     _link_to(*args, &block)
+  end
+
+  # Support local images first and fall-back on site-wide images
+  def image_tag(path, params={})
+    current_path = "#{File.split(current_page.path).first}"
+    full_file = File.join(root, source, current_path, path.split('?').first)
+
+    if path !~ /^(http|\/)/ and File.exists? full_file
+      path = "/#{current_path}/#{path}"
+    end
+
+    _image_tag(path, params)
   end
 end
 

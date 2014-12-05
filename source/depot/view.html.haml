@@ -1,0 +1,131 @@
+---
+page_classes: "depot depot-view"
+---
+
+:ruby
+  # Repo-related directories
+  depot_dir = "#{root}/source/depot"
+  repo_dir = "#{depot_dir}/extension"
+  extension_dir = "#{repo_dir}/#{extension_name}"
+
+  # Common depot-related code
+  require "#{depot_dir}/extensions-info.rb"
+  extension = extensions_info[extension_name]
+
+  # Git-related information
+  git = "git -C #{repo_dir}"
+  first_commit = `#{git} log --oneline #{extension_dir} | tail -n 1 | cut -f1 -d ' '`
+  modified_time = IO.popen("git -C #{repo_dir} log --pretty=format:%ai #{extension_name}").read.split(/\n/).sort.last.to_time
+
+  # Content grabber
+  begin
+    content = Nokogiri::HTML markdown_to_html open("#{extension_dir}/content.md").read
+
+    # Strip the H1 if it matches the extension name
+    if content.css('h1').text.gsub(/[\W_\-]/, '').downcase == extension_name.gsub(/[\W_\-]/, '').downcase
+      content.css('h1').remove
+    end
+  rescue # Just in case...
+    content = 'No summary available.'
+  end
+
+
+-##########################
+
+- if extension && extension['name']
+  .extension
+    .row
+      .col-sm-12
+
+        .title
+          %h2
+            %span.hidden Extension:
+            = extension['name']
+
+          - if extension['version']
+            %span.hidden Version:
+            %span.version= extension['version']
+
+    .meta.row
+
+      .left.col-sm-6
+        -#.author= "by #{([extension['author']] + extension['collaborator']).to_sentence}"
+        .authors
+          - author_size = 24
+          - authors = []
+
+          - ([extension['author']] + extension['collaborator']).each do |author|
+            - html = capture_haml do
+              %span.author
+                = link_to user_info(author)['html_url'], {target: "_blank", title: "View '#{author}' on GitHub"} do
+                  = image_tag user_info(author)['avatar_url'] + "&s=#{author_size}", {width: author_size, height: author_size}
+                  = user_info(author)['name'] || author.titlecase
+
+            - authors.push html.gsub(/>\s+</, '><').gsub(/\n/, '')
+
+          = "by #{authors.to_sentence}"
+
+
+      .right.col-sm-6
+        - if extension['dependencies'].length > 0
+          %span.dependencies
+            Requires:
+            = extension['dependencies'].join(', ')
+
+        - updated = modified_time || extension['date']
+
+        %span.updated
+          Updated:
+          %time.timeago{datetime: updated.to_time.iso8601}
+            = pretty_date(updated)
+
+
+    - if extension['description']
+      .row
+        .col-sm-12
+          .description= markdown_to_html extension['description']
+
+
+    .row
+      .col-sm-12
+        .tags
+          %span.label Tags:
+          = tags_list extension['tags'], '', '/depot/'
+
+
+      - scripts = Dir["#{extension_dir}/scripts/*"]
+      .col-sm-6
+        - if scripts.count > 0
+          .scripts
+            %span.label Scripts:
+            %ul
+              - scripts.each do |script|
+                %li= link_to script.split('/').last, script.gsub(/.*depot\/ext/, '/depot/ext')
+
+      .col-sm-6
+        .src_url
+          %span.label Source URL:
+          = link_to extension['src_url'], extension['src_url']
+
+      :ruby
+        versions = extension['miq_ver'] + ['bsomething']
+        branches = `#{git} branch --contains #{first_commit}`.split(/\W+/).reject{|x| x.empty?}
+        branch_versions = branches & versions
+
+      - if branch_versions.count > 0
+        .col-sm-4
+          .previous-versions
+            Also available for previous ManageIQ releases:
+            %ul
+              - branch_versions.each do |ver|
+                %li= link_to ver, extension['src_url'].gsub(/tree\/master/, "tree/#{ver}")
+
+
+    %hr.content-split
+
+    = content
+
+
+- content_for :tail do
+  :coffee
+    $ -> do $("time.timeago").timeago

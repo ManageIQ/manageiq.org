@@ -1,0 +1,10 @@
+---
+layout: false
+---
+
+:ruby
+  require "#{root}/source/depot/extensions-info.rb"
+
+  all_tags = extensions_info.dup.map {|n, e| e['tags']}.flatten.sort.uniq
+
+= {extensions: extensions_info, tags: all_tags}.to_json

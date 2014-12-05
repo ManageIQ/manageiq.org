@@ -1,0 +1,134 @@
+.depot
+
+  .tags-filter
+    margin: 0 0 5ex
+
+  .tags-list
+    &, ul, li
+      display: inline
+      margin: 0
+      padding: 0
+
+    li a
+      display: inline-block
+      margin: 0
+      padding: 0.25ex 0.5ex
+
+  .extension
+
+    .title,
+    .title h2,
+    .version,
+    .tags
+      line-height: 3rem
+      display: inline-block
+
+      .version
+        opacity: 0.5
+        padding-left: 1ex
+        font-size: 2.75rem
+        font-style: italic
+
+    .authors,
+    .updated,
+    .dependencies
+      color: #999
+      margin-bottom: 1ex
+
+    .authors
+      a
+        display: inline-block
+        white-space: nowrap
+        padding-left: 0.5ex
+
+      img
+        margin-right: 0.5ex
+        vertical-align: middle
+
+  hr
+    clear: both
+
+
+.depot-index
+
+  .title
+    h2
+      display: inline !important
+      font-size: 3rem !important
+      margin: 0
+      padding: 0
+
+    .version
+      font-size: 2.125rem !important
+
+  .extension
+    border-left: 2ex solid transparent
+    box-sizing: border-box
+    clear: both
+    margin: 0 0 2em
+    overflow: hidden
+    padding: 1ex 0 1ex 2ex
+
+    .tags ul
+      float: right
+
+  .tags-filter
+    background: #f8f8f8
+    border-radius: 6px
+    padding: 0 2ex
+    margin: 3em 0
+    color: #999
+
+    ul
+      margin-left: 1ex
+
+    li a
+      $line-size: 6px
+      $padding-x: 2ex
+      $padding-y: 1ex
+      //background: #eee
+      //border-radius: 3px
+      padding: $padding-y $padding-x
+
+      &.active
+        background: lighten(#2a6496, 57%)
+        color: #555
+        border-top: $line-size solid lighten(#2a6496, 35%)
+        padding-top: calc(#{$padding-y} - #{$line-size})
+
+
+.depot-view
+  .meta
+    line-height: 32px
+
+  .description
+    padding: 2rem 0 3rem
+
+  .extension
+    .label,
+    ul
+      float: left
+      line-height: 1.5
+
+  .label
+    min-width: 12ex
+    text-align: right
+    margin-right: 2ex
+    color: #999
+    display: inline-block
+
+  .tags
+    margin-bottom: 4ex
+
+  .scripts,
+  .previous-versions
+    ul
+      padding: 0 0 0 3ex
+      margin: 0
+      color: #ccc
+
+  hr.content-split
+    margin: 4em 0
+
+  .dependencies
+    margin-right: 3ex
