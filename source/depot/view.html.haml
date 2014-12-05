@@ -102,6 +102,11 @@ page_classes: "depot depot-view"
               - scripts.each do |script|
                 %li= link_to script.split('/').last, script.gsub(/.*depot\/ext/, '/depot/ext')
 
+      .col-sm-6
+        .src_url
+          %span.label Source URL:
+          = link_to extension['src_url'], extension['src_url']
+
       :ruby
         versions = extension['miq_ver'] + ['bsomething']
         branches = `#{git} branch --contains #{first_commit}`.split(/\W+/).reject{|x| x.empty?}
