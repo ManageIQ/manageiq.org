@@ -55,13 +55,17 @@ page_classes: "depot depot-view"
           - authors = []
 
           - ([extension['author']] + extension['collaborator']).each do |author|
-            - html = capture_haml do
-              %span.author
-                = link_to user_info(author)['html_url'], {target: "_blank", title: "View '#{author}' on GitHub"} do
-                  = image_tag user_info(author)['avatar_url'] + "&s=#{author_size}", {width: author_size, height: author_size}
-                  = user_info(author)['name'] || author.titlecase
+            - if user_info(author).nil?
+              - authors.push link_to(author, "https://github.com/#{author}")
 
-            - authors.push html.gsub(/>\s+</, '><').gsub(/\n/, '')
+            - else
+              - html = capture_haml do
+                %span.author
+                  = link_to user_info(author)['html_url'], {target: "_blank", title: "View '#{author}' on GitHub"} do
+                    = image_tag user_info(author)['avatar_url'] + "&s=#{author_size}", {width: author_size, height: author_size}
+                    = user_info(author)['name'] || author
+
+              - authors.push html.gsub(/>\s+</, '><').gsub(/\n/, '')
 
           = "by #{authors.to_sentence}"
 

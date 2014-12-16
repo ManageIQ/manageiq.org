@@ -5,14 +5,16 @@ page_classes: "depot depot-index"
 .intro
   :markdown
 
-    ## Community Depot - (BETA!)
+    ## Community Depot _BETA_{:.label.label-warning}
 
     The ManageIQ Community Depot is where you can share, download and collaborate
     on extensions and other software built for ManageIQ. Got a policy you want to
     share? State machine? A set of scripts that utilize the REST API and object model?
-    Put it in the community depot! 
+    Put it in the community depot!
 
-    WARNING: the Depot is in BETA. Please [submit any issues you find to the bug tracker](https://github.com/ManageIQ/manageiq_depot/issues). Want to contribute an extension? [Follow the README.md here](https://github.com/ManageIQ/manageiq_depot/blob/master/README.md).
+    Want to contribute an extension? [Follow the README.md here](https://github.com/ManageIQ/manageiq_depot/blob/master/README.md).
+
+    **WARNING**: The Depot is in BETA. Please [submit any issues you find to the bug tracker](https://github.com/ManageIQ/manageiq_depot/issues).
 
 
 - ######################################################################
@@ -33,7 +35,7 @@ page_classes: "depot depot-index"
   = tags_list ["all"] + all_tags, "all"
 
 #extension-list.extensions
-  - extensions_info.each do |name, extension|
+  - extensions_info.sort.each do |name, extension|
 
     .extension(style="border-color:#{extension['color']}")
 
@@ -56,7 +58,10 @@ page_classes: "depot depot-index"
         .col-sm-12
           .authors
             - authors = ([extension['author']] + extension['collaborator']).map do |author|
-              - user_info(author)['name'] || author.titlecase
+              - if user_info(author).nil?
+                - author
+              - else
+                - user_info(author)['name']
 
             = "by #{authors.to_sentence}"
 
