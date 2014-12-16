@@ -11,8 +11,13 @@ def user_info github_user
 
   return $github_users[github_user] if $github_users[github_user]
 
-  data = open("https://api.github.com/users/#{github_user}").read
-  $github_users[github_user] = JSON.parse(data)
+  begin
+    data = open("https://api.github.com/users/#{github_user}").read
+    $github_users[github_user] = JSON.parse(data)
+  rescue
+    puts "!! Error retrieving github user info from the github API"
+    return
+  end
 end
 
 

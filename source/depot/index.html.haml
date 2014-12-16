@@ -56,7 +56,10 @@ page_classes: "depot depot-index"
         .col-sm-12
           .authors
             - authors = ([extension['author']] + extension['collaborator']).map do |author|
-              - user_info(author)['name'] || author.titlecase
+              - if user_info(author).nil?
+                - author
+              - else
+                - user_info(author)['name']
 
             = "by #{authors.to_sentence}"
 
