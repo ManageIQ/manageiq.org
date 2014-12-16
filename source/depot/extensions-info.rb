@@ -38,10 +38,10 @@ def extensions_info
     ext_data['description'].to_s.gsub!(/(\S)\n(\S)/, '\1 \2').to_s.strip!
 
     # Convert miq_ver, collaborator, tags, and dependencies into arrays
-    ext_data['miq_ver'] = ext_data['miq_ver'].split(/[,\s]+/)
-    ext_data['collaborator'] = ext_data['collaborator'].split(/[,\s]+/)
-    ext_data['tags'] = ext_data['tags'].downcase.split(/[,\s]+/).sort.uniq
-    ext_data['dependencies'] = ext_data['dependencies'].split(/,\s*/)
+    ext_data['miq_ver'] = ext_data['miq_ver'].to_s.split(/[,\s]+/)
+    ext_data['collaborator'] = ext_data['collaborator'].to_s.split(/[,\s]+/)
+    ext_data['tags'] = ext_data['tags'].to_s.downcase.split(/[,\s]+/).sort.uniq
+    ext_data['dependencies'] = ext_data['dependencies'].to_s.split(/,\s*/)
     ext_data['color'] = "##{color_from_string(ext_data['name'].parameterize)}"
 
     # Add to info array
