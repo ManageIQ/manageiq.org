@@ -48,7 +48,7 @@ def extensions_info
     info[ext] = ext_data
   end
 
-  return $extensions_info = info
+  return $extensions_info = info.sort_by {|slug, ext| ext['name'].downcase}
 end
 
 
