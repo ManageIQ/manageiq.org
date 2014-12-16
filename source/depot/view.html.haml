@@ -108,7 +108,7 @@ page_classes: "depot depot-view"
           = link_to extension['src_url'], extension['src_url']
 
       :ruby
-        versions = extension['miq_ver'] + ['bsomething']
+        versions = extension['miq_ver']
         branches = `#{git} branch --contains #{first_commit}`.split(/\W+/).reject{|x| x.empty?}
         branch_versions = branches & versions
 
