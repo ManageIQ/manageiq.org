@@ -33,7 +33,7 @@ page_classes: "depot depot-index"
   = tags_list ["all"] + all_tags, "all"
 
 #extension-list.extensions
-  - extensions_info.each do |name, extension|
+  - extensions_info.sort.each do |name, extension|
 
     .extension(style="border-color:#{extension['color']}")
 
