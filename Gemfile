@@ -80,10 +80,6 @@ gem 'middleman-sprockets', '3.3.2'
 #####
 # Formats
 
-# less (css)
-gem "therubyracer"
-gem "less"
-
 # asciidoctor
 gem "asciidoctor"
 
