@@ -192,6 +192,9 @@ activate :piwik do |f|
     f.domain = 'analytics.manageiq.org'
 end
 
+activate :google_analytics do |ga|
+  ga.tracking_id = 'UA-58883457-1'
+end
 
 ###
 # Monkey patches
