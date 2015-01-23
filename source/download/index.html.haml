@@ -95,10 +95,13 @@ page_classes: header-page download-page
             - data.deploy_types.each do |dlabel, dname|
               .download-option= link_to dname, "#{dlabel}/", class: "download-choice"
 
-            .row
-            :markdown            
-              See what's changed since the last release by reviewing the [Change Log](/community/changelog).
-              
+          .row
+            .col-md-10.col-md-offset-1
+              %h3 Change log
+              :markdown
+                See what's changed since the last release by reviewing
+                [the change log](/community/changelog).
+
           - unless @build_type.match /beta|devel/
 
             .row
