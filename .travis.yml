@@ -1,8 +1,6 @@
 language: ruby
 rvm:
-- 2.0.0
-install:
-- sudo apt-get update -qq
-- sudo apt-get install -y ruby-dev git make gcc
-- bundle install
+- "2.0"
+sudo: false
+cache: bundler
 script: bundle exec middleman build --verbose
