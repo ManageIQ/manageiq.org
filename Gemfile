@@ -38,6 +38,9 @@ gem 'middleman-deploy'
 # Piwik tracker
 gem 'middleman-piwik'
 
+# Google Analytics
+gem 'middleman-google-analytics'
+
 # Thumbnailer
 #gem "middleman-thumbnailer", github: "nhemsley/middleman-thumbnailer"
 
