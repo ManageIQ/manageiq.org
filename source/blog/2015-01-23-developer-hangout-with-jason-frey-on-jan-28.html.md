@@ -1,5 +1,5 @@
 ---
-title: Dev Hangout with Jason Frey - Provider Architecture
+title: Update - Provider Architecture Hangout now Jan 29
 author: johnmark
 date: 2015-01-23 21:06:02 UTC
 tags: providers, roadmap, architecture, dev, fryguy
@@ -13,6 +13,6 @@ If you've been [following the recent sprints](https://github.com/ManageIQ/manage
 
 To shed some light on recent efforts in this area, we're happy to have Jason Frey give an overview of the latest developments, and what's in store for Botvinnik and beyond. 
 
-Date: January, 28, 2015
-Time: 9am, Eastern US (14:00 GMT)
+Date: January, 29, 2015
+Time: 11:15am, Eastern US (16:15 GMT)
 Location: [Google Hangout](https://plus.google.com/events/cdcn39jq33hckv7uelh3ktihne4) (can be viewed from this blog post)
