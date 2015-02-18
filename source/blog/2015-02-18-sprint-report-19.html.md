@@ -1,11 +1,15 @@
 ---
-title: 'Sprint Report 19 '
+title: Sprint Report 19 - Wed Feb 18
 author: johnmark
 date: 2015-02-18 14:02:41 UTC
 tags: sprint, report, community, development
 comments: true
 published: true
 ---
+
+**Date & time:** Wed February 18, 10:30am Eastern US/15:30 UTC
+
+**Location:** [Bluejeans video conference](https://bluejeans.com/946365937)
 
 Today (Feb 18) is the date for our tri-weekly sprint report. Attending these will show you all of the latest things we're working on in the ManageIQ community.
 
@@ -20,5 +24,3 @@ Topics for today:
 * Preventing Event Storms 
 * Appliance
 * Manageiq.org
-
-
