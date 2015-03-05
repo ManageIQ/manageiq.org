@@ -126,3 +126,117 @@ Details on installing an image using a quickstart file are available from
     ```
 
 You should now be able to access the ManageIQ console at **\<IP_ADDRESS\>:3000**. The default username and password is `username : admin` and `password : smartvm`
+
+### Mac
+
+* Install [Homebrew](http://brew.sh/)
+
+  If you do not have Homebrew installed, go to the Homebrew website and install it.
+
+* Install Packages
+
+  ```bash
+  brew install git
+  brew install memcached
+  brew install postgresql
+  ```
+
+* Configure memcached
+
+ ```bash
+  $ mkdir ~/Library/LaunchAgents
+  $ cp /usr/local/Cellar/memcached/$version/homebrew.mxcl.memcached.plist ~/Library/LaunchAgents/
+  $ launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.memcached.plist.
+  $ /opt/local/bin/memcached -d -p 11211
+  ```
+  
+* Configure PostgreSQL
+
+  ```bash
+  # Enable PostgreSQL on boot
+  mkdir -p ~/Library/LaunchAgents
+  ln -sfv /usr/local/opt/postgresql/*.plist ~/Library/LaunchAgents
+  launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
+
+  psql -c "CREATE ROLE root SUPERUSER LOGIN PASSWORD 'smartvm'"
+  psql -c "alter database vmdb_development owner to root”
+  
+  env ARCHFLAGS="-arch x86_64" gem install pg
+  ```
+ 
+ 
+## Setup Git and Github
+
+* The most reliable authentication mechanism for git uses SSH keys.
+  * [SSH Key Setup](https://help.github.com/articles/generating-ssh-keys) Set up a SSH keypair for authentication.  Note: If you enter a passphrase, you will be prompted every time you authenticate with it.
+
+* Github account setup [Account Settings](https://github.com/settings).
+  * [Profile](https://github.com/settings/profile): Fill in your personal information, such as your name.
+  * [Profile](https://github.com/settings/profile): Optionally set up an avatar at gravatar.com.  When you set up your gravatar, be sure to have an entry for the addresses you plan to use with git / Github.
+  * [Emails](https://github.com/settings/emails): Enter your e-mail address and verify it, click the Verify button and follow the instructions.
+  * [Notification Center](https://github.com/settings/notifications) / Notification Email / Custom Routing: Change the email address associated with ManageIQ if desired.
+* Forking ManageIQ/manageiq:
+  * Go to [ManageIQ/mangeiq](https://github.com/ManageIQ/manageiq)
+  * Click the Fork button and choose "Fork to \<yourname\>"
+* If you are a member of the ManageIQ organization:
+  * Go to [the Members page](https://github.com/ManageIQ?tab=members).
+    * Verify you are listed.
+    * Optionally click Publicize Membership.
+
+* Git configuration and default settings.
+
+  ```zsh
+  git config --global user.name "Joe Smith"
+  git config --global user.email joe.smith@example.com
+  git config --global --bool pull.rebase true
+  git config --global push.default simple
+  ```
+  If you need to use git with other email addresses, you can set the local user.email from within the clone using:
+
+  ```zsh
+  git config user.name "Joe Smith"
+  git config user.email joe.smith@example.com
+  ```
+
+## Install Ruby
+
+* RVM: <http://rvm.io/>
+  ```bash
+  $ \curl -L https://get.rvm.io | bash -s stable —ruby
+  ```
+  
+* RUBY:
+  ```bash  
+  $ rvm install ruby-2.0.0
+  $ rvm --default use ruby-2.0.0
+  ```
+## Clone the Code
+
+```zsh
+git clone git@github.com:JoeSmith/manageiq.git # Use "-o my_fork" if you don't want the remote to be named origin
+cd manageiq
+git remote add upstream git@github.com:ManageIQ/manageiq.git
+git fetch upstream
+```
+
+You can add other remotes at any time to collaborate with others by running:
+
+```zsh
+git remote add other_user git@github.com:OtherUser/manageiq.git
+git fetch upstream
+```
+
+
+## Get the Rails environment up and running
+
+```zsh
+gem install bundler -v "~>1.3"
+cd vmdb
+bundle install --without qpid
+cd ..
+rake build:shared_objects
+cd vmdb
+cp config/database.pg.yml config/database.yml
+```
+
+You should now be able to access the ManageIQ console at **\<IP_ADDRESS\>:3000**. The default username and password is `username : admin` and `password : smartvm`
