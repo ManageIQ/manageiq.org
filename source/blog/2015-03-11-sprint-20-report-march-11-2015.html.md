@@ -7,7 +7,7 @@ comments: true
 published: true
 ---
 
-The sprint 20 report is today at the [usual bluejeans.com location](https://bluejeans.com/946365937). Today's topics include updates on the following:
+The sprint 20 report is today at 7:30 PDT/10:30 EDT/14:30 GMT at the [usual bluejeans.com location](https://bluejeans.com/946365937). Today's topics include updates on the following:
 
 * Provider Architecture (G. Blomquist)
 * Rest API (A. Bellotti)
@@ -18,5 +18,4 @@ The sprint 20 report is today at the [usual bluejeans.com location](https://blue
 * VM Fleecing - *baaaaaahhhhh* (Rich O.)
 * Community Update (JMW)
 
-A sprint image will follow in the next day or so. 
-
+A sprint image will follow in the next day or so.
