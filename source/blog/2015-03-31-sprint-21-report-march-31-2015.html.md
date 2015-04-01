@@ -7,7 +7,7 @@ comments: true
 published: true
 ---
 
-Every three weeks, we discuss our sprint reports, and you can participate in this process. 
+Every three weeks, we discuss our sprint reports, and you can participate in this process, as well as take a look at our handiwork with a [compiled image from this sprint](/download/devel/). 
 
 To join the meeting live, go to our handy-dandy [Bluejeans.com link](https://bluejeans.com/946365937). 
 
@@ -24,4 +24,3 @@ For this sprint, we worked on the following:
 * Automate (G. McCullough)
 * IPv6 (J. Rafaniello)
 * Fleecing (R. Oliveri)
-
