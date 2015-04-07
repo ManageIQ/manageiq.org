@@ -10,7 +10,7 @@ page_classes: header-page download-page
 :ruby
 
   @build_name_stable = 'Anand'
-  @build_name_unstable = 'Botvinnik'
+  @build_name_unstable = 'Botvinnik RC1'
 
   @build_type_devel = 'release candidate'
   # @build_type_devel = 'nightly'
@@ -57,8 +57,7 @@ page_classes: header-page download-page
         subheader_type = if @build_type == "stable"
                            ""
                          else
-                           "-#{@build_name_view}-" \
-                             "#{defined?(@build_type_override) ? @build_type_override : @build_type}"
+                           "-#{@build_name_view}" 
                          end
 
         header_string = "Download and install ManageIQ#{subheader_type}"
