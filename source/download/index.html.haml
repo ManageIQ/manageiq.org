@@ -3,6 +3,21 @@ page_classes: header-page download-page
 ---
 -# To add additional deployment types, please edit data/deploy_types.yml
 
+-########################################################################
+-# Editable values
+-########################################################################
+
+:ruby
+
+  @build_name_stable = 'Anand'
+  @build_name_unstable = 'Botvinnik'
+
+  @build_type_devel = 'release candidate'
+  # @build_type_devel = 'nightly'
+
+  # Comment out if you want the standard '-devel' in the name.
+  # Otherwise, this replaces '-devel'.
+  @build_type_override = 'rc1'
 
 -########################################################################
 -# Ruby helper functions
@@ -11,8 +26,19 @@ page_classes: header-page download-page
 :ruby
   @build_type = defined?(build_type) ? build_type : "stable"
 
+  @build_name_view = (@build_type == 'devel') ? @build_name_unstable : @build_name_stable
+
   def build_filename type, ext
-    "manageiq-#{type}-#{@build_type}.#{ext}"
+    build_type_string =
+      if @build_type == 'devel' && defined?(@build_type_override)
+        @build_type_override
+      else
+        @build_type
+      end
+
+    puts build_type_string
+
+    "manageiq-#{type}-#{build_type_string}.#{ext}"
   end
 
   def build_url type, ext
@@ -28,7 +54,13 @@ page_classes: header-page download-page
   .row
     %section.col-md-12
       :ruby
-        subheader_type = @build_type == "stable" ? "" : "-#{@build_type}"
+        subheader_type = if @build_type == "stable"
+                           ""
+                         else
+                           "-#{@build_name_view}-" \
+                             "#{defined?(@build_type_override) ? @build_type_override : @build_type}"
+                         end
+
         header_string = "Download and install ManageIQ#{subheader_type}"
         subheader_string = defined?(deploy_name) ? "for <span class='product-name'>#{deploy_name}</span>" : ""
 
@@ -49,12 +81,25 @@ page_classes: header-page download-page
     .row
       %section.col-md-12
         - stable_url = current_page.url.gsub("#{@build_type}/", '')
-        - build_name = (build_type == "devel") ? "nightly build" : "anand release"
 
-        :markdown
-          **Warning**: These are instructions for the **#{build_name}**. Things may be unstable, and may break.
-          If you're looking for adventure, please proceed.
-          Otherwise, [view instructions for the current release instead](#{stable_url}).
+        - if defined?(@build_type_devel) && @build_type_devel != "nightly"
+          :markdown
+            Download and test the **#{@build_name_unstable} #{@build_type_devel}**
+            using the instructions below.
+            If things break,
+            [report an issue](https://github.com/ManageIQ/manageiq/issues)
+            or ask questions on [talk.manageiq.org](http://talk.manageiq.org).
+            If you meant to download the current release, **#{@build_name_stable}**,
+            [see the main download page](#{stable_url}).
+
+        - else
+          :markdown
+            **Warning**: These are instructions for the **#{@build_name_view}**.
+            Things may be unstable, and may break.
+            If you're looking for adventure, please proceed.
+            Otherwise, [view instructions for the current release instead](#{stable_url}).
+
+
 
 
 - if defined? deploy_type
@@ -95,7 +140,7 @@ page_classes: header-page download-page
             - data.deploy_types.each do |dlabel, dname|
               .download-option= link_to dname, "#{dlabel}/", class: "download-choice"
 
-          .row
+          .row.center
             .col-md-10.col-md-offset-1
               %h3 Change log
               :markdown
@@ -104,12 +149,13 @@ page_classes: header-page download-page
 
           - unless @build_type.match /beta|devel/
 
-            .row
+            .row.center
               .col-md-10.col-md-offset-1
-                %h3 Like living on the edge?
+                %h3 Download the #{@build_type_devel}
 
-              .col-md-5.col-md-offset-1
-                =link_to "Download the nightly build for testing only...", "/download/devel/", class: "download-mode-devel"
+              .col-md-10.col-md-offset-1
+                = link_to "Download #{@build_name_unstable}&hellip;", "/download/devel/", class: "download-mode-devel"
+                = link_to "Report issues", "https://github.com/ManageIQ/manageiq/issues", class: "download-mode-bugs"
 
 
       -##################################################################
@@ -241,7 +287,7 @@ page_classes: header-page download-page
               2. Click **Configuration** → **Add a New Cloud Provider**
               3. Select the **type**.
               4. Enter required credentials.
-              5. Click **Add**.  
+              5. Click **Add**.
 
 
         -################################################################
