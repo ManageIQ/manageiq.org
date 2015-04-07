@@ -24,5 +24,5 @@ We're pleased to announce that, effective now, the first [Botvinnik release cand
   
 Refer to the [changelog](https://github.com/ManageIQ/manageiq/blob/botvinnik/CHANGELOG.md) for more details. 
   
-Please test the Botvinnik RC and [report any issues](https://github.com/ManageIQ/manageiq/issues). For questions or support, please see our [talk page](http://talk.manageiq.org/) and make sure to tag your questions with "Botvinnik". 
+Please test the Botvinnik RC and [report any issues](https://github.com/ManageIQ/manageiq/issues). For questions or support, please see our [talk page](http://talk.manageiq.org/) and make sure to use the "[Release Candidate](http://talk.manageiq.org/c/release-candidate)" category. 
 
