@@ -358,7 +358,6 @@ body.download-page
       top: 50%
       margin-top: -24px
 
-
     a
       color: $warn-link-color
 
@@ -420,9 +419,11 @@ body.download-page
 
 
 .download-mode-beta,
-.download-mode-devel
+.download-mode-devel,
+.download-mode-bugs
   //@extend .btn
   //@extend .btn-default
+  padding: 0 2ex
 
   &:before
     @extend .fa
@@ -436,8 +437,10 @@ body.download-page
   @extend .fa-wrench
 
 .download-mode-devel:before
-  @extend .fa-bug
+  @extend .fa-wrench
 
+.download-mode-bugs:before
+  @extend .fa-bug
 
 .content > section
   margin: 0 -15px
