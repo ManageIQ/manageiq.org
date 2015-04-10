@@ -1,5 +1,5 @@
 ---
-title: Botvinnik RC2
+title: Botvinnik RC2 for Download
 author: johnmark
 date: 2015-04-10 02:04:27 UTC
 tags: botvinnik, rc, release candidate, news
