@@ -11,8 +11,8 @@ As I mentioned in a [previous blog post](/blog/2015/04/manageiq-at-openstack-sum
 
 We've been prepping and now have an agenda:
 
-- 1:50 - 2:30 pm - Introduction to ManageIQ, an Expert-guided Tour, John Hardy, Red Hat
-  - Learn all the ins and outs of ManageIQ by the field product manager who makes it go for customers
+- 1:50 - 2:30 pm - Managing OpenStack Infrastructure with ManageIQ, John Hardy, Red Hat
+  - Learn what is transforming OpenStack to really replace VMware, by the product manager who makes it go for customers
 - 2:40 - 4:10 pm - ManageIQ Lab #1
   - This is an opportunity to get your hands dirty and work with a live ManageIQ deployment. Learn what makes it the leading open source hybrid cloud management platform. 
 - 4:30 - 5:10 pm - ManageIQ Lab #2
