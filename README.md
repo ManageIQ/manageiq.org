@@ -20,7 +20,7 @@ checked out directory.
 2.  Run the following to install brew and bundler. Then, run bundler.
   
   ```
-  ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
+  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   mkdir -p ~/Library/LaunchAgents
   brew doctor  
   brew update
