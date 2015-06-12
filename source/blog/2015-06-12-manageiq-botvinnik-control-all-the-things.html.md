@@ -17,7 +17,7 @@ For the impatient, here's what you need to know:
 * Read some docs about [using it for the first time](http://manageiq.org/documentation/top-tasks/)
 * Talk about it on [talk.manageiq.org](http://talk.manageiq.org/)
 
-[Cloud management](http://en.wikipedia.org/wiki/Cloud_management) is very quickly morphing into systems management, to the point where the difference between the two is increasingly indestinguishable. Everyone has a cloud, somewhere. Everyone has a virtualization platform. ManageIQ has had management capabilities for popular platforms of both for some time. 
+[Cloud management](http://en.wikipedia.org/wiki/Cloud_management) is very quickly morphing into systems management, to the point where the difference between the two is increasingly indistinguishable. Everyone has a cloud, somewhere. Everyone has a virtualization platform. ManageIQ has had management capabilities for popular platforms of both for some time. 
 
 [What's new in the Botvinnik release](https://github.com/ManageIQ/manageiq/blob/botvinnik/CHANGELOG.md), which marks the beginning of ManageIQ's evolution from "Your gateway to the open cloud" to "Control all the things," brings several important new features, including: 
 
