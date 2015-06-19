@@ -19,10 +19,10 @@ Next week (June 23 - June 26) is [Red Hat Summit](http://www.redhat.com/summit/)
 
 **CloudForms agenda:**
 
+* Wednesday, June 24, 1:30 pm: [Managing your cloud environment - Customer insights](http://www.redhat.com/summit/agenda/sessions/index.html#15878)
 * Wednesday, June 24, 2:30pm - [Out with the old: How Red Hat CloudForms improves management & orchestration while using legacy automation systems](http://www.redhat.com/summit/agenda/sessions/index.html#13680)
 * Wednesday, June 24, 4:50pm - [OpenStack infrastructure management with Red Hat CloudForms](http://www.redhat.com/summit/agenda/sessions/index.html#13795)
 * Wednesday, June 24, 7pm - [Managing OpenStack clouds with Red Hat CloudForms](http://www.redhat.com/summit/agenda/sessions/index.html#13773) 
 * Thursday, June 25, 1:20pm - [Red Hat CloudForms, Red Hat Satellite 6, & Puppet for automating JBoss EAP 6](http://www.redhat.com/summit/agenda/sessions/index.html#13723) 
 * Thursday, June 25, 1:20pm - [CloudForms Automate and Red Hat Enterprise Virtualization](http://www.redhat.com/summit/agenda/sessions/index.html#12024)
 * Thursday, June 25, 2:30pm - [Red Hat CloudForms roadmap](http://www.redhat.com/summit/agenda/sessions/index.html#13354)
-
