@@ -57,7 +57,7 @@ Details on installing an image using a quickstart file are available from
    1. Initialize the database:
 
       ```bash
-      service postgresql initdb
+      systemctl postgresql initdb
       ````
 
    2. Edit `/var/lib/pgsql/data/pg_hba.conf`, comment out everything and add
@@ -93,7 +93,7 @@ Details on installing an image using a quickstart file are available from
     su - miqbuilder
     \curl -sSL https://get.rvm.io | bash -s stable
     rvm install 2.0.0
-    gem install bundler -v "~>1.3"
+    gem install bundler -v ">=1.8.4"
     ```
 
     Note: You can install the development version of rvm by using:
@@ -107,11 +107,7 @@ Details on installing an image using a quickstart file are available from
 
     ```bash
     git clone https://github.com/ManageIQ/manageiq
-    cd manageiq/vmdb
-    bundle install --without qpid
-    cd ..
-    vmdb/bin/rake build:shared_objects
-    cd vmdb
+    cd manageiq
     bundle install --without qpid
     ```
 
@@ -210,6 +206,7 @@ You should now be able to access the ManageIQ console at **\<IP_ADDRESS\>:3000**
   $ rvm install ruby-2.0.0
   $ rvm --default use ruby-2.0.0
   ```
+
 ## Clone the Code
 
 ```zsh
@@ -230,12 +227,8 @@ git fetch upstream
 ## Get the Rails environment up and running
 
 ```zsh
-gem install bundler -v "~>1.3"
-cd vmdb
+gem install bundler -v ">=1.8.4"
 bundle install --without qpid
-cd ..
-rake build:shared_objects
-cd vmdb
 cp config/database.pg.yml config/database.yml
 ```
 
