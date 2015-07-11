@@ -143,7 +143,7 @@ You should now be able to access the ManageIQ console at **\<IP_ADDRESS\>:3000**
 
 * Configure memcached
 
- ```bash
+  ```bash
   $ mkdir ~/Library/LaunchAgents
   $ cp /usr/local/Cellar/memcached/$version/homebrew.mxcl.memcached.plist ~/Library/LaunchAgents/
   $ launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.memcached.plist.
@@ -201,11 +201,13 @@ You should now be able to access the ManageIQ console at **\<IP_ADDRESS\>:3000**
 ## Install Ruby
 
 * RVM: <http://rvm.io/>
+
   ```bash
   $ \curl -L https://get.rvm.io | bash -s stable —ruby
   ```
   
 * RUBY:
+
   ```bash  
   $ rvm install ruby-2.0.0
   $ rvm --default use ruby-2.0.0
