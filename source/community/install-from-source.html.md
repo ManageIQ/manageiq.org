@@ -4,7 +4,7 @@ To get started developing ManageIQ, or to deploy on an OS other than CentOS
 or Red Hat Enterprise Linux (RHEL), there are a few steps to get started.
 
 A lot of this has been automated in the [ManageIQ kickstart
-file](https://github.com/ManageIQ/manageiq/blob/master/build/kickstarts/base.ks.erb).
+file](https://github.com/ManageIQ/manageiq-appliance-build/blob/master/kickstarts/base.ks.erb).
 Details on installing an image using a quickstart file are available from
 [the Kickstart page on Fedora](http://fedoraproject.org/wiki/Anaconda/Kickstart).
 
