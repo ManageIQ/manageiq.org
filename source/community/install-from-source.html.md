@@ -232,6 +232,9 @@ git fetch upstream
 gem install bundler -v ">=1.8.4"
 bundle install --without qpid
 cp config/database.pg.yml config/database.yml
+bundle exec rake db:migrate
+bundle exec rake db:seed
+bin/rake evm:start
 ```
 
 You should now be able to access the ManageIQ console at **\<IP_ADDRESS\>:3000**. The default username and password is `username : admin` and `password : smartvm`
