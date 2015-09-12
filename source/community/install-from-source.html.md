@@ -108,7 +108,7 @@ Details on installing an image using a quickstart file are available from
     ```bash
     git clone https://github.com/ManageIQ/manageiq
     cd manageiq
-    bundle install --without qpid
+    bundle install
     ```
 
 10. Ensure that ManageIQ is connecting to the right database. Edit the
@@ -230,7 +230,7 @@ git fetch upstream
 
 ```zsh
 gem install bundler -v ">=1.8.4"
-bundle install --without qpid
+bundle install
 cp config/database.pg.yml config/database.yml
 bundle exec rake db:migrate
 bundle exec rake db:seed
