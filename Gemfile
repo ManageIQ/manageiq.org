@@ -24,6 +24,8 @@ end
 # For faster file watcher updates for people using Windows
 gem "wdm", "~> 0.1.0", :platforms => [:mswin, :mingw]
 
+# JavaScript interpreter, used for coffeescript (requiremd by middleman)
+gem 'therubyracer'
 
 #####
 # General plugins
