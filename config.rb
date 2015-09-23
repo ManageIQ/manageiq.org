@@ -154,7 +154,7 @@ ready do
 
   # Add blog feeds
   blog.tags.each do |tag_name, tag_data|
-    proxy "/blog/tag/#{tag_name.downcase}.xml", "feed.xml", locals: {tag_name: tag_name}, :ignore => true if tag_name
+    proxy "/blog/tag/#{tag_name.downcase.parameterize}.xml", "feed.xml", locals: {tag_name: tag_name}, :ignore => true if tag_name
   end
   proxy "/blog/feed.xml", "feed.xml", :ignore => true
   proxy "/blog/tag/index.html", "tag.html", :ignore => true
