@@ -99,7 +99,7 @@ gem "kramdown"
 
 gem 'open-uri-cached'
 
-gem 'font-awesome-middleman'
+gem 'font-awesome-middleman', '~> 4.1.1'
 
 gem 'chronic'
 
