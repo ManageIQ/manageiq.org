@@ -24,7 +24,7 @@ In addition, the following technical improvements have been made:
 * ManageIQ runs on Ruby 2.2 and Rails 4.2.
 * The appliance is based on CentOS 7.1, PostgreSQL 9.4.1, and Apache 2.4.
 * The appliance includes FreeIPA 4.1, providing users with two-factor authentication.
-* Work has begun that moves all providers to their own files and directories, and make them live in their own namespaces. This makes it much easier to add new providers.
+* Work has begun that moves all providers to their own files and directories, and makes them live in their own namespaces. This makes it much easier to add new providers.
 
 These are just some of the new features coming in this alpha release. For a complete list of new and updated features, see the [release notes](https://github.com/ManageIQ/manageiq/blob/capablanca/CHANGELOG.md).
 
