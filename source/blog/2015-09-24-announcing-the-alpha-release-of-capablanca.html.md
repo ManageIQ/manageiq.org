@@ -16,7 +16,7 @@ Topping the list of user-visible features are:
 * **A new container management provider.** The provider supports managing Kubernetes clusters, either “plain” or as part of OpenShift.
 * **A new container management UI.** This new user interface has been designed by the group along with the Red Hat UX team as a modern UI based on the latest technology and UX research. The UI uses the Patternfly/Angular frameworks and includes cool widgets like heat maps and a topology viewer. The UI is exposed under the new top-level “Containers” tab.
 * **A Microsoft Azure provider.** Work has begun on supporting the management of virtual machines and associated objects on Microsoft Azure. The provider uses the “Azure Resource Manager” RESTful API recently introduced by Microsoft. The API is accessed through a newly developed Ruby gem called [azure-armrest](https://github.com/ManageIQ/azure-armrest). Currently basic inventory collection is available.
-* Revamping the UI to the Angular/Patternfly frameworks.** This ongoing work will be completed over the coming releases. One place where you can already see the new UI is in the cloud provider and host editors.
+* **Revamping the UI to the Angular/Patternfly frameworks.** This ongoing work will be completed over the coming releases. One place where you can already see the new UI is in the cloud provider and host editors.
 * **Provider cross-linking.** ManageIQ now knows that Kubernetes node X is running on virtual machine Y.
 
 In addition, the following technical improvements have been made:
