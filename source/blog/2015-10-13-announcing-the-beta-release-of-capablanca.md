@@ -15,7 +15,8 @@ The following provides a list of key features and technical improvements since o
 
 Topping the list of user-visible features are:
 
- * **Self Service UI.** Adopted from [Project Jellyfish](https://github.com/projectjellyfish/api), this new interface will add charting by field values; the Cloud Provider Editor, Host Editor, and Stacks Retrirement screens converted to the Angular semantic UI; and the DHTMLX menus replaced with Bootstrap/Patternfly menus.
+ * **User Interface.** Updates include: The Self Service UI, adopted from [Project Jellyfish](https://github.com/projectjellyfish/api), this new interface is a standalone portal allowing end users to manage their own Services: Charting is now allowed by field values; the Cloud Provider Editor, Host Editor, and Stacks Retrirement screens (among others) have been converted to Angular, making them more responsive; and many of the DHTMLX based controls have been replaced with Bootstrap/Patternfly equivalents.
+
 
  * **Cloud-Service level Orchestration.** Multi-tenant support for OpenStack orchestration provisioning
 
