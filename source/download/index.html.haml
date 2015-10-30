@@ -9,15 +9,12 @@ page_classes: header-page download-page
 
 :ruby
 
-  @build_name_stable = 'Botvinnik'
-  @build_name_unstable = 'Developer Branch'
+  @build_name_devel    = 'Nightly'
+  @build_name_stable   = 'Botvinnik'
 
-  # @build_type_devel = 'release candidate'
-  @build_type_devel = 'nightly'
-
-  # Comment out if you want the standard '-devel' in the name.
-  # Otherwise, this replaces '-devel'.
-  # @build_type_override = 'botvinnik-1-rc4'
+  @show_prerelease_build = true
+  @build_name_prerelease = 'Capablanca RC 1'
+  @build_filename_suffix_prerelease = 'capablanca-1-rc1'
 
 -########################################################################
 -# Ruby helper functions
@@ -26,21 +23,20 @@ page_classes: header-page download-page
 :ruby
   @build_type = defined?(build_type) ? build_type : "stable"
 
-  @build_name_view = (@build_type == 'devel') ? @build_name_unstable : @build_name_stable
-
-  def build_filename type, ext
-    build_type_string =
-      if @build_type == 'devel' && defined?(@build_type_override)
-        @build_type_override
-      else
-        @build_type
-      end
-
-    "manageiq-#{type}-#{build_type_string}.#{ext}"
+  def build_name
+    instance_variable_get("@build_name_#{@build_type}")
   end
 
-  def build_url type, ext
-    "http://manageiq.org/download/#{build_filename type, ext}"
+  def build_filename_suffix
+    @build_type == "prerelease" ? @build_filename_suffix_prerelease : @build_type
+  end
+
+  def build_filename(type, ext)
+    "manageiq-#{type}-#{build_filename_suffix}.#{ext}"
+  end
+
+  def build_url(type, ext)
+    "http://manageiq.org/download/#{build_filename(type, ext)}"
   end
 
 
@@ -55,7 +51,7 @@ page_classes: header-page download-page
         subheader_type = if @build_type == "stable"
                            ""
                          else
-                           "-#{@build_name_view}" 
+                           " - #{build_name}"
                          end
 
         header_string = "Download and install ManageIQ#{subheader_type}"
@@ -79,11 +75,10 @@ page_classes: header-page download-page
       %section.col-md-12
         - stable_url = current_page.url.gsub("#{@build_type}/", '')
 
-        - if defined?(@build_type_devel) && @build_type_devel != "nightly"
+        - if @build_type == "prerelease"
           :markdown
-            Download and test the **#{@build_name_unstable} #{@build_type_devel}**
-            using the instructions below.
-            If things break,
+            Download and test the **#{build_name}** build using the
+            instructions below. If things break,
             [report an issue](https://github.com/ManageIQ/manageiq/issues)
             or ask questions on [talk.manageiq.org](http://talk.manageiq.org).
             If you meant to download the current release, **#{@build_name_stable}**,
@@ -91,7 +86,7 @@ page_classes: header-page download-page
 
         - else
           :markdown
-            **Warning**: These are instructions for the **#{@build_name_view}**.
+            **Warning**: These are instructions for the **#{build_name}** build.
             Things may be unstable, and may break.
             If you're looking for adventure, please proceed.
             Otherwise, [view instructions for the current release instead](#{stable_url}).
@@ -144,15 +139,24 @@ page_classes: header-page download-page
                 See what's changed since the last release by reviewing
                 [the change log](/community/changelog).
 
-          - unless @build_type.match /beta|devel/
 
+          - if @show_prerelease_build
             .row.center
               .col-md-10.col-md-offset-1
-                %h3 Download the #{@build_type_devel}
+                %h3 Download the #{@build_name_prerelease} build
 
               .col-md-10.col-md-offset-1
-                = link_to "Download #{@build_name_unstable}&hellip;", "/download/devel/", class: "download-mode-devel"
+                = link_to "Download the #{@build_name_prerelease} build&hellip;", "/download/prerelease/", class: "download-mode-devel"
                 = link_to "Report issues", "https://github.com/ManageIQ/manageiq/issues", class: "download-mode-bugs"
+
+          .row.center
+            .col-md-10.col-md-offset-1
+              %h3 Download the #{@build_name_devel} build
+
+            .col-md-10.col-md-offset-1
+              = link_to "Download the #{@build_name_devel} build&hellip;", "/download/devel/", class: "download-mode-devel"
+              = link_to "Report issues", "https://github.com/ManageIQ/manageiq/issues", class: "download-mode-bugs"
+
 
 
       -##################################################################
