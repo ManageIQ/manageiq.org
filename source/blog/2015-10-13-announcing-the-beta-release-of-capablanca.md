@@ -30,6 +30,6 @@ In addition, the following technical improvements have been made:
 * Improved OpenStack naming for AMQP binding queues and support for shelving VMs.
 * Exposed additional properties to Foreman reporting
 
-These are just some of the new features coming in this Beta release. For a complete list of new and updated features, see the [release notes](https://github.com/ManageIQ/manageiq/blob/capablanca/CHANGELOG.md).
+These are just some of the new features coming in this Beta release. For a complete list of new and updated features, see the [release notes](/community/changelog).
 
 The Capablanca alpha can be downloaded now. Either use the site's [download workflow](http://manageiq.org/download/devel/) or choose what you want from the [list of available images](http://releases.manageiq.org/).
