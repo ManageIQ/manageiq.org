@@ -568,6 +568,7 @@ The **Virtual Machines** pages display all virtual machines that were discovered
 
 ![](doc/getting-started/2124.png)
 
+{:type="lower-alpha"}
 1.  History button
 2.  Refresh screen button
 3.  Taskbar
