@@ -3,8 +3,6 @@
 title: ""
 pageable: false
 page_classes: front-page header-page
-per_page: 1
-blog_summary_length: 700
 ---
 
 - content_for :head do
@@ -16,6 +14,16 @@ blog_summary_length: 700
 
       %h2 Control All the Things 
       %h3 automate, optimize, and control your cloud and virtualization services
+
+- if (teaser_article = blog.articles.find(&:published?))
+  %section.blog-teaser
+    .row
+      %section.col-md-12
+
+        Latest News:
+        = link_to teaser_article.title, teaser_article.url
+
+        %small= pretty_date teaser_article.date, "short"
 
 %section.overview
   .row
@@ -73,32 +81,6 @@ blog_summary_length: 700
           *[service orchestration]: Automate virtual machine workflows toward an overal direction
           *[lifecycle management]: Oversee a workload from start to finish, and everything in-between
           *[automated workflows]: ManageIQ can decide when and how to work with workloads, based on your own custom rules
-
-%section.blog-area
-  .row
-
-    - blog_archives = blog.articles.length - current_page.data.per_page
-    - blogwidth = blog_archives > 0 ? 8 : 12
-
-    %h2 ManageIQ Community News
-
-    %section{class: "col-md-#{blogwidth}"}
-      %section.blog-posts
-        = partial :blog_posts, locals: {summarize: current_page.data.blog_summary_length}
-
-
-    - if blog_archives > 0
-      %section.col-md-4
-        %section.blog-archive
-          - blog_url = "#{blog.options[:prefix]}#{blog.options[:page_link]}/".sub(':num', '2')
-
-          %h2 Recent archives
-          %ol
-            - blog.articles.drop(current_page.data.per_page).take(blog.options[:per_page] - current_page.data.per_page).each do |article|
-              %li= link_to article.title, article.url
-
-          = link_to "&raquo; View older posts", blog_url, class: "more-link"
-
 
 %section.get-started
   .row

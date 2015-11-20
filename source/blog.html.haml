@@ -4,6 +4,6 @@ pageable: true
 
 %section.blog-archive
 
-  %h2= "ManageIQ Community News: page #{page_number}"
+  %h2= "ManageIQ Community News#{page_number > 1 ? ": page #{page_number}" : ""}"
 
   = partial :blog_posts, locals: locals
