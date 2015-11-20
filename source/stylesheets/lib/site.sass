@@ -117,7 +117,7 @@ pre, code
       /* The SVG is viewboxed, so we should set the size
       width: 200px
 
-      @media screen and (max-width:1023px)
+      @media screen and (max-width:1023px) and (min-width:640px)
         width: 300px
         margin: 20px 0 0
 
@@ -140,9 +140,14 @@ pre, code
       padding-left: 0
       padding-right: 0
 
+      li a
+        padding-left: 14px
+        padding-right: 14px
+
   @media screen and (max-width: 799px)
     nav
-      //font-size: 18pt
+      .nav-link-home
+        display: none
 
   @media screen and (min-width: 1024px)
     .hgroup
@@ -219,10 +224,9 @@ pre, code
           float: none
           padding: 0
 
-        a
-          display: inline-block
-          padding-top: 0.5ex
-          padding-bottom: 0.5ex
+          a
+            display: inline-block
+            padding: 0.5ex 6px
 
 
 @import compass/css3/images
