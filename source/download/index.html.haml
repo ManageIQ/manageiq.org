@@ -10,9 +10,10 @@ page_classes: header-page download-page
 :ruby
 
   @build_name_devel    = 'Nightly'
-  @build_name_stable   = 'Botvinnik'
+  @build_name_stable   = 'Capablanca'
+  @build_filename_suffix_stable = 'capablanca-1'
 
-  @show_prerelease_build = true
+  @show_prerelease_build = false
   @build_name_prerelease = 'Capablanca RC2'
   @build_filename_suffix_prerelease = 'capablanca-1-rc2'
 
@@ -28,7 +29,11 @@ page_classes: header-page download-page
   end
 
   def build_filename_suffix
-    @build_type == "prerelease" ? @build_filename_suffix_prerelease : @build_type
+    case @build_type
+    when "prerelease" then @build_filename_suffix_prerelease
+    when "stable" then @build_filename_suffix_stable
+    else @build_type
+    end
   end
 
   def build_filename(type, ext)
