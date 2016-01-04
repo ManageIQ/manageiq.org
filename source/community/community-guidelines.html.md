@@ -28,7 +28,8 @@ much detailed information as you can when asking and answering questions.
 Try to stay on topic - developer topics on [Talk](http://talk.manageiq.org)
 should be in the "Developers" category, topics related to using and
 customizing ManageIQ should be in the "Users" category. The best place to
-get an answer to a question is in [Ask](http://ask.manageiq.org).
+get an answer to a question is in the 
+["Support" category](http://talk.manageiq.org/category/support).
 
 ### Be polite
 
