@@ -3,7 +3,7 @@
 ## Step 1: Check it out
 
 Check out this this git repository by running:
-`git clone git@github.com:ManageIQ/manageiq.org.git`
+`git clone --recursive git@github.com:ManageIQ/manageiq.org.git`
 
 When the git clone is done, run `cd manageiq.org` to change to the
 checked out directory.
