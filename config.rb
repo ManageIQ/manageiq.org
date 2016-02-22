@@ -137,14 +137,6 @@ proxy "/documentation/development/index.html", "/documentation/development/READM
 
 proxy "/.htaccess", "/.htaccess.html", :locals => {}, :ignore => true
 
-data.deploy_types.each do |deploy_type, deploy_name|
-  proxy "/download/#{deploy_type}.html", "/download/index.html", locals: {deploy_type: deploy_type, deploy_name: deploy_name, build_type: "stable"}
-  proxy "/download/devel/#{deploy_type}.html", "/download/index.html", locals: {deploy_type: deploy_type, deploy_name: deploy_name, build_type: "devel"}
-  proxy "/download/prerelease/#{deploy_type}.html", "/download/index.html", locals: {deploy_type: deploy_type, deploy_name: deploy_name, build_type: "prerelease"}
-end
-proxy "/download/devel.html", "/download/index.html", locals: {build_type: "devel"}
-proxy "/download/prerelease.html", "/download/index.html", locals: {build_type: "prerelease"}
-
 ready do
   # Add author pages
   sitemap.resources.group_by {|p| p.data["author"]}.each do |author, pages|

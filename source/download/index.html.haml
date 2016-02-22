@@ -1,377 +1,273 @@
 ---
 page_classes: header-page download-page
 ---
--# To add additional deployment types, please edit data/deploy_types.yml
-
--########################################################################
--# Editable values
--########################################################################
-
-:ruby
-
-  @build_name_devel    = 'Nightly'
-  @build_name_stable   = 'Capablanca'
-  @build_filename_suffix_stable = 'capablanca-2'
-
-  @show_prerelease_build = false
-  @build_name_prerelease = 'Capablanca RC2'
-  @build_filename_suffix_prerelease = 'capablanca-1-rc2'
-
--########################################################################
--# Ruby helper functions
--########################################################################
-
-:ruby
-  @build_type = defined?(build_type) ? build_type : "stable"
-
-  def build_name
-    instance_variable_get("@build_name_#{@build_type}")
-  end
-
-  def build_filename_suffix
-    case @build_type
-    when "prerelease" then @build_filename_suffix_prerelease
-    when "stable" then @build_filename_suffix_stable
-    else @build_type
-    end
-  end
-
-  def build_filename(type, ext)
-    "manageiq-#{type}-#{build_filename_suffix}.#{ext}"
-  end
-
-  def build_url(type, ext)
-    "http://manageiq.org/download/#{build_filename(type, ext)}"
-  end
-
-
--########################################################################
--# Page header
--########################################################################
 
 %section.page-header
   .row
     %section.col-md-12
-      :ruby
-        subheader_type = if @build_type == "stable"
-                           ""
-                         else
-                           " - #{build_name}"
-                         end
-
-        header_string = "Download and install ManageIQ#{subheader_type}"
-        subheader_string = defined?(deploy_name) ? "for <span class='product-name'>#{deploy_name}</span>" : ""
-
       :markdown
-        ## #{header_string} #{subheader_string}
-        {:.#{(defined? deploy_type) ? "with-type" : "without-type"}}
+        ## Download and install ManageIQ
 
         Getting started with ManageIQ is as simple as following three
         steps. You'll be up and running in under 30 minutes.
 
 
--########################################################################
--# Selected-target banner / switcher
--########################################################################
+%section.download-selection
+  .row.text-center{:style => "padding-bottom:0"}
+    %section.col-md-12
+      %select{:id => "platform", :onchange => "downloadSelectionChanged()"}
+        %option{:disabled => true, :selected => true} --Choose your platform--
+        - data.deploy_types.each do |key, info|
+          %option{:value => key, :data => {:ext => info["ext"]}}= info["name"]
 
-- unless @build_type == "stable"
-  %section.page-warning
-    .row
-      %section.col-md-12
-        - stable_url = current_page.url.gsub("#{@build_type}/", '')
+      %select{:id => "release", :onchange => "downloadSelectionChanged()"}
+        %option{:disabled => true, :selected => true} --Choose a release--
+        - data.deploy_releases.each do |key, info|
+          %option{:value => key, :data => {:filename => info["filename"]}}= info["name"]
 
-        - if @build_type == "prerelease"
-          :markdown
-            Download and test the **#{build_name}** build using the
-            instructions below. If things break,
-            [report an issue](https://github.com/ManageIQ/manageiq/issues)
-            or ask questions on [talk.manageiq.org](http://talk.manageiq.org).
-            If you meant to download the current release, **#{@build_name_stable}**,
-            [see the main download page](#{stable_url}).
+      .release-warning{:hidden => true}
+        %h1
+        .alert.alert-warning
+          %span.fa.fa-exclamation-triangle
+          %strong
+            Warning
+          Things may be unstable, and may break. If you're looking for adventure,
+          please proceed.
 
-        - else
-          :markdown
-            **Warning**: These are instructions for the **#{build_name}** build.
-            Things may be unstable, and may break.
-            If you're looking for adventure, please proceed.
-            Otherwise, [view instructions for the current release instead](#{stable_url}).
+      :javascript
+        function downloadSelectionChanged() {
+          platform = $("#platform").val();
+          release  = $("#release").val();
+
+          if (release != null && platform != null) {
+            if (release != "stable")
+              $(".release-warning").show();
+            else
+              $(".release-warning").hide();
+
+            ext = $("#platform option:selected").attr("data-ext");
+            filename = $("#release option:selected").attr("data-filename");
+            replace_html = $("#instructions-template-" + platform).
+              html().
+              replace(/!!build_url!!/g, build_url(platform, filename, ext)).
+              replace(/!!build_filename!!/g, build_filename(platform, filename, ext))
+
+            $(".installation-steps").show();
+            $("#installation-step1").html(replace_html);
+          }
+        }
+
+        function build_url(platform, filename, ext) {
+          return "http://manageiq.org/download/" + build_filename(platform, filename, ext);
+        }
+
+        function build_filename(platform, filename, ext) {
+          return "manageiq-" + platform + "-" + filename + "." + ext;
+        }
+
+%section.installation-steps{:hidden => true}
+  .row{:style => "padding-top:0"}
+    %section.col-md-12
+      :markdown
+        ### Step 1: **Download & deploy your appliance**
+
+      %div#installation-step1
+        :markdown
+          1.  Download ManageIQ directly to OpenStack by running
+              this com
+
+      %div#instructions-template-openstack{:hidden => true}
+        :markdown
+          1.  Download ManageIQ directly to OpenStack by running
+              this command:
+
+              ~~~bash
+              curl -O -L !!build_url!! && \
+              glance image-create --name "!!build_filename!!" \
+              --is-public True --disk-format qcow2 \
+              --container-format=bare --file !!build_filename!!
+              ~~~
+
+          2.  Launch a new instance from the ManageIQ image. ManageIQ needs a
+              minimum of 6GB RAM and a 45GB persistent disk, so choose or create
+              an instance flavor accordingly.
+
+      %div#instructions-template-ovirt{:hidden => true}
+        %ol
+          %li
+            %p
+              %a.download-link{:href => "!!build_url!!"}
+                Download ManageIQ for oVirt
+          %li
+            %p
+              When the file has finished downloading, upload it to
+              an export domain on your oVirt instance by running the
+              following command locally:
+
+              :markdown
+                ~~~bash
+                engine-image-uploader -e $YOUR_EXPORT_DOMAIN --engine=$YOUR_ENGINE_HOST upload -v -m !!build_filename!!
+                ~~~
+          %li
+            %p
+              Navigate to the "Template Import" tab of your export
+              domain in your oVirt admin console, and import the
+              ManageIQ image template you uploaded.
+          %li
+            %p
+              Create a new virtual machine from the ManageIQ
+              template, and start the VM.
+
+      %div#instructions-template-rhev{:hidden => true}
+        %ol
+          %li
+            %p
+              %a.download-link{:href => "!!build_url!!"}
+                Download ManageIQ for Red Hat Enterprise Virtualization
+          %li
+            %p
+              When the file has finished downloading, upload it to
+              an export domain on your RHEV instance by running the
+              following command locally:
+
+              :markdown
+                ~~~bash
+                rhevm-image-uploader -e $YOUR_EXPORT_DOMAIN --engine=$YOUR_RHEVM_HOST upload -v -m !!build_filename!!
+                ~~~
+          %li
+            %p
+              Navigate to the "Template Import" tab of your export
+              domain in your RHEV admin console, and import the
+              ManageIQ image template you uploaded.
+          %li
+            %p
+              Create a new virtual machine from the ManageIQ
+              template, and start the VM.
+
+      %div#instructions-template-vmware{:hidden => true}
+        :markdown
+          1.  From the vSphere client, click File → Deploy OVF Template
+              (or Actions → Deploy OVF Template from the vSphere Web client).
+
+          2.  Enter `!!build_url!!`
+              in the URL field of the resulting dialog window, and select
+              the location, host and storage you wish to use for the ManageIQ VM.
+
+          3.  Check the box "Power on after deployment" to start the VM
+              once the deployment is complete.
+
+      :markdown
+        ### Step 2: **First connection and configuration**
+
+        1.  Log into the ManageIQ dashboard by connecting to the new running VM
+            with a web browser.
+            The initial username and password is `admin`/`smartvm`.
+
+        2.  There are a number of basic settings, located under
+            "Configure → Configuration" in the web interface, or under
+            "Advanced Settings" in the VM's console, that you may wish to
+            change when starting ManageIQ for the first time. Among the
+            most common are:
+
+            * Time and date settings
+            * DHCP configuration
+            * Hostname
+            * Admin password
 
 
+        ### Step 3: **Add an infrastructure or cloud provider**
+
+        Now that your ManageIQ Appliance is up and running, it's time to connect up
+        with your Providers (Cloud or Infrastructure) and gather data about them.
 
 
-- if defined? deploy_type
-  %section.page-tip
-    .row
-      %section.col-md-12
+  .row
+    .col-md-6
+      :markdown
+        #### Discover a new infrastructure provider
 
-        .download-selection-secondary
+        For Microsoft SCVMM, RHEV, oVirt, or vSphere
 
-          .side-left
-            %strong.block= "You&lsquo;re currently viewing instructions for <em>#{deploy_name}</em>."
-            If this isn&lsquo;t what you want, please select another deploy target:
+        1. Navigate to **Infrastructure** → **Providers**
+        2. Click **Configuration** → **Discover Infrastructure Providers**,
+        3. Select the **type**.
+        4. Enter an IP Range.
+        5. Click **Add**.
 
-          .side-right
-            .download-options
-              - data.deploy_types.reject {|d| d == deploy_type}.each do |dlabel, dname|
-                .download-option= link_to dname, "../#{dlabel}/", {class: "download-choice alert-link"}
+    .col-md-6
+      :markdown
+        #### Add a new cloud provider
 
-%section.installation-steps
+        For OpenStack, Amazon EC2
+
+        1. Navigate to **Clouds** → **Providers**
+        2. Click **Configuration** → **Add a New Cloud Provider**
+        3. Select the **type**.
+        4. Enter required credentials.
+        5. Click **Add**.
+
+
+    .next-steps
+      %hr
+
+      :markdown
+
+        ## What's next?
+
+
+      .col-md-4
+        :markdown
+          ### Consult the docs
+
+          * [Visit the **Documentation** section](/documentation/)
+          * [Check out **Top Tasks**](/documentation/top-tasks/)
+          * [Read the **Getting Started** guide](/documentation/getting-started)
+
+          {::comment} Switch this to the ManageIQ PDF guides SOON
+          * Much of the information in the downstream
+          [Cloudforms 3.0 docs](https://access.redhat.com/site/documentation/en-US/CloudForms/)
+          applies to ManageIQ.
+          {:/comment}
+
+      .col-md-4
+        :markdown
+          ### Join our community
+
+          [Visit the **Community** section](/community/) to find out the best ways to communicate with the community, help make the software better, and learn how to participate in the development of ManageIQ itself!
+
+          *[the community]: people who use and/or make the software
+
+
+      .col-md-4
+        :markdown
+          ### Get support
+
+          All the code produced in the ManageIQ project gets funneled into
+          [Red Hat® CloudForms](https://redhat.com/products/cloud-computing/cloudforms/).
+          If you're looking for a supported ManageIQ-based product, be sure to check it out.
+
+%section#export.export-notice
   .row
     %section.col-md-12
-
-      -##################################################################
-      -# Initial splash page (choose your adventure)
-      -##################################################################
-
-      - unless defined? deploy_type
-
-        .download-selection-primary
-
-          .intro
-            :markdown
-              Please select the option that most closely matches your
-              infrastructure to see instructions for your optimal
-              installation.
-
-          .row.download-options
-            - data.deploy_types.each do |dlabel, dname|
-              .download-option= link_to dname, "#{dlabel}/", class: "download-choice"
-
-          .row.center
-            .col-md-10.col-md-offset-1
-              %h3 Change log
-              :markdown
-                See what's changed since the last release by reviewing
-                [the change log](/community/changelog).
-
-
-          - if @show_prerelease_build
-            .row.center
-              .col-md-10.col-md-offset-1
-                %h3 Download the #{@build_name_prerelease} build
-
-              .col-md-10.col-md-offset-1
-                = link_to "Download the #{@build_name_prerelease} build&hellip;", "/download/prerelease/", class: "download-mode-devel"
-                = link_to "Report issues", "https://github.com/ManageIQ/manageiq/issues", class: "download-mode-bugs"
-
-          .row.center
-            .col-md-10.col-md-offset-1
-              %h3 Download the #{@build_name_devel} build
-
-            .col-md-10.col-md-offset-1
-              = link_to "Download the #{@build_name_devel} build&hellip;", "/download/devel/", class: "download-mode-devel"
-              = link_to "Report issues", "https://github.com/ManageIQ/manageiq/issues", class: "download-mode-bugs"
-
-
-
-      -##################################################################
-      -# Sub-pages (actual content)
-      -##################################################################
-
-      - if defined? deploy_type
-        :markdown
-          ### Step 1: **Download & deploy your appliance**
-
-        - case deploy_type
-
-          - when 'ovirt'
-            :markdown
-              1.  [Download ManageIQ for oVirt](#{build_url "ovirt", "ova"}){: .download-link}
-                  to your local computer.
-
-              2.  When the file has finished downloading, upload it to
-                  an export domain on your oVirt instance by running the
-                  following command locally:
-
-                  ~~~bash
-                  engine-image-uploader -e $YOUR_EXPORT_DOMAIN --engine=$YOUR_ENGINE_HOST upload -v -m #{build_filename "ovirt", "ova"}
-                  ~~~
-
-              3.  Navigate to the "Template Import" tab of your export
-                  domain in your oVirt admin console, and import the
-                  ManageIQ image template you uploaded.
-
-              4.  Create a new virtual machine from the ManageIQ
-                  template, and start the VM.
-
-
-          - when 'rhev'
-            :markdown
-              1.  [Download ManageIQ for Red Hat Enterprise Virtualization](#{build_url "ovirt", "ova"}){: .download-link}
-                  to your local computer.
-
-              2.  When the file has finished downloading, upload it to an
-                  export domain on your RHEV instance by running the
-                  following command locally:
-
-                  ~~~bash
-                  rhevm-image-uploader -e $YOUR_EXPORT_DOMAIN --engine=$YOUR_RHEVM_HOST upload -v -m #{build_filename "ovirt", "ova"}
-                  ~~~
-
-              3.  Navigate to the "Template Import" tab of your export
-                  domain in your RHEV-M console, and import the
-                  ManageIQ image template you uploaded.
-
-              4.  Create a new virtual machine from the ManageIQ
-                  template, and start the VM.
-
-
-          - when 'openstack'
-            :markdown
-              1.  Download ManageIQ directly to OpenStack by running
-                  this command:
-
-                  ~~~bash
-                  curl -O -L #{build_url "openstack", "qc2"} && \
-                  glance image-create --name "ManageIQ" \
-                  --is-public True --disk-format qcow2 \
-                  --container-format=bare --file #{build_filename "openstack", "qc2"}
-                  ~~~
-
-              2.  Launch a new instance from the ManageIQ image. ManageIQ needs a
-                  minimum of 6GB RAM and a 45GB persistent disk, so choose or create
-                  an instance flavor accordingly.
-
-          - when 'vmware'
-            :markdown
-              1.  From the vSphere client, click File → Deploy OVF Template
-                  (or Actions → Deploy OVF Template from the vSphere Web client).
-
-              2.  Enter `#{build_url "vsphere", "ova"}`
-                  in the URL field of the resulting dialog window, and select
-                  the location, host and storage you wish to use for the ManageIQ VM.
-
-              3.  Check the box "Power on after deployment" to start the VM
-                  once the deployment is complete.
-
-
-        :markdown
-          ### Step 2: **First connection and configuration**
-
-          1.  Log into the ManageIQ dashboard by connecting to the new running VM
-              with a web browser.
-              The initial username and password is `admin`/`smartvm`.
-
-          2.  There are a number of basic settings, located under
-              "Configure → Configuration" in the web interface, or under
-              "Advanced Settings" in the VM's console, that you may wish to
-              change when starting ManageIQ for the first time. Among the
-              most common are:
-
-              * Time and date settings
-              * DHCP configuration
-              * Hostname
-              * Admin password
-
-
-          ### Step 3: **Add an infrastructure or cloud provider**
-
-          Now that your ManageIQ Appliance is up and running, it's time to connect up
-          with your Providers (Cloud or Infrastructure) and gather data about them.
-
-
-        .row
-          .col-md-6
-            :markdown
-              #### Discover a new infrastructure provider
-
-              For Microsoft SCVMM, RHEV, oVirt, or vSphere
-
-              1. Navigate to **Infrastructure** → **Providers**
-              2. Click **Configuration** → **Discover Infrastructure Providers**,
-              3. Select the **type**.
-              4. Enter an IP Range.
-              5. Click **Add**.
-
-          .col-md-6
-            :markdown
-              #### Add a new cloud provider
-
-              For OpenStack, Amazon EC2
-
-              1. Navigate to **Clouds** → **Providers**
-              2. Click **Configuration** → **Add a New Cloud Provider**
-              3. Select the **type**.
-              4. Enter required credentials.
-              5. Click **Add**.
-
-
-        -################################################################
-        -# Next steps
-        -################################################################
-
-        .next-steps
-          %hr
-
-          :markdown
-
-            ## What's next?
-
-
-          .col-md-4
-            :markdown
-              ### Consult the docs
-
-              * [Visit the **Documentation** section](/documentation/)
-              * [Check out **Top Tasks**](/documentation/top-tasks/)
-              * [Read the **Getting Started** guide](/documentation/getting-started)
-
-              {::comment} Switch this to the ManageIQ PDF guides SOON
-              * Much of the information in the downstream
-              [Cloudforms 3.0 docs](https://access.redhat.com/site/documentation/en-US/CloudForms/)
-              applies to ManageIQ.
-              {:/comment}
-
-          .col-md-4
-            :markdown
-              ### Join our community
-
-              [Visit the **Community** section](/community/) to find out the best ways to communicate with the community, help make the software better, and learn how to participate in the development of ManageIQ itself!
-
-              *[the community]: people who use and/or make the software
-
-
-          .col-md-4
-            :markdown
-              ### Get support
-
-              All the code produced in the ManageIQ project gets funneled into
-              [Red Hat® CloudForms](https://redhat.com/products/cloud-computing/cloudforms/).
-              If you're looking for a supported ManageIQ-based product, be sure to check it out.
-
-
--########################################################################
--# Disclaimer (legal stuff)
--########################################################################
-
-- if defined? deploy_type
-  %section#export.export-notice
-    .row
-      %section.col-md-12
-
-        :markdown
-          ## Export notice
-
-          By downloading ManageIQ software, you acknowledge that you
-          understand all of the following: ManageIQ software and
-          technical information may be subject to the U.S. Export
-          Administration Regulations (the “EAR”) and other U.S. and
-          foreign laws and may not be exported, re-exported or
-          transferred (a) to any country listed in Country Group E:1 in
-          Supplement No. 1 to part 740 of the EAR (currently, Cuba,
-          Iran, North Korea, Sudan &amp; Syria); (b) to any prohibited
-          destination or to any end user who has been prohibited from
-          participating in U.S. export transactions by any federal
-          agency of the U.S. government; or (c) for use in connection
-          with the design, development or production of nuclear,
-          chemical or biological weapons, or rocket systems, space
-          launch vehicles, or sounding rockets, or unmanned air vehicle
-          systems. You may not download ManageIQ software or technical
-          information if you are located in one of these countries or
-          otherwise subject to these restrictions. You may not provide
-          ManageIQ software or technical information to individuals or
-          entities located in one of these countries or otherwise
-          subject to these restrictions. You are also responsible for
-          compliance with foreign law requirements applicable to the
-          import, export and use of ManageIQ software and technical
-          information.
+      :markdown
+        ## Export notice
+
+        By downloading ManageIQ software, you acknowledge that you understand
+        all of the following: ManageIQ software and technical information may be
+        subject to the U.S. Export Administration Regulations (the “EAR”) and
+        other U.S. and foreign laws and may not be exported, re-exported or
+        transferred (a) to any country listed in Country Group E:1 in Supplement
+        No. 1 to part 740 of the EAR (currently, Cuba, Iran, North Korea, Sudan
+        &amp; Syria); (b) to any prohibited destination or to any end user who
+        has been prohibited from participating in U.S. export transactions by
+        any federal agency of the U.S. government; or (c) for use in connection
+        with the design, development or production of nuclear, chemical or
+        biological weapons, or rocket systems, space launch vehicles, or
+        sounding rockets, or unmanned air vehicle systems. You may not download
+        ManageIQ software or technical information if you are located in one of
+        these countries or otherwise subject to these restrictions. You may not
+        provide ManageIQ software or technical information to individuals or
+        entities located in one of these countries or otherwise subject to these
+        restrictions. You are also responsible for compliance with foreign law
+        requirements applicable to the import, export and use of ManageIQ
+        software and technical information.

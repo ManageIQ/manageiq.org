@@ -350,16 +350,6 @@ body.download-page
     strong.block
       display: block
 
-  .download-options
-    margin: 0 auto
-
-  .download-option
-    float: left
-    min-width: 50%
-
-    a
-      margin-left: 6ex
-
   @at-root .page-warning
     @extend .page-tip
     background: $warn-color
@@ -380,87 +370,6 @@ body.download-page
 
     a
       color: $warn-link-color
-
-  .download-selection-primary
-
-    .intro
-      font-size: 1.8rem
-      max-width: 84rem
-      margin: 0 auto
-
-    .download-options
-      padding-top: 1.5rem
-      max-width: 84rem
-
-    .download-option
-
-      @media screen and (max-width: 40rem)
-        width: 100%
-
-      a
-        font-family: $headings-font-family
-        font-size: 2.125rem
-        padding: 1ex 0
-        display: block
-
-  .download-selection-secondary
-
-    em
-      font-style: normal
-      white-space: nowrap
-
-    $download-doc-switcher-text: 45rem
-
-    .side-left
-      width: $download-doc-switcher-text
-      width: 50%
-      float: left
-
-    .side-right
-      float: right
-      width: calc(100% - $download-doc-switcher-text)
-      width: 50%
-      overflow: hidden
-
-    .download-option
-
-      a
-        padding: 0
-        font: inherit
-        font-weight: normal
-        color: $download-link-color
-        margin-left: 3ex
-
-        &:before
-          font-size: 1.75ex
-          vertical-align: baseline
-          padding: 0
-          margin: 0
-
-
-.download-mode-beta,
-.download-mode-devel,
-.download-mode-bugs
-  //@extend .btn
-  //@extend .btn-default
-  padding: 0 2ex
-
-  &:before
-    @extend .fa
-    margin-right: 0.5ex
-    font-size: 32px
-    vertical-align: middle
-    opacity: 0.5
-
-
-.download-mode-beta:before
-  @extend .fa-wrench
-
-.download-mode-devel:before
-  @extend .fa-wrench
-
-.download-mode-bugs:before
-  @extend .fa-bug
 
 .content > section
   margin: 0 -15px
