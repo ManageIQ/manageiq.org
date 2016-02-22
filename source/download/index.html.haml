@@ -223,7 +223,7 @@ page_classes: header-page download-page
 
                   ~~~bash
                   curl -O -L #{build_url "openstack", "qc2"} && \
-                  glance image-create --name "ManageIQ-devel" \
+                  glance image-create --name "ManageIQ" \
                   --is-public True --disk-format qcow2 \
                   --container-format=bare --file #{build_filename "openstack", "qc2"}
                   ~~~
