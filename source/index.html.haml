@@ -101,8 +101,8 @@ page_classes: front-page header-page
 
     %section.col-md-7.choices
       %ul
-        - data.deploy_types.each do |dlabel, dname|
-          %li= link_to dname, "/download/#{dlabel}/", class: "download-choice"
+        - data.deploy_types.each do |key, info|
+          %li= link_to info["name"], "/download", class: "download-choice"
 
 
 %section.communication

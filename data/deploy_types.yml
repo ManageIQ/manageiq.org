@@ -1,4 +1,12 @@
-openstack: OpenStack
-ovirt: oVirt
-rhev: Red Hat Enterprise Virtualization
-vmware: VMware vSphere
+openstack:
+  name: OpenStack
+  ext: qc2
+ovirt:
+  name: oVirt
+  ext: ova
+rhev:
+  name: Red Hat Enterprise Virtualization
+  ext: ova
+vmware:
+  name: VMware vSphere
+  ext: ova
