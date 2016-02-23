@@ -7,6 +7,6 @@ ovirt:
 rhev:
   name: Red Hat Enterprise Virtualization
   ext: ova
-vmware:
+vsphere:
   name: VMware vSphere
   ext: ova
