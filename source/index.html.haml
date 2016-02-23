@@ -101,7 +101,7 @@ page_classes: front-page header-page
 
     %section.col-md-7.choices
       %ul
-        - data.deploy_types.each do |key, info|
+        - data.deploy_types.each_value do |info|
           %li= link_to info["name"], "/download", class: "download-choice"
 
 
