@@ -18,12 +18,12 @@ page_classes: header-page download-page
       %select{:id => "platform", :onchange => "downloadSelectionChanged()"}
         %option{:disabled => true, :selected => true} --Choose your platform--
         - data.deploy_types.each do |key, info|
-          %option{:value => key, :data => {:ext => info["ext"]}}= info["name"]
+          %option{:value => key, :data => info.slice("ext", "download_platform")}= info["name"]
 
       %select{:id => "release", :onchange => "downloadSelectionChanged()"}
         %option{:disabled => true, :selected => true} --Choose a release--
         - data.deploy_releases.each do |key, info|
-          %option{:value => key, :data => {:filename => info["filename"]}}= info["name"]
+          %option{:value => key, :data => info.slice("filename")}= info["name"]
 
       .release-warning{:hidden => true}
         %h1
@@ -45,12 +45,14 @@ page_classes: header-page download-page
             else
               $(".release-warning").hide();
 
+            dl_platform = $("#platform option:selected").attr("data-download-platform");
             ext = $("#platform option:selected").attr("data-ext");
             filename = $("#release option:selected").attr("data-filename");
+
             replace_html = $("#instructions-template-" + platform).
               html().
-              replace(/!!build_url!!/g, build_url(platform, filename, ext)).
-              replace(/!!build_filename!!/g, build_filename(platform, filename, ext))
+              replace(/!!build_url!!/g, build_url(dl_platform, filename, ext)).
+              replace(/!!build_filename!!/g, build_filename(dl_platform, filename, ext))
 
             $(".installation-steps").show();
             $("#installation-step1").html(replace_html);
