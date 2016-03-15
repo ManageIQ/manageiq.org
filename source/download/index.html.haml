@@ -78,6 +78,14 @@ page_classes: header-page download-page
           1.  Download ManageIQ directly to OpenStack by running
               this com
 
+      %div#instructions-template-qemu{:hidden => true}
+        :markdown
+          1.  Download the ManageIQ appliance for OpenStack [here](!!build_url!!).
+              This appliance works with generic QEmu/KVM and libvirt as well.
+
+          2.  Create a new VM with virt-manager and select "Import existing disk image".
+              ManageIQ needs a minimum of 6GB RAM.
+
       %div#instructions-template-openstack{:hidden => true}
         :markdown
           1.  Download ManageIQ directly to OpenStack by running
