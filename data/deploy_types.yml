@@ -1,12 +1,16 @@
 openstack:
   name: OpenStack
+  download_platform: openstack
   ext: qc2
 ovirt:
   name: oVirt
+  download_platform: ovirt
   ext: ova
 rhev:
   name: Red Hat Enterprise Virtualization
+  download_platform: ovirt
   ext: ova
 vsphere:
   name: VMware vSphere
+  download_platform: vsphere
   ext: ova
