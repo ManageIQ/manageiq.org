@@ -6,6 +6,10 @@ ovirt:
   name: oVirt
   download_platform: ovirt
   ext: ova
+qemu:
+  name: QEmu/KVM
+  download_platform: openstack
+  ext: qc2
 rhev:
   name: Red Hat Enterprise Virtualization
   download_platform: ovirt
