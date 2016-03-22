@@ -1,3 +1,7 @@
+hyperv:
+  name: Microsoft SCVMM
+  download_platform: hyperv
+  ext: vhd
 openstack:
   name: OpenStack
   download_platform: openstack

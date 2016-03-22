@@ -49,13 +49,18 @@ page_classes: header-page download-page
             ext = $("#platform option:selected").attr("data-ext");
             filename = $("#release option:selected").attr("data-filename");
 
-            replace_html = $("#instructions-template-" + platform).
-              html().
-              replace(/!!build_url!!/g, build_url(dl_platform, filename, ext)).
-              replace(/!!build_filename!!/g, build_filename(dl_platform, filename, ext))
+            if (dl_platform == "hyperv" && release == "stable") {
+              // We won't have hyperv stable until the darga release
+              $(".installation-steps").hide();
+            } else {
+              replace_html = $("#instructions-template-" + platform).
+                html().
+                replace(/!!build_url!!/g, build_url(dl_platform, filename, ext)).
+                replace(/!!build_filename!!/g, build_filename(dl_platform, filename, ext))
 
-            $(".installation-steps").show();
-            $("#installation-step1").html(replace_html);
+              $(".installation-steps").show();
+              $("#installation-step1").html(replace_html);
+            }
           }
         }
 
@@ -74,9 +79,61 @@ page_classes: header-page download-page
         ### Step 1: **Download & deploy your appliance**
 
       %div#installation-step1
+
+      %div#instructions-template-hyperv{:hidden => true}
         :markdown
-          1.  Download ManageIQ directly to OpenStack by running
-              this com
+          1.  Download the ManageIQ appliance for SCVMM to the SCVMM server
+              [here](!!build_url!!).
+
+          2.  In the Library workspace of the VMM console, expand Library
+              Servers, expand a library server, right-click a library share,
+              and then click Explore. Then, copy the ManageIQ image to the share.
+
+          3.  In the Library pane, expand Library Servers, right-click the
+              library server or library share that you want to refresh, and then
+              click Refresh.
+
+          4.  In the Library workspace, with Library Servers expanded, navigate
+              to the library server or library share that contains the file.
+
+          5.  Right-click the file and then click Properties.
+
+          6.  For Operating system, expand the list and select the operating
+              system that has been placed on the virtual hard disk.
+
+          7.  Optionally, for Virtualization platform, select the virtualization
+              platform on which you will deploy virtual machines that use the
+              file.
+
+          8.  When you have updated the properties, click OK.
+
+          9.  Now that the ManageIQ image is added to the library, select the
+              image.
+
+          10. Click on Create Virtual Machine.
+
+          11. Enter the name of the Virtual Machine you're creating and click
+              Next.
+
+          12. Under Configure Hardware, choose the following:
+
+                  Processors - 2
+                  Memory - 4096 MB
+                  Connected to a VM Network
+
+          13. Click Next
+
+          14. Select Place the Virtual Machine on a Host and click Next.
+
+          15. Choose the Virtual Machine path for storing the virtual machine
+              files or accept the default, then click Next.
+
+          16. Select Always Turn on the Virtual Machine and click Next.
+
+          17. Check the Start the Virtual Machine After Deploying It, and click
+              Next.
+
+          18. Select Create.
 
       %div#instructions-template-qemu{:hidden => true}
         :markdown
