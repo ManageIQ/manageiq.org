@@ -325,6 +325,27 @@ body.front-page
     .row
       border: none
 
+body.summit-page
+
+  .page-header
+    background: $bg-header-color url(/images/header-clouds.jpg) no-repeat fixed left bottom
+    background-size: cover
+    padding: 10em 0 10em
+    //height: 100%
+    text-shadow: 0 0 15px white
+    overflow: hidden
+    
+    .summit-logo
+      margin: auto
+
+.summit-page .content > section:not(.page-header)
+
+  // Add borders to the top of the sections (which are not the header)
+  .row
+    border-top: 1px solid #ddd
+
+    .row
+      border: none
 
 body.download-page
   $tip-color: #fef6dc
