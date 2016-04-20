@@ -1,9 +1,9 @@
 stable:
   name: Stable (capablanca-2)
   filename: capablanca-2
-# prerelease:
-#   name: Prerelease (capablanca-1-rc2)
-#   filename: capablanca-1-rc2
+prerelease:
+  name: Prerelease (darga-1-beta1)
+  filename: darga-1-beta1
 devel:
   name: Nightly
   filename: devel
