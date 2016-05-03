@@ -150,13 +150,6 @@ ready do
   end
   proxy "/blog/feed.xml", "feed.xml", :ignore => true
   proxy "/blog/tag/index.html", "tag.html", :ignore => true
-
-  # Remap extensions to the extension viewer
-  sitemap.resources.group_by {|p| p.url.match(/^\/depot\/extension\/.*\/$/)}.each do |url, pages|
-    next if url.to_s.match(/README/) or url.nil?
-    name = url.to_s.split('/')[3]
-    proxy "/depot/extension/#{name}/index.html", "depot/view.html", locals: {extension_name: name}, ignore: true
-  end
 end
 
 
