@@ -141,7 +141,7 @@ page_classes: header-page download-page
               This appliance works with generic QEmu/KVM and libvirt as well.
 
           2.  Create a new VM with virt-manager and select "Import existing disk image".
-              ManageIQ needs a minimum of 6GB RAM.
+              ManageIQ needs a minimum of 6GB RAM and a 45GB persistent disk. The root password is 'smartvm'
 
       %div#instructions-template-openstack{:hidden => true}
         :markdown
@@ -209,7 +209,7 @@ page_classes: header-page download-page
           %li
             %p
               Create a new virtual machine from the ManageIQ
-              template, and start the VM.
+              template, and start the VM. The root password is 'smartvm'
 
       %div#instructions-template-vsphere{:hidden => true}
         :markdown
@@ -221,7 +221,7 @@ page_classes: header-page download-page
               the location, host and storage you wish to use for the ManageIQ VM.
 
           3.  Check the box "Power on after deployment" to start the VM
-              once the deployment is complete.
+              once the deployment is complete. The root password is 'smartvm'
 
       :markdown
         ### Step 2: **First connection and configuration**
