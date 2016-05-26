@@ -1,3 +1,7 @@
+azure:
+  name: Microsoft Azure
+  download_platform: azure
+  ext: vhd
 hyperv:
   name: Microsoft SCVMM
   download_platform: hyperv

@@ -49,8 +49,11 @@ page_classes: header-page download-page
             ext = $("#platform option:selected").attr("data-ext");
             filename = $("#release option:selected").attr("data-filename");
 
-            if (dl_platform == "hyperv" && release == "stable") {
-              // We won't have hyperv stable until the darga release
+            if ((dl_platform == "hyperv" || dl_platform == "azure") && release == "stable") {
+              // We won't have azure/hyperv stable until the darga release
+              $(".installation-steps").hide();
+            } else if (dl_platform == "azure" && release == "prerelease") {
+              // We won't have azure prerelease until the darga rc-2
               $(".installation-steps").hide();
             } else {
               replace_html = $("#instructions-template-" + platform).
@@ -79,6 +82,75 @@ page_classes: header-page download-page
         ### Step 1: **Download & deploy your appliance**
 
       %div#installation-step1
+
+      %div#instructions-template-azure{:hidden => true}
+        :markdown
+          1.  Download the ManageIQ appliance for Azure [here](!!build_url!!).
+
+          2.  In PowerShell prompt, log in to Azure Resource Manager using the cmdlet:
+
+              ~~~powershell
+              Login-AzureRmAccount
+              ~~~
+
+          3.  Upload the VHD file, make a copy of the VHD file and create a virtual
+              machine. As shown in the example script below, you will first create a
+              Resource Group through the Portal UI or Powershell. Additionally, create
+              the storage container defined in "BlobDestinationContainer" in advance.
+
+              Example script:
+
+              ~~~powershell
+              ## Upload image
+              # Define the Source and Destination
+              $ResourceGroupName = "test"
+              $BlobNameSource = "!!build_filename!!"
+              $BlobNameDest = "!!build_filename!!"
+              $BlobSourceContainer = "templates"
+              $BlobDestinationContainer = "vhds"
+              $LocalImagePath = 'C:\temp\!!build_filename!!'
+
+              $StorageAccountName = <yourStorageAccountNameHere>
+              $StorageAccountKey = <yourStorageAccountKeyHere>
+
+              # Upload VHD to a "templates" directory.
+              Add-AzureRmVhd -ResourceGroupName $ResourceGroupName -Destination https://$StorageAccountName.blob.core.windows.net/$BlobSourceContainer/$BlobNameSource -LocalFilePath $LocalImagePath -NumberOfUploaderThreads 8
+
+              # Copy the VHD to "live" directory
+              $myStorage = New-AzureStorageContext -StorageAccountName $StorageAccountName -StorageAccountKey $StorageAccountKey
+              $BlobResult = Start-AzureStorageBlobCopy -SrcBlob $BlobNameSource -SrcContainer $BlobSourceContainer -DestContainer $BlobDestinationContainer -DestBlob $BlobNameDest -Context $myStorage -DestContext $myStorage
+
+              ## Create Virtual Machine
+              $Location = "East US"
+              $VMName = "azure-test-vm"
+              $ComputerName = $VMName
+              $OSDiskName = $VMName
+              $deployName = $VMName
+              $deploySize= "Standard_A3"
+
+              # Setup Storage
+              $StorageName = "test"
+              $StorageType = "Standard_RAGRS"
+              $StorageAccount = Get-AzureRmStorageAccount -ResourceGroupName $ResourceGroupName -Name $StorageName
+
+              # Setup Network
+              $InterfaceName = "test"
+              $Subnet1Name = "default"
+              $VNetName = "test1"
+              $VNetAddressPrefix = "10.1.0.0/16"
+              $VNetSubnetAddressPrefix = "10.1.0.0/24"
+              $PIp = New-AzureRmPublicIpAddress -Name $InterfaceName -ResourceGroupName $ResourceGroupName -Location $Location -AllocationMethod Dynamic -Force
+              $SubnetConfig = New-AzureRmVirtualNetworkSubnetConfig -Name $Subnet1Name -AddressPrefix $VNetSubnetAddressPrefix
+              $VNet = New-AzureRmVirtualNetwork -Name $VNetName -ResourceGroupName $ResourceGroupName -Location $Location -AddressPrefix $VNetAddressPrefix -Subnet $SubnetConfig -Force
+              $Interface = New-AzureRmNetworkInterface -Name $InterfaceName -ResourceGroupName $ResourceGroupName -Location $Location -SubnetId $VNet.Subnets[0].Id -PublicIpAddressId $PIp.Id -Force
+
+              # Configure VM
+              $VirtualMachine = New-AzureRmVMConfig -VMName $deployName -VMSize $deploySize
+              $VirtualMachine = Add-AzureRmVMNetworkInterface -VM $VirtualMachine -Id $Interface.Id
+              $OSDiskUri = $StorageAccount.PrimaryEndpoints.Blob.ToString() + $BlobDestinationContainer + "/" + $BlobNameDest
+              $VirtualMachine = Set-AzureRmVMOSDisk -VM $VirtualMachine -Name $OSDiskName -VhdUri $OSDiskUri -CreateOption attach -Linux
+              New-AzureRmVM -ResourceGroupName $ResourceGroupName -Location $Location -VM $VirtualMachine
+              ~~~
 
       %div#instructions-template-hyperv{:hidden => true}
         :markdown
