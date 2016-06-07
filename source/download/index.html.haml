@@ -46,24 +46,16 @@ page_classes: header-page download-page
               $(".release-warning").hide();
 
             dl_platform = $("#platform option:selected").attr("data-download-platform");
-            ext = $("#platform option:selected").attr("data-ext");
             filename = $("#release option:selected").attr("data-filename");
+            ext = $("#platform option:selected").attr("data-ext");
 
-            if ((dl_platform == "hyperv" || dl_platform == "azure") && release == "stable") {
-              // We won't have azure/hyperv stable until the darga release
-              $(".installation-steps").hide();
-            } else if (dl_platform == "azure" && release == "prerelease") {
-              // We won't have azure prerelease until the darga rc-2
-              $(".installation-steps").hide();
-            } else {
-              replace_html = $("#instructions-template-" + platform).
-                html().
-                replace(/!!build_url!!/g, build_url(dl_platform, filename, ext)).
-                replace(/!!build_filename!!/g, build_filename(dl_platform, filename, ext))
+            replace_html = $("#instructions-template-" + platform).
+              html().
+              replace(/!!build_url!!/g, build_url(dl_platform, filename, ext)).
+              replace(/!!build_filename!!/g, build_filename(dl_platform, filename, ext))
 
-              $(".installation-steps").show();
-              $("#installation-step1").html(replace_html);
-            }
+            $(".installation-steps").show();
+            $("#installation-step1").html(replace_html);
           }
         }
 
