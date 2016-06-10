@@ -52,7 +52,8 @@ page_classes: header-page download-page
             replace_html = $("#instructions-template-" + platform).
               html().
               replace(/!!build_url!!/g, build_url(dl_platform, filename, ext)).
-              replace(/!!build_filename!!/g, build_filename(dl_platform, filename, ext))
+              replace(/!!build_filename!!/g, build_filename(dl_platform, filename, ext)).
+              replace(/!!docker_tag!!/g, docker_tag)
 
             $(".installation-steps").show();
             $("#installation-step1").html(replace_html);
@@ -67,6 +68,13 @@ page_classes: header-page download-page
           return "manageiq-" + platform + "-" + filename + "." + ext;
         }
 
+        function docker_tag() {
+          if (release == "devel")
+            return "latest";
+          else
+            return filename;
+        }
+
 %section.installation-steps{:hidden => true}
   .row{:style => "padding-top:0"}
     %section.col-md-12
@@ -74,6 +82,14 @@ page_classes: header-page download-page
         ### Step 1: **Download & deploy your appliance**
 
       %div#installation-step1
+
+      %div#instructions-template-docker{:hidden => true}
+        :markdown
+          1.  Pull the ManageIQ docker image from Docker Hub and run:
+
+              ~~~
+              docker run --privileged -di -p 80:80 -p 443:443 docker.io/manageiq/manageiq:!!docker_tag!!
+              ~~~
 
       %div#instructions-template-azure{:hidden => true}
         :markdown

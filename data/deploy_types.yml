@@ -1,3 +1,7 @@
+docker:
+  name: Docker
+  download_platform: docker
+  ext:
 azure:
   name: Microsoft Azure
   download_platform: azure
