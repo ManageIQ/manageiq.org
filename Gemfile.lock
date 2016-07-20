@@ -34,10 +34,6 @@ GEM
       shellany (~> 0.0)
       thor (>= 0.18.1)
     guard-compat (1.2.1)
-    guard-jekyll-plus (2.0.2)
-      guard (~> 2.10, >= 2.10.3)
-      guard-compat (~> 1.1)
-      jekyll (>= 1.0.0)
     guard-livereload (2.5.2)
       em-websocket (~> 0.5)
       guard (~> 2.8)
@@ -105,7 +101,6 @@ PLATFORMS
 
 DEPENDENCIES
   guard
-  guard-jekyll-plus
   guard-livereload
   jekyll
   jekyll-assets

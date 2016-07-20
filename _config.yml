@@ -21,8 +21,9 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://manageiq.org" # the base hostname & protocol for your site
 # twitter_username: jekyllrb
 # github_username:  jekyll
+permalink: /blog/:year/:month/:day/:title/
 
 # Build settings
 markdown: kramdown
 
-exclude: [data, lib, source, create-post.rb, Gemfile.*, LICENSE.md, README.md, setup.sh]
+exclude: [data, lib, source, create-post.rb, Gemfile*, Guardfile, LICENSE.md, README.md, setup.sh]
