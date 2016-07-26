@@ -10,5 +10,6 @@
 
   - page_articles.reject {|a| !a.published? }.each do |article|
     = partial :blog_post, locals: {article: article, summarize: summarize}
+    %hr
 
   = partial :blog_pagination, locals: locals
