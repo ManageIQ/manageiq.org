@@ -6,8 +6,6 @@ comments: true
 published: true
 ---
 
-# Last Week in ManageIQ: Faster Reports, Cloud Networks, and more!
-
 Hello and welcome to the first *Last Week in ManageIQ*! This is
 [Tim](https://twitter.com/imtayadeway) here ready to take you on a
 whirlwind tour of some of the many, many (many) updates we had to the
