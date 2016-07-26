@@ -1,5 +1,5 @@
 ---
-title: Last Week in ManageIQ: Faster Reports, Cloud Networks, and more!
+title: "Last Week in ManageIQ: Faster Reports, Cloud Networks, and more!"
 author: imtayadeway
 date: 2016-07-26 15:01:11 UTC
 comments: true
