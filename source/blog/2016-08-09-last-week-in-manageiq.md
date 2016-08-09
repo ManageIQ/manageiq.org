@@ -23,9 +23,9 @@ get involved.
 ### [Backend support for service types that are generic of a certain type.](https://github.com/ManageIQ/manageiq/pull/10203)
 
 Currently you can only create services with a limited number of specific
-service types(VMware, RHEV, OpenStack, etc). This improvement in the back end
+service types (VMware, RHEV, OpenStack, etc). This improvement in the back end
 lays down the beginnings of creating new service types that are 'generic' (i.e.
-"Generic_VM, Generic_Container", etc.). The idea is that a blue print can be
+"Generic_VM, Generic_Container", etc.). The idea is that a blueprint can be
 authored using only these generic types, laying out the architecture to an
 application, without the need to explicitly define the resources to make the
 application. There's plenty left to do but this is a great start!
@@ -73,7 +73,7 @@ issue.
 This published the Create and Read parts of the Blueprints API. It provides the
 back end support for the new Service Designer UI (SDUI) to start fleshing out
 the canvas for dragging and dropping service items. Users will be able to create
-Blueprints, and then be able to drag other Catalog ITems (or bundles) onto the
+Blueprints, and then be able to drag other Catalog Items (or bundles) onto the
 canvas and save the blueprint. Neat!
 
 ### [Added VMware catalog parsing](https://github.com/ManageIQ/manageiq/pull/10136)
