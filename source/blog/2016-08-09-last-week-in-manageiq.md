@@ -68,7 +68,7 @@ issue.
 
 ## New
 
-### [Blueprints API](https://github.com/ManageIQ/manageiq/pull/9765)
+### [Added Blueprints REST API endpoints](https://github.com/ManageIQ/manageiq/pull/9765)
 
 This published the Create and Read parts of the Blueprints API. It provides the
 back end support for the new Service Designer UI (SDUI) to start fleshing out
