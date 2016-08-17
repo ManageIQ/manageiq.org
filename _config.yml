@@ -26,4 +26,29 @@ permalink: /blog/:year/:month/:day/:title/
 # Build settings
 markdown: kramdown
 
-exclude: [data, lib, source, create-post.rb, Gemfile*, Guardfile, LICENSE.md, README.md, setup.sh]
+exclude:
+  - data
+  - lib
+  - source
+  - create-post.rb
+  - Gemfile*
+  - Guardfile
+  - LICENSE.md
+  - README.md
+  - setup.sh
+  - "*.yaml"
+
+# Keep things built externally
+keep_files: ["docs/master"]
+
+collections:
+  dev_docs:
+    output: true
+    permalink: /docs/dev/:path
+
+defaults:
+  - scope:
+      path: ""
+      type: "dev_docs"
+    values:
+      layout: document

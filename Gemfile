@@ -4,6 +4,8 @@ gem "jekyll"
 gem "jekyll-assets"
 gem "patternfly-sass"
 
+# Dev
+gem "pry"
 gem "guard"
 gem "guard-livereload"
 
