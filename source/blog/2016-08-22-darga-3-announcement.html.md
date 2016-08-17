@@ -8,6 +8,12 @@ published: true
 
 We've just built Darga-3. This release contains bug fixes, numerous UI tweaks, and stabilization.
 
+Here are the summary of fixes in darga-3:
+[manageiq](https://github.com/ManageIQ/manageiq/issues?utf8=%E2%9C%93&q=is%3Aclosed%20label%3Adarga%2Fbackported%20)
+[manageiq-appliance](https://github.com/ManageIQ/manageiq-appliance/issues?utf8=%E2%9C%93&q=is%3Aclosed%20label%3Adarga%2Fbackported)
+[manageiq-appliance-build](https://github.com/ManageIQ/manageiq-appliance-build/issues?utf8=%E2%9C%93&q=is%3Aclosed%20label%3Adarga%2Fbackported)
+[manageiq-ui-self_service](https://github.com/ManageIQ/manageiq-ui-self_service/issues?utf8=%E2%9C%93&q=is%3Aclosed%20label%3Adarga%2Fbackported)
+
 The [GA announcement](http://manageiq.org/blog/2016/06/darga-ga-announcement/)
 remains the best summary of changes since Capablanca.
 
