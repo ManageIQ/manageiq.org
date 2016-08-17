@@ -16,5 +16,5 @@
 # and, you'll have to watch "config/Guardfile" instead of "Guardfile"
 
 guard 'livereload' do
-  watch(/^_site/)
+  watch(/^site\/_site/)
 end

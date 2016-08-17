@@ -41,14 +41,22 @@ exclude:
 # Keep things built externally
 keep_files: ["docs/master"]
 
-collections:
-  dev_docs:
-    output: true
-    permalink: /docs/dev/:path
+# collections:
+#   dev_docs:
+#     output: true
+#     permalink: /docs/dev/:path
 
 defaults:
   - scope:
-      path: ""
-      type: "dev_docs"
+      path: "docs"
+      type: "pages"
     values:
       layout: document
+      permalink: /docs/guides/:path
+
+# defaults:
+#   - scope:
+#       path: ""
+#       type: "dev_docs"
+#     values:
+#       layout: document

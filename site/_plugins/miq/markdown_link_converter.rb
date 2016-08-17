@@ -3,7 +3,7 @@ require 'pry'
 module Miq
   class MdLinkGenerator < Jekyll::Generator
     def generate(site)
-      site.collections["dev_docs"].docs.each { |doc| rewrite_links(doc) }
+      # site.collections["dev_docs"].docs.each { |doc| rewrite_links(doc) }
     end
 
     def rewrite_links(doc)
@@ -11,4 +11,8 @@ module Miq
       doc.content = Miq.md_link_to_html(doc.content)
     end
   end
+end
+
+Jekyll::Hooks.register :site, :post_read do |post|
+  binding.pry
 end
