@@ -48,11 +48,12 @@ keep_files: ["docs/master"]
 
 defaults:
   - scope:
-      path: "docs"
+      path: "docs/guides"
       type: "pages"
     values:
       layout: document
-      permalink: /docs/guides/:path
+      permalink: /:path/:basename
+      nav_exclude: true
 
 # defaults:
 #   - scope:

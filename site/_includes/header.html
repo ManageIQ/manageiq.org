@@ -12,13 +12,11 @@
       </div>
       <div class="collapse navbar-collapse navbar-collapse-1">
         <ul id="menu-primary" class="nav navbar-nav navbar-right">
-          {% for my_page in site.pages %}
-            {% if my_page.title %}
-            <li>
-              <a href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
-            </li>
-            {% endif %}
-          {% endfor %}
+          {% for page in site.data['titled_pages'] -%}
+          <li>
+            <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+          </li>
+          {% endfor -%}
         </ul>
       </div>
     </nav>
