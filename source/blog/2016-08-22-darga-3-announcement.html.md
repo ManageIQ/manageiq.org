@@ -8,7 +8,16 @@ published: true
 
 We've just built Darga-3. This release contains bug fixes, numerous UI tweaks, and stabilization.
 
-Here are the summary of fixes in darga-3:
+Security Fix(es):
+
+* It was found that the CloudForms web UI did not properly filter input in
+certain fields. A remote, authenticated attacker could use this flaw to execute
+arbitrary code on the system running CloudForms. (CVE-2016-5383)
+
+This issue was discovered by Eric Hayes (Red Hat).
+
+
+and here is the complete summary of fixes in darga-3:
 [manageiq](https://github.com/ManageIQ/manageiq/issues?utf8=%E2%9C%93&q=is%3Aclosed%20label%3Adarga%2Fbackported%20)
 [manageiq-appliance](https://github.com/ManageIQ/manageiq-appliance/issues?utf8=%E2%9C%93&q=is%3Aclosed%20label%3Adarga%2Fbackported)
 [manageiq-appliance-build](https://github.com/ManageIQ/manageiq-appliance-build/issues?utf8=%E2%9C%93&q=is%3Aclosed%20label%3Adarga%2Fbackported)
