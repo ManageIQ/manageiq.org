@@ -1,7 +1,7 @@
 ---
 title: Announcing Darga-3
 author: jprause
-date: 2016-06-22 14:35:39 UTC
+date: 2016-08-22 14:35:39 UTC
 comments: true
 published: true
 ---
