@@ -1,5 +1,5 @@
 ---
-title: "Last Week in ManageIQ: "
+title: "Last Week in ManageIQ: The Azure, nice errors, and gems"
 date: 2016-08-22 07:30 UTC
 author: juliancheal
 comments: true
@@ -10,7 +10,7 @@ What ho! Welcome to another jolly edition of Last Week in ManageIQ. [Julian](htt
 
 ## Featured
 
-We've had a spiffing week with [138 pull requests merged][PRs merged last week] from our marvellous contributors. ManageIQ always welcomes new contributors, we have a great list of
+We've had a spiffing week with [147 pull requests merged][PRs merged last week] from our marvellous contributors. ManageIQ always welcomes new contributors, we have a great list of
 [issues](https://github.com/manageiq/manageiq/issues) so take a gander to see where
 you can help us.
 
@@ -32,7 +32,7 @@ As with all good refactorings, this included 48 new additions, but managed to re
 
 ### [Improving the API](https://github.com/ManageIQ/manageiq/pull/10632)
 
-Fellow Brit [Time Wade](https://github.com/imtayadeway) has been refactoring away at the API, this time extracting classes to remove the `Settings concern` from every API call. Good job Tim.
+Fellow Brit [Tim Wade](https://github.com/imtayadeway) has been refactoring away at the API, this time extracting classes to remove the `Settings concern` from every API call. Good job Tim.
 
 ### [Nicer Errors](https://github.com/ManageIQ/manageiq/pull/10511)
 
