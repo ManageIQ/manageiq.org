@@ -18,3 +18,10 @@
 guard 'livereload' do
   watch(/^site\/_site/)
 end
+
+guard :minitest do
+  watch(%r{^test/(.*)\/?(.*)_test[s]?\.rb$})
+  watch(%r{^lib/(.*/)?([^/]+)\.rb$}) { |m| "test/#{m[1]}test_#{m[2]}.rb" }
+  watch(%r{^site/_plugins/(.*/)?([^/]+)\.rb$}) { "test/plugin_tests.rb" }
+  watch(%r{^test/test_helper\.rb$})  { "test" }
+end

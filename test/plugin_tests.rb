@@ -1,10 +1,4 @@
-require "minitest/autorun"
-
-require "jekyll"
-
-require File.expand_path("../../_plugins/miq.rb", __FILE__)
-require File.expand_path("../../_plugins/miq/doc_menu.rb", __FILE__)
-require File.expand_path("../../_plugins/miq/markdown_link_converter.rb", __FILE__)
+require_relative "test_helper"
 
 class MiqTest < Minitest::Test
   def test_converting_md_href_to_html
@@ -19,10 +13,10 @@ end
 
 class DocMenuTest < Minitest::Test
   def test_tree_of_files
-    menu = Miq::DocMenu.new(File.expand_path("../dir_fixture", __FILE__))
+    menu = Miq::DocMenu.new(File.expand_path("../fixtures/doc_menu", __FILE__))
 
     expected = {
-      :name => "dir_fixture",
+      :name => "doc_menu",
       :children => [
         "bar.html",
         "foo.html"

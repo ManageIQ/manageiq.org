@@ -1,3 +1,6 @@
+require_relative "miq/doc_menu"
+require_relative "miq/markdown_link_converter"
+
 module Miq
   MD_LINK = /(\[[^\]]*\]\([^:\)]*)\.md\)/
 

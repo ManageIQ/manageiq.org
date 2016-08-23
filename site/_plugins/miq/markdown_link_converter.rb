@@ -1,4 +1,4 @@
-require 'pry'
+require "Jekyll"
 
 module Miq
   class MdLinkGenerator < Jekyll::Generator

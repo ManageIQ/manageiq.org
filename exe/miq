@@ -1,0 +1,115 @@
+#!/usr/bin/env ruby
+require "pry"
+
+require "thor"
+require File.expand_path("../../lib/miq", __FILE__)
+
+module Miq
+  #
+  # Reset repos back to clean state
+  #
+  class Reset < Thor
+    desc "all", "Reset all repos to clean state"
+    def all
+      invoke :guides
+      invoke :site
+    end
+
+    desc "guides", "Reset guides to clean state"
+    def guides
+      Guides.reset
+    end
+
+    desc "site", "Reset site repo to clean state"
+    def site
+      Site.reset
+    end
+  end
+
+  #
+  # Update repos
+  #
+  class Update < Thor
+    desc "all", "Update guides and site from upstream; prime ref doc repo"
+    def all
+      invoke :guides
+      invoke :site
+      invoke :reference
+    end
+
+    desc "guides", "Reset and update guides repo"
+    def guides
+      say "Updating guides", :green
+      Guides.update
+    end
+
+    desc "site", "Reset and update site repo"
+    def site
+      say "Updating site", :green
+      Site.update
+    end
+
+    desc "reference", "Prime the reference docs staging directory"
+    def reference
+      say "Updating reference docs", :green
+      RefDocs.update
+    end
+
+    map :ref => :reference
+  end
+
+  #
+  # Build aspects of the site
+  #
+  class Build < Thor
+    desc "all", "Buildes guides, Jekyll site, and reference docs"
+    def all
+      say "Building all"
+      invoke :guides
+      invoke :site
+      invoke :reference
+    end
+
+    desc "guides", "Build guides"
+    def guides
+      say "Processing guides", :green
+      Guides.build
+    end
+
+    desc "site", "Build Jekyll site"
+    def site
+      say "Building Jekyll site", :green
+      Site.build
+    end
+
+    desc "ref, reference", "Build Reference Docs"
+    def reference
+      say "Building reference docs", :green
+      Guides.build
+    end
+
+    map :ref => :reference
+  end
+
+  #
+  # Top level command
+  #
+  class CLI < Thor
+    desc "reset <all|guides|site|reference>", "Reset repo(s) to clean state"
+    subcommand "reset", Reset
+
+    desc "update <all|guides|site|reference>", "Pull changes from origin repos"
+    subcommand "update", Update
+
+    desc "build <all|guides|site|reference>", "Build or process an aspect of the site"
+    subcommand "build", Build
+
+    desc "deploy", "Prepares and deploys site. Don't use unless your changes have been pushed to repos."
+    def deploy
+      invoke 'miq:update:all'
+      invoke 'miq:build:all'
+    end
+  end
+end
+
+Miq::CLI.start
