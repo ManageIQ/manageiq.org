@@ -1,6 +1,3 @@
-[submodule "ref_docs"]
-	path = ref_docs
-	url = https://github.com/ManageIQ/manageiq_docs.git
 [submodule "site/docs/guides"]
 	path = site/docs/guides
-	url = https://github.com/hayesr/guides.git
+	url = https://github.com/ManageIQ/guides.git
