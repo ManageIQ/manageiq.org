@@ -23,7 +23,7 @@ you can help us.
 ### [MiQ Roles API](https://github.com/ManageIQ/manageiq/pull/10452)
 
 Chris Arcand and Joe Rafaniello have been at the refactoring again, this time
-overhauling the MiQ Roles API to:
+overhauling the ManageIQ Roles API to:
 > remove unused and needlessly complex code.
 
 As with all good refactorings, this included 48 new additions, but managed to remove 124 lines of code!
@@ -46,7 +46,7 @@ If you use `ldap` you might be happy to know [Gregg Tanzillo](https://github.com
 
 ### [Active Support for Everyone](https://github.com/ManageIQ/manageiq/pull/10627)
 
-[Nick Carboni](https://github.com/carbonin) has added the ability to use methods such as `Hash#symbolize_keys` and `Time#current` in production, by requiring `active_support/all` and making it safer for everyone needing those methods
+[Nick Carboni](https://github.com/carbonin) has added the ability in the PostgresHAAdmin to use methods such as `Hash#symbolize_keys` and `Time#current` in production, by requiring `active_support/all` and making it safer for everyone needing those methods
 
 ## Deleted
 
@@ -60,9 +60,9 @@ A small change, but a useful one. Removing an unused and _broken_ OAuth button. 
 
 ## Wrapping up
 
-Not technically last week, but ManageIQ developer Chris Arcand, made it into [Ruby Weekly](https://chrisarcand.com/the-search-for-class0x0000001ab51700/?utm_source=rubyweekly&utm_medium=email) with `The Search For <Class:0x00000027b59290>`, a thrilling tale of hunting for that mysterious bug in a codebase.
+Not technically last week, but ManageIQ developer Chris Arcand, made it into [Ruby Weekly](https://chrisarcand.com/the-search-for-class0x0000001ab51700/?utm_source=rubyweekly&utm_medium=email) with `The Search For <Class:0x00000027b59290>`, a thrilling tale of hunting for a mysterious bug in our codebase.
 
-As always we have too many PRs to cover here in detail. You are always welcome to have a peak at them [here][PRs merged last week]. And with that pip pip & toodle-oo, and don't forget to look out for the next
+As always we have too many PRs to cover here in detail. You are always welcome to have a peek at them [here][PRs merged last week]. And with that pip pip & toodle-oo, and don't forget to look out for the next
 exciting issue of *Last Week in ManageIQ*!
 
 [PRs merged last week]: https://github.com/ManageIQ/manageiq/pulls?page=1&q=is%3Apr+is%3Amerged+base%3Amaster+merged%3A%222016-08-15+..+2016-08-22%22+sort%3Acreated-desc&utf8=✓
