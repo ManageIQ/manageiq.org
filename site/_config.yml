@@ -39,7 +39,10 @@ exclude:
   - "*.yaml"
 
 # Keep things built externally
-keep_files: ["docs/master"]
+keep_files:
+  - docs/reference/_images
+  - docs/reference/_stylesheets
+  - docs/reference/master
 
 # collections:
 #   dev_docs:

@@ -58,19 +58,27 @@ module Miq
 
     def build_ref_docs
       logger.info "Building ref docs"
-      shell "cd #{tmp_dir} && #{bundler} exec asciibinder build"
+      shell "cd #{tmp_dir} && #{bundler} exec asciibinder package"
     end
 
     def move_files
       prep dest_dir
       logger.info "Syncing files to #{dest_dir}"
-      shell "rsync -av #{tmp_dir}/_package/* #{dest_dir}"
+      cmd = "rsync -av "
+      cmd << exclude_files.map{|x| "--exclude '#{x}'"}.join(' ')
+      cmd << " #{tmp_dir}/_package/community/* #{dest_dir}/"
+      shell cmd
     end
 
     private
 
     def prep(dir)
       FileUtils.mkdir_p(dir)
+    end
+
+    # Relative to tmp_dir/_package/community
+    def exclude_files
+      ["/index.html", "sitemap.xml"]
     end
   end
 end

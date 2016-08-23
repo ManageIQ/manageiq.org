@@ -55,7 +55,7 @@ module Miq
       RefDocs.update
     end
 
-    map :ref => :reference
+    map "ref" => "reference"
   end
 
   #
@@ -85,10 +85,10 @@ module Miq
     desc "ref, reference", "Build Reference Docs"
     def reference
       say "Building reference docs", :green
-      Guides.build
+      RefDocs.build
     end
 
-    map :ref => :reference
+    map "ref" => "reference"
   end
 
   #
