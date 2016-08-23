@@ -10,7 +10,7 @@ What ho! Welcome to another jolly edition of Last Week in ManageIQ. [Julian](htt
 
 ## Featured
 
-We've had a spiffing week with [147 pull requests merged][PRs merged last week] from our marvellous contributors. ManageIQ always welcomes new contributors, we have a great list of
+We've had a spiffing week with [167 pull requests merged][PRs merged last week] from our marvellous contributors. ManageIQ always welcomes new contributors, we have a great list of
 [issues](https://github.com/manageiq/manageiq/issues) so take a gander to see where
 you can help us.
 
@@ -60,7 +60,7 @@ A small change, but a useful one. Removing an unused and _broken_ OAuth button. 
 
 ## Wrapping up
 
-Not technically last week, but ManageIQ developer Chris Arcand, made it into [Ruby Weekly](https://chrisarcand.com/the-search-for-class0x0000001ab51700/?utm_source=rubyweekly&utm_medium=email) with `The Search For <Class:0x00000027b59290>`, a thrilling tail of hunting for that mysterious bug in a codebase.
+Not technically last week, but ManageIQ developer Chris Arcand, made it into [Ruby Weekly](https://chrisarcand.com/the-search-for-class0x0000001ab51700/?utm_source=rubyweekly&utm_medium=email) with `The Search For <Class:0x00000027b59290>`, a thrilling tale of hunting for that mysterious bug in a codebase.
 
 As always we have too many PRs to cover here in detail. You are always welcome to have a peak at them [here][PRs merged last week]. And with that pip pip & toodle-oo, and don't forget to look out for the next
 exciting issue of *Last Week in ManageIQ*!
