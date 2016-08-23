@@ -15,7 +15,7 @@ module Miq
     attr_reader :guides_dir
 
     def initialize
-      @guides_dir = ENV["MIQ_GUIDES_DIR"] || File.expand_path("../../../site/docs/guides")
+      @guides_dir = Miq.site_dir.join( (ENV["MIQ_GUIDES_DIR"] || "docs/guides") )
     end
 
     def reset

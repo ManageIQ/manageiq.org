@@ -12,14 +12,17 @@ module Miq
       new.build
     end
 
-    attr_reader :source_dir, :branch
+    attr_reader :source_dir, :dest_dir, :branch
 
     def initialize
       # Where is the site directory?
-      @source_dir = ENV["MIQ_SITE_DIR"] || File.expand_path("../../../site", __FILE__)
+      @source_dir = Miq.site_dir
+
+      # Where should the site go?
+      @dest_dir   = Miq.dest_dir
 
       # Which branch to pull (useful for development)
-      @branch     = ENV["MIQ_SITE_BRANCH"] || "master"
+      @branch     = ENV["MIQ_SITE_BRANCH"]  || `git rev-parse --abbrev-ref HEAD`
     end
 
     def reset
@@ -31,7 +34,7 @@ module Miq
     end
 
     def build
-      shell "cd #{source_dir} && #{bundler} exec jekyll build"
+      shell "#{bundler} exec jekyll build -s #{source_dir} -d #{dest_dir}"
     end
   end
 end

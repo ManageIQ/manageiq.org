@@ -24,7 +24,7 @@ module Miq
       @tmp_dir  = ENV["MIQ_REF_TMP"]  || "/tmp/manageiq_docs"
 
       # Where should the files end up?
-      @dest_dir = ENV["MIQ_REF_DEST"] || File.join(Dir.pwd, "site/_site/docs/reference/")
+      @dest_dir = ENV["MIQ_REF_DEST"] || Miq.dest_dir.join("docs", "reference")
 
       # Probably a good idea to use an explicit bundler path
       @bundler  = ENV["MIQ_BUNDLER"]  || `which bundle`
