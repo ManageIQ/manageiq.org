@@ -18,7 +18,7 @@ you can help us.
 
 ### [The Azure, Azure](https://github.com/ManageIQ/manageiq/pull/10629)
 
-[Bronagh Sorota] (https://github.com/bronaghs) has improved the naming of the Azure regions. When creating an Azure provider with no instances; instead of naming the region `Azure-eastus`, we incorrectly called it `Azure-Azure-eastus`
+[Bronagh Sorota](https://github.com/bronaghs) has improved the naming of the Azure regions. When creating an Azure provider with no instances; instead of naming the region `Azure-eastus`, we incorrectly called it `Azure-Azure-eastus`
 
 ### [MiQ Roles API](https://github.com/ManageIQ/manageiq/pull/10452)
 
