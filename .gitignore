@@ -1,5 +1,7 @@
 _site
 .sass-cache
 .jekyll-metadata
+.env
 
 dest/*
+site/docs/reference

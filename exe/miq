@@ -1,7 +1,6 @@
 #!/usr/bin/env ruby
 
-require "thor"
-require File.expand_path("../../lib/miq", __FILE__)
+require_relative "../lib/miq"
 
 module Miq
   #
@@ -23,6 +22,13 @@ module Miq
     def site
       Site.reset
     end
+
+    desc "reference", "Delete reference docs tmp directory"
+    def reference
+      RefDocs.reset
+    end
+
+    map "ref" => "reference"
   end
 
   #

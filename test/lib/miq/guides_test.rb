@@ -2,8 +2,8 @@ require "test_helper"
 
 class GuidesTest < Minitest::Test
   def setup
-    @dir = File.expand_path("../../../fixtures/guides", __FILE__)
-    ENV["MIQ_GUIDES_DIR"] = @dir
+    ENV["MIQ_GUIDES_DIR"] = File.expand_path("../../../fixtures/guides", __FILE__)
+    @dir = Pathname.new(ENV["MIQ_GUIDES_DIR"])
     @subject = Miq::Guides.new
   end
 
@@ -31,11 +31,11 @@ class GuidesTest < Minitest::Test
   private
 
   def has_yaml
-    "#{@dir}/has_yaml.md"
+    @dir.join("has_yaml.md")
   end
 
   def no_yaml
-    "#{@dir}/no_yaml.md"
+    @dir.join("no_yaml.md")
   end
 
   def reset_fixture

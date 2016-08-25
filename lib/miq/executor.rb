@@ -18,6 +18,8 @@ module Miq
       !!(ENV["MIQ_DEBUG"])
     end
 
+    # Probably a good idea to use an explicit path to Bundler
+    # also allow for user specified path
     def bundler
       ENV["MIQ_BUNDLER"]  || `which bundle`
     end

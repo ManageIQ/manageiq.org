@@ -1,3 +1,12 @@
+require 'pathname'
+require 'bundler'
+Bundler.require(:default)
+
+unless ENV["MIQ_ENV"] == "production"
+  Bundler.require(:development)
+  Dotenv.load
+end
+
 require_relative "miq/executor"
 require_relative "miq/site"
 require_relative "miq/guides"
@@ -21,6 +30,10 @@ module Miq
   end
 
   def self.docs_dir
-    working_dir.join( (ENV["MIQ_DOCS_DIR"] || ["site", "docs"]) )
+    if ENV["MIQ_DOCS_DIR"]
+      working_dir.join(ENV["MIQ_DOCS_DIR"])
+    else
+      working_dir.join("site", "docs")
+    end
   end
 end

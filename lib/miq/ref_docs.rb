@@ -2,7 +2,7 @@ require 'fileutils'
 
 module Miq
   class RefDocs < Executor
-    def reset
+    def self.reset
       new.reset
     end
 
@@ -14,20 +14,33 @@ module Miq
       new.update
     end
 
-    attr_reader :repo, :tmp_dir, :dest_dir, :bundler
+    attr_reader :repo, :branch, :tmp_dir, :src_dir, :dst_dir
 
     def initialize
       # Where do the docs live?
       @repo     = ENV["MIQ_REF_REPO"] || "https://github.com/ManageIQ/manageiq_docs.git"
 
+      # What branch to checkout?
+      @branch   = ENV["MIQ_REF_BRANCH"] || "master"
+
       # Where should we cache and build?
       @tmp_dir  = ENV["MIQ_REF_TMP"]  || "/tmp/manageiq_docs"
 
-      # Where should the files end up?
-      @dest_dir = ENV["MIQ_REF_DEST"] || Miq.dest_dir.join("docs", "reference")
+      # Where are the built files that we want?
+      @src_dir  = ENV["MIQ_REF_SRC"]  || "_package/community/latest"
 
-      # Probably a good idea to use an explicit bundler path
-      @bundler  = ENV["MIQ_BUNDLER"]  || `which bundle`
+      # Where should the files end up?
+      @dst_dir  = ENV["MIQ_REF_DST"] || Miq.docs_dir.join("reference")
+    end
+
+    def reset
+      logger.info "Removing #{tmp_dir}"
+      logger.info "Removing #{dst_dir}"
+
+      unless debug?
+        rm_dir(tmp_dir)
+        rm_dir(dst_dir)
+      end
     end
 
     def build
@@ -58,15 +71,19 @@ module Miq
 
     def build_ref_docs
       logger.info "Building ref docs"
-      shell "cd #{tmp_dir} && #{bundler} exec asciibinder package"
+      shell [
+        "cd #{tmp_dir}",
+        "git checkout #{branch}",
+        "#{bundler} exec asciibinder package"
+      ].join(" && ")
     end
 
     def move_files
-      prep dest_dir
-      logger.info "Syncing files to #{dest_dir}"
+      prep dst_dir
+      logger.info "Syncing files to #{dst_dir}"
       cmd = "rsync -av "
       cmd << exclude_files.map{|x| "--exclude '#{x}'"}.join(' ')
-      cmd << " #{tmp_dir}/_package/community/* #{dest_dir}/"
+      cmd << " #{tmp_dir}/#{src_dir}/* #{dst_dir}/"
       shell cmd
     end
 
@@ -76,7 +93,13 @@ module Miq
       FileUtils.mkdir_p(dir)
     end
 
-    # Relative to tmp_dir/_package/community
+    def rm_dir(dir)
+      if File.directory?(dir)
+        FileUtils.remove_dir(dir)
+      end
+    end
+
+    # Relative to src_dir
     def exclude_files
       ["/index.html", "sitemap.xml"]
     end
