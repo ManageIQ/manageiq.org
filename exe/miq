@@ -1,5 +1,4 @@
 #!/usr/bin/env ruby
-require "pry"
 
 require "thor"
 require File.expand_path("../../lib/miq", __FILE__)
