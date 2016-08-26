@@ -6,7 +6,7 @@ module Miq
       if debug?
         logger.debug(cmd)
       else
-        Bundler.clean_system(cmd)
+        run_cmd_with_bundle_env(cmd)
       end
     end
 
@@ -31,6 +31,18 @@ module Miq
         lgr = Logger.new(log_dest)
         lgr.level = Logger::DEBUG
         lgr
+      end
+    end
+
+    # When running commands in main directory we want `system`.
+    # When changing directories to run another Ruby process,
+    # we need a clean Bundler env.
+    # FIXME: This is might be a bit naive
+    def run_cmd_with_bundle_env(cmd)
+      if cmd =~ /cd\ /
+        Bundler.clean_system(cmd)
+      else
+        system(cmd)
       end
     end
   end

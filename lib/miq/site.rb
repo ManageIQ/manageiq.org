@@ -12,6 +12,10 @@ module Miq
       new.build
     end
 
+    def self.serve
+      new.serve
+    end
+
     attr_reader :source_dir, :dest_dir, :branch
 
     def initialize
@@ -35,6 +39,10 @@ module Miq
 
     def build
       shell "#{bundler} exec jekyll build -s #{source_dir} -d #{dest_dir}"
+    end
+
+    def serve
+      shell "#{bundler} exec jekyll serve -s #{source_dir} -d #{dest_dir}"
     end
   end
 end

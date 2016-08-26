@@ -114,6 +114,11 @@ module Miq
       invoke 'miq:update:all'
       invoke 'miq:build:all'
     end
+
+    desc "serve", "Does Jekyll serve with appropriate args"
+    def serve
+      Site.serve
+    end
   end
 end
 
