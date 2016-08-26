@@ -4,9 +4,9 @@ module Miq
   class Executor
     def shell(cmd)
       if debug?
-        logger.debug cmd
+        logger.debug(cmd)
       else
-        system cmd
+        Bundler.clean_system(cmd)
       end
     end
 
