@@ -10,13 +10,6 @@ Oleg Barenboim:
   freenode: chessbyte
   gravatar: 146e1e458ee9bed63d1e109045bb92c1
 
-Aaron Patterson:
-  bio: Aaron is an engineer who loves cats, programming, and public speaking.
-  github: tenderlove
-  twitter: tenderlove
-  freenode: tenderlove
-  gravatar: 146e1e458ee9bed63d1e109045bb92c1
-
 Adam Grare:
   bio: Adam is a ManageIQ developer and likes to play hockey in his free time
   github: agrare
@@ -29,13 +22,14 @@ Alberto Bellotti:
   freenode: abellotti
   gravatar: aaf19fd37e5bf992e72d79b59d240202
 
-
 Aparna Karve:
   bio: Aparna is a tea-sipping versatile developer on the UI team who rarely misses an opportunity to work on cool and new projects.
   github: AparnaKarve
   freenode: akarve
   gravatar: e637895cb8ff33e302cd90ebf3c91ef7
 
+Bill Fitzgerald:
+  bio: Bill is a Senior Software Engineer
 
 Bill Wei:
   bio: Bill is currently working on orchestration but will expand his territory into other domains. Like others on the team, he is interested in functional languages!
@@ -43,13 +37,11 @@ Bill Wei:
   freenode: bzwei
   gravatar: 6900dec9b0f9c3ca2158ed5b20d9d2c7
 
-
 Brandon Dunne:
   bio: Former IT Admin turned Rails developer working on provisioning and anything else that comes my way.  I also enjoy deletions and refactorings.
   github: brandondunne
   freenode: bdunne
   gravatar: f510e1010b62b1de9412510e5b815e49
-
 
 Brian McLaughlin:
   bio: Brian works on the UI and whatever other random bits need attention.
@@ -57,12 +49,16 @@ Brian McLaughlin:
   freenode: bmclaughlin
   gravatar: bcf0ee70ddb3e7f36c0b05855a83bd9b
 
-
 Bronagh Sorota:
   bio: Bronagh provides integration to Microsoft Virtualization products, currently SCVMM, through inventory, eventing and power operations.
   github: bronaghs
   freenode: bronaghsorota
   gravatar: a189be51a68d411a238ba81214683f70
+
+Carol Chen:
+  bio: Carol is Community Development Manager for ManageIQ
+  github: cybette
+  twitter: cybette
 
 Chris Arcand:
   bio: Chris is a software developer who loves hockey, hiking, the Oxford comma, and music.
@@ -71,19 +67,27 @@ Chris Arcand:
   freenode: chrisarcand
   gravatar: 956593b947dfddf6d89168fe09aa628a
 
+Chris Chiampa:
+  bio: Chris is a Senior Systems Administrator
+
+Chris Kacerguis:
+  bio: Chris is Software Engineering Manager
+
+Chris Pelland:
+  bio: Chris is Software Development Manager for a diverse team that handles the build and release scheduling, systems administration, and project management.
+  github: chrispy
+
 Dan Berger:
   bio: Ruby programmer working on Azure integration, cross-platform support, and general cleanup for ManageIQ.
   github: djberg96
   twitter: djberg96
   freenode: imperator
-  
 
 Daniel Clarizio:
   bio: Daniel is the Development Manager in charge of the UI Team.  He has been on the ManageIQ project since the start.
   github: dclarizio
   freenode: dclarizio
   gravatar: a279c07fbd3d2565005013d8a8d58710
-
 
 David Halasz:
   bio: David's main field is HW design and he plays with FPGAs before going to bed, but he worships any kind of creativity. Maybe that's the reason he joined our UI team as a Ruby developer.
@@ -104,6 +108,9 @@ Drew Bomhof:
   freenode: syncrou
   gravatar: 66ce1a283674c043af688900d69b9f52
 
+Eric Hayes:
+  bio: Eric is a Software Engineer and has extensive web experience.
+
 Eric Winchell:
   bio: Eric is a member of the UI Team and has been involved on the ManageIQ project from the beginning.
   github: epwinchell
@@ -111,20 +118,20 @@ Eric Winchell:
   freenode: epwinchell
   gravatar: 890affede5bf05bd7e27f120fdd75266
 
-
 Erik Clarizio:
   bio: Erik works full stack, but is currently focusing on the UI portion of the product. He also loves working with RSpec and TDD in general. Always looking for best practices and new patterns to help make the code as technical-debt free as possible.
   github: eclarizio
   freenode: eclarizi  
   gravatar: 6388da1948d6d6efef236ce4365ca86e
 
+Geert Jansen:
+  bio: Geert is Senior Principal Product and Program Manager for the team.
 
 Greg Blomquist:
   bio: Greg has been at Red Hat for 8 years and joined the ManageIQ team to focus on Provider integrations, starting with Openstack.
   github: blomquisg
   freenode: blomquisg
   gravatar: adf5c78bbd29506f1afd6da1a53ebbe8
-
 
 Gregory McCullough:
   bio: Gregory is a Development Manager on ManageIQ focusing mostly on Control, Automate, Services and provisioning.
@@ -133,13 +140,11 @@ Gregory McCullough:
   freenode: gmccullough
   gravatar: 0b87ce47850558d2a37c02b650e2e12e
 
-
 Greg Piatigorski:
   bio: Greg works on UI features and maintenance, in particular the configuration pages.
   github: GregP
   freenode: GregP
   gravatar: ac8ca3cd113d960db6bc73638fa80ca7
-
 
 Gregg Tanzillo:
   bio: Gregg is a Development Manager for ManageIQ core components. He loves coding in RoR and homebrewing beer. 
@@ -147,20 +152,23 @@ Gregg Tanzillo:
   freenode: greggt
   gravatar: 7ce438a2d6f6a5fe8186def359e834ff
 
-
 Harpreet Kataria:
   bio: Harpreet is a seasoned developer on ManageIQ team since 2007, works for Dan Clarizio. My core strength lies in solving complex tasks and providing effective solutions. Not only do I love "Ruby(ies)" but know the idiosyncrasies of "Ruby/Rails" and use it to my advantage in my passion for UI development.
   github: h-kataria
   freenode: hkay
   gravatar: 376d6d799ecf753ee58106f8b82dc9bb
 
+Hilda Stastna:
+  bio: Hilda is a developer on the UI team.
+
+Hui Song:
+  bio: Hui is a Senior Software Engineer
 
 James Wong:
   bio: James joins Provider Integration team. He had worked with VMware APIs for several years and recently helped build a online-ad bidding datacenter on AWS using Ansible/boto. 
   github: jameswnl
   twitter: jameswnl
   freenode: jameswnl
-
 
 Jason Frey:
   bio: Jason is a lead developer on ManageIQ, responsible for core components, EMS Refresh and provider libraries. He meticulously works with others to encourage good coding practices and contribute to opensource libraries.
@@ -169,6 +177,8 @@ Jason Frey:
   freenode: fryguy9
   gravatar: 245b6b5244353a3be9babde7652493c1
 
+Jillian Tullo:
+  bio: Jillian is a software developer for the team.
 
 Jerry Keselman:
   bio: Jerry works on the fleecing subsystem, in particular binding to VixDiskLib, and filesystems. In his spare time, he bikes and dabbles in photography and filmmaking.
@@ -177,7 +187,6 @@ Jerry Keselman:
   freenode: jerrykbiker
   gravatar: b5d9faa985683010aef288f9f37c03a6
 
-
 Joe Rafaniello:
   bio: Joe jumps on many grenades, deletes lots of code, and has his hands in many aspects of the code, though he wishes he had time to work on more.
   github: jrafanie
@@ -185,6 +194,8 @@ Joe Rafaniello:
   freenode: jrafanie
   gravatar: efa8cdd1cd8442d0317b62858df8dde9
 
+Joe Smith:
+  bio: aka "Smitty" is a Senior Systems Administrator
 
 Joe VLcek:
   bio: Joe has been a developer at Red Hat for 3 years and joined the ManageIQ team to focus on automating the production build, and reduce the team's challenges using Bugzilla.
@@ -192,6 +203,9 @@ Joe VLcek:
   freenode: joevlcek
   gravatar: 78baf96643508953bce34ff86b75247e
 
+John Prause:
+  bio: John is Senior Technical Project Manager for the team. John loves photography and fishing.
+  github: jprause
 
 Jozef Zigmund:
   bio: Jozef fell in love with Ruby/Rails many years ago which has transformed him into a web developer 'samurai'. Currently, he works on frontend development.
@@ -199,6 +213,8 @@ Jozef Zigmund:
   freenode: jzigmund
   gravatar: 7c52ffc78640bd46f1956644f5950de9
 
+Julian Cheal:
+  bio: Julian is a Senior Software Engineer and loves making drones dance in his spare time.
 
 Keenan Brock:
   bio: Keenan spans the stack deleting code. Currently focused on multi-appliance communication and security.
@@ -207,6 +223,8 @@ Keenan Brock:
   freenode: kbrock
   gravatar: a4452be1a1419dba959142c893ebcf02
 
+Ladislav Smola:
+  bio: Ladis is a Senior Software Engineer
 
 Laura Galis:
   bio: Laura is an experienced developer that likes to solve complex problems. She is a part of the UI team.
@@ -224,13 +242,14 @@ Lucy Fu:
   freenode: lfu
   gravatar: fda707ecd8b0918978fdf9bbda51fabb
 
-
 Madhu Kanoor:
   bio: Madhu has been working with scripting engines for years and is applying that expertise to the Automate engine.
   github: mkanoor
   freenode: mkanoor
   gravatar: 973125a900cb5fd24f18fbf8e0ea578d
 
+Marcel Hild:
+  bio: Marcel is a Senior Software Engineer
 
 Marianne Feifer:
   bio: Marianne started writing all the documentation way back when, but now finds herself herding developers while creating processes and documentation to make the lives of developers better.
@@ -239,6 +258,8 @@ Marianne Feifer:
   freenode: marigold
   gravatar: b9d270b470df146aae6ef51e3483fc63
 
+Martin Hradil: 
+  bio: Martin is a software engineer on the UI team.
 
 Martin Povolny:
   bio: Martin works on the web frontend and is interested in web app security, functional languages, and traditional sql databases. He loves finding security holes almost as much as he loves patching them.
@@ -246,19 +267,11 @@ Martin Povolny:
   freenode: mpovolny
   gravatar: a9b85ede4e86ee8fbe2f631761e54bdb
 
-Matthew Draper:
-  bio: matthewd is from Australia.  He lives in a time zone that is not a whole hour off from UTC and is working on plug-in providers.
-  github: matthewd
-  twitter: _matthewd
-  freenode: matthewd
-  gravatar: b9d270b470df146aae6ef51e3483fc63
-  
 Milan Zazrivec:
   bio: Milan is part of the group working on the manageiq user interface.
   github: mzazrivec
   freenode: mzazrivec
   gravatar: bb0314a5dd0b0bd757eda222d969b814
-
 
 Mo Morsi:
   bio: Mo has recently been working on automating support of the underlying Ruby platform and the dependency packaging process. He has worked on a variety of projects in many different languages and is never too far away from a cup of coffee!
@@ -271,18 +284,34 @@ Nick Carboni:
   github: carbonin
   freenode: ncarboni
 
+Nick LaMuro:
+  bio: Nick is a Software Engineer on the performance team.
+
 Richard Oliveri:
   bio: Lead developer responsible for "Smart State Analysis" (fleecing), storage (inventory, capacity & utilization, physical/virtual bridge), the VMware API bindings and the VIM broker server.
   github: roliveri
   freenode: roliveri
   gravatar: 7ba825581ecadc0d6c867844741cc222
 
+Robin Knaur:
+  bio: Robin is a developer on the UI team.
 
 Roman Blanco:
   bio: Roman is a member of the UI Team.
   github: romanblanco
   freenode: rblanco
   gravatar: 890affede5bf05bd7e27f120fdd75266
+
+Satoe Imaishi:
+  bio: Satoe is a member of the Build Team.
+  github: simaishi
+
+Šimon Lukašík:
+  bio: Software engineer. I work, eat, sleep, get up and do it all over again. I read books when left unattended. I enjoy watching bad theater and removing code that reminds it.
+  github: isimluk
+  twitter: isimluk
+  freenode: isimluk
+  gravatar: d5262f131d5d5000db48f475185ad199
 
 Tim Wade:
   bio: Tim is a software engineer with tireless enthusiasm for Ruby, Rails and Emacs. When not writing code he enjoys music, reading, cooking, cycling and meditating.
@@ -303,16 +332,5 @@ Yuri Rudman:
   github: yrudman
   freenode: yrudman
 
-Garrett LeSage:
-  bio: Working in the field of design for the over two decades, Garrett has spent the past 17 years bringing interface design, better usability, art, and even a bit of programming to FOSS (Free & Open Source Software) communities.
-  github: garrett
-  twitter: garrett
-  googleplus: GarrettLeSage
-  gravatar: ee31aa48c51297eb062133b15eaff702
-
-Šimon Lukašík:
-  bio: Software engineer. I work, eat, sleep, get up and do it all over again. I read books when left unattended. I enjoy watching bad theater and removing code that reminds it.
-  github: isimluk
-  twitter: isimluk
-  freenode: isimluk
-  gravatar: d5262f131d5d5000db48f475185ad199
+Zita Nemeckova:
+  bio: Zita is a software developer on the UI team.
