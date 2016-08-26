@@ -27,7 +27,7 @@ module Miq
       @tmp_dir  = ENV["MIQ_REF_TMP"]  || "/tmp/manageiq_docs"
 
       # Where are the built files that we want?
-      @src_dir  = ENV["MIQ_REF_SRC"]  || "_package/community/latest"
+      @src_dir  = ENV["MIQ_REF_SRC"]  || "_preview/manageiq/#{@branch}"
 
       # Where should the files end up?
       @dst_dir  = ENV["MIQ_REF_DST"]  || Miq.docs_dir.join("reference")
@@ -80,7 +80,7 @@ module Miq
       logger.info "Building ref docs"
       shell [
         "cd #{tmp_dir}",
-        "#{bundler} exec ascii_binder package"
+        "#{bundler} exec ascii_binder build"
       ].join(" && ")
     end
 
