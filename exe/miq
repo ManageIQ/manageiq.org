@@ -81,8 +81,9 @@ module Miq
       Guides.build
     end
 
-    desc "site", "Build Jekyll site"
+    desc "site", "Build Jekyll site (and guides)"
     def site
+      invoke :guides
       say "Building Jekyll site", :green
       Site.build
     end
@@ -117,6 +118,7 @@ module Miq
 
     desc "serve", "Does Jekyll serve with appropriate args"
     def serve
+      invoke 'miq:build:guides'
       Site.serve
     end
   end
