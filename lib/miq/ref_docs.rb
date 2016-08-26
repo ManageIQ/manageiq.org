@@ -26,11 +26,13 @@ module Miq
       # Where should we cache and build?
       @tmp_dir  = ENV["MIQ_REF_TMP"]  || "/tmp/manageiq_docs"
 
+      # TODO: src & dst will need to be changed to support multiple versions
+
       # Where are the built files that we want?
       @src_dir  = ENV["MIQ_REF_SRC"]  || "_preview/manageiq/#{@branch}"
 
       # Where should the files end up?
-      @dst_dir  = ENV["MIQ_REF_DST"]  || Miq.docs_dir.join("reference")
+      @dst_dir  = ENV["MIQ_REF_DST"]  || Miq.docs_dir.join("reference", "latest")
     end
 
     def reset

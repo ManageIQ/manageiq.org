@@ -40,14 +40,7 @@ exclude:
 
 # Keep things built externally
 keep_files:
-  - docs/reference/_images
-  - docs/reference/_stylesheets
-  - docs/reference/master
-
-# collections:
-#   dev_docs:
-#     output: true
-#     permalink: /docs/dev/:path
+  - docs/reference/latest
 
 defaults:
   - scope:
@@ -57,10 +50,10 @@ defaults:
       layout: document
       permalink: /:path/:basename
       nav_exclude: true
-
-# defaults:
-#   - scope:
-#       path: ""
-#       type: "dev_docs"
-#     values:
-#       layout: document
+  - scope:
+      path: "docs/reference"
+      type: "pages"
+    values:
+      layout: document
+      permalink: /:path/:basename
+      nav_exclude: true

@@ -1,6 +1,6 @@
 ---
 layout: document
-title: Documentation
+title: Reference Documentation
 permalink: /docs/reference/
 ---
 
