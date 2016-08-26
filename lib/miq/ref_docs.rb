@@ -30,16 +30,19 @@ module Miq
       @src_dir  = ENV["MIQ_REF_SRC"]  || "_package/community/latest"
 
       # Where should the files end up?
-      @dst_dir  = ENV["MIQ_REF_DST"] || Miq.docs_dir.join("reference")
+      @dst_dir  = ENV["MIQ_REF_DST"]  || Miq.docs_dir.join("reference")
     end
 
     def reset
       logger.info "Removing #{tmp_dir}"
-      logger.info "Removing #{dst_dir}"
+      logger.info "Removing directories from #{dst_dir}"
 
       unless debug?
         rm_dir(tmp_dir)
-        rm_dir(dst_dir)
+
+        Dir["#{dst_dir}/*"].each do |path|
+          rm_dir(path) if File.directory?(path)
+        end
       end
     end
 
@@ -66,25 +69,32 @@ module Miq
 
     def setup_ascii_binder
       logger.info "Installing Ascii Binder"
-      shell "cd #{tmp_dir} && #{bundler} install"
+      shell [
+        "cd #{tmp_dir}",
+        "git checkout #{branch}",
+        "#{bundler} install"
+      ].join(" && ")
     end
 
     def build_ref_docs
       logger.info "Building ref docs"
       shell [
         "cd #{tmp_dir}",
-        "git checkout #{branch}",
-        "#{bundler} exec asciibinder package"
+        "#{bundler} exec ascii_binder package"
       ].join(" && ")
     end
 
     def move_files
-      prep dst_dir
-      logger.info "Syncing files to #{dst_dir}"
-      cmd = "rsync -av "
-      cmd << exclude_files.map{|x| "--exclude '#{x}'"}.join(' ')
-      cmd << " #{tmp_dir}/#{src_dir}/* #{dst_dir}/"
-      shell cmd
+      if File.directory?("#{tmp_dir}/#{src_dir}") || debug?
+        prep dst_dir
+        logger.info "Syncing files to #{dst_dir}"
+        cmd = "rsync -av "
+        cmd << exclude_files.map{|x| "--exclude '#{x}'"}.join(' ')
+        cmd << " #{tmp_dir}/#{src_dir}/* #{dst_dir}/"
+        shell cmd
+      else
+        logger.error "Reference docs source directory not present."
+      end
     end
 
     private
