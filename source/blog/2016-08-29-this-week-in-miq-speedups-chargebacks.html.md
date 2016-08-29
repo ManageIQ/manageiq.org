@@ -6,7 +6,7 @@ comments: true
 published: true
 ---
 
-[Jillian](github.com/jntullo) here to guide you through another edition of Last Week in ManageIQ. Let's get this show on the road and explore what we've accomplished this week!
+[Jillian](https://github.com/jntullo) here to guide you through another edition of Last Week in ManageIQ. Let's get this show on the road and explore what we've accomplished this week!
 
 ## Featured
 As usual, we had a great week in ManageIQ with 94 pull requests merged from our awesome [contributors](https://github.com/ManageIQ/manageiq/graphs/contributors). Next week, one of them could be you! 
