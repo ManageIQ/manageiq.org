@@ -22,8 +22,9 @@ you can help us.
 
 ### [MiQ Roles API](https://github.com/ManageIQ/manageiq/pull/10452)
 
-Chris Arcand and Joe Rafaniello have been at the refactoring again, this time
+[Chris Arcand](http://github.com/chrisarcand/) and (Joe Rafaniello)[https://github.com/jrafanie] have been at the refactoring again, this time
 overhauling the ManageIQ Roles API to:
+
 > remove unused and needlessly complex code.
 
 As with all good refactorings, this included 48 new additions, but managed to remove 124 lines of code!
