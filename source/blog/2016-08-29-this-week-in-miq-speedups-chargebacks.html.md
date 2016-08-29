@@ -15,7 +15,7 @@ Head on over to our [issues](https://github.com/manageiq/manageiq/issues) to see
 ## Improved
 
 ### [Index Speedup](https://github.com/ManageIQ/manageiq/pull/10685)
-The _VMs & Instances in My LDAP Group_ index and ajax calls in `/vm_or_template` received an awesome speedup this week
+_VMs & Instances in My LDAP Group_ index and ajax calls in `/vm_or_template` received an awesome speedup this week
 thanks to the work of [Nick LaMuro](https://github.com/NickLaMuro). Head on over to the PR to view the improvement statistics.
 
 ### [Setup and Update Failure Report](https://github.com/ManageIQ/manageiq/pull/10745)
@@ -28,7 +28,7 @@ as they will no longer have to assume that those commands executed correctly.
 Multi-rate chargebacks can now be queued again, as [Libor Pichler](https://github.com/lpichler) resolved the issue by adding in the missing providers.
 
 ### [Angular Toolbars in Production](https://github.com/ManageIQ/manageiq/pull/10751)
-Angular toolbars were failing to load in Production mode, but was fixed by [Aparna Karve](https://github.com/AparnaKarve).
+Angular toolbars were failing to load in Production mode, but were fixed by [Aparna Karve](https://github.com/AparnaKarve).
 
 ## New
 
