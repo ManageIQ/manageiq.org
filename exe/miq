@@ -70,9 +70,9 @@ module Miq
     desc "all", "Buildes guides, Jekyll site, and reference docs"
     def all
       say "Building all"
+      invoke :reference
       invoke :guides
       invoke :site
-      invoke :reference
     end
 
     desc "guides", "Build guides"
