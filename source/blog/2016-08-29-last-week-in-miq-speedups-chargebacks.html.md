@@ -9,7 +9,7 @@ published: true
 [Jillian](https://github.com/jntullo) here to guide you through another edition of Last Week in ManageIQ. Let's get this show on the road and explore what we've accomplished last week!
 
 ## Featured
-As usual, we had a great week in ManageIQ with 110 pull requests merged from our awesome [contributors](https://github.com/ManageIQ/manageiq/graphs/contributors). Next week, one of them could be you! 
+As usual, we had a great week in ManageIQ with 92 pull requests merged from our awesome [contributors](https://github.com/ManageIQ/manageiq/graphs/contributors). Next week, one of them could be you! 
 Head on over to our [issues](https://github.com/manageiq/manageiq/issues) to see where you can contribute - we'd love to have you.
 
 ## Improved
@@ -53,4 +53,4 @@ which resolved confusion in some back buttons.
 There's a lot more where those PRs came from, so head on over [here][PRs merged last week] to
 check them all out. We'll be back next week, same place, same time, for another edition of *Last Week in ManageIQ*!
 
-[PRs merged last week]: https://github.com/ManageIQ/manageiq/pulls?page=1&q=is%3Apr+is%3Amerged+base%3Amaster+merged%3A%222016-08-22+..+2016-08-29%22+sort%3Acreated-desc&utf8=
+[PRs merged last week]: https://github.com/ManageIQ/manageiq/pulls?page=1&q=is%3Apr+is%3Amerged+base%3Amaster+merged%3A%222016-08-22+..+2016-08-28%22+sort%3Acreated-desc&utf8=
