@@ -1,4 +1,4 @@
-require "Jekyll"
+require "jekyll"
 
 module Miq
   class MdLinkGenerator < Jekyll::Generator
