@@ -2,8 +2,8 @@ require "test_helper"
 
 class GuidesTest < Minitest::Test
   def setup
-    ENV["MIQ_GUIDES_DIR"] = File.expand_path("../../../fixtures/guides", __FILE__)
-    @dir = Pathname.new(ENV["MIQ_GUIDES_DIR"])
+    @dir = fixtures_path.join("docs", "guides")
+    ENV["MIQ_GUIDES_DIR"] = @dir.to_s
     @subject = Miq::Guides.new
   end
 

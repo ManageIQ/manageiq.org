@@ -1,0 +1,377 @@
+---
+distro:         ManageIQ
+version:        Branch Build
+
+group_id:       RestApi
+group_title:    REST API
+
+subgroup_id:    RestApi::Appendices
+subgroup_title: Appendices
+
+topic_id:       RestApi::Appendices::AdvancedProvisioningAttributes
+topic_title:    Advanced Provisioning Attributes
+
+article_title:  "Advanced Provisioning Attributes"
+
+breadcrumb_group: REST API
+breadcrumb_topic: Advanced Provisioning Attributes
+---
+
+<div class="sect1">
+<h2 id="advanced-provisioning-attributes"><a class="anchor" href="#advanced-provisioning-attributes"></a>Advanced Provisioning Attributes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This appendix lists parameters that apply to REST API initiated provisioning via
+/api/provision_requests.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#defining-new-vlans-adapters">Defining new vLans adapters</a></p>
+</li>
+<li>
+<p><a href="#defining-new-scsi-controller">Defining new SCSI Controller</a></p>
+</li>
+<li>
+<p><a href="#defining-new-disks">Defining new Disks</a></p>
+</li>
+<li>
+<p><a href="#cloning-type">Cloning Type</a></p>
+</li>
+<li>
+<p><a href="#limit-template-selection">Limit Template Selection</a></p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="defining-new-vlans-adapters"><a class="anchor" href="#defining-new-vlans-adapters"></a>Defining new vLans adapters</h3>
+<div class="paragraph">
+<p>These attributes allow adding new vLan adapters during the provisioning request.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Required</th>
+<th class="tableblock halign-left valign-top">Values</th>
+<th class="tableblock halign-left valign-top">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">network##</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Network Name</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">network##.mac_address</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MAC Address</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">network##.deviceType</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VirtualE1000, VirtualPCNet32, VirtualVmxnet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VirtualPCNet32</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">network##.connectable.allowGuestControl</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">network##.connectable.startConnected</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">network##.connectable.connected</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json"><span style="color:#606"><span style="color:#404">&quot;</span><span>network0</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">VM Network</span><span style="color:#710">&quot;</span></span>,
+<span style="color:#606"><span style="color:#404">&quot;</span><span>network0.mac_address</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">00:50:56:57:58:59</span><span style="color:#710">&quot;</span></span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="defining-new-scsi-controller"><a class="anchor" href="#defining-new-scsi-controller"></a>Defining new SCSI Controller</h3>
+<div class="paragraph">
+<p>The SCSI Controller attributes are optional. If a controller is required, it will be added with the
+defined defaults. These settings are only required if you need to override a default value.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Required</th>
+<th class="tableblock halign-left valign-top">Values</th>
+<th class="tableblock halign-left valign-top">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ctrlscsi##</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VirtualBusLogicController, VirtualLsiLogicController</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VirtualLsiLogicController</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ctrlscsi##.sharedBus</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">noSharing, physicalSharing, virtualSharing</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">noSharing</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The ## value defines the controller bus number
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json"><span style="color:#606"><span style="color:#404">&quot;</span><span>ctrlscsi00</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">VirtualBusLogicController</span><span style="color:#710">&quot;</span></span>
+<span style="color:#606"><span style="color:#404">&quot;</span><span>ctrlscsi00.sharedBus</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">virtualSharing</span><span style="color:#710">&quot;</span></span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="defining-new-disks"><a class="anchor" href="#defining-new-disks"></a>Defining new Disks</h3>
+<div class="paragraph">
+<p>The Disk attributes allow adding disks as part of the provisioning request.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Required</th>
+<th class="tableblock halign-left valign-top">Values</th>
+<th class="tableblock halign-left valign-top">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">diskscsi##</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"controller_#:controller_position_#:size_in_mb"</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">diskscsi##.datastore</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Datastore Name</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">diskscsi##.filename</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Filename</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">diskscsi##.connectable.allowGuestControl</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">diskscsi##.connectable.startConnected</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">diskscsi##.connectable.connected</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">diskscsi##.backing.diskmode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">persistent, independent_persistent, independent_nonpersistent, nonpersistent</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">persistent</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">diskscsi##.backing.split</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">diskscsi##.backing.thinProvisioned</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">diskscsi##.backing.writeThrough</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json"><span style="color:#606"><span style="color:#404">&quot;</span><span>diskscsi0</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">0:0:10</span><span style="color:#710">&quot;</span></span>
+<span style="color:#606"><span style="color:#404">&quot;</span><span>diskscsi1</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">0:0:8</span><span style="color:#710">&quot;</span></span>
+<span style="color:#606"><span style="color:#404">&quot;</span><span>diskscsi1.datastore</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">storage1</span><span style="color:#710">&quot;</span></span>
+<span style="color:#606"><span style="color:#404">&quot;</span><span>diskscsi1.backing.diskmode</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">independent_persistent</span><span style="color:#710">&quot;</span></span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="cloning-type"><a class="anchor" href="#cloning-type"></a>Cloning Type</h3>
+<div class="paragraph">
+<p>This attribute sets the type of cloning request, either clone to vm or clone to template. It is
+an attribute to set with the <em>template_fields</em> hash.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Required</th>
+<th class="tableblock halign-left valign-top">Values</th>
+<th class="tableblock halign-left valign-top">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">request_type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">clone_to_vm, clone_to_template</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">clone_to_vm</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json"><span style="color:#606"><span style="color:#404">&quot;</span><span>template_fields</span><span style="color:#404">&quot;</span></span> : {
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>guid</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">afe6e8a0-89fd-11e3-b6ac-b8e85646e742</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>request_type</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">clone_to_template</span><span style="color:#710">&quot;</span></span>
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="limit-template-selection"><a class="anchor" href="#limit-template-selection"></a>Limit Template Selection</h3>
+<div class="paragraph">
+<p>This attribute value limits the template selection to the Datacenters contained in the specified cluster.
+It is an attribute to be specified with the <em>additional_values</em> hash.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cluster</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json"><span style="color:#606"><span style="color:#404">&quot;</span><span>additional_values</span><span style="color:#404">&quot;</span></span> : {
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>request_id</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">87458</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>cluster</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">sales_prod</span><span style="color:#710">&quot;</span></span>
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
