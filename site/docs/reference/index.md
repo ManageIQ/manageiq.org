@@ -1,9 +1,9 @@
 ---
-layout: document
+layout: ref_doc
 title: Reference Documentation
 permalink: /docs/reference/
 ---
 
 You're in the ascii_binder portion of the website.
 
-[Reference Docs](welcome/)
+[Reference Docs](latest/welcome)

@@ -101,19 +101,9 @@ module Miq
 
     private
 
-    def prep(dir)
-      FileUtils.mkdir_p(dir)
-    end
-
-    def rm_dir(dir)
-      if File.directory?(dir)
-        FileUtils.remove_dir(dir)
-      end
-    end
-
     # Relative to src_dir
     def exclude_files
-      ["/index.html", "sitemap.xml"]
+      ["_stylesheets", "/index.html", "sitemap.xml"]
     end
   end
 end

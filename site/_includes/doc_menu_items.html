@@ -1,0 +1,17 @@
+{% for item in include.items %}
+  <li {% if page.url == item.path %}class="active"{% endif %}>
+    {% if item.path %}
+    <a href="{{ item.path }}">{{ item.title }}</a>
+    {% else %}
+    <span class="nav-subheading">
+      {{ item.title }}
+    </span>
+    {% endif %}
+
+    {% if item.children %}
+    <ul>
+      {% include doc_menu_items.html items=item.children %}
+    </ul>
+    {% endif %}
+  </li>
+{% endfor %}

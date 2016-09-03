@@ -69,7 +69,7 @@ module Miq
     end
 
     def replace_path(path)
-      path.gsub(/#{Miq.site_dir}/, '').gsub(".md", '/')
+      path.gsub(/#{Miq.site_dir}/, '').gsub(".md", '')
     end
 
     def titlefy(path)

@@ -47,13 +47,13 @@ defaults:
       path: "docs/guides"
       type: "pages"
     values:
-      layout: document
+      layout: guide
       permalink: /:path/:basename
       nav_exclude: true
   - scope:
       path: "docs/reference"
       type: "pages"
     values:
-      layout: document
+      layout: ref_doc
       permalink: /:path/:basename
       nav_exclude: true

@@ -1,16 +1,19 @@
 require 'pathname'
 require 'bundler'
-Bundler.require(:default)
 
-unless ENV["MIQ_ENV"] == "production"
-  Bundler.require(:development)
+if ENV["MIQ_ENV"] == "production"
+  Bundler.require(:default)
+else
+  Bundler.require(:default, :development)
   Dotenv.load
 end
 
 require_relative "miq/executor"
 require_relative "miq/site"
 require_relative "miq/guides"
+require_relative "miq/guides_menu"
 require_relative "miq/ref_docs"
+require_relative "miq/ref_menu"
 
 module Miq
   def self.working_dir
@@ -35,5 +38,15 @@ module Miq
     else
       working_dir.join("site", "docs")
     end
+  end
+
+  MD_LINK = /(\[[^\]]*\]\([^:\)]*)\.md\)/
+
+  def self.md_link_to_html(link)
+    link.gsub(MD_LINK, '\1.html)')
+  end
+
+  def self.md_file_to_html(file)
+    file.gsub(/md$/, "html")
   end
 end

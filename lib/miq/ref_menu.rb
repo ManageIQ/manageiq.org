@@ -80,7 +80,7 @@ module Miq
     end
 
     def replace_path(path)
-      path.gsub(/#{Miq.site_dir}/, '').gsub(".html", '/')
+      path.gsub(/#{Miq.site_dir}/, '').gsub(".html", '')
     end
 
     def exclusions

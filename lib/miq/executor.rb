@@ -34,6 +34,16 @@ module Miq
       end
     end
 
+    def prep(dir)
+      FileUtils.mkdir_p(dir)
+    end
+
+    def rm_dir(dir)
+      if File.directory?(dir)
+        FileUtils.remove_dir(dir)
+      end
+    end
+
     # When running commands in main directory we want `system`.
     # When changing directories to run another Ruby process,
     # we need a clean Bundler env.
