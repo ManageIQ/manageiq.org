@@ -4,6 +4,7 @@ gem "thor"
 gem "jekyll"
 gem "jekyll-assets"
 gem "patternfly-sass"
+gem "activesupport", :require => false
 
 group :test, :development do
   gem "dotenv"
