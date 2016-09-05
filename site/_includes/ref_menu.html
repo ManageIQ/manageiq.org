@@ -1,7 +1,7 @@
 {% for hsh in site.data["menus"]["ref_menu"] %}
 {% assign group = hsh[1] %}
-<ul class="nav nav-stacked">
-  <li class="nav-heading">{{ group.title }}</li>
+<ul id="ref_menu" class="menu">
+  <li class="menu-heading">{{ group.title }}</li>
 
   {% include doc_menu_items.html items=group.children %}
 </ul>

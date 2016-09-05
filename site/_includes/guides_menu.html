@@ -1,7 +1,7 @@
 {% for group in site.data["menus"]["guides_menu"]["children"] %}
 
-<ul id="guides_menu" class="nav nav-stacked">
-  <li class="nav-heading">{{ group.title }}</li>
+<ul id="guides_menu" class="menu">
+  <li class="menu-heading">{{ group.title }}</li>
   {% include doc_menu_items.html items=group.children %}
 </ul>
 {% endfor %}
