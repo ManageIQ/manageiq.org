@@ -1,0 +1,11 @@
+---
+layout: default
+---
+
+<ul>
+  {% for page in page.pages %}
+  <li>
+    <a href="{{ page.url }}">{{ page.name | remove: '.md' | titleize }}</a>
+  </li>
+  {% endfor %}
+</ul>

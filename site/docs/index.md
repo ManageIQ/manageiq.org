@@ -9,8 +9,8 @@ redirect_from:
 
 ## Quick Start
 
-## User Reference
+## [User Reference](reference)
 
-## Developer Guides
+## [Developer Guides](guides)
 
 ## ManageIQ Automation Book
