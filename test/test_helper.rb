@@ -2,7 +2,6 @@ require "minitest/autorun"
 require "pathname"
 
 require_relative "../lib/miq"
-require_relative "../site/_plugins/miq"
 
 module Miq::TestHelpers
   def test_root
