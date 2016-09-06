@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem "thor"
 gem "jekyll"
+gem "jekyll-paginate"
 gem "jekyll-assets"
 gem "patternfly-sass"
 gem "activesupport", :require => false

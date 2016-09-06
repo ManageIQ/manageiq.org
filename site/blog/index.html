@@ -1,0 +1,60 @@
+---
+layout: page
+title: Blog
+---
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="posts">
+        {% for post in paginator.posts %}
+        <article class="post_excerpt">
+          <header class="post-header">
+            <h1><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
+          </header>
+
+          <div class="post-content">
+            {{ post.excerpt }}
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="col-md-4">
+
+    </div>
+  </div>
+
+  <ul class="pagination">
+    <li>
+      {% if paginator.previous_page %}
+        <a href="{{ paginator.previous_page_path }}" class="previous">&laquo;</a>
+      {% else %}
+        <span class="previous">&laquo;</span>
+      {% endif %}
+    </li>
+    {% for page in (1..paginator.total_pages) %}
+      {% if page == paginator.page %}
+      <li class="active">
+        <a href="#">{{ page }}</a>
+      </li>
+      {% elsif page == 1 %}
+      <li>
+        <a href="/blog/">{{ page }}</a>
+      </li>
+      {% else %}
+      <li>
+        <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+      </li>
+      {% endif %}
+    {% endfor %}
+    <li>
+      {% if paginator.next_page %}
+        <a href="{{ paginator.next_page_path }}" class="next">&raquo;</a>
+      {% else %}
+        <span class="next ">&raquo;</span>
+      {% endif %}
+    </li>
+  </ul>
+</div>

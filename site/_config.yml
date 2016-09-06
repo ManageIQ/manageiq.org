@@ -7,6 +7,7 @@
 
 gems:
   - jekyll-assets
+  - jekyll-paginate
   - patternfly-sass
 
 
@@ -21,9 +22,11 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://manageiq.org" # the base hostname & protocol for your site
 twitter_username: manageiq
 github_username:  manageiq
-permalink: /blog/:year/:month/:title/
 
-# Build settings
+permalink: /blog/:year/:month/:title/
+paginate: 10
+paginate_path: "/blog/page:num/"
+
 markdown: kramdown
 
 exclude:
@@ -43,6 +46,11 @@ keep_files:
   - docs/reference/latest
 
 defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
   - scope:
       path: "docs/guides"
       type: "pages"
