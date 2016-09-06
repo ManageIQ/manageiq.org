@@ -19,9 +19,9 @@ email: contact@manageiq.org
 #   Google search results) and in your feed.xml site description.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://manageiq.org" # the base hostname & protocol for your site
-# twitter_username: jekyllrb
-# github_username:  jekyll
-permalink: /blog/:year/:month/:day/:title/
+twitter_username: manageiq
+github_username:  manageiq
+permalink: /blog/:year/:month/:title/
 
 # Build settings
 markdown: kramdown
