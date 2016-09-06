@@ -1,19 +1,35 @@
 <footer class="site-footer">
 
   <div class="container">
-
-    <h2 class="footer-heading">{{ site.title }}</h2>
-
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
-        <ul class="contact-list">
-          <li>{{ site.title }}</li>
-          <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+    <div class="row">
+      <div class="col-md-6">
+        {% include main_nav.html %}
+      </div>
+      <div class="col-md-6">
+        <ul class="footer_link_list">
+          <li>Email</li>
+          <li>Gitter</li>
+          <li>Forum</li>
         </ul>
       </div>
-
-      <div class="footer-col footer-col-2">
-        <ul class="social-media-list">
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <p>
+          <span class="copyright">
+            &copy; 2016 ManageIQ.
+            Sponsored by Red Hat, Inc.
+          </span>
+          <span>
+            <a href="/logo" class="footer-link">Logo</a>
+          </span>
+          <span>
+            <a href="/legal" class="footer-link">Legal &amp; Privacy</a>
+          </span>
+        </p>
+      </div>
+      <div class="col-md-4">
+        <ul class="social_list footer_link_list">
           {% if site.github_username %}
           <li>
             {% include icon-github.html username=site.github_username %}
@@ -27,12 +43,7 @@
           {% endif %}
         </ul>
       </div>
-
-      <div class="footer-col footer-col-3">
-        <p>{{ site.description }}</p>
-      </div>
     </div>
-
   </div>
 
 </footer>

@@ -11,13 +11,7 @@
         <a class="navbar-brand" href="{{ site.baseurl }}/">{{ site.title }}</a>
       </div>
       <div class="collapse navbar-collapse navbar-collapse-1">
-        <ul id="menu-primary" class="nav navbar-nav navbar-right">
-          {% for page in site.data['titled_pages'] -%}
-          <li>
-            <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
-          </li>
-          {% endfor -%}
-        </ul>
+        {% include main_nav.html %}
       </div>
     </nav>
   </div>
