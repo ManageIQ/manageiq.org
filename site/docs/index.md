@@ -11,6 +11,6 @@ redirect_from:
 
 ## [User Reference](reference)
 
-## [Developer Guides](guides)
+## [Developer Guides](guides/architecture)
 
 ## ManageIQ Automation Book
