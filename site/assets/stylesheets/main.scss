@@ -5,9 +5,28 @@
 
 $font-size-base: 16px;
 
+$grid-gutter-width: 30px;
+$container-desktop: (867px + $grid-gutter-width);
+$container-large-desktop: $container-desktop;
+
 @import "patternfly-sprockets", "patternfly";
 
+// Undo Bootstrap pixel font-size
+// http://fvsch.com/code/css-locks/#toc-2d
+
+/*
+ * Redefine the rem value while keeping it proportional.
+ * Useful values, with default font-size of 16px:
+ * • 62.5% -> 1rem = 10px, .1rem  = 1px
+ * • 125%  -> 1rem = 20px, .05rem = 1px
+ */
+html {
+  font-size: 62.5%;
+}
+
 @import
+  "type",
   "footer",
+  "triad",
   "features",
   "providers";

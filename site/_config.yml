@@ -27,6 +27,8 @@ permalink: /blog/:year/:month/:title/
 paginate: 10
 paginate_path: "/blog/page:num/"
 
+image_path: "/assets/images/"
+
 markdown: kramdown
 
 exclude:
