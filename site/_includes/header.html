@@ -1,18 +1,8 @@
 <header class="site-header">
-  <div class="container-fluid">
-    <nav id="site-nav" class="navbar navbar-default">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-1">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="{{ site.baseurl }}/">{{ site.title }}</a>
-      </div>
-      <div class="collapse navbar-collapse navbar-collapse-1">
-        {% include main_nav.html %}
-      </div>
-    </nav>
+  <div class="brand">
+    <span class="brand-name">ManageIQ</span>
   </div>
+  <nav>
+    {% include site_nav.html %}
+  </nav>
 </header>
