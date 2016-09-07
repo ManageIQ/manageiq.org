@@ -1,26 +1,24 @@
 ---
 layout: default
+body_class: home
 ---
 
-<div id="home">
-  <div class="container">
-    <h1>Discover, Optimize, And Control Your Hybrid IT</h1>
-    <h2>
-      Manage containers, virtual machines, networks,
-      and storage from a single platform
-    </h2>
+<div class="page" id="home">
+  <div class="banner" id="home_banner">
+    <div class="banner-content">
+      <h1>Discover, Optimize, and Control your Hybrid IT</h1>
+      <h2>
+        Manage containers, virtual machines, networks,
+        and storage from a single platform
+      </h2>
+    </div>
   </div>
 
-  <div class="jumbotron">
-    {% include triad.html %}
-  </div>
+  {% include triad.html %}
 
-  <div class="container">
-    <h2>
-      ManageIQ is the open source manager of managers
-      that discovers your environment: containers,
-      virtual machines, networks, storage volumes, and more.
-    </h2>
+  {% include appliances.html %}
+
+  <div class="home_container">
 
     <div class="features">
       {% for i in (1..3) %}

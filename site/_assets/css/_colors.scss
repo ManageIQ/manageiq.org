@@ -1,0 +1,15 @@
+$site-bg: #f9f9f9;
+
+$text-black: #333;
+
+$grey-lite: #e6e6e6;
+
+$blue-lite: #00a6e6;
+$blue-white: #abdaf9;
+
+$banner-grad-dark: #063451;
+$banner-grad-lite: #0c69a5;
+
+@mixin banner_grad {
+  @include gradient-horizontal($banner-grad-dark, $banner-grad-lite, 0, 100%);
+}

@@ -1,15 +1,18 @@
----
-# Only the main Sass file needs front matter (the dashes are enough)
----
 @charset "utf-8";
 
 $font-size-base: 16px;
 
-$grid-gutter-width: 30px;
-$container-desktop: (867px + $grid-gutter-width);
-$container-large-desktop: $container-desktop;
+// Home Grid vars
+$hg-gutter-width: 30px;
+$hg-container-desktop: (867px + $hg-gutter-width);
 
-@import "patternfly-sprockets", "patternfly";
+
+// $grid-gutter-width: 30px;
+// $container-desktop: (867px + $grid-gutter-width);
+// $container-large-desktop: $container-desktop;
+
+@import "patternfly-sprockets";
+@import "pf_custom";
 
 // Undo Bootstrap pixel font-size
 // http://fvsch.com/code/css-locks/#toc-2d
@@ -25,8 +28,11 @@ html {
 }
 
 @import
+  "colors",
   "type",
+  "page",
+  "header",
   "footer",
+  "banner",
   "triad",
-  "features",
-  "providers";
+  "features";

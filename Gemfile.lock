@@ -7,7 +7,7 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     addressable (2.4.0)
-    autoprefixer-rails (6.4.0.3)
+    autoprefixer-rails (6.4.1)
       execjs
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
@@ -89,7 +89,7 @@ GEM
       shellany (~> 0.0)
     pathutil (0.14.0)
       forwardable-extended (~> 2.6)
-    patternfly-sass (3.8.1)
+    patternfly-sass (3.10.0)
       bootstrap-sass (~> 3.3.7)
       font-awesome-sass (~> 4.6.2)
       sass (~> 3.4.15)

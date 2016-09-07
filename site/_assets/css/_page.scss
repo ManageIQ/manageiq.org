@@ -1,0 +1,9 @@
+body {
+  background-color: $site-bg;
+  border-top: 3px solid $blue-lite;
+}
+
+.home_container {
+  max-width: 867px;
+  @include container-fixed(0);
+}

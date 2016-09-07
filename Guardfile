@@ -16,7 +16,7 @@
 # and, you'll have to watch "config/Guardfile" instead of "Guardfile"
 
 guard 'livereload' do
-  watch(/^site\/_site/)
+  watch(/^dest/)
 end
 
 guard :minitest do
