@@ -38,11 +38,11 @@ module Miq
     end
 
     def build
-      shell "#{bundler} exec jekyll build -s #{source_dir} -d #{dest_dir}"
+      shell "#{bundler} exec jekyll build -s #{source_dir} -d #{dest_dir}", clean: true
     end
 
     def serve
-      shell "#{bundler} exec jekyll serve -s #{source_dir} -d #{dest_dir} --incremental"
+      shell "#{bundler} exec jekyll serve -s #{source_dir} -d #{dest_dir} --incremental", clean: true
     end
   end
 end

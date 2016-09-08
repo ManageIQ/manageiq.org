@@ -2,11 +2,11 @@ require 'logger'
 
 module Miq
   class Executor
-    def shell(cmd)
+    def shell(cmd, clean: false)
       if debug?
         logger.debug(cmd)
       else
-        run_cmd_with_bundle_env(cmd)
+        run_cmd_with_bundle_env(cmd, clean)
       end
     end
 
@@ -48,8 +48,8 @@ module Miq
     # When changing directories to run another Ruby process,
     # we need a clean Bundler env.
     # FIXME: This is might be a bit naive
-    def run_cmd_with_bundle_env(cmd)
-      if cmd =~ /cd\ /
+    def run_cmd_with_bundle_env(cmd, clean)
+      if clean || (cmd =~ /cd\ /)
         Bundler.clean_system(cmd)
       else
         system(cmd)
