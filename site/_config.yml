@@ -67,3 +67,9 @@ defaults:
       layout: ref_doc
       permalink: /:path/:basename
       nav_exclude: true
+
+assets:
+  compress:
+    css: false
+    js: false
+  digest: true

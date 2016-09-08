@@ -1,0 +1,28 @@
+.appliances {
+  position: relative;
+  top: ($triad-offset / 2);
+  width: 940px;
+  margin: 0 auto;
+
+  h4 {
+    text-align: center;
+    line-height: 1;
+    margin: 0 0 16px 0;
+    padding: 0;
+
+    span {
+      color: $text-black;
+    }
+  }
+}
+
+.appliance_brand {
+  width: 12.5%;
+  max-width: 144px;
+  padding: 0 8px;
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}

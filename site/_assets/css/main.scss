@@ -2,15 +2,6 @@
 
 $font-size-base: 16px;
 
-// Home Grid vars
-$hg-gutter-width: 30px;
-$hg-container-desktop: (867px + $hg-gutter-width);
-
-
-// $grid-gutter-width: 30px;
-// $container-desktop: (867px + $grid-gutter-width);
-// $container-large-desktop: $container-desktop;
-
 @import "patternfly-sprockets";
 @import "pf_custom";
 
@@ -27,12 +18,25 @@ html {
   font-size: 62.5%;
 }
 
+// Home Grid vars
+$hg-gutter-width: 30px;
+$hg-container-desktop: (867px + $hg-gutter-width);
+
+$triad-gutter: 74px;
+$triad-offset: -74px;
+
+// High-level, site-wide stuff
 @import
   "colors",
   "type",
-  "page",
+  "page",   // page containers and colors
   "header",
   "footer",
-  "banner",
+  "banner";
+
+// Home page
+@import
   "triad",
+  "appliances",
+  "solutions",
   "features";

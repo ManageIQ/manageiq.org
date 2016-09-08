@@ -7,3 +7,8 @@ body {
   max-width: 867px;
   @include container-fixed(0);
 }
+
+.flex_container {
+  display: flex;
+  justify-content: center;
+}

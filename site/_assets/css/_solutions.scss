@@ -1,0 +1,38 @@
+.solutions {}
+
+.solution {
+  padding: 72px 0;
+
+  .placeholder {
+    width: 175px;
+    height: 175px;
+    padding: 16px;
+    text-align: center;
+    color: #777;
+    background-color: $grey-lite;
+  }
+}
+
+.solution-left {
+  background-color: #fff;
+
+  .placeholder {
+    margin-right: 72px;
+  }
+}
+
+.solution-right {
+  .placeholder {
+    margin-left: 72px;
+  }
+}
+
+.solution-container {
+  @include container-fixed(0);
+  display: flex;
+  max-width: $hg-container-desktop;
+}
+
+.solution-text {
+  font-size: 14px;
+}

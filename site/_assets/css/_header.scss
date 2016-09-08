@@ -1,4 +1,34 @@
-.site-header {}
+.site-header {
+  width: 100%;
+  padding: 30px;
+
+  @include banner_grad;
+
+  z-index: 9999;
+
+  .brand {
+    float: left;
+    color: #fff;
+  }
+
+  .main_nav {
+    list-style: none;
+    float: right;
+
+    li {
+      float: left;
+      margin-right: 30px;
+
+      &:last-child {
+        margin-right: none;
+      }
+    }
+
+    a {
+      color: #fff;
+    }
+  }
+}
 
 .home {
   .site-header {
