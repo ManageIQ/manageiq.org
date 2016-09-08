@@ -21,7 +21,7 @@ module Miq
     # Probably a good idea to use an explicit path to Bundler
     # also allow for user specified path
     def bundler
-      ENV["MIQ_BUNDLER"]  || `which bundle`
+      ENV["MIQ_BUNDLER"]  || %x{which bundle}.chomp
     end
 
     private
