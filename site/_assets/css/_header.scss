@@ -2,6 +2,7 @@
   width: 100%;
   padding: 30px;
 
+  @include clearfix;
   @include banner_grad;
 
   z-index: 9999;

@@ -1,7 +1,9 @@
-{% for group in site.data["menus"]["guides_menu"]["children"] %}
+<div class="guides_menu">
+  {% for group in site.data["menus"]["guides_menu"]["children"] %}
 
-<ul id="guides_menu" class="menu">
-  <li class="menu-heading">{{ group.title }}</li>
-  {% include doc_menu_items.html items=group.children %}
-</ul>
-{% endfor %}
+  <ul class="menu">
+    <li class="menu-heading">{{ group.title }}</li>
+    {% include doc_menu_items.html items=group.children %}
+  </ul>
+  {% endfor %}
+</div>

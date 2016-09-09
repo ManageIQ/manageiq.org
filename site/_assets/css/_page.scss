@@ -12,3 +12,29 @@ body {
   display: flex;
   justify-content: center;
 }
+
+.doc_container {
+  display: flex;
+
+  .doc {
+    flex-shrink: 1;
+  }
+}
+
+.doc_menu {
+  width: 100em;
+  color: #fff;
+  background-color: #292e33;
+
+  .menu {
+    list-style: none;
+
+    ul {
+      list-style: none;
+    }
+  }
+
+  a {
+    color: #fff;
+  }
+}
