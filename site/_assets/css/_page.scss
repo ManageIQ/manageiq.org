@@ -14,19 +14,15 @@ body {
 }
 
 .doc_container {
-  display: flex;
-
-  .doc {
-    flex-shrink: 1;
-  }
+  @include container-fixed(0);
+  background-color: #292e33;
 }
 
 .doc_menu {
-  width: 100em;
   color: #fff;
-  background-color: #292e33;
 
   .menu {
+    font-size: 14px;
     list-style: none;
 
     ul {
@@ -37,4 +33,8 @@ body {
   a {
     color: #fff;
   }
+}
+
+.doc_page {
+  background-color: $site-bg;
 }
