@@ -1,15 +1,39 @@
 .site-footer {
-  margin-top: 1em;
-  border-top: 1px solid #ccc;
-  padding-top: 1em;
+  @include banner_grad;
+  color: #fff;
 
-  .footer_link_list {
+  .main_nav {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    float: left;
+
+    li {
+      float: left;
+      margin-right: 30px;
+
+      &:last-child {
+        margin-right: none;
+      }
+    }
+
+    a {
+      font-size: 14px;
+      color: #fff;
+    }
+  }
+
+  .social_menu, .contact_menu {
     float: right;
     list-style: none;
 
     li {
       float: left;
       margin-right: 0.5em;
+    }
+
+    a {
+      color: #fff;
     }
   }
 
@@ -21,5 +45,28 @@
 
   .social_link-username {
     display: none;
+  }
+}
+
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+#footer_top {
+  height: 95px;
+}
+
+#footer_bottom {
+  height: 60px;
+  background-color: $blue-dark;
+}
+
+.footer-legal {
+  font-size: 12px;
+  color: $blue-lite2;
+
+  a {
+    color: #fff;
   }
 }
