@@ -12,6 +12,15 @@
     display: block;
   }
 
+  .brand-name {
+    display: none;
+  }
+
+  .brand-logo {
+    width: 160px;
+    height: auto;
+  }
+
   .main_nav {
     list-style: none;
     float: right;

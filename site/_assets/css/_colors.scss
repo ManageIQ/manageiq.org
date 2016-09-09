@@ -8,8 +8,8 @@ $grey-lite2: #ebebeb;
 $blue-lite: #00a6e6;
 $blue-white: #abdaf9;
 
-$banner-grad-dark: #063451;
-$banner-grad-lite: #0c69a5;
+$banner-grad-dark: rgba(6, 52, 81, 1);
+$banner-grad-lite: rgba(12, 105, 165, 1);
 
 @mixin banner_grad {
   @include gradient-horizontal($banner-grad-dark, $banner-grad-lite, 0, 100%);

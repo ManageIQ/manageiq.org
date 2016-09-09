@@ -4,6 +4,7 @@ gem "thor"
 gem "jekyll"
 gem "jekyll-paginate"
 gem "jekyll-assets"
+gem "jekyll-coffeescript"
 gem "patternfly-sass"
 gem "activesupport", :require => false
 

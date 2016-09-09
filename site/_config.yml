@@ -6,6 +6,7 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 gems:
+  - jekyll-coffeescript
   - jekyll-assets
   - jekyll-paginate
   - patternfly-sass
@@ -67,9 +68,3 @@ defaults:
       layout: ref_doc
       permalink: /:path/:basename
       nav_exclude: true
-
-assets:
-  compress:
-    css: false
-    js: false
-  digest: true
