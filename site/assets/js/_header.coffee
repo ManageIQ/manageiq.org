@@ -4,8 +4,12 @@ miq.header = miq.select(".site-header")
 miq.triad  = miq.select(".triad")
 miq.title  = miq.select(".banner h1")
 
+miq.offset_pos  = miq.header.offsetHeight
+miq.start_pos   = miq.title.offsetTop - miq.offset_pos
+miq.stop_pos    = (miq.triad.offsetTop + miq.triad.offsetHeight)
+miq.pos_diff    = (miq.stop_pos - miq.start_pos) / 1.8
+
 miq.last_scroll_y = -1
-miq.ticking = false
 
 miq.on_scroll = ->
   miq.update_background()
@@ -21,16 +25,11 @@ miq.update_background = ->
   requestAnimationFrame(miq.update_background)
 
 miq.animate_header = ->
-  offset_pos  = miq.header.offsetHeight
-  start_pos   = miq.title.offsetTop - offset_pos
-  stop_pos    = (miq.triad.offsetTop + miq.triad.offsetHeight) - offset_pos
-  pos_diff    = (stop_pos - start_pos) / 1.8
-
-  if @last_scroll_y > start_pos && @last_scroll_y < stop_pos
-    opac = @last_scroll_y / pos_diff
-  else if @last_scroll_y < start_pos
+  if miq.last_scroll_y > miq.start_pos && miq.last_scroll_y < miq.stop_pos
+    opac = miq.last_scroll_y / miq.pos_diff
+  else if miq.last_scroll_y < miq.start_pos
     opac = 0
-  else if @last_scroll_y > stop_pos
+  else if miq.last_scroll_y > miq.stop_pos
     opac = 1
 
   start_values = [6, 52, 81, opac]
@@ -43,6 +42,3 @@ miq.animate_header = ->
 
 
 window.addEventListener "scroll", miq.on_scroll
-
-document.addEventListener "DOMContentLoaded", ->
-  miq.last_scroll_y = window.scrollY
