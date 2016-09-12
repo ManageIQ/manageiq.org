@@ -1,6 +1,13 @@
 body {
   background-color: $site-bg;
   border-top: 3px solid $blue-lite;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
 }
 
 .home_container {

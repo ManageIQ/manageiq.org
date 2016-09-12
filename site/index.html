@@ -20,72 +20,22 @@ body_class: home
 
   {% include solutions.html %}
 
-  <section class="features">
-    <h3 class="features-heading">Key Features</h3>
-    <div class="features-container">
-      <article class="feature">
-        <aside class="feature-img">
-          {% include placeholder.html %}
-        </aside>
-        <div class="feature-content">
-          <h4 class="feature-title">
-            Wide Platform Support
-          </h4>
-          <div class="feature-text">
-            ManageIQ supports many different platforms,
-            including VMware, Hyper-V, OpenStack, oVirtm Amazon Web Services,
-            Azure, Google Cloud Platform, Kubernetes, OpenShift and more.
-          </div>
-        </div>
-      </article>
+  {% include features.html %}
 
-      <article class="feature">
-        <aside class="feature-img">
-          {% include placeholder.html %}
-        </aside>
-        <div class="feature-content">
-          <h4 class="feature-title">
-            Wide Platform Support
-          </h4>
-          <div class="feature-text">
-            ManageIQ supports many different platforms,
-            including VMware, Hyper-V, OpenStack, oVirtm Amazon Web Services,
-            Azure, Google Cloud Platform, Kubernetes, OpenShift and more.
-          </div>
-        </div>
-      </article>
+  <section class="partners">
+    <h3 class="section-title partners-title">
+      Brought to you by
+    </h3>
 
-      <article class="feature">
-        <aside class="feature-img">
-          {% include placeholder.html %}
-        </aside>
-        <div class="feature-content">
-          <h4 class="feature-title">
-            Wide Platform Support
-          </h4>
-          <div class="feature-text">
-            ManageIQ supports many different platforms,
-            including VMware, Hyper-V, OpenStack, oVirtm Amazon Web Services,
-            Azure, Google Cloud Platform, Kubernetes, OpenShift and more.
-          </div>
-        </div>
-      </article>
-
-      <article class="feature">
-        <aside class="feature-img">
-          {% include placeholder.html %}
-        </aside>
-        <div class="feature-content">
-          <h4 class="feature-title">
-            Wide Platform Support
-          </h4>
-          <div class="feature-text">
-            ManageIQ supports many different platforms,
-            including VMware, Hyper-V, OpenStack, oVirtm Amazon Web Services,
-            Azure, Google Cloud Platform, Kubernetes, OpenShift and more.
-          </div>
-        </div>
-      </article>
+    <div class="partners-container">
+      {% for partner in site.data.partners %}
+      <div class="partner">
+        <img
+          src="/assets/images/partners/{{partner.name}}.svg"
+          alt="{{ partner.name | replace: '_', ' ' }}"
+          width="{{ partner.width }}" >
+      </div>
+      {% endfor %}
     </div>
   </section>
 </div>
