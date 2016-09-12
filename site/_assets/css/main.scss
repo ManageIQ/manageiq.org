@@ -20,10 +20,12 @@ html {
 
 // Home Grid vars
 $hg-gutter-width: 30px;
-$hg-container-desktop: (867px + $hg-gutter-width);
+$hg-container-desktop: 867px;
 
 $triad-gutter: 74px;
 $triad-offset: -74px;
+
+@import "mixins";
 
 // High-level, site-wide stuff
 @import
@@ -39,4 +41,5 @@ $triad-offset: -74px;
   "triad",
   "appliances",
   "solutions",
-  "features";
+  "features",
+  "partners";

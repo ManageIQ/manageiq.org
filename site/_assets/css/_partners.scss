@@ -1,0 +1,31 @@
+section.partners {
+  border-top: 1px solid $grey-lite2;
+  padding: 60px 0;
+  background-color: #fff;
+}
+
+.partners-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.partners-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+
+  max-width: 1060px;
+  min-width: 730px;
+  margin: 0 auto;
+}
+
+.partner {
+  padding: 0 20px 34px;
+  margin: 0;
+
+  img {
+    @include grayscale;
+    opacity: 0.8;
+  }
+}

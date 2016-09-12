@@ -1,0 +1,8 @@
+@mixin grayscale($amount: 100%) {
+  // TODO: determine if filter: url is still valid
+  // filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); // Firefox 10+, Firefox on Android
+
+  // filter: gray; // Who cares about IE6-9
+  filter: grayscale($amount);
+  // -webkit-filter: grayscale($amount); // uncomment if necessary
+}
