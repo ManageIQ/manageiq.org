@@ -1,9 +1,14 @@
+{% assign hpath = page.url | append: ".html" %}
+<!-- hpath: {{ hpath }} -->
+<!-- page.url: {{ page.url }} -->
+
 {% for item in include.items %}
+  <!-- item.path: {{ item.path }} -->
   {% assign item_class = "" %}
   {% if item.children %}
     {% assign item_class = item_class | append: "menu-parent" %}
   {% endif %}
-  {% if item.path == page.url or item.path == page.url | concat ".html" %}
+  {% if item.path == page.url or item.path == hpath %}
     {% assign item_class = item_class | append: "active" %}
   {% endif %}
   <li{% if item_class.size > 0 %} class="{{ item_class }}"{% endif %}>

@@ -21,7 +21,7 @@ $menu-level-pad: 2em;
     display: block;
   }
 
-  li.active a {
+  li.active > a {
     background-color: lighten($grey-dark, 8%);
   }
 

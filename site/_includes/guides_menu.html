@@ -1,6 +1,15 @@
+{% assign hpath = page.url | append: ".html" %}
+
 <ul class="menu menu-toplevel" id="guides_menu">
 {% for group in site.data["menus"]["guides_menu"]["children"] %}
-  <li class="menu-parent">
+  {% assign item_class = "" %}
+  {% if group.children %}
+    {% assign item_class = item_class | append: "menu-parent" %}
+  {% endif %}
+  {% if group.path == page.url or group.path == hpath %}
+    {% assign item_class = item_class | append: " active menu-open" %}
+  {% endif %}
+  <li{% if item_class.size > 0 %} class="{{ item_class }}"{% endif %}>
     {% if group.path %}
     <a href="{{ group.path }}">
       {{ group.title }}
