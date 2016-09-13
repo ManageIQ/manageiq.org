@@ -1,8 +1,23 @@
+
+<ul id="ref_menu" class="menu">
 {% for hsh in site.data["menus"]["ref_menu"] %}
 {% assign group = hsh[1] %}
-<ul id="ref_menu" class="menu">
-  <li class="menu-heading">{{ group.title }}</li>
+  <li class="menu-parent">
+    {% if group.path %}
+    <a href="{{ group.path }}">
+      {{ group.title }}
+    </a>
+    {% else %}
+    <a href="#">
+      {{ group.title }}
+    </a>
+    {% endif %}
 
-  {% include doc_menu_items.html items=group.children %}
-</ul>
+    {% if group.children.size > 0 %}
+      <ul>
+        {% include doc_menu_items.html items=group.children %}
+      </ul>
+    {% endif %}
+  </li>
 {% endfor %}
+</ul>

@@ -18,14 +18,27 @@ class GuidesMenuTest < Minitest::Test
     {
       "title" => "Guides",
       "children" => [
-        { "title" => "Has Yaml", "path" => "/docs/guides/has_yaml" },
-        { "title" => "No Yaml", "path" => "/docs/guides/no_yaml" },
+        {
+          "title" => "Architecture",
+          "path"  => "/docs/guides/architecture.html",
+          "children" => [
+            {
+              "title" => "Enterprise",
+              "path" => "/docs/guides/architecture/enterprise"
+            }
+          ]
+        },
         {
           "title" => "Subdir",
           "children" => [
-            { "title" => "Nested File", "path" => "/docs/guides/subdir/nested_file" }
+            {
+              "title" => "Nested File",
+              "path" => "/docs/guides/subdir/nested_file"
+            }
           ]
-        }
+        },
+        { "title" => "Has Yaml", "path" => "/docs/guides/has_yaml" },
+        { "title" => "No Yaml", "path" => "/docs/guides/no_yaml" }
       ]
     }
   end

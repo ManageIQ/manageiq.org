@@ -1,13 +1,15 @@
 {% for item in include.items %}
-  <li {% if page.url == item.path %}class="active"{% endif %}>
-    {% if item.path %}
-    <a href="{{ item.path }}">{{ item.title }}</a>
-    {% else %}
-    <span class="nav-subheading">
+  {% assign item_class = "" %}
+  {% if item.children %}
+    {% assign item_class = item_class | append: "menu-parent" %}
+  {% endif %}
+  {% if item.path == page.url or item.path == page.url | concat ".html" %}
+    {% assign item_class = item_class | append: "active" %}
+  {% endif %}
+  <li{% if item_class.size > 0 %} class="{{ item_class }}"{% endif %}>
+    <a href="{% if item.path %}{{ item.path }}{% else %}#{% endif %}">
       {{ item.title }}
-    </span>
-    {% endif %}
-
+    </a>
     {% if item.children %}
     <ul>
       {% include doc_menu_items.html items=item.children %}

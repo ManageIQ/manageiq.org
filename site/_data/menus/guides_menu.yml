@@ -2,12 +2,10 @@
 title: Guides
 children:
 - title: Architecture
+  path: "/docs/guides/architecture.html"
   children:
-  - title: Capacity And Utilization Collection Explanation
-    path: "/docs/guides/architecture/capacity_and_utilization_collection_explanation"
-  - title: Enterprise
-    path: "/docs/guides/architecture/enterprise"
   - title: Providers Database Architecture
+    path: "/docs/guides/architecture/providers_database_architecture.html"
     children:
     - title: Availability Zone
       path: "/docs/guides/architecture/providers_database_architecture/availability_zone"
@@ -49,19 +47,16 @@ children:
       path: "/docs/guides/architecture/providers_database_architecture/security_group"
     - title: Vm Or Template
       path: "/docs/guides/architecture/providers_database_architecture/vm_or_template"
-  - title: Providers Database Architecture
-    path: "/docs/guides/architecture/providers_database_architecture"
+  - title: Capacity And Utilization Collection Explanation
+    path: "/docs/guides/architecture/capacity_and_utilization_collection_explanation"
+  - title: Enterprise
+    path: "/docs/guides/architecture/enterprise"
   - title: Providers Overview
     path: "/docs/guides/architecture/providers_overview"
   - title: Source Code Layout
     path: "/docs/guides/architecture/source_code_layout"
-- title: Architecture
-  path: "/docs/guides/architecture"
-- title: Coding Style And Standards
-  path: "/docs/guides/coding_style_and_standards"
-- title: Developer Copr Setup Centos6
-  path: "/docs/guides/developer_copr_setup_centos6"
 - title: Developer Setup
+  path: "/docs/guides/developer_setup.html"
   children:
   - title: Minimal Mode
     path: "/docs/guides/developer_setup/minimal_mode"
@@ -71,18 +66,13 @@ children:
     path: "/docs/guides/developer_setup/ruby_mine_setup"
   - title: Running Test Suites
     path: "/docs/guides/developer_setup/running_test_suites"
-- title: Developer Setup
-  path: "/docs/guides/developer_setup"
 - title: External Auth
+  path: "/docs/guides/external_auth.html"
   children:
   - title: Configuration
     path: "/docs/guides/external_auth/configuration"
   - title: Installation
     path: "/docs/guides/external_auth/installation"
-- title: External Auth
-  path: "/docs/guides/external_auth"
-- title: I18n
-  path: "/docs/guides/i18n"
 - title: Images
   children: []
 - title: Proposals
@@ -99,18 +89,24 @@ children:
     path: "/docs/guides/proposals/support_of_openstack_tenants"
 - title: Providers
   children:
+  - title: Openstack Infra Files
+    children: []
   - title: Amazon Aws Config
     path: "/docs/guides/providers/amazon_aws_config"
   - title: Containers
     path: "/docs/guides/providers/containers"
-  - title: Openstack Infra Files
-    children: []
   - title: Openstack Infra Provider
     path: "/docs/guides/providers/openstack_infra_provider"
 - title: Provisioning
   children:
   - title: Windows Imaging
     path: "/docs/guides/provisioning/windows_imaging"
+- title: Coding Style And Standards
+  path: "/docs/guides/coding_style_and_standards"
+- title: Developer Copr Setup Centos6
+  path: "/docs/guides/developer_copr_setup_centos6"
+- title: I18n
+  path: "/docs/guides/i18n"
 - title: Readme
   path: "/docs/guides/README"
 - title: Rest Api

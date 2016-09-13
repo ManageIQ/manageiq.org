@@ -22,11 +22,12 @@ main {
 
 .doc_container {
   @include container-fixed(0);
-  background-color: #292e33;
+  background-color: $grey-dark;
 }
 
 .doc_menu {
   color: #fff;
+  padding-right: 0;
 
   .menu {
     font-size: 14px;

@@ -1,9 +1,20 @@
-<div class="guides_menu">
-  {% for group in site.data["menus"]["guides_menu"]["children"] %}
-
-  <ul class="menu">
-    <li class="menu-heading">{{ group.title }}</li>
-    {% include doc_menu_items.html items=group.children %}
-  </ul>
-  {% endfor %}
-</div>
+<ul class="menu menu-toplevel" id="guides_menu">
+{% for group in site.data["menus"]["guides_menu"]["children"] %}
+  <li class="menu-parent">
+    {% if group.path %}
+    <a href="{{ group.path }}">
+      {{ group.title }}
+    </a>
+    {% else %}
+    <a href="#">
+      {{ group.title }}
+    </a>
+    {% endif %}
+    {% if group.children.size > 0 %}
+      <ul>
+        {% include doc_menu_items.html items=group.children %}
+      </ul>
+    {% endif %}
+  </li>
+{% endfor %}
+</ul>
