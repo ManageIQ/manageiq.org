@@ -1,0 +1,112 @@
+.doc_container {
+  @include container-fixed(0);
+  background-color: $grey-dark;
+}
+
+.doc_menu {
+  color: #fff;
+  padding-right: 0;
+
+  .menu {
+    font-size: 14px;
+    list-style: none;
+
+    ul {
+      list-style: none;
+    }
+  }
+
+  a {
+    color: #fff;
+  }
+}
+
+.doc_menu-header {
+  border-bottom: 1px solid lighten($grey-dark, 10%);
+  padding: 2em 0 2em 1.6em;
+
+  h4 {
+    line-height: 1;
+    margin: 0;
+  }
+}
+
+.doc_page {
+  background-color: $site-bg;
+  padding: 5.1em 0;
+
+  .doc {
+    border-top: 1px solid $doc-line-lite;
+    padding: 3em;
+    max-width: 52em;
+  }
+}
+
+// Ref Docs
+
+.toc {
+  font-size: 14px;
+  float: right;
+  padding: 0 0 1em 1em;
+  border-left: 1px solid $doc-line-lite;
+  margin: 0 0 2em 2em;
+  width: 40%;
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  li > ul {
+    padding: 0 0 1em 1.2em;
+  }
+
+  // Don't separate below the top level
+  li > ul > li ul {
+    padding-bottom: 0;
+  }
+}
+
+table.tableblock {
+  max-width: 100%;
+  margin-bottom: 1em;
+
+  th {
+    border-bottom: 1px solid $doc-line-lite;
+  }
+
+  td, th {
+    font-size: 14px;
+    padding: 1em;
+    border-right: 1px solid $doc-line-lite;
+    vertical-align: middle;
+
+    &:last-child {
+      border-right: none;
+    }
+
+    // Paragraphs in table cells, WHY???
+    p {
+      margin: 0;
+      line-height: 1.4;
+    }
+  }
+
+  tr:nth-child(even) {
+    td {
+      background-color: lighten($grey-dark, 75%);
+    }
+  }
+}
+
+.ref_doc {
+  span.image {
+    display: block;
+  }
+
+  img {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+  }
+}

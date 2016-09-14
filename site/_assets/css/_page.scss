@@ -19,36 +19,3 @@ main {
   display: flex;
   justify-content: center;
 }
-
-.doc_container {
-  @include container-fixed(0);
-  background-color: $grey-dark;
-}
-
-.doc_menu {
-  color: #fff;
-  padding-right: 0;
-
-  .menu {
-    font-size: 14px;
-    list-style: none;
-
-    ul {
-      list-style: none;
-    }
-  }
-
-  a {
-    color: #fff;
-  }
-}
-
-.doc_menu-header {
-  border-bottom: 1px solid lighten($grey-dark, 10%);
-  padding: 1em 0 1em 1.6em;
-}
-
-.doc_page {
-  padding: 3em;
-  background-color: $site-bg;
-}

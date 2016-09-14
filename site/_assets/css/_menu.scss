@@ -10,10 +10,6 @@ $menu-level-pad: 1.6em;
     margin: 0;
   }
 
-  // li {
-  //   border-left: $menu-highlight-bar solid $grey-dark;
-  // }
-
   li > ul {
     display: none;
   }
@@ -21,10 +17,6 @@ $menu-level-pad: 1.6em;
   li.menu-open > ul {
     display: block;
   }
-
-  // li.active {
-  //   border-left-color: $blue-lite;
-  // }
 
   li.active > a {
     background-color: lighten($grey-dark, 8%);
