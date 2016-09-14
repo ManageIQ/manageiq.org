@@ -43,6 +43,12 @@ main {
   }
 }
 
+.doc_menu-header {
+  border-bottom: 1px solid lighten($grey-dark, 10%);
+  padding: 1em 0 1em 1.6em;
+}
+
 .doc_page {
+  padding: 3em;
   background-color: $site-bg;
 }
