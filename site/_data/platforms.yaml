@@ -1,0 +1,15 @@
+- id: kubernetes
+  name: Kubernetes
+  img: /assets/images/platforms/kubernetes.svg
+
+- id: vmware
+  name: VMWare
+  img: /assets/images/providers/vmware.svg
+
+- id: openshift
+  name: OpenShift
+  img: /assets/images/platforms/openshift.svg
+
+- id: aws
+  name: Amazon Web Services
+  img: /assets/images/platforms/aws.svg

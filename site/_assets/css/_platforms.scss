@@ -1,0 +1,37 @@
+.platforms {
+  background-color: #fff;
+  padding: 3.75em 0;
+}
+
+.platforms-container {
+  width: $hg-container-desktop;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.platform_brand {
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+#platform_kubernetes {
+  width: 13em;
+}
+
+#platform_vmware {
+  width: 11em;
+}
+
+#platform_openshift {
+  width: 6em;
+}
+
+#platform_aws {
+  width: 8em;
+}

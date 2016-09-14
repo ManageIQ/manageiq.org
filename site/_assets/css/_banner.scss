@@ -22,7 +22,8 @@
 }
 
 .banner-content {
-  width: 55em;
+  width: 60em;
+  max-width: 100%;
   @include container-fixed(0);
 }
 

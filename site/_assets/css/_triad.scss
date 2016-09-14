@@ -63,3 +63,12 @@
     display: block;
   }
 }
+
+.download {
+  position: relative;
+  top: ($triad-offset / 2);
+
+  h4 {
+    text-align: center;
+  }
+}

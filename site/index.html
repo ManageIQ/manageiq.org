@@ -16,9 +16,30 @@ body_class: home
 
   {% include triad.html %}
 
-  {% include appliances.html %}
+  <section class="download">
+    <h4>
+      <a href="/download/">
+        <span>Or download one of our virtual appliances</span>
+        <i class="fa fa-arrow-right"></i>
+      </a>
+    </h4>
+  </section>
 
   {% include solutions.html %}
+
+  <section class="platforms">
+    <h3 class="section-title">
+      Wide Platform Support
+    </h3>
+
+    <div class="platforms-container">
+      {% for platform in site.data.platforms %}
+      <div id="platform_{{platform.id}}" class="platform_brand">
+        <img src="{{platform.img}}" alt="{{platform.name}}">
+      </div>
+      {% endfor %}
+    </div>
+  </section>
 
   {% include features.html %}
 
