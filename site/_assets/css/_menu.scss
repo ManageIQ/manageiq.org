@@ -64,7 +64,7 @@ $menu-level-pad: 1.6em;
     }
   }
 
-  &.active {
+  &.active, &.menu-open {
     > a:before {
       content: $fa-var-chevron-down;
     }
