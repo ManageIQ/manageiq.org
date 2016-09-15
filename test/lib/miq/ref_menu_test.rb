@@ -16,6 +16,15 @@ class RefMenuTest < Minitest::Test
   private
 
   def expected
+    [
+      multiple_children,
+      sibling,
+      toc_style,
+      welcome
+    ].inject({}) {|memo, hsh| memo.merge(hsh) }
+  end
+
+  def multiple_children
     {
       "RestApi" => {
         "title" => "REST API",
@@ -48,7 +57,12 @@ class RefMenuTest < Minitest::Test
             ]
           }
         ]
-      },
+      }
+    }
+  end
+
+  def sibling
+    {
       "RestApiExamples" => {
         "title" => "REST API Examples",
         "children" => [
@@ -62,6 +76,24 @@ class RefMenuTest < Minitest::Test
             ]
           }
         ]
+      }
+    }
+  end
+
+  def toc_style
+    {
+      "SquashMe" => {
+        "title" => "Squash Me",
+        "path" => "/docs/reference/latest/squashme"
+      }
+    }
+  end
+
+  def welcome
+    {
+      "welcome" => {
+        "title" => "Welcome",
+        "path" => "/docs/reference/latest/welcome"
       }
     }
   end
