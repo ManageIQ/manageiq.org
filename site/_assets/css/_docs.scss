@@ -1,11 +1,17 @@
+// body border + header + footer
+$doc-height-offset: 257px;
+
 .doc_container {
-  @include container-fixed(0);
-  background-color: $grey-dark;
+  display: flex;
+  min-height: calc(100vh - #{$doc-height-offset});
 }
 
 .doc_menu {
   color: #fff;
   padding-right: 0;
+  background-color: $grey-dark;
+  min-width: 16em;
+  width: 25%;
 
   .menu {
     font-size: 14px;
@@ -28,43 +34,77 @@
   h4 {
     line-height: 1;
     margin: 0;
+    color: #fff;
   }
 }
 
 .doc_page {
-  background-color: $site-bg;
   padding: 5.1em 0;
+  overflow-x: hidden;
 
   .doc {
     border-top: 1px solid $doc-line-lite;
     padding: 3em;
-    max-width: 52em;
   }
 }
 
 // Ref Docs
 
+.ref_doc .doc-content {
+  margin-right: 35%;
+}
+
+.ref_doc .sect1 {
+  h2:first-child {
+    margin-top: 0;
+  }
+}
+
 .toc {
   font-size: 14px;
-  float: right;
-  padding: 0 0 1em 1em;
+  padding: 0 1em 1em 1em;
   border-left: 1px solid $doc-line-lite;
   margin: 0 0 2em 2em;
-  width: 40%;
+  width: 25%;
+  position: absolute;
+  right: 1em;
 
   ul {
     list-style: none;
     padding: 0;
   }
 
-  li > ul {
-    padding: 0 0 1em 1.2em;
+  li {
+    padding-bottom: 0.5em;
+
+    // Pad anchors followed by <ul>'s
+    > a {
+      display: block;
+      padding-bottom: 0.5em;
+    }
+  }
+
+  // Reset padding from above
+  li a:only-child {
+    padding-bottom: 0;
+  }
+
+  .sectlevel2 {
+    padding: 0 0 1em 1em;
+  }
+
+  .sectlevel3 {
+    padding: 0 0 1em 2em;
   }
 
   // Don't separate below the top level
   li > ul > li ul {
     padding-bottom: 0;
   }
+}
+
+#toctitle {
+  margin-bottom: 1em;
 }
 
 table.tableblock {

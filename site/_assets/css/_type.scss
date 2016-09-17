@@ -9,6 +9,7 @@ body {
 // 12 14 16 18 20 30 42 72 175 200 215 289 350 525 867
 
 h1, h2, h3, h4 {
+  color: $grey-dark;
   font-weight: 500;
   text-rendering: optimizeLegibility;
   font-feature-settings: "kern";
@@ -21,7 +22,11 @@ h1 {
   font-size: 42px;
 }
 
-h2 {}
+h2 {
+  font-size: 30px;
+  line-height: 1.4;
+  margin: 1.4em 0;
+}
 
 h3 {
   font-size: 20px;

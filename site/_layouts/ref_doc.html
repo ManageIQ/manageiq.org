@@ -1,24 +1,23 @@
 ---
 layout: default
 ---
-<div class="doc_container">
-  <div class="row">
-    <div class="doc_menu col-md-3">
-      {% include doc_menu_header.html %}
-      {% include ref_menu.html %}
-    </div>
-    <div class="doc_page col-md-9">
-      <article class="doc ref_doc">
-        {% if page.title %}
-        <header class="doc-header">
-          <h1 class="doc-title">{{ page.title }}</h1>
-        </header>
-        {% endif %}
 
-        <div class="doc-content">
-          {{ content }}
-        </div>
-      </article>
-    </div>
+<div class="doc_container">
+  <div class="doc_menu">
+    {% include doc_menu_header.html %}
+    {% include ref_menu.html %}
+  </div>
+  <div class="doc_page">
+    <article class="doc ref_doc">
+      {% if page.title %}
+      <header class="doc-header">
+        <h1 class="doc-title">{{ page.title }}</h1>
+      </header>
+      {% endif %}
+
+      <div class="doc-content">
+        {{ content }}
+      </div>
+    </article>
   </div>
 </div>
