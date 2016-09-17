@@ -6,16 +6,16 @@ module Miq
       new.build
     end
 
-    attr_reader :dest_dir, :data_dir
+    attr_reader :source_dir, :output_dir
 
     def initialize(transform_paths: true)
-      @dest_dir = Pathname.new(ENV["MIQ_GUIDES_DST"] || Miq.docs_dir.join("guides"))
-      @data_dir = Miq.site_dir.join("_data", "menus")
+      @source_dir = Pathname.new(ENV["MIQ_GUIDES_DST"] || Miq.docs_dir.join("guides"))
+      @output_dir = Miq.working_dir.join("tmp", "menus")
       @transform_paths = transform_paths
     end
 
     def menu_data
-      @data ||= walk_tree(dest_dir)
+      @data ||= walk_tree(source_dir)
     end
 
     def to_yaml
@@ -23,9 +23,9 @@ module Miq
     end
 
     def build
-      prep(data_dir)
+      prep(output_dir)
 
-      File.open("#{data_dir}/guides_menu.yml", "w") do |f|
+      File.open("#{output_dir}/guides_menu.yml", "w") do |f|
         f.puts to_yaml
       end
     end

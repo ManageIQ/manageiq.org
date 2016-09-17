@@ -7,11 +7,11 @@ module Miq
       new.build
     end
 
-    attr_reader :dst_dir, :data_dir
+    attr_reader :source_dir, :output_dir
 
     def initialize
-      @dst_dir  = ENV["MIQ_REF_DST"] || Miq.docs_dir.join("reference", "latest")
-      @data_dir = Miq.site_dir.join("_data", "menus")
+      @source_dir = ENV["MIQ_REF_DST"] || Miq.docs_dir.join("reference", "latest")
+      @output_dir = Miq.working_dir.join("tmp", "menus")
     end
 
     def menu_data
@@ -23,9 +23,9 @@ module Miq
     end
 
     def build
-      prep(data_dir)
+      prep(output_dir)
 
-      File.open("#{data_dir}/ref_menu.yml", "w") do |f|
+      File.open("#{output_dir}/ref_menu.yml", "w") do |f|
         f.puts to_yaml
       end
     end
@@ -33,7 +33,7 @@ module Miq
     private
 
     def load_data
-      flat_data = Dir["#{dst_dir}/**/*.html"].map do |path|
+      flat_data = Dir["#{source_dir}/**/*.html"].map do |path|
         read_yaml(path)
       end
 

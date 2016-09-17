@@ -3,7 +3,8 @@ _site
 .jekyll-metadata
 .env
 
+dest/
+site/docs/reference/latest/
 site/.asset-cache
 
-dest/*
-site/docs/reference/latest/
+tmp/
