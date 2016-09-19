@@ -46,7 +46,51 @@ $doc-height-offset: 257px;
     border-top: 1px solid $doc-line-lite;
     padding: 3em;
   }
+
+  .doc-title {
+    margin-top: 0;
+  }
 }
+
+.doc-content {
+  h1:first-child, h2:first-child {
+    margin-top: 0;
+  }
+
+  table {
+    max-width: 100%;
+    margin-bottom: 1em;
+
+    th {
+      border-bottom: 1px solid $doc-line-lite;
+    }
+
+    td, th {
+      font-size: 14px;
+      padding: 1em;
+      border-right: 1px solid $doc-line-lite;
+      vertical-align: middle;
+
+      &:last-child {
+        border-right: none;
+      }
+
+      // Paragraphs in table cells, WHY???
+      p {
+        margin: 0;
+        line-height: 1.4;
+      }
+    }
+
+    tr:nth-child(even) {
+      td {
+        background-color: lighten($grey-dark, 75%);
+      }
+    }
+  }
+}
+
+// Guides
 
 // Ref Docs
 
@@ -107,37 +151,37 @@ $doc-height-offset: 257px;
   margin-bottom: 1em;
 }
 
-table.tableblock {
-  max-width: 100%;
-  margin-bottom: 1em;
-
-  th {
-    border-bottom: 1px solid $doc-line-lite;
-  }
-
-  td, th {
-    font-size: 14px;
-    padding: 1em;
-    border-right: 1px solid $doc-line-lite;
-    vertical-align: middle;
-
-    &:last-child {
-      border-right: none;
-    }
-
-    // Paragraphs in table cells, WHY???
-    p {
-      margin: 0;
-      line-height: 1.4;
-    }
-  }
-
-  tr:nth-child(even) {
-    td {
-      background-color: lighten($grey-dark, 75%);
-    }
-  }
-}
+// table.tableblock {
+//   max-width: 100%;
+//   margin-bottom: 1em;
+//
+//   th {
+//     border-bottom: 1px solid $doc-line-lite;
+//   }
+//
+//   td, th {
+//     font-size: 14px;
+//     padding: 1em;
+//     border-right: 1px solid $doc-line-lite;
+//     vertical-align: middle;
+//
+//     &:last-child {
+//       border-right: none;
+//     }
+//
+//     // Paragraphs in table cells, WHY???
+//     p {
+//       margin: 0;
+//       line-height: 1.4;
+//     }
+//   }
+//
+//   tr:nth-child(even) {
+//     td {
+//       background-color: lighten($grey-dark, 75%);
+//     }
+//   }
+// }
 
 .ref_doc {
   span.image {

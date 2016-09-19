@@ -2,62 +2,20 @@
 title: Guides
 children:
 - title: Architecture
-  path: "/docs/guides/architecture.html"
   children:
-  - title: Providers Database Architecture
-    path: "/docs/guides/architecture/providers_database_architecture.html"
-    children:
-    - title: Availability Zone
-      path: "/docs/guides/architecture/providers_database_architecture/availability_zone"
-    - title: Cloud Network
-      path: "/docs/guides/architecture/providers_database_architecture/cloud_network"
-    - title: Cloud Object Store Container
-      path: "/docs/guides/architecture/providers_database_architecture/cloud_object_store_container"
-    - title: Cloud Object Store Object
-      path: "/docs/guides/architecture/providers_database_architecture/cloud_object_store_object"
-    - title: Cloud Resource Quota
-      path: "/docs/guides/architecture/providers_database_architecture/cloud_resource_quota"
-    - title: Cloud Subnet
-      path: "/docs/guides/architecture/providers_database_architecture/cloud_subnet"
-    - title: Cloud Tenant
-      path: "/docs/guides/architecture/providers_database_architecture/cloud_tenant"
-    - title: Cloud Volume
-      path: "/docs/guides/architecture/providers_database_architecture/cloud_volume"
-    - title: Cloud Volume Snapshot
-      path: "/docs/guides/architecture/providers_database_architecture/cloud_volume_snapshot"
-    - title: Flavor
-      path: "/docs/guides/architecture/providers_database_architecture/flavor"
-    - title: Hardware
-      path: "/docs/guides/architecture/providers_database_architecture/hardware"
-    - title: Host
-      path: "/docs/guides/architecture/providers_database_architecture/host"
-    - title: Metric
-      path: "/docs/guides/architecture/providers_database_architecture/metric"
-    - title: Orchestration Stack
-      path: "/docs/guides/architecture/providers_database_architecture/orchestration_stack"
-    - title: Orchestration Stack Output
-      path: "/docs/guides/architecture/providers_database_architecture/orchestration_stack_output"
-    - title: Orchestration Stack Parameter
-      path: "/docs/guides/architecture/providers_database_architecture/orchestration_stack_parameter"
-    - title: Orchestration Stack Resource
-      path: "/docs/guides/architecture/providers_database_architecture/orchestration_stack_resource"
-    - title: Orchestration Template
-      path: "/docs/guides/architecture/providers_database_architecture/orchestration_template"
-    - title: Security Group
-      path: "/docs/guides/architecture/providers_database_architecture/security_group"
-    - title: Vm Or Template
-      path: "/docs/guides/architecture/providers_database_architecture/vm_or_template"
+  - title: Overview
+    path: "/docs/guides/architecture.html"
   - title: Capacity And Utilization Collection Explanation
     path: "/docs/guides/architecture/capacity_and_utilization_collection_explanation"
   - title: Enterprise
     path: "/docs/guides/architecture/enterprise"
-  - title: Providers Overview
-    path: "/docs/guides/architecture/providers_overview"
   - title: Source Code Layout
     path: "/docs/guides/architecture/source_code_layout"
+
 - title: Developer Setup
-  path: "/docs/guides/developer_setup.html"
   children:
+  - title: Overview
+    path: "/docs/guides/developer_setup.html"
   - title: Minimal Mode
     path: "/docs/guides/developer_setup/minimal_mode"
   - title: Postgresql Software Collection
@@ -66,48 +24,32 @@ children:
     path: "/docs/guides/developer_setup/ruby_mine_setup"
   - title: Running Test Suites
     path: "/docs/guides/developer_setup/running_test_suites"
+
 - title: External Auth
-  path: "/docs/guides/external_auth.html"
   children:
+  - title: Overview
+    path: "/docs/guides/external_auth.html"
   - title: Configuration
     path: "/docs/guides/external_auth/configuration"
   - title: Installation
     path: "/docs/guides/external_auth/installation"
-- title: Images
-  children: []
-- title: Proposals
-  children:
-  - title: Automate Domain Export Import
-    path: "/docs/guides/proposals/automate_domain_export_import"
-  - title: Automate Model Redesign
-    path: "/docs/guides/proposals/automate_model_redesign"
-  - title: Configuration Redesign
-    path: "/docs/guides/proposals/configuration_redesign"
-  - title: Rest Api Provisioning Automation
-    path: "/docs/guides/proposals/rest_api_provisioning_automation"
-  - title: Support Of Openstack Tenants
-    path: "/docs/guides/proposals/support_of_openstack_tenants"
+
 - title: Providers
   children:
-  - title: Openstack Infra Files
-    children: []
+  - title: Providers Overview
+    path: "/docs/guides/architecture/providers_overview"
+  - title: Providers Database Architecture
+    path: "/docs/guides/architecture/providers_database_architecture.html"
   - title: Amazon Aws Config
     path: "/docs/guides/providers/amazon_aws_config"
   - title: Containers
     path: "/docs/guides/providers/containers"
   - title: Openstack Infra Provider
     path: "/docs/guides/providers/openstack_infra_provider"
-- title: Provisioning
-  children:
-  - title: Windows Imaging
-    path: "/docs/guides/provisioning/windows_imaging"
+
+- title: Windows Imaging
+  path: "/docs/guides/provisioning/windows_imaging"
 - title: Coding Style And Standards
   path: "/docs/guides/coding_style_and_standards"
-- title: Developer Copr Setup Centos6
-  path: "/docs/guides/developer_copr_setup_centos6"
 - title: I18n
   path: "/docs/guides/i18n"
-- title: Readme
-  path: "/docs/guides/README"
-- title: Rest Api
-  path: "/docs/guides/rest_api"

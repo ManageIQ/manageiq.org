@@ -1,6 +1,7 @@
 ---
 layout: ref_doc
 title: Get Started With Docker
+permalink: /docs/get-started/docker
 ---
 
 #Quick guide to ManageIQ installation with Docker#

@@ -1,6 +1,6 @@
 $menu-link-color: lighten($grey-dark, 55%);
-$menu-highlight-bar: 0.4em;
-$menu-level-pad: 10%;
+$menu-highlight-bar: 0.25em;
+$menu-level-pad: 12%;
 
 .menu {
   padding: 0;
@@ -11,11 +11,24 @@ $menu-level-pad: 10%;
   }
 
   li > ul {
-    display: none;
+    overflow: hidden;
+    // height: 0;
+    max-height: 0vh;
+
+    transition: max-height 0.5s;
+
+    li {
+      opacity: 0;
+      transition: opacity 0.8s;
+    }
   }
 
   li.menu-open > ul {
-    display: block;
+    max-height: 100vh;
+
+    li {
+      opacity: 1;
+    }
   }
 
   li.active > a {
@@ -40,11 +53,12 @@ $menu-level-pad: 10%;
   }
 
   li > ul > li > a {
-    padding-left: $menu-level-pad * 2;
+    padding-left: $menu-level-pad * 1.5;
   }
 
+  // 3rd level
   li > ul > li > ul > li > a {
-    padding-left: $menu-level-pad * 4;
+    padding-left: $menu-level-pad * 3;
   }
 }
 
@@ -59,8 +73,12 @@ $menu-level-pad: 10%;
       content: $fa-var-chevron-right;
 
       display: inline-block;
-      font-size: 12px;
+      font-size: 9px;
+      color: lighten($grey-dark, 30%);
       margin-left: -1em;
+
+      position: relative;
+      top: -2px;
     }
   }
 
