@@ -29,22 +29,26 @@ $doc-height-offset: 257px;
 
 .doc_menu-header {
   border-bottom: 1px solid lighten($grey-dark, 10%);
-  padding: 2em 0 2em 1.6em;
+  padding: 2em 0;
 
-  h4 {
-    line-height: 1;
-    margin: 0;
-    color: #fff;
+  // h4 {
+  //   line-height: 1;
+  //   margin: 0;
+  //   color: #fff;
+  // }
+
+  .menu {
+    font-size: 18px;
   }
 }
 
 .doc_page {
-  padding: 5.1em 0;
+  // padding: 5.1em 0;
   overflow-x: hidden;
 
   .doc {
     border-top: 1px solid $doc-line-lite;
-    padding: 3em;
+    padding: 4em;
   }
 
   .doc-title {
@@ -150,38 +154,6 @@ $doc-height-offset: 257px;
 #toctitle {
   margin-bottom: 1em;
 }
-
-// table.tableblock {
-//   max-width: 100%;
-//   margin-bottom: 1em;
-//
-//   th {
-//     border-bottom: 1px solid $doc-line-lite;
-//   }
-//
-//   td, th {
-//     font-size: 14px;
-//     padding: 1em;
-//     border-right: 1px solid $doc-line-lite;
-//     vertical-align: middle;
-//
-//     &:last-child {
-//       border-right: none;
-//     }
-//
-//     // Paragraphs in table cells, WHY???
-//     p {
-//       margin: 0;
-//       line-height: 1.4;
-//     }
-//   }
-//
-//   tr:nth-child(even) {
-//     td {
-//       background-color: lighten($grey-dark, 75%);
-//     }
-//   }
-// }
 
 .ref_doc {
   span.image {

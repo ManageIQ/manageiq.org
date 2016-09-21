@@ -1,5 +1,10 @@
 <header class="doc_menu-header">
-  <h4 class="doc_menu-title">
-    Documentation
-  </h4>
+  <ul class="menu">
+    <li{% if include.doc_group == "user" %} class="active"{% endif %}>
+      <a href="/docs/reference/">User Reference</a>
+    </li>
+    <li{% if include.doc_group == "dev" %} class="active"{% endif %}>
+      <a href="/docs/guides/README">Developer Guides</a>
+    </li>
+  </ul>
 </header>
