@@ -1,9 +1,8 @@
-# Terms of use
-{: .no_toc}
+---
+layout: page
+title: Terms of Use
+---
 
-1. TOC_here
-{:toc}
-{: .toc-wrap}
 
 ## General Information
 

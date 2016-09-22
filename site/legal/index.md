@@ -1,3 +1,8 @@
+---
+layout: page
+title: Legal
+---
+
 ## Copyright
 
 Except where otherwise indicated, all submissions to this site (including wiki page edits, forum posts and comments) are licensed under the [Creative Commons Attribution-ShareAlike 4.0 International license](http://creativecommons.org/licenses/by-sa/4.0/)
