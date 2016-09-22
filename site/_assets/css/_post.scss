@@ -1,0 +1,30 @@
+.post_container {
+  display: flex;
+  min-height: calc(100vh - #{$page-height-offset});
+
+  max-width: 60em;
+  margin: 0 auto;
+}
+
+.post_main {
+  width: 70%;
+  // max-width: 54em;
+}
+
+.post_links {
+  width: 30%;
+}
+
+.post {
+  p {
+    margin-bottom: 3em;
+  }
+}
+
+.post-header {
+  margin-bottom: 2em;
+}
+
+.post-meta {
+  color: $text-subdued;
+}

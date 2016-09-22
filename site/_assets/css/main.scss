@@ -25,6 +25,15 @@ $hg-container-desktop: 867px;
 $triad-gutter: 74px;
 $triad-offset: -74px;
 
+// Height of flexbox containers in <main>
+// body border + header + footer
+$page-height-offset: 257px;
+
+// Menu
+
+$menu-highlight-bar: 0.25em;
+$menu-level-pad: 12%;
+
 @import "mixins";
 
 // High-level, site-wide stuff
@@ -47,3 +56,6 @@ $triad-offset: -74px;
 
 // Docs
 @import "docs";
+
+// Blog
+@import "post";

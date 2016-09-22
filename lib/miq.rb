@@ -16,6 +16,7 @@ require_relative "miq/ref_docs"
 require_relative "miq/ref_menu"
 require_relative "miq/md_link_converter"
 require_relative "miq/dir_index"
+require_relative "miq/tag_index"
 
 module Miq
   def self.working_dir
@@ -50,7 +51,11 @@ module Miq
     (ENV["MIQ_GUIDES_DIR"] || "docs/guides")
   end
 
-  def self.index_template
-    "dir_index.html"
+  def self.doc_index_template
+    "doc_index.html"
+  end
+
+  def self.tag_index_template
+    "tag_index.html"
   end
 end

@@ -4,6 +4,8 @@ date: 2016-09-05
 author: himdel
 comments: true
 published: true
+tags:
+ - LWIMIQ
 ---
 
 Greetings from sunny Brno, [Happy Martin](https://github.com/himdel) here, from the UI team :).

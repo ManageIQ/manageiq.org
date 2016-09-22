@@ -1,6 +1,7 @@
 $site-bg: #f9f9f9;
 
 $text-black: #444;
+$text-subdued: mix($site-bg, $text-black, 40%);
 
 $grey-dark: #292e33;
 $grey-md: #a6aeb7;
@@ -17,6 +18,8 @@ $banner-grad-dark: rgba(6, 52, 81, 1);
 $banner-grad-lite: rgba(12, 105, 165, 1);
 
 $doc-line-lite: lighten($grey-dark, 70%);
+
+$menu-link-color: lighten($grey-dark, 55%);
 
 @mixin banner_grad {
   @include gradient-horizontal($banner-grad-dark, $banner-grad-lite, 0, 100%);
