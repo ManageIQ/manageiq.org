@@ -1,15 +1,50 @@
+
+- id: vmware
+  name: VMWare vSphere
+  img: /assets/images/providers/vmware.svg
+
+- id: msscvmm
+  name: Microsoft System Center Virtual Machine Manager
+  img: /assets/images/platforms/msscvmm.svg
+
+- id: ovirt
+  name: oVirt
+  img: /assets/images/platforms/ovirt.svg
+
+- id: openstack
+  name: OpenStack
+  img: /assets/images/platforms/openstack.svg
+
+- id: vmware_vcloud
+  name: VMWare vCloud Network
+  img: /assets/images/platforms/vmw_vcloud.png
+
+- id: gcp
+  name: Google Cloud Platform
+  img: /assets/images/platforms/gcp.svg
+
+- id: aws
+  name: Amazon Web Services
+  img: /assets/images/platforms/aws.svg
+
+- id: azure
+  name: Microsoft Azure
+  img: /assets/images/platforms/azure.svg
+
+- id: ansible_tower
+  name: Ansible Tower By Red Hat
+  img: /assets/images/platforms/ansible_tower.svg
+
+- id: foreman
+  name: Foreman
+  img: /assets/images/platforms/foreman.svg
+
 - id: kubernetes
   name: Kubernetes
   img: /assets/images/platforms/kubernetes.svg
-
-- id: vmware
-  name: VMWare
-  img: /assets/images/providers/vmware.svg
 
 - id: openshift
   name: OpenShift
   img: /assets/images/platforms/openshift.svg
 
-- id: aws
-  name: Amazon Web Services
-  img: /assets/images/platforms/aws.svg
+# Hawkular
