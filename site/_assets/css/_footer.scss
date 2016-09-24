@@ -28,6 +28,7 @@
     li {
       float: left;
       margin-right: 0.5em;
+      text-align: center;
     }
 
     a {
@@ -39,6 +40,23 @@
     display: block;
     width: 1.5em;
     height: 1.5em;
+
+    svg {
+      fill: $blue-lite2;
+    }
+
+    svg:hover {
+      fill: #fff;
+    }
+
+    i.fa {
+      font-size: 22px;
+      color: $blue-lite2;
+    }
+
+    i.fa:hover {
+      color: #fff;
+    }
   }
 
   .social_link-username {
@@ -50,6 +68,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 40px;
 }
 
 #footer_top {
@@ -65,6 +84,10 @@
   font-size: 12px;
   color: $blue-lite2;
 
+  span {
+    margin-right: 1em;
+  }
+
   a {
     color: #fff;
   }
@@ -79,5 +102,5 @@
 .footer-logo {
   width: 40px;
   height: 40px;
-  margin: 0 70px 0 40px;
+  margin: 0 70px 0 0;
 }

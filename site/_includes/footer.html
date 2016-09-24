@@ -7,9 +7,15 @@
 
 
     <ul class="contact_menu">
-      <li>Email</li>
-      <li>Gitter</li>
-      <li>Forum</li>
+      <li>
+        <a href="mailto:info@manageiq.org">Email</a>
+      </li>
+      <li>
+        <a href="https://gitter.im/ManageIQ/manageiq">Gitter</a>
+      </li>
+      <li>
+        <a href="http://talk.manageiq.org/">Forum</a>
+      </li>
     </ul>
   </div>
 
@@ -29,17 +35,33 @@
 
     <div class="footer-social">
       <ul class="social_menu">
-        {% if site.github_username %}
         <li>
-          {% include icon-github.html username=site.github_username %}
+          <a href="https://twitter.com/ManageIQ" class="social_link social_link-twitter">
+            <span class="social_link-icon">{% include icon-twitter.svg %}</span>
+          </a>
         </li>
-        {% endif %}
 
-        {% if site.twitter_username %}
         <li>
-          {% include icon-twitter.html username=site.twitter_username %}
+          <a href="https://github.com/ManageIQ/" class="social_link social_link-github">
+            <span class="social_link-icon">{% include icon-github.svg %}</span>
+          </a>
         </li>
-        {% endif %}
+
+        <li>
+          <a href="https://www.facebook.com/manageiq/" class="social_link social_link-facebook">
+            <span class="social_link-icon">
+              <i class="fa fa-facebook"></i>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.youtube.com/user/ManageIQVideo" class="social_link social_link-youtube">
+            <span class="social_link-icon">
+              <i class="fa fa-youtube"></i>
+            </span>
+          </a>
+        </li>
       </ul>
     </div>
   </div>
