@@ -2,6 +2,7 @@
 title: Sprint 45 review - August 24, 2016
 author: cybette
 date: 2016-09-09 13:14:06 UTC
+tags: sprints
 comments: true
 published: true
 ---

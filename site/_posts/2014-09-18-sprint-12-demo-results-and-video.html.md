@@ -2,10 +2,7 @@
 title: Sprint 12 Demo Results and Video
 date: 2014-09-18 14:27 UTC
 author: johnmark
-tags:
-- sprint demo
-- video
-- bug squashing
+tags: sprints
 ---
 
 We just finished up the Sprint 12 demo, ended September 9.

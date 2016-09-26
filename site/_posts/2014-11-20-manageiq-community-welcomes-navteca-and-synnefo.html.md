@@ -2,7 +2,7 @@
 title: 'ManageIQ Community Welcomes Navteca and Synnefo '
 author: johnmark
 date: 2014-11-20 22:30:49 UTC
-tags: community, members, navteca, synnefo
+tags: announcements, collaboration
 comments: true
 published: true
 ---

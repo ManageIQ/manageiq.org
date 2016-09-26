@@ -2,11 +2,7 @@
 title: Design Summit Podcast - Brad Ascar and John Hardy
 date: 2014-09-24 19:01 UTC
 author: johnmark
-tags:
-- design summit
-- open source
-- podcast
-- extending manageiq
+tags: events
 ---
 
 John Hardy and Brad Ascar stopped by the studio to discuss their talks at the upcoming [ManageIQ Design Summit on October 7 & 8 in Mahwah, NJ](http://miqdevsummit14.eventbrite.com/)

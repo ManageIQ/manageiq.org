@@ -2,6 +2,7 @@
 title: Presentation slides and demo videos from ManageIQ Design Summit
 author: cybette
 date: 2016-06-20 14:35:39 UTC
+tags: events
 comments: true
 published: true
 ---

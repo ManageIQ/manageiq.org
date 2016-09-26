@@ -2,7 +2,7 @@
 title: All About Botvinnik at 11am EDT Today - June 9
 author: johnmark
 date: 2015-06-09 12:16:07 UTC
-tags: webinar, botvinnik, new release
+tags: releases, events
 comments: true
 published: true
 ---

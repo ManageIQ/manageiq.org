@@ -2,11 +2,7 @@
 title: First Ever ManageIQ Design Summit - Oct 7-8
 date: 2014-08-19 04:50 UTC
 author: johnmark
-tags:
-  - design summit
-  - cloud conference
-  - booz allen
-  - call for participation
+tags: events, announcements
 ---
 
 As we wind down the [Anand release cycle](/blog/2014-08-15-planning-the-b-release.html.md), the next one is winding up: a vote to [determine the next release name](http://talk.manageiq.org/t/planning-the-b-release/115), a [call for feature blueprints](http://talk.manageiq.org/t/about-the-blueprints-category/122), and a call for participation for the [very first ManageIQ Design Summit](http://miqdevsummit14.eventbrite.com/).

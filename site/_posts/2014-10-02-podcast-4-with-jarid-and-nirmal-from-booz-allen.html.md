@@ -2,12 +2,7 @@
 title: Podcast 4 with Jarid and Nirmal from Booz Allen
 date: 2014-10-02 18:27 UTC
 author: johnmark
-tags:
-- booz allen
-- cloud broker
-- cloud management
-- open source
-- jellyfish
+tags: collaboration
 ---
 
 <a href="http://boozallen.com/"><img src="/images/partners/Booz_Allen_Hamilton.svg" width="300" border="1"></a>

@@ -1,7 +1,7 @@
 ---
 title: Welcome to the ManageIQ Community!
 date: 2014-05-12 09:05 UTC
-tags: [community, announcement]
+tags: announcements
 author: johnmark
 ---
 

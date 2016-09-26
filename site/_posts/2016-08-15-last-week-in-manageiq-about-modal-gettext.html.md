@@ -2,6 +2,7 @@
 title: "Last Week in ManageIQ: About modal, gettext improvements, refactoring and more!"
 date: 2016-08-15 06:20 UTC
 author: skateman
+tags: LWIMIQ
 comments: true
 published: true
 ---

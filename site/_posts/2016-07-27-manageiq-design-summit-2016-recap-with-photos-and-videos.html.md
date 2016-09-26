@@ -2,6 +2,7 @@
 title: ManageIQ Design Summit 2016 Recap (with photos and videos!)
 author: cybette
 date: 2016-07-27 13:00:00 UTC
+tags: events
 comments: true
 published: true
 ---

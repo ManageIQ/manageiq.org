@@ -2,7 +2,7 @@
 title: ManageIQ Sprint 16 Report
 author: johnmark
 date: 2014-12-03 13:57:46 UTC
-tags: sprint, demo, roadmap, community
+tags: sprints
 comments: true
 published: true
 ---

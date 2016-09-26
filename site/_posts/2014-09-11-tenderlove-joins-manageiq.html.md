@@ -2,10 +2,7 @@
 title: Aaron Patterson (aka tenderlove) joins ManageIQ Team
 date: 2014-09-11 10:31 UTC
 author: chessbyte
-tags:
-  - manageiq
-  - tenderlove
-  - patterson
+tags: announcements, collaboration
 ---
 
 We are thrilled to announce that Aaron Patterson ([@tenderlove](http://twitter.com/tenderlove)) has joined the ManageIQ team.

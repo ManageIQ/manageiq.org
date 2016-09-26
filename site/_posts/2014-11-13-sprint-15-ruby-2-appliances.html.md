@@ -2,7 +2,7 @@
 title: Sprint 15 ruby 2 appliances available
 author: jrafanie
 date: 2014-11-13 22:30:00 UTC
-tags: ruby, manageiq
+tags: sprints
 comments: true
 published: true
 ---

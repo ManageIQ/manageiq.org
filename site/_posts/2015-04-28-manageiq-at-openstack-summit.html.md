@@ -2,7 +2,7 @@
 title: ManageIQ at OpenStack Summit
 author: johnmark
 date: 2015-04-28 17:11:47 UTC
-tags: openstack, openstack summit, community day, birds of a feather, jhardy
+tags: events, announcements
 comments: true
 published: true
 ---

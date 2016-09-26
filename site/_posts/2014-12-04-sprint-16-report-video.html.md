@@ -2,7 +2,7 @@
 title: Sprint 16 Report Video Recording
 author: johnmark
 date: 2014-12-04 01:18:35 UTC
-tags: sprint, recording, roadmap, community
+tags: sprints
 comments: true
 published: true
 ---

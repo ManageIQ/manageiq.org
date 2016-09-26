@@ -2,6 +2,7 @@
 title: "Last Week in ManageIQ: The Azure, nice errors, and gems"
 date: 2016-08-22 07:30 UTC
 author: juliancheal
+tags: LWIMIQ
 comments: true
 published: true
 ---

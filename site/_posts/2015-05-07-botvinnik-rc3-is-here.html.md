@@ -2,7 +2,7 @@
 title: Botvinnik RC3 is here
 author: johnmark
 date: 2015-05-07 15:21:21 UTC
-tags: botvinnik, new release, testing, release candidate
+tags: releases, announcements
 comments: true
 published: true
 ---

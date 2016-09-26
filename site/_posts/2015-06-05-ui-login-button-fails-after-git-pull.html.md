@@ -2,7 +2,7 @@
 title: UI login button fails after git pull
 author: jrafanie
 date: 2015-06-05 14:10:00 UTC
-tags: developers, community, support
+tags: collaboration
 comments: true
 published: true
 ---

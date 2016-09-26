@@ -2,6 +2,7 @@
 title: Announcing Darga Release Candidate 1 (RC1)
 author: cybette
 date: 2016-05-19 12:49:24 UTC
+tags: releases, announcements
 comments: true
 published: true
 ---

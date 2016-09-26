@@ -2,7 +2,7 @@
 title: CLOUDFORMS 5.3.0 GEM List
 author: jhardy
 date: 2014-12-03 05:00:00 UTC
-tags: cloudforms, KVM, vcac, vmware, vsphere
+tags: collaboration
 comments: true
 published: true
 ---

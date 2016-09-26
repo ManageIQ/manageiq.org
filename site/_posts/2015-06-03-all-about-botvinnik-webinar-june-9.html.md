@@ -2,7 +2,7 @@
 title: All About Botvinnik Webinar - June 9
 author: johnmark
 date: 2015-06-03 13:20:53 UTC
-tags: botvinnik, release, webinar
+tags: releases, events
 comments: true
 published: true
 ---

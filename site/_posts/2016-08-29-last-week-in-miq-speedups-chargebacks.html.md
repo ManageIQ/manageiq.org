@@ -2,6 +2,7 @@
 title: "Last Week in ManageIQ: Speedups, Chargebacks, Toolbars, and more!"
 date: 2016-08-29
 author: jntullo
+tags: LWIMIQ
 comments: true
 published: true
 ---

@@ -2,7 +2,7 @@
 title: ManageIQ  BoF at Red Hat Summit TODAY 4pm
 author: johnmark
 date: 2015-06-25 13:54:41 UTC
-tags: bof, red hat summit
+tags: events
 comments: true
 published: true
 ---

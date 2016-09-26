@@ -2,7 +2,7 @@
 title: Preview of Planet ManageIQ
 author: johnmark
 date: 2015-04-15 19:03:42 UTC
-tags: planet, blog aggregator, blogging, rss, syndication
+tags: collaboration
 comments: true
 published: true
 ---

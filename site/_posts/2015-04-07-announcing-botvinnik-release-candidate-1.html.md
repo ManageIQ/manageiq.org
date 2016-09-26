@@ -2,7 +2,7 @@
 title: Announcing Botvinnik Release Candidate 1
 author: johnmark
 date: 2015-04-07 17:06:00 UTC
-tags: botvinnik, rc, release candidate, news
+tags: releases, announcements
 comments: true
 published: true
 ---

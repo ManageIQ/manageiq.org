@@ -2,7 +2,7 @@
 title: Update - Provider Architecture Hangout now Jan 29
 author: johnmark
 date: 2015-01-23 21:06:02 UTC
-tags: providers, roadmap, architecture, dev, fryguy
+tags: events
 comments: true
 published: true
 ---

@@ -2,7 +2,7 @@
 title: Sprint 24 Report - June 3
 author: johnmark
 date: 2015-06-03 12:57:25 UTC
-tags: sprint report, community
+tags: sprints
 comments: true
 published: true
 ---

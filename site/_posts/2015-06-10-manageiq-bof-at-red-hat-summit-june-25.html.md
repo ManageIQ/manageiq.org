@@ -2,7 +2,7 @@
 title: ManageIQ BoF at Red Hat Summit - June 25
 author: johnmark
 date: 2015-06-10 20:52:19 UTC
-tags: birds-of-a-feather, botvinnik, red hat summit, capablanca
+tags: events
 comments: true
 published: true
 ---

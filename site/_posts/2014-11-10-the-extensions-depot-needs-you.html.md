@@ -2,7 +2,7 @@
 title: The Extensions Depot Needs You - Call for Participation
 author: johnmark
 date: 2014-11-10 19:21:00.000000000 Z
-tags: extensions depot marketplace
+tags: collaboration
 comments: true
 published: true
 ---

@@ -2,7 +2,7 @@
 title: Agenda for ManageIQ User Day at OpenStack Summit
 author: johnmark
 date: 2015-04-30 19:51:53 UTC
-tags: openstack, openstack summit, ecosystem, open cloud
+tags: events
 comments: true
 published: true
 ---

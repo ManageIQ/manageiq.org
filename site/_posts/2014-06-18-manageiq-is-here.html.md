@@ -2,10 +2,7 @@
 title: ManageIQ is here!
 date: 2014-06-18 14:55 UTC
 author: johnmark
-tags:
-  - ManageIQ
-  - open source
-  - announcement
+tags: announcements
 ---
 
 The wait is over&mdash;ManageIQ is now open source!

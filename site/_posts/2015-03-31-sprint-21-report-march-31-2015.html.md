@@ -2,7 +2,7 @@
 title: Sprint 21 Report - April 1, 2015
 author: johnmark
 date: 2015-03-31 20:49:16 UTC
-tags: sprint report, cool new stuff
+tags: sprints
 comments: true
 published: true
 ---

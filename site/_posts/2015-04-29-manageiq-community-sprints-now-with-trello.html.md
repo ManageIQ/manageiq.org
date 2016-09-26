@@ -2,7 +2,7 @@
 title: 'ManageIQ Community Sprints - Now with Trello '
 author: johnmark
 date: 2015-04-29 20:06:49 UTC
-tags: trello, sprints, transparency
+tags: sprints, collaboration
 comments: true
 published: true
 ---

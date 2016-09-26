@@ -2,7 +2,7 @@
 title: Sprint 23 Report - May 13
 author: johnmark
 date: 2015-05-12 21:53:41 UTC
-tags: sprint reports, community process, new hotness
+tags: sprints
 comments: true
 published: true
 ---

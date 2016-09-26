@@ -2,7 +2,7 @@
 title: How to Contribute to the ManageIQ Depot
 author: johnmark
 date: 2014-11-21 22:48:17 UTC
-tags: depot, forge, github, ruby, middleman
+tags: collaboration
 comments: true
 published: true
 ---

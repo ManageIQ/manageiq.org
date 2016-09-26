@@ -2,7 +2,7 @@
 title: ManageIQ Botvinnik is Here - Control All the Things
 author: johnmark
 date: 2015-06-12 14:50:17 UTC
-tags: botvinnik, cloud management, foreman, systems management, kubernetes
+tags: releases, announcements
 comments: true
 published: true
 ---

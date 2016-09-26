@@ -2,7 +2,7 @@
 title: Service Item Selection
 author: jhardy
 date: 2014-10-11 04:00:00 UTC
-tags: depot
+tags: collaboration
 comments: true
 published: true
 ---

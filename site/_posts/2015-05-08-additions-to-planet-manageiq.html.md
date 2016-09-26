@@ -2,7 +2,7 @@
 title: Additions to Planet ManageIQ
 author: johnmark
 date: 2015-05-08 13:30:54 UTC
-tags: planet, blogs, aggregator
+tags: collaboration
 comments: true
 published: true
 ---

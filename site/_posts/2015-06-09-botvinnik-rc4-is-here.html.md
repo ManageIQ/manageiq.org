@@ -2,7 +2,7 @@
 title: Botvinnik RC4 is Here
 author: johnmark
 date: 2015-06-09 17:13:26 UTC
-tags: botvinnik, release candidate, rc4, download
+tags: releases, announcements
 comments: true
 published: true
 ---

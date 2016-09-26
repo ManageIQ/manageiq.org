@@ -2,7 +2,7 @@
 title: ManageIQ with vSphere - Deploy and Configure
 author: johnmark
 date: 2015-07-01 14:19:59 UTC
-tags: vsphere, community, syndicated
+tags: collaboration
 comments: true
 published: true
 ---

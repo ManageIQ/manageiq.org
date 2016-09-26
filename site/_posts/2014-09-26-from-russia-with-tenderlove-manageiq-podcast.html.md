@@ -2,10 +2,7 @@
 title: From Russia with Tenderlove - ManageIQ Podcast
 date: 2014-09-26 18:41 UTC
 author: johnmark
-tags:
-- tenderlove
-- aaron patterson
-- ruby on rails
+tags: collaboration
 ---
 
 Aaron Patterson joined us from Russia on this fun podcast, covering many topics, from the Rails 4 migration and the [ManageIQ Design Summit](http://miqdevsummit14.eventbrite.com/) to why you should "just use Ruby".

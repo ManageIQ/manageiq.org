@@ -2,6 +2,7 @@
 title: "Last Week in ManageIQ: An Afresh Absence of Atomic Providers"
 date: 2016-09-19
 author: drew
+tags: LWIMIQ
 comments: true
 published: true
 ---

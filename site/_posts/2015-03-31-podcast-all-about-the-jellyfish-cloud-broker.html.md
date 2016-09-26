@@ -2,7 +2,7 @@
 title: Podcast - All About the Jellyfish Cloud Broker
 author: johnmark
 date: 2015-03-31 20:41:23 UTC
-tags: jellyfish, booz allen, bah, cloud broker
+tags: collaboration
 comments: true
 published: true
 ---

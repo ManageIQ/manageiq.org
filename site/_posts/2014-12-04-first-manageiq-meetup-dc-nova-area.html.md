@@ -2,7 +2,7 @@
 title: First ManageIQ Meetup in DC/NOVA Area
 author: johnmark
 date: 2014-12-04 13:46:53 UTC
-tags: meetup, community, dc, nova
+tags: events
 comments: true
 published: true
 ---

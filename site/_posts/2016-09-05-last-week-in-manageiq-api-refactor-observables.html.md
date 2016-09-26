@@ -2,10 +2,9 @@
 title: "Last Week in ManageIQ: API refactor, Observables and more!"
 date: 2016-09-05
 author: himdel
+tags: LWIMIQ
 comments: true
 published: true
-tags:
- - LWIMIQ
 ---
 
 Greetings from sunny Brno, [Happy Martin](https://github.com/himdel) here, from the UI team :).

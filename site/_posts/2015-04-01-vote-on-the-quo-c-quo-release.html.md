@@ -2,7 +2,7 @@
 title: Vote on the &quot;C&quot; Release
 author: johnmark
 date: 2015-04-01 13:22:15 UTC
-tags: releases, botvinnik, voting
+tags: releases, collaboration
 comments: true
 published: true
 ---

@@ -1,8 +1,8 @@
 ---
 title: 'Last Week in ManageIQ: Saying Goodbye to rubyrep'
 author: syncrou
-tags: 
 date: '2016-08-01 16:19:55 UTC'
+tags: LWIMIQ
 comments: true
 published: true
 ---

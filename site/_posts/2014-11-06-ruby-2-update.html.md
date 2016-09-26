@@ -2,9 +2,7 @@
 title: Ruby 2 Update
 author: jrafanie
 date: 2014-11-06 19:20 UTC
-tags:
-- ruby
-- manageiq
+tags: announcements
 ---
 
 ### Travis CI

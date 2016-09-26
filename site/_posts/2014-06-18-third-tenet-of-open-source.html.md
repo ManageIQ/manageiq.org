@@ -2,10 +2,7 @@
 title: The Third Tenet of Open Source
 date: 2014-06-18 16:30 UTC
 author: johnmark
-tags:
-  - news 
-  - open source
-  - announcement
+tags: announcements, collaboration
 ---
 
 Here's a great [introduction written by Bryan Che](http://tentenet.net/2014/06/19/the-third-tenet-of-open-source-open-source-requires-commitment-welcome-manageiq/), a Red Hat cloud strategy guy, on why we released ManageIQ as an open source project, as well as a look at the cloud management landscape. Cloud management is currently a nice car with four flat tires, and all four of them with different sizes, colors, and recommended pressure. 

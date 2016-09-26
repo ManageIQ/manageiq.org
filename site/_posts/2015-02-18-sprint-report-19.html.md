@@ -2,7 +2,7 @@
 title: Sprint Report 19 - Wed Feb 18
 author: johnmark
 date: 2015-02-18 14:02:41 UTC
-tags: sprint, report, community, development
+tags: sprints
 comments: true
 published: true
 ---

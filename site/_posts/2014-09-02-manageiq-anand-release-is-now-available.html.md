@@ -2,10 +2,7 @@
 title: ManageIQ Anand Release Now Available
 date: 2014-09-02 18:31 UTC
 author: johnmark
-tags:
-  - anand
-  - release
-  - GA
+tags: releases, announcements
 ---
 
 [Download ManageIQ Anand](http://manageiq.org/download)

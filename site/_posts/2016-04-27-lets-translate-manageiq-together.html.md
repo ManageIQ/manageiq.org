@@ -2,6 +2,7 @@
 title: Let's translate ManageIQ together!
 author: cybette
 date: 2016-04-27 14:42:02 UTC
+tags: collaboration
 comments: true
 published: true
 ---

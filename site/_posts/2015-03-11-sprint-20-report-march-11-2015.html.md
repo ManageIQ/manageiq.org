@@ -2,7 +2,7 @@
 title: Sprint 20 Report - March 11, 2015
 author: johnmark
 date: 2015-03-11 13:05:20 UTC
-tags: sprint
+tags: sprints
 comments: true
 published: true
 ---

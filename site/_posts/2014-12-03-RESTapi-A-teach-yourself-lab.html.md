@@ -2,7 +2,7 @@
 title: RESTapi - A teach yourself lab
 author: jhardy
 date: 2014-12-03 05:00:00 UTC
-tags: cloudforms, get, post, rest, restapi, vcac, vmware, vrealize, WebServices
+tags: collaboration
 comments: true
 published: true
 ---

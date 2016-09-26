@@ -1,8 +1,8 @@
 ---
 title: Announcing Capablanca RC2
 author: matthewd
-tags: release Capablanca
 date: 2015-11-19 23:45 UTC
+tags: releases, announcements
 comments: true
 published: true
 ---

@@ -2,6 +2,7 @@
 title: Open Source License Change - April 2
 author: chessbyte
 date: 2016-04-01 15:42:00 UTC
+tags: announcements
 comments: true
 published: true
 ---

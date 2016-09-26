@@ -2,6 +2,7 @@
 title: "Last Week in ManageIQ: Bootstrap Tree is Here"
 date: 2016-09-12
 author: zita
+tags: LWIMIQ
 comments: true
 published: true
 ---

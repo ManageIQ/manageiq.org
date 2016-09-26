@@ -2,7 +2,7 @@
 title: ManageIQ at Red Hat Summit - June 23 - 26
 author: johnmark
 date: 2015-06-18 13:05:46 UTC
-tags: red hat summit, bof, booth
+tags: events, announcements
 comments: true
 published: true
 ---

@@ -2,13 +2,7 @@
 title: 'Jason Frey Podcast - Design Summit, Fleecing, Security, and Plugability'
 author: johnmark
 date: 2014-10-02 15:44 UTC 
-tags: 
-- design summit
-- fleecing
-- shellshock
-- heartbleed
-- fryguy
-- cloud security
+tags: collaboration, events
 ---
 
 [Jason Frey](http://twitter.com/fryguy9) is a long-time contributor and architect for the ManageIQ and CloudForms world. If you want to know anything about ManageIQ, he's your guy. Watch and learn from the following video. 

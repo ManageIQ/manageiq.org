@@ -2,7 +2,7 @@
 title: YouTube CLOUDFORMSNOW channel
 author: jhardy
 date: 2014-09-22 04:00:00 UTC
-tags: youtube
+tags: collaboration
 comments: true
 published: true
 ---

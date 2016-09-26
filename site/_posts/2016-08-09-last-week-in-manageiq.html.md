@@ -2,6 +2,7 @@
 title: "Last Week in ManageIQ: VMware catalog parsing, MiqExpression refinement, and more!"
 author: chrisarcand
 date: 2016-08-09 15:00:00 UTC
+tags: LWIMIQ
 comments: true
 published: true
 ---

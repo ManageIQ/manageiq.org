@@ -2,7 +2,7 @@
 title: 'Sprint 18 Report - Wed Jan 28 '
 author: mfeifer
 date: 2015-01-27 19:52:21 UTC
-tags: sprint, report
+tags: sprints
 comments: true
 published: true
 ---

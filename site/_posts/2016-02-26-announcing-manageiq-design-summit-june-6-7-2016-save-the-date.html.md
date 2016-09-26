@@ -2,6 +2,7 @@
 title: Announcing ManageIQ Design Summit - June 6 & 7, 2016 - save the date!
 author: cybette
 date: 2016-02-26 18:20:08 UTC
+tags: events, announcements
 comments: true
 published: true
 ---

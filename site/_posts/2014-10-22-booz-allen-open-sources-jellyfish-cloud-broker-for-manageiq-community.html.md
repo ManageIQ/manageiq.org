@@ -2,7 +2,7 @@
 title: Booz Allen Open Sources Jellyfish Cloud Broker for ManageIQ Community
 author: johnmark
 date: 2014-10-22 19:05:00.000000000 Z
-tags: booz allen, jellyfish, cloud broker, open source, open cloud, winning
+tags: announcements, collaboration
 comments: true
 published: true
 ---

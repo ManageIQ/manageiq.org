@@ -2,7 +2,7 @@
 title: Community Depot is Live - and in BETA
 author: johnmark
 date: 2014-12-05 22:13:54 UTC
-tags: depot, extensions, collaboration, github
+tags: collaboration, announcements
 comments: true
 published: true
 ---

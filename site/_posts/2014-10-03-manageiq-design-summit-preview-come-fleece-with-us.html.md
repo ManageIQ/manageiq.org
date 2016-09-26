@@ -2,7 +2,7 @@
 title: 'ManageIQ Design Summit Preview - Come Fleece with Us'
 author: johnmark
 date: 2014-10-03 17:45:08.000000000 Z
-tags: manageiq, design summit, agenda, cloud management
+tags: events
 comments: true
 published: true
 ---
