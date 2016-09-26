@@ -2,9 +2,6 @@
 layout: page
 title: Documentation
 permalink: /docs/
-redirect_from:
-  - /documentation/
-  - /documentation
 ---
 
 ## Quick Start
