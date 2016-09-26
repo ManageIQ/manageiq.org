@@ -2,7 +2,7 @@
 title: Announcing the Alpha Release of Capablanca
 date: 2015-09-24 14:11 UTC
 author: chessbyte
-tags: releases, announcements
+tags: releases announcements
 comments: true
 published: true
 ---

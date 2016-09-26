@@ -2,7 +2,7 @@
 title: Planning the "B" Release
 date: 2014-08-15 16:50 UTC
 author: johnmark
-tags: releases, collaboration
+tags: releases collaboration
 ---
 
 Now that the [Anand release](http://manageiq.org/download/) is almost out the door, it's the right time to turn our attention to the next release. Since we're going alphabetically by chess world champions, we have a few [choices](http://simple.wikipedia.org/wiki/List_of_World_Chess_Champions):

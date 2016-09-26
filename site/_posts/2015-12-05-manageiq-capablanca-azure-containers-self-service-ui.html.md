@@ -1,7 +1,7 @@
 ---
 title: 'ManageIQ Capablanca: Azure, Containers, Self-Service UI'
 author: matthewd
-tags: releases, announcements
+tags: releases announcements
 date: 2015-12-05 11:53:50 UTC
 ---
 

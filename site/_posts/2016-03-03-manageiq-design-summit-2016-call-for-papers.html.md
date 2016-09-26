@@ -2,7 +2,7 @@
 title: ManageIQ Design Summit 2016 - Call for Papers
 author: cybette
 date: 2016-03-03 16:20:00 UTC
-tags: events, announcements
+tags: events announcements
 comments: true
 published: true
 ---

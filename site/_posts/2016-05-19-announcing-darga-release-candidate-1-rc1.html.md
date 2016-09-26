@@ -2,12 +2,12 @@
 title: Announcing Darga Release Candidate 1 (RC1)
 author: cybette
 date: 2016-05-19 12:49:24 UTC
-tags: releases, announcements
+tags: releases announcements
 comments: true
 published: true
 ---
 
-On behalf of the ManageIQ team, I'm pleased to announce the first release candidate (RC1) for ManageIQ Darga! 
+On behalf of the ManageIQ team, I'm pleased to announce the first release candidate (RC1) for ManageIQ Darga!
 
 Darga is the next milestone release for ManageIQ cloud and virtualization management platform. The update is packed with new features and improvements. Highlights include:
 

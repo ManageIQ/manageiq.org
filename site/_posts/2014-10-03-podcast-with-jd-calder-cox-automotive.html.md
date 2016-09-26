@@ -2,7 +2,7 @@
 title: Podcast with JD Calder, Cox Automotive
 date: 2014-10-03 17:00 UTC
 author: johnmark
-tags: events, collaboration
+tags: events collaboration
 ---
 
 <a href="http://coxautoinc.com/" target="_blank"><img src="/images/partners/Cox_Automotive.svg" width="300" border="1"></a>

@@ -2,7 +2,7 @@
 title: ManageIQ Botvinnik is Here - Control All the Things
 author: johnmark
 date: 2015-06-12 14:50:17 UTC
-tags: releases, announcements
+tags: releases announcements
 comments: true
 published: true
 ---
@@ -17,9 +17,9 @@ For the impatient, here's what you need to know:
 * Read some docs about [using it for the first time](http://manageiq.org/documentation/top-tasks/)
 * Talk about it on [talk.manageiq.org](http://talk.manageiq.org/)
 
-[Cloud management](http://en.wikipedia.org/wiki/Cloud_management) is very quickly morphing into systems management, to the point where the difference between the two is increasingly indistinguishable. Everyone has a cloud, somewhere. Everyone has a virtualization platform. ManageIQ has had management capabilities for popular platforms of both for some time. 
+[Cloud management](http://en.wikipedia.org/wiki/Cloud_management) is very quickly morphing into systems management, to the point where the difference between the two is increasingly indistinguishable. Everyone has a cloud, somewhere. Everyone has a virtualization platform. ManageIQ has had management capabilities for popular platforms of both for some time.
 
-[What's new in the Botvinnik release](https://github.com/ManageIQ/manageiq/blob/botvinnik/CHANGELOG.md), which marks the beginning of ManageIQ's evolution from "Your gateway to the open cloud" to "Control all the things," brings several important new features, including: 
+[What's new in the Botvinnik release](https://github.com/ManageIQ/manageiq/blob/botvinnik/CHANGELOG.md), which marks the beginning of ManageIQ's evolution from "Your gateway to the open cloud" to "Control all the things," brings several important new features, including:
 
 * More and better integration with cloud orchestration frameworks, including CloudFormations and OpenStack Heat.
 * Comprehensive support for OpenStack infrastructure management.
@@ -33,11 +33,11 @@ Botvinnik has a host of new features, and these are just a sample:
 **OpenStack Infrastructure Management (Undercloud)**
 
 * Infrastructure Provider (undercloud) in 2015
-* Inventory for Heat Stacks 
+* Inventory for Heat Stacks
 * Connect Cloud provider to Infra provider
 * Autoscale compute nodes via Automate
 * Infrastructure Host Events & Event processing
-* Handling of power states (paused, rebooting, waiting, etc.) 
+* Handling of power states (paused, rebooting, waiting, etc.)
 * Tenant filtering based on security groups, floating IPs, and networks.
 
 **Foreman Provider Integration**

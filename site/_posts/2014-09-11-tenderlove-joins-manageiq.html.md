@@ -2,7 +2,7 @@
 title: Aaron Patterson (aka tenderlove) joins ManageIQ Team
 date: 2014-09-11 10:31 UTC
 author: chessbyte
-tags: announcements, collaboration
+tags: announcements collaboration
 ---
 
 We are thrilled to announce that Aaron Patterson ([@tenderlove](http://twitter.com/tenderlove)) has joined the ManageIQ team.
@@ -12,4 +12,3 @@ Aaron is the only engineer in the world who is on both the core Ruby and core Ra
 Aaron will be splitting his time in continuing to move the Ruby and Rails communities forward as well as helping us with the ManageIQ project.  Some of the things Aaron will focus on for ManageIQ are getting our software to Ruby 2.x and Rails 4.x, removing the need for our own Rails extensions and forks, and helping to tackle our technical debt.
 
 We look forward to great contributions from Aaron to the Ruby, Rails and ManageIQ communities!
-

@@ -2,7 +2,7 @@
 title: Breaking&#58; Tenderlove to Discuss Rails 4 Migration Plans at Design Summit
 date: 2014-09-19 16:01 UTC
 author: johnmark
-tags: events, collaboration
+tags: events collaboration
 ---
 <a href="http://twitter.com/tenderlove"><img src="/images/tenderlove.jpeg" width="250"></a>
 If you're headed to the [ManageIQ Design Summit on October 7 & 8](http://miqdevsummit14.eventbrite.com/), you're in for a treat. Aaron Patterson ([@tenderlove](http://twitter.com/tenderlove)) will be leading a session in the design track on the topic of migrating ManageIQ to Ruby on Rails 4.

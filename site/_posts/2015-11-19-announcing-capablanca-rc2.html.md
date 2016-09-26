@@ -2,7 +2,7 @@
 title: Announcing Capablanca RC2
 author: matthewd
 date: 2015-11-19 23:45 UTC
-tags: releases, announcements
+tags: releases announcements
 comments: true
 published: true
 ---
@@ -18,4 +18,3 @@ Please do [download Capablanca RC2](http://manageiq.org/download/prerelease/)
 and report any issues. For questions or support,
 [join in on the talk page](http://talk.manageiq.org/) using the
 "Release Candidate" category.
-

@@ -2,7 +2,7 @@
 title: Name of E Release
 author: chessbyte
 date: 2016-06-07 20:05:24 UTC
-tags: releases, announcements
+tags: releases announcements
 comments: true
 published: true
 ---

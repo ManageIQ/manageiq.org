@@ -2,7 +2,7 @@
 title: Announcing Darga-2
 author: mfeifer
 date: 2016-06-30 14:35:39 UTC
-tags: releases, announcements
+tags: releases announcements
 comments: true
 published: true
 ---

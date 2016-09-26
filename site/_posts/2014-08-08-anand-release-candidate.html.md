@@ -2,7 +2,7 @@
 title: Anand Release Candidate
 date: 2014-08-08 13:00 UTC
 author: johnmark
-tags: releases, announcements
+tags: releases announcements
 ---
 
 Things have been rolling along here at the ManageIQ community, and we're proud

@@ -2,7 +2,7 @@
 title: Vote on the &quot;C&quot; Release
 author: johnmark
 date: 2015-04-01 13:22:15 UTC
-tags: releases, collaboration
+tags: releases collaboration
 comments: true
 published: true
 ---
@@ -12,7 +12,6 @@ As we get ever closer to the Botvinnik release, we turn our eyes to the next rel
 Here are the possible names for this release cycle:
 
 * Capablanca - [José Raúl Capablanca](http://en.wikipedia.org/wiki/Jos%C3%A9_Ra%C3%BAl_Capablanca)
-* Carlsen - [Magnus Carlsen](http://en.wikipedia.org/wiki/Magnus_Carlsen) 
+* Carlsen - [Magnus Carlsen](http://en.wikipedia.org/wiki/Magnus_Carlsen)
 
 Vote for your favorite below! Or if you want to nominate a "write-in" candidate, you're welcome to do that as well.
-

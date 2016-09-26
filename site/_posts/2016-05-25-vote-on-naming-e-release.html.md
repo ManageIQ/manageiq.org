@@ -2,7 +2,7 @@
 title: Voting on Name of E Release
 author: chessbyte
 date: 2016-06-01 20:02:24 UTC
-tags: releases, collaboration
+tags: releases collaboration
 comments: true
 published: true
 ---

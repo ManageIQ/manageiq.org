@@ -2,7 +2,7 @@
 title: Announcing the Beta Release of Capablanca
 date: 2015-10-13 14:03 UTC
 author: chessbyte
-tags: releases, announcements
+tags: releases announcements
 comments: true
 published: true
 ---

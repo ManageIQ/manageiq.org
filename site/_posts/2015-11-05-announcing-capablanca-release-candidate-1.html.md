@@ -2,7 +2,7 @@
 title: Announcing Capablanca RC-1
 date: 2015-11-05 07:20 UTC
 author: chessbyte
-tags: releases, announcements
+tags: releases announcements
 comments: true
 published: true
 ---

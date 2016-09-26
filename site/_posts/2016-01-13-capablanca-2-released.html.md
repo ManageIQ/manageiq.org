@@ -2,7 +2,7 @@
 title: Capablanca-2 released
 author: matthewd
 date: 2016-01-13 01:40:25 UTC
-tags: releases, announcements
+tags: releases announcements
 comments: true
 published: true
 ---
