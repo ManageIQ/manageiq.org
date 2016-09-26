@@ -6,7 +6,7 @@ miq.setup_header_ani = ->
   miq.title  = miq.select(".banner h1")
 
   miq.offset_pos  = miq.header.offsetHeight
-  miq.start_pos   = miq.title.offsetTop - miq.offset_pos
+  miq.start_pos   = miq.offset_pos / 2 # Start fading a little lower than top
   miq.stop_pos    = (miq.triad.offsetTop + miq.triad.offsetHeight)
   miq.pos_diff    = (miq.stop_pos - miq.start_pos) / 1.8
 

@@ -1,9 +1,14 @@
+$banner_height: 440px;
+
 .banner {
   display: flex;
   justify-content: center;
   align-items: center;
 
   @include banner_grad;
+
+  overflow: hidden;
+  position: relative; // necessary to hide absolutely positioned elements
 
   h1, h2 {
     margin: 0;
@@ -25,8 +30,18 @@
   width: 60em;
   max-width: 100%;
   @include container-fixed(0);
+
+  z-index: 5;
+}
+
+.banner-logo {
+  background: #{$glphy_img};
+  position: absolute;
+  width: 100%;
+  height: $banner_height * 2;
+  z-index: 0;
 }
 
 #home_banner {
-  height: 440px;
+  height: $banner_height;
 }

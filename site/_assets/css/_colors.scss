@@ -22,5 +22,24 @@ $doc-line-lite: lighten($grey-dark, 70%);
 $menu-link-color: lighten($grey-dark, 55%);
 
 @mixin banner_grad {
+  // from Bootstrap
   @include gradient-horizontal($banner-grad-dark, $banner-grad-lite, 0, 100%);
+}
+
+// FIXME: Can ditch bootstrap mixin and simplify,
+// linear-gradient is supported IE 10+
+
+$grad_start_color: $banner-grad-dark;
+$grad_end_color: $banner-grad-lite;
+
+$webkit_linear_grad: -webkit-linear-gradient(left,  $grad_start_color 0, $grad_end_color 100%);
+$opera_linear_grad:  -o-linear-gradient(     left,  $grad_start_color 0, $grad_end_color 100%);
+$linear_grad:        linear-gradient(    to right,  $grad_start_color 0, $grad_end_color 100%);
+
+$glphy_img: url("/assets/images/logo/banner-glyph.svg") 173% 50% no-repeat;
+
+@mixin banner_grad_with_glyph {
+  background: #{$glphy_img}, #{$webkit_linear_grad};
+  background: #{$glphy_img}, #{$opera_linear_grad};
+  background: #{$glphy_img}, #{$linear_grad};
 }
