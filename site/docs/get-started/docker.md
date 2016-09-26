@@ -1,10 +1,9 @@
 ---
-layout: ref_doc
+layout: start_doc
 title: Get Started With Docker
 permalink: /docs/get-started/docker
 ---
 
-#Quick guide to ManageIQ installation with Docker#
 You can test ManageIQ running in a Docker container using images from the [Docker hub](https://hub.docker.com/).
 
 The installation consists on two phases:

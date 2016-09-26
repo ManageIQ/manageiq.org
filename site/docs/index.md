@@ -10,4 +10,4 @@ permalink: /docs/
 
 ## [Developer Guides](guides/architecture)
 
-## ManageIQ Automation Book
+## [ManageIQ Automation Book]({{ site.book_path }})

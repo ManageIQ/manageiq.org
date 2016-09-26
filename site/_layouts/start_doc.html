@@ -1,0 +1,22 @@
+---
+layout: default
+---
+<div class="doc_container">
+  <div class="doc_menu">
+    {% include doc_menu_header.html doc_group="start" %}
+    {% include start_menu.html %}
+  </div>
+  <div class="doc_main">
+    <article class="doc ref_doc">
+      {% if page.title %}
+      <header class="doc-header">
+        <h1 class="doc-title">{{ page.title }}</h1>
+      </header>
+      {% endif %}
+
+      <div class="doc-content">
+        {{ content }}
+      </div>
+    </article>
+  </div>
+</div>

@@ -24,11 +24,14 @@ url: "http://manageiq.org" # the base hostname & protocol for your site
 twitter_username: manageiq
 github_username:  manageiq
 
+# Paths and such
+
 permalink: /blog/:year/:month/:title/
 paginate: 10
 paginate_path: "/blog/page:num/"
 
 image_path: "/assets/images/"
+book_path: https://pemcg.gitbooks.io/mastering-automation-in-cloudforms-and-manageiq/content/
 
 markdown: kramdown
 
