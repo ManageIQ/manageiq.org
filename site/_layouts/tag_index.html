@@ -1,17 +1,27 @@
 ---
 layout: default
-permalink: /:path/:basename:output_ext
 ---
-<div class="tag_index posts">
-  {% for post in page.pages %}
-  <article class="post_excerpt">
-    <header class="post-header">
-      <h1><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
-    </header>
 
-    <div class="post-content">
-      {{ post.excerpt }}
-    </div>
-  </article>
-  {% endfor %}
+<div class="blog_container">
+  <div class="blog-link">
+    <a href="/blog">&larr; Blog</a>
+  </div>
+
+  <header class="blog_header">
+    <h1>{{ page.title }}</h1>
+  </header>
+
+  <div class="tag_index posts">
+    {% for post in page.pages %}
+    <article class="post_excerpt">
+      <header class="post-header">
+        <h1><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
+      </header>
+
+      <div class="post-content">
+        {{ post.excerpt }}
+      </div>
+    </article>
+    {% endfor %}
+  </div>
 </div>

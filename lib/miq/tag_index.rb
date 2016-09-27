@@ -23,6 +23,7 @@ module Miq
         site.frontmatter_defaults.find(File.join(@dir, @name), type, key)
       end
 
+      data['title'] = tag.titlecase
       data['pages'] = pages
 
       Jekyll::Hooks.trigger :pages, :post_init, self

@@ -1,40 +1,41 @@
 ---
 layout: default
 ---
-<div class="post_container">
-  <div class="post_main">
-    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
-        <div class="post-meta">
-          <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-            {{ page.date | date: "%b %-d, %Y" }}
-          </time>
-
-          {% if page.author %}
-          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-            by
-            <i itemprop="name">
-              {{ page.author }}
-            </i>
-          </span>
-          {% endif %}
-        </div>
-      </header>
-
-      <div class="post-content" itemprop="articleBody">
-        {{ content }}
-      </div>
-    </article>
+<div class="blog_container">
+  <div class="blog-link">
+    <a href="/blog">&larr; Blog</a>
   </div>
 
-  <aside class="post_links">
-    <ul>
-      {% for tag in page.tags %}
-      <li>
-        <a href="/blog/tags/{{ tag }}">{{ tag }}</a>
-      </li>
-      {% endfor %}
-    </ul>
-  </aside>
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
+
+      <div class="post-meta">
+        <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+          {{ page.date | date: "%b %-d, %Y" }}
+        </time>
+
+        {% if page.author %}
+        <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+          by
+          <i itemprop="name">
+            {{ page.author }}
+          </i>
+        </span>
+        {% endif %}
+
+        <ul class="post-tags">
+          {% for tag in page.tags %}
+          <li>
+            <a href="/blog/tags/{{ tag }}">{{ tag }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </header>
+
+    <div class="post-content" itemprop="articleBody">
+      {{ content }}
+    </div>
+  </article>
 </div>

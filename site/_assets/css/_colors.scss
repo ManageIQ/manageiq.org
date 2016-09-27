@@ -1,7 +1,7 @@
 $site-bg: #f9f9f9;
 
 $text-black: #444;
-$text-subdued: mix($site-bg, $text-black, 40%);
+$text-subdued: mix($site-bg, $text-black, 30%);
 
 $grey-dark: #292e33;
 $grey-md: #a6aeb7;
@@ -16,6 +16,8 @@ $blue-white: #abdaf9;
 
 $banner-grad-dark: rgba(6, 52, 81, 1);
 $banner-grad-lite: rgba(12, 105, 165, 1);
+
+$heading-line: lighten($grey-dark, 60%);
 
 $doc-line-lite: lighten($grey-dark, 70%);
 

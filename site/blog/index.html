@@ -1,30 +1,24 @@
 ---
-layout: page
-title: Blog
+layout: default
+title: ManageIQ Blog
 ---
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-8">
-      <div class="posts">
-        {% for post in paginator.posts %}
-        <article class="post_excerpt">
-          <header class="post-header">
-            <h1><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
-          </header>
+<div class="blog_container">
+  <header class="blog_header">
+    <h1>{{ page.title }}</h1>
+  </header>
 
-          <div class="post-content">
-            {{ post.excerpt }}
-          </div>
-        </article>
-        {% endfor %}
-      </div>
+  {% for post in paginator.posts %}
+  <article class="post_excerpt">
+    <header class="post-header">
+      <h1><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
+    </header>
+
+    <div class="post-content">
+      {{ post.excerpt }}
     </div>
-
-    <div class="col-md-4">
-
-    </div>
-  </div>
+  </article>
+  {% endfor %}
 
   <ul class="pagination">
     <li>
