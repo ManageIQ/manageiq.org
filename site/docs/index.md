@@ -1,10 +1,10 @@
 ---
-layout: page
+layout: doc_page
 title: Documentation
 permalink: /docs/
 ---
 
-## Quick Start
+## [Quick Start](get-started)
 
 ## [User Reference](reference)
 
