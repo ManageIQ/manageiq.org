@@ -5,7 +5,8 @@ author: johnmark
 tags: events collaboration
 ---
 
-<a href="http://coxautoinc.com/" target="_blank"><img src="/images/partners/Cox_Automotive.svg" width="300" border="1"></a>
+<a href="http://coxautoinc.com/" target="_blank"><img src="/assets/images/partners/Cox_Automotive.svg" width="300" border="1"></a>
+
 
 Cox Automotive (nee Autotrader Group) is a founding member of the ManageIQ Community. JD Calder talked about their contributions and what you can look forward to at the [Design Summit](http://miqdevsummit14.eventbrite.com/).
 

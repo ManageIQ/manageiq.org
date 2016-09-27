@@ -7,9 +7,9 @@ comments: true
 published: true
 ---
 
-<a href="http://navteca.com/" target="_blank"><img src="/images/partners/Navteca.svg" width="250"></a>
+<a href="http://navteca.com/" target="_blank"><img src="/assets/images/partners/Navteca.svg" width="250"></a>
 
-<a href="http://synnefo.forsythe.com/" target="_blank"><img src="/images/partners/Synnefo.svg" width="250"></a>
+<a href="http://synnefo.forsythe.com/" target="_blank"><img src="/assets/images/partners/Synnefo.svg" width="250"></a>
 
 <br />
 
