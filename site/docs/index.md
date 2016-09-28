@@ -4,7 +4,7 @@ title: Documentation
 permalink: /docs/
 ---
 
-## [Quick Start](get-started)
+## [Get Started with ManageIQ](get-started)
 
 ## [User Reference](reference)
 
