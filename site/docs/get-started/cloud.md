@@ -5,3 +5,6 @@ title: Get Started Using A Public Cloud Provider
 ---
 
 Public cloud quick start
+
+
+## Next: [Basic Configuration](/docs/get-started/basic-configuration)

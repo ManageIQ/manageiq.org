@@ -1,0 +1,43 @@
+---
+- title: Concepts
+  path: /docs/get-started
+
+- title: Get ManageIQ
+  children:
+    - title: Docker
+      path: /docs/get-started/docker
+    - title: Vagrant
+      path: /docs/get-started/vagrant
+    - title: Public Cloud
+      path: /docs/get-started/cloud
+
+- title: Configuration
+  path: /docs/get-started/basic-configuration
+
+- title: Add A Provider
+  path: /docs/get-started/add-a-provider
+
+- title: Review Provider Details
+  path: /docs/get-started/review-provider
+
+- title: Provision Your First Machine
+  path: /docs/get-started/provision-machine
+
+- title: Create Your First Service Item
+  path: /docs/get-started/create-service-item
+
+- title: Where to go from here
+  children:
+    - title: Services
+      path: "#"
+    - title: Automation
+      path: "#"
+    - title: Policies
+      path: "#"
+
+- title: Where to Ask for Help
+  children:
+    - title: Documenation
+      path: "#"
+    - title: Talk
+      path: "#"

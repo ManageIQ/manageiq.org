@@ -75,3 +75,5 @@ For OpenStack, Amazon EC2, Azure, Google Cloud Engine:
  * Select the type.
  * Enter required credentials.
  * Click ***Add***.
+
+## Next: [Basic Configuration](/docs/get-started/basic-configuration)
