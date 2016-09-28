@@ -1,0 +1,31 @@
+// Site nav
+// See _header and _footer for scoped styles
+
+.site_nav {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  li {
+    float: left;
+
+    &:last-child {
+      margin-right: none;
+    }
+  }
+
+  a {
+    display: block;
+    padding: 0.5em 1em;
+    background-color: transparent;
+    border-radius: 10px;
+    color: #fff;
+
+    transition: background-color 0.5s;
+  }
+
+  a:hover {
+    text-decoration: none;
+    background-color: lighten($grad_end_color, 7%);
+  }
+}

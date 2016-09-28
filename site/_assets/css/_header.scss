@@ -22,24 +22,8 @@
     height: auto;
   }
 
-  .main_nav {
-    padding: 0;
-    margin: 0;
-    list-style: none;
+  .site_nav {
     float: right;
-
-    li {
-      float: left;
-      margin-right: 30px;
-
-      &:last-child {
-        margin-right: none;
-      }
-    }
-
-    a {
-      color: #fff;
-    }
   }
 }
 

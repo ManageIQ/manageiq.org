@@ -2,23 +2,9 @@
   @include banner_grad;
   color: #fff;
 
-  .main_nav {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-
-    li {
-      float: left;
-      margin-right: 30px;
-
-      &:last-child {
-        margin-right: none;
-      }
-    }
-
+  .site_nav {
     a {
       font-size: 14px;
-      color: #fff;
     }
   }
 
