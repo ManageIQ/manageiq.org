@@ -9,5 +9,6 @@ $(document).ready ->
   if $(".menu-parent").length > 0
     miq.open_active()
 
-    $(document).on "click", ".menu-parent > a", ->
+    $(document).on "click", ".menu-parent > a", (e) ->
       $(@).parent("li.menu-parent").toggleClass("menu-open")
+      e.preventDefault()
