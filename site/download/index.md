@@ -29,30 +29,6 @@ title: Download
   </table>
 </div>
 
-### Previous stable release (Darga-2)
-
-<div class="table-responsive">
-  <table class="table table-bordered table-hover">
-    <tr>
-      <th>Appliance</th>
-      <th>Format</th>
-      <th>Size</th>
-    </tr>
-    <tr>
-      <td><a href="https://hub.docker.com/r/manageiq/manageiq/">Docker (tag darga-2)</a></td>
-      <td>docker</td>
-      <td>0.6 GB</td>
-    </tr>
-    {% for type in site.data.download_types %}
-    <tr>
-      <td><a href="http://manageiq.org/download/manageiq-{{type.download_platform}}-darga-2.{{type.ext}}">{{ type.name }}</a></td>
-      <td>{{ type.download_platform }}</td>
-      <td>{{ type.size_prev }}</td>
-    </tr>
-    {% endfor %}
-  </table>
-</div>
-
 ### Nightlies (developers only)
 
 **Warning:** things may be unstable, stuff may break. If you're looking for adventure, please proceed.
@@ -84,17 +60,25 @@ title: Download
   </table>
 </div>
 
-If you don't find what you want in the above lists, try searching from the available images at [releases.manageiq.org](http://releases.manageiq.org/).
+If you don't find what you want in the above lists, try searching from the available images at [releases.manageiq.org][].
 
 ## What's next?
 
-Take a look at our [Quick Start Guide](/docs/get-started/) for an overview of ManageIQ concepts to get you up and running quickly. You can easily get started with:
+Take a look at our [Quick Start Guide][] for an overview of ManageIQ concepts to get you up and running quickly. You can easily get started with:
 
-- [Docker](/docs/get-started/docker)
-- [Vagrant](/docs/get-started/vagrant)
+- [Docker][]
+- [Vagrant][]
 
-To go more in-depth, check out the [User Reference](/docs/reference/).
+To go more in-depth, check out the [User Reference][].
 
-Bookmark the [documentation page](/docs/) to access the above docs and more at your convenience.
+Bookmark the [documentation page][] to access the above docs and more at your convenience.
 
-Don't forget to join the [ManageIQ community](/community/) for various ways to communicate, contribute, and get support!
+Don't forget to join the [ManageIQ community][] for various ways to communicate, contribute, and get support!
+
+[releases.manageiq.org]: http://releases.manageiq.org/
+[Quick Start Guide]:     /docs/get-started/
+[Docker]:                /docs/get-started/docker
+[Vagrant]:               /docs/get-started/vagrant
+[User Reference]:        /docs/reference/
+[documentation page]:    /docs/
+[ManageIQ community]:    /community/

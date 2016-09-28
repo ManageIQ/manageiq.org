@@ -38,7 +38,7 @@ ManageIQ is open source and open for contributions. There are many ways to get i
       <ul>
         <li> <a href="https://github.com/manageiq/manageiq">Main ManageIQ GitHub repo</a> <a class="github-button" href="https://github.com/manageiq/manageiq" data-icon="octicon-star" aria-label="Star manageiq/manageiq on GitHub">Star</a> <a class="github-button" href="https://github.com/manageiq/manageiq/fork" data-icon="octicon-repo-forked" aria-label="Fork manageiq/manageiq on GitHub">Fork</a></li>
         <li> <a href="https://github.com/manageiq">All repos under ManageIQ</a> <a class="github-button" href="https://github.com/manageiq" aria-label="Follow @manageiq on GitHub">Follow @manageiq</a></li>
-        <li> <a href="/docs/guides">Developer Guides</a></li>
+        <li> <a href="/docs/guides/architecture">Developer Guides</a></li>
       </ul>
   </div>
 
@@ -91,6 +91,7 @@ You can import the [ManageIQ community calendar](https://calendar.google.com/ca
     activationElement: false
   };
 </script>
-<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script><script src="https://apis.google.com/js/platform.js" async defer></script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
 <script src="//platform.linkedin.com/in.js" type="text/javascript"> lang:en_US</script>
 <script async defer src="https://buttons.github.io/buttons.js"></script>
