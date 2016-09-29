@@ -5,7 +5,9 @@ title: Download
 
 ## Download ManageIQ
 
-### Current stable release (Darga-3)
+{% assign release = site.data.releases["stable"] %}
+
+### Current stable release ({{ release.name }})
 
 <div class="table-responsive">
   <table class="table table-bordered table-hover">
@@ -15,13 +17,13 @@ title: Download
       <th>Size</th>
     </tr>
     <tr>
-      <td><a href="https://hub.docker.com/r/manageiq/manageiq/">Docker (tag darga-3)</a></td>
+      <td><a href="https://hub.docker.com/r/manageiq/manageiq/">Docker (tag {{release.tag}})</a></td>
       <td>docker</td>
       <td>0.5 GB</td>
     </tr>
     {% for type in site.data.download_types %}
     <tr>
-      <td><a href="http://manageiq.org/download/manageiq-{{type.download_platform}}-darga-3.{{type.ext}}">{{ type.name }}</a></td>
+      <td><a href="http://manageiq.org/download/manageiq-{{type.download_platform}}-{{release.filename}}.{{type.ext}}">{{ type.name }}</a></td>
       <td>{{ type.download_platform }}</td>
       <td>{{ type.size_stable }}</td>
     </tr>
@@ -29,7 +31,9 @@ title: Download
   </table>
 </div>
 
-### Nightlies (developers only)
+{% assign release = site.data.releases["devel"] %}
+
+### {{ release.name }} (developers only)
 
 **Warning:** things may be unstable, stuff may break. If you're looking for adventure, please proceed.
 
@@ -41,13 +45,13 @@ title: Download
       <th>Size</th>
     </tr>
     <tr>
-      <td><a href="https://hub.docker.com/r/manageiq/manageiq/">Docker (tag latest)</a></td>
+      <td><a href="https://hub.docker.com/r/manageiq/manageiq/">Docker (tag {{release.tag}})</a></td>
       <td>docker</td>
       <td>0.4 GB</td>
     </tr>
     {% for type in site.data.download_types %}
     <tr>
-      <td><a href="http://manageiq.org/download/manageiq-{{type.download_platform}}-devel.{{type.ext}}">{{ type.name }}</a></td>
+      <td><a href="http://manageiq.org/download/manageiq-{{type.download_platform}}-{{release.filename}}.{{type.ext}}">{{ type.name }}</a></td>
       <td>{{ type.download_platform }}</td>
       <td>{{ type.size_devel }}</td>
     </tr>
