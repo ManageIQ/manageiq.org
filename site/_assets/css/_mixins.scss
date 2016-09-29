@@ -14,3 +14,14 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+@mixin link_background_hover {
+  background-color: transparent;
+  border-radius: 10px;
+  transition: background-color 0.5s;
+
+  &:hover {
+    text-decoration: none;
+    background-color: lighten($grad_end_color, 7%);
+  }
+}

@@ -13,19 +13,22 @@
 
     li {
       float: left;
-      margin-right: 0.5em;
       text-align: center;
     }
 
     a {
       color: #fff;
+      padding: 0 1em;
+    }
+  }
+
+  .contact_menu {
+    a {
+      @include link_background_hover;
     }
   }
 
   .social_link {
-    display: block;
-    width: 1.5em;
-    height: 1.5em;
 
     svg {
       fill: $blue-lite2;
@@ -89,4 +92,17 @@
   width: 40px;
   height: 40px;
   margin: 0 70px 0 0;
+}
+
+.fa-gitter {
+  width: 14px;
+
+  svg {
+    max-width: 100%;
+    height: auto;
+
+    g#icon-gitter {
+      fill: #fff;
+    }
+  }
 }
