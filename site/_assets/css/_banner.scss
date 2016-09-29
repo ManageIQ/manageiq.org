@@ -35,10 +35,12 @@ $banner_height: 440px;
 }
 
 .banner-logo {
-  background: #{$glphy_img};
+  background-image: url("/assets/images/logo/banner-glyph.svg");
+  background-size: cover;
   position: absolute;
-  width: 100%;
-  height: $banner_height * 2;
+  width: 900px;
+  height: 900px;
+  right: -200px;
   z-index: 0;
 }
 
