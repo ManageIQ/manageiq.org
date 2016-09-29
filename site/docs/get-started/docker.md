@@ -13,7 +13,7 @@ The installation consists on two phases:
 
 ## Installing ManageIQ as a docker container ##
 ### Step 1. Install docker in your machine
-You can foolow instruction for your specific OS in the [Docker getstarted](https://docs.docker.com/engine/getstarted/step_one/#step-1-get-docker)
+You can follow instructions for your specific OS in the [Docker getstarted](https://docs.docker.com/engine/getstarted/step_one/#step-1-get-docker)
 
 For Fedora, you will need a 64-bit installation (all new ones). Instructions can be found on [Fedora wiki](https://fedoraproject.org/wiki/Docker) and [docker documentation](https://docs.docker.com/engine/installation/linux/fedora/):
 

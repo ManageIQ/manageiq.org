@@ -13,7 +13,7 @@ The installation consists of two phases:
 
 ## Installing ManageIQ as a Vagrant box ##
 ### Step 1. Install Vagrant in your machine
-You can foolow instruction for your specific OS in the [Vagrant downloads](https://www.vagrantup.com/downloads.html)
+You can follow instructions for your specific OS in the [Vagrant downloads](https://www.vagrantup.com/downloads.html)
 
 For Fedora, you will need a 64-bit installation (all new ones) and [VirtualBox](https://www.virtualbox.org/). Instructions can be found on [Fedora Developer Portal](https://developer.fedoraproject.org/tools/vagrant/vagrant-virtualbox.html) and [Hashicorp(https://www.vagrantup.com/downloads.html):
 
