@@ -1,4 +1,4 @@
-FROM ehayes/nginx:latest
+FROM ehayes/manageiq_org_base:latest
 MAINTAINER Eric Hayes <eric@erichayes.net>
 
 # ENV vars
@@ -41,7 +41,7 @@ COPY config/manageiq_org.conf /etc/nginx/conf.d/
 RUN mkdir -p ${MIQ_SITE_DEST} ${MIQ_BASE_DIR}
 COPY / ${MIQ_BASE_DIR}
 WORKDIR ${MIQ_BASE_DIR}
-RUN ${MIQ_BUNDLER} install
+RUN ${MIQ_BUNDLER} install --without development test
 
 # Build site (working dir == /srv/build)
 RUN /bin/bash -l -c "exe/miq build all"
