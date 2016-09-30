@@ -1,6 +1,5 @@
 <ul class="menu menu-toplevel" id="start_menu">
-  {% for item in site.data["menus"]["start_menu"] %}
-  <!-- item -->
+{% for item in site.data["menus"]["start_menu"] %}
   {% assign item_class = "menu-item" %}
   {% if item.children %}
     {% assign item_class = item_class | append: " menu-parent" %}
@@ -18,5 +17,5 @@
     </ul>
     {% endif %}
   </li>
-  {% endfor %}
+{% endfor %}
 </ul>

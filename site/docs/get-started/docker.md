@@ -1,5 +1,6 @@
 ---
 layout: start_doc
+doc_group: start
 title: Easy Install With Docker
 permalink: /docs/get-started/docker
 ---
