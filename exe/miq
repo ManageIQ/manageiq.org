@@ -124,11 +124,11 @@ module Miq
     desc "build <all|guides|site|reference>", "Build or process an aspect of the site"
     subcommand "build", Build
 
-    desc "deploy", "Prepares and deploys site. Don't use unless your changes have been pushed to repos."
-    def deploy
-      invoke 'miq:update:all'
-      invoke 'miq:build:all'
-    end
+    # desc "deploy", "Prepares and deploys site. Don't use unless your changes have been pushed to repos."
+    # def deploy
+    #   invoke 'miq:update:all'
+    #   invoke 'miq:build:all'
+    # end
 
     desc "serve", "Does Jekyll serve with appropriate args"
     def serve
