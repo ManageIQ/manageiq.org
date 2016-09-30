@@ -3,4 +3,5 @@ rvm:
 - "2.0"
 sudo: false
 cache: bundler
-script: bundle exec middleman build --verbose
+script: bundle exec bin/miq build all
+
