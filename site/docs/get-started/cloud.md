@@ -8,7 +8,7 @@ The installation consists on two phases:
  1. Install ManageIQ in your local machine inside a Docker container and configure it
  2. Connect to a managed system, and start working with it.
 
-We will use the Google Cloud Platform as an example, so you need to open an account. Free accounts can be opened in [Google Cloud](https://console.cloud.google.com/freetrial) for elegible users.
+We will use the Google Cloud Platform as an example, so you need to open an account. Free accounts can be opened in [Google Cloud](https://console.cloud.google.com/freetrial) for eligible users.
 
 ![screenshot0037](/assets/images/docs/screenshot_0037.png)
 
