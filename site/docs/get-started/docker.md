@@ -1,6 +1,6 @@
 ---
 layout: start_doc
-title: Get Started With Docker
+title: Easy Install With Docker
 permalink: /docs/get-started/docker
 ---
 
