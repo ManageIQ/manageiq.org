@@ -2,7 +2,6 @@
 layout: start_doc
 doc_group: start
 title: Easy Install With Vagrant
-permalink: /docs/get-started/vagrant
 ---
 
 You can test ManageIQ running in a Vagrant box using images from [Atlas](https://atlas.hashicorp.com/vagrant).

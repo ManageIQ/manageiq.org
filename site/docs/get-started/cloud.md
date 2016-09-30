@@ -2,7 +2,6 @@
 layout: start_doc
 doc_group: start
 title: Easy Install Using A Public Cloud Provider
-permalink: /docs/get-started/cloud
 ---
 The installation consists on two phases:
 

@@ -2,7 +2,6 @@
 layout: start_doc
 doc_group: start
 title: Easy Install With Docker
-permalink: /docs/get-started/docker
 ---
 
 You can test ManageIQ running in a Docker container using images from the [Docker hub](https://hub.docker.com/).
