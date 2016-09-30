@@ -1,6 +1,6 @@
 ---
 layout: start_doc
-title: Provision Your First Machine
+title: Provision Your First Instance
 ---
 
 Let’s generate a new instance through ManageIQ, the hard way. Don't worry, And afterwards
