@@ -2,6 +2,7 @@
 layout: start_doc
 title: Basic Configuration
 ---
+### 1. Introduction
 
 The Red Hat CloudForms appliance is a virtual machine image that runs on
 a Red Hat Enterprise Linux-based operating system. It is advisable to
@@ -19,50 +20,63 @@ setting ssh keys)
 
 ![screenshot0001](/assets/images/docs/screenshot_0001.png)
 
-3.  Log in using default credentials
+### 2. Log in using default credentials
 
-    1.  **Login:** admin
-    2.  **Password:** smartvm
+1.  **Login:** admin
+2.  **Password:** smartvm
 
-
-
-4.  ManageIQ uses vertical navigation. The main menus are available in
+### 3. ManageIQ vertical navigation.
+The main menus are available in
     the left of the screen, and secondary and tertiary menus are
     expanded when needed. You can pin a secondary or tertiary menu to
     easily navigate through its elements.
 
 ![screenshot0002](/assets/images/docs/screenshot_0002.png)
 
-5.  Go to Settings → Configuration to change how the appliance behaves:
+###  4. Change options
+Go to Settings → Configuration to change how the appliance behaves:
 
-    1.  *CFME Region: Region 0* → *Zones* → *Zone:
-        Default zone(current)* → *Server: EVM\[1\](current)* should be
+#### 1. Select the appliance to configure ####
+- ***CFME Region: Region 0*** → ***Zones*** → ***Zone: Default zone(current)*** → ***Server: EVM\[1\](current)*** should be
         selected by default.  
-        The hostname and IP address will be available here, in some
+-         The *hostname* and *IP address* of the aplliance will be shown here, be careful as in some 
         cases this will be the internal IP address and not the one you
         connected to.  
-        You can change the *Company Name* to your company names, and the
-        interface will reflect the change.  
-        *Change it to ManageIQ*  
-        And *select your time zone  
-        *If you want, you can change the language default.
-    2.  Server control defines what roles each appliance executes in a
+
+-         You can change the *Company Name* to whatever you want, the change will be reflected in the interface.  ***Change it to ManageIQ*** 
+
+-         ***Select your time zone***, and, 
+        if you want, you can change the language default.
+
+![screenshot0003](/assets/images/docs/screenshot_0003.png)
+
+#### 2. Choose functions for this appliance ####
+Server control defines what roles each appliance executes in a
         multi-appliance deployment. For now, as we have only one
         appliance, select all C&U and Notification options. Don’t select
         Database synchronization, Git Repositories Owner, RHN Mirror or
         Smart Proxy unless you need them.
-    3.  Configure your email server so ManageIQ can send you emails
-    4.  *Press Save* to save your changes
 
-6.  In the accordion, *select Access Control.*
+![screenshot0004](/assets/images/docs/screenshot_0004.png)
 
-    1.  You can see definitions for Users, Groups, Roles and Tenants.
-        For now, let’s create a user with limited access to
-        self-service.  
-        Select Users  
-        Click *Configuration → Add a new User  
-        * Fill all the elements in the form (select
-        Role EvmRole-user\_limited\_self\_service) and then press *Add*
-    * Vagrant: 172.28.128.3
+#### 3.  Configure your email server so ManageIQ can send you emails ####
+
+![screenshot0005](/assets/images/docs/screenshot_0005.png)
+
+#### 4. Save your changes ####
+**Press Save*** to save your changes
+
+#### 5. Create a new user ####
+
+In the accordion, ***select Access Control.***
+
+1.  You can see definitions for Users, Groups, Roles and Tenants.
+    For now, let’s create a user with limited access to
+    self-service.  
+2.    Select Users  
+3.    Click ***Configuration → Add a new User*** 
+4.    Fill all the elements in the form (***select Role *EvmRole-user\_limited\_self\_service****) and then ***press *Add***
+
+![screenshot0005](/assets/images/docs/screenshot_0006.png)
 
 ## Next: [Add A Provider](/docs/get-started/add-a-provider)
