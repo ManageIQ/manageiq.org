@@ -15,24 +15,14 @@ The installation consists of two phases:
 ### Step 1. Install Vagrant in your machine
 You can follow instructions for your specific OS in the [Vagrant downloads](https://www.vagrantup.com/downloads.html)
 
-For Fedora, you will need a 64-bit installation (all new ones) and [VirtualBox](https://www.virtualbox.org/). Instructions can be found on [Fedora Developer Portal](https://developer.fedoraproject.org/tools/vagrant/vagrant-virtualbox.html) and [Hashicorp(https://www.vagrantup.com/downloads.html):
-
-Install the **vagrant** package:
-
-$ sudo dnf -y install vagrant
-You can install plugins to add additional functionality, for instance, OpenShift Origin recommends you install the following ones:
-$ vagrant plugin install vagrant-registration
-$ vagrant plugin install vagrant-service-manager
-$ vagrant plugin install vagrant-sshfs
-
 Additional details on how to configure the system properly can be found on the links above.
 
 ### Step 2. Download and deploy the appliance
 
 1. Pull the ManageIQ Vagrant box from [Atlas](https://atlas.hashicorp.com/vagrant) and run it
 
-$ mkdir manageiq-vagrant; cd manageiq-vagrant
-$ vagrant init geertj/manageiq
+    $ mkdir manageiq-vagrant; cd manageiq-vagrant
+    $ vagrant init geertj/manageiq
 
 2. Modify the Vagrantfile if you want to add more memory and CPU (currently configured for 6144 MB and 4 CPU)
 For instance, this at the beginning of the Vagrant file will make sure that you always call it with virtualbox

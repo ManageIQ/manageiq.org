@@ -13,20 +13,7 @@ The installation consists on two phases:
 
 ## Installing ManageIQ as a docker container ##
 ### Step 1. Install docker in your machine
-You can follow instructions for your specific OS in the [Docker getstarted](https://docs.docker.com/engine/getstarted/step_one/#step-1-get-docker)
-
-For Fedora, you will need a 64-bit installation (all new ones). Instructions can be found on [Fedora wiki](https://fedoraproject.org/wiki/Docker) and [docker documentation](https://docs.docker.com/engine/installation/linux/fedora/):
-
-Install the **docker** package:
-
-    $ sudo dnf -y install docker
-
-Start the Docker daemon:
-
-    $ sudo systemctl start docker
-    $ sudo systemctl status docker
-
-You can make the daemon start at boon, running **sudo systemctl enable docker**
+You can follow instructions for your specific OS in the [Get Started with Docker](https://docs.docker.com/engine/getstarted/step_one/#step-1-get-docker)
 
 Additional details on how to configure the system properly can be found on the links above.
 
@@ -36,7 +23,7 @@ Additional details on how to configure the system properly can be found on the l
 
     $ docker run --privileged -di -p 80:80 -p 443:443 docker.io/manageiq/manageiq:darga-3
 
-You can use other tags to get different versions of the container: *latest, latest-darga, etc*.
+You can use other tags to get different versions of the container: [*latest, latest-darga, etc*](https://hub.docker.com/r/manageiq/manageiq/).
 
 ### Step 3. First connection and configuration
 
@@ -49,7 +36,6 @@ The Docker image is a self starting image that has already been configured. You 
     * Time and date settings
     * Hostname
     * Admin password
-
 
 ## Configure managed systems
 ### Step 4. Add an infrastructure or cloud provider ###
