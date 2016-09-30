@@ -5,11 +5,11 @@
 - title: Get ManageIQ
   children:
     - title: Docker
-      path: /docs/get-started/docker
+      path: /docs/get-started/docker/
     - title: Vagrant
-      path: /docs/get-started/vagrant
+      path: /docs/get-started/vagrant/
     - title: Public Cloud
-      path: /docs/get-started/cloud
+      path: /docs/get-started/cloud/
 
 - title: Configuration
   path: /docs/get-started/basic-configuration
