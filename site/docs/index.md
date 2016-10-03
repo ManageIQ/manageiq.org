@@ -11,3 +11,5 @@ permalink: /docs/
 ## [Developer Guides](guides/architecture)
 
 ## [ManageIQ Automation Book]({{ site.book_path }})
+
+- This is a work in progress, thus the content is subject to updates and improvements.
