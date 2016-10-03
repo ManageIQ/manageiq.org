@@ -1,5 +1,5 @@
 ---
-- title: Concepts
+- title: Get started
   path: /docs/get-started
 
 - title: Get ManageIQ
@@ -26,6 +26,7 @@
 - title: Create Your First Service Item
   path: /docs/get-started/create-service-item
 
+
 - title: Where to go from here
   children:
     - title: Services
@@ -41,3 +42,6 @@
       path: "#"
     - title: Talk
       path: "#"
+
+- title: Concepts Guide
+  path: /docs/concepts

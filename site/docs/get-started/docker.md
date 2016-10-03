@@ -6,22 +6,22 @@ title: Easy Install With Docker
 
 You can test ManageIQ running in a Docker container using images from the [Docker hub](https://hub.docker.com/).
 
-The installation consists on two phases:
+The installation consists of two phases:
 
- 1. Install ManageIQ in your local machine inside a Docker container and configure it
+ 1. Install ManageIQ in your local machine inside a Docker container, and then configure it
  2. Connect to a managed system, and start working with it.
 
 ## Installing ManageIQ as a docker container ##
 ### Step 1. Install docker in your machine
 You can follow instructions for your specific OS in the [Get Started with Docker](https://docs.docker.com/engine/getstarted/step_one/#step-1-get-docker)
 
-Additional details on how to configure the system properly can be found on the links above.
+Additional details on how to configure the system properly can be found in the links above.
 
 ### Step 2. Download and deploy the appliance
 
  1. Pull the ManageIQ docker image from [Docker hub](https://hub.docker.com/) and run it
 
-    $ docker run --privileged -di -p 80:80 -p 443:443 docker.io/manageiq/manageiq:darga-3
+`$ docker run --privileged -di -p 80:80 -p 443:443 docker.io/manageiq/manageiq:darga-3`
 
 You can use other tags to get different versions of the container: [*latest, latest-darga, etc*](https://hub.docker.com/r/manageiq/manageiq/).
 

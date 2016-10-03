@@ -3,10 +3,10 @@ layout: start_doc
 doc_group: start
 title: Easy Install Using A Public Cloud Provider
 ---
-The installation consists on two phases:
+The installation of ManageIQ consists on two phases:
 
- 1. Install ManageIQ in your local machine inside a Docker container and configure it
- 2. Connect to a managed system, and start working with it.
+ 1. Install ManageIQ as a cloud image in the cloud
+ 2. Connect it to a managed system, and start working with it.
 
 We will use the Google Cloud Platform as an example, so you need to open an account. Free accounts can be opened in [Google Cloud](https://console.cloud.google.com/freetrial) for eligible users.
 

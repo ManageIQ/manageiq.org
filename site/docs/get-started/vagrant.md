@@ -15,20 +15,21 @@ The installation consists of two phases:
 ### Step 1. Install Vagrant in your machine
 You can follow instructions for your specific OS in the [Vagrant downloads](https://www.vagrantup.com/downloads.html)
 
-Additional details on how to configure the system properly can be found on the links above.
+Additional details on how to configure the system properly can be found in the links above.
 
 ### Step 2. Download and deploy the appliance
 
 1. Pull the ManageIQ Vagrant box from [Atlas](https://atlas.hashicorp.com/vagrant) and run it
-
+```bash
     $ mkdir manageiq-vagrant; cd manageiq-vagrant
     $ vagrant init geertj/manageiq
-
+```
 2. Modify the Vagrantfile if you want to add more memory and CPU (currently configured for 6144 MB and 4 CPU)
 For instance, this at the beginning of the Vagrant file will make sure that you always call it with virtualbox
+````
 # Vagrantfile
 ENV['VAGRANT_DEFAULT_PROVIDER'] = 'virtualbox'
-
+```
 
 You can use other tags to get different versions of the container: *latest, latest-darga, etc*.
 
