@@ -4,5 +4,19 @@
     <img class="brand-logo" src="/assets/images/manageiq-logo-inverse.svg" alt="ManageIQ Logo">
   </a>
 
-  {% include site_nav.html %}
+  <div class="off_canvas-toggle" id="site_header-nav_toggle">
+    <a href="#" data-behavior="off_canvas-toggle">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <div class="off_canvas">
+    <header class="off_canvas-header">
+      <a href="#" class="off_canvas-toggle" data-behavior="off_canvas-toggle">
+        <i class="fa fa-times"></i>
+      </a>
+    </header>
+
+    {% include site_nav.html %}
+  </div>
 </header>

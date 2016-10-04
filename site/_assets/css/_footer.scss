@@ -1,97 +1,35 @@
+
 .site-footer {
   @include banner_grad;
   color: #fff;
-
-  .site_nav {
-    a {
-      font-size: 14px;
-    }
-  }
+  padding: 1em;
 
   .social_menu, .contact_menu {
     list-style: none;
-
-    li {
-      float: left;
-      text-align: center;
-    }
+    width: 100%;
+    padding: 0;
+    margin: 1em 0;
 
     a {
       color: #fff;
       padding: 0 1em;
     }
   }
-
-  .contact_menu {
-    a {
-      @include link_background_hover;
-    }
-  }
-
-  .social_link {
-
-    svg {
-      fill: $blue-lite2;
-    }
-
-    svg:hover {
-      fill: #fff;
-    }
-
-    i.fa {
-      font-size: 22px;
-      color: $blue-lite2;
-    }
-
-    i.fa:hover {
-      color: #fff;
-    }
-  }
-
-  .social_link-username {
-    display: none;
-  }
-}
-
-.footer-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 40px;
-}
-
-#footer_top {
-  height: 95px;
-}
-
-#footer_bottom {
-  height: 60px;
-  background-color: $blue-dark;
-}
-
-.footer-legal {
-  font-size: 12px;
-  color: $blue-lite2;
-
-  span {
-    margin-right: 1em;
-  }
-
-  a {
-    color: #fff;
-  }
-}
-
-.footer-group {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .footer-logo {
   width: 40px;
   height: 40px;
   margin: 0 70px 0 0;
+}
+
+.footer-legal {
+  font-size: 12px;
+  color: $blue-lite2;
+
+  a {
+    color: #fff;
+  }
 }
 
 .fa-gitter {
@@ -106,3 +44,82 @@
     }
   }
 }
+
+@media only screen and (min-width: #{$bp-desk0}) {
+  .site-footer {
+    padding: 0;
+
+    .site_nav {
+      a {
+        font-size: 14px;
+      }
+    }
+
+    .social_menu, .contact_menu {
+      width: auto;
+
+      li {
+        float: left;
+        text-align: center;
+      }
+    }
+
+    .contact_menu {
+      a {
+        @include link_background_hover;
+      }
+    }
+
+    .social_link {
+
+      svg {
+        fill: $blue-lite2;
+      }
+
+      svg:hover {
+        fill: #fff;
+      }
+
+      i.fa {
+        font-size: 22px;
+        color: $blue-lite2;
+      }
+
+      i.fa:hover {
+        color: #fff;
+      }
+    }
+
+    .social_link-username {
+      display: none;
+    }
+  } // .site-footer
+
+  .footer-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+  }
+
+  #footer_top {
+    height: 95px;
+  }
+
+  #footer_bottom {
+    height: 60px;
+    background-color: $blue-dark;
+  }
+
+  .footer-legal {
+    span {
+      margin-right: 1em;
+    }
+  }
+
+  .footer-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+} // @media

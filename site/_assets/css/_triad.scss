@@ -1,74 +1,115 @@
+
 .triad {
-  max-width: $hg-container-desktop;
+  max-width: 90%;
   @include container-fixed(0);
-  padding-bottom: 60px;
-
-  position: relative;
-  top: $triad-offset;
-
-  background-color: #fff;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.25);
 }
 
-.triad-heading {
-  text-align: center;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1;
-  margin: 0;
-  padding: 30px;
+.triad-item {
+  display: flex;
+  align-items: center;
+  height: 4em;
+  border-bottom: 1px solid $heading-line;
 }
 
-.triad-col {
-  @include make-md-column(4, $triad-gutter);
-
-  border-right: 1px solid $grey-lite;
-
-  &:last-child {
-    border-right: none;
-  }
+.triad-col:last-child .triad-item {
+  border-bottom: none;
 }
-
-.triad-item {}
 
 .triad-logo {
-  height: 150px;
-  margin: 0 auto;
-
-  img {
-    display: block;
-    max-width: 100%;
-  }
+  width: 15%;
+  margin-right: 1em;
 }
 
 .triad-title {
-  text-align: center;
-  font-size: 18px;
-  line-height: 1;
-  padding: 24px 0;
-}
-
-.triad-vagrant {
-  width: 150px;
-}
-
-.triad-cloud {
-  width: 180px;
-}
-
-.triad-button {
-  text-align: center;
-
-  .btn {
-    display: block;
-  }
+  flex: 1;
 }
 
 .download {
-  position: relative;
-  top: ($triad-offset / 2);
+  padding: 1em 0;
+  border-top: 1px solid $heading-line;
+  border-bottom: 1px solid $heading-line;
 
   h4 {
     text-align: center;
   }
 }
+
+@media only screen and (min-width: #{$bp-desk0}) {
+  .triad {
+    display: block;
+    max-width: $hg-container-desktop;
+
+    padding-bottom: 60px;
+
+    position: relative;
+    top: $triad-offset;
+
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+  }
+
+  .triad-heading {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1;
+    margin: 0;
+    padding: 30px;
+  }
+
+  .triad-col {
+    @include make-md-column(4, $triad-gutter);
+
+    border-right: 1px solid $grey-lite;
+
+    &:last-child {
+      border-right: none;
+    }
+  }
+
+  .triad-item {
+    display: block;
+    border-bottom: none;
+    height: auto;
+  }
+
+  .triad-logo {
+    width: auto;
+    height: 150px;
+    margin: 0 auto;
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+  }
+
+  .triad-title {
+    text-align: center;
+    font-size: 18px;
+    line-height: 1;
+    padding: 24px 0;
+  }
+
+  .triad-vagrant {
+    width: 150px;
+  }
+
+  .triad-cloud {
+    width: 180px;
+  }
+
+  .triad-button {
+    text-align: center;
+
+    .btn {
+      display: block;
+    }
+  }
+
+  .download {
+    position: relative;
+    top: ($triad-offset / 2);
+    border: none;
+  }
+} // @media
