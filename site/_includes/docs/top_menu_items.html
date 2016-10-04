@@ -5,14 +5,14 @@
   <li{% if include.active == "user" %} class="active"{% endif %}>
     <a href="/docs/reference/">User Reference</a>
   </li>
-  <li>
-    <a href="/docs/automation/" class="ext" target="_blank">
+  <li{% if page.url == "/docs/automation/" %} class="active"{% endif %}>
+    <a href="/docs/automation/">
       Automation Book
     </a>
   </li>
   <li{% if include.active == "api" %} class="active"{% endif %}>
-    <a href="#">
-      API Reference
+    <a href="/docs/api">
+      API Docs
     </a>
   </li>
   <li{% if include.active == "dev" %} class="active"{% endif %}>

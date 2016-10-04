@@ -1,0 +1,21 @@
+<ul class="menu menu-toplevel" id="{{ page.doc_group }}_menu">
+{% for item in site.data["menus"]["api_menu"] %}
+  {% assign item_class = "menu-item" %}
+  {% if item.children %}
+    {% assign item_class = item_class | append: " menu-parent" %}
+  {% endif %}
+  {% if item.path == page.url %}
+    {% assign item_class = item_class | append: " active" %}
+  {% endif %}
+  <li{% if item_class.size > 0 %} class="{{ item_class }}"{% endif %}>
+    <a href="{% if item.path %}{{ item.path }}{% else %}#{% endif %}">
+      {{ item.title }}
+    </a>
+    {% if item.children %}
+    <ul>
+      {% include docs/doc_menu_items.html items=item.children %}
+    </ul>
+    {% endif %}
+  </li>
+{% endfor %}
+</ul>

@@ -1,0 +1,199 @@
+- title: Overview
+  children:
+  - title: Authentication
+    path: "/docs/reference/latest/api/overview/auth"
+  - title: Authorization
+    path: "/docs/reference/latest/api/overview/authorization"
+  - title: CRUD
+    path: "/docs/reference/latest/api/overview/crud"
+  - title: Filtering
+    path: "/docs/reference/latest/api/overview/filtering"
+  - title: HTTP Basics
+    path: "/docs/reference/latest/api/overview/http"
+  - title: Json Convention
+    path: "/docs/reference/latest/api/overview/json"
+  - title: Password Updates
+    path: "/docs/reference/latest/api/overview/password"
+  - title: Querying
+    path: "/docs/reference/latest/api/overview/query"
+  - title: Version History
+    path: "/docs/reference/latest/api/overview/versioning"
+
+- title: Reference
+  children:
+  - title: Automation Requests
+    path: "/docs/reference/latest/api/reference/automation_requests"
+  - title: Categories & Tags
+    path: "/docs/reference/latest/api/reference/categories_tags"
+  - title: Chargebacks & Rates
+    path: "/docs/reference/latest/api/reference/chargebacks_rates"
+  - title: Primary Collections
+    path: "/docs/reference/latest/api/reference/collections"
+  - title: VM Custom Attributes
+    path: "/docs/reference/latest/api/reference/custom_attributes"
+  - title: Group Management
+    path: "/docs/reference/latest/api/reference/groups"
+  - title: Host Management
+    path: "/docs/reference/latest/api/reference/hosts"
+  - title: Instance Management
+    path: "/docs/reference/latest/api/reference/instances"
+  - title: Setting Ownership
+    path: "/docs/reference/latest/api/reference/ownership"
+  - title: Policies & Policy Profiles
+    path: "/docs/reference/latest/api/reference/policies"
+  - title: Policy Collections
+    path: "/docs/reference/latest/api/reference/policy_collections"
+  - title: Provider Support
+    path: "/docs/reference/latest/api/reference/providers"
+  - title: Provision Requests
+    path: "/docs/reference/latest/api/reference/provision_requests"
+  - title: Reports Support
+    path: "/docs/reference/latest/api/reference/reports"
+  - title: Role Management
+    path: "/docs/reference/latest/api/reference/roles"
+  - title: Service Custom Actions
+    path: "/docs/reference/latest/api/reference/service_custom_actions"
+  - title: Service Orders (Shopping Carts)
+    path: "/docs/reference/latest/api/reference/service_orders"
+  - title: Service Queries
+    path: "/docs/reference/latest/api/reference/service_queries"
+  - title: Service Management
+    path: "/docs/reference/latest/api/reference/services"
+  - title: Tags & Tagging
+    path: "/docs/reference/latest/api/reference/tagging"
+  - title: Tenant Management
+    path: "/docs/reference/latest/api/reference/tenants"
+  - title: User Management
+    path: "/docs/reference/latest/api/reference/users"
+  - title: VM Management
+    path: "/docs/reference/latest/api/reference/vms"
+
+- title: Appendices
+  children:
+  - title: Advanced Provisioning Attributes
+    path: "/docs/reference/latest/api/appendices/advanced_provisioning"
+  - title: Provider Types
+    path: "/docs/reference/latest/api/appendices/provider_types"
+  - title: Provision Request Supported Attributes
+    path: "/docs/reference/latest/api/appendices/provision_attributes"
+  - title: Quick Reference
+    path: "/docs/reference/latest/api/appendices/quick_reference"
+  - title: Resource Attributes
+    path: "/docs/reference/latest/api/appendices/resource_attributes"
+  - title: SOAP to REST Mapping
+    path: "/docs/reference/latest/api/appendices/soap_to_rest"
+
+
+
+- title: Examples
+  children:
+  - title: VM Management
+    children:
+    - title: Add event to a VM
+      path: "/docs/reference/latest/api/examples/add_event_vm"
+    - title: Add lifecycle event to a VM
+      path: "/docs/reference/latest/api/examples/add_lifecycle_event_vm"
+    - title: Delete a VM
+      path: "/docs/reference/latest/api/examples/delete_vm"
+    - title: Scan a VM
+      path: "/docs/reference/latest/api/examples/scan_vm"
+    - title: Set owner of a VM
+      path: "/docs/reference/latest/api/examples/set_owner_vm"
+    - title: Start a VM
+      path: "/docs/reference/latest/api/examples/start_vm"
+    - title: Stop a VM
+      path: "/docs/reference/latest/api/examples/stop_vm"
+    - title: Suspend a VM
+      path: "/docs/reference/latest/api/examples/suspend_vm"
+  - title: Service Catalogs
+    children:
+    - title: Add a Service Catalog
+      path: "/docs/reference/latest/api/examples/add_service_catalog"
+    - title: Add multiple Service Catalogs
+      path: "/docs/reference/latest/api/examples/add_service_catalogs"
+    - title: Assign Service Templates
+      path: "/docs/reference/latest/api/examples/assign_service_templates"
+    - title: Delete Service Catalogs
+      path: "/docs/reference/latest/api/examples/delete_service_catalogs"
+    - title: Edit a Service Catalog
+      path: "/docs/reference/latest/api/examples/edit_service_catalog"
+    - title: Edit Service Catalogs
+      path: "/docs/reference/latest/api/examples/edit_service_catalogs"
+    - title: Unassign Service Templates
+      path: "/docs/reference/latest/api/examples/unassign_service_templates"
+  - title: Tag Management
+    children:
+    - title: Assign Tags
+      path: "/docs/reference/latest/api/examples/assign_tags"
+    - title: Assign Tags to Service Template
+      path: "/docs/reference/latest/api/examples/assign_tags_to_service_template"
+    - title: Unassign Tags
+      path: "/docs/reference/latest/api/examples/unassign_tags"
+    - title: Unassign Tags from a Service Template
+      path: "/docs/reference/latest/api/examples/unassign_tags_from_service_template"
+  - title: Automation Requests
+    children:
+    - title: Create an Automation Request
+      path: "/docs/reference/latest/api/examples/automation_request"
+    - title: Create multiple Automation Requests
+      path: "/docs/reference/latest/api/examples/automation_requests"
+  - title: Providers
+    children:
+    - title: Create a Provider
+      path: "/docs/reference/latest/api/examples/create_provider"
+    - title: Create a Provider with multiple credentials
+      path: "/docs/reference/latest/api/examples/create_provider_compound_credentials"
+    - title: Delete Provider
+      path: "/docs/reference/latest/api/examples/delete_provider"
+    - title: Refresh Provider
+      path: "/docs/reference/latest/api/examples/refresh_provider"
+    - title: Update a Provider
+      path: "/docs/reference/latest/api/examples/update_provider"
+  - title: Services
+    children:
+    - title: Trigger a Custom Action on a Service
+      path: "/docs/reference/latest/api/examples/custom_action_service"
+    - title: Delete Services
+      path: "/docs/reference/latest/api/examples/delete_services"
+    - title: Edit a Service
+      path: "/docs/reference/latest/api/examples/edit_service"
+    - title: Edit Service via PATCH
+      path: "/docs/reference/latest/api/examples/edit_service_via_patch"
+    - title: Edit Service via PUT
+      path: "/docs/reference/latest/api/examples/edit_service_via_put"
+    - title: Edit Services
+      path: "/docs/reference/latest/api/examples/edit_services"
+    - title: Order a Service
+      path: "/docs/reference/latest/api/examples/order_service"
+    - title: Order multiple Services
+      path: "/docs/reference/latest/api/examples/order_services"
+    - title: Reconfigure Service
+      path: "/docs/reference/latest/api/examples/reconfigure_service"
+    - title: Refresh Service Template Dialog Fields
+      path: "/docs/reference/latest/api/examples/refresh_dialog_fields"
+    - title: Refresh Service Dialog Fields
+      path: "/docs/reference/latest/api/examples/refresh_service_dialog_fields"
+    - title: Retire a Service
+      path: "/docs/reference/latest/api/examples/retire_service"
+    - title: Retire multiple Services
+      path: "/docs/reference/latest/api/examples/retire_services"
+  - title: Service Templates
+    children:
+    - title: Delete Service Templates
+      path: "/docs/reference/latest/api/examples/delete_service_templates"
+    - title: Edit a Service Template
+      path: "/docs/reference/latest/api/examples/edit_service_template"
+    - title: Edit Service Templates
+      path: "/docs/reference/latest/api/examples/edit_service_templates"
+  - title: Foundation
+    children:
+    - title: Paging Queries
+      path: "/docs/reference/latest/api/examples/paging_queries"
+    - title: Querying Examples
+      path: "/docs/reference/latest/api/examples/queries"
+  - title: Provisioning Requests
+    children:
+    - title: Create a Provision Request
+      path: "/docs/reference/latest/api/examples/provision_request"
+    - title: Create multliple Provision Requests
+      path: "/docs/reference/latest/api/examples/provision_requests"

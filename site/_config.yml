@@ -71,3 +71,8 @@ defaults:
       layout: doc_page
       permalink: /:path/:basename
       doc_group: user
+  - scope:
+      path: "docs/reference/latest/api"
+    values:
+      layout: doc_page
+      doc_group: api
