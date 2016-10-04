@@ -1,5 +1,5 @@
 ---
-layout: start_doc
+layout: doc_page
 title: Get Started
 permalink: /docs/get-started/
 doc_group: start

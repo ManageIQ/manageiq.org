@@ -1,5 +1,5 @@
 ---
-layout: start_doc
+layout: doc_page
 title: Concepts guide
 permalink: /docs/concepts/
 ---

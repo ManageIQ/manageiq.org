@@ -1,5 +1,5 @@
 ---
-layout: ref_doc
+layout: doc_page
 title: Get Started With ManageIQ
 permalink: /docs/reference/
 ---

@@ -1,3 +1,43 @@
+.doc_tabs {
+  background-color: $blue-dark;
+  border-top: 1px solid darken($banner-grad-lite, 9%);
+  border-bottom: 1px solid darken($grey-dark, 3%);
+  box-shadow: 0 1px 4px -1px darken($grey-dark, 3%);
+  @include clearfix;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      float: left;
+
+      a {
+        display: block;
+        padding: 1em;
+        color: mix($blue-dark, #fff, 50%);
+
+        &:hover {
+          color: #fff;
+          text-decoration: none;
+        }
+      }
+
+      &:first-child a {
+        padding-left: 38px;
+      }
+    }
+
+    li.active {
+      a {
+        color: #fff;
+        background-color: lighten($blue-dark, 10%);
+      }
+    }
+  }
+}
+
 .doc_container {
   display: flex;
   min-height: calc(100vh - #{$page-height-offset});
@@ -87,13 +127,13 @@
 
 // Guides
 
-// Ref Docs
+// User Ref Docs
 
-.ref_doc .doc-content {
+.user_doc .doc-content {
   margin-right: 35%;
 }
 
-.ref_doc .sect1 {
+.user_doc .sect1 {
   h2:first-child {
     margin-top: 0;
   }
@@ -146,7 +186,7 @@
   margin-bottom: 1em;
 }
 
-.ref_doc {
+.user_doc {
   span.image {
     display: block;
   }

@@ -1,0 +1,21 @@
+<ul>
+  <li{% if include.active == "start" %} class="active"{% endif %}>
+    <a href="/docs/get-started/">Get Started</a>
+  </li>
+  <li{% if include.active == "user" %} class="active"{% endif %}>
+    <a href="/docs/reference/">User Reference</a>
+  </li>
+  <li>
+    <a href="{{ site.book_path }}" class="ext" target="_blank">
+      Automation Book
+    </a>
+  </li>
+  <li{% if include.active == "api" %} class="active"{% endif %}>
+    <a href="#">
+      API Reference
+    </a>
+  </li>
+  <li{% if include.active == "dev" %} class="active"{% endif %}>
+    <a href="/docs/guides/README">Developer Guides</a>
+  </li>
+</ul>

@@ -1,5 +1,5 @@
 ---
-layout: start_doc
+layout: doc_page
 doc_group: start
 title: Easy Install With Vagrant
 ---

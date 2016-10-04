@@ -1,12 +1,15 @@
 ---
 layout: default
 ---
+{% include docs/doc_tabs.html active=page.doc_group %}
 <div class="doc_container">
   <div class="doc_menu">
-    {% include doc_menu_header.html doc_group=page.doc_group %}
+    {% if page.doc_group %}
+    {% include docs/{{page.doc_group}}_menu.html %}
+    {% endif %}
   </div>
   <div class="doc_main">
-    <article class="doc ref_doc">
+    <article class="doc {{ page.doc_group }}_doc">
       {% if page.title %}
       <header class="doc-header">
         <h1 class="doc-title">{{ page.title }}</h1>

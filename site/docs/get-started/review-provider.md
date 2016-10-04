@@ -1,5 +1,5 @@
 ---
-layout: start_doc
+layout: doc_page
 title: Review What You Can See From The Provider
 ---
 

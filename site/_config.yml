@@ -48,8 +48,8 @@ exclude:
   - "*.yaml"
 
 # Keep things built externally
-keep_files:
-  - docs/reference/latest
+# keep_files:
+#   - docs/reference/latest
 
 defaults:
   - scope:
@@ -61,13 +61,13 @@ defaults:
       path: "docs/guides"
       type: "pages"
     values:
-      layout: guide
+      layout: doc_page
       permalink: /:path/:basename
-      nav_exclude: true
+      doc_group: dev
   - scope:
       path: "docs/reference"
       type: "pages"
     values:
-      layout: ref_doc
+      layout: doc_page
       permalink: /:path/:basename
-      nav_exclude: true
+      doc_group: user
