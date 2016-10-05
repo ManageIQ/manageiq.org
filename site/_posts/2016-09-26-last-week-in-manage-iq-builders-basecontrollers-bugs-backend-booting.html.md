@@ -2,6 +2,7 @@
 title: "Last Week in ManageIQ: Builders, BaseControllers, bugs, backend changes, and booting of comments!"
 date: 2016-09-26
 author: eclarizio
+tags: LWIMIQ
 comments: true
 published: true
 ---
