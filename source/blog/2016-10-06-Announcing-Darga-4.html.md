@@ -25,6 +25,6 @@ Here is the complete summary of fixes in Darga-4:
 The [GA announcement](http://manageiq.org/blog/2016/06/darga-ga-announcement/)
 shows the summary of changes since Capablanca.
 
-So, go ahead and [download Darga-4](http://manageiq.org/download/).
+With this release we're also introducing a Vagrant image so you can run ManageIQ in a Vagrant box. So, go ahead and [download Darga-4](http://manageiq.org/download/).
 For questions or support,
 [join in on the talk page](http://talk.manageiq.org/).
