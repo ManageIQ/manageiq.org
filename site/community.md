@@ -63,6 +63,9 @@ Here are some opportunities to meet with members of the community to learn and s
     <p><a href="https://kubecon.io">KubeCon</a> <br /> November 8-9, 2016 in Seattle, WA</p>
   </div>
   <div class="col-md-6">
+    <p><a href="http://rubyconf.org/">RubyConf</a> <br /> November 10-12, 2016 in Cincinnati, OH</p>
+    <p>Speaker: <a href="https://twitter.com/chrisarcand">Chris Arcand</a> <br /> Topic:
+    <a href="http://rubyconf.org/program#prop_46">Deletion Driven Development: Code to delete code!</a></p>
   </div>
 </div>
 
@@ -72,6 +75,8 @@ Here are some opportunities to meet with members of the community to learn and s
   <div class="col-md-6">
     <p><img src="/assets/images/events/miqsummit2016.png" alt="ManageIQ Design Summit 2016" /></p>
     <p><a href="http://manageiq.org/summit/">ManageIQ Design Summit 2016</a> <br /> June 6-7, 2016 in Mahwah, NJ</p>
+    <p>Recap: <a href="/blog/2016/06/presentation-slides-and-demo-videos-from-manageiq-design-summit/">Slides,</a>
+    <a href="/blog/2016/07/manageiq-design-summit-2016-recap-with-photos-and-videos/">videos and photos</a></p>
   </div>
   <div class="col-md-6">
     <p><img src="/assets/images/events/miqsummit2014.png" alt="ManageIQ Design Summit 2014" /></p>
