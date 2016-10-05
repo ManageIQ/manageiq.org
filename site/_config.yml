@@ -58,6 +58,12 @@ defaults:
     values:
       layout: post
   - scope:
+      path: "docs/get-started"
+      type: pages
+    values:
+      layout: doc_page
+      doc_group: start
+  - scope:
       path: "docs/guides"
       type: "pages"
     values:
