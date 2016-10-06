@@ -1,9 +1,9 @@
-stable:
-  name: Stable (darga-4.1)
-  filename: darga-4.1
-# prerelease:
-#   name: Prerelease (darga-1-rc1)
-#   filename: darga-1-rc1.1
+# stable:
+#  name: Stable (darga-4.1)
+#  filename: darga-4.1
+prerelease:
+   name: Prerelease (euwe-1-beta1)
+   filename: euwe-1-beta1
 devel:
   name: Nightly
   filename: devel
