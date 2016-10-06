@@ -82,7 +82,7 @@ module Miq
       logger.info "Building ref docs"
       shell [
         "cd #{tmp_dir}",
-        "#{bundler} exec ascii_binder build"
+        "#{bundler} exec asciibinder build"
       ].join(" && ")
     end
 
