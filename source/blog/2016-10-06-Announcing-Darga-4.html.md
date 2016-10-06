@@ -6,7 +6,7 @@ comments: true
 published: true
 ---
 
-We've just built Darga-4. This release contains a security fix, bug fixes, numerous UI tweaks, and stabilization.
+We've just built Darga-4.1 This release contains a security fix, bug fixes, numerous UI tweaks, and stabilization.
 
 Security Fix(es):
 (CVE-2016-7040) In ManageIQ product there was found an improper input validation vulnerability in expression engine allowing to trigger code execution. The issue was found to be exploitable both via JSON API, which can be triggered by users authorized with GET/read access to a collection in API, and via UI when filtering on VMs based on regular expression, which can be triggered by users able to view and filter on VMs in UI.
