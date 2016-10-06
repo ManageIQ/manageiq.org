@@ -19,21 +19,21 @@ will be available at the same time and you will be able to interact with them.
 
 Select ***Lifecycle → Provision Instances*** from the bar on the top.
 
-![screenshot0027](/assets/images/docs/screenshot_0027.png) 
+![screenshot0027](/assets/images/docs/screenshot_0027.png){:.img-responsive}
 
 After a few seconds you will have a list of all images available, select
 *the latest version of centos-7*. Press ***Continue***
 
 There are different elements that you need to fulfill:
 
-![screenshot0028](/assets/images/docs/screenshot_0028.png) 
+![screenshot0028](/assets/images/docs/screenshot_0028.png){:.img-responsive}
 
 #### Request####
 
 The information about the request itself, it will be used for reporting,
 notifications, and to help decide whether approve it or not.
 
-![screenshot0029](/assets/images/docs/screenshot_0029.png) 
+![screenshot0029](/assets/images/docs/screenshot_0029.png){:.img-responsive} 
 
 #### Purpose####
 
@@ -47,7 +47,7 @@ about this in the documentation.
 This will allow to modify some characteristics of the instance, like the
 number of instances, its name and description.
 
-![screenshot0030](/assets/images/docs/screenshot_0030.png) 
+![screenshot0030](/assets/images/docs/screenshot_0030.png){:.img-responsive} 
 
 #### Environment####
 
@@ -57,7 +57,7 @@ network to be used.
 You can always check ***choose automatically*** to allow the system to find
 the best option for you.
 
-![screenshot0031](/assets/images/docs/screenshot_0031.png) 
+![screenshot0031](/assets/images/docs/screenshot_0031.png){:.img-responsive} 
 
 #### Properties #####
 
@@ -66,13 +66,13 @@ it to your necessities.
 
 Choose a small instance type: (*g1-small*) and a boot-disk of *10 GB*.
 
-![screenshot0032](/assets/images/docs/screenshot_0032.png) 
+![screenshot0032](/assets/images/docs/screenshot_0032.png){:.img-responsive} 
 
 #### Schedule #####
 
 This allows you to decide if you want to provision the Instance now or in a later time.
 
-![screenshot0033](/assets/images/docs/screenshot_0033.png) 
+![screenshot0033](/assets/images/docs/screenshot_0033.png){:.img-responsive} 
 
 Press ***Submit***
 
@@ -80,12 +80,12 @@ You will see your request go through different stages (you can press
 ***Reload*** to see the changes)
 
 
-![screenshot0034](/assets/images/docs/screenshot_0034.png) 
+![screenshot0034](/assets/images/docs/screenshot_0034.png){:.img-responsive}
 
 After a few seconds, a new vm will be present, owner and group will be
 properly set up for this new VM and you will see all the information about it.
 
-![screenshot0035](/assets/images/docs/screenshot_0035.png) 
+![screenshot0035](/assets/images/docs/screenshot_0035.png){:.img-responsive} 
 
 
 Once you have this VM created, you can go to any of the VM and choose
@@ -93,6 +93,6 @@ Once you have this VM created, you can go to any of the VM and choose
 charges
 
 
-![screenshot0036](/assets/images/docs/screenshot_0036.png) 
+![screenshot0036](/assets/images/docs/screenshot_0036.png){:.img-responsive} 
 
 ## Next: [Create a Self-service Catalog Item](/docs/get-started/create-service-item)
