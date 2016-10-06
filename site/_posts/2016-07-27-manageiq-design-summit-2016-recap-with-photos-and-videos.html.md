@@ -17,7 +17,7 @@ From the history of ManageIQ to its future directions, and along this journey th
 
 If you'd like a visual summary of the event, following is an album on Facebook with snapshots - not only from the presentations but also the "hallway track", lunch breaks, and the fascinating chess simul during first day's happy hour.
 
-[![](/images/blog/MIQsummit2016_FB_album.png)](https://www.facebook.com/media/set/?set=a.942309235878230.1073741825.213973718711789&type=1&l=97ef097485)
+[![](/assets/images/blog/MIQsummit2016_FB_album.png)](https://www.facebook.com/media/set/?set=a.942309235878230.1073741825.213973718711789&type=1&l=97ef097485)
 
 While I tried to capture and document as much of the happenings as possible, `git clone urn:homosapiens:cybette` hasn't been fully implemented, and I fell short. Thankfully many of you were tweeting actively with cool commentary and pictures. Check out [these tweets with event hashtag #miqsummit2016](https://twitter.com/search?src=typd&q=%23miqsummit2016).
 

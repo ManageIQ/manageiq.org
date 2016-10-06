@@ -21,7 +21,7 @@ Take a look at the [changelog](https://github.com/ManageIQ/manageiq/blob/darga/C
 
 We encourage you to download RC1 and try it out! Select "Prerelease (darga-1-rc1)" from the [download page](http://manageiq.org/download/) as illustrated below:
 
-![Darga RC1 download flow](/images/blog/Darga_RC1_download.png)
+![Darga RC1 download flow](/assets/images/blog/Darga_RC1_download.png)
 
 If you encounter any issues/bugs, please report them on [Github](https://github.com/ManageIQ/manageiq/issues). You can also join our [discussion forum](http://talk.manageiq.org/) if you have questions or need more support. Remember to use the ["Release Candidate"](http://talk.manageiq.org/c/release-candidate) category.
 
