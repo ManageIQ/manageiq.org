@@ -4,6 +4,7 @@ author: jprause
 date: 2016-10-06 14:35:39 UTC
 comments: true
 published: true
+tags: releases announcements
 ---
 
 We've just built Darga-4.1 This release contains a security fix, bug fixes, numerous UI tweaks, and stabilization.
