@@ -19,7 +19,7 @@ title: Download
     <tr>
       <td><a href="https://hub.docker.com/r/manageiq/manageiq/">Docker (tag {{release.tag}})</a></td>
       <td>docker</td>
-      <td>0.5 GB</td>
+      <td>0.4 GB</td>
     </tr>
     {% for type in site.data.download_types %}
     <tr>
