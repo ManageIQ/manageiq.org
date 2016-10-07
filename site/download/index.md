@@ -23,7 +23,7 @@ title: Download
     </tr>
     {% for type in site.data.download_types %}
     <tr>
-      <td><a href="http://manageiq.org/download/manageiq-{{type.download_platform}}-{{release.filename}}.{{type.ext}}">{{ type.name }}</a></td>
+      <td><a href="http://releases.manageiq.org/manageiq-{{type.download_platform}}-{{release.filename}}.{{type.ext}}">{{ type.name }}</a></td>
       <td>{{ type.download_platform }}</td>
       <td>{{ type.size_stable }}</td>
     </tr>
@@ -51,7 +51,7 @@ title: Download
     </tr>
     {% for type in site.data.download_types %}
     <tr>
-      <td><a href="http://manageiq.org/download/manageiq-{{type.download_platform}}-{{release.filename}}.{{type.ext}}">{{ type.name }}</a></td>
+      <td><a href="http://releases.manageiq.org/manageiq-{{type.download_platform}}-{{release.filename}}.{{type.ext}}">{{ type.name }}</a></td>
       <td>{{ type.download_platform }}</td>
       <td>{{ type.size_devel }}</td>
     </tr>
