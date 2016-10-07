@@ -18,6 +18,16 @@ html {
   font-size: 62.5%;
 }
 
+// Breakpoints, mobile first
+$bp-mobl-s: 320px;
+$bp-mobl-m: 375px;
+$bp-mobl-l: 425px;
+
+$bp-tabl: 768px;
+
+$bp-desk0: 880px;
+$bp-desk1: 1000px;
+
 // Home Grid vars
 $hg-gutter-width: 30px;
 $hg-container-desktop: 867px;
@@ -29,8 +39,10 @@ $triad-offset: -74px;
 // body border + header + footer
 $page-height-offset: 257px;
 
-// Menu
+// Site menu
+$site-menu-sm-width: 320px;
 
+// Docs Menu
 $menu-highlight-bar: 0.25em;
 $menu-level-pad: 36px;
 
@@ -43,12 +55,13 @@ $menu-level-pad: 36px;
   "page",   // page containers and colors
   "menu",
   "site_nav",
+  "off_canvas",
   "header",
-  "footer",
-  "banner";
+  "footer";
 
 // Home page
 @import
+  "banner",
   "triad",
   "platforms",
   "solutions",

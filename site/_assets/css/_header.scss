@@ -1,36 +1,63 @@
-.site-header {
-  width: 100%;
-  padding: 30px;
+$site-header-sm-pad: 10px;
 
-  @include clearfix;
+.site-header {
+  max-width: 100%;
+  padding: $site-header-sm-pad;
+
   @include banner_grad;
 
   z-index: 9999;
-
-  .brand {
-    float: left;
-    color: #fff;
-    display: block;
-  }
 
   .brand-name {
     display: none;
   }
 
   .brand-logo {
-    width: 160px;
+    display: block;
+    width: 120px;
     height: auto;
-  }
-
-  .site_nav {
-    float: right;
   }
 }
 
 .home {
   .site-header {
     position: fixed;
+    right: 0;
+    left: 0;
     top: 0;
     background: none;
   }
 }
+
+#site_header-nav_toggle {
+  position: absolute;
+  right: $site-header-sm-pad;
+  top: $site-header-sm-pad;
+
+  a {
+    color: #fff;
+  }
+}
+
+@media only screen and (min-width: #{$bp-desk0}) {
+  .site-header {
+
+    padding: 30px;
+
+    @include clearfix;
+
+    .brand {
+      float: left;
+      color: #fff;
+      display: block;
+    }
+
+    .brand-logo {
+      width: 160px;
+    }
+
+    .site_nav {
+      float: right;
+    }
+  }
+} // @media

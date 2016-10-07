@@ -11,8 +11,6 @@
     padding: 0;
 
     li {
-      float: left;
-
       a {
         display: block;
         padding: 1em;
@@ -23,32 +21,14 @@
           text-decoration: none;
         }
       }
-
-      &:first-child a {
-        padding-left: 38px;
-      }
-    }
-
-    li.active {
-      a {
-        color: #fff;
-        background-color: lighten($blue-dark, 10%);
-      }
     }
   }
-}
-
-.doc_container {
-  display: flex;
-  min-height: calc(100vh - #{$page-height-offset});
 }
 
 .doc_menu {
   color: #fff;
   padding-right: 0;
   background-color: $grey-dark;
-  min-width: 16em;
-  width: 25%;
 
   .menu {
     font-size: 14px;
@@ -64,136 +44,170 @@
   }
 }
 
-.doc_menu-header {
-  border-bottom: 1px solid lighten($grey-dark, 10%);
-  padding: 2em 0;
-
-  .menu {
-    font-size: 18px;
-  }
-}
-
 .doc_main {
-  // padding: 5.1em 0;
-  overflow-x: hidden;
-
-  .doc {
-    border-top: 1px solid $doc-line-lite;
-    padding: 4em;
-  }
-
-  .doc-title {
-    margin-top: 0;
-  }
+  padding: 0 2em;
 }
 
-.doc-content {
-  h1:first-child, h2:first-child {
-    margin-top: 0;
-  }
+@media only screen and (min-width: #{$bp-desk0}) {
+  .doc_tabs {
+    ul {
+      li {
+        float: left;
 
-  table {
-    max-width: 100%;
-    margin-bottom: 1em;
-
-    th {
-      border-bottom: 1px solid $doc-line-lite;
-    }
-
-    td, th {
-      font-size: 14px;
-      padding: 1em;
-      border-right: 1px solid $doc-line-lite;
-      vertical-align: middle;
-
-      &:last-child {
-        border-right: none;
+        &:first-child a {
+          padding-left: 38px;
+        }
       }
 
-      // Paragraphs in table cells, WHY???
-      p {
-        margin: 0;
-        line-height: 1.4;
-      }
-    }
-
-    tr:nth-child(even) {
-      td {
-        background-color: lighten($grey-dark, 75%);
+      li.active {
+        a {
+          color: #fff;
+          background-color: lighten($blue-dark, 10%);
+        }
       }
     }
   }
-}
 
-// Guides
-
-// User Ref Docs
-
-.user_doc .doc-content {
-  margin-right: 35%;
-}
-
-.user_doc .sect1 {
-  h2:first-child {
-    margin-top: 0;
-  }
-}
-
-.toc {
-  font-size: 14px;
-  padding: 0 1em 1em 1em;
-  border-left: 1px solid $doc-line-lite;
-  margin: 0 0 2em 2em;
-  width: 25%;
-  position: absolute;
-  right: 1em;
-
-  ul {
-    list-style: none;
-    padding: 0;
+  .doc_container {
+    display: flex;
+    min-height: calc(100vh - #{$page-height-offset});
   }
 
-  li {
-    padding-bottom: 0.5em;
+  .doc_menu {
+    min-width: 16em;
+    width: 16em;
+  }
 
-    // Pad anchors followed by <ul>'s
-    > a {
-      display: block;
+  // .doc_menu-header {
+  //   border-bottom: 1px solid lighten($grey-dark, 10%);
+  //   padding: 2em 0;
+  //
+  //   .menu {
+  //     font-size: 18px;
+  //   }
+  // }
+
+  .doc_main {
+    overflow-x: hidden;
+
+    .doc {
+      border-top: 1px solid $doc-line-lite;
+      padding: 4em;
+    }
+
+    .doc-title {
+      margin-top: 0;
+    }
+  }
+
+  .doc-content {
+    h1:first-child, h2:first-child {
+      margin-top: 0;
+    }
+
+    table {
+      max-width: 100%;
+      margin-bottom: 1em;
+
+      th {
+        border-bottom: 1px solid $doc-line-lite;
+      }
+
+      td, th {
+        font-size: 14px;
+        padding: 1em;
+        border-right: 1px solid $doc-line-lite;
+        vertical-align: middle;
+
+        &:last-child {
+          border-right: none;
+        }
+
+        // Paragraphs in table cells, WHY???
+        p {
+          margin: 0;
+          line-height: 1.4;
+        }
+      }
+
+      tr:nth-child(even) {
+        td {
+          background-color: lighten($grey-dark, 75%);
+        }
+      }
+    }
+  }
+
+  // Guides
+
+  // User Ref Docs
+
+  .user_doc .doc-content {
+    margin-right: 35%;
+  }
+
+  .user_doc .sect1 {
+    h2:first-child {
+      margin-top: 0;
+    }
+  }
+
+  .toc {
+    font-size: 14px;
+    padding: 0 1em 1em 1em;
+    border-left: 1px solid $doc-line-lite;
+    margin: 0 0 2em 2em;
+    width: 25%;
+    position: absolute;
+    right: 1em;
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
       padding-bottom: 0.5em;
+
+      // Pad anchors followed by <ul>'s
+      > a {
+        display: block;
+        padding-bottom: 0.5em;
+      }
+    }
+
+    // Reset padding from above
+    li a:only-child {
+      padding-bottom: 0;
+    }
+
+    .sectlevel2 {
+      padding: 0 0 1em 1em;
+    }
+
+    .sectlevel3 {
+      padding: 0 0 1em 2em;
+    }
+
+    // Don't separate below the top level
+    li > ul > li ul {
+      padding-bottom: 0;
     }
   }
 
-  // Reset padding from above
-  li a:only-child {
-    padding-bottom: 0;
+  #toctitle {
+    margin-bottom: 1em;
   }
 
-  .sectlevel2 {
-    padding: 0 0 1em 1em;
-  }
+  .user_doc {
+    span.image {
+      display: block;
+    }
 
-  .sectlevel3 {
-    padding: 0 0 1em 2em;
+    img {
+      display: inline-block;
+      max-width: 100%;
+      height: auto;
+    }
   }
-
-  // Don't separate below the top level
-  li > ul > li ul {
-    padding-bottom: 0;
-  }
-}
-
-#toctitle {
-  margin-bottom: 1em;
-}
-
-.user_doc {
-  span.image {
-    display: block;
-  }
-
-  img {
-    display: inline-block;
-    max-width: 100%;
-    height: auto;
-  }
-}
+} // @media

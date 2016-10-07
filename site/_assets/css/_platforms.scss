@@ -1,11 +1,9 @@
 .platforms {
-  background-color: #fff;
-  padding: 3.75em 0;
+  max-width: 100%;
 }
 
 .platforms-container {
-  width: $hg-container-desktop;
-  margin: 0 auto;
+  max-width: 100%;
 
   display: flex;
   flex-flow: row wrap;
@@ -14,8 +12,8 @@
 }
 
 .platform_brand {
-  width: 10em;
-  margin: 0 1em;
+  width: 8em;
+  margin: 0.875em;
 
   img {
     display: block;
@@ -25,15 +23,15 @@
 }
 
 #platform_aws {
-  width: 8em;
+  width: 7em;
 }
 
 #platform_gcp {
-  width: 16em;
+  width: 14em;
 }
 
 #platform_kubernetes {
-  width: 13em;
+  width: 10em;
 }
 
 #platform_openshift {
@@ -41,17 +39,77 @@
 }
 
 #platform_openstack {
-  width: 5em;
+  width: 4em;
 }
 
 #platform_ovirt {
-  width: 5em;
+  width: 4em;
 }
 
 #platform_vmware {
-  width: 11em;
+  width: 8em;
 }
 
 #platform_hawkular {
-  width: 11em;
+  width: 4em;
+}
+
+@media only screen and (min-width: #{$bp-desk0}) {
+  .platforms {
+    background-color: #fff;
+    padding: 3.75em 0;
+  }
+
+  .platforms-container {
+    width: $hg-container-desktop;
+    margin: 0 auto;
+
+    // display: flex;
+    // flex-flow: row wrap;
+    // justify-content: space-around;
+    // align-items: center;
+  }
+
+  .platform_brand {
+    width: 10em;
+    margin: 0 1em;
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  #platform_aws {
+    width: 8em;
+  }
+
+  #platform_gcp {
+    width: 16em;
+  }
+
+  #platform_kubernetes {
+    width: 13em;
+  }
+
+  #platform_openshift {
+    width: 6em;
+  }
+
+  #platform_openstack {
+    width: 5em;
+  }
+
+  #platform_ovirt {
+    width: 5em;
+  }
+
+  #platform_vmware {
+    width: 11em;
+  }
+
+  #platform_hawkular {
+    width: 5em;
+  }
 }

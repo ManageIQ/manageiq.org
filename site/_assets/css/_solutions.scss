@@ -3,31 +3,18 @@
 .solution-container {
   @include container-fixed(0);
   display: flex;
-  max-width: $hg-container-desktop;
+  max-width: 100%;
   justify-content: space-between;
+  align-items: center;
 }
 
 .solution {
-  padding: 72px 0;
-}
-
-.solution-left {
-  background-color: #fff;
-
-  .solution-img {
-    margin-right: 72px;
-  }
-}
-
-.solution-right {
-  .solution-img {
-    margin-left: 72px;
-  }
+  padding: 2em 0;
 }
 
 .solution-img {
-  width: 175px;
-  height: 175px;
+  width: 80px;
+  height: 80px;
 
   img {
     display: block;
@@ -38,9 +25,55 @@
 
 .solution-content {
   flex: 1;
-  max-width: 33em;
+  max-width: 16em;
 }
 
 .solution-text {
-  font-size: 14px;
+  font-size: 12px;
+}
+
+@media only screen and (min-width: #{$bp-desk0}) {
+  .solutions {}
+
+  .solution-container {
+    max-width: $hg-container-desktop;
+  }
+
+  .solution {
+    padding: 72px 0;
+  }
+
+  .solution-left {
+    background-color: #fff;
+
+    .solution-img {
+      margin-right: 72px;
+    }
+  }
+
+  .solution-right {
+    .solution-img {
+      margin-left: 72px;
+    }
+  }
+
+  // .solution-img {
+  //   width: 175px;
+  //   height: 175px;
+  //
+  //   img {
+  //     display: block;
+  //     max-width: 100%;
+  //     height: auto;
+  //   }
+  // }
+
+  .solution-content {
+    flex: 1;
+    max-width: 33em;
+  }
+
+  .solution-text {
+    font-size: 14px;
+  }
 }
