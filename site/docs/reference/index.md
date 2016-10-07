@@ -1,6 +1,6 @@
 ---
 layout: doc_page
-title: Get Started With ManageIQ
+title: User Reference
 permalink: /docs/reference/
 ---
 
