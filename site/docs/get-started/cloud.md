@@ -10,17 +10,17 @@ The installation of ManageIQ consists on two phases:
 
 We will use the Google Cloud Platform as an example, so you need to open an account. Free accounts can be opened in [Google Cloud](https://console.cloud.google.com/freetrial) for eligible users.
 
-![screenshot0037](/assets/images/docs/screenshot_0037.png)
+![screenshot0037](/assets/images/docs/screenshot_0037.png){:.img-responsive}
 
 ## 1. Installing ManageIQ as a cloud image ##
 ### Step 1. Create a new image ###
 From console.cloud.google.com, go to "Compute Engine" and then "Images"
 
-![screenshot0038](/assets/images/docs/screenshot_0038.png)
+![screenshot0038](/assets/images/docs/screenshot_0038.png){:.img-responsive}
 
 Create a new image:
 
-![screenshot0040](/assets/images/docs/screenshot_0040.png)
+![screenshot0040](/assets/images/docs/screenshot_0040.png){:.img-responsive}
 
 **Name:** manageiq-darga-3
 
@@ -34,7 +34,7 @@ Create a new image:
 
 Once the image is created, you can create a new instance based on this
 image. It's recommended to select the 2 CPU / 7.5GB instance.
-![screenshot0041](/assets/images/docs/screenshot_0041.png)
+![screenshot0041](/assets/images/docs/screenshot_0041.png){:.img-responsive}
 
 While creating the image, select in firewalls:
 ~~~~
@@ -42,7 +42,7 @@ While creating the image, select in firewalls:
 -[x] Allow HTTPS traffic
 ~~~~
 
-![screenshot0042](/assets/images/docs/screenshot_0042.png)
+![screenshot0042](/assets/images/docs/screenshot_0042.png){:.img-responsive}
 
 ```
 #### [NOTE]

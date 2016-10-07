@@ -18,7 +18,7 @@ setting ssh keys)
     1.  **Docker:** localhost (127.0.0.1)
     2.  **Vagrant:** 172.28.128.3
 
-![screenshot0001](/assets/images/docs/screenshot_0001.png)
+![screenshot0001](/assets/images/docs/screenshot_0001.png){:.img-responsive}
 
 ### 2. Log in using default credentials
 
@@ -31,7 +31,7 @@ The main menus are available in
     expanded when needed. You can pin a secondary or tertiary menu to
     easily navigate through its elements.
 
-![screenshot0002](/assets/images/docs/screenshot_0002.png)
+![screenshot0002](/assets/images/docs/screenshot_0002.png){:.img-responsive}
 
 ###  4. Change options
 Go to Settings → Configuration to change how the appliance behaves:
@@ -48,7 +48,7 @@ Go to Settings → Configuration to change how the appliance behaves:
 -         ***Select your time zone***, and, 
         if you want, you can change the language default.
 
-![screenshot0003](/assets/images/docs/screenshot_0003.png)
+![screenshot0003](/assets/images/docs/screenshot_0003.png){:.img-responsive}
 
 #### 2. Choose functions for this appliance ####
 Server control defines what roles each appliance executes in a
@@ -57,11 +57,11 @@ Server control defines what roles each appliance executes in a
         Database synchronization, Git Repositories Owner, RHN Mirror or
         Smart Proxy unless you need them.
 
-![screenshot0004](/assets/images/docs/screenshot_0004.png)
+![screenshot0004](/assets/images/docs/screenshot_0004.png){:.img-responsive}
 
 #### 3.  Configure your email server so ManageIQ can send you emails ####
 
-![screenshot0005](/assets/images/docs/screenshot_0005.png)
+![screenshot0005](/assets/images/docs/screenshot_0005.png){:.img-responsive}
 
 #### 4. Save your changes ####
 **Press Save*** to save your changes
@@ -77,6 +77,6 @@ In the accordion, ***select Access Control.***
 3.    Click ***Configuration → Add a new User*** 
 4.    Fill all the elements in the form (***select Role *EvmRole-user\_limited\_self\_service****) and then ***press *Add***
 
-![screenshot0005](/assets/images/docs/screenshot_0006.png)
+![screenshot0005](/assets/images/docs/screenshot_0006.png){:.img-responsive}
 
 ## Next: [Add A Provider](/docs/get-started/add-a-provider)
