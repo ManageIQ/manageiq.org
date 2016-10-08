@@ -37,11 +37,8 @@ h4 {
 }
 
 .section-title {
-  font-size: 14px;
-  line-height: 1.3;
   text-align: center;
-  margin: 1.5em auto;
-  max-width: 18em;
+  margin: 0 0 2em;
 }
 
 @media only screen and (min-width: #{$bp-desk0}) {
@@ -64,6 +61,6 @@ h4 {
   }
 
   .section-title {
-    max-width: 100%;
+    font-size: 20px;
   }
 }

@@ -1,8 +1,13 @@
-.features {}
+.features {
+  padding: 2em 0
+}
 
 .feature {
   display: flex;
-  margin-bottom: 2em;
+  margin: 1em 0.5em;
+  padding: 1em;
+  background-color: #fff;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.2);
 }
 
 .feature-img {
@@ -11,8 +16,13 @@
   margin-right: 30px;
 }
 
+.feature-title {
+  font-size: 16px;
+}
+
 .feature-text {
   font-size: 14px;
+  color: $text-subdued;
 }
 
 @media only screen and (min-width: #{$bp-desk0}) {
@@ -34,12 +44,13 @@
     width: 525px;
     margin: 0 0 30px 0;
     padding: 24px;
-
-    background-color: #fff;
-    box-shadow: 0 1px 1px rgba(0,0,0,0.2);
   }
 
   .feature-img {}
+
+  .feature-title {
+    font-size: 18px;
+  }
 
   .feature-text {}
 }
