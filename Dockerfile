@@ -8,11 +8,16 @@ MAINTAINER Eric Hayes <eric@erichayes.net>
 ENV LC_LANG="en_US.UTF-8"
 ENV LANG="en_US.UTF-8"
 
-# Affects Ruby libs loaded
+# Effects things like whether Google Analytics is included
+ENV JEKYLL_ENV=production
+
+# Effects Ruby libs loaded
 ENV MIQ_ENV=production
 
 # Shell commands are logged, not run
 # MIQ_DEBUG=1
+
+# Change logging destination
 # MIQ_LOG_DEST
 
 # Absolute path for Bundler
