@@ -7,20 +7,30 @@ $solution_pad: 4em;
   display: flex;
   max-width: 100%;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .solution {
-  padding: 2em 0;
+  padding: 2em 1em;
 }
 
 .solution-left {
   background-color: #fff;
+
+  .solution-img {
+    margin-right: 1em;
+  }
+}
+
+.solution-right {
+  .solution-img {
+    margin-left: 1em;
+  }
 }
 
 .solution-img {
-  width: 80px;
-  height: 80px;
+  width: 50px;
+  height: 50px;
 
   img {
     display: block;
@@ -40,13 +50,18 @@ $solution_pad: 4em;
 
 .solution-text {
   font-size: 12px;
+  color: lighten($text-black, 10%);
 }
 
 @media only screen and (min-width: #{$bp-desk0}) {
-  .solutions {}
+  .solutions {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
 
   .solution-container {
     max-width: $hg-container-desktop;
+    align-items: center;
   }
 
   .solution {
@@ -77,6 +92,5 @@ $solution_pad: 4em;
 
   .solution-text {
     font-size: 16px;
-    color: lighten($text-black, 10%);
   }
 }

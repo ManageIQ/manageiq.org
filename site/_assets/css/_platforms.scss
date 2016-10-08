@@ -1,5 +1,7 @@
 .platforms {
   max-width: 100%;
+  padding: 2em 0;
+  background-color: #fff;
 }
 
 .platforms-container {
@@ -50,13 +52,8 @@
   width: 8em;
 }
 
-#platform_hawkular {
-  width: 4em;
-}
-
 @media only screen and (min-width: #{$bp-desk0}) {
   .platforms {
-    background-color: #fff;
     padding: 3.75em 0;
   }
 
@@ -107,9 +104,5 @@
 
   #platform_vmware {
     width: 11em;
-  }
-
-  #platform_hawkular {
-    width: 5em;
   }
 }
