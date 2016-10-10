@@ -15,7 +15,7 @@ This issue was discovered by Adam Mariš (Red Hat).
 
 
 Here is the changelog:
-[Darga-4.1](https://github.com/ManageIQ/manageiq/blob/master/CHANGELOG.md)
+[Darga-4.1](https://github.com/ManageIQ/manageiq/blob/darga/CHANGELOG.md)
 
 Here is the complete summary of fixes in Darga-4.1:
 [manageiq](https://github.com/ManageIQ/manageiq/issues?utf8=%E2%9C%93&q=is%3Amerged%20label%3Adarga%2Fbackported%20merged%3A2016-08-08..2016-10-05%20)
