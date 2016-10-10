@@ -11,10 +11,10 @@ On behalf of the ManageIQ team, we're pleased to announce the Beta release for M
 
 Euwe is the next milestone release for ManageIQ cloud and virtualization management platform. The update is packed with new features and improvements. Highlights include:
 
-* Centralized Administration
-* Performance Improvements (including SmartState)
-* Providers: Core
-* PostgreSQL HA
+* Centralized administration allowing you to invoke power and retirement operations on remote regions.
+* Huge performance improvements for page rendering in the User Interface as well as SmartState for Microsoft Azure.
+* Provider logic which asks instead of assuming that an operation or feature is available for a specific provider. In other words, known features are discoverable.
+* High Availabilty for the PostgreSQL ManageIQ server maintaining a list of standby servers as well as a failover monitor for the database.
 * New method taggable? to programmatically determine if a Service Model class or instance is taggable.
 * Enhanced messaging for provisioning: Displayed elements.
 
