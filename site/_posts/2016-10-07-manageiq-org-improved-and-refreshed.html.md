@@ -11,7 +11,7 @@ When ManageIQ was open sourced two years ago, the manageiq.org website was launc
 
 So for the past couple of months, a group of us have been working diligently to renew the experience for manageiq.org. Some of you may have already [sneaked a peek during the Sprint reviews](/blog/2016/09/sprint-46-review-september-14-2016/), or even reviewed the [beta version of the new site](http://talk.manageiq.org/t/preview-the-beta-manageiq-website-and-give-your-feedback/1756/). We've made more changes with the last round of comments and we're proud to present the refreshed and improved [ManageIQ.org](http://manageiq.org/)!
 
-The goals of the new website is to make it easier for first time users of ManageIQ to get started, for seasoned users to locate the additional infomation they are looking for, as well as for developers to contribute and extend ManageIQ and its functionalities. The redesign of visuals and user interaction pulls the updated content together to provide an overall enhanced experience for all visitors.
+The goals of the new website is to make it easier for first time users of ManageIQ to get started, for seasoned users to locate the additional information they are looking for, as well as for developers to contribute and extend ManageIQ and its functionalities. The redesign of visuals and user interaction pulls the updated content together to provide an overall enhanced experience for all visitors.
 
 ## Front page
 
