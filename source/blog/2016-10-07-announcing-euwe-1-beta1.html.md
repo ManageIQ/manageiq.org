@@ -1,21 +1,22 @@
 ---
 title: Announcing Euwe Beta1 
 author: jprause
-date: 2016-10-07 12:49:24 UTC
+date: 2016-10-10 12:49:24 UTC
 comments: true
 published: true
+tags: releases announcements
 ---
 
 On behalf of the ManageIQ team, we're pleased to announce the Beta release for ManageIQ Euwe! 
 
 Euwe is the next milestone release for ManageIQ cloud and virtualization management platform. The update is packed with new features and improvements. Highlights include:
 
-* Cinder Storage Manager
-* Swift Storaeg Manager
-* Centralized Administration - support for Power Operations and Retirement
-* Allow policies to prevent Container image scans
-* Chargeback rates based on container image tags
-* Keep pod-container relationship after disconnection
+* Centralized Administration
+* Performance Improvements (including SmartState)
+* Providers: Core
+* PostgreSQL HA
+* New method taggable? to programmatically determine if a Service Model class or instance is taggable.
+* Enhanced messaging for provisioning: Displayed elements.
 
 Take a look at the [changelog](https://github.com/ManageIQ/manageiq/blob/euwe/CHANGELOG.md/) for more details.
 
