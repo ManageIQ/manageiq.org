@@ -15,8 +15,6 @@ Euwe is the next milestone release for ManageIQ cloud and virtualization managem
 * Huge performance improvements for page rendering in the User Interface as well as SmartState for Microsoft Azure.
 * Provider logic which asks instead of assuming that an operation or feature is available for a specific provider. In other words, known features are discoverable.
 * High Availabilty for the PostgreSQL ManageIQ server maintaining a list of standby servers as well as a failover monitor for the database.
-* New method taggable? to programmatically determine if a Service Model class or instance is taggable.
-* Enhanced messaging for provisioning: Displayed elements.
 
 Take a look at the [changelog](https://github.com/ManageIQ/manageiq/blob/euwe/CHANGELOG.md/) for more details.
 
