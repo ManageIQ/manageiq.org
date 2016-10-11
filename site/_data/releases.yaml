@@ -1,7 +1,12 @@
 stable:
-  name: Darga-3
-  tag: darga-3
-  filename: darga-3
+  name: darga-4.1
+  tag: darga-4.1
+  filename: darga-4.1
+
+prerelease:
+  name: euwe-1-beta-1.1
+  tag: euwe-1-beta-1.1
+  finename: euwe-1-beta-1.1
 
 devel:
   name: Nightly
