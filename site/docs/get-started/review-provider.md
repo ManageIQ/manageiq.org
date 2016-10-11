@@ -59,7 +59,7 @@ Click on any of the VM available (or follow the next element if you
 don’t see any to create a new VM).
 
 You will find in the accordion a hierarchy tree that allows you to see
-the context: our machine is part of the avaiability zone: *“us-east1-b”*.
+the context: our machine is part of the availability zone: *“us-east1-b”*.
 
 ![screenshot0021a](/assets/images/docs/screenshot_0021a.png){:.img-responsive}
 
@@ -131,8 +131,8 @@ data and relationships in an structured way. You can find reports under ***Cloud
 This tutorial does not specify the information you can gather in reporting
 ~~~~
 [NOTE]
-Providers need to have avaiable Capacity and Utilization data to be able to generate reports on them
-Not all providers show the same data or have the C&U data avaiable.
+Providers need to have Capacity and Utilization data available to be able to generate reports on them
+Not all providers show the same data or have the C&U data available.
 
 ~~~~
 

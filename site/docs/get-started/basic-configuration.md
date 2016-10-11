@@ -4,7 +4,7 @@ title: Basic Configuration
 ---
 ### 1. Introduction
 
-The Red Hat CloudForms appliance is a virtual machine image that runs on
+The ManageIQ appliance is a virtual machine image that runs on
 a Red Hat Enterprise Linux-based operating system. It is advisable to
 perform some tasks in the appliance (i.e changing the root password and
 setting ssh keys)
@@ -39,7 +39,7 @@ Go to Settings → Configuration to change how the appliance behaves:
 #### 1. Select the appliance to configure ####
 - ***CFME Region: Region 0*** → ***Zones*** → ***Zone: Default zone(current)*** → ***Server: EVM\[1\](current)*** should be
         selected by default.  
--         The *hostname* and *IP address* of the aplliance will be shown here, be careful as in some 
+-         The *hostname* and *IP address* of the appliance will be shown here, be careful as in some
         cases this will be the internal IP address and not the one you
         connected to.  
 

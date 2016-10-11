@@ -5,7 +5,7 @@ title: Create A Self-service Catalog Item
 
 Go to ***Services → Catalogs***.
 
-Currently there are no catalogues, but we will be creating a new one
+Currently there are no catalogs, but we will be creating a new one
 now. We need a few things:
 
 -   A service dialog to gather user input
@@ -13,7 +13,7 @@ now. We need a few things:
 -   A catalog to show the user
 -   A catalog item within that catalog to put all together
 
-###Creating the dialog
+### Creating the dialog####
 
 Let’s start creating the dialog. Dialogs are part of Automate, so go to
 ***Automate → Customization*** and select ***Service Dialogs*** in the
@@ -29,7 +29,7 @@ circle on top.
 ### Creating a catalog####
 
 You need a catalog for the user to choose from it. Let’s create a
-catalog with a basic name and descrition
+catalog with a basic name and description
 
 Go to ***Services → Catalogs*** and choose ***Catalogs*** in the accordion.
 
@@ -49,7 +49,7 @@ Add a new ***Configuration → Add a New Catalog Item***
 
 Select * Google* as Catalog Item type and you will get a dialog to
 configure what will happen when the customer orders the item. Don’t
-forget to select DIsplay in Catalog to be make it available.
+forget to select Display in Catalog to be make it available.
 
 Fill the description in details and fill ***Request Info*** with the same
 data you did in the traditional provisioning.
