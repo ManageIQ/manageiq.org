@@ -207,7 +207,7 @@ Service
 : An item in a Service Catalog that can be requested.
 
 Service Catalog 
-: A catalog item or Catalog bundle that is available for provisioning. Provide theability to permit users to order our orchestration workflows with a single button click.
+: A catalog item or Catalog bundle that is available for provisioning. Provide the ability to permit users to order our orchestration workflows with a single button click.
 
 Service Dialogs
 : Made up of fully customizable tabs, items, and values for use with Service provisioning.

@@ -82,7 +82,7 @@ You will see your request go through different stages (you can press
 
 ![screenshot0034](/assets/images/docs/screenshot_0034.png){:.img-responsive}
 
-After a few seconds, a new vm will be present, owner and group will be
+After a few seconds, a new VM will be present, owner and group will be
 properly set up for this new VM and you will see all the information about it.
 
 ![screenshot0035](/assets/images/docs/screenshot_0035.png){:.img-responsive} 

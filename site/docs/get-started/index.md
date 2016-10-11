@@ -17,7 +17,7 @@ MangeIQ is an open source management platform for hybrid IT. Agile, Efficient an
 
 ## Following this Guide
 
-In order to follow this guide, you will needa computer that allows you to run the software and a provider to connect to. ManageiQ can be installed in many different providers, virtual or cloud. We will provide some options in this tutorial but you can check in the documentation for other options.
+In order to follow this guide, you will need a computer that allows you to run the software and a provider to connect to. ManageiQ can be installed in many different providers, virtual or cloud. We will provide some options in this tutorial but you can check in the documentation for other options.
 Requirements vary depending on your choice.
 
 There is a concept guide that you can check if you need a definition:

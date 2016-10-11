@@ -18,7 +18,7 @@ Create the Google Cloud Platform free trial account if you don’t have
 one already. You will need an existing Google account that you will use
 to create a new GCP project and billing account.
 
-[Google Cloud Platform gree trial](https://console.cloud.google.com/freetrial)
+[Google Cloud Platform free trial](https://console.cloud.google.com/freetrial)
 
 Once you have your billing account created and you have started your
 trial, create a VM to make sure that everything is working.
@@ -41,7 +41,7 @@ After you finish the tutorial, you should have at least 1 instance in your accou
 
 #### 1.  Connect to ManageIQ as admin (admin/password)####
 
-1.  Conect to the appliance via ssh and make sure that the appliance is configured in the same zone that
+1.  Connect to the appliance via ssh and make sure that the appliance is configured in the same zone that
         the GUI and that is synchronized 
         (`sudo systemctl restart chronyd`)
 2.  Access the console to see available options
