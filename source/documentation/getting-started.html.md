@@ -1052,6 +1052,113 @@ Result:
 ManageIQ refreshes the details for the chosen cloud providers.
 
 
+## Containers
+
+The currently supported container provider types are:
+
+- [Kubernetes](http://kubernetes.io/)
+- [OpenShift Origin](http://www.openshift.org/)
+- [OpenShift Enterprise](https://enterprise.openshift.com/)
+- [Atomic](http://www.projectatomic.io/)
+- [Atomic Enterprise](https://access.redhat.com/products/red-hat-atomic-enterprise-platform)
+
+### Service Accounts
+
+To add a Kubernetes or OpenShift provider you must create, in those clusters, a specific `management` service account with the proper role,
+permissions, and authentication token.
+
+For more information on these topics, check out the relevant documentation:
+
+- [Kubernetes Service Accounts](https://github.com/kubernetes/kubernetes/blob/release-1.1/docs/design/service_accounts.md)
+- [Kubernetes Authentication](https://github.com/kubernetes/kubernetes/blob/release-1.1/docs/admin/authentication.md)
+- [OpenShift Service Accounts](https://docs.openshift.com/enterprise/3.0/dev_guide/service_accounts.html)
+
+To add a `management` service account in an OpenShift cluster:
+
+    $ oadm new-project management-infra --description="Management Infrastructure"
+
+    $ oc create -n management-infra -f - <<EOF
+    apiVersion: v1
+    kind: ServiceAccount
+    metadata:
+      name: management-admin
+    EOF
+
+    $ oc create -f - <<EOF
+    apiVersion: v1
+    kind: ClusterRole
+    metadata:
+      name: management-infra-admin
+    rules:
+    - resources:
+      - pods/proxy
+      verbs:
+      - '*'
+    EOF
+
+    $ oadm policy add-role-to-user -n management-infra admin -z management-admin
+    $ oadm policy add-role-to-user -n management-infra management-infra-admin -z management-admin
+    $ oadm policy add-cluster-role-to-user cluster-reader system:serviceaccount:management-infra:management-admin
+    $ oadm policy add-scc-to-user privileged system:serviceaccount:management-infra:management-admin
+
+*Note: at the moment the `management-infra-admin` role is needed to address the OpenShift issue [#5973](https://github.com/openshift/origin/issues/5973).*
+
+To obtain the `management` service account token name:
+
+    oc get -n management-infra sa/management-admin --template='{{range .secrets}}{{printf "%s\n" .name}}{{end}}'
+    management-admin-token-32f97
+    management-admin-dockercfg-fvkso
+
+To retrieve the token (substitute `management-admin-token-32f97` with the name of your token):
+
+    $ oc get -n management-infra secrets management-admin-token-32f97 --template='{{.data.token}}' | base64 -d
+    eyJhbGciOiJSUzI1NiIsInR5cC...
+
+It is now possible to use the token to add the container provider in ManageIQ (see next chapter).
+
+
+### Configuring OpenShift Metrics
+
+To collect the `nodes`, `pods` and `containers` metrics it is required to run the OpenShift Metrics services inside your cluster.
+For more infromation on this subject please refer to the [OpenShift Metrics Documentation](https://github.com/openshift/origin-metrics).
+
+**Note:** use the OpenShift master public hostname as the `HAWKULAR_METRICS_HOSTNAME`, at the moment a limitation in ManageIQ is assuming
+that the provider *Host Name* is used also to collect the metrics.
+
+Once [Hawkular Metrics](http://www.hawkular.org/) and [Heapster](https://github.com/kubernetes/heapster) have been successfully deployed
+by OpenShift Metrics it is possible to create a router for ManageIQ to access the metrics data:
+
+    oadm router management-metrics \
+      --credentials=/etc/origin/master/openshift-router.kubeconfig \
+      --service-account=router --ports='443:5000' \
+      --selector='kubernetes.io/hostname=<INSERT MASTER HOSTNAME HERE>'
+      --stats-port=1937 \
+      --host-network=false
+
+This router, at the moment, **must** run on the master nodes in order to expose the metrics on the port **5000** to ManageIQ, hence the
+need for a `selector` on the `kubernetes.io/hostname` of the master node.
+
+As long as the router, or routers, are accessible from the same public hostname of the master it is possible to use different selectors
+and scale the number of replicas in order to achieve high availability.
+
+
+### Adding a Container Provider
+
+After initial installation and creation of a ManageIQ environment and the creation of the `management` service account in the relevant container cluster, you can add the provider:
+
+**Procedure 6.1. To Add a Container Provider**
+
+1.  Navigate to **Containers** → **Providers**.
+2.  Click ![](doc/getting-started/1847.png) **(Configuration)**, then click ![](doc/getting-started/1848.png) **(Add a New Container Provider)**.
+3.  Enter a **Name** for the provider.
+4.  Select the **Type** of container provider.
+5.  Type in the **Host Name** or **IP Address** of the provider to add.
+6.  Change the **Port** if your provider uses a non-standard port for access.
+6.  Fill out the **Credentials** by typing in a **Token**.
+8.  Click **Validate** to validate the credentials.
+9.  Click **Add**.
+
+
 ## Provisioning Instances
 
 Cloud instances follow the same process (Request, Approval, Deployment) as a standard virtual machine from virtualization infrastructure. First, a user makes a request for instances and specifies the image, tags, availability zone and hardware profile flavor. Second, the request goes through the approval phase. Finally, ManageIQ executes the request.
