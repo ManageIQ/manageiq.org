@@ -65,4 +65,5 @@ miq update <all|guides|site|reference>  # Pull changes from origin repos
 `docker build <your-tag> .`
 
 ### Questions / Suggestions?
-https://gitter.im/ManageIQ/manageiq.org
+* Chat: https://gitter.im/ManageIQ/manageiq.org
+* Forum: http://talk.manageiq.org/c/website
