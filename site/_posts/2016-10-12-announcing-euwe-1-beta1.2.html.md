@@ -1,7 +1,7 @@
 ---
-title: Announcing Euwe-1-Beta-1.1 
+title: Announcing Euwe-1-Beta1.2 
 author: jprause
-date: 2016-10-11 12:49:24 UTC
+date: 2016-10-12 12:49:24 UTC
 comments: true
 published: true
 tags: releases announcements
@@ -20,7 +20,7 @@ Euwe is the next milestone release for ManageIQ cloud and virtualization managem
 
 Take a look at the [changelog](https://github.com/ManageIQ/manageiq/blob/euwe/CHANGELOG.md/) for more details.
 
-We encourage you to download Beta1 and try it out! Select "Prerelease (euwe-1-beta1)" from the [download page](http://manageiq.org/download/)
+We encourage you to download Beta1 and try it out! Select "Prerelease (euwe-1-beta1.2)" from the [download page](http://manageiq.org/download/)
 
 If you encounter any issues/bugs, please report them on [Github](https://github.com/ManageIQ/manageiq/issues). You can also join our [discussion forum](http://talk.manageiq.org/) if you have questions or need more support. Remember to use the ["Support"](http://talk.manageiq.org/c/support) category.
 
