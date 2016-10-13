@@ -1,5 +1,5 @@
 ---
-title: Announcing Euwe-1-Beta1.3 
+title: Announcing Euwe Beta Release 
 author: chessbyte
 date: 2016-10-13 12:49:24 UTC
 comments: true
