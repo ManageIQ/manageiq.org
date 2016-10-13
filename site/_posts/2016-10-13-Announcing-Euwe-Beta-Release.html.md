@@ -34,7 +34,7 @@ We encourage you to download Beta1 and try it out!
 | [oVirt] (http://releases.manageiq.org/manageiq-ovirt-euwe-1-beta1.3.ova) | ovirt | 1.1 GB |
 | [Qemu/KVM] (http://releases.manageiq.org/manageiq-openstack-euwe-1-beta1.3.qc2) | openstack | 1.2 GB |
 | [Red Hat Enterprise Virtualization] (http://releases.manageiq.org/manageiq-ovirt-euwe-1-beta1.3.ova) | ovirt | 1.1 GB |
-| [Vagrant] (https://atlas.hashicorp.com/vagrant) | vagrant | 1.1 GB |
+| [Vagrant] (https://atlas.hashicorp.com/manageiq/euwe) | vagrant | 1.1 GB |
 | [VMware vSphere] (http://releases.manageiq.org/manageiq-vsphere-euwe-1-beta1.3.ova) | vsphere | 1.3 GB |
 ---
 
