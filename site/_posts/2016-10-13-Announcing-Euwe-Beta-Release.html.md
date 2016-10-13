@@ -23,6 +23,7 @@ If you want to hear about features, improvements, and fixes directly from the de
 Take a look at the [changelog](https://github.com/ManageIQ/manageiq/blob/euwe/CHANGELOG.md/) for more details.
 
 We encourage you to download Beta1 and try it out!
+---
 | Appliance | Format | Size |
 | --- | --- | --- |
 | [Docker] (https://hub.docker.com/r/manageiq/manageiq/) | docker | 0.5 GB |
@@ -35,5 +36,6 @@ We encourage you to download Beta1 and try it out!
 | [Red Hat Enterprise Virtualization] (http://releases.manageiq.org/manageiq-ovirt-euwe-1-beta1.3.ova) | ovirt | 1.1 GB |
 | [Vagrant] (https://atlas.hashicorp.com/vagrant) | vagrant | 1.1 GB |
 | [VMware vSphere] (http://releases.manageiq.org/manageiq-vsphere-euwe-1-beta1.3.ova) | vsphere | 1.3 GB |
+---
 
 If you encounter any issues/bugs, please report them on [GitHub](https://github.com/ManageIQ/manageiq/issues). You can also join our [discussion forum](http://talk.manageiq.org/) if you have questions or need more support. Remember to use the ["Support"](http://talk.manageiq.org/c/support) category.
