@@ -9,7 +9,7 @@ tags: releases announcements
 
 On behalf of the ManageIQ team, we're pleased to announce the Beta release for ManageIQ Euwe! 
 
-Euwe is the next milestone release for ManageIQ cloud and virtualization management platform. With each release, Manageiq gets more robust and feature complete across providers. In this release, we not only attended to providers and chargeback, but we also made some essential improvements to the appliance itself including performance and high availability.
+Euwe is the next milestone release for ManageIQ cloud and virtualization management platform. With each release, ManageIQ gets more robust and feature complete across providers. In this release, we not only attended to providers and chargeback, but we also made some essential improvements to the appliance itself including performance and high availability.
 
 * **Centralized administration** allowing you to invoke power and retirement operations on remote regions.
 * Huge **performance improvements** for page rendering in the User Interface as well as SmartState for Microsoft Azure.
