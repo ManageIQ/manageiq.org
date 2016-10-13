@@ -1,7 +1,7 @@
 ---
 title: Announcing Euwe-1-Beta1.3 
 author: jprause
-date: 2016-10-12 12:49:24 UTC
+date: 2016-10-13 12:49:24 UTC
 comments: true
 published: true
 tags: releases announcements
