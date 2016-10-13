@@ -1,6 +1,6 @@
 ---
 title: Announcing Euwe-1-Beta1.3 
-author: jprause
+author: chessbyte
 date: 2016-10-13 12:49:24 UTC
 comments: true
 published: true
