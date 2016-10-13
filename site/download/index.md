@@ -31,6 +31,36 @@ title: Download
   </table>
 </div>
 
+
+
+{% assign release = site.data.releases["prerelease"] %}
+
+### Pre-release ({{ release.name }})
+
+<div class="table-responsive">
+  <table class="table table-bordered table-hover">
+    <tr>
+      <th>Appliance</th>
+      <th>Format</th>
+      <th>Size</th>
+    </tr>
+    <tr>
+      <td><a href="https://hub.docker.com/r/manageiq/manageiq/">Docker (tag {{release.tag}})</a></td>
+      <td>docker</td>
+      <td>0.5 GB</td>
+    </tr>
+    {% for type in site.data.download_types %}
+    <tr>
+      <td><a href="http://releases.manageiq.org/manageiq-{{type.download_platform}}-{{release.filename}}.{{type.ext}}">{{ type.name }}</a></td>
+      <td>{{ type.download_platform }}</td>
+      <td>{{ type.size_stable }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+
+
+
 {% assign release = site.data.releases["devel"] %}
 
 ### {{ release.name }} (developers only)
