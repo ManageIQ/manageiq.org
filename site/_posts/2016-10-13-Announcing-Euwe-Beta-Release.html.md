@@ -31,7 +31,7 @@ We encourage you to download Beta1 and try it out!
 | [Microsoft Azure] (http://releases.manageiq.org/manageiq-azure-euwe-1-beta1.3.vhd) | azure | 3.1 GB |
 | [Microsoft SCVMM] (http://releases.manageiq.org/manageiq-hyperv-euwe-1-beta1.3.vhd) | hyperv | 3.1 GB |
 | [Openstack] (http://releases.manageiq.org/manageiq-openstack-euwe-1-beta1.3.qc2) | openstack | 1.2 GB |
-| [oVirt] (http://releases.manageiq.org/manageiq-ovirt-euwe-1-beta1.3.ova) | oVirt | 1.1 GB |
+| [oVirt] (http://releases.manageiq.org/manageiq-ovirt-euwe-1-beta1.3.ova) | ovirt | 1.1 GB |
 | [Qemu/KVM] (http://releases.manageiq.org/manageiq-openstack-euwe-1-beta1.3.qc2) | openstack | 1.2 GB |
 | [Red Hat Enterprise Virtualization] (http://releases.manageiq.org/manageiq-ovirt-euwe-1-beta1.3.ova) | ovirt | 1.1 GB |
 | [Vagrant] (https://atlas.hashicorp.com/vagrant) | vagrant | 1.1 GB |
