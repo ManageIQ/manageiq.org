@@ -19,7 +19,7 @@ Additional details on how to configure the system properly can be found in the l
 
 ### Step 2. Download and deploy the appliance
 
-1. Pull the ManageIQ Vagrant box from [Atlas](https://atlas.hashicorp.com/ManageIQ) and run it
+1. Pull the ManageIQ Vagrant box from [Atlas](https://atlas.hashicorp.com/manageiq) and run it
 ```bash
     $ mkdir manageiq-vagrant; cd manageiq-vagrant
     $ vagrant init ManageIQ/darga
