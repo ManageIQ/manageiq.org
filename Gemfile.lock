@@ -96,10 +96,6 @@ GEM
       shellany (~> 0.0)
     pathutil (0.14.0)
       forwardable-extended (~> 2.6)
-    patternfly-sass (3.11.0)
-      bootstrap-sass (~> 3.3.7)
-      font-awesome-sass (~> 4.6.2)
-      sass (~> 3.4.15)
     pry (0.10.4)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -134,7 +130,9 @@ PLATFORMS
 
 DEPENDENCIES
   activesupport
+  bootstrap-sass
   dotenv
+  font-awesome-sass
   guard
   guard-livereload
   guard-minitest
@@ -142,7 +140,6 @@ DEPENDENCIES
   jekyll-assets
   jekyll-coffeescript
   jekyll-paginate
-  patternfly-sass
   pry
   pry-byebug
   rake
