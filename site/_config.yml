@@ -62,6 +62,7 @@ defaults:
       type: pages
     values:
       layout: doc_page
+      permalink: /:path/:basename
       doc_group: start
   - scope:
       path: "docs/guides"

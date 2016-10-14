@@ -1,7 +1,6 @@
 ---
 layout: doc_page
 title: Concepts guide
-permalink: /docs/concepts/
 ---
 
 ## Concepts
