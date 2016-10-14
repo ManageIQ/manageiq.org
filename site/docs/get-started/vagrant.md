@@ -22,7 +22,7 @@ Additional details on how to configure the system properly can be found in the l
 1. Pull the ManageIQ Vagrant box from [Atlas](https://atlas.hashicorp.com/manageiq) and run it
 ```bash
     $ mkdir manageiq-vagrant; cd manageiq-vagrant
-    $ vagrant init ManageIQ/darga
+    $ vagrant init manageiq/darga
 ```
 2. Modify the Vagrantfile if you want to add more memory and CPU (currently configured for 6144 MB and 4 CPU)
 For instance, this at the beginning of the Vagrant file will make sure that you always call it with virtualbox
