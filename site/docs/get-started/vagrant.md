@@ -19,10 +19,10 @@ Additional details on how to configure the system properly can be found in the l
 
 ### Step 2. Download and deploy the appliance
 
-1. Pull the ManageIQ Vagrant box from [Atlas](https://atlas.hashicorp.com/vagrant) and run it
+1. Pull the ManageIQ Vagrant box from [Atlas](https://atlas.hashicorp.com/manageiq) and run it
 ```bash
     $ mkdir manageiq-vagrant; cd manageiq-vagrant
-    $ vagrant init geertj/manageiq
+    $ vagrant init manageiq/darga
 ```
 2. Modify the Vagrantfile if you want to add more memory and CPU (currently configured for 6144 MB and 4 CPU)
 For instance, this at the beginning of the Vagrant file will make sure that you always call it with virtualbox
@@ -32,6 +32,13 @@ ENV['VAGRANT_DEFAULT_PROVIDER'] = 'virtualbox'
 ```
 
 You can use other tags to get different versions of the container: *latest, latest-darga, etc*.
+
+3. Start the vagrant image
+```bash
+    $ vagrant up
+```
+You can also use *vagrant up --provider virtualbox*
+
 
 ### Step 3. First connection and configuration
 
