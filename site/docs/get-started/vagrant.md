@@ -1,81 +1,66 @@
 ---
 layout: doc_page
-doc_group: start
 title: Easy Install With Vagrant
 ---
 
-You can test ManageIQ running in a Vagrant box using images from [Atlas](https://atlas.hashicorp.com/vagrant).
+You can test ManageIQ with Vagrant using the images that the ManageIQ project
+makes available on [Atlas](https://atlas.hashicorp.com/manageiq). This is a
+great option if you have a Windows PC or a Mac. Note that you need 8GB of
+memory to run ManageIQ!
 
-The installation consists of two phases:
+We will assume that you have Vagrant
+[installed](https://www.vagrantup.com/docs/installation/) on your computer, and
+that it is configured with VirtualBox as the hypervisor. Currently only
+VirtualBox boxes are provided.
 
-1. Install ManageIQ in your local machine inside a Vagrant box and configure it
-2. Connect to a managed system, and start working with it.
+### Step 1: Create a new box
 
-## Installing ManageIQ as a Vagrant box ##
-### Step 1. Install Vagrant in your machine
-You can follow instructions for your specific OS in the [Vagrant downloads](https://www.vagrantup.com/downloads.html)
+Execute the following commands to create a new Vagrant box:
 
-Additional details on how to configure the system properly can be found in the links above.
-
-### Step 2. Download and deploy the appliance
-
-1. Pull the ManageIQ Vagrant box from [Atlas](https://atlas.hashicorp.com/manageiq) and run it
 ```bash
-    $ mkdir manageiq-vagrant; cd manageiq-vagrant
-    $ vagrant init manageiq/darga
-```
-2. Modify the Vagrantfile if you want to add more memory and CPU (currently configured for 6144 MB and 4 CPU)
-For instance, this at the beginning of the Vagrant file will make sure that you always call it with virtualbox
-````
-# Vagrantfile
-ENV['VAGRANT_DEFAULT_PROVIDER'] = 'virtualbox'
+$ mkdir manageiq
+$ cd manageiq
+$ vagrant init manageiq/darga
 ```
 
-You can use other tags to get different versions of the container: *latest, latest-darga, etc*.
+There is now a `Vagrantfile` in the current directory.
 
-3. Start the vagrant image
+### Step 2: Modify Vagrantfile
+
+You need to expose the ManageIQ web interface. Add the following setting to
+the `Vagrantfile`:
+
+```ruby
+config.vm.network "forwarded_port", guest: 443, host: 8443
+```
+This will create a port mapping so that the ManageIQ web interface can be found
+on https://localhost:8443.
+
+By default ManageIQ is configured to use 6144MB and 4 CPUs. You can slightly
+tune this down, but you should not go below the following settings:
+
+```ruby
+config.vm.provider "virtualbox" do |vb|
+  vb.memory = 4096
+  vb.cpus = 2
+end
+```
+
+### Step 3: Start ManageIQ
+
+Start ManageIQ by executing:
+
 ```bash
-    $ vagrant up
+$ vagrant up
 ```
-You can also use *vagrant up --provider virtualbox*
 
+Ensure you can login to the ManageIQ appliance:
 
-### Step 3. First connection and configuration
+```bash
+$ vagrant ssh
+```
 
-The Vagrant image is a self starting image that has already been configured. You can connect directly into the appliance and start working with it.
+ManageIQ is now up and running.
 
-1. Log into the ManageIQ dashboard by connecting to the new running VM with a web [browser](http://172.28.128.3/). The initial username and password is ***admin/smartvm***
-
-2. There are a number of basic settings, located under <u>"Configure → Configuration"</u> in the web interface, or under <u>"Advanced Settings"</u> in the VM's console, that you may wish to change when starting ManageIQ for the first time. Among the most common are:
-
-* Time and date settings
-* Hostname
-* Admin password
-
-
-## Configure managed systems
-### Step 4. Add an infrastructure or cloud provider ###
-
-Now that your ManageIQ Appliance is up and running, it's time to connect up with your Providers (Cloud or Infrastructure) and gather data about them. There are detailed instructions for each provider in the documentation.
-
-#### Discover a new infrastructure provider
-
-For Microsoft SCVMM, RHEV, oVirt, or vSphere
-
-* Navigate to ***Infrastructure → Providers***
-* Click ***Configuration → Discover Infrastructure Providers***
-* Select the type.
-* Enter an IP Range.
-* Click ***Add***.
-
-#### Discover a new cloud provider
-
-For OpenStack, Amazon EC2, Azure, Google Cloud Engine:
-
-* Navigate to ***Clouds → Providers***
-* Click ***Configuration → Add a New Cloud Provider***
-* Select the type.
-* Enter required credentials.
-* Click ***Add***.
-
-## Next: [Basic Configuration](/docs/get-started/basic-configuration)
+Next step is to perform some [basic
+configuration](/docs/get-started/basic-configuration).
