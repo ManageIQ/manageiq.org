@@ -6,7 +6,8 @@ gem "jekyll-paginate"
 gem "jekyll-assets"
 gem "jekyll-coffeescript"
 gem "therubyracer"
-gem "patternfly-sass"
+gem "bootstrap-sass"
+gem "font-awesome-sass"
 gem "activesupport", :require => false
 
 group :test, :development do

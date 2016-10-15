@@ -2,8 +2,11 @@
 
 $font-size-base: 16px;
 
-@import "patternfly-sprockets";
-@import "pf_custom";
+@import "font-awesome-sprockets";
+@import "bootstrap-sprockets";
+
+@import "font-awesome";
+@import "twbs_custom";
 
 // Undo Bootstrap pixel font-size
 // http://fvsch.com/code/css-locks/#toc-2d
