@@ -43,9 +43,9 @@
   name: Kubernetes
   img: /assets/images/platforms/kubernetes.svg
 
-- id: openshift
-  name: OpenShift
-  img: /assets/images/platforms/openshift.svg
+- id: openshift_origin
+  name: OpenShift Origin
+  img: /assets/images/platforms/openshift_origin.svg
 
 - id: hawkular
   name: Hawkular
