@@ -3,35 +3,36 @@ layout: doc_page
 title: Get Started
 ---
 
-## What is ManageIQ?
+ManageIQ is an open source management platform for Hybrid IT. It can manage
+small and large environments, and supports multiple technologies such as
+virtual machines, public clouds and containers.
 
-MangeIQ is an open source management platform for hybrid IT. Agile, Efficient and Risk Managed IT infrastructure, through:
+With ManageIQ you will be able to:
 
-* Continuous **discovery** of managed environments.
-* Unified operations **management across hybrid footprints**.
-* **Self-service** with complete life-cycle management.
-* **Compliance enforcement** for any changes, applied or discovered.
-* **Platform** based approach, allowing for fast implementation and coexistence with other management tools
+* Continuously discover the latest state of your environment.
+* Implement **self service** for your end users.
+* Enforce **compliance** across the environment.
+* Optimize the performance and utilization of you environment.
 
 ## Following this Guide
 
-In order to follow this guide, you will need a computer that allows you to run the software and a provider to connect to. ManageiQ can be installed in many different providers, virtual or cloud. We will provide some options in this tutorial but you can check in the documentation for other options.
-Requirements vary depending on your choice.
+In order to follow this guide, you will need:
 
-There is a concept guide that you can check if you need a definition:
-[Concepts Guide](/docs/get-started/concepts)
+* Somewhere to run the ManageIQ software.
+* Something to manage.
 
+When used in production environments, ManageIQ users typically download [one of
+our virtual appliances](/download) and deploy copies of it onto a
+virtualization platform like OpenStack or VMware. The appliance is then
+configured to connect to the virtualization platform so that it can be managed.
 
-Current options are:
+For this getting started guide however, we will focus on a simpler way for you
+to get to know ManageIQ, one that does not require access to a virtualization
+platform. We describe three easy options:
 
- - [Docker](/docs/get-started/docker) (if you use the Docker option)
- - [Vagrant](/docs/get-started/vagrant) (if you use the Vagrant option)
- - [Cloud](/docs/get-started/cloud) (if you use the Cloud option)
+ - [Vagrant](/docs/get-started/vagrant) -- run ManageIQ as a Vagrant Box
+ - [Docker](/docs/get-started/docker) -- run ManageIQ as a Docker container
+ - [Public Cloud](/docs/get-started/cloud) -- run ManageIQ in the cloud
 
-You would also need a system to manage, we will use a free sign-up Google Cloud Platform account for testing, but you can use any provider supported by ManageIQ
-
-## Next: Get the ManageIQ Appliance
-
-### [Try ManageIQ with Docker](/docs/get-started/docker)
-### [Try ManageIQ with Vagrant](/docs/get-started/vagrant)
-### [Try ManageIQ with a Public Cloud Provider](/docs/get-started/cloud)
+We will use the Google Cloud Platform as the platform to manage (but you can
+use any public cloud supported by ManageIQ).

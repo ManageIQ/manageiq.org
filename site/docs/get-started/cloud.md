@@ -1,26 +1,29 @@
 ---
 layout: doc_page
-doc_group: start
 title: Easy Install Using A Public Cloud Provider
 ---
-The installation of ManageIQ consists on two phases:
 
- 1. Install ManageIQ as a cloud image in the cloud
- 2. Connect it to a managed system, and start working with it.
+You can try ManageIQ in one of the public clouds that are supported. The
+benefits of this option are that you don't need any hardware yourself, and that
+you can also use the same public cloud as the platform to be managed.
 
-We will use the Google Cloud Platform as an example, so you need to open an account. Free accounts can be opened in [Google Cloud](https://console.cloud.google.com/freetrial) for eligible users.
+In the instructions below we will use the Google Cloud Platform. The ManageIQ
+project publishes ready-to-use images on [Google
+Storage](https://console.cloud.google.com/storage/browser/manageiq). We will
+assume that you have a Google account with an active payment method or a free
+trial. You also need to make sure that you have a default keypair installed.
 
-![screenshot0037](/assets/images/docs/screenshot_0037.png){:.img-responsive}
+The ManageIQ project is working on making it easy to try out ManageIQ on other
+clouds as well.
 
-## 1. Installing ManageIQ as a cloud image ##
-### Step 1. Create a new image ###
-From console.cloud.google.com, go to "Compute Engine" and then "Images"
+### Step 1: Create a new image
 
-![screenshot0038](/assets/images/docs/screenshot_0038.png){:.img-responsive}
-
-Create a new image:
+From console.cloud.google.com, go to "Compute Engine", "Images" and then click
+on "Create Image":
 
 ![screenshot0040](/assets/images/docs/screenshot_0040.png){:.img-responsive}
+
+Fill in the following data:
 
 **Name:** manageiq-darga-3
 
@@ -30,50 +33,20 @@ Create a new image:
 
 **Cloud storage file:** manageiq/darga-3.tar.gz
 
-### Step 2. Create a new instance using the image you created
+### Step 2: Create a new instance using the image you created
 
-Once the image is created, you can create a new instance based on this
-image. It's recommended to select the 2 CPU / 7.5GB instance.
-![screenshot0041](/assets/images/docs/screenshot_0041.png){:.img-responsive}
-
-While creating the image, select in firewalls:
-~~~~
--[x] Allow HTTP traffic
--[x] Allow HTTPS traffic
-~~~~
+Once the image is created, you can create a new instance based on this image.
+Go to "Compute Engine", "VM instances and then click on "Create instance".
 
 ![screenshot0042](/assets/images/docs/screenshot_0042.png){:.img-responsive}
 
-```
-#### [NOTE]
-Access to console via ssh is similar to other systems, but as the user is non-privileged, you will need to use
- $ sudo appliance_console
-====
-```
-## 2. Configure managed systems
-### Step 3. Add an infrastructure or cloud provider ###
+It's recommended to select the 2 CPU / 7.5GB instance. Under "boot disk",
+select the image that you created above. You also need to make sure that HTTP
+traffic is enabled.
 
-Now that your ManageIQ Appliance is up and running, it's time to connect up with your Providers (Cloud or Infrastructure) and gather data about them. There are detailed instructions for each provider in the documentation.
+Now hit "Create" to start the instance.
 
-#### Discover a new infrastructure provider
+ManageIQ is now up and running.
 
-For Microsoft SCVMM, RHEV, oVirt, or vSphere
-
- * Navigate to ***Infrastructure → Providers***
- * Click ***Configuration → Discover Infrastructure Providers***
- * Select the type.
- * Enter an IP Range.
- * Click ***Add***.
-
-
-#### Discover a new cloud provider
-
-For OpenStack, Amazon EC2, Azure, Google Cloud Engine:
-
- * Navigate to ***Clouds → Providers***
- * Click ***Configuration → Add a New Cloud Provider***
- * Select the type.
- * Enter required credentials.
- * Click ***Add***.
-
-## Next: [Basic Configuration](/docs/get-started/basic-configuration)
+Next step is to perform some [basic
+configuration](/docs/get-started/basic-configuration).
