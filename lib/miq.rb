@@ -10,10 +10,14 @@ end
 
 require_relative "miq/executor"
 require_relative "miq/site"
+
 require_relative "miq/guides"
 require_relative "miq/guides_menu"
+require_relative "miq/guide_page"
+
 require_relative "miq/ref_docs"
 require_relative "miq/ref_menu"
+
 require_relative "miq/md_link_converter"
 require_relative "miq/dir_index"
 require_relative "miq/tag_index"
