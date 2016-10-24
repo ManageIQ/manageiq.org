@@ -53,5 +53,6 @@ RUN /bin/bash -l -c "exe/miq build all"
 RUN chown -R nginx: ${MIQ_SITE_DEST}
 
 # Run webserver
-EXPOSE 80
+VOLUME "/etc/letsencrypt"
+EXPOSE 80 443
 CMD ["nginx", "-g", "daemon off;"]
