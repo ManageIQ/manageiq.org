@@ -22,6 +22,8 @@ require_relative "miq/md_link_converter"
 require_relative "miq/dir_index"
 require_relative "miq/tag_index"
 
+require_relative "miq/lwimiq"
+
 module Miq
   def self.working_dir
     if ENV["MIQ_BASE_DIR"]

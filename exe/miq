@@ -111,6 +111,14 @@ module Miq
     end
   end
 
+  class Generate < Thor
+    desc "lwimiq", "Generate a LWIMIQ blog post"
+    def lwimiq(week_beginning)
+      say "Generating LWIMIQ post", :green
+      Lwimiq.generate(week_beginning)
+    end
+  end
+
   #
   # Top level command
   #
@@ -123,6 +131,9 @@ module Miq
 
     desc "build <all|guides|site|reference>", "Build or process an aspect of the site"
     subcommand "build", Build
+
+    desc "generate lwimiq YYYY-MM-DD", "Generate a new blog post"
+    subcommand "generate", Generate
 
     # desc "deploy", "Prepares and deploys site. Don't use unless your changes have been pushed to repos."
     # def deploy
