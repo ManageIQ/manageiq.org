@@ -1,0 +1,38 @@
+<div class="blog_side-group">
+  <h3 class="blog_side-heading">
+    Categories
+  </h3>
+
+  <ul id="blog_tag_menu" class="blog_menu">
+    {% for tag in site.data['tags'] %}
+    <li class="blog_menu-tag">
+      <a href="/blog/tags/{{ tag }}">{{ tag }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+
+<div class="blog_side-group">
+  <h3 class="blog_side-heading">
+    Archive
+  </h3>
+
+  <ul id="blog_archive_menu" class="blog_menu">
+    {% comment %}
+    Show only this year's months
+    {% endcomment %}
+    {% assign items = site.data["menus"]["blog_menu"] | reverse %}
+    {% assign current_year = "now" | date: "%Y" | plus: 0 %}
+
+    {% for item in items %}
+    <li class="blog_menu-year">
+      <a href="{% if item.path %}/{{ item.path }}{% else %}#{% endif %}">
+        {{ item.title }}
+      </a>
+      {% if item.children and item.title == current_year %}
+        {% include blog/side_menu_items.html items=item.children %}
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+</div>

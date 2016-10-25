@@ -1,0 +1,65 @@
+<nav class="pagination-container">
+  <ul class="pagination">
+    <li>
+      {% if paginator.previous_page %}
+        <a href="{{ paginator.previous_page_path }}" class="previous">&laquo;</a>
+      {% else %}
+        <span class="previous">&laquo;</span>
+      {% endif %}
+    </li>
+    {% for page in (1..paginator.total_pages) %}
+      {% if page == paginator.page %}
+        <li class="active">
+          <a href="#">{{ page }}</a>
+        </li>
+      {% elsif page == 1 %}
+        <li>
+          <a href="/blog/">{{ page }}</a>
+        </li>
+      {% else %}
+        <li>
+          <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+        </li>
+      {% endif %}
+    {% endfor %}
+    <li>
+      {% if paginator.next_page %}
+        <a href="{{ paginator.next_page_path }}" class="next">&raquo;</a>
+      {% else %}
+        <span class="next ">&raquo;</span>
+      {% endif %}
+    </li>
+  </ul>
+</nav>
+
+<nav class="pager-container">
+  <ul class="pager">
+    {% if paginator.previous_page %}
+    <li class="previous">
+      <a href="{{ paginator.previous_page_path }}">
+        <span aria-hidden="true">&larr;</span> Newer
+      </a>
+    </li>
+    {% else %}
+    <li class="previous disabled">
+      <a href="javascript:;">
+        <span aria-hidden="true">&larr;</span> Newer
+      </a>
+    </li>
+    {% endif %}
+
+    {% if paginator.next_page %}
+    <li class="next">
+      <a href="{{ paginator.next_page_path }}">
+        Older <span aria-hidden="true">&rarr;</span>
+      </a>
+    </li>
+    {% else %}
+    <li class="next disabled">
+      <a href="javascript:;">
+        Older <span aria-hidden="true">&rarr;</span>
+      </a>
+    </li>
+    {% endif %}
+  </ul>
+</nav>

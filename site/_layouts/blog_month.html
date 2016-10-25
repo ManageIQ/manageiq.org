@@ -1,0 +1,19 @@
+---
+layout: default
+---
+
+<div class="blog blog_year">
+  <header class="blog_header">
+    <h1>{{ page.title }}, {{ page.year }}</h1>
+  </header>
+
+  <div class="blog_container">
+    <div class="blog_main">
+      {% include post_list.html posts=page.posts css="month_archive" %}
+    </div>
+
+    <div class="blog_side">
+      {% include blog/side.html %}
+    </div>
+  </div>
+</div>

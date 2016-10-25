@@ -3,52 +3,35 @@ layout: default
 title: ManageIQ Blog
 ---
 
-<div class="blog_container">
+<div class="blog">
   <header class="blog_header">
     <h1>{{ page.title }}</h1>
   </header>
 
-  {% for post in paginator.posts %}
-  <article class="post_excerpt">
-    <header class="post-header">
-      <h1><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
-    </header>
+  <div class="blog_container">
+    <div class="blog_main">
+      {% for post in paginator.posts %}
+      <article class="post_excerpt">
+        <header class="post-header">
+          <h1><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
+          <div class="post-meta">
+            <time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">
+              {{ post.date | date: "%b %-d, %Y" }}
+            </time>
+          </div>
+        </header>
 
-    <div class="post-content">
-      {{ post.excerpt }}
+        <div class="post-content">
+          {{ post.excerpt }}
+        </div>
+      </article>
+      {% endfor %}
+
+      {% include blog/pagination.html %}
     </div>
-  </article>
-  {% endfor %}
 
-  <ul class="pagination">
-    <li>
-      {% if paginator.previous_page %}
-        <a href="{{ paginator.previous_page_path }}" class="previous">&laquo;</a>
-      {% else %}
-        <span class="previous">&laquo;</span>
-      {% endif %}
-    </li>
-    {% for page in (1..paginator.total_pages) %}
-      {% if page == paginator.page %}
-      <li class="active">
-        <a href="#">{{ page }}</a>
-      </li>
-      {% elsif page == 1 %}
-      <li>
-        <a href="/blog/">{{ page }}</a>
-      </li>
-      {% else %}
-      <li>
-        <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
-      </li>
-      {% endif %}
-    {% endfor %}
-    <li>
-      {% if paginator.next_page %}
-        <a href="{{ paginator.next_page_path }}" class="next">&raquo;</a>
-      {% else %}
-        <span class="next ">&raquo;</span>
-      {% endif %}
-    </li>
-  </ul>
+    <div class="blog_side">
+      {% include blog/side.html %}
+    </div>
+  </div>
 </div>

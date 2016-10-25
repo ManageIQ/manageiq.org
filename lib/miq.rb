@@ -23,6 +23,8 @@ require_relative "miq/dir_index"
 require_relative "miq/tag_index"
 
 require_relative "miq/lwimiq"
+require_relative "miq/blog_year"
+require_relative "miq/blog_month"
 
 module Miq
   def self.working_dir
@@ -57,11 +59,21 @@ module Miq
     (ENV["MIQ_GUIDES_DIR"] || "docs/guides")
   end
 
+  # Might want to make these override-able in the future:
+
   def self.doc_index_template
     "doc_index.html"
   end
 
   def self.tag_index_template
     "tag_index.html"
+  end
+
+  def self.blog_year_template
+    "blog_year.html"
+  end
+
+  def self.blog_month_template
+    "blog_month.html"
   end
 end

@@ -2,26 +2,30 @@
 layout: default
 ---
 
-<div class="blog_container">
-  <div class="blog-link">
-    <a href="/blog">&larr; Blog</a>
-  </div>
-
+<div class="blog tag_index">
   <header class="blog_header">
-    <h1>{{ page.title }}</h1>
+    <h1>Tagged with {{ page.title }}</h1>
   </header>
 
-  <div class="tag_index posts">
-    {% for post in page.pages %}
-    <article class="post_excerpt">
-      <header class="post-header">
-        <h1><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
-      </header>
+  <div class="blog_container">
+    <div class="blog_main">
+      <div class="tag_index posts">
+        {% for post in page.pages %}
+        <article class="post_excerpt">
+          <header class="post-header">
+            <h1><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
+          </header>
 
-      <div class="post-content">
-        {{ post.excerpt }}
+          <div class="post-content">
+            {{ post.excerpt }}
+          </div>
+        </article>
+        {% endfor %}
       </div>
-    </article>
-    {% endfor %}
+    </div>
+
+    <div class="blog_side">
+      {% include blog/side.html %}
+    </div>
   </div>
 </div>

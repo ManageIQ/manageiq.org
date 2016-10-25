@@ -11,6 +11,8 @@
     padding: 0;
 
     li {
+      margin: 0;
+
       a {
         display: block;
         padding: 1em;
@@ -48,6 +50,16 @@
   padding: 0 2em;
 }
 
+.doc-header {
+  padding-bottom: 2em;
+  border-bottom: 1px solid $doc-line-lite;
+  margin: 4em 0 2em;
+
+  h1 {
+    margin: 0;
+  }
+}
+
 @media only screen and (min-width: #{$bp-desk0}) {
   .doc_tabs {
     ul {
@@ -78,26 +90,21 @@
     width: 16em;
   }
 
-  // .doc_menu-header {
-  //   border-bottom: 1px solid lighten($grey-dark, 10%);
-  //   padding: 2em 0;
-  //
-  //   .menu {
-  //     font-size: 18px;
-  //   }
-  // }
-
   .doc_main {
     overflow-x: hidden;
 
     .doc {
-      border-top: 1px solid $doc-line-lite;
+      // border-top: 1px solid $doc-line-lite;
       padding: 4em;
     }
 
     .doc-title {
       margin-top: 0;
     }
+  }
+
+  .doc-header {
+    margin: 0 0 2em;
   }
 
   .doc-content {
