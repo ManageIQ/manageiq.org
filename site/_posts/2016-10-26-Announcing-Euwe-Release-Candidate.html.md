@@ -9,14 +9,16 @@ tags: releases announcements
 
 On behalf of the ManageIQ team, we're pleased to announce the Release Cadidate of ManageIQ Euwe!
 
-Euwe is the next milestone release for ManageIQ cloud and virtualization management platform. With each release, ManageIQ gets more robust and feature complete across providers. In this release, we not only attended to providers and chargeback, but we also made some essential improvements to the appliance itself including performance and high availability.
+Euwe is the next milestone release for ManageIQ cloud and virtualization management platform. With each release, ManageIQ gets more robust and feature complete across providers. In this release, we concentrated on stablization fixes prior to the upcoming GA release. There are also updates to Providers as well as continuing performance improvements.
 
-* **Centralized administration** allowing you to invoke power and retirement operations on remote regions.
-* Huge **performance improvements** for page rendering in the User Interface as well as SmartState for Microsoft Azure.
-* **Provider logic** which asks instead of assuming that an operation or feature is available for a specific provider. In other words, known features are discoverable.
-* **High Availabilty** for the PostgreSQL ManageIQ server maintaining a list of standby servers as well as a failover monitor for the database.
-* Darga timelines have been replaced by **PatternFly timelines** in Euwe.
-* **Notification drawer** has been added using ActionCable with PatternFly's notification drawer powered by Angular.
+* Microsoft SCVMM: Set default security protocol to ssl.
+* PostgreSQL High Availability:
+** Added repmgr to support automatic failover.
+** Maintain list of active standby database servers.
+** Added pg-dsn_parser for converting DSN to a hash.
+* Added Google pre and post provisioning methods.
+* Appliance Console: Removed menu items that are not applicable when running inside a container.
+* Performance: Services -> Workloads -> All VMs page load time reduced from 93,770ms to 524ms (99%) with a test of 20,000 VMs.
 
 If you want to hear about features, improvements, and fixes directly from the developers, check out the [Last Week in ManageIQ blog posts](http://manageiq.org/blog/tags/LWIMIQ/).
 
