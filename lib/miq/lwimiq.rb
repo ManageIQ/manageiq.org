@@ -17,7 +17,7 @@ module Miq
     end
 
     def path
-      File.join("site", "blog", "#{Date.today.strftime("%Y-%m-%d")}-CHANGE-ME.md")
+      File.join("site", "_posts", "#{Date.today.strftime("%Y-%m-%d")}-CHANGE-ME.md")
     end
 
     def content
