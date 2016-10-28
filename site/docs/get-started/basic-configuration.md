@@ -15,7 +15,7 @@ setting ssh keys)
     your provider to configure.
 2.  Point your browser to its IP address
 
-    1.  **Docker:** localhost (127.0.0.1)
+    1.  **Docker:** localhost (https://127.0.0.1:8443)
     2.  **Vagrant:** 172.28.128.3
 
 ![screenshot0001](/assets/images/docs/screenshot_0001.png){:.img-responsive}
@@ -65,18 +65,5 @@ Server control defines what roles each appliance executes in a
 
 #### 4. Save your changes ####
 **Press Save*** to save your changes
-
-#### 5. Create a new user ####
-
-In the accordion, ***select Access Control.***
-
-1.  You can see definitions for Users, Groups, Roles and Tenants.
-    For now, let’s create a user with limited access to
-    self-service.  
-2.    Select Users  
-3.    Click ***Configuration → Add a new User*** 
-4.    Fill all the elements in the form (***select Role *EvmRole-user\_limited\_self\_service****) and then ***press *Add***
-
-![screenshot0005](/assets/images/docs/screenshot_0006.png){:.img-responsive}
 
 ## Next: [Add A Provider](/docs/get-started/add-a-provider)

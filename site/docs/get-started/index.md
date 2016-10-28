@@ -9,17 +9,17 @@ virtual machines, public clouds and containers.
 
 With ManageIQ you will be able to:
 
-* Continuously discover the latest state of your environment.
+* **Continuously discover** the latest state of your environment.
 * Implement **self service** for your end users.
 * Enforce **compliance** across the environment.
-* Optimize the performance and utilization of you environment.
+* **Optimize** the performance and utilization of you environment.
 
 ## Following this Guide
 
 In order to follow this guide, you will need:
 
-* Somewhere to run the ManageIQ software.
-* Something to manage.
+* A host environment to run the ManageIQ software.
+* A supported managed system to connect to.
 
 When used in production environments, ManageIQ users typically download [one of
 our virtual appliances](/download) and deploy copies of it onto a
