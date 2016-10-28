@@ -61,7 +61,7 @@ accordion, and within it the catalog you just created
 
 Add a new ***Configuration → Add a New Catalog Item***
 
-Select * Google* as Catalog Item type and you will get a dialog to
+Select *Google* as Catalog Item type and you will get a dialog to
 configure what will happen when the customer orders the item. Don’t
 forget to select Display in Catalog to be make it available.
 
@@ -88,12 +88,12 @@ Go to the Service catalog again. Now you can see your catalog item as part of th
 
 ![screenshot0050](/assets/images/docs/screenshot_0050.png){:.img-responsive}
 
-A service item can consist on different elements, not only a VM, and will be triggered through a series of automation workflows. 
+A service item can be more complex than a single VM, including bundles and items that comprise different providers, and are provisioned through a series of automation workflows. 
 The dialog we created will be used to gather information from the customer, hiding all the complexity of the details needed to actually deploy any of the components.
 
-Services has their own life cycle, as well as their components, so you can see (if your user profiles allows it), the resources associated to it in each moment
+Services has their own life cycle on top of the lifecycle of its components. With the appropriate permissions you can see the resources associated to it in each moment
 
-Ordering consists on different phases that are outside of the scope of this guide.
+Ordering consists of different phases that are outside of the scope of this guide.
 
 ![screenshot0051](/assets/images/docs/screenshot_0051.png){:.img-responsive}
 
@@ -108,7 +108,7 @@ underlying infrastructure.
 
 ![screenshot0052](/assets/images/docs/screenshot_0052.png){:.img-responsive}
 
-Self service interface allows an easier management of services and a easier design for end users than the operational interface
+The Service UI allows for a more simple design for end users compared to the Operational UI.
 ![screenshot0053](/assets/images/docs/screenshot_0053.png){:.img-responsive}
 
 

@@ -18,8 +18,8 @@ With ManageIQ you will be able to:
 
 In order to follow this guide, you will need:
 
-* Some place to run the ManageIQ software.
-* Something to manage.
+* A host environment to run the ManageIQ software.
+* A supported managed system to connect to.
 
 When used in production environments, ManageIQ users typically download [one of
 our virtual appliances](/download) and deploy copies of it onto a
