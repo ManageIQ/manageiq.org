@@ -19,7 +19,7 @@ title: Download
     <tr>
       <td><a href="https://hub.docker.com/r/manageiq/manageiq/">Docker (tag {{release.tag}})</a></td>
       <td>docker</td>
-      <td>0.5 GB</td>
+      <td>0.4 GB</td>
     </tr>
     {% for type in site.data.download_types %}
     <tr>
@@ -28,6 +28,11 @@ title: Download
       <td>{{ type.size_stable }}</td>
     </tr>
     {% endfor %}
+    <tr>
+      <td><a href="https://atlas.hashicorp.com/manageiq/boxes/darga">Vagrant</a></td>
+      <td>vagrant</td>
+      <td>1.3 GB</td>
+    </tr>
   </table>
 </div>
 
@@ -47,15 +52,20 @@ title: Download
     <tr>
       <td><a href="https://hub.docker.com/r/manageiq/manageiq/">Docker (tag {{release.tag}})</a></td>
       <td>docker</td>
-      <td>0.5 GB</td>
+      <td>0.4 GB</td>
     </tr>
     {% for type in site.data.download_types %}
     <tr>
       <td><a href="http://releases.manageiq.org/manageiq-{{type.download_platform}}-{{release.filename}}.{{type.ext}}">{{ type.name }}</a></td>
       <td>{{ type.download_platform }}</td>
-      <td>{{ type.size_stable }}</td>
+      <td>{{ type.size_pre }}</td>
     </tr>
     {% endfor %}
+    <tr>
+      <td><a href="https://atlas.hashicorp.com/manageiq/boxes/euwe">Vagrant</a></td>
+      <td>vagrant</td>
+      <td>1.0 GB</td>
+    </tr>
   </table>
 </div>
 
@@ -77,7 +87,7 @@ title: Download
     <tr>
       <td><a href="https://hub.docker.com/r/manageiq/manageiq/">Docker (tag {{release.tag}})</a></td>
       <td>docker</td>
-      <td>0.4 GB</td>
+      <td>0.5 GB</td>
     </tr>
     {% for type in site.data.download_types %}
     <tr>
@@ -86,11 +96,6 @@ title: Download
       <td>{{ type.size_devel }}</td>
     </tr>
     {% endfor %}
-    <tr>
-      <td><a href="https://atlas.hashicorp.com/vagrant">Vagrant</a></td>
-      <td>vagrant</td>
-      <td>1.1 GB</td>
-    </tr>
   </table>
 </div>
 
