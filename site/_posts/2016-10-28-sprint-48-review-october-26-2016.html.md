@@ -9,15 +9,15 @@ published: true
 
 Welcome to the Sprint 48 review recap! This was the sprint for the [Euwe Beta](http://manageiq.org/blog/2016/10/Announcing-Euwe-Beta-Release/) release, with the just announced [Euwe release candidate](http://manageiq.org/blog/2016/10/Announcing-Euwe-Release-Candidate/) hot on its heels.
 
-In this sprint we had 404 pull requests merged in the main [ManageIQ repo](https://github.com/ManageIQ/manageiq), a big chunk consisting of bug fixes. 266 PRs were backported to the Euwe branch that we are focusing on stabilizing, and this will continue to the next sprint. Across the repos, with plenty of work going into the [new](http://manageiq.org/) [website](https://github.com/ManageIQ/manageiq.org), a lot of clean-up and new features in <del>Self</del> [Service UI](https://github.com/ManageIQ/manageiq-ui-service), as well as a [new repo to podify](https://github.com/ManageIQ/manageiq-pods) the ManageIQ project for Kubernetes/Openshift, we accomplished a total of 693 PRs in 3 weeks!
+In this sprint we had 404 pull requests merged in the main [ManageIQ repo](https://github.com/ManageIQ/manageiq), a big chunk consisting of bug fixes. 266 PRs were backported to the Euwe branch that we are focusing on stabilizing, and this will continue to the next sprint. Across the repos, with plenty of work going into the [new website](http://manageiq.org/) [(source)](https://github.com/ManageIQ/manageiq.org), a lot of clean-up and new features in <del>Self</del> [Service UI](https://github.com/ManageIQ/manageiq-ui-service), as well as a [new repo to podify](https://github.com/ManageIQ/manageiq-pods) the ManageIQ project for Kubernetes/Openshift, we accomplished a total of 693 PRs in 3 weeks!
 
 To start off, there is a new arrival [Lenovo](https://github.com/ManageIQ/manageiq-providers-lenovo), which is a physical infrastructure provider. This is a brand new provider type for ManageIQ, so we are just getting started and laying the foundation work for now. However, this promises more cool stuff to look forward to, building towards the full stack picture.
 
 On the Chargeback front, there's major rework of the calculations, with reinstated weekly and monthly rates. The Service UI now supports showing Chargeback report data, and you can enable custom attributes for those reports as well.
 
-Further enhancements include scheduling Automate Tasks via the rails console, and several notable support in API for central admin work. Cinder backup/restore has been added to OpenStack and Automate. Also take note that we are no longer appending "_" to the VM name in service provisioning as the underscore is an invalid character for some providers.
+Further enhancements include scheduling Automate Tasks via the rails console, and several notable API support for central admin work. Cinder backup/restore has been added to OpenStack and Automate. Also take note that we are no longer appending "_" to the VM name in service provisioning as the underscore is an invalid character for some providers.
 
-You will notice numerous screenshots in the slides showcasing work done on the Classic UI, such as creating/updating/deleting OpenStack cloud Tenants and Cloud Networks (previously only view and tag were supported). There are new topology views for Cloud Manager and Infrastructure providers. Finally, you can find demos on proxying the VNC or SPICE connection, hiding VMs and instances in explorer trees (for improving performance), and the added OpenStack features along with the rest of the Sprint review meeting [here in the video](https://www.youtube.com/watch?v=wD6dqm9hSRM).
+You will notice numerous screenshots in the slides showcasing work done on the Classic UI, such as creating/updating/deleting Cloud Networks and OpenStack Cloud Tenants (previously only view and tag were supported). There are new topology views for Cloud Manager and Infrastructure providers. Finally, you can find demos on proxying the VNC or SPICE connection, hiding VMs and instances in explorer trees (for improving performance), and the added OpenStack features along with the rest of the Sprint review meeting [here in the video](https://www.youtube.com/watch?v=wD6dqm9hSRM).
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/wD6dqm9hSRM" frameborder="0" allowfullscreen></iframe>
 
@@ -41,11 +41,11 @@ Get a closer look at some of the work done this sprint with the following "Last 
 
 While getting closer to the Euwe GA, we are also embarking on the F-release on master. These are exciting times! Don't miss out on the excitement by joining us every 3 weeks in the ManageIQ Sprint review via [Bluejeans](https://bluejeans.com/5927041376/). Sprint 49 review will be on November 16, 2016 @ [7:30am PST/10:30am EST/15:30 GMT](http://www.timeanddate.com/worldclock/fixedtime.html?msg=ManageIQ+Sprint+49+review&iso=20161116T1530). You can import the [ManageIQ community calendar](https://calendar.google.com/calendar/embed?src=contact%40manageiq.org) to be notified about this and future Sprint reviews.
 
-### [Slide deck](http://www.slideshare.net/ManageIQ/sprint-48-review):
+### [Slide deck](http://www.slideshare.net/ManageIQ/sprint-48-review)
 
 <iframe src="//www.slideshare.net/slideshow/embed_code/key/A9MiYmAgdgOwap" width="510" height="420" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
 
-### [Changelog](http://manageiq.org/community/changelog/):
+### [Changelog](http://manageiq.org/community/changelog/)
 
 #### Added
 
