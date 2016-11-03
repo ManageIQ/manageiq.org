@@ -19,7 +19,7 @@ $ sudo docker pull manageiq/manageiq:latest-darga
 ### Step 2: Run the container
 
 ```bash
-$ sudo docker run -d -p 8443:443 manageiq/manageiq:latest-darga
+$ sudo docker run --privileged -d -p 8443:443 manageiq/manageiq:latest-darga
 ```
 
 ManageIQ is now up and running.
