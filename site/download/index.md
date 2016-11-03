@@ -1,9 +1,7 @@
 ---
 layout: page
-title: Download
+title: Download ManageIQ
 ---
-
-## Download ManageIQ
 
 {% assign release = site.data.releases["stable"] %}
 

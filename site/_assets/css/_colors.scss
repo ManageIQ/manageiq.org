@@ -14,6 +14,8 @@ $blue-lite: #00a6e6;
 $blue-lite2: #78c4f6;
 $blue-white: #abdaf9;
 
+$link-blue: mix($blue-dark, $blue-lite, 50%);
+
 $banner-grad-dark: rgba(6, 52, 81, 1);
 $banner-grad-lite: rgba(12, 105, 165, 1);
 

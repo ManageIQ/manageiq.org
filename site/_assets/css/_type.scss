@@ -2,11 +2,23 @@
 
 body {
   font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  line-height: 1.4;
   color: $text-black;
 }
 
-// Significant numbers:
-// 12 14 16 18 20 30 42 72 175 200 215 289 350 525 867
+a {
+  color: $link-blue;
+  padding-bottom: 0.01em;
+
+  &:hover {
+    color: lighten($link-blue, 10%);
+    text-decoration: none;
+  }
+
+  &:active {
+    text-decoration: none;
+  }
+}
 
 h1, h2, h3, h4 {
   color: $grey-dark;
@@ -20,6 +32,7 @@ h1, h2, h3, h4 {
 
 h1 {
   font-size: 24px;
+  font-weight: 700;
 }
 
 h2 {
@@ -60,6 +73,13 @@ th {
   border-bottom: 1px solid $heading-line;
 }
 
+ul {
+  margin: 0 0 1em 0;
+}
+
+li {
+  margin-bottom: 1em;
+}
 
 @media only screen and (min-width: #{$bp-desk0}) {
   h1 {
