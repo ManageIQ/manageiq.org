@@ -14,9 +14,9 @@ tags: LWIMIQ
 
 Since the last edition, we've merged 114 [pull requests](https://github.com/ManageIQ/manageiq/pulls?utf8=%E2%9C%93&q=is%3Apr%20is%3Amerged%20base%3Amaster%20merged%3A%222016-10-29%20..%202016-11-06%22%20sort%3Acreated-desc%20) in the `manageiq` repo, 56 of which were labeled `bug`, 18 `enhancement`, 16 `technical debt` and 13 `refactoring`. As always, almost half was in the UI, totalling 48 `ui` pull requests.
 
-In the recently renamed `manageiq-ui-service` repo, we've had 8 [pull requests](https://github.com/ManageIQ/manageiq-ui-service/pulls?utf8=%E2%9C%93&q=is%3Apr%20is%3Amerged%20base%3Amaster%20merged%3A%222016-10-29%20..%202016-11-06%22%20sort%3Acreated-desc%20), and there's surely more in our other repos.
+In the recently renamed `manageiq-ui-service` repo, we've had 8 [pull requests](https://github.com/ManageIQ/manageiq-ui-service/pulls?utf8=%E2%9C%93&q=is%3Apr%20is%3Amerged%20base%3Amaster%20merged%3A%222016-10-29%20..%202016-11-06%22%20sort%3Acreated-desc%20), and there are surely more in our other repos.
 
-There's also many [open issues] you can try your skills on, because who doesn't want to be [famous](https://github.com/ManageIQ/manageiq/graphs/contributors)? And, as always, we're ready to help on [gitter].
+There are also many [open issues] you can try your skills on, because who doesn't want to be [famous](https://github.com/ManageIQ/manageiq/graphs/contributors)? And, as always, we're ready to help on [gitter].
 
 
 ## Improved
