@@ -21,7 +21,7 @@ There are also many [open issues] you can try your skills on, because who doesn'
 
 ## Improved
 
-As a sign of things to come, [Allen](https://github.com/AllenBW) has finished moving our Service UI from `bower` to `npm` (actually, `yarn`, we're so modern!) in [#296](https://github.com/ManageIQ/manageiq-ui-service/pull/296), ManageIQ itself will follow shortly.
+As a sign of things to come, [Allen](https://github.com/AllenBW) has finished moving our Service UI from Bower to npm (actually, Yarn, we're so modern!) in [#296](https://github.com/ManageIQ/manageiq-ui-service/pull/296), ManageIQ itself will follow shortly.
 
 [Martin P](https://github.com/martinpovolny) has deduplicated our `tree_select` and `accordion_select` methods in [#12320](https://github.com/ManageIQ/manageiq/pull/12320), making it easier to make bigger changes to trees, and getting rid of about 40 lines in the process. While deduplicating, he also looked into `x_show` in [#12313](https://github.com/ManageIQ/manageiq/pull/12313), and apparently, he's also [removed "some code"](https://github.com/ManageIQ/manageiq/pull/12314), that's it :).
 
