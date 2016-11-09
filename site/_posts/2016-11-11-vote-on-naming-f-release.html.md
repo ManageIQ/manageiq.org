@@ -9,7 +9,7 @@ published: true
 
 Vote for the F-Release!!!
 
-We are closing in on the final Euwe release.  So, it’s time to think about how we will name the F Release.  In keeping with our nomenclature of using chess grandmasters and world champions as release names, here are the proposed names for the F Release, as well some interesting background data:
+We are closing in on the final Euwe release.  So, it’s time to think about how we will name the F-Release.  In keeping with our nomenclature of using chess grandmasters and world champions as release names, here are the proposed names for the F-Release, as well some interesting background data:
 
 - [Fine, Reuben](https://en.wikipedia.org/wiki/Reuben_Fine) (October 11, 1914 – March 26, 1993)
 During World War II, Fine worked for the U.S. Navy, analyzing the probability of German U-boats surfacing at certain points in the Atlantic Ocean. Fine also worked as a translator. Fine has played ManageIQ's previously named releases; Botvinnik, Capablanca, and Euwe.
@@ -26,7 +26,7 @@ Furman was a Soviet chess International Grandmaster and trainer. He is best know
 
 Vote [HERE](need to update once poll is created on talk) for your favorite by making a selection in the corresponding talk topic for this post! You are welcome to write in any player you want (as long as their last name starts with the letter F) by replying to the topic with your choice.  Here are the [top 100 active players](http://2700chess.com/?per-page=100) and [all grandmasters - past and present](https://en.wikipedia.org/wiki/List_of_chess_grandmasters).
 
-Votes entered by Friday, November 18th will be tallied and the name will be announced on Monday November 21st. This is scheduled to be the Euwe GA release date.
+Votes entered by Friday, November 18th will be tallied and the name will be announced on Monday November 21st. This is also the scheduled release date for Euwe GA.
 
-SPECIAL NOTE: [The FIDE World Chess Championship Match 2016](https://worldchess.com/nyc2016/) between Magnus Carlsen (Norway) and Sergey Karjakin (Russia), is being held in New York City November 11-30, 2016
+*SPECIAL NOTE*: [The FIDE World Chess Championship Match 2016](https://worldchess.com/nyc2016/) between Magnus Carlsen (Norway) and Sergey Karjakin (Russia), is being held in New York City November 11-30, 2016
 
