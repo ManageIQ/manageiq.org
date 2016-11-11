@@ -24,7 +24,7 @@ Fressinet won the French Chess Championship in 2010 and 2014. In October 2015 at
 - [Furman, Semyon Abramovich](https://en.wikipedia.org/wiki/Semyon_Furman) (December 1, 1920 – March 17, 1978)
 Furman was a Soviet chess International Grandmaster and trainer. He is best known for developing Anatoly Karpov into a World Chess Champion, but was a formidable player himself, as well as a successful coach for several other world-class players. Interestingly, Furman did not become a Grandmaster until 1966, at age 46.
 
-Vote [HERE](need to update once poll is created on talk) for your favorite by making a selection in the corresponding talk topic for this post! You are welcome to write in any player you want (as long as their last name starts with the letter F) by replying to the topic with your choice.  Here are the [top 100 active players](http://2700chess.com/?per-page=100) and [all grandmasters - past and present](https://en.wikipedia.org/wiki/List_of_chess_grandmasters).
+Vote [HERE](http://talk.manageiq.org/t/voting-on-name-of-f-release/1881) for your favorite by making a selection in the corresponding talk topic for this post! You are welcome to write in any player you want (as long as their last name starts with the letter F) by replying to the topic with your choice.  Here are the [top 100 active players](http://2700chess.com/?per-page=100) and [all grandmasters - past and present](https://en.wikipedia.org/wiki/List_of_chess_grandmasters).
 
 Votes entered by Friday, November 18th will be tallied and the name will be announced on Monday November 21st. This is also the scheduled release date for Euwe GA.
 
