@@ -7,7 +7,7 @@ comments: true
 published: true
 ---
 
-Vote for the F-Release!!!
+Vote for the F-Release!!! Here is the [Poll](http://talk.manageiq.org/t/voting-on-name-of-f-release/1881) on talk.manageiq.org
 
 We are closing in on the final Euwe release.  So, it’s time to think about how we will name the F-Release.  In keeping with our nomenclature of using chess grandmasters and world champions as release names, here are the proposed names for the F-Release, as well some interesting background data:
 
