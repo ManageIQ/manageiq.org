@@ -1,8 +1,8 @@
 ---
 title: Voting on Name of F Release
 author: chessbyte
-date: 2016-11-11 20:02:24 UTC
-tags: releases collaboration announcments
+date: 2016-11-11 09:02:24 UTC
+tags: releases collaboration announcements
 comments: true
 published: true
 ---
@@ -29,4 +29,3 @@ Vote [HERE](need to update once poll is created on talk) for your favorite by ma
 Votes entered by Friday, November 18th will be tallied and the name will be announced on Monday November 21st. This is also the scheduled release date for Euwe GA.
 
 *SPECIAL NOTE*: [The FIDE World Chess Championship Match 2016](https://worldchess.com/nyc2016/) between Magnus Carlsen (Norway) and Sergey Karjakin (Russia), is being held in New York City November 11-30, 2016
-
