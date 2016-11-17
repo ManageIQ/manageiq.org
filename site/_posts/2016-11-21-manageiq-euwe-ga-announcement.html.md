@@ -1,7 +1,7 @@
 ---
 title: ManageIQ Euwe GA - For your Public Cloud and Container Management needs
 author: cybette
-date: 2016-11-17 11:21:16 UTC
+date: 2016-11-21 11:21:16 UTC
 tags: releases announcements
 comments: true
 published: true
