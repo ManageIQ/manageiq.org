@@ -47,13 +47,13 @@ Community translators can contribute to the [ManageIQ project on Zanata](https:/
 
 2) Locate the version you wish to translate. For now, we are translating the d-release.
 
-![Zanata project and version view](/images/blog/Zanata_ManageIQ_versions.png)
+![Zanata project and version view](/assets/images/blog/Zanata_ManageIQ_versions.png)
 
 3) Click on the language you plan to translate.
 
 4) Click on the document name (manageiq in this case) to open up the editor.
 
-![Zanata languages and documents view](/images/blog/Zanata_Languages_Documents.png)
+![Zanata languages and documents view](/assets/images/blog/Zanata_Languages_Documents.png)
 
 5) You can start translating using the editor (see: [Editor view - Zanata Server](http://docs.zanata.org/en/release/user-guide/editor/editor-view/))
 
