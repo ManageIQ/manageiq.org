@@ -13,13 +13,13 @@ is available).
 Pull the ManageIQ docker image:
 
 ```bash
-$ sudo docker pull manageiq/manageiq:latest-darga
+$ sudo docker pull manageiq/manageiq:latest-euwe
 ```
 
 ### Step 2: Run the container
 
 ```bash
-$ sudo docker run --privileged -d -p 8443:443 manageiq/manageiq:latest-darga
+$ sudo docker run --privileged -d -p 8443:443 manageiq/manageiq:latest-euwe
 ```
 
 ManageIQ is now up and running.
