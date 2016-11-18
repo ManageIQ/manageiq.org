@@ -1,7 +1,7 @@
 ---
 title: Announcing Euwe Release Candidate 2
 author: chessbyte
-date: 2016-11-18 12:49:24 UTC
+date: 2016-11-21 12:49:24 UTC
 comments: true
 published: true
 tags: releases announcements
@@ -9,12 +9,19 @@ tags: releases announcements
 
 On behalf of the ManageIQ team, we're pleased to announce the Release Candidate 2 of ManageIQ Euwe!
 
-Euwe is the next milestone release for ManageIQ cloud and virtualization management platform. With each release, ManageIQ gets more robust and feature complete across providers. Since the Euwe-RC-1 release, we further concentrated on stablization fixes as well as numerous performance improvements prior to the upcoming GA release.
+Euwe is the next milestone release for ManageIQ cloud and virtualization management platform. With each release, ManageIQ gets more robust and feature complete across providers. Since the Euwe-RC-1 release, we further concentrated on stablization fixes as well as numerous performance improvements prior to the upcoming GA release. A security fix was also added.
 
-* **Added Google** pre and post provisioning methods.
-* **Backend support** to enable VMware provisioning through selection of a DRS-enabled cluster instead of a host.
-* **Restored retirement logic** to verify that VM was provisioned or contains Lifecycle tag before processing.
-* **REST API** Adding support for /api/requests creation and edits.
+Security Fix(es):
+(CVE-2016-7071) It was found that the CloudForms did not properly apply permissions controls to VM IDs passed by users. A remote, authenticated attacker could use this flaw to execute arbitrary VMs on systems managed by CloudForms if they know the ID of the VM.
+This issue was reported by Jeremy Choi (Red Hat).
+
+Plenty of new reports and metrics enhancements have been included to let you manage containers with confidence. Pods for images per project and Pods per node are added to operations reporting. Additionally, you can get Chargeback rates for container images filtered by image tags, with support for custom attributes in the reports. Speaking of tags, container objects can be auto-tagged with the same labels in Kubernetes/OpenShift.
+
+A new cache module is deployed in SmartState for Microsoft Azure, which reduces the average read requests from >7000 to <1000. Scan times have also been reduced from >20 min to <5 min!
+
+A new cache module is deployed in SmartState for Microsoft Azure, which reduces the average read requests from >7000 to <1000. Scan times have also been reduced from >20 min to <5 min!
+
+A new cache module is deployed in SmartState for Microsoft Azure, which reduces the average read requests from >7000 to <1000. Scan times have also been reduced from >20 min to <5 min!
 
 If you want to hear about features, improvements, and fixes directly from the developers, check out the [Last Week in ManageIQ blog posts](http://manageiq.org/blog/tags/LWIMIQ/).
 
