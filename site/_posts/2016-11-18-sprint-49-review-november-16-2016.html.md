@@ -29,7 +29,7 @@ Nonetheless, there's always room for improvements, and here are some highlights:
 * RHEV: piggybacking on the work - targeted refresh when provisioning - from previous sprint, time taken for provisioning a new VM to a large environment reduced from 17 min to 1 min
 * RHEV: added live migration of VM, and the ability to import VMs from VMware to RHEV (also an API enhancement)
 * VMware vCloud: XLAB team implemented the feature where credentials for vCloud events can now be added in the UI instead of using the rails console, improving the user experience
-* Performance: there's a shiny new manageiq-performance gem for automating and collecting of metrics with initial focus on UI performance, it's emphasis is on being modular and configurable so as to unify the toolchain for everyone (QE, performance team, developers, support)
+* Performance: there's a shiny new manageiq-performance gem for automating and collecting of metrics with initial focus on UI performance; its emphasis is on being modular and configurable so as to unify the toolchain for everyone (QE, performance team, developers, support)
 
 An in-depth presentation of the new performance gem, along with the rest of the Sprint review meeting is [here in the video](https://www.youtube.com/watch?v=Y4dU1fmRgX4).
 
