@@ -19,9 +19,9 @@ Plenty of new reports and metrics enhancements have been included to let you man
 
 A new cache module is deployed in SmartState for Microsoft Azure, which reduces the average read requests from >7000 to <1000. Scan times have also been reduced from >20 min to <5 min!
 
-A new cache module is deployed in SmartState for Microsoft Azure, which reduces the average read requests from >7000 to <1000. Scan times have also been reduced from >20 min to <5 min!
+Also added is the initial support for Cinder and Swift managers, to manage block storage and object storage respectively. For now, these first storage managers are OpenStack specific, and will be extended in future to support association with other providers or as standalone. The implementation supports managers of either physical or software defined storages.
 
-A new cache module is deployed in SmartState for Microsoft Azure, which reduces the average read requests from >7000 to <1000. Scan times have also been reduced from >20 min to <5 min!
+Besides copious amounts of new eye-candy for all the added features and new providers, UI performance has seen a boost as well. By optimizing resources and filtering, operations such as page rendering are much faster. For example, Services -> Workloads -> All VMs page load time has reduced from 93,770ms to 524ms (99%) with a test of 20,000 VMs.
 
 If you want to hear about features, improvements, and fixes directly from the developers, check out the [Last Week in ManageIQ blog posts](http://manageiq.org/blog/tags/LWIMIQ/).
 
