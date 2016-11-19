@@ -12,16 +12,43 @@
   transform: translate3d($site-menu-sm-width, 0, 0);
   transition: all 0.5s;
 
-  background-color: $blue-dark;
+  // background-color: $blue-dark;
+  @include banner_grad;
 }
 
-.off_canvas-open {
+// default position for menu effect
+main, .site-header .brand-logo {
+  transform: translate3d(0, 0, 0);
+  transition: all 0.6s;
+}
+
+.off_canvas-visible {
+
+  // stop scroll when menu is visible
+  overflow: hidden;
+
+  // shift+faded site behind menu effect
+  main, .site-header .brand-logo {
+    opacity: 0.8;
+    transform: translate3d(-40px, 0, 0);
+  }
+
   .off_canvas {
     transform: translate3d(0, 0, 0);
   }
 }
 
+.off_canvas-hide {
+  display: block;
+  padding: 1em;
+  color: #fff;
+}
+
 @media only screen and (min-width: #{$bp-desk0}) {
+  main {
+    transition: none;
+  }
+
   .off_canvas {
     position: static;
     width: 100%;
@@ -30,7 +57,7 @@
     background: none;
   }
 
-  .off_canvas-toggle {
+  .off_canvas-hide, .off_canvas-show {
     display: none;
   }
 }

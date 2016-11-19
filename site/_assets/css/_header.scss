@@ -8,6 +8,12 @@ $site-header-sm-pad: 10px;
 
   z-index: 9999;
 
+  // give space to menu toggle
+  .brand {
+    display: block;
+    margin-right: 80px;
+  }
+
   .brand-name {
     display: none;
   }
@@ -59,5 +65,9 @@ $site-header-sm-pad: 10px;
     .site_nav {
       float: right;
     }
+  }
+
+  #site_header-nav_toggle {
+    display: none;
   }
 } // @media
