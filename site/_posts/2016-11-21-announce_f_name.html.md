@@ -13,10 +13,10 @@ The following table shows the final vote tally, including write-ins.
 
 | Name | Votes |
 | ---- | ----- |
-| Reuben Fine | 28 |
-| Bobby Fischer | 0 |
-| Ben Finegold | 0 |
-| Seymon Furman | 0 |
-| Salomon Flohr | 0 |
-| Laurent Fressinet | 0 |
+| Reuben Fine | 45 |
+| Bobby Fischer | 38 |
+| Ben Finegold | 5 |
+| Seymon Furman | 4 |
+| Salomon Flohr | 3 |
+| Laurent Fressinet | 2 |
 | Sabina-Francesca Foiso | 1 |
