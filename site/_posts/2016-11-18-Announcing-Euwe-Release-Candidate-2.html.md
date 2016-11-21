@@ -17,7 +17,8 @@ This issue was reported by Jeremy Choi (Red Hat).
 
 The following was also added:
 * Auto-tagging based on labels for Containers
-* Add Migrate support to RHEV provider - Support analysis of VMs residing on NFS41 datastores
+* Add Migrate support to RHEV provider 
+* Support analysis of VMs residing on NFS41 datastores
 
 
 If you want to hear about features, improvements, and fixes directly from the developers, check out the [Last Week in ManageIQ blog posts](http://manageiq.org/blog/tags/LWIMIQ/).
