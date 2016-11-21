@@ -8,12 +8,17 @@
 
   li {
     margin-bottom: 0;
+
+    &:last-child a {
+      border-bottom: none;
+    }
   }
 
   a {
     display: block;
-    padding: 0.5em 1em;
+    padding: 1em;
     color: #fff;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
 
     @include link_background_hover;
   }
@@ -26,6 +31,12 @@
 
       &:last-child {
         margin-right: none;
+      }
+
+      a {
+        padding: 0.5em 1em;
+        border-radius: 10px;
+        border-bottom: none;
       }
     }
   }
