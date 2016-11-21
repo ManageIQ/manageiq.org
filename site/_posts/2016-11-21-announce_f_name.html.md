@@ -1,7 +1,7 @@
 ---
 title: Name of F Release
 author: chessbyte
-date: 2016-11-21 20:05:24 UTC
+date: 2016-11-21 03:05:24 UTC
 tags: releases announcements
 comments: true
 published: true
