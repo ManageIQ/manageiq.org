@@ -14,15 +14,15 @@ Security Fix(es):
 This issue was discovered by Adam Mariš (Red Hat).
 
 and here are just a few of the things added since Dara-4.1 release:
-**  SmartState: Support analysis of VMs residing on NFS41 datastores
-**  User Interface:
-****    Use VMRC desktop client if no NPAPI plugin is available ****
-****    Add Advanced Search to Containers explorer ****
+*  SmartState: Support analysis of VMs residing on NFS41 datastores
+*  User Interface:
+     Use VMRC desktop client if no NPAPI plugin is available ****
+     Add Advanced Search to Containers explorer ****
 
-** Fixed issues with Alerts
-**    Alerts
-****    Fixed alerts not sending SNMP v1 traps ****
-****    Fixed users not being able to add alerts ****
+* Fixed issues with Alerts
+* Alerts
+    Fixed alerts not sending SNMP v1 traps ****
+    Fixed users not being able to add alerts ****
 
 Here is the changelog:
 [Darga-5](https://github.com/ManageIQ/manageiq/blob/darga/CHANGELOG.md)
