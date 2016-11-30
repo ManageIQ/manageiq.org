@@ -18,7 +18,7 @@ setting ssh keys)
     1.  **Docker:** localhost (https://127.0.0.1:8443)
     2.  **Vagrant:** 172.28.128.3
 
-![screenshot0001](/assets/images/docs/screenshot_0001.png){:.img-responsive}
+![screenshot0001](/assets/images/docs/screenshot_0001.png){:.large_img}
 
 ### 2. Log in using default credentials
 
@@ -31,7 +31,7 @@ The main menus are available in
     expanded when needed. You can pin a secondary or tertiary menu to
     easily navigate through its elements.
 
-![screenshot0002](/assets/images/docs/screenshot_0002.png){:.img-responsive}
+![screenshot0002](/assets/images/docs/screenshot_0002.png)
 
 ###  4. Change options
 Go to Settings → Configuration to change how the appliance behaves:
@@ -43,12 +43,12 @@ Go to Settings → Configuration to change how the appliance behaves:
         cases this will be the internal IP address and not the one you
         connected to.  
 
--         You can change the *Company Name* to whatever you want, the change will be reflected in the interface.  ***Change it to ManageIQ*** 
+-         You can change the *Company Name* to whatever you want, the change will be reflected in the interface.  ***Change it to ManageIQ***
 
--         ***Select your time zone***, and, 
+-         ***Select your time zone***, and,
         if you want, you can change the language default.
 
-![screenshot0003](/assets/images/docs/screenshot_0003.png){:.img-responsive}
+![screenshot0003](/assets/images/docs/screenshot_0003.png){:.large_img}
 
 #### 2. Choose functions for this appliance ####
 Server control defines what roles each appliance executes in a
@@ -57,11 +57,11 @@ Server control defines what roles each appliance executes in a
         Database synchronization, Git Repositories Owner, RHN Mirror or
         Smart Proxy unless you need them.
 
-![screenshot0004](/assets/images/docs/screenshot_0004.png){:.img-responsive}
+![screenshot0004](/assets/images/docs/screenshot_0004.png){:.large_img}
 
 #### 3.  Configure your email server so ManageIQ can send you emails ####
 
-![screenshot0005](/assets/images/docs/screenshot_0005.png){:.img-responsive}
+![screenshot0005](/assets/images/docs/screenshot_0005.png){:.large_img}
 
 #### 4. Save your changes ####
 **Press Save*** to save your changes

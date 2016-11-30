@@ -32,7 +32,7 @@ tutorial on the platform.
 3.  Create an instance or follow the tutorial. For instance, a CentOS 7
     VM with 10 GB hard drive
 
-![screenshot0007](/assets/images/docs/screenshot_0007.png){:.img-responsive}
+![screenshot0007](/assets/images/docs/screenshot_0007.png){:.large_img}
 
 After you finish the tutorial, you should have at least 1 instance in your account
 
@@ -52,26 +52,26 @@ Platform (API → Credentials), don’t forget your key as you will
     need it. And enable API for the
     project (https://support.google.com/cloud/answer/6158841)
 
-![screenshot0008](/assets/images/docs/screenshot_0008.png){:.img-responsive}
+![screenshot0008](/assets/images/docs/screenshot_0008.png){:.large_img}
 
 #### 3.  Add a new Cloud provider ####
 In ManageIQ, go to ***Compute→Cloud → Providers*** and select Add New
     Cloud Provider.
 
-![screenshot0009](/assets/images/docs/screenshot_0009.png){:.img-responsive}
+![screenshot0009](/assets/images/docs/screenshot_0009.png){:.large_img}
 
 #### 4. Select Google Cloud Platform ####
 
 Select Google Cloud Platform as type
 
-![screenshot0010](/assets/images/docs/screenshot_0010.png){:.img-responsive}
+![screenshot0010](/assets/images/docs/screenshot_0010.png){:.large_img}
 
 #### 5. Enter credentials ####
 Enter your Google Compute Engine Project ID for *Project*.
 Copy your project’s *Service Account* JSON key contents to the
     *Service Account JSON* field.
 
-![screenshot0011](/assets/images/docs/screenshot_0011.png){:.img-responsive}
+![screenshot0011](/assets/images/docs/screenshot_0011.png){:.large_img}
 
 #### 6. Store the provider configuration  ####
  Press ***Validate*** and then ***Add***
@@ -86,6 +86,6 @@ Copy your project’s *Service Account* JSON key contents to the
     the Provider and then press *Authentication → Re-check
     Authentication Status* to trigger a refreshment.
 
-![screenshot0012](/assets/images/docs/screenshot_0012.png){:.img-responsive}
+![screenshot0012](/assets/images/docs/screenshot_0012.png){:.large_img}
 
 ## Next: [Review Provider](/docs/get-started/review-provider)
