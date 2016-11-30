@@ -7,7 +7,7 @@ published: true
 tags: releases announcements
 ---
 
-We've just built Darga-5 This release contains a security fix, bug fixes, numerous UI tweaks, and stabilization.
+We've just built Darga-5. This release contains a security fix, bug fixes, numerous UI tweaks, and stabilization.
 
 Security Fix(es):
 (CVE-2016-5402) A vulnerability in CFME and ManageIQ was found allowing users authorized to product feature known as "Control" or "Policies" to run arbitrary code as root.
