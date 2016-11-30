@@ -13,18 +13,19 @@ Security Fix(es):
 (CVE-2016-5402) A vulnerability in CFME and ManageIQ was found allowing users authorized to product feature known as "Control" or "Policies" to run arbitrary code as root.
 This issue was discovered by Adam Mariš (Red Hat).
 
+and here are just a few of the things added since Dara-4.1 release:
+**  SmartState: Support analysis of VMs residing on NFS41 datastores
+**  User Interface:
+****    Use VMRC desktop client if no NPAPI plugin is available ****
+****    Add Advanced Search to Containers explorer ****
+
+** Fixed issues with Alerts
+**    Alerts
+****    Fixed alerts not sending SNMP v1 traps ****
+****    Fixed users not being able to add alerts ****
 
 Here is the changelog:
 [Darga-5](https://github.com/ManageIQ/manageiq/blob/darga/CHANGELOG.md)
-
-Here is the complete summary of fixes in Darga-5:
-[manageiq](https://github.com/ManageIQ/manageiq/issues?utf8=%E2%9C%93&q=is%3Amerged%20label%3Adarga%2Fbackported%20merged%3A2016-10-06..2016-11-30%20)
-[manageiq-appliance](https://github.com/ManageIQ/manageiq-appliance/issues?utf8=%E2%9C%93&q=is%3Amerged%20label%3Adarga%2Fbackported%20merged%3A2016-10-06..2016-11-30%20)
-[manageiq-appliance-build](https://github.com/ManageIQ/manageiq-appliance-build/issues?utf8=%E2%9C%93&q=is%3Amerged%20label%3Adarga%2Fbackported%20merged%3A2016-10-06..2016-11-30%20)
-[manageiq-ui-self_service](https://github.com/ManageIQ/manageiq-ui-self_service/issues?utf8=%E2%9C%93&q=is%3Amerged%20label%3Adarga%2Fbackported%20merged%3A2016-10-06..2016-11-30%20)
-
-The [GA announcement](http://manageiq.org/blog/2016/06/darga-ga-announcement/)
-shows the summary of changes since Capablanca.
 
 For questions or support,
 [join in on the talk page](http://talk.manageiq.org/).
