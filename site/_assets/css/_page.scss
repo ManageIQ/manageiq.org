@@ -19,3 +19,7 @@ main {
   display: flex;
   justify-content: center;
 }
+
+main img {
+  @include responsive_img;
+}

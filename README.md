@@ -61,6 +61,10 @@ miq serve                               # Does Jekyll serve with appropriate arg
 miq update <all|guides|site|reference>  # Pull changes from origin repos
 ```
 
+### Working with large images
+
+Images (img) in documents and blog posts should be "responsive" by default, that is their width should not exceed the width of their container. Add the `.large_img` class to give large images zoomability.
+
 ### Building a Docker image
 `docker build <your-tag> .`
 

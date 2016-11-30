@@ -24,3 +24,8 @@
     background-color: lighten($grad_end_color, 7%);
   }
 }
+
+@mixin responsive_img {
+  max-width: 100%;
+  height: auto;
+}

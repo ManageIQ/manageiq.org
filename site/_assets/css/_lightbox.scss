@@ -1,0 +1,68 @@
+// Images with this class will get lightbox behavior
+
+.large_img {
+  @include responsive_img;
+  display: block;
+  cursor: zoom-in;
+}
+
+#lightbox {
+  display: none;
+  background-color: fade-out($grey-dark, 0.1);
+  width: 100%;
+  height: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: scroll;
+  z-index: 10000;
+  &.js-display{
+    display: block;
+  }
+}
+
+.lightbox-header {
+  display: flex;
+}
+
+.lightbox-title {
+  flex: 1;
+  padding: 1em;
+  color: #fff;
+}
+
+.lightbox-close {
+  padding: 1em;
+
+  span {
+    color: #fff;
+  }
+}
+
+.lightbox-image {
+  padding: 1em;
+
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    cursor: zoom-in;
+  }
+}
+
+.lightbox-image.lightbox-full {
+  padding: 0;
+
+  img {
+    max-width: inherit;
+    width: auto;
+    height: auto;
+    cursor: zoom-out;
+  }
+}
+
+body.js-no_scroll {
+  overflow: hidden;
+}

@@ -8,7 +8,7 @@ Go to ***Compute → Clouds → Providers***
 
 You can see there your new GCE provider, and a quad icon with four zones that specifies:
 
-![screenshot0013a](/assets/images/docs/screenshot_0013a.png){:.img-responsive}
+![screenshot0013a](/assets/images/docs/screenshot_0013a.png){:.large_img}
 
 - Type of provider
 - Authentication status
@@ -24,7 +24,7 @@ discovered:
 -   Number of instances (VM)
 -   Number of Images (Templates)
 
-![screenshot0013](/assets/images/docs/screenshot_0013.png){:.img-responsive}
+![screenshot0013](/assets/images/docs/screenshot_0013.png){:.large_img}
 
 
 Clicking it will show you more information:
@@ -33,17 +33,17 @@ Clicking it will show you more information:
     like type of provider and preferred region. This information will be
     different for each provider.
 
-![screenshot0019](/assets/images/docs/screenshot_0019.png){:.img-responsive} 
+![screenshot0019](/assets/images/docs/screenshot_0019.png)
 -   **Status**. Whether your credentials are valid and when the last refresh
     was done.
 
-![screenshot0015](/assets/images/docs/screenshot_0015.png){:.img-responsive} 
+![screenshot0015](/assets/images/docs/screenshot_0015.png){:.large_img}
 -   **Relationships**. Including the information about the components of the
     provider, like the number of security groups defined in the network,
     the number of available flavors (virtual hardware characteristics),
     cloud volumes, etc.
 
-![screenshot0018](/assets/images/docs/screenshot_0018.png){:.img-responsive} 
+![screenshot0018](/assets/images/docs/screenshot_0018.png)
 
 
 
@@ -51,7 +51,7 @@ You can click on any of those elements to see detail information and a
 list of objects within. For instance, you can click on ***Instances*** to
 see names and characteristics of the instances within the provider
 
-![screenshot0014](/assets/images/docs/screenshot_0014.png){:.img-responsive} 
+![screenshot0014](/assets/images/docs/screenshot_0014.png){:.large_img}
 
 ## Discovering a VM
 
@@ -61,11 +61,11 @@ don’t see any to create a new VM).
 You will find in the accordion a hierarchy tree that allows you to see
 the context: our machine is part of the availability zone: *“us-east1-b”*.
 
-![screenshot0021a](/assets/images/docs/screenshot_0021a.png){:.img-responsive}
+![screenshot0021a](/assets/images/docs/screenshot_0021a.png)
 
 There is a lot of detailed information out of the box:
 
-![screenshot0016](/assets/images/docs/screenshot_0016.png){:.img-responsive}
+![screenshot0016](/assets/images/docs/screenshot_0016.png){:.large_img}
 
 ### Information available ###
 
@@ -75,7 +75,7 @@ ManageIQ is capable of autodiscovering all IP addresses associated to
 the VM, the container (hardware associated to the instance), or the
 Operating System that is using, automatically.
 
-![screenshot0023](/assets/images/docs/screenshot_0023.png){:.img-responsive}
+![screenshot0023](/assets/images/docs/screenshot_0023.png)
 
 
 #### Lifecycle####
@@ -84,7 +84,7 @@ It provides information about the lifecycle of the entity, when it was
 discovered, and when it was last analyzed. Whether there is a retirement
 date for the instance, and the group it belongs to.
 
-![screenshot0025](/assets/images/docs/screenshot_0025.png){:.img-responsive}
+![screenshot0025](/assets/images/docs/screenshot_0025.png){:.large_img}
 
 #### Relationships####
 
@@ -100,7 +100,7 @@ As different cloud providers use different concepts, it is possible that
 you find many parameters define as 0 or None. You need to check in the
 documentation what information is discovered for each one.
 
-![screenshot0018](/assets/images/docs/screenshot_0018.png){:.img-responsive} 
+![screenshot0018](/assets/images/docs/screenshot_0018.png){:.large_img}
 
 #### Compliance####
 
@@ -113,7 +113,7 @@ Allows you to know the power state of the instance and the last time
 ManageIQ saw it changing. As these instances are discovered, ManageIQ
 does not know the last time it booted.
 
-![screenshot0026](/assets/images/docs/screenshot_0026.png){:.img-responsive}
+![screenshot0026](/assets/images/docs/screenshot_0026.png){:.large_img}
 
 
 #### Security, Configuration, Diagnostics and Smart Management####
@@ -121,7 +121,7 @@ does not know the last time it booted.
 More advanced capabilities are available for selected providers,
 including agentless inspection of workloads to discover
 
-![screenshot0017](/assets/images/docs/screenshot_0017.png){:.img-responsive}
+![screenshot0017](/assets/images/docs/screenshot_0017.png){:.large_img}
 
 ## Reporting##
 

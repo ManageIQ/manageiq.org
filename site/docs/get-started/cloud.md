@@ -21,7 +21,7 @@ clouds as well.
 From console.cloud.google.com, go to "Compute Engine", "Images" and then click
 on "Create Image":
 
-![screenshot0040](/assets/images/docs/screenshot_0040.png){:.img-responsive}
+![screenshot0040](/assets/images/docs/screenshot_0040.png){:.large_img}
 
 Fill in the following data:
 
@@ -38,7 +38,7 @@ Fill in the following data:
 Once the image is created, you can create a new instance based on this image.
 Go to "Compute Engine", "VM instances and then click on "Create instance".
 
-![screenshot0042](/assets/images/docs/screenshot_0042.png){:.img-responsive}
+![screenshot0042](/assets/images/docs/screenshot_0042.png){:.large_img}
 
 It's recommended to select the 2 CPU / 7.5GB instance. Under "boot disk",
 select the image that you created above. You also need to make sure that HTTP
