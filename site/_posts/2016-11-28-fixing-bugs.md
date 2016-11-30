@@ -26,7 +26,7 @@ zooming feature available, but it was not always helpful. Now thanks to
 our charts expert [Robin](https://github.com/PanSpagetka) the zoomed version
 uses [a full screen modal](https://github.com/ManageIQ/manageiq/pull/12811).
 
-![https://cloud.githubusercontent.com/assets/9535558/20563637/bacc8c78-b189-11e6-95c2-c308bfe04e4f.png]
+![Full screen modal for dashboard charts](https://cloud.githubusercontent.com/assets/9535558/20563637/bacc8c78-b189-11e6-95c2-c308bfe04e4f.png)
 
 There were also some improvements in the Automate part of our codebase.
 For example [Patrik](https://github.com/pkomanek) continued the [refactoring
