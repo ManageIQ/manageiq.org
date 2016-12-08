@@ -15,19 +15,19 @@ title: Download ManageIQ
       <th>Size</th>
     </tr>
     <tr>
-      <td><a href="https://hub.docker.com/r/manageiq/manageiq/" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'download', eventLabel: 'Docker', eventValue: 0, transport: 'beacon' });">Docker (tag {{release.tag}})</a></td>
+      <td><a href="https://hub.docker.com/r/manageiq/manageiq/" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'outbound', eventLabel: 'Docker {{release.name}}', transport: 'beacon' });">Docker (tag {{release.tag}})</a></td>
       <td>docker</td>
       <td>0.4 GB</td>
     </tr>
     {% for type in site.data.download_types %}
     <tr>
-      <td><a href="http://releases.manageiq.org/manageiq-{{type.download_platform}}-{{release.filename}}.{{type.ext}}" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'download', eventLabel: '{{type.name}}', eventValue: 0, transport: 'beacon' });">{{ type.name }}</a></td>
+      <td><a href="http://releases.manageiq.org/manageiq-{{type.download_platform}}-{{release.filename}}.{{type.ext}}" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'download', eventLabel: '{{type.name}} {{release.name}}', transport: 'beacon' });">{{ type.name }}</a></td>
       <td>{{ type.download_platform }}</td>
       <td>{{ type.size_stable }}</td>
     </tr>
     {% endfor %}
     <tr>
-      <td><a href="https://atlas.hashicorp.com/manageiq/boxes/darga" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'download', eventLabel: 'Vagrant', eventValue: 0, transport: 'beacon' });">Vagrant</a></td>
+      <td><a href="https://atlas.hashicorp.com/manageiq/boxes/darga" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'outbound', eventLabel: 'Vagrant {{release.name}}', transport: 'beacon' });">Vagrant</a></td>
       <td>vagrant</td>
       <td>1.3 GB</td>
     </tr>
@@ -48,19 +48,19 @@ title: Download ManageIQ
       <th>Size</th>
     </tr>
     <tr>
-      <td><a href="https://hub.docker.com/r/manageiq/manageiq/" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'download', eventLabel: 'Docker', eventValue: 1, transport: 'beacon' });">Docker (tag {{release.tag}})</a></td>
+      <td><a href="https://hub.docker.com/r/manageiq/manageiq/" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'outbound', eventLabel: 'Docker {{release.name}}', transport: 'beacon' });">Docker (tag {{release.tag}})</a></td>
       <td>docker</td>
       <td>0.4 GB</td>
     </tr>
     {% for type in site.data.download_types %}
     <tr>
-      <td><a href="http://releases.manageiq.org/manageiq-{{type.download_platform}}-{{release.filename}}.{{type.ext}}" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'download', eventLabel: '{{type.name}}', eventValue: 1, transport: 'beacon' });">{{ type.name }}</a></td>
+      <td><a href="http://releases.manageiq.org/manageiq-{{type.download_platform}}-{{release.filename}}.{{type.ext}}" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'download', eventLabel: '{{type.name}} {{release.name}}', transport: 'beacon' });">{{ type.name }}</a></td>
       <td>{{ type.download_platform }}</td>
       <td>{{ type.size_pre }}</td>
     </tr>
     {% endfor %}
     <tr>
-      <td><a href="https://atlas.hashicorp.com/manageiq/boxes/euwe" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'download', eventLabel: 'Vagrant', eventValue: 1, transport: 'beacon' });">Vagrant</a></td>
+      <td><a href="https://atlas.hashicorp.com/manageiq/boxes/euwe" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'outbound', eventLabel: 'Vagrant {{release.name}}', transport: 'beacon' });">Vagrant</a></td>
       <td>vagrant</td>
       <td>1.0 GB</td>
     </tr>
@@ -83,13 +83,13 @@ title: Download ManageIQ
       <th>Size</th>
     </tr>
     <tr>
-      <td><a href="https://hub.docker.com/r/manageiq/manageiq/" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'download', eventLabel: 'Docker', eventValue: 2, transport: 'beacon' });">Docker (tag {{release.tag}})</a></td>
+      <td><a href="https://hub.docker.com/r/manageiq/manageiq/" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'outbound', eventLabel: 'Docker {{release.name}}', transport: 'beacon' });">Docker (tag {{release.tag}})</a></td>
       <td>docker</td>
       <td>0.5 GB</td>
     </tr>
     {% for type in site.data.download_types %}
     <tr>
-      <td><a href="http://releases.manageiq.org/manageiq-{{type.download_platform}}-{{release.filename}}.{{type.ext}}" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'download', eventLabel: '{{type.name}}', eventValue: 2, transport: 'beacon' });">{{ type.name }}</a></td>
+      <td><a href="http://releases.manageiq.org/manageiq-{{type.download_platform}}-{{release.filename}}.{{type.ext}}" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'download', eventLabel: '{{type.name}} {{release.name}}', transport: 'beacon' });">{{ type.name }}</a></td>
       <td>{{ type.download_platform }}</td>
       <td>{{ type.size_devel }}</td>
     </tr>
