@@ -25,7 +25,7 @@ checking out the [issues tracker](https://github.com/manageiq/manageiq/issues).
 ## Improved
 
 ### [pglogical Upgrade](https://github.com/ManageIQ/manageiq/pull/13070)
-pglogical had released many versions after the one we are currently using, and
+pglogical had released many versions after the one we were currently using, and
 these new versions contain many bug fixes as well as the ability to fire
 triggers on replicated rows and to cleanly update a node data source name.
 However, there was a serious trigger bug that had to be resolved first. Slated
@@ -63,7 +63,6 @@ pluggable provider for ManageIQ. Just `rails generate provider YourProvider` and
 
 ### [Removed unneeded _perf_chart_flash_layout](https://github.com/ManageIQ/manageiq/pull/12989)
 Funny enough, as [Milan](https://github.com/mzazrivec) pointed out, we no longer have flash charts in the application.
-
 
 ### [Removed some outdated CSS](https://github.com/ManageIQ/manageiq/pull/12998)
 As part of some work with updating the expression editor toolbar styling, [Eric](https://github.com/epwinchell) had
