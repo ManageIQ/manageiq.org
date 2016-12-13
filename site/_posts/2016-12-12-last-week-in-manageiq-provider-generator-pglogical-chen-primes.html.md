@@ -1,7 +1,7 @@
 ---
 title: "Last Week in ManageIQ: Provider generator, pglogical upgrades, and Chen primes!"
 author: chrisarcand
-date: 2016-12-13 14:05:10 -06:00
+date: 2016-12-13 00:05:10
 comments: true
 published: true
 tags: LWIMIQ
