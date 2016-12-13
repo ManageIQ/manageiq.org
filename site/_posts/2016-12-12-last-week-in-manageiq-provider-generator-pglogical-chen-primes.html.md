@@ -19,7 +19,7 @@ winter day!
 There were [107 pull requests merged to master][PRs merged last week] last week! 107 is the 28th prime number.
 The next prime is 109, meaning that 107 is called a [Chen prime](https://en.wikipedia.org/wiki/Chen_prime).
 Super cool, right? Almost as super cool as 0°! If I haven't scared you off yet,
-you can join the 45 contributors that made [255 commits][Commits merged last week] by
+you can join the 45 contributors that made [297 commits][Commits merged last week] by
 checking out the [issues tracker](https://github.com/manageiq/manageiq/issues).
 
 ## Improved
@@ -47,7 +47,7 @@ if the error is generic and unrelated to missing/invalid credentials (unreachabl
 
 ### [Fixed save button for VM retirement date](https://github.com/ManageIQ/manageiq/pull/12343)
 The save button for VMs would not be clickable when you set a retirement date of the current day or tomorrow.
-Fixed! Now you can retire whenever you want!
+Fixed! Thanks to [Laura](https://github.com/lgalis) you can now retire whenever you want! ;)
 
 ## New
 
