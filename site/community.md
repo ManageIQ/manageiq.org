@@ -88,11 +88,6 @@ Here are some opportunities to meet with members of the community to learn and s
   </div>
 </div>
 
-
-ManageIQ talk
-“Collaborating in ManageIQ”
-
-
 <div class="row">
   <div class="col-md-6">
     <p><img src="/assets/images/events/rubyconf2016.png" alt="RubyConf 2016" /></p>
