@@ -59,13 +59,12 @@ Here are some opportunities to meet with members of the community to learn and s
 
 <div class="row">
   <div class="col-md-6">
-    <p><img src="/assets/images/events/kubecon2016.png" alt="KubeCon 2016" /></p>
-    <p><a href="https://kubecon.io">KubeCon</a> <br /> November 8-9, 2016 in Seattle, WA</p>
+    <p><img src="/assets/images/events/devconfcz2017.png" alt="DevConf.CZ 2017" /></p>
+    <p><a href="https://devconf.cz/">DevConf.CZ 2017</a> <br /> January 27-29, 2017 in Brno, Czech Republic</p>
   </div>
   <div class="col-md-6">
-    <p><a href="http://rubyconf.org/">RubyConf</a> <br /> November 10-12, 2016 in Cincinnati, OH</p>
-    <p>Speaker: <a href="https://twitter.com/chrisarcand">Chris Arcand</a> <br /> Topic:
-    <a href="http://rubyconf.org/program#prop_46">Deletion Driven Development: Code to delete code!</a></p>
+    <p><img src="/assets/images/events/fosdem2017.png" alt="FOSDEM 2017" /></p>
+    <p><a href="https://fosdem.org/2017/">FOSDEM 2017</a> <br /> February 4-5, 2017 in Brussels, Belgium</p>
   </div>
 </div>
 
@@ -73,8 +72,41 @@ Here are some opportunities to meet with members of the community to learn and s
 
 <div class="row">
   <div class="col-md-6">
+    <p><img src="/assets/images/events/gdgdevfestmadrid2016.png" alt="GDG DevFest Madrid 2016" /></p>
+    <p><a href="https://gdgmadrid.com/">GDG DevFest Madrid 2016</a> <br /> December 2-3, 2016 in Madrid, Spain</p>
+    <p>Speaker: <a href="https://twitter.com/sergioocon">Sergio Ocón</a> <br /> Topic:
+    <a href="https://gdgmadrid.com/schedule/day1?sessionId=101">Collaborating in ManageIQ</a></p>
+  </div>
+  <div class="col-md-6">
+    <p><img src="/assets/images/events/nluug2016.png" alt="NLUUG Fall Conference 2016" /></p>
+    <p><a href="https://nluug.nl/activiteiten/events/nj16/index.html">NLUUG Fall Conference 2016</a>
+    <br /> November 17, 2016 in Utrecht, The Netherlands</p>
+    <p>Speaker: <a href="https://twitter.com/mhulsman66">Mike Hulsman</a> <br /> Topic:
+    <a href="https://nluug.nl/activiteiten/events/nj16/abstracts/ab10.html">ManageIQ: Control your Cloud and Virtualization Services</a><br />
+    Recap: <a href="https://twitter.com/i/moments/799390447361728512">Tweets,</a>
+    <a href="http://ftp.nluug.nl/video/nluug/2016-11-17_nj16/zaal-1/1_ManageIQ_control_your_cloud_and_virtualisation_services_-_Mike_Hulsman.webm">video</a></p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <p><img src="/assets/images/events/rubyconf2016.png" alt="RubyConf 2016" /></p>
+    <p><a href="http://rubyconf.org/">RubyConf 2016</a> <br /> November 10-12, 2016 in Cincinnati, OH</p>
+    <p>Speaker: <a href="https://twitter.com/chrisarcand">Chris Arcand</a> <br /> Topic:
+    <a href="http://rubyconf.org/program#prop_46">Deletion Driven Development: Code to delete code!</a><br />
+    Recap: <a href="https://speakerdeck.com/chrisarcand/deletion-driven-development-code-to-delete-code-north-american-edition">Slides,</a>
+    <a href="http://confreaks.tv/videos/rubyconf2016-deletion-driven-development-code-to-delete-code">video</a></p>
+  </div>
+  <div class="col-md-6">
+    <p><img src="/assets/images/events/kubecon2016.png" alt="KubeCon 2016" /></p>
+    <p><a href="https://kubecon.io">KubeCon 2016</a> <br /> November 8-9, 2016 in Seattle, WA</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
     <p><img src="/assets/images/events/miqsummit2016.png" alt="ManageIQ Design Summit 2016" /></p>
-    <p><a href="http://manageiq.org/summit/">ManageIQ Design Summit 2016</a> <br /> June 6-7, 2016 in Mahwah, NJ</p>
+    <p><a href="http://miqsummit2016.eventbrite.com/">ManageIQ Design Summit 2016</a> <br /> June 6-7, 2016 in Mahwah, NJ</p>
     <p>Recap: <a href="/blog/2016/06/presentation-slides-and-demo-videos-from-manageiq-design-summit/">Slides,</a>
     <a href="/blog/2016/07/manageiq-design-summit-2016-recap-with-photos-and-videos/">videos and photos</a></p>
   </div>
