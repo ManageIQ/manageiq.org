@@ -42,7 +42,7 @@ The UI now sees [the correct IDs of ui_properties nodes][5] when a blueprint is 
 We have several renditions of the :title property used to update buttons when they are disabled, and so a lot of those methods have been [consolidated into the base method of #calculate_properties][17], thanks to [Attila][18]. 
 ## No, the journey doesn't end here! (Wrapping up)
 
-Pull requests are not less valiant because they are here unpraised. Check out [the full list][], and, be bold, but wary! Keep up your merry hearts, and ride to meet your fortune!
+Pull requests are not less valiant because they are here unpraised. Check out [the full list][1], and, be bold, but wary! Keep up your merry hearts, and ride to meet your fortune!
   
 
 [1]: https://github.com/ManageIQ/manageiq/pulls?utf8=%E2%9C%93&q=is%3Apr%20is%3Amerged%20base%3Amaster%20merged%3A%222016-12-12%20..%202016-12-18%22%20sort%3Acreated-desc%20
