@@ -20,7 +20,7 @@ In the land of ManageIQ where the heisenbugs lie.
 There were [82 pull requests merged last week][1]! Even the smallest person can change the course of the future. We are looking for people to [share in this adventure][2]!
 
 ## Uprooting the evil in the fields that we know. (Improved)
-Exciting news from the world of :ems_azure! [Bronagh][3] has [added an `:additional_regions` hash][4]. Coming soon: that hash will be read and the regions added to those in the supported Azure regions file. 
+Exciting news from the world of `:ems_azure`! [Bronagh][3] has [added an `:additional_regions` hash][4]. Coming soon: that hash will be read and the regions added to those in the supported Azure regions file. 
 
 The UI now sees [the correct IDs of ui_properties nodes][5] when a blueprint is published, thanks to [Jillian][6]. 
 
