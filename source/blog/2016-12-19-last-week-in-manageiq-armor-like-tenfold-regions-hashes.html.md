@@ -32,7 +32,7 @@ The UI now sees [the correct IDs of ui_properties nodes][5] when a blueprint is 
 [Laura][11] has fixed an issue where [the submission of a custom dialog should redirect][12] to the request list only if a request was created. 
 
 ## Go back? ... No good at all! Go sideways? Impossible! Go forward? Only thing to do! On we go! (New)
-[Provider plugins can carry their own automate domains][13] now, thanks to [Brandon][]14. 
+[Provider plugins can carry their own automate domains][13] now, thanks to [Brandon][14]. 
 
 [Keenan][15] has introduced [automatic purging of the report results table][16], preventing a huge use of resources. 
 
