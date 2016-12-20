@@ -25,13 +25,15 @@ on "Create Image":
 
 Fill in the following data:
 
-**Name:** manageiq-darga-3
+{% assign release = site.data.releases["stable"] %}
+
+**Name:** manageiq-{{release.tag}}
 
 **Family:** centos-7
 
 **Source:** cloud storage file
 
-**Cloud storage file:** manageiq/darga-3.tar.gz
+**Cloud storage file:** manageiq/{{release.tag}}.tar.gz
 
 ### Step 2: Create a new instance using the image you created
 

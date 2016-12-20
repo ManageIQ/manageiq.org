@@ -8,18 +8,20 @@ ManageIQ project makes available on the [Docker Hub](https://hub.docker.com/r/ma
 This is a great option if you have a Linux PC (but it works everywhere Docker
 is available).
 
+{% assign release = site.data.releases["stable"] %}
+
 ### Step 1: Download and deploy the appliance
 
 Pull the ManageIQ docker image:
 
 ```bash
-$ sudo docker pull manageiq/manageiq:latest-darga
+$ sudo docker pull manageiq/manageiq:{{release.tag}}
 ```
 
 ### Step 2: Run the container
 
 ```bash
-$ sudo docker run --privileged -d -p 8443:443 manageiq/manageiq:latest-darga
+$ sudo docker run --privileged -d -p 8443:443 manageiq/manageiq:{{release.tag}}
 ```
 
 ManageIQ is now up and running.
