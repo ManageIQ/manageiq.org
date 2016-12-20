@@ -1,6 +1,6 @@
 ---
 title: "Last Week in ManageIQ: Armor like Tenfold Regions Hashes"
-date: 2016-12-16
+date: 2016-12-19
 author: drew
 tags: LWIMIQ
 comments: true
