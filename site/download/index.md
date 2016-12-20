@@ -27,7 +27,7 @@ title: Download ManageIQ
     </tr>
     {% endfor %}
     <tr>
-      <td><a href="https://atlas.hashicorp.com/manageiq/boxes/darga" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'outbound', eventLabel: 'Vagrant {{release.name}}', transport: 'beacon' });">Vagrant</a></td>
+      <td><a href="https://atlas.hashicorp.com/manageiq/boxes/euwe" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'outbound', eventLabel: 'Vagrant {{release.name}}', transport: 'beacon' });">Vagrant</a></td>
       <td>vagrant</td>
       <td>1.3 GB</td>
     </tr>
@@ -37,6 +37,8 @@ title: Download ManageIQ
 
 
 {% assign release = site.data.releases["prerelease"] %}
+
+{% if release %}
 
 ### Pre-release ({{ release.name }})
 
@@ -67,7 +69,7 @@ title: Download ManageIQ
   </table>
 </div>
 
-
+{% endif %}
 
 {% assign release = site.data.releases["devel"] %}
 
