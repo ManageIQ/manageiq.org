@@ -10,6 +10,17 @@ ManageIQ is open source and open for contributions. There are many ways to get i
 
 <div class="row">
   <div class="col-md-6">
+    <br /><script type='text/javascript' src='https://www.openhub.net/p/manageiq/widgets/project_basic_stats?format=js'></script>
+  </div>
+
+  <div class="col-md-6">
+    <br /><p><a href="https://github.com/orgs/ManageIQ/people">Members in ManageIQ community</a></p>
+    <p><a href="https://github.com/ManageIQ/manageiq/graphs/contributors">Contributors to the main ManageIQ repo</a></p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
       <h3>Discuss</h3>
       <p>Join the active ManageIQ community on <a href="http://talk.manageiq.org/">ManageIQ Talk forum</a> with your questions and discussions, or chat with us anytime on <a href="https://gitter.im/ManageIQ/manageiq">Gitter</a> (sign in with your GitHub account).</p>
       <p><button class="js-gitter-toggle-chat-button" data-gitter-toggle-chat-state="true">Open Chat</button>
