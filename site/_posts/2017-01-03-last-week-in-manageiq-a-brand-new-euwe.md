@@ -11,11 +11,11 @@ As the end of 2016 grew closer, and the Winter Solstice brought with it either t
 
 ## Featured
 
-Over the last two weeks amongst all the New Year's celebrations there were [70 pull requests merged][3]! These pull requests (PRs) were comprised of [229 commits][4]. Why not start your New Year by contributing to Open Source, just checkout our [issue tracker][5] to see something that tickles your fancy, or join our chat on [Gitter][6] to find out more.
+Over the last two weeks amongst all the New Year's celebrations there were [70 pull requests merged][3]! These pull requests (PRs) were comprised of [229 commits][4]. Why not start your New Year by contributing to Open Source, just check out our [issue tracker][5] to see something that tickles your fancy, or join our chat on [Gitter][6] to find out more.
 
 ## Improved
 
-If removing technical debt is considered an improvement (answer: it should be), then this last two weeks won't disappoint.
+If removing technical debt is considered an improvement (answer: it should be), then these last two weeks won't disappoint.
 First up is [Tim Wade][7] removing some [dead paths][8] in `MiqExpression.operands2rubyvalue`. Next up is [Tim Wade][7] again! This time [fixing invalid chargeback factories][9] in our test suit.
 
 And finally, a useful improvement from [Ari Zellner][10] Changing `Images` to `ContainerImages` in our [chargeback rate assignments][11].
