@@ -7,7 +7,7 @@ published: true
 tags: LWIMIQ
 ---
 
-As the end of 2016 grew closer, and the Winter Solstice brought with it either the longest night or shortest night, depending on which hemisphere you frequent, ManageIQ cut it's latest release Euwe. You can download it [here][1] or clone it from Github [here][2] Happy New Year!
+As the end of 2016 grew closer, and the Winter Solstice brought with it either the longest night or shortest night, depending on which hemisphere you frequent, ManageIQ cut its latest release Euwe. You can download it [here][1] or clone it from Github [here][2] Happy New Year!
 
 ## Featured
 
@@ -30,13 +30,13 @@ I know, I know it's January and we're all still zoned out from the holidays. Don
 
 ## New
 
-With new code comes new bugs, one of our new projects is creating a new physical infrastructure provider, this is still ongoing work. However that has lead to a couple of bugs, but [Dávid Halász][18] to the rescue he's fixed our [Rubocop][19] [style guide][20] to [not complain][21] about the `$lenovo_log` global; the logging variable used by our first physical infrastructure provider, Lenovo.
+With new code comes new bugs, one of our new projects is creating a new physical infrastructure provider, this is still ongoing work. However that has led to a couple of bugs, but [Dávid Halász][18] to the rescue he's fixed our [Rubocop][19] [style guide][20] to [not complain][21] about the `$lenovo_log` global; the logging variable used by our first physical infrastructure provider, Lenovo.
 
 [Aparna Karve][22] has a new feature exposing [workflows on api request resources][23] to show the Request Workflow details in SUI.
 
 ## Deleted
 
-In this issue, I think [Martin Povolny][24] wins the deletion prize, with a massive `359,849` lines deleted! Admittedly [this PR][25] was part of the UI spit into a separate repo, but that still counts right? If you want to find the recently deleted code it can be found in it's own [repository][26], more information on this can be found in this [guide][27]. This is all part of ManageIQ's plan to "extract all the things". Expect more code extractions over the coming months.
+In this issue, I think [Martin Povolny][24] wins the deletion prize, with a massive `359,849` lines deleted! Admittedly [this PR][25] was part of the UI spit into a separate repo, but that still counts right? If you want to find the recently deleted code it can be found in its own [repository][26], more information on this can be found in this [guide][27]. This is all part of ManageIQ's plan to "extract all the things". Expect more code extractions over the coming months.
 
 ## Wrapping up
 
