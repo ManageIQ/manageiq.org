@@ -36,7 +36,7 @@ With new code comes new bugs, one of our new projects is creating a new physical
 
 ## Deleted
 
-In this issue, I think [Martin Povolny][24] wins the deletion prize. With a massive `359,849` lines deleted! Admittedly [this PR][25] was part of the UI spit into a separate repo, but that still counts right? If you want to find the recently deleted code it can be found in it's own [repository][26]. This is all part of ManageIQ's plan to "extract all the things". Expect more code extractions over the coming months.
+In this issue, I think [Martin Povolny][24] wins the deletion prize, with a massive `359,849` lines deleted! Admittedly [this PR][25] was part of the UI spit into a separate repo, but that still counts right? If you want to find the recently deleted code it can be found in it's own [repository][26]. This is all part of ManageIQ's plan to "extract all the things". Expect more code extractions over the coming months.
 
 ## Wrapping up
 
