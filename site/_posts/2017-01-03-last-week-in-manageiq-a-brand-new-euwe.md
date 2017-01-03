@@ -36,11 +36,11 @@ With new code comes new bugs, one of our new projects is creating a new physical
 
 ## Deleted
 
-In this issue, I think [Martin Povolny][24] wins the deletion prize, with a massive `359,849` lines deleted! Admittedly [this PR][25] was part of the UI spit into a separate repo, but that still counts right? If you want to find the recently deleted code it can be found in it's own [repository][26]. This is all part of ManageIQ's plan to "extract all the things". Expect more code extractions over the coming months.
+In this issue, I think [Martin Povolny][24] wins the deletion prize, with a massive `359,849` lines deleted! Admittedly [this PR][25] was part of the UI spit into a separate repo, but that still counts right? If you want to find the recently deleted code it can be found in it's own [repository][26], more information on this can be found in this [guide][27]. This is all part of ManageIQ's plan to "extract all the things". Expect more code extractions over the coming months.
 
 ## Wrapping up
 
-Well that about wraps up this double issue of [Last two weeks in ManageIQ][27]. Hopefully 2017 brings you joy and happiness, and lots more [Open Source contributions][5]. Happy coding!
+Well that about wraps up this double issue of [Last two weeks in ManageIQ][28]. Hopefully 2017 brings you joy and happiness, and lots more [Open Source contributions][5]. Happy coding!
 
 
 [1]: http://manageiq.org/download/
@@ -69,4 +69,5 @@ Well that about wraps up this double issue of [Last two weeks in ManageIQ][27]. 
 [24]: https://github.com/martinpovolny
 [25]: https://github.com/ManageIQ/manageiq/pull/13303
 [26]: https://github.com/ManageIQ/manageiq-ui-classic
-[27]: http://manageiq.org/blog/2017/01/last-week-in-manageiq-a-brand-new-euwe/
+[27]: https://github.com/ManageIQ/guides/blob/master/developer_setup/classic_ui_split.md
+[28]: http://manageiq.org/blog/2017/01/last-week-in-manageiq-a-brand-new-euwe/
