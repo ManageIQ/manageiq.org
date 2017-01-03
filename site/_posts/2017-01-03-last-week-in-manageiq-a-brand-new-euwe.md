@@ -16,13 +16,13 @@ Over the last two weeks amongst all the New Year's celebrations there were [70 p
 ## Improved
 
 If removing technical debt is considered an improvement (answer: it should be), then these last two weeks won't disappoint.
-First up is [Tim Wade][7] removing some [dead paths][8] in `MiqExpression.operands2rubyvalue`. Next up is [Tim Wade][7] again! This time [fixing invalid chargeback factories][9] in our test suit.
+First up is [Tim Wade][7] removing some [dead paths][8] in `MiqExpression.operands2rubyvalue`. Next up is [Tim Wade][7] again! This time [fixing invalid chargeback factories][9] in our test suite.
 
 And finally, a useful improvement from [Ari Zellner][10] Changing `Images` to `ContainerImages` in our [chargeback rate assignments][11].
 
 ## Fixed
 
-After a normally expensive December, people are often frugal in January; which is good as that's when the sales start! And who wants to overpay when you can get something for less. That's why [Šimon Lukašík][12] fixed a bug in [chargeback reporting][13]
+After a normally expensive December, people are often frugal in January; which is good as that's when the sales start! And who wants to overpay when you can get something for less. That's why [Šimon Lukašík][12] fixed a bug in [chargeback reporting][13].
 
 [Laura Galis][14] Fixed the case where an empty link was being created if an [orchestration stack was empty][15].
 
@@ -30,17 +30,17 @@ I know, I know it's January and we're all still zoned out from the holidays. Don
 
 ## New
 
-With new code comes new bugs, one of our new projects is creating a new physical infrastructure provider, this is still ongoing work. However that has led to a couple of bugs, but [Dávid Halász][18] to the rescue he's fixed our [Rubocop][19] [style guide][20] to [not complain][21] about the `$lenovo_log` global; the logging variable used by our first physical infrastructure provider, Lenovo.
+New code usually creates new bugs. One of our new and ongoing projects is creating a new physical infrastructure provider. However that has led to a couple of bugs, but [Dávid Halász][18] to the rescue he's fixed our [Rubocop][19] [style guide][20] to [not complain][21] about the `$lenovo_log` global; the logging variable used by our first physical infrastructure provider, Lenovo.
 
-[Aparna Karve][22] has a new feature exposing [workflows on api request resources][23] to show the Request Workflow details in SUI.
+[Aparna Karve][22] has a new feature exposing [workflows on api request resources][23] to show the Request Workflow details in the SUI.
 
 ## Deleted
 
-In this issue, I think [Martin Povolny][24] wins the deletion prize, with a massive `359,849` lines deleted! Admittedly [this PR][25] was part of the UI spit into a separate repo, but that still counts right? If you want to find the recently deleted code it can be found in its own [repository][26], more information on this can be found in this [guide][27]. This is all part of ManageIQ's plan to "extract all the things". Expect more code extractions over the coming months.
+In this issue, I think [Martin Povolny][24] wins the deletion prize, with a massive `359,849` lines deleted! Admittedly [this PR][25] was part of the UI split into a separate repo, but that still counts right? If you want to find the recently deleted code it can be found in its own [repository][26], more information on this can be found in this [guide][27]. This is all part of ManageIQ's plan to "extract all the things". Expect more code extractions over the coming months.
 
 ## Wrapping up
 
-Well that about wraps up this double issue of [Last two weeks in ManageIQ][28]. Hopefully 2017 brings you joy and happiness, and lots more [Open Source contributions][5]. Happy coding!
+Well that about wraps up this double issue of [Last Two Weeks in ManageIQ][28]. Hopefully 2017 brings you joy and happiness, and lots more [Open Source contributions][5]. Happy coding!
 
 
 [1]: http://manageiq.org/download/
