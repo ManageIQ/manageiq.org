@@ -1,0 +1,48 @@
+- name: manageiq
+  description: ManageIQ Open-Source Management Platform
+
+- name: manageiq-ui-classic
+  description: Classic UI of ManageIQ
+
+- name: manageiq-ui-service
+  description: Service UI for ManageIQ
+
+- name: manageiq-appliance
+  description: System files for the ManageIQ appliance
+
+- name: manageiq-appliance-build
+  description: Scripts to build ManageIQ appliances
+
+- name: manageiq-content
+  description: Default ManageIQ content
+
+- name: manageiq-gems-pending
+  description: Gems Pending to be extracted for ManageIQ project
+
+- name: manageiq-providers-amazon
+  description: ManageIQ plugin for the Amazon EC2 provider
+
+- name: manageiq-providers-azure
+  description: ManageIQ plugin for the Microsoft Azure provider
+
+- name: manageiq-providers-lenovo
+  description: ManageIQ plugin for the Lenovo XClarity provider
+
+- name: manageiq-api-client
+  description: Ruby client library to the ManageIQ REST API
+
+- name: manageiq-pods
+  description: ManageIQ on OpenShift
+
+- name: manageiq_docs
+  description: Documentation for the ManageIQ Cloud Management Platform
+
+- name: integration_tests
+  description: ManageIQ integration tests
+
+- name: ui-components
+  description: Angular UI Components for ManageIQ
+
+- name: manageiq.org
+  description: Website for the ManageIQ Cloud Management Platform
+

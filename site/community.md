@@ -15,7 +15,10 @@ ManageIQ is open source and open for contributions. There are many ways to get i
 
   <div class="col-md-6">
     <br /><p><a href="https://github.com/orgs/ManageIQ/people">Members in ManageIQ community</a></p>
-    <p><a href="https://github.com/ManageIQ/manageiq/graphs/contributors">Contributors to the main ManageIQ repo</a></p>
+    <p>Contributors to the ManageIQ repositories:</p>
+    {% for repo in site.data.github_repos %}
+    <small>&#9823;&nbsp;<a href="https://github.com/ManageIQ/{{repo.name}}/graphs/contributors" title="{{repo.description}}">{{repo.name}}</a></small>
+    {% endfor %}
   </div>
 </div>
 
@@ -129,7 +132,7 @@ Here are some opportunities to meet with members of the community to learn and s
 
 ### Sprint reviews
 
-There is a ManageIQ Sprint review every 3 weeks open to the community. To join the online video conference, please use this [Bluejeans link](https://bluejeans.com/5927041376/).
+There is a ManageIQ Sprint review every 2 weeks open to the community. To join the online video conference, please use this [Bluejeans link](https://bluejeans.com/5927041376/).
 
 You can import the [ManageIQ community calendar](https://calendar.google.com/calendar/embed?src=contact%40manageiq.org) to be notified about ManageIQ events and Sprint reviews.
 
