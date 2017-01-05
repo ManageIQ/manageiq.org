@@ -7,7 +7,7 @@ comments: true
 published: true
 ---
 
-Happy New Year! We're starting off 2017 with a notable change in the ManageIQ process. In an effort to become more agile, and allow more flexibility in planning and scheduling, we will be switiching from 3-week Sprints to 2-week Sprints.
+Happy New Year! We're starting off 2017 with a notable change in the ManageIQ process. In an effort to become more agile, and allow more flexibility in planning and scheduling, we will be switching from 3-week Sprints to 2-week Sprints.
 
 We had the Sprint 51 review meeting yesterday (Jan 4) as planned, and from now on the meetings will occur fortnightly. The next 3 sprint reviews are as follows:
 
