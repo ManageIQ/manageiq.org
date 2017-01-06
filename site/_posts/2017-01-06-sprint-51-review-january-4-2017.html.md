@@ -22,7 +22,7 @@ In Classic UI, columns displaying virtual CPU and memory values for Cloud Provid
 
 New Chargeback features include support for fixed and allocated costs without metrics, and arbitration logic for multiple assigned rates. On the Automate side, enhanced messaging has been extended to Ansible and Cloud Provisioning, and importing Automate modeling from the UI now honors the tenant.
 
-For VMware vCloud, XLAB added the ability to specify VM attributes when deploying vApps. Another big step for providers in general is the new Provider Generator, which was [proposed](https://www.youtube.com/watch?v=i5ZuTKFQqJ8) in last year's Design Summit. With a single line of command, `rails generate provider ProviderName` will generate the scaffolding for a provider. 
+For the VMware vCloud provider, XLAB added the ability to specify VM attributes when deploying vApps. As for providers in general, a big step is made with the new Provider Generator, which was [proposed](https://www.youtube.com/watch?v=i5ZuTKFQqJ8) in last year's Design Summit. With a single line of command, `rails generate provider ProviderName` will generate the scaffolding for a provider. 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/2iRkB_eKb44" frameborder="0" allowfullscreen></iframe>
 
