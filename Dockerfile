@@ -25,7 +25,9 @@ ENV MIQ_BUNDLER=/root/.rbenv/shims/bundle
 
 ENV MIQ_BASE_DIR=/srv/build
 ENV MIQ_DOCS_DIR=/srv/build/site/docs
-ENV MIQ_GUIDES_DIR=${MIQ_DOCS_DIR}/guides
+
+ENV MIQ_GUIDES_REPO=https://github.com/manageiq/guides
+ENV MIQ_GUIDES_BRANCH=master
 
 ENV MIQ_SITE_DEST=/srv/manageiq_org
 ENV MIQ_SITE_SOURCE=${MIQ_BASE_DIR}/site
