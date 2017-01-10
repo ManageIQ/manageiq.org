@@ -52,7 +52,7 @@ module Miq
       clone_or_update_repo
       setup_ascii_binder
       build_ref_docs
-      move_files
+      sync_files
     end
 
     def update
@@ -65,7 +65,7 @@ module Miq
         shell "cd #{tmp_dir} && git pull origin"
       else
         logger.info "Cloning #{repo} to #{tmp_dir}"
-        shell "git clone #{repo} #{tmp_dir}"
+        shell "git clone #{repo} --depth 1 #{tmp_dir}"
       end
     end
 
@@ -86,7 +86,7 @@ module Miq
       ].join(" && ")
     end
 
-    def move_files
+    def sync_files
       if File.directory?("#{tmp_dir}/#{src_dir}") || debug?
         prep dst_dir
         logger.info "Syncing files to #{dst_dir}"

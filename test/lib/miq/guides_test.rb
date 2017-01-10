@@ -3,7 +3,8 @@ require "test_helper"
 class GuidesTest < Minitest::Test
   def setup
     @dir = fixtures_path.join("docs", "guides")
-    ENV["MIQ_GUIDES_DIR"] = @dir.to_s
+    ENV["MIQ_GUIDES_TMP"] = @dir.to_s
+    ENV["MIQ_GUIDES_DST"] = @dir.to_s
     @subject = Miq::Guides.new
   end
 
@@ -11,8 +12,9 @@ class GuidesTest < Minitest::Test
     reset_fixture
   end
 
-  def test_setting_dir_from_env
-    assert_equal @dir, @subject.guides_dir
+  def test_setting_dirs_from_env
+    assert_equal @dir.to_s, @subject.tmp_dir
+    assert_equal @dir.to_s, @subject.dst_dir
   end
 
   def test_adding_front_matter

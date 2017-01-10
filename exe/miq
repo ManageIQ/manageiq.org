@@ -81,9 +81,8 @@ module Miq
       Guides.build
     end
 
-    desc "site", "Build Jekyll site (and guides)"
+    desc "site", "Build Jekyll site"
     def site
-      invoke :guides
       say "Building Jekyll site", :green
       Site.build
     end
@@ -99,7 +98,7 @@ module Miq
     desc "menus", "Regenerate menu yaml files"
     def menus
       say "Rebuilding menu yaml files", :red
-      say "This will clobber existing files.", :red
+      say "This will clobber existing files in tmp.", :red
       answer = ask("Are you sure? Y/n")
 
       if answer == "Y"
@@ -135,15 +134,8 @@ module Miq
     desc "generate lwimiq YYYY-MM-DD", "Generate a new blog post"
     subcommand "generate", Generate
 
-    # desc "deploy", "Prepares and deploys site. Don't use unless your changes have been pushed to repos."
-    # def deploy
-    #   invoke 'miq:update:all'
-    #   invoke 'miq:build:all'
-    # end
-
     desc "serve", "Does Jekyll serve with appropriate args"
     def serve
-      invoke 'miq:build:guides'
       Site.serve
     end
   end
