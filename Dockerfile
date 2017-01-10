@@ -29,10 +29,10 @@ ENV MIQ_GUIDES_DIR=${MIQ_DOCS_DIR}/guides
 
 ENV MIQ_SITE_DEST=/srv/manageiq_org
 ENV MIQ_SITE_SOURCE=${MIQ_BASE_DIR}/site
-ENV MIQ_SITE_BRANCH=reorg
+ENV MIQ_SITE_BRANCH=master
 
-ENV MIQ_REF_REPO=https://github.com/hayesr/manageiq_docs
-ENV MIQ_REF_BRANCH=redesign
+ENV MIQ_REF_REPO=https://github.com/manageiq/manageiq_docs
+ENV MIQ_REF_BRANCH=master
 # ENV MIQ_REF_TMP=/tmp/manageiq_docs
 # ENV MIQ_REF_SRC=_preview/manageiq/${MIQ_REF_BRANCH}
 # ENV MIQ_REF_DST=${MIQ_DOCS_DIR}/reference/latest
