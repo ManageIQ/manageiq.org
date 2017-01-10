@@ -85,6 +85,7 @@ the pipeline and are happy you're helping to continuously improve our (your) pro
 [breath]: http://sensuousmind.com/sites/default/files/breathe-sensuousmind-1280x720-AndroidGalaxyNexus.jpg
 [classic]: https://github.com/ManageIQ/manageiq-ui-classic
 [automate]: https://github.com/ManageIQ/manageiq-content
+[amazon]: https://github.com/ManageIQ/manageiq-providers-amazon
 [sui]: https://github.com/ManageIQ/manageiq-ui-service
 [miq]: https://github.com/ManageIQ/manageiq
 [easter_egg]: http://allrecipes.com/recipe/23891/grilled-cheese-sandwich/
