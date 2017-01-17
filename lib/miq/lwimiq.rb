@@ -62,8 +62,31 @@ tags: LWIMIQ
 
 <outro>
 
-[PRs merged last week]: https://github.com/ManageIQ/manageiq/pulls?page=1&q=is%3Apr+is%3Amerged+base%3Amaster+merged%3A%22#{start_date.strftime("%Y-%m-%d")}+..+#{end_date.strftime("%Y-%m-%d")}%22+sort%3Acreated-desc&utf8=%E2%9C%93
+[manageiq PRs merged]: #{uri_for("manageiq")}
+[manageiq-ui-classic PRs merged]: #{uri_for("manageiq-ui-classic")}
+[manageiq-ui-service PRs merged]: #{uri_for("manageiq-ui-service")}
+[manageiq-providers-amazon PRs merged]: #{uri_for("manageiq-providers-amazon")}
+[manageiq-providers-azure PRs merged]: #{uri_for("manageiq-providers-azure")}
+[manageiq-providers-vmware PRs merged]: #{uri_for("manageiq-providers-vmware")}
 EOF
+    end
+
+    def uri_for(repo)
+      URI::HTTPS.build(
+        :host  => "github.com",
+        :path  => "/ManageIQ/#{repo}/pulls",
+        :query => [
+          "page=1",
+          [
+            "q=is%3Apr",
+            "is%3Amerged",
+            "base%3Amaster",
+            "merged%3A%22#{start_date.strftime("%Y-%m-%d")}+..+#{end_date.strftime("%Y-%m-%d")}%22",
+            "sort%3Acreated-desc",
+          ].join("+"),
+          "utf8=%E2%9C%93"
+        ].join("&")
+      )
     end
   end
 end
