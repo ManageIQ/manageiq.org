@@ -50,3 +50,88 @@ As mentioned above, the next sprint will be in 2 weeks instead of 3, so Sprint 5
 
 <iframe src="//www.slideshare.net/slideshow/embed_code/key/48gZvEYdGZYudf" width="510" height="420" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
 
+### [Changelog](https://github.com/ManageIQ/manageiq/blob/master/CHANGELOG.md)
+
+#### Added
+
+- Automate
+  - Events: Add openstack floatingip/security group events ([#12941](https://github.com/ManageIQ/manageiq/pull/12941))
+  - Pluggable automate domains ([#11083](https://github.com/ManageIQ/manageiq/pull/11083))
+  - When importing domains from the UI, pass in the tenant_id ([#13031](https://github.com/ManageIQ/manageiq/pull/13031))
+
+- Platform
+  - Notifications: Use initiator's tenant when subject lacks tenant relationship ([#13081](https://github.com/ManageIQ/manageiq/pull/13081))
+  - Replication: Add a default value for the replication subscription database name ([#12994](https://github.com/ManageIQ/manageiq/pull/12994))
+  - Chargeback: Prioritize rate with tag of VM when selecting from more rates ([#12534](https://github.com/ManageIQ/manageiq/pull/12534))
+
+- Providers
+  - Amazon: Add an additional_regions key for amazon EC2 ([#12965](https://github.com/ManageIQ/manageiq/pull/12965))
+  - Hawkular: Enable deployment actions in server deployments list view ([#12991](https://github.com/ManageIQ/manageiq/pull/12991))
+  - Network: Model for add/remove interface on network router ([#13032](https://github.com/ManageIQ/manageiq/pull/13032))
+  - VMware: Add VM specific customisations to vApp orchestration ([#12273](https://github.com/ManageIQ/manageiq/pull/12273))
+
+- REST API
+  - Missing DELETE /api/actions/:id ([#13160](https://github.com/ManageIQ/manageiq/pull/13160))
+  - Missing DELETE /api/conditions/:id ([#13161](https://github.com/ManageIQ/manageiq/pull/13161))
+  - Expose workflow on request resources ([#13254](https://github.com/ManageIQ/manageiq/pull/13254))
+
+- Services UI
+  - Load Balancers API ([#13067](https://github.com/ManageIQ/manageiq/pull/13067))
+  - Add Service Request Approver ([#12997](https://github.com/ManageIQ/manageiq/pull/12997))
+  - Service order copy API ([#12951](https://github.com/ManageIQ/manageiq/pull/12951))
+  - Service Request edit API ([#12929](https://github.com/ManageIQ/manageiq/pull/12929))
+  - ServiceOrder deep copy ([#12945](https://github.com/ManageIQ/manageiq/pull/12945))
+  - Update Blueprint ui_properties with service template ids on publish ([#13153](https://github.com/ManageIQ/manageiq/pull/13153))
+
+- User Interface (Classic)
+  - Providers: OpenStack: Add ipv4 ipv6 selection to Subnet view for Network Manager ([#12650](https://github.com/ManageIQ/manageiq/pull/12650))
+  - Access Control: Make a link from User/Group/Role screens text ([#13022](https://github.com/ManageIQ/manageiq/pull/13022))
+  - Cloud Subnet UI: Task queue validation buttons ([#12045](https://github.com/ManageIQ/manageiq/pull/12045))
+  - Floating IPs provisioning UI ([#12097](https://github.com/ManageIQ/manageiq/pull/12097))
+  - Add Cores and Memory of Infra Provider list view ([#12758](https://github.com/ManageIQ/manageiq/pull/12758))
+  - Cloud Providers: VCpus and Memory for Cloud Providers visual ([#13124](https://github.com/ManageIQ/manageiq/pull/13124))
+  - Display IPv6Address on VM summary page ([#13190](https://github.com/ManageIQ/manageiq/pull/13190))
+
+#### Changed
+
+- Automate
+  - Provisioning: Update Azure provision template to restrict VM names ([#12947](https://github.com/ManageIQ/manageiq/pull/12947))
+  - UI: Fixed code to expect keys as strings instead of symbols. ([#13087](https://github.com/ManageIQ/manageiq/pull/13087))
+
+- Performance
+  - Filter undercloud resource query for performance ([#13004](https://github.com/ManageIQ/manageiq/pull/13004))
+
+- Platform
+  - Chargeback: Set different undeleteable default rate for container image chargeback ([#13063](https://github.com/ManageIQ/manageiq/pull/13063))
+  - Upgrade pglogical to 1.2.1 ([#13070](https://github.com/ManageIQ/manageiq/pull/13070))
+  - Reporting: Introduce report result purging timer ([#13044](https://github.com/ManageIQ/manageiq/pull/13044))
+  - Introduce purge timer for drift states ([#13086](https://github.com/ManageIQ/manageiq/pull/13086))
+  - Add configuration support for websocket logging level ([#13265](https://github.com/ManageIQ/manageiq/pull/13265))
+
+- User Interface
+  - Add validation for charts with values ([#13079](https://github.com/ManageIQ/manageiq/pull/13079))
+  - Convert summary screen images to fonticons and SVGs ([#13222](https://github.com/ManageIQ/manageiq/pull/13222))
+  - Rename the `:icon` parameter in tree nodes to `:image` ([#13297](https://github.com/ManageIQ/manageiq/pull/13297))
+  - UI Repository Split ([#13303](https://github.com/ManageIQ/manageiq/pull/13303))
+
+#### Fixed
+
+Notable fixes include:
+
+- Platform
+  - Chargeback: Fix chargeback for container Images with rate assigning by docker label ([#12851](https://github.com/ManageIQ/manageiq/pull/12851))
+  - Fix master server failover race condition ([#13065](https://github.com/ManageIQ/manageiq/pull/13065))
+  - Notify only a group of users when notifying about MiqRequest ([#13051](https://github.com/ManageIQ/manageiq/pull/13051))
+  - Remove default consumption admin user ([#13039](https://github.com/ManageIQ/manageiq/pull/13039))
+  - Filter attempt from the authentication_check options ([#13026](https://github.com/ManageIQ/manageiq/pull/13026))
+  - Reporting: Added 'VMware ESXi' to the list of known operating systems ([#13249](https://github.com/ManageIQ/manageiq/pull/13249))
+
+- Providers
+  - Ensure AnsibleTowerClient.logger is set to $log not a NullLogger ([#12996](https://github.com/ManageIQ/manageiq/pull/12996))
+
+- User Interface
+  - OpenStack: Remove duplicate flash message. ([#13035](https://github.com/ManageIQ/manageiq/pull/13035))
+  - Memory checkbox should not show when VM is not powerd on ([#12678](https://github.com/ManageIQ/manageiq/pull/12678))
+  - Disallow subnet deletion if it has an associated instance ([#13098](https://github.com/ManageIQ/manageiq/pull/13098))
+  - Fix format in providers view list in Infrastructure ([#13248](https://github.com/ManageIQ/manageiq/pull/13248))
+
