@@ -13,7 +13,7 @@
   }
 
   li > ul {
-    overflow: scroll;
+    overflow: auto;
     max-height: 0vh;
 
     transition: max-height 0.5s;
