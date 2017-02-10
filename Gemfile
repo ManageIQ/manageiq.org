@@ -10,6 +10,7 @@ gem "therubyracer"
 gem "bootstrap-sass"
 gem "font-awesome-sass"
 gem "activesupport", :require => false
+gem "jemoji"
 
 group :test, :development do
   gem "dotenv"
