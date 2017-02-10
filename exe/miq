@@ -112,9 +112,10 @@ module Miq
 
   class Generate < Thor
     desc "lwimiq", "Generate a LWIMIQ blog post"
-    def lwimiq(week_beginning)
+    option :current
+    def lwimiq
       say "Generating LWIMIQ post", :green
-      Lwimiq.generate(week_beginning)
+      Lwimiq.generate(options)
     end
   end
 

@@ -1,14 +1,20 @@
 module Miq
   class Lwimiq
-    def self.generate(start_date)
-      new(start_date).generate
+    def self.generate(options)
+      start_date = if options[:current]
+                     Date.today - Date.today.wday + 1
+                   else
+                     Date.today - Date.today.wday - 6
+                   end
+      end_date = start_date + 6
+      new(start_date, end_date).generate
     end
 
     attr_reader :start_date, :end_date
 
-    def initialize(start_date)
-      @start_date = Date.parse(start_date)
-      @end_date = @start_date + 6
+    def initialize(start_date, end_date)
+      @start_date = start_date
+      @end_date = end_date
     end
 
     def generate
