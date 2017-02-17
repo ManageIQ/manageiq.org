@@ -73,16 +73,27 @@ Here are some opportunities to meet with members of the community to learn and s
 
 <div class="row">
   <div class="col-md-6">
-    <p><img src="/assets/images/events/devconfcz2017.png" alt="DevConf.CZ 2017" /></p>
-    <p><a href="https://devconf.cz/">DevConf.CZ 2017</a> <br /> January 27-29, 2017 in Brno, Czech Republic</p>
+    <p><img src="/assets/images/events/fossasia2017.png" alt="FOSSASIA 2017" /></p>
+    <p><a href="http://2017.fossasia.org/">FOSSASIA 2017</a> <br /> March 17-19, 2017 in Singapore</p>
   </div>
   <div class="col-md-6">
-    <p><img src="/assets/images/events/fosdem2017.png" alt="FOSDEM 2017" /></p>
-    <p><a href="https://fosdem.org/2017/">FOSDEM 2017</a> <br /> February 4-5, 2017 in Brussels, Belgium</p>
+    <p><img src="/assets/images/events/kubeconeu2017.png" alt="CloudNativeCon + KubeCon 2017" /></p>
+    <p><a href="http://events.linuxfoundation.org/events/cloudnativecon-and-kubecon-europe">CloudNativeCon + KubeCon 2017</a> <br /> March 29-30, 2017 in Berlin, Germany</p>
   </div>
 </div>
 
 ### Past Events
+
+<div class="row">
+  <div class="col-md-6">
+    <p><img src="/assets/images/events/fosdem2017.png" alt="FOSDEM 2017" /></p>
+    <p><a href="https://fosdem.org/2017/">FOSDEM 2017</a> <br /> February 4-5, 2017 in Brussels, Belgium</p>
+  </div>
+  <div class="col-md-6">
+    <p><img src="/assets/images/events/devconfcz2017.png" alt="DevConf.CZ 2017" /></p>
+    <p><a href="https://devconf.cz/">DevConf.CZ 2017</a> <br /> January 27-29, 2017 in Brno, Czech Republic</p>
+  </div>
+</div>
 
 <div class="row">
   <div class="col-md-6">
@@ -113,7 +124,7 @@ Here are some opportunities to meet with members of the community to learn and s
   </div>
   <div class="col-md-6">
     <p><img src="/assets/images/events/kubecon2016.png" alt="KubeCon 2016" /></p>
-    <p><a href="https://kubecon.io">KubeCon 2016</a> <br /> November 8-9, 2016 in Seattle, WA</p>
+    <p><a href="http://events.linuxfoundation.org/events/cloudnativecon">KubeCon 2016</a> <br /> November 8-9, 2016 in Seattle, WA</p>
   </div>
 </div>
 
