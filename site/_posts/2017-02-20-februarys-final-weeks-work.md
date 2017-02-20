@@ -18,7 +18,7 @@ So here are the raw numbers:
 * Amazon provider had [4 PRs][manageiq-providers-amazon PRs merged] merged (awarded most resilient!) :5th_place_medal:
 * Azure provider had [3 PRs][manageiq-providers-azure PRs merged] merged (awarded most resilient!) :6 th_place_medal:
 
-But this :video_game: we play is not about the :trophy:'s, :taco:'s or :+1: its about the change, once such type of change being the Improvements!
+But this :video_game: we play is not about the :trophy:'s, :taco:'s or :+1: its about the change, one such type of change being the Improvements!
 ## Improved
 Every line of code contributed across the ManageIQ repo collection is an improvement, but since neither of us have the attention to look at each of the 169 improvements from last week, here are a few highlights:
 * [Marcel](https://github.com/durandom) refreshed the workings of MIQ core credentials in support of Ansible Tower here [Ansible refresh inventory credentials](https://github.com/ManageIQ/manageiq/pull/13834)
