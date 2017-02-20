@@ -35,20 +35,20 @@ In MIQ Classic repo broken automate icons [Fix broken Automate icons](https://gi
 MIQ Core experienced the most hotly discussed bug fix (42 comments :eyes::feelsgood:) [Create a hawkular client for partial endpoints](https://github.com/ManageIQ/manageiq/pull/13814) authored by [Mooli](https://github.com/moolitayer)
 
 ## New
-Hold the :phone:'s **newly introduced** REST API endpoints for service templates! This deeply pondered pr (Nov 2016  :scream_cat: ) [create service template REST api](https://github.com/ManageIQ/manageiq/pull/125940) was slain to completion by [Jillian](https://github.com/ManageIQ/manageiq/pull/12594).  
+Hold the :phone:'s **newly introduced** REST API endpoints for service templates! This deeply pondered pr (Nov 2016  :scream_cat: ) [create service template REST api](https://github.com/ManageIQ/manageiq/pull/12594) was slain to completion by [Jillian](https://github.com/jntullo).  
 
 
 ## Deleted
 Extending that :walking: motif from earlier, [Martin](https://github.com/martinpovolny) added to MIQ Classic a fantastic line reduction by employing mixins [Deduplicate show methods using mixins](https://github.com/ManageIQ/manageiq-ui-classic/pull/384).
 
-Another pr overflowing with juicy red minus numbers is [Delte ontap files](https://github.com/ManageIQ/manageiq-ui-classic/pull/392).  Brought to us by [Zita](https://github.com/ZitaNemeckova), this :hocho: removes all unused Ontap files :tada:.
+Another pr overflowing with juicy red minus numbers is [Delete ontap files](https://github.com/ManageIQ/manageiq-ui-classic/pull/392).  Brought to us by [Zita](https://github.com/ZitaNemeckova), this :hocho: removes all unused Ontap files :tada:.
 
 ## Wrapping up
 In conclusion, ya'll :rocket:. No really! Especially those who are absent mention in this LWIMIQ; which is only ever but a snapshot of all the awesome on goings of this repo. That being said, we always welcome your involvement, so head on over to [Current Issues](https://github.com/ManageIQ/manageiq/issues) to see where you can contribute.
 
-*Phew* that's it! It was an honour and pleasure to walk you around the contributes of the 170 developers working on ManageIQ Open-Source Management Platform, **STAY TUNED FOR MORE** or else  :taco::dancer:.  Oh and happy last week of February :feelsgood::wink: .
+*Phew* that's it! It was an honour and pleasure to walk you around the contributions of the 170 developers working on ManageIQ Open-Source Management Platform, **STAY TUNED FOR MORE** or else  :taco::dancer:.  Oh and happy last week of February :feelsgood::wink: .
 
-[manageiq PRs merged]: https://github.com/ManageIQ/manageiq/pulls?page=1&q=is%3Apr+is%3Amerged+base%3Amaster+merged%3A%222017-02-03+..+2017-02-19%22+sort%3Acreated-desc&utf8=%E2%9C%93
+[manageiq PRs merged]: https://github.com/ManageIQ/manageiq/pulls?page=1&q=is%3Apr+is%3Amerged+base%3Amaster+merged%3A%222017-02-13+..+2017-02-19%22+sort%3Acreated-desc&utf8=%E2%9C%93
 [manageiq-ui-classic PRs merged]: https://github.com/ManageIQ/manageiq-ui-classic/pulls?page=1&q=is%3Apr+is%3Amerged+base%3Amaster+merged%3A%222017-02-13+..+2017-02-19%22+sort%3Acreated-desc&utf8=%E2%9C%93
 [manageiq-ui-service PRs merged]: https://github.com/ManageIQ/manageiq-ui-service/pulls?page=1&q=is%3Apr+is%3Amerged+base%3Amaster+merged%3A%222017-02-13+..+2017-02-19%22+sort%3Acreated-desc&utf8=%E2%9C%93
 [manageiq-providers-amazon PRs merged]: https://github.com/ManageIQ/manageiq-providers-amazon/pulls?page=1&q=is%3Apr+is%3Amerged+base%3Amaster+merged%3A%222017-02-13+..+2017-02-19%22+sort%3Acreated-desc&utf8=%E2%9C%93
