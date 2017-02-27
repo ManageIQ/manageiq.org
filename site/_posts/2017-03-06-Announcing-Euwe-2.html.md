@@ -25,7 +25,7 @@ and here are just a few of the things added since Euwe-1 release:
   * Red Hat Enterprise Virtualization: Removed the option to migrate the VMs outside of the cluster. 
 
 Here is the changelog:
-[Euew-2](https://github.com/ManageIQ/manageiq/blob/euwe/CHANGELOG.md)
+[Euwe-2](https://github.com/ManageIQ/manageiq/blob/euwe/CHANGELOG.md)
 
 For questions or support,
 [join in on the talk page](http://talk.manageiq.org/).
