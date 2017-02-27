@@ -20,7 +20,7 @@ Another outstanding week with over 109 PRs merged. Here is the breakdown:
 
 ## Improved
 
-There were quite a few improvements to facilitate the embedding Ansible effort. First, [Ladas](https://github.com/Ladas) has laid the foundation for [query optimizations](https://github.com/ManageIQ/manageiq/pull/13978) for inventory collections based on tracking graph dependencies. [Nick](https://github.com/carbonin) implemented a [worker lifecycle for embedded Ansible](https://github.com/ManageIQ/manageiq/pull/14023) to aid monitoring efforts. To simplify decorating models, [Martin](https://github.com/himdel) has added an implementation for [class decorator support](https://github.com/ManageIQ/manageiq-ui-classic/pull/237) which also removes the need to use the draper gem.
+Although there were a number of great improvements this round, here are a few highlights. First, [Ladas](https://github.com/Ladas) has laid the foundation for [query optimizations](https://github.com/ManageIQ/manageiq/pull/14023) of inventory collections based on tracking graph dependencies. [Nick](https://github.com/carbonin) implemented a [worker lifecycle for embedded Ansible](https://github.com/ManageIQ/manageiq/pull/13978) to aid monitoring efforts. To simplify decorating models, [Martin](https://github.com/himdel) has added an implementation for [class decorator support](https://github.com/ManageIQ/manageiq-ui-classic/pull/237) which also removes the need to use the draper gem.
 
 ## Fixed
 
