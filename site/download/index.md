@@ -21,7 +21,11 @@ title: Download ManageIQ
     </tr>
     {% for type in site.data.download_types %}
     <tr>
+      {% if type.download_platform == 'gce' %}
+      <td><a href="https://console.cloud.google.com/storage/browser/manageiq/" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'outbound', eventLabel: '{{type.name}} {{release.name}}', transport: 'beacon' });">{{ type.name }}</a></td>
+      {% else %}
       <td><a href="http://releases.manageiq.org/manageiq-{{type.download_platform}}-{{release.filename}}.{{type.ext}}" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'download', eventLabel: '{{type.name}} {{release.name}}', transport: 'beacon' });">{{ type.name }}</a></td>
+      {% endif %}
       <td>{{ type.download_platform }}</td>
       <td>{{ type.size_stable }}</td>
     </tr>
