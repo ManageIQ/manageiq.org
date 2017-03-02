@@ -20,11 +20,11 @@ and here are just a few of the things added since Euwe-1 release:
   * Ansible Tower: Advanced search for Ansible Tower Jobs not visible on switch from a different tab
   * Microsoft Azure: Delete all resources when deleting an Azure stack
 
-- Fixed issues with User Interface (Classic)
-  * Fix missing Smart State Analysis button on Cloud Instances list view
-  * Red Hat Enterprise Virtualization: Removed the option to migrate the VMs outside of the cluster. 
+- Notable Platform fixes include:
+  * Tenant admin should not be able to create groups in other tenants.
+  * Introduce report result purging timer. 
 
-Here is the changelog:
+Here is the complete changelog:
 [Euwe-2](https://github.com/ManageIQ/manageiq/blob/euwe/CHANGELOG.md)
 
 For questions or support,
