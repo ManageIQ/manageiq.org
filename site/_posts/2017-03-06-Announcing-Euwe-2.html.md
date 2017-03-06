@@ -1,7 +1,7 @@
 ---
 title: Announcing Euwe-2
 author: jprause
-date: 2016-03-06 08:35:39 UTC
+date: 2017-03-06 08:35:39 UTC
 comments: true
 published: true
 tags: releases announcements
