@@ -15,7 +15,7 @@ On the Platform side, there's a check for whether the embedded Ansible is "alive
 
 Even though Ansible is killing it across the different categories, Amazon still led the pack in number of PRs for providers. Building on momentum from the previous sprint, XLab made more updates to Amazon Storage Manager. OpenStack's inventory refresh performance has been improved by reducing the orchestration stack resource depth. As for Containers, there are lots of new reports and widgets available, and the container team also helped fix a race condition in `container_live_dashboard_controller`.
 
-Service UI added more endpoints to the Mock API system created last sprint. This lightweight system simulates the ManageIQ backend, so one can develop or test against the API without running the backend. Service Designer and Arbitration Profiles have been completely removed. To enable the same dialog editor in both Classic and Service UI, the ui-components were updated in Classic UI. The ongoing, repaying tech-debt process saw more images being converted to svg and fonticons (75% done).
+Service UI added more endpoints to the Mock API system created last sprint. This lightweight system simulates the ManageIQ backend, so one can develop or test against the API without running the backend. Service Designer and Arbitration Profiles have been completely removed. To enable the same dialog editor in both Classic and Service UIs, the ui-components were updated in Classic UI. The ongoing, repaying tech-debt process saw more images being converted to svg and fonticons (75% done).
 
 Here are some API improvements sprint-to-sprint:
 * support for bulk tag assignments for VMs and Services + support for bulk tag *un*assignments for VMs and Services
