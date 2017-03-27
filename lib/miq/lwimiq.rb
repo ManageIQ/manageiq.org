@@ -31,7 +31,7 @@ module Miq
 ---
 title: "Last Week in ManageIQ: <subtitle>"
 author: <author>
-date: #{DateTime.now.strftime("%Y-%m-%d %H:%M:%S %Z")}
+date: #{publication_date}
 comments: true
 published: true
 tags: LWIMIQ
@@ -75,6 +75,10 @@ tags: LWIMIQ
 [manageiq-providers-azure PRs merged]: #{uri_for("manageiq-providers-azure")}
 [manageiq-providers-vmware PRs merged]: #{uri_for("manageiq-providers-vmware")}
 EOF
+    end
+
+    def publication_date
+      Date.today.upto(Date.today + 6).detect(&:tuesday?)
     end
 
     def uri_for(repo)
