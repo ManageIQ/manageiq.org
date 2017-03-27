@@ -78,7 +78,7 @@ EOF
     end
 
     def publication_date
-      Date.today
+      Date.today.upto(Date.today + 6).detect(&:tuesday?)
     end
 
     def uri_for(repo)
