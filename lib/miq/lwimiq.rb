@@ -78,7 +78,7 @@ EOF
     end
 
     def publication_date
-      DateTime.now.strftime("%Y-%m-%d %H:%M:%S %Z")
+      Date.today
     end
 
     def uri_for(repo)
