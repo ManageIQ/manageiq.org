@@ -9,14 +9,13 @@ tags: releases announcements
 
 On behalf of the ManageIQ team, we're pleased to announce the Beta release for ManageIQ Fine!
 
-Fine is the next milestone release for ManageIQ cloud and virtualization management platform. With each release, ManageIQ gets more robust and feature complete across providers. In this release, we not only attended to providers and chargeback, but we also made some essential improvements to the appliance itself including performance and high availability.
+Fine is the next milestone release for ManageIQ cloud and virtualization management platform. With each release, ManageIQ gets more robust and feature complete across providers. In this release, a lot of attention was given to Ansible. However, other providers, REST API, as well as performance also benefit in this release.
 
-* **Centralized administration** allowing you to invoke power and retirement operations on remote regions.
-* Huge **performance improvements** for page rendering in the User Interface as well as SmartState for Microsoft Azure.
-* **Provider logic** which asks instead of assuming that an operation or feature is available for a specific provider. In other words, known features are discoverable.
-* **High Availabilty** for the PostgreSQL ManageIQ server maintaining a list of standby servers as well as a failover monitor for the database.
-* Darga timelines have been replaced by **PatternFly timelines** in Euwe.
-* **Notification drawer** has been added using ActionCable with PatternFly's notification drawer powered by Angular.
+* Added **"Ansible Playbook"** to the list of catalog item types.
+* Automate Model: Add Amazon block storage automation models.
+* Adding new report and widgets for Containers and Add option for container performance reports.
+* Add Alert Definitions (MiqAlert) bulk edits support.
+* Middleware: Hawkular Allow adding datawarehouse provider with a port other than 80.
 
 If you want to hear about features, improvements, and fixes directly from the developers, check out the [Last Week in ManageIQ blog posts](http://manageiq.org/blog/tags/LWIMIQ/).
 
@@ -29,14 +28,14 @@ We encourage you to download the Fine Beta Release and try it out!
 | --------- | ------ | ---- |
 | [Docker](https://hub.docker.com/r/manageiq/manageiq/) | docker | 0.5 GB |
 | [Google Compute Engine](http://releases.manageiq.org/manageiq-gce-fine-1-beta1.gz) | gce | 1.1 GB |
-| [Microsoft Azure](http://releases.manageiq.org/manageiq-azure-fine-1-beta1.vhd) | azure | 3.1 GB |
-| [Microsoft SCVMM](http://releases.manageiq.org/manageiq-hyperv-fine-1-beta1.vhd) | hyperv | 3.1 GB |
+| [Microsoft Azure](http://releases.manageiq.org/manageiq-azure-fine-1-beta1.vhd) | azure | 3.6 GB |
+| [Microsoft SCVMM](http://releases.manageiq.org/manageiq-hyperv-fine-1-beta1.vhd) | hyperv | 3.6 GB |
 | [Openstack](http://releases.manageiq.org/manageiq-openstack-fine-1-beta1.qc2) | openstack | 1.2 GB |
 | [oVirt](http://releases.manageiq.org/manageiq-ovirt-fine-1-beta1.ova) | ovirt | 1.1 GB |
 | [Qemu/KVM](http://releases.manageiq.org/manageiq-openstack-fine-1-beta1.qc2) | openstack | 1.2 GB |
-| [Red Hat Enterprise Virtualization](http://releases.manageiq.org/manageiq-ovirt-fine-1-beta1.ova) | ovirt | 1.1 GB |
+| [Red Hat Enterprise Virtualization](http://releases.manageiq.org/manageiq-ovirt-fine-1-beta1.ova) | ovirt | 1.2 GB |
 | [Vagrant](https://atlas.hashicorp.com/manageiq/fine) | vagrant | 1.1 GB |
-| [VMware vSphere](http://releases.manageiq.org/manageiq-vsphere-fine-1-beta1.ova) | vsphere | 1.3 GB |
+| [VMware vSphere](http://releases.manageiq.org/manageiq-vsphere-fine-1-beta1.ova) | vsphere | 1.2 GB |
 
 
 If you encounter any issues/bugs, please report them on [GitHub](https://github.com/ManageIQ/manageiq/issues). You can also join our [discussion forum](http://talk.manageiq.org/) if you have questions or need more support. Remember to use the ["Support"](http://talk.manageiq.org/c/support) category.
