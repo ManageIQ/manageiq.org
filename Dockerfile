@@ -37,7 +37,7 @@ ENV MIQ_REF_REPO=https://github.com/manageiq/manageiq_docs
 ENV MIQ_REF_BRANCH=master
 # ENV MIQ_REF_TMP=/tmp/manageiq_docs
 # ENV MIQ_REF_SRC=_preview/manageiq/${MIQ_REF_BRANCH}
-# ENV MIQ_REF_DST=${MIQ_DOCS_DIR}/reference/latest
+# ENV MIQ_REF_DIR=${MIQ_DOCS_DIR}/reference/latest
 
 # Nginx configs
 RUN mv /etc/nginx/nginx.conf /etc/nginx/nginx.conf.dist

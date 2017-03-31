@@ -1,0 +1,53 @@
+---
+distro:         ManageIQ
+version:        Branch Build
+
+group_id:       RestApiExamples
+group_title:    REST API Examples
+
+subgroup_id:    RestApiExamples::VmManagement
+subgroup_title: VM Management
+
+topic_id:       RestApiExamples::VmManagement::AddEventToAVm
+topic_title:    Add event to a VM
+
+article_title:  "Add event to a VM"
+
+breadcrumb_group: REST API Examples
+breadcrumb_topic: Add event to a VM
+---
+
+<div class="sect2">
+<h3 id="add-event-to-vm"><a class="anchor" href="#add-event-to-vm"></a>Add event to a VM</h3>
+<div class="sect3">
+<h4 id="request"><a class="anchor" href="#request"></a>Request:</h4>
+<div class="listingblock">
+<div class="content">
+<pre>POST /api/vms/1921</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">add_event</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>resource</span><span style="color:#404">&quot;</span></span> : {
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>event_type</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">BadUserNameSessionEvent</span><span style="color:#710">&quot;</span></span>,
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>event_message</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Cannot login user@test.domain</span><span style="color:#710">&quot;</span></span>
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="response"><a class="anchor" href="#response"></a>Response:</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>success</span><span style="color:#404">&quot;</span></span>: <span style="color:#088">true</span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>message</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Adding Event type=BadUserNameSessionEvent message=Cannot login user@test.domain</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/vms/1921</span><span style="color:#710">&quot;</span></span>
+}</code></pre>
+</div>
+</div>
+</div>
+</div>

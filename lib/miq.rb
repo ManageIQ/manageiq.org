@@ -17,6 +17,7 @@ require_relative "miq/guide_page"
 
 require_relative "miq/ref_docs"
 require_relative "miq/ref_menu"
+require_relative "miq/ref_page"
 
 require_relative "miq/md_link_converter"
 require_relative "miq/dir_index"
@@ -28,35 +29,37 @@ require_relative "miq/blog_month"
 
 module Miq
   def self.working_dir
-    if ENV["MIQ_BASE_DIR"]
-      Pathname.new(ENV["MIQ_BASE_DIR"])
-    else
-      Pathname.new(Dir.pwd)
-    end
+    Pathname.new(ENV.fetch("MIQ_BASE_DIR", Dir.pwd))
   end
 
+  # Main directories
+
   def self.dest_dir
-    working_dir.join( (ENV["MIQ_SITE_DEST"] || "dest") )
+    Pathname.new ENV.fetch("MIQ_SITE_DEST", working_dir.join("dest"))
   end
 
   def self.site_dir
-    working_dir.join( (ENV["MIQ_SITE_SOURCE"] || "site") )
+    Pathname.new ENV.fetch("MIQ_SITE_SOURCE", working_dir.join("site"))
   end
 
   def self.docs_dir
-    if ENV["MIQ_DOCS_DIR"]
-      working_dir.join(ENV["MIQ_DOCS_DIR"])
-    else
-      working_dir.join("site", "docs")
-    end
+    Pathname.new ENV.fetch("MIQ_DOCS_DIR", site_dir.join("docs"))
   end
 
+  def self.tmp_dir
+    working_dir.join(ENV["MIQ_TMP_DIR"] || "tmp")
+  end
+
+  # Docs subdirectories
+
+  # Where Jekyll will look for guides
   def self.guides_dir
-    site_dir.join(guides_relative)
+    docs_dir.join(ENV["MIQ_GUIDES_DIR"] || "guides")
   end
 
-  def self.guides_relative
-    (ENV["MIQ_GUIDES_DIR"] || "docs/guides")
+  # The reference doc destination that Jekyll will use
+  def self.reference_dir
+    docs_dir.join(ENV["MIQ_REF_DIR"] || "reference")
   end
 
   # Might want to make these override-able in the future:
@@ -75,5 +78,9 @@ module Miq
 
   def self.blog_month_template
     "blog_month.html"
+  end
+
+  def self.doc_branches
+    ENV.fetch('MIQ_DOC_BRANCHES', 'euwe,fine,latest').split(',')
   end
 end

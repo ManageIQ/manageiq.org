@@ -2,15 +2,28 @@ require "test_helper"
 
 class RefMenuTest < Minitest::Test
   def setup
+    clear_env
+
     @dir = fixtures_path.join("docs", "reference")
-    ENV["MIQ_REF_DST"] = @dir.to_s
-    ENV["MIQ_BASE_DIR"] = fixtures_path.to_s
+    ENV["MIQ_REF_DIR"]     = @dir.to_s
+    ENV["MIQ_BASE_DIR"]    = fixtures_path.to_s
     ENV["MIQ_SITE_SOURCE"] = fixtures_path.to_s
+
+    clear_files(Miq.tmp_dir.join('menus'))
+
     @subject = Miq::RefMenu.new
   end
 
   def test_menu_tree
     assert_equal expected, @subject.menu_data
+  end
+
+  def test_multiple_branches_become_multiple_files
+    Miq::RefMenu.build
+
+    assert File.exist?(Miq.tmp_dir.join('menus', 'ref_menu_foo.yml'))
+    assert File.exist?(Miq.tmp_dir.join('menus', 'ref_menu_bar.yml'))
+    assert File.exist?(Miq.tmp_dir.join('menus', 'ref_menu_latest.yml'))
   end
 
   private
@@ -21,7 +34,7 @@ class RefMenuTest < Minitest::Test
       sibling,
       toc_style,
       welcome
-    ].inject({}) {|memo, hsh| memo.merge(hsh) }
+    ].inject({}) { |memo, hsh| memo.merge(hsh) }
   end
 
   def multiple_children

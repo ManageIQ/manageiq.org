@@ -21,7 +21,8 @@ end
 
 guard :minitest do
   watch(%r{^test/(.*)\/?(.*)_test[s]?\.rb$})
-  watch(%r{^lib/(.*/)?([^/]+)\.rb$}) { |m| "test/#{m[1]}test_#{m[2]}.rb" }
+  # watch('lib/miq.rb') { |_| "test/lib/miq_test.rb" }
+  watch(%r{^lib\/(.*\/)?([^\/]+)\.rb$}) { |m| "test/lib/#{m[1]}#{m[2]}_test.rb" }
   watch(%r{^site/_plugins/(.*/)?([^/]+)\.rb$}) { "test/plugin_tests.rb" }
   watch(%r{^test/test_helper\.rb$})  { "test" }
 end

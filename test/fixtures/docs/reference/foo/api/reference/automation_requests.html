@@ -1,0 +1,189 @@
+---
+distro:         ManageIQ
+version:        Branch Build
+
+group_id:       RestApi
+group_title:    REST API
+
+subgroup_id:    RestApi::Reference
+subgroup_title: Reference
+
+topic_id:       RestApi::Reference::AutomationRequests
+topic_title:    Automation Requests
+
+article_title:  "Automation Requests"
+
+breadcrumb_group: REST API
+breadcrumb_topic: Automation Requests
+---
+
+<div class="sect1">
+<h2 id="automation-requests"><a class="anchor" href="#automation-requests"></a>Automation Requests</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Automation requests are made available via the following entrypoint.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">/api/automation_requests</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#creating-requests">Creating Requests</a></p>
+</li>
+<li>
+<p><a href="#approving-denying-requests">Approving or Denying Requests</a></p>
+</li>
+<li>
+<p><a href="#monitoring-requests">Monitoring Requests</a></p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="creating-requests"><a class="anchor" href="#creating-requests"></a>Creating Requests</h3>
+<div class="paragraph">
+<p>Either by specifying a <em>create</em> action or by posting the automation request directly
+to <strong>/api/automation_requests</strong>.</p>
+</div>
+<div class="paragraph">
+<p>As an example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>uri_parts</span><span style="color:#404">&quot;</span></span> : {
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>namespace</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">System</span><span style="color:#710">&quot;</span></span>,
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>class</span><span style="color:#404">&quot;</span></span>     : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Request</span><span style="color:#710">&quot;</span></span>,
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>instance</span><span style="color:#404">&quot;</span></span>  : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">InspectME</span><span style="color:#710">&quot;</span></span>,
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>message</span><span style="color:#404">&quot;</span></span>   : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">create</span><span style="color:#710">&quot;</span></span>
+  },
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>parameters</span><span style="color:#404">&quot;</span></span> : {
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>var1</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">value 1</span><span style="color:#710">&quot;</span></span>,
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>var2</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">value 2</span><span style="color:#710">&quot;</span></span>,
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>minimum_memory</span><span style="color:#404">&quot;</span></span> : <span style="color:#00D">2048</span>
+  },
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>requester</span><span style="color:#404">&quot;</span></span> : {
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>auto_approve</span><span style="color:#404">&quot;</span></span> : <span style="color:#088">true</span>
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="approving-denying-requests"><a class="anchor" href="#approving-denying-requests"></a>Approving or Denying Requests</h3>
+<div class="paragraph">
+<p>If an automation request is not auto approved, it can be approved or denied via the
+actions <em>approve</em> and <em>deny</em> on the automation request resource.</p>
+</div>
+<div class="sect3">
+<h4 id="approving-request"><a class="anchor" href="#approving-request"></a>Approving a Request</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">POST /api/automation_requests/:id</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">approve</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>reason</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">reason for approval</span><span style="color:#710">&quot;</span></span>
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="denying-request"><a class="anchor" href="#denying-request"></a>Denying a Request</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">POST /api/automation_requests/:id</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">deny</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>reason</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">reason for denial</span><span style="color:#710">&quot;</span></span>
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="monitoring-requests"><a class="anchor" href="#monitoring-requests"></a>Monitoring Requests</h3>
+<div class="paragraph">
+<p>Once an automation request is created, the response will be the queryable
+automation request itself, i.e. <strong>/api/automation_request/:id</strong></p>
+</div>
+<div class="sect3">
+<h4 id="response"><a class="anchor" href="#response"></a>Response:</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>results</span><span style="color:#404">&quot;</span></span>: [
+    {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">10</span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Automation Task</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>approval_state</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">approved</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">AutomationRequest</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>created_on</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2015-04-14T18:12:12Z</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>updated_on</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2015-04-14T18:12:12Z</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>requester_id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">1</span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>requester_name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Administrator</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>request_type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">automation</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>request_state</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">pending</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>status</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Ok</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>options</span><span style="color:#404">&quot;</span></span>: {
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>message</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">create</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>namespace</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">System</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>class_name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Request</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>instance_name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">InspectME</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>user_id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">1</span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>attrs</span><span style="color:#404">&quot;</span></span>: {
+          <span style="color:#606"><span style="color:#404">&quot;</span><span>var1</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">value 1</span><span style="color:#710">&quot;</span></span>,
+          <span style="color:#606"><span style="color:#404">&quot;</span><span>var2</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">value 2</span><span style="color:#710">&quot;</span></span>,
+          <span style="color:#606"><span style="color:#404">&quot;</span><span>minimum_memory</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">2048</span>,
+          <span style="color:#606"><span style="color:#404">&quot;</span><span>userid</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">admin</span><span style="color:#710">&quot;</span></span>
+        }
+      },
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>userid</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">admin</span><span style="color:#710">&quot;</span></span>
+    }
+  ]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In the above example, the request could be queried periodically
+until the <strong>request_state</strong> reaches the <strong>finished</strong> state.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The request tasks of an automation request can also be queried by
+expanding the request_tasks subcollection as follows:
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/automation_requests/:id?expand=request_tasks</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>An alias <strong>tasks</strong> is also defined for the above subcollection:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/automation_requests/:id?expand=tasks</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>

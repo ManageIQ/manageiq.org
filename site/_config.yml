@@ -32,6 +32,12 @@ paginate_path: "/blog/page:num/"
 
 image_path: "/assets/images/"
 book_path: https://pemcg.gitbooks.io/mastering-automation-in-cloudforms-and-manageiq/content/
+user_docs_path: "/docs/reference"
+
+doc_branches:
+  - latest
+  - fine
+  - euwe
 
 markdown: kramdown
 
@@ -53,6 +59,7 @@ defaults:
       type: posts
     values:
       layout: post
+
   - scope:
       path: "docs/get-started"
       type: pages
@@ -60,6 +67,7 @@ defaults:
       layout: doc_page
       permalink: /:path/:basename
       doc_group: start
+
   - scope:
       path: "docs/guides"
       type: "pages"
@@ -67,15 +75,53 @@ defaults:
       layout: doc_page
       permalink: /:path/:basename
       doc_group: dev
+
   - scope:
-      path: "docs/reference"
+      path: "docs/reference/"
       type: "pages"
     values:
       layout: doc_page
       permalink: /:path/:basename
       doc_group: user
+
+  - scope:
+      path: "docs/reference/latest"
+      type: "pages"
+    values:
+      layout: doc_page
+      permalink: /:path/:basename
+      doc_group: user
+
   - scope:
       path: "docs/reference/latest/api"
+    values:
+      layout: doc_page
+      doc_group: api
+
+  - scope:
+      path: "docs/reference/fine"
+      type: "pages"
+    values:
+      layout: doc_page
+      permalink: /:path/:basename
+      doc_group: user
+
+  - scope:
+      path: "docs/reference/fine/api"
+    values:
+      layout: doc_page
+      doc_group: api
+
+  - scope:
+      path: "docs/reference/euwe"
+      type: "pages"
+    values:
+      layout: doc_page
+      permalink: /:path/:basename
+      doc_group: user
+
+  - scope:
+      path: "docs/reference/euwe/api"
     values:
       layout: doc_page
       doc_group: api

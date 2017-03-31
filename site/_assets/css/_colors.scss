@@ -4,6 +4,7 @@ $text-black: #444;
 $text-subdued: mix($site-bg, $text-black, 30%);
 
 $grey-dark: #292e33;
+$grey-darker: darken($grey-dark, 5%);
 $grey-md: #a6aeb7;
 
 $grey-lite: #e6e6e6;

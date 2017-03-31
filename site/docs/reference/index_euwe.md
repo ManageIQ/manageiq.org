@@ -1,14 +1,14 @@
 ---
 layout: doc_page
 title: User Reference
-permalink: /docs/reference/
+permalink: /docs/reference/euwe/
 doc_group: user
-doc_branch: latest
+doc_branch: euwe
 ---
 
 ## Installation
 
-{% for item in site.data["menus"]["ref_menu_latest"]["installation"]["children"] %}
+{% for item in site.data["menus"]["ref_menu_euwe"]["installation"]["children"] %}
 ### [{{item.title}}]({{item.path}})
 {{item.desc}}
 
@@ -16,7 +16,7 @@ doc_branch: latest
 
 ## Administration
 
-{% for item in site.data["menus"]["ref_menu_latest"]["administration"]["children"] %}
+{% for item in site.data["menus"]["ref_menu_euwe"]["administration"]["children"] %}
 ### [{{item.title}}]({{item.path}})
 {{item.desc}}
 
@@ -24,7 +24,7 @@ doc_branch: latest
 
 ## Integration
 
-{% for item in site.data["menus"]["ref_menu_latest"]["integration"]["children"] %}
+{% for item in site.data["menus"]["ref_menu_euwe"]["integration"]["children"] %}
 ### [{{item.title}}]({{item.path}})
 {{item.desc}}
 
@@ -33,7 +33,7 @@ doc_branch: latest
 
 ## Reference
 
-{% for item in site.data["menus"]["ref_menu_latest"]["reference"]["children"] %}
+{% for item in site.data["menus"]["ref_menu_euwe"]["reference"]["children"] %}
 ### [{{item.title}}]({{item.path}})
 {{item.desc}}
 

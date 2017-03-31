@@ -149,6 +149,24 @@
     }
   }
 
+  .doc-versions {
+    padding-bottom: 1em;
+    border-bottom: 1px solid $doc-line-lite;
+    margin-bottom: 1em;
+
+    .label, .separator {
+      color: $text-subdued;
+    }
+
+    .active {
+      font-weight: 700;
+    }
+  }
+
+  #release_menu {
+    background-color: $grey-darker;
+  }
+
   // Guides
 
   // User Ref Docs
