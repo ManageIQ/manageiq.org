@@ -27,7 +27,7 @@ We encourage you to download the Fine Beta Release and try it out!
 | Appliance | Format | Size |
 | --------- | ------ | ---- |
 | [Docker](https://hub.docker.com/r/manageiq/manageiq/) | docker | 0.5 GB |
-| [Google Compute Engine](http://releases.manageiq.org/manageiq-gce-fine-1-beta1.gz) | gce | 1.1 GB |
+| [Google Compute Engine](http://releases.manageiq.org/manageiq-gce-fine-1-beta1.tar.gz) | gce | 1.1 GB |
 | [Microsoft Azure](http://releases.manageiq.org/manageiq-azure-fine-1-beta1.vhd) | azure | 3.6 GB |
 | [Microsoft SCVMM](http://releases.manageiq.org/manageiq-hyperv-fine-1-beta1.vhd) | hyperv | 3.6 GB |
 | [Openstack](http://releases.manageiq.org/manageiq-openstack-fine-1-beta1.qc2) | openstack | 1.2 GB |
