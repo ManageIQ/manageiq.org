@@ -1,15 +1,15 @@
 ---
 title: Voting on Name of F Release
 author: chessbyte
-date: 2017-03-31 09:02:24 UTC
+date: 2017-04-03 09:02:24 UTC
 tags: releases collaboration
 comments: true
 published: true
 ---
 
-Vote for the G-Release!!! Here is the [Poll](http://talk.manageiq.org/t/voting-on-name-of-g-release/1881) on talk.manageiq.org
+Vote for the G-Release!!! Here is the [Poll](http://talk.manageiq.org/t/voting-on-name-of-g-release/2225) on talk.manageiq.org
 
-We are closing in on the final Fine release.  So, it’s time to think about how we will name the G-Release.  In keeping with our nomenclature of using chess grandmasters and world champions as release names, here are the proposed names for the G-Release, as well some interesting background data:
+While we close in on the Fine release, it’s time to think about how we will name the G-Release.  In keeping with our nomenclature of using chess grandmasters and world champions as release names, here are the proposed names for the G-Release, as well some interesting background data:
 
 - [Ganguly, Surya Shekhar](https://en.wikipedia.org/wiki/Surya_Shekhar_Ganguly) (February 24, 1983 – ) Peak rating 2676 (July 2016)
 Ganguly became an International Master at 16 and a Grandmaster at 19. Ganguly's grandfather, the late Anil Basumallick, taught him chess at the age of 5. While Ganguly is a fine positional player, he also relishes complicated positions.
@@ -24,6 +24,6 @@ Geller was coach to World Champions Boris Spassky and Anatoly Karpov, as well as
 - [Grünfeld, Ernst](https://en.wikipedia.org/wiki/Ernst_Gr%C3%BCnfeld) (November 21, 1893 – April 03, 1962)
 Grünfeld had lost a leg in his early childhood, and his family was also beset by poverty. However, he discovered chess, studied intensely, and quickly earned a reputation as a skilled player. His style of avoiding complex variations together with an essentially drawish nature was simply not good enough to trouble the world's best. Grunfeld was also the inventor of the eponymous Grünfeld Defense which is extremely popular in high-level tournament play.
 
-Vote [HERE](http://talk.manageiq.org/t/voting-on-name-of-g-release/1881) for your favorite by making a selection in the corresponding talk topic for this post! You are welcome to write in any player you want (as long as their last name starts with the letter G) by replying to the topic with your choice.  Here are the [top 100 active players](http://2700chess.com/?per-page=100) and [all grandmasters - past and present](https://en.wikipedia.org/wiki/List_of_chess_grandmasters).
+Vote [HERE](http://talk.manageiq.org/t/voting-on-name-of-g-release/2225) for your favorite by making a selection in the corresponding talk topic for this post! You are welcome to write in any player you want (as long as their last name starts with the letter G) by replying to the topic with your choice.  Here are the [top 100 active players](http://2700chess.com/?per-page=100) and [all grandmasters - past and present](https://en.wikipedia.org/wiki/List_of_chess_grandmasters).
 
-Votes entered by Friday, April 7th will be tallied and the name will be announced on Monday April 10th.
+Votes entered by Friday, April 14th will be tallied and the name will be announced on Monday April 17th.
