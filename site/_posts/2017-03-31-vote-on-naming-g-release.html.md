@@ -1,5 +1,5 @@
 ---
-title: Voting on Name of F Release
+title: Voting on Name of G Release
 author: chessbyte
 date: 2017-04-03 09:02:24 UTC
 tags: releases collaboration
