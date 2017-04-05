@@ -1,7 +1,7 @@
 ---
 title: Announcing Fine Beta Release
 author: chessbyte
-date: 2017-04-03 07:49:24 UTC
+date: 2017-04-05 07:49:24 UTC
 comments: true
 published: true
 tags: releases announcements
