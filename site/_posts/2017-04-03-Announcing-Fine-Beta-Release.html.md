@@ -26,6 +26,7 @@ We encourage you to download the Fine Beta Release and try it out!
 
 | Appliance | Format | Size |
 | --------- | ------ | ---- |
+| [Amazon EC2](http://releases.manageiq.org/manageiq-ec2-fine-1-beta1.vhd) | ec2 | 3.6 GB |
 | [Docker](https://hub.docker.com/r/manageiq/manageiq/) | docker | 0.5 GB |
 | [Google Compute Engine](http://releases.manageiq.org/manageiq-gce-fine-1-beta1.tar.gz) | gce | 1.1 GB |
 | [Microsoft Azure](http://releases.manageiq.org/manageiq-azure-fine-1-beta1.vhd) | azure | 3.6 GB |
