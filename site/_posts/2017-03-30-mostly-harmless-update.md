@@ -13,15 +13,13 @@ team, and I'll walk you through what happened in the last week in ManageIQ.
 
 ## Featured
 
-Attention please, numbers are comming!
-
 This week we had:
 
 - 56 PRs in the [manageiq][manageiq PRs merged] repo
 - 54 in the [manageiq-ui-classic][manageiq-ui-classic PRs merged] repo
 - 13 in the [manageiq-ui-service][manageiq-ui-service PRs merged] repo
 
-It's woth mentioning we now have 3 merged Pull Requests
+It's worth mentioning we now have 3 merged Pull Requests
 ([#470](https://github.com/ManageIQ/manageiq-ui-classic/pull/470),
 [#466](https://github.com/ManageIQ/manageiq-ui-classic/pull/466),
 [#475](https://github.com/ManageIQ/manageiq-ui-classic/pull/475))
@@ -54,7 +52,7 @@ and missing table name on VMDB Summary page
 
 ## New
 
-Of cource, we have also added a lot of new code.
+Of course, we have also added a lot of new code.
 
 [Alberto](https://github.com/abellotti) has added support for a
 `format_attributes` parameter in
