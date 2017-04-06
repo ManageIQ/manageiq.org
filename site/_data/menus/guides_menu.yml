@@ -16,12 +16,10 @@ children:
   children:
   - title: Overview
     path: "/docs/guides/developer_setup.html"
+  - title: Plugins
+    path: "/docs/guides/developer_setup/plugins"
   - title: Minimal Mode
     path: "/docs/guides/developer_setup/minimal_mode"
-  - title: Postgresql Software Collection
-    path: "/docs/guides/developer_setup/postgresql_software_collection"
-  - title: Ruby Mine Setup
-    path: "/docs/guides/developer_setup/ruby_mine_setup"
   - title: Running Test Suites
     path: "/docs/guides/developer_setup/running_test_suites"
 
