@@ -18,9 +18,9 @@ We've just built Euwe-2.1. This release resolves the issue in Euwe-2, where drop
 | [Microsoft Azure](http://releases.manageiq.org/manageiq-azure-euwe-2.1.vhd) | azure | 3.3 GB |
 | [Microsoft SCVMM](http://releases.manageiq.org/manageiq-hyperv-euwe-2.1.vhd) | hyperv | 3.3 GB |
 | [Openstack](http://releases.manageiq.org/manageiq-openstack-euwe-2.1.qc2) | openstack | 1.1 GB |
-| oVirt [ova](http://releases.manageiq.org/manageiq-ovirt-euwe-2.1.ova) [qc2](http://releases.manageiq.org/manageiq-ovirt-euwe-2.1.qc2) | ovirt | 1.1 GB |
+| oVirt [ova](http://releases.manageiq.org/manageiq-ovirt-euwe-2.1.ova) or [qc2](http://releases.manageiq.org/manageiq-ovirt-euwe-2.1.qc2) | ovirt | 1.1 GB |
 | [Qemu/KVM](http://releases.manageiq.org/manageiq-openstack-euwe-2.1.qc2) | openstack | 1.1 GB |
-| Red Hat Enterprise Virtualization [ova](http://releases.manageiq.org/manageiq-ovirt-euwe-2.1.ova) [qc2](http://releases.manageiq.org/manageiq-ovirt-euwe-2.1.qc2) | ovirt | 1.1 GB |
+| Red Hat Enterprise Virtualization [ova](http://releases.manageiq.org/manageiq-ovirt-euwe-2.1.ova) or [qc2](http://releases.manageiq.org/manageiq-ovirt-euwe-2.1.qc2) | ovirt | 1.1 GB |
 | [Vagrant](https://atlas.hashicorp.com/manageiq/euwe) | vagrant | 1.1 GB |
 | [VMware vSphere](http://releases.manageiq.org/manageiq-vsphere-euwe-2.1.ova) | vsphere | 1.1 GB |
 
