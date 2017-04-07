@@ -1,12 +1,12 @@
 stable:
-  name: Euwe-2.1
-  tag: euwe-2.1
-  filename: euwe-2.1
+  name: Euwe-3
+  tag: euwe-3
+  filename: euwe-3
 
 prerelease:
- name: Fine-1-Beta1
- tag: fine-1-beta1
- filename: fine-1-beta1
+ name: Fine-1-RC1
+ tag: fine-1-rc1
+ filename: fine-1-rc1
 
 devel:
   name: Nightly
