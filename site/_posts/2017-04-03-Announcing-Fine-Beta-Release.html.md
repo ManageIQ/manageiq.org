@@ -23,20 +23,14 @@ Take a look at the [changelog](https://github.com/ManageIQ/manageiq/blob/fine/CH
 
 We encourage you to download the Fine Beta Release and try it out!
 
+{% assign releasename = "Fine-1-Beta1" %}
+{% assign releasetag = "fine-1-beta1" %}
 
 | Appliance | Format | Size |
 | --------- | ------ | ---- |
-| [Amazon EC2](http://releases.manageiq.org/manageiq-ec2-fine-1-beta1.vhd) | ec2 | 3.6 GB |
-| [Docker](https://hub.docker.com/r/manageiq/manageiq/) | docker | 0.5 GB |
-| [Google Compute Engine](http://releases.manageiq.org/manageiq-gce-fine-1-beta1.tar.gz) | gce | 1.1 GB |
-| [Microsoft Azure](http://releases.manageiq.org/manageiq-azure-fine-1-beta1.vhd) | azure | 3.6 GB |
-| [Microsoft SCVMM](http://releases.manageiq.org/manageiq-hyperv-fine-1-beta1.vhd) | hyperv | 3.6 GB |
-| [Openstack](http://releases.manageiq.org/manageiq-openstack-fine-1-beta1.qc2) | openstack | 1.2 GB |
-| [oVirt](http://releases.manageiq.org/manageiq-ovirt-fine-1-beta1.ova) | ovirt | 1.1 GB |
-| [Qemu/KVM](http://releases.manageiq.org/manageiq-openstack-fine-1-beta1.qc2) | openstack | 1.2 GB |
-| [Red Hat Enterprise Virtualization](http://releases.manageiq.org/manageiq-ovirt-fine-1-beta1.ova) | ovirt | 1.2 GB |
-| [Vagrant](https://atlas.hashicorp.com/manageiq/fine) | vagrant | 1.1 GB |
-| [VMware vSphere](http://releases.manageiq.org/manageiq-vsphere-fine-1-beta1.ova) | vsphere | 1.2 GB |
+| <a href="https://hub.docker.com/r/manageiq/manageiq/" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'outbound', eventLabel: 'Docker {{releasename}}', transport: 'beacon' });">Docker (tag {{releasetag}})</a> | docker | 0.7 GB |
+{% for type in site.data.download_types %} | <a href="http://releases.manageiq.org/manageiq-{{type.download_platform}}-{{releasetag}}.{{type.ext}}" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'download', eventLabel: '{{type.name}} {{releasename}}', transport: 'beacon' });">{{ type.name }}</a> | {{ type.download_platform }} | {{ type.size_pre }} |
+{% endfor %} | <a href="https://atlas.hashicorp.com/manageiq/boxes/fine" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'outbound', eventLabel: 'Vagrant {{releasename}}', transport: 'beacon' });">Vagrant</a> | vagrant | 1.1 GB |
 
 
 If you encounter any issues/bugs, please report them on [GitHub](https://github.com/ManageIQ/manageiq/issues). You can also join our [discussion forum](http://talk.manageiq.org/) if you have questions or need more support. Remember to use the ["Support"](http://talk.manageiq.org/c/support) category.
