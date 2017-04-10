@@ -21,16 +21,6 @@ If you want to hear about features, improvements, and fixes directly from the de
 
 Take a look at the [changelog](https://github.com/ManageIQ/manageiq/blob/fine/CHANGELOG.md/) for more details.
 
-We encourage you to download the Fine Beta Release and try it out!
-
-+{% assign releasename = "Fine-1-RC1" %}
-+{% assign releasetag = "fine-1-rc1" %}
-
-
-| Appliance | Format | Size |
-| --------- | ------ | ---- |
-| <a href="https://hub.docker.com/r/manageiq/manageiq/" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'outbound', eventLabel: 'Docker {{releasename}}', transport: 'beacon' });">Docker (tag {{releasetag}})</a> | docker | 0.7 GB |
-+{% for type in site.data.download_types %} | <a href="http://releases.manageiq.org/manageiq-{{type.download_platform}}-{{releasetag}}.{{type.ext}}" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'download', eventLabel: '{{type.name}} {{releasename}}', transport: 'beacon' });">{{ type.name }}</a> | {{ type.download_platform }} | {{ type.size_pre }} |
-+{% endfor %} | <a href="https://atlas.hashicorp.com/manageiq/boxes/fine" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'outbound', eventLabel: 'Vagrant {{releasename}}', transport: 'beacon' });">Vagrant</a> | vagrant | 1.1 GB |
+We encourage you to [download](http://manageiq.org/download/) the Fine RC1 and try it out!
 
 If you encounter any issues/bugs, please report them on [GitHub](https://github.com/ManageIQ/manageiq/issues). You can also join our [discussion forum](http://talk.manageiq.org/) if you have questions or need more support. Remember to use the ["Support"](http://talk.manageiq.org/c/support) category.
