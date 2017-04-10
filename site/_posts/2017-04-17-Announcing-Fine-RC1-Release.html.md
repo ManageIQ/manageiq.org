@@ -11,6 +11,8 @@ On behalf of the ManageIQ team, we're pleased to announce Release Candidate 1 fo
 
 Fine is the next milestone release for ManageIQ cloud and virtualization management platform. With each release, ManageIQ gets more robust and feature complete across providers. In this release, a lot of attention was given to Ansible. However, other providers, REST API, as well as performance also benefit in this release.
 
+**Update details with delta of beta and rc1**
+
 * Added **"Ansible Playbook"** to the list of catalog item types.
 * Automate Model: Add Amazon block storage automation models.
 * Adding new report and widgets for Containers and Add option for container performance reports.
