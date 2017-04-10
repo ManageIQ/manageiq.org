@@ -7,6 +7,7 @@ published: true
 tags: releases announcements
 ---
 
+We've just built Euwe-2.1. This release resolves the issue in Euwe-2, where dropdowns and trees don't work in the UI.
 If you already have Euwe-2 installed, you can follow the steps [here](http://talk.manageiq.org/t/euwe-2-broken-ui-fix/2221) for the manual fix.
 
 Otherwise, we encourage you to [download](http://manageiq.org/download/) Euwe-2.1 and try it out!
