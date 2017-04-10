@@ -11,23 +11,18 @@ tags: releases announcements
 We've just built Euwe-3. This release contains a security fix, bug fixes, numerous UI tweaks, and stabilization.
 You can download the Euwe-3 release [here](http://manageiq.org/download/)
 
-Note: Need to update the following.
-
 
 Security Fixes:
 
-[CVE-2017-2632](https://access.redhat.com/security/cve/CVE-2017-2632) - It was found that a tenant administrator could create groups with roles that have higher permissions than those of the tenant administrator.
-This issue was discovered by Matouš Mojžíš (Red Hat).
+[CVE-2017-2653](https://access.redhat.com/security/cve/CVE-2017-2653) - A number of unused delete routes are present in CloudForms which can be accessed via GET requests instead of just POST requests. This could allow an attacker to bypass the protect_from_forgery XSRF protection causing the routes to be used. This attack would require additional cross-site scripting or similar attacks in order to execute.
+This issue was reported by Martin Povolny (Red Hat).
 
-and here are just a few of the things added since Euwe-1 release:
-- Automate: Automate Retry with Server Affinity
-- Providers:
-  * Ansible Tower: Advanced search for Ansible Tower Jobs not visible on switch from a different tab
-  * Microsoft Azure: Delete all resources when deleting an Azure stack
-
-- Notable Platform fixes include:
-  * Tenant admin should not be able to create groups in other tenants.
-  * Introduce report result purging timer. 
+and here are just a few of the things added since Euwe-2 release
+- UI: Add new Subnet must be disabled when there is no cloud provider present
+- Inventory refresh fail on timeout, after ~2 minutes
+- Security groups/Floating IPs not displayed in Network Topology View
+- External authentication works when logging into the Admin UI but doesn't work for the same user to get into the Service UI
+- Unable to bring VM out of retirement from details page 
 
 Here is the complete changelog:
 [Euwe-3](https://github.com/ManageIQ/manageiq/blob/euwe/CHANGELOG.md)
