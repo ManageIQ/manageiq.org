@@ -1,7 +1,7 @@
 ---
 title: "Blood, fire and ManageIQ"
 author: panspagetka
-date: 2017-04-07
+date: 2017-04-11
 comments: true
 published: true
 tags: LWIMIQ
