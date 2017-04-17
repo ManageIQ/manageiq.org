@@ -7,7 +7,7 @@ comments: true
 published: true
 ---
 
-The results of the poll on the name of the G release are in.  *Nona Gaprindashvili* is the winner! Looking forward to all the exciting features that will come in the Gaprindashvili release! Thanks to all that voted!! We had 104 total votes for the G-Release,...whereas, the E-Release garnered a total of 98 votes. The ManageIQ Community continues to grow!
+The results of the poll on the name of the G release are in.  *Nona Gaprindashvili* is the winner! Looking forward to all the exciting features that will come in the Gaprindashvili release! Thanks to all that voted!! We had 104 total votes for the G-Release,...whereas, the F-Release garnered a total of 98 votes. The ManageIQ Community continues to grow!
 
 The following table shows the final vote tally.
 
