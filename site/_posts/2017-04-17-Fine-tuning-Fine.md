@@ -1,5 +1,5 @@
 ---
-title: "And Finally . . . Fine-tuning Fine"
+title: "Last Week in ManageIQ: And Finally...Fine-tuning Fine"
 author: AparnaKarve
 date: 2017-04-18
 comments: true
@@ -32,7 +32,7 @@ I'll do my best to bring you some of the **`Fine`** highlights of the repositori
 
 ## Some Fine 'Finishing' Touches
 
-- [Laura Galis](https://github.com/lgalis) fixed the PDF download issue for Ansible Tower Job Templates in [ManageIQ/manageiq-ui-classic#53](https://github.com/ManageIQ/manageiq-ui-classic/pull/523)
+- [Laura Galis](https://github.com/lgalis) fixed the PDF download issue for Ansible Tower Job Templates in [ManageIQ/manageiq-ui-classic#523](https://github.com/ManageIQ/manageiq-ui-classic/pull/523)
 
 - [Martin Hradil](https://github.com/himdel) and [I](https://github.com/AparnaKarve) fixed some synching issues in the Ansible Credential form in [ManageIQ/manageiq-ui-classic#860](https://github.com/ManageIQ/manageiq-ui-classic/pull/860) and [ManageIQ/manageiq-ui-classic#1017](https://github.com/ManageIQ/manageiq-ui-classic/pull/1017)
    
