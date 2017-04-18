@@ -6,7 +6,6 @@ comments: true
 published: true
 tags: LWIMIQ
 ---
-## And Finally . . . Fine-tuning **`Fine`**
 
 After a long and cold winter, we are thankful that spring is finally here! In some parts of the world, the cherry blossoms are spectacular. The birds are happily chirping. A **`Fine`** season (get it?) indeed is one that brings with it a glimmer of sunshine and all around goodness.
 
