@@ -57,13 +57,13 @@ https://github.com/ManageIQ/manageiq/pull/14711
  We DO love our Spring-cleaning PRs. What say you [Joe Rafaniello](https://github.com/jrafanie)? 
 
 
-- https://github.com/ManageIQ/manageiq/pull/14633/files, courtesy, [Federico Simoncelli](https://github.com/simon3z)
+- https://github.com/ManageIQ/manageiq/pull/14633, courtesy, [Federico Simoncelli](https://github.com/simon3z)
 
-- https://github.com/ManageIQ/manageiq/pull/14598/files, courtesy, [Jozef Zigmund](https://github.com/jzigmund)
+- https://github.com/ManageIQ/manageiq/pull/14598, courtesy, [Jozef Zigmund](https://github.com/jzigmund)
 
-- https://github.com/ManageIQ/manageiq/pull/14515/files, courtesy, [Nimrod Shneor](https://github.com/nimrodshn)
+- https://github.com/ManageIQ/manageiq/pull/14515, courtesy, [Nimrod Shneor](https://github.com/nimrodshn)
 
-- https://github.com/ManageIQ/manageiq/pull/14766/files, courtesy, [Tzu-Mainn Chen](https://github.com/tzumainn)
+- https://github.com/ManageIQ/manageiq/pull/14766, courtesy, [Tzu-Mainn Chen](https://github.com/tzumainn)
 
 ## Some Fine 'House-Keeping'
 
@@ -75,7 +75,7 @@ https://github.com/ManageIQ/manageiq/pull/14711
 
 ## Other Noteworthy PRs
 
-- Thanks [Allen Wight](https://github.com/ManageIQ/manageiq-ui-service/pull/664) for showing all kinds of notifications! https://github.com/ManageIQ/manageiq-ui-service/pull/664
+- Thanks [Allen Wight](https://github.com/AllenBW) for showing all kinds of notifications! https://github.com/ManageIQ/manageiq-ui-service/pull/664
  
 - Thanks, [Alberto Bellotti](https://github.com/abellotti)! https://github.com/ManageIQ/manageiq/pull/14690
  
