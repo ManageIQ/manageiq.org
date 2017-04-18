@@ -1,5 +1,5 @@
 ---
-title: "Last Week in ManageIQ: And Finally . . . Fine-tuning Fine"
+title: "And Finally . . . Fine-tuning Fine"
 author: AparnaKarve
 date: 2017-04-18
 comments: true
@@ -32,23 +32,17 @@ I'll do my best to bring you some of the **`Fine`** highlights of the repositori
 
 ## Some Fine 'Finishing' Touches
 
-- [Laura Galis](https://github.com/lgalis) fixed the PDF download issue for Ansible Tower Job Templates in https://github.com/ManageIQ/manageiq-ui-classic/pull/523
+- [Laura Galis](https://github.com/lgalis) fixed the PDF download issue for Ansible Tower Job Templates in [ManageIQ/manageiq-ui-classic#53](https://github.com/ManageIQ/manageiq-ui-classic/pull/523)
 
-- [Martin Hradil](https://github.com/himdel) and [I](https://github.com/AparnaKarve) fixed some synching issues in the Ansible Credential form in 
+- [Martin Hradil](https://github.com/himdel) and [I](https://github.com/AparnaKarve) fixed some synching issues in the Ansible Credential form in [ManageIQ/manageiq-ui-classic#860](https://github.com/ManageIQ/manageiq-ui-classic/pull/860) and [ManageIQ/manageiq-ui-classic#1017](https://github.com/ManageIQ/manageiq-ui-classic/pull/1017)
+   
+- [Jillian Tullo](https://github.com/jntullo) worked on a new API endpoint for refreshing Configuration Script Sources in [ManageIQ/manageiq#14714](https://github.com/ManageIQ/manageiq/pull/14714)
 
-   https://github.com/ManageIQ/manageiq-ui-classic/pull/860
- 
-   https://github.com/ManageIQ/manageiq-ui-classic/pull/1017
+- [Marcel Hild](https://github.com/durandom) worked on the targeted refresh for Ansible configuration_script_source in [ManageIQ/manageiq#14711](https://github.com/ManageIQ/manageiq/pull/14711)
 
-- [Jillian Tullo](https://github.com/jntullo) worked on a new API endpoint for refreshing Configuration Script Sources
-https://github.com/ManageIQ/manageiq/pull/14714
+- [James Wong](https://github.com/jameswnl) added the Notification for the Ansible Tower credential CUD operations in [ManageIQ/manageiq#14625](https://github.com/ManageIQ/manageiq/pull/14625)
 
-- [Marcel Hild](https://github.com/durandom) worked on the targeted refresh for Ansible configuration_script_source in 
-https://github.com/ManageIQ/manageiq/pull/14711
-
-- [James Wong](https://github.com/jameswnl) added the Notification for the Ansible Tower credential CUD operations in https://github.com/ManageIQ/manageiq/pull/14625
-
-- [Milan Zázrivec](https://github.com/mzazrivec) added Embedded Ansible refresh for Ansible Credentials and Repositories in https://github.com/ManageIQ/manageiq-ui-classic/pull/934
+- [Milan Zázrivec](https://github.com/mzazrivec) added Embedded Ansible refresh for Ansible Credentials and Repositories in [ManageIQ/manageiq-ui-classic#934](https://github.com/ManageIQ/manageiq-ui-classic/pull/934)
 
 
 ## Some Fine 'Spring-Cleaning'
@@ -56,34 +50,34 @@ https://github.com/ManageIQ/manageiq/pull/14711
  We DO love our Spring-cleaning PRs. What say you [Joe Rafaniello](https://github.com/jrafanie)? 
 
 
-- https://github.com/ManageIQ/manageiq/pull/14633, courtesy, [Federico Simoncelli](https://github.com/simon3z)
+- [ManageIQ/manageiq#14633](https://github.com/ManageIQ/manageiq/pull/14633) courtesy, [Federico Simoncelli](https://github.com/simon3z)
 
-- https://github.com/ManageIQ/manageiq/pull/14598, courtesy, [Jozef Zigmund](https://github.com/jzigmund)
+- [ManageIQ/manageiq#14598](https://github.com/ManageIQ/manageiq/pull/14598) courtesy, [Jozef Zigmund](https://github.com/jzigmund)
 
-- https://github.com/ManageIQ/manageiq/pull/14515, courtesy, [Nimrod Shneor](https://github.com/nimrodshn)
+- [ManageIQ/manageiq#14515](https://github.com/ManageIQ/manageiq/pull/14515) courtesy, [Nimrod Shneor](https://github.com/nimrodshn)
 
-- https://github.com/ManageIQ/manageiq/pull/14766, courtesy, [Tzu-Mainn Chen](https://github.com/tzumainn)
+- [ManageIQ/manageiq#14766](https://github.com/ManageIQ/manageiq/pull/14766) courtesy, [Tzu-Mainn Chen](https://github.com/tzumainn)
 
 ## Some Fine 'House-Keeping'
 
-- https://github.com/ManageIQ/manageiq-ui-service/pull/659, Updates Yarn -- courtesy, [Chris Hale](https://github.com/chalettu)
+- [ManageIQ/manageiq-ui-service#659](https://github.com/ManageIQ/manageiq-ui-service/pull/659), Updates Yarn -- courtesy, [Chris Hale](https://github.com/chalettu)
 
-- https://github.com/ManageIQ/manageiq-ui-classic/pull/1019, Updates Patternfly -- courtesy, [Dávid Halász](https://github.com/skateman)
+- [ManageIQ/manageiq-ui-classic#1019](https://github.com/ManageIQ/manageiq-ui-classic/pull/1019), Updates Patternfly -- courtesy, [Dávid Halász](https://github.com/skateman)
 
-- https://github.com/ManageIQ/manageiq/pull/14692, Updates some Request Factories -- courtesy, [Tim Wade](https://github.com/imtayadeway)
+- [ManageIQ/manageiq#14692](https://github.com/ManageIQ/manageiq/pull/14692), Updates some Request Factories -- courtesy, [Tim Wade](https://github.com/imtayadeway)
 
 ## Other Noteworthy PRs
 
-- Thanks [Allen Wight](https://github.com/AllenBW) for showing all kinds of notifications! https://github.com/ManageIQ/manageiq-ui-service/pull/664
+- Thanks [Allen Wight](https://github.com/AllenBW) for showing all kinds of notifications! [ManageIQ/manageiq-ui-service#664](https://github.com/ManageIQ/manageiq-ui-service/pull/664)
  
-- Thanks, [Alberto Bellotti](https://github.com/abellotti)! https://github.com/ManageIQ/manageiq/pull/14690
+- Thanks, [Alberto Bellotti](https://github.com/abellotti)! [ManageIQ/manageiq#14690](https://github.com/ManageIQ/manageiq/pull/14690)
  
- - Thanks, [Joshua Langholtz](https://github.com/jjlangholtz)!  https://github.com/ManageIQ/manageiq-ui-service/pull/669
+ - Thanks, [Joshua Langholtz](https://github.com/jjlangholtz)!  [ManageIQ/manageiq-ui-service#669](https://github.com/ManageIQ/manageiq-ui-service/pull/669)
 
 
 ## The Fine 'Finesse'
 
-Simplicity coupled with performance is what transforms the PR to the 'Finesse' level - With that in mind, thanks [Šimon Lukašík](https://github.com/isimluk) for https://github.com/ManageIQ/manageiq/pull/14712 & https://github.com/ManageIQ/manageiq/pull/14721.
+Simplicity coupled with performance is what transforms the PR to the 'Finesse' level - With that in mind, thanks [Šimon Lukašík](https://github.com/isimluk) for [ManageIQ/manageiq#14712](https://github.com/ManageIQ/manageiq/pull/14712) & [ManageIQ/manageiq#14721](https://github.com/ManageIQ/manageiq/pull/14721).
 
 
 ## Globalizing Fine
@@ -91,9 +85,9 @@ Simplicity coupled with performance is what transforms the PR to the 'Finesse' l
 Folks all around the world would appreciate **`Fine`** even more if it was localized in a language of their preference.  We currently support Simplified Chinese, Japanese, French, German, Spanish just to name a few. 
 
 Thanks, [Milan](https://github.com/mzazrivec) for taking the lead in this project and making the whole process so seamless to us.
- - https://github.com/ManageIQ/manageiq/pull/14750
- - https://github.com/ManageIQ/manageiq-ui-classic/pull/1023
- - https://github.com/ManageIQ/manageiq-ui-service/pull/670
+ - [ManageIQ/manageiq#14750](https://github.com/ManageIQ/manageiq/pull/14750)
+ - [ManageIQ/manageiq-ui-classic#1023](https://github.com/ManageIQ/manageiq-ui-classic/pull/1023)
+ - [ManageIQ/manageiq-ui-service#670](https://github.com/ManageIQ/manageiq-ui-service/pull/670)
  
  
 ## In Closing...
