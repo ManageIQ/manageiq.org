@@ -18,11 +18,11 @@ Security Fixes:
 This issue was reported by Martin Povolny (Red Hat).
 
 and here are just a few of the things added since Euwe-2 release
-- UI: Add new Subnet must be disabled when there is no cloud provider present
-- Inventory refresh fail on timeout, after ~2 minutes
-- Security groups/Floating IPs not displayed in Network Topology View
-- External authentication works when logging into the Admin UI but doesn't work for the same user to get into the Service UI
-- Unable to bring VM out of retirement from details page 
+- Automate: Allow passing options when adding a disk in automate.
+- Authentication: Ensure user name is set even when common LDAP attributes are missing.
+- Red Hat Virtualization Manager: Resolve oVirt IP addresses
+- Performance: Speed up widget generation
+- Reporting: Support dots and slashes in virtual custom attributes
 
 Here is the complete changelog:
 [Euwe-3](https://github.com/ManageIQ/manageiq/blob/euwe/CHANGELOG.md)
