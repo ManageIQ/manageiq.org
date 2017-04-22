@@ -12,7 +12,7 @@ With ManageIQ you will be able to:
 * **Continuously discover** the latest state of your environment.
 * Implement **self service** for your end users.
 * Enforce **compliance** across the environment.
-* **Optimize** the performance and utilization of you environment.
+* **Optimize** the performance and utilization of your environment.
 
 ## Following this Guide
 
