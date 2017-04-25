@@ -8,7 +8,7 @@ tags: LWIMIQ
 ---
 
 Hello there! This is [Harpreet Kataria](https://github.com/h-kataria), my first contribution at LWIMIQ blog post, I want to share some updates on what has been happening in ManageIQ world this past week. 
-Team ManageIQ has been busy squashing bugz rapidly to make Fine release finer and stable. After all bugz are bugz and must be squashed.
+Team ManageIQ has been busy squashing bugz rapidly to make Fine release finer and more stable. After all bugz are bugz and must be squashed.
 
 
 ## Count/List of PRs merged in all repos in LWIMIQ:
@@ -47,7 +47,7 @@ Several fixes were made in Embedded Ansible area and Ansible Services area, see 
 
 [Aparna](https://github.com/AparnaKarve) Quadicon links fixed on Tagging edit screen ([#1041](https://github.com/ManageIQ/manageiq-ui-classic/pull/1041))
 
-[Zahi](https://github.com/zakiva) Add Container entities to TAG_CLASSES ([#14535](https://github.com/ManageIQ/manageiq/pull/14535/files))
+[Zahi](https://github.com/zakiva) Add Container entities to TAG_CLASSES ([#14535](https://github.com/ManageIQ/manageiq/pull/14535))
 
 There were many more bugz that were fixed last week, please see complete list of merged PRs in each repo for more details.
 
@@ -85,7 +85,7 @@ Aside from some new additions & lots of bug fixing, we also deleted some unwante
 
 [Brandon](https://github.com/bdunne) Removal of unsused Global Variables from manageiq-ui-classic repo ([#969](https://github.com/ManageIQ/manageiq-ui-classic/pull/969))
 
-[Roman](https://github.com/rblanco) Removed unused & invalid provider documentation link ([#1002](https://github.com/ManageIQ/manageiq-ui-classic/pull/1002))
+[Roman](https://github.com/romanblanco) Removed unused & invalid provider documentation link ([#1002](https://github.com/ManageIQ/manageiq-ui-classic/pull/1002))
 
 [Tzu-Mainn](https://github.com/tzumainn) Remove code that creates phantom object when creating Cloud Volume & Tenant ([#14766](https://github.com/ManageIQ/manageiq/pull/14766))
 
@@ -95,6 +95,6 @@ Aside from some new additions & lots of bug fixing, we also deleted some unwante
 
 ## Wrapping up
 
-That's all i have to share with you folks. Stay tuned for next week's LWIMIQ post, by
+That's all I have to share with you folks. Stay tuned for next week's LWIMIQ post, by
 [Drew](https://github.com/d-m-u).
 
