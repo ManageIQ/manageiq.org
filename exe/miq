@@ -113,6 +113,8 @@ module Miq
   class Generate < Thor
     desc "lwimiq", "Generate a LWIMIQ blog post"
     option :current
+    option :author, :default => '<author>'
+    option :subtitle, :default => '<subtitle>'
     def lwimiq
       say "Generating LWIMIQ post", :green
       Lwimiq.generate(options)

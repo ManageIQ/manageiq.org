@@ -7,14 +7,18 @@ module Miq
                      Date.today - Date.today.wday - 6
                    end
       end_date = start_date + 6
-      new(start_date, end_date).generate
+      author = options[:author]
+      subtitle = options[:subtitle]
+      new(start_date, end_date, author, subtitle).generate
     end
 
-    attr_reader :start_date, :end_date
+    attr_reader :start_date, :end_date, :author, :subtitle
 
-    def initialize(start_date, end_date)
+    def initialize(start_date, end_date, author, subtitle)
       @start_date = start_date
       @end_date = end_date
+      @author = author
+      @subtitle = subtitle
     end
 
     def generate
@@ -23,14 +27,15 @@ module Miq
     end
 
     def path
-      File.join("site", "_posts", "#{Date.today.strftime("%Y-%m-%d")}-CHANGE-ME.md")
+      File.join("site", "_posts", "#{Date.today.strftime("%Y-%m-%d")}-#{file_rename}.md")
     end
+
 
     def content
       <<-EOF
 ---
-title: "Last Week in ManageIQ: <subtitle>"
-author: <author>
+title: "Last Week in ManageIQ: #{@subtitle}"
+author: #{@author}
 date: #{publication_date}
 comments: true
 published: true
@@ -97,6 +102,14 @@ EOF
           "utf8=%E2%9C%93"
         ].join("&")
       )
+    end
+
+    def file_rename
+      @subtitle == '<subtitle>' ? 'CHANGE-ME' : cleanup
+    end
+
+    def cleanup
+      @subtitle.gsub(/[^0-9a-z]/i, '-')
     end
   end
 end
