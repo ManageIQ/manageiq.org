@@ -7,7 +7,7 @@ published: true
 tags: releases announcements
 ---
 
-On behalf of the ManageIQ team, we're pleased to announce the Beta 2 release for ManageIQ Fine! You can download the Fine Beta 2 Release [here](http://manageiq.org/download/). You'll find it under the "Pre-release (Fine1-Beta2)" section.
+On behalf of the ManageIQ team, we're pleased to announce the Beta 2 release for ManageIQ Fine! You can download the Fine Beta 2 Release [here](http://manageiq.org/download/). You'll find it under the "Pre-release (Fine-1-Beta2)" section.
 
 Fine is the next milestone release for ManageIQ cloud and virtualization management platform. With each release, ManageIQ gets more robust and feature complete across providers. In this release, a lot of attention was given to performance and fixes. 
 
