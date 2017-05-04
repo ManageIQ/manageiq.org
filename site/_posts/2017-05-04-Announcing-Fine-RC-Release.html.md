@@ -1,5 +1,5 @@
 ---
-title: Announcing Fine Beta 2 Release
+title: Announcing Fine Release Candidate
 author: chessbyte
 date: 2017-05-04 07:49:24 UTC
 comments: true
