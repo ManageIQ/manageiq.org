@@ -82,7 +82,7 @@ And Martin did a toolbar cleanup, we no longer have to show/hide the toolbar man
 [ManageIQ/manageiq-ui-classic#1239](https://github.com/ManageIQ/manageiq-ui-classic/pull/1239)
 )
 
-We also had a bunch of Mendel University in Brno students convert some Angular controllers to `controllerAs`, as part of their Software Engineering course, thanks! :)
+We also had a bunch of students from Mendel University in Brno convert some Angular controllers to `controllerAs`, as part of their Software Engineering course, thanks! :)
 (
 [ManageIQ/manageiq-ui-classic#740](https://github.com/ManageIQ/manageiq-ui-classic/pull/740),
 [ManageIQ/manageiq-ui-classic#719](https://github.com/ManageIQ/manageiq-ui-classic/pull/719),
