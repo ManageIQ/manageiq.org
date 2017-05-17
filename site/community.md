@@ -73,6 +73,26 @@ Here are some opportunities to meet with members of the community to learn and s
 
 <div class="row">
   <div class="col-md-6">
+    <p><img src="/assets/images/events/openexpo2017.png" alt="OpenExpo 2017" /></p>
+    <p><a href="http://www.openexpo.es/en/">OpenExpo 2017</a> <br /> June 1, 2017 in Madrid, Spain</p>
+  </div>
+</div>
+
+### Past Events
+
+<div class="row">
+  <div class="col-md-6">
+    <p><img src="/assets/images/events/rhsummit2017.png" alt="RHSUMMIT 2017" /></p>
+    <p><a href="https://www.redhat.com/en/summit/2017">Red Hat Summit 2017</a> <br /> May 2-4, 2017 in Boston, MA</p>
+  </div>
+  <div class="col-md-6">
+    <p><img src="/assets/images/events/oscal17.png" alt="OSCAL 2017" /></p>
+    <p><a href="https://oscal.openlabs.cc">OSCAL 2017</a> <br /> May 13-14, 2017 in Tirana, Albania</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
     <p><img src="/assets/images/events/fossasia2017.png" alt="FOSSASIA 2017" /></p>
     <p><a href="http://2017.fossasia.org/">FOSSASIA 2017</a> <br /> March 17-19, 2017 in Singapore</p>
   </div>
@@ -81,8 +101,6 @@ Here are some opportunities to meet with members of the community to learn and s
     <p><a href="http://events.linuxfoundation.org/events/cloudnativecon-and-kubecon-europe">CloudNativeCon + KubeCon 2017</a> <br /> March 29-30, 2017 in Berlin, Germany</p>
   </div>
 </div>
-
-### Past Events
 
 <div class="row">
   <div class="col-md-6">
