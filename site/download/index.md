@@ -31,7 +31,7 @@ title: Download ManageIQ
     </tr>
     {% endfor %}
     <tr>
-      <td><a href="https://atlas.hashicorp.com/manageiq/boxes/euwe" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'outbound', eventLabel: 'Vagrant {{release.name}}', transport: 'beacon' });">Vagrant</a></td>
+      <td><a href="https://atlas.hashicorp.com/manageiq/boxes/fine" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'outbound', eventLabel: 'Vagrant {{release.name}}', transport: 'beacon' });">Vagrant</a></td>
       <td>vagrant</td>
       <td>1.3 GB</td>
     </tr>

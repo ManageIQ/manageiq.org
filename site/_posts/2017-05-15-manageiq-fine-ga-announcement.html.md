@@ -31,7 +31,7 @@ Ansible Play data, including start time and finish time, is collected during a J
 
 For the [Euwe release](/blog/2016/12/manageiq-euwe-ga-announcement/), we highlighted the work done on Google Compute Engine and Microsoft Azure cloud platforms. This release we have a fine focus on the Amazon cloud provider, which took the lead for number of Provider PRs for quite a few sprints.
 
-First of all, the Amazon provider got [it's own repository](https://github.com/manageiq/manageiq-providers-amazon), and the related settings are moved over from ManageIQ core. Microsoft Azure [followed suit](https://github.com/manageiq/manageiq-providers-azure) shortly after. Further breaking down included separating AWS storage functionality into specific storage managers, S3 (object) and EBS (block), much like what we did to OpenStack Swift and Cinder previously.
+First of all, the Amazon provider got [it's own repository](https://github.com/manageiq/manageiq-providers-amazon), and the related settings are moved over from ManageIQ core. Microsoft Azure [followed suit](https://github.com/manageiq/manageiq-providers-azure) shortly after. Further partition included separating AWS storage functionality into specific storage managers, S3 (object) and EBS (block), much like what we did to OpenStack Swift and Cinder previously.
 
 Now we have the foundations for managing EBS and S3 services from AWS. There are many updates to the Amazon Storage Managers, such as new service models in Automate, collecting inventory for S3 objects, cloud volume snapshot operations for EBS, and the support for deletion of S3 folders.
 
