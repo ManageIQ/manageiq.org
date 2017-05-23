@@ -10,7 +10,7 @@ is available).
 
 {% assign release = site.data.releases["stable"] %}
 
-Before you start, make sure the Docker service is running:
+If you are on Linux, make sure the Docker service is running:
 
 ```bash
 $ sudo service docker start
