@@ -10,6 +10,12 @@ is available).
 
 {% assign release = site.data.releases["stable"] %}
 
+If you are on Linux, make sure the Docker service is running:
+
+```bash
+$ sudo service docker start
+```
+
 ### Step 1: Download and deploy the appliance
 
 Pull the ManageIQ docker image:
