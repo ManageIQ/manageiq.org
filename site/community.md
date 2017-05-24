@@ -161,7 +161,7 @@ Here are some opportunities to meet with members of the community to learn and s
 
 ### Sprint reviews
 
-There is a ManageIQ Sprint review every 2 weeks open to the community. To join the online video conference, please use this [Bluejeans link](https://bluejeans.com/5927041376/).
+There is a ManageIQ Sprint review every 2 weeks open to the community. To join the online video conference, please use this [Bluejeans link](https://bluejeans.com/4409197730/).
 
 You can import the [ManageIQ community calendar](https://calendar.google.com/calendar/embed?src=contact%40manageiq.org) to be notified about ManageIQ events and Sprint reviews.
 
