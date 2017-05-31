@@ -7,20 +7,17 @@ published: true
 tags: releases announcements
 ---
 
-We've just built Fine-2. This release contains bug fixes, numerous UI tweaks, and stabilization.
-
-(Will update once the fine-2 changelog is created)
-
+We've just built Fine-2. This release contains bug fixes, UI tweaks, and stabilization.
 
 Here are just a few of the things added since Fine-1 release:
-- Automate: Automate Retry with Server Affinity
-- Providers:
-  * Ansible Tower: Advanced search for Ansible Tower Jobs not visible on switch from a different tab
-  * Microsoft Azure: Delete all resources when deleting an Azure stack
+- ADDED
+  * REST API: Enable custom actions for Vms API
 
-- Notable Platform fixes include:
-  * Tenant admin should not be able to create groups in other tenants.
-  * Introduce report result purging timer. 
+- FIXED 
+  * Ansible: Make device path mandatory for EBS attachments
+  * RBAC: Need to gsub occurrences of {{ }} in the output
+  * Platform: Ensure order is qualified by table name for rss feeds
+  * Ansible Tower: Encrypt secrets before enqueue Tower CU operations
 
 Here is the complete changelog:
 [Fine-2](https://github.com/ManageIQ/manageiq/blob/fine/CHANGELOG.md)
