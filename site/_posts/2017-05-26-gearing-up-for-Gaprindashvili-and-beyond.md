@@ -1,5 +1,5 @@
 ---
-title: "Last Week in ManageIQ: Gearing up for Gaprindshvilli and beyond>"
+title: "Last Week in ManageIQ: Gearing up for Gaprindashvili and beyond"
 author: lgalis
 date: 2017-05-30
 comments: true
