@@ -21,7 +21,7 @@ module Miq
       @repo     = ENV["MIQ_REF_REPO"] || "https://github.com/ManageIQ/manageiq_docs.git"
 
       # What branches to copy?
-      @branches = ENV["MIQ_REF_BRANCHES"]&.split(',') || %w(master fine euwe)
+      @branches = Miq.doc_branches
 
       # Where should we cache and build?
       @tmp_dir  = ENV["MIQ_REF_TMP"]  || "/tmp/manageiq_docs"
