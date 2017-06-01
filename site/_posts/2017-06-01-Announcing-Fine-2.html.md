@@ -19,6 +19,8 @@ Here are just a few of the things added since Fine-1 release:
   * Platform: Ensure order is qualified by table name for rss feeds
   * Ansible Tower: Encrypt secrets before enqueue Tower CU operations
 
+You can download Fine-2 [here](http://manageiq.org/download/).
+
 Here is the complete changelog:
 [Fine-2](https://github.com/ManageIQ/manageiq/blob/fine/CHANGELOG.md)
 
