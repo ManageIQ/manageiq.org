@@ -46,6 +46,11 @@
   }
 }
 
+.doc_menu-heading {
+  color: mix(#fff, $grey-dark, 50%);
+  padding: 1em $menu-level-pad;
+}
+
 .doc_main {
   padding: 0 2em;
 }

@@ -1,5 +1,9 @@
 {% assign menu = "ref_menu_" | append: include.branch %}
 
+<div class="doc_menu-heading">
+  {{ include.branch | titleize }}
+</div>
+
 <ul class="menu menu-toplevel" id={{ menu }}>
 {% for hsh in site.data["menus"][menu] %}
 {% assign group = hsh[1] %}
