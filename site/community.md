@@ -73,12 +73,27 @@ Here are some opportunities to meet with members of the community to learn and s
 
 <div class="row">
   <div class="col-md-6">
-    <p><img src="/assets/images/events/openexpo2017.png" alt="OpenExpo 2017" /></p>
-    <p><a href="http://www.openexpo.es/en/">OpenExpo 2017</a> <br /> June 1, 2017 in Madrid, Spain</p>
+    <p><img src="/assets/images/events/viennarbmeetup41.png" alt="vienna.rb #41" /></p>
+    <p><a href="https://www.meetup.com/vienna-rb/events/239689512/">Ruby User Group Vienna meetup #41</a> <br /> June 8, 2017 in Vienna, Austria</p>
+  </div>
+  <div class="col-md-6">
+    <p><img src="/assets/images/events/ansiblefestlnd17.png" alt="AnsibleFest London 2017" /></p>
+    <p><a href="https://www.ansible.com/ansiblefest/london">#AnsibleFest London 2017</a> <br /> June 22, 2017 in London, UK</p>
   </div>
 </div>
 
 ### Past Events
+
+<div class="row">
+  <div class="col-md-6">
+    <p><img src="/assets/images/events/osdc2017.png" alt="OSDC 2017" /></p>
+    <p><a href="https://www.netways.de/en/events/osdc/archive/osdc2017/talks/">OSDC 2017</a> <br /> May 16-18, 2017 in Berlin, Germany</p>
+  </div>
+  <div class="col-md-6">
+    <p><img src="/assets/images/events/openexpo2017.png" alt="OpenExpo 2017" /></p>
+    <p><a href="http://www.openexpo.es/en/">OpenExpo 2017</a> <br /> June 1, 2017 in Madrid, Spain</p>
+  </div>
+</div>
 
 <div class="row">
   <div class="col-md-6">
