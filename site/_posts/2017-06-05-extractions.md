@@ -1,6 +1,6 @@
 ---
 title: "Last Week in ManageIQ: Extractions"
-author: <author>
+author: juliancheal
 date: 2017-06-06
 comments: true
 published: true
@@ -44,7 +44,7 @@ Keeping with physical infrastructure, we've [added](https://github.com/ManageIQ/
 
 ## Deleted
 
-Removing technical debt is always satisfying. So removing a dependency from custom code to a default Ruby Gem is always a good thing. That's what this [PR](https://github.com/ManageIQ/manageiq/pull/15294).
+Removing technical debt is always satisfying. So removing a dependency from custom code to a default Ruby Gem is always a good thing. That's what this [PR](https://github.com/ManageIQ/manageiq/pull/15294) does.
 
 Unused variables clog up the code and generally make everything untidy. So [removing](https://github.com/ManageIQ/manageiq/pull/15226) them is always a good thing.
 
