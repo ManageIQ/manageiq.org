@@ -17,8 +17,6 @@ Looking at our repositories we've had:
 * 30 PRs in [manageiq-ui-classic](https://github.com/ManageIQ/manageiq-ui-classic) repo
 * 8 PRs in [manaiq-ui-service](https://github.com/ManageIQ/manageiq-ui-service) repo
 
-<important news>
-
 ## Improved
 
 The big news this week is the extraction of four providers to their own repositories. This is ongoing work part of the pluggable providers initiative. Each provider also now have their own [Gitter rooms](https://gitter.im/ManageIQ/)
