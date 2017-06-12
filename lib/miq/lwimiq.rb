@@ -72,7 +72,17 @@ tags: LWIMIQ
 [manageiq-ui-classic PRs merged]: #{uri_for("manageiq-ui-classic")}
 [manageiq-ui-service PRs merged]: #{uri_for("manageiq-ui-service")}
 [manageiq-providers-amazon PRs merged]: #{uri_for("manageiq-providers-amazon")}
-[manageiq-providers-azure PRs merged]: #{uri_for("manageiq-providers-azure")}
+[manageiq-providers-ansible_tower PRs merged]: #{uri_for("manageiq-providers-ansible_tower")}
+[manageiq-providers-foreman PRs merged]: #{uri_for("manageiq-providers-foreman")}
+[manageiq-providers-google PRs merged]: #{uri_for("manageiq-providers-google")}
+[manageiq-providers-hawkular PRs merged]: #{uri_for("manageiq-providers-hawkular")}
+[manageiq-providers-lenovo PRs merged]: #{uri_for("manageiq-providers-lenovo")}
+[manageiq-providers-kubernetes PRs merged]: #{uri_for("manageiq-providers-kubernetes")}
+[manageiq-providers-nuage PRs merged]: #{uri_for("manageiq-providers-nuage")}
+[manageiq-providers-openshift PRs merged]: #{uri_for("manageiq-providers-openshift")}
+[manageiq-providers-openstack PRs merged]: #{uri_for("manageiq-providers-openstack")}
+[manageiq-providers-ovirt PRs merged]: #{uri_for("manageiq-providers-ovirt")}
+[manageiq-providers-scvmm PRs merged]: #{uri_for("manageiq-providers-scvmm")}
 [manageiq-providers-vmware PRs merged]: #{uri_for("manageiq-providers-vmware")}
 EOF
     end
