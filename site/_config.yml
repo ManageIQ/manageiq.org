@@ -34,11 +34,6 @@ image_path: "/assets/images/"
 book_path: https://pemcg.gitbooks.io/mastering-automation-in-cloudforms-and-manageiq/content/
 user_docs_path: "/docs/reference"
 
-doc_branches:
-  - latest
-  - fine
-  - euwe
-
 markdown: kramdown
 
 exclude:

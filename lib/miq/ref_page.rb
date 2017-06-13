@@ -31,6 +31,8 @@ module Miq
       data['branch_paths'] = branch_paths
     end
 
+    # Returns the path for a given branch
+    #
     def branch_path_for(given_branch)
       if name =~ /index.*\.md$/
         "/" + path.sub(name, '') + given_branch
@@ -39,8 +41,12 @@ module Miq
       end
     end
 
+    # Collect branches in a hash for the branch menu at the top of pages
+    # For historical/SEO reasons, master docs are under "/latest", and renamed such
+    #
     def branch_paths
       Miq.doc_branches.each_with_object({}) do |branch, hsh|
+        branch = "latest" if branch == "master"
         hsh[branch.to_s] = branch_path_for(branch)
       end
     end
