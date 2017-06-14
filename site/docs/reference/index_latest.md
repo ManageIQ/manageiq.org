@@ -1,7 +1,7 @@
 ---
 layout: doc_page
 title: User Reference
-permalink: /docs/reference/
+permalink: /docs/reference/latest/
 doc_group: user
 doc_branch: latest
 ---

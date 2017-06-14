@@ -4,14 +4,20 @@ require "safe_yaml/load"
 module Miq
   class RefMenu < Executor
     def self.build
-      new.build
+      # build for each dir in MIQ_REF_DIR
+      Dir["#{Miq.reference_dir}/*"].each do |path|
+        new(source_dir: path).build if File.directory?(path)
+      end
     end
 
-    attr_reader :source_dir, :output_dir
+    attr_reader :source_dir, :output_dir, :output_file
 
-    def initialize
-      @source_dir = ENV["MIQ_REF_DST"] || Miq.docs_dir.join("reference", "latest")
-      @output_dir = Miq.working_dir.join("tmp", "menus")
+    def initialize(source_dir: nil, output_dir: nil)
+      # @source_dir = Miq.default_path(source_dir, Miq.reference_dir, "latest")
+      @source_dir = Pathname.new(source_dir || Miq.reference_dir.join("latest"))
+      # @output_dir = Miq.default_path(output_dir, Miq.tmp_dir, "menus")
+      @output_dir = Pathname.new(output_dir || Miq.tmp_dir.join("menus"))
+      @output_file = @source_dir.basename
     end
 
     def menu_data
@@ -25,7 +31,7 @@ module Miq
     def build
       prep(output_dir)
 
-      File.open("#{output_dir}/ref_menu.yml", "w") do |f|
+      File.open("#{output_dir}/ref_menu_#{output_file}.yml", "w") do |f|
         f.puts to_yaml
       end
     end
@@ -137,7 +143,7 @@ module Miq
     end
 
     def exclusions
-      ["." ".."]
+      [".", ".."]
     end
 
     def inclusions

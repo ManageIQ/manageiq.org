@@ -1,0 +1,216 @@
+---
+distro:         ManageIQ
+version:        Branch Build
+
+group_id:       RestApi
+group_title:    REST API
+
+subgroup_id:    RestApi::Overview
+subgroup_title: Overview
+
+topic_id:       RestApi::Overview::Authentication
+topic_title:    Authentication
+
+article_title:  "REST API Authentication"
+
+breadcrumb_group: REST API
+breadcrumb_topic: Authentication
+---
+
+<div class="sect2">
+<h3 id="rest-api-authentication"><a class="anchor" href="#rest-api-authentication"></a>REST API Authentication</h3>
+<div class="paragraph">
+<p>There are two methods of authentication for the REST API, these are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Basic Authentication</p>
+</li>
+<li>
+<p>Token based Authentication</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>With Basic Authentication, the user and password credentials are passed
+in with each HTTP request as follows:</p>
+</div>
+<div class="sect3">
+<h4 id="request-using-basic-authentication"><a class="anchor" href="#request-using-basic-authentication"></a>Request using Basic Authentication</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="sh">$ curl --user username:password
+        -i -X GET -H &quot;Accept: application/json&quot;
+        http://localhost:3000/api/services/1013</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>However, for multiple REST API calls to the Appliance, it is recommended
+to use the Token based Authentication. In this approach, the client
+requests a token for the username/password credentials specified. Then
+the token is used in lieu of the username/password for each subsequent
+API call.</p>
+</div>
+<div class="paragraph">
+<p>Authentication tokens:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Are associated with the user credentials</p>
+</li>
+<li>
+<p>Provide the necessary identify for RBAC in subsequent REST API calls</p>
+</li>
+<li>
+<p>Expire after a certain amount of time with no REST API activity - 10 minutes by default.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="requesting-an-authentication-token"><a class="anchor" href="#requesting-an-authentication-token"></a>Requesting an authentication token</h4>
+<div id="request" class="paragraph">
+<p>Request:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="sh">$ curl --user username:password
+        -i X GET -H &quot;Accept: application/json&quot;
+        http://localhost:3000/api/auth</code></pre>
+</div>
+</div>
+<div id="response" class="paragraph">
+<p>Response for the Authentication Token Request:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  &quot;auth_token&quot;: &quot;93d98fd44cc5a401ff385ba87b21fd13&quot;,
+  &quot;token_ttl&quot;: 600,
+  &quot;expires_on&quot;: &quot;2015-11-02T21:50:16Z&quot;
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="request-using-token-based-authentication"><a class="anchor" href="#request-using-token-based-authentication"></a>Request using Token based authentication</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="sh">$ curl -i -X GET -H &quot;Accept: application/json&quot;
+       -H &quot;X-Auth-Token: 93d98fd44cc5a401ff385ba87b21fd13&quot;
+       http://localhost:3000/api/services/1013</code></pre>
+</div>
+</div>
+<div id="failed-response-due-to-invalid-token" class="paragraph">
+<p>Failed response due to invalid token</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">HTTP/1.1 401 Unauthorized
+WWW-Authenticate: Basic realm=&quot;Application&quot;
+...</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When a request fails due to an invalid token, the client would then need
+to re-authenticate with the user credentials to obtain a new
+Authentication Token.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="requesting-an-authentication-token-for-ui-client"><a class="anchor" href="#requesting-an-authentication-token-for-ui-client"></a>Requesting an authentication token for a UI client</h4>
+<div class="paragraph">
+<p>While the default duration for a REST API token is 10 minutes, it is not sufficient for UI type clients
+where the token is needed for sessions that time-out much later.</p>
+</div>
+<div class="paragraph">
+<p>For such environments, it is possible to request a REST API token to leverage the administrative UI
+session timeout.  This is requested with the <strong>requester_type</strong> parameter witih the value <strong>ui</strong> as follows:</p>
+</div>
+<div id="request" class="paragraph">
+<p>Request:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="sh">$ curl --user username:password
+        -i X GET -H &quot;Accept: application/json&quot;
+        http://localhost:3000/api/auth?requester_type=ui</code></pre>
+</div>
+</div>
+<div id="response" class="paragraph">
+<p>Response for the Authentication Token Request:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  &quot;auth_token&quot;: &quot;8789bcd6562beacbaf9f77927c2825e2&quot;,
+  &quot;token_ttl&quot;: 3600,
+  &quot;expires_on&quot;: &quot;2015-11-02T23:24:03Z&quot;
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="deleting-an-authentication-token"><a class="anchor" href="#deleting-an-authentication-token"></a>Deleting one&#8217;s own authentication token</h4>
+<div class="paragraph">
+<p>When UI based tokens are used in UI sessions, it is common for the UI to need to invalidate an authentication
+token upon logout. This is made available via the DELETE HTTP method on the token authenticated /api/auth
+as follows:</p>
+</div>
+<div id="request" class="paragraph">
+<p>Request:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="sh">$ curl -i -X DELETE -H &quot;Accept: application/json&quot;
+       -H &quot;X-Auth-Token: 93d98fd44cc5a401ff385ba87b21fd13&quot;
+       http://localhost:3000/api/auth</code></pre>
+</div>
+</div>
+<div id="response" class="paragraph">
+<p>Response for the token DELETE request:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">HTTP/1.1 204 No Content</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="api-token-ttl-configuration"><a class="anchor" href="#api-token-ttl-configuration"></a>Configuring the REST API Token Duration</h4>
+<table class="tableblock frame-all grid-all" style="width: 70%;">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Requester Type</th>
+<th class="tableblock halign-left valign-top">Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Configure&#8594;Configuration&#8594;Advanced</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Default</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10 minutes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">api: &#8594; token_ttl: 10.minutes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ui</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 hour</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>

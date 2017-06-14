@@ -6,6 +6,8 @@ module Miq
       new(page.site, Miq.site_dir.to_s, page.dir, page.name)
     end
 
+    # Don't render guides with liquid because some
+    # pages have conflicting syntax
     def render_with_liquid?
       false
     end

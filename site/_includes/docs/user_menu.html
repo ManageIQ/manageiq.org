@@ -1,6 +1,11 @@
+{% assign menu = "ref_menu_" | append: include.branch %}
 
-<ul class="menu menu-toplevel" id="ref_menu">
-{% for hsh in site.data["menus"]["ref_menu"] %}
+<div class="doc_menu-heading">
+  {{ include.branch | titleize }}
+</div>
+
+<ul class="menu menu-toplevel" id={{ menu }}>
+{% for hsh in site.data["menus"][menu] %}
 {% assign group = hsh[1] %}
   <li class="menu-parent">
     {% if group.path %}
@@ -12,7 +17,6 @@
       {{ group.title }}
     </a>
     {% endif %}
-
     {% if group.children.size > 0 %}
       <ul>
         {% include docs/doc_menu_items.html items=group.children %}

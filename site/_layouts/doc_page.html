@@ -5,7 +5,7 @@ layout: default
 <div class="doc_container">
   <div class="doc_menu">
     {% if page.doc_group %}
-    {% include docs/{{page.doc_group}}_menu.html %}
+    {% include docs/{{page.doc_group}}_menu.html branch=page.branch %}
     {% endif %}
   </div>
   <div class="doc_main">
@@ -17,6 +17,19 @@ layout: default
       {% endif %}
 
       <div class="doc-content">
+        {% if page.doc_group == "user" %}
+        <div class="doc-versions">
+          <span class="label">Versions: </span>
+          {% for path in page.branch_paths %}
+          <span{% if page.branch == path[0] %} class="active" {% endif %}>
+            <a href="{{ path[1] }}">
+              {{ path[0] | titleize }}
+            </a>
+          </span>
+          <span class="separator">/</span>
+          {% endfor %}
+        </div>
+        {% endif %}
         {{ content }}
       </div>
     </article>
