@@ -73,6 +73,14 @@ Here are some opportunities to meet with members of the community to learn and s
 
 <div class="row">
   <div class="col-md-6">
+    <p>There are no events in the near future.</p>
+  </div>
+</div>
+
+### Past Events
+
+<div class="row">
+  <div class="col-md-6">
     <p><img src="/assets/images/events/viennarbmeetup41.png" alt="vienna.rb #41" /></p>
     <p><a href="https://www.meetup.com/vienna-rb/events/239689512/">Ruby User Group Vienna meetup #41</a> <br /> June 8, 2017 in Vienna, Austria</p>
   </div>
@@ -81,8 +89,6 @@ Here are some opportunities to meet with members of the community to learn and s
     <p><a href="https://www.ansible.com/ansiblefest/london">#AnsibleFest London 2017</a> <br /> June 22, 2017 in London, UK</p>
   </div>
 </div>
-
-### Past Events
 
 <div class="row">
   <div class="col-md-6">
