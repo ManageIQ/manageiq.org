@@ -30,37 +30,37 @@ This week, I'm simply going to give credit in images.
 
 After all, like they say: A picture is worth a thousand words.  
 
-![ManageIQ Plug](/assets/images/blog/manageiq_logos.jpg)
+![ManageIQ Plug](/assets/images/blog/lwimiq_20170704_manageiq_logos.jpg)
 
 ## ManageIQ
 
-![ManageIQ](/assets/images/blog/manageiq_app.jpg)
+![ManageIQ](/assets/images/blog/lwimiq_20170704_manageiq_app.jpg)
 
 ## Classic UI
 
-![Classic UI](/assets/images/blog/classic_ui.jpg)
+![Classic UI](/assets/images/blog/lwimiq_20170704_classic_ui.jpg)
 
 ## Service UI
 
-![Service UI](/assets/images/blog/service_ui.jpg)
+![Service UI](/assets/images/blog/lwimiq_20170704_service_ui.jpg)
 
 ## Some Providers
 
 ### Amazon
 
-![Amazon](/assets/images/blog/provider_amazon.jpg)
+![Amazon](/assets/images/blog/lwimiq_20170704_provider_amazon.jpg)
 
 ### Kubernetes
 
-![Kubernetes](/assets/images/blog/provider_kubernetes.jpg)
+![Kubernetes](/assets/images/blog/lwimiq_20170704_provider_kubernetes.jpg)
 
 ### Openshift
 
-![Openshift](/assets/images/blog/provider_openshift.jpg)
+![Openshift](/assets/images/blog/lwimiq_20170704_provider_openshift.jpg)
 
 ### SCVMM
 
-![SCVMM](/assets/images/blog/provider_scvmm.jpg)
+![SCVMM](/assets/images/blog/lwimiq_20170704_provider_scvmm.jpg)
 
 ## Wrapping up
 
