@@ -111,8 +111,16 @@ module Miq
   end
 
   class Generate < Thor
-    desc "lwimiq", "Generate a LWIMIQ blog post"
-    option :current
+    desc "generate lwimiq", "Generate a LWIMIQ blog post"
+    long_desc <<-LONGDESC
+      Generates a new Last Week in ManageIQ blog post
+      skeleton. Includes all the links for PRs merged in the last week
+      in the various ManageIQ repositories.
+
+      With --current option, bin/miq generate lwimiq generates links
+      based on the current week instead of the last.
+    LONGDESC
+    option :current, :type => :boolean, :default => false
     def lwimiq
       say "Generating LWIMIQ post", :green
       Lwimiq.generate(options)
