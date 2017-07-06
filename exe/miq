@@ -112,7 +112,7 @@ module Miq
 
   class Generate < Thor
     desc "lwimiq", "Generate a LWIMIQ blog post"
-    option :current
+    option :current, :type => :boolean
     def lwimiq
       say "Generating LWIMIQ post", :green
       Lwimiq.generate(options)
