@@ -1,5 +1,44 @@
-FROM ehayes/manageiq_org_base:latest
+# FROM ehayes/manageiq_org_base:latest
+FROM manageiq/ruby:latest
 MAINTAINER Eric Hayes <eric@erichayes.net>
+
+RUN yum -y install epel-release
+RUN yum -y install \
+  bison \
+  bzip2 \
+  curl-devel \
+  gcc \
+  gcc-c++ \
+  git \
+  libffi \
+  libffi-devel \
+  libxml2-devel \
+  libxslt-devel \
+  libyaml-devel \
+  make \
+  openssl-devel \
+  readline-devel \
+  tar \
+  vim-enhanced \
+  wget \
+  zlib-devel
+
+# Install Nginx & setup
+# ----------------------------------------
+RUN yum -y install nginx
+
+# forward request and error logs to docker log collector
+RUN ln -sf /dev/stdout /var/log/nginx/access.log \
+    && ln -sf /dev/stderr /var/log/nginx/error.log
+
+
+# Install Certbot for SSL renewal
+# ----------------------------------------
+RUN yum -y install certbot
+
+# Install Bundler
+# ----------------------------------------
+RUN gem install bundler
 
 # ENV vars
 # ----------------------------------------
@@ -21,7 +60,7 @@ ENV MIQ_ENV=production
 # MIQ_LOG_DEST
 
 # Absolute path for Bundler
-ENV MIQ_BUNDLER=/root/.rbenv/shims/bundle
+ENV MIQ_BUNDLER=/opt/rubies/ruby-2.3.1/bin/bundler
 
 ENV MIQ_BASE_DIR=/srv/build
 ENV MIQ_DOCS_DIR=/srv/build/site/docs
@@ -38,6 +77,16 @@ ENV MIQ_REF_BRANCH=master
 # ENV MIQ_REF_TMP=/tmp/manageiq_docs
 # ENV MIQ_REF_SRC=_preview/manageiq/${MIQ_REF_BRANCH}
 # ENV MIQ_REF_DIR=${MIQ_DOCS_DIR}/reference/latest
+
+# Prime the pump bundler gems (hopefully this is cached)
+# ----------------------------------------
+
+RUN mkdir -p /srv/base
+COPY /Gemfile /srv/base
+
+WORKDIR /srv/base
+RUN ${MIQ_BUNDLER} install
+RUN gem install ascii_binder
 
 # Nginx configs
 RUN mv /etc/nginx/nginx.conf /etc/nginx/nginx.conf.dist
