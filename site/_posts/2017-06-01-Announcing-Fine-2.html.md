@@ -15,7 +15,7 @@ Here are just a few of the things added since Fine-1 release:
 
 - FIXED 
   * Ansible: Make device path mandatory for EBS attachments
-  * RBAC: Need to gsub occurrences of {{ }} in the output
+  * RBAC: Need to gsub occurrences of {% raw %}{{ }}{% endraw %} in the output
   * Platform: Ensure order is qualified by table name for rss feeds
   * Ansible Tower: Encrypt secrets before enqueue Tower CU operations
 
