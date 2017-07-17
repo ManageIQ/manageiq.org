@@ -78,8 +78,8 @@ way to the chopping blank, too. Yay deleting stuff!
 ## Wrapping up
 
 As always, this is just a small sampling of all the great pull requests merged
-to ManageIQ these past couple weeks. Check out the ManageIQ organization on
-Github to view the progress being made across all of our repositories, and
+to ManageIQ these past couple weeks. Check out the [ManageIQ organization](https://github.com/ManageIQ) on
+GitHub to view the progress being made across all of our repositories, and
 don't be afraid to join in on the fun and become a contributor!
 
 Thanks for joining us on this summer edition of *Last Week In ManageIQ*! Whew,
