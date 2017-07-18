@@ -18,7 +18,7 @@ No matter. Let's not sweat the details in this hot weather and just get to the g
 
 ## Featured
 
-[60 pull requests][manageiq PRs merged] were merged in to ManageIQ core over
+[60 pull requests][manageiq PRs merged] were merged into ManageIQ core over
 the past two weeks.
 
 [36 pull requests][manageiq-ui-classic PRs merged] were merged in the classic
@@ -54,7 +54,7 @@ Similarly, you've got better things to do than stare at non-responsive buttons. 
 ## New
 
 ### Bundler groups ([manageiq#15459](https://github.com/ManageIQ/manageiq/pull/15459))
-Ruby dependencies in ManageIQ's Gemfile are now bucketed in to [Bundler groups](http://bundler.io/v1.15/groups.html), which
+Ruby dependencies in ManageIQ's Gemfile are now bucketed into [Bundler groups](http://bundler.io/v1.15/groups.html), which
 should allow us some immediate memory and boot improvements, better
 organization, and eventual extraction of dependencies to code providing that
 feature. You can read more about it in the PR description.
@@ -62,7 +62,7 @@ feature. You can read more about it in the PR description.
 ### Add validate_blacklist method for VM pre-provisioning ([manageiq#15513](https://github.com/ManageIQ/manageiq/pull/15513))
 Some providers have special blacklists for VM usernames and passwords that would pass a regex check but are not considered valid.
 For example, you cannot use "abc@123" as a password for Microsoft Azure VMs, even though that would normally pass a validity check.
-This new method now allows you to hook in to the validation of these names and specify the provider's specific blacklist.
+This new method now allows you to hook into the validation of these names and specify the provider's specific blacklist.
 
 ## Deleted
 
@@ -73,7 +73,7 @@ The `target` option in the save inventory container was removed as it was unused
 
 A PORT environment variable ([manageiq#15536](https://github.com/ManageIQ/manageiq/pull/15536)) and some
 leading blank lines ([manageiq#15515](https://github.com/ManageIQ/manageiq/pull/15515)) made their
-way to the chopping blank, too. Yay deleting stuff!
+way to the chopping block, too. Yay deleting stuff!
 
 ## Wrapping up
 
