@@ -10,9 +10,9 @@ tags: releases announcements
 We've just built Fine-3. This release contains security fixes, bug fixes, UI tweaks, and stabilization.
 
 - Security Fixes:
-  * [CVE-2016-7047](https://access.redhat.com/security/cve/CVE-2016-7047) - A flaw was found in the CloudForms API. A user with permissions to use the MiqReportResults capability within the API could potentially view data from other tenants or groups to which they should not have access.
-  * [CVE-2017-2664](https://access.redhat.com/security/cve/CVE-2017-2664) - CloudForms lacks RBAC controls on certain methods in the rails application portion of CloudForms. An attacker with access could use a variety of methods within the rails applications portion of CloudForms to escalate privileges.
-  * [CVE-2017-7497](https://access.redhat.com/security/cve/CVE-2017-7497) - The dialog for creating cloud volumes (cinder provider) in CloudForms does not filter cloud tenants by user. An attacker with the ability to create storage volumes could use this to create storage volumes for any other tenant.
+  * [CVE-2016-7047](https://access.redhat.com/security/cve/CVE-2016-7047) - A flaw was found in the REST API. A user with permissions to use the MiqReportResults capability within the API could potentially view data from other tenants or groups to which they should not have access.
+  * [CVE-2017-2664](https://access.redhat.com/security/cve/CVE-2017-2664) - Lacks RBAC controls on certain methods in the rails application portion. An attacker with access could use a variety of methods within the rails applications to escalate privileges.
+  * [CVE-2017-7497](https://access.redhat.com/security/cve/CVE-2017-7497) - The dialog for creating cloud volumes (cinder provider) does not filter cloud tenants by user. An attacker with the ability to create storage volumes could use this to create storage volumes for any other tenant.
   * [CVE-2017-7530](https://access.redhat.com/security/cve/CVE-2017-7530) - It was found that privilege check is missing when invoking arbitrary methods via filtering on VMs that MiqExpression will execute that is triggerable by API users. An attacker could use this to execute actions they should not be allowed to (e.g. destroying VMs).
 
 and here are just a few of the things added since Fine-2 release:
