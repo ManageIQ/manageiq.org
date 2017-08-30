@@ -44,6 +44,7 @@ This [enhancement](https://github.com/ManageIQ/manageiq-providers-lenovo/pull/69
 * Power_restart_node_now
 * Power_restart_node_controller
 * Power_off_node_now
+
 ## Deleted
 ### `spec_helper.rb` Cleanup
 Stale code is :no_good: **SO** the aforementioned file was cleaned up [here](https://github.com/ManageIQ/manageiq/pull/15853).
