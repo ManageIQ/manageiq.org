@@ -30,11 +30,11 @@ At the end of each [Sprint Review](https://youtu.be/yJRDT3m63z0), a PR is submit
 
 Taking a look back at the [changelog][miqchangelog], we see under the Sprint 67 header, a list of work that was Added, Changed, and Fixed. Under the Added sub-heading we see that the work is further broken down by team (or function). In this case; Platform, Providers, Reporting, REST API, and Services.
 
-In each breakdown, we find the actual PRs that comprise the work done over the past 2-week Sprint period. As an example, under Added/Platform, you’ll find [PR15819][15819]
+In each breakdown, we find the actual PRs that comprise the work done over the past 2-week Sprint period. As an example, under Added/Platform, you’ll find [PR15819][nickpr]
 
-An important (and highly stressed) component to the PR's description is that it should be user-readable and not developer-speak. [PR15819][15819]’s description says: “Don't use secure sessions in containers”. A clear description is needed because you, as the community user, shouldn’t have to drill down into the PR to try and understand what is actually going on.
+An important (and highly stressed) component to the PR's description is that it should be user-readable and not developer-speak. [PR15819][nickpr]’s description says: “Don't use secure sessions in containers”. A clear description is needed because you, as the community user, shouldn’t have to drill down into the PR to try and understand what is actually going on.
 
-([Squirrel Moment](https://youtu.be/SSUXXzN26zg)) Let me take a minute to showcase the [fine](http://manageiq.org/blog/2016/11/announce_f_name/) (no pun intended) work of our development team. If you take a look at [PR15819][15819], you’ll see we use multiple labels, have multiple reviewers, and use Sprint markers to define which sprint this enhancement came into.
+([Squirrel Moment](https://youtu.be/SSUXXzN26zg)) Let me take a minute to showcase the [fine](http://manageiq.org/blog/2016/11/announce_f_name/) (no pun intended) work of our development team. If you take a look at [PR15819][nickpr], you’ll see we use multiple labels, have multiple reviewers, and use Sprint markers to define which sprint this enhancement came into.
 
 Now back to our [changelog][miqchangelog]. Further work is done on the changelogs once we have a release of ManageIQ,...such as the recent [Fine-3 release](http://manageiq.org/blog/2017/08/Announcing-Fine-3/). Once a release is announced, we go back into the changelog and now add a header for the Fine-3 release, as well as define which fixes are Released.
 
@@ -45,5 +45,5 @@ There’s really a lot more to say about this subject,..however, you can read al
 I hope this helped and until next time!
 
 [keepachangelog]: http://keepachangelog.com/en/1.0.0/
-[15810]: https://github.com/ManageIQ/manageiq/pull/15819
+[nickpr]: https://github.com/ManageIQ/manageiq/pull/15819
 [miqchangelog]: https://github.com/ManageIQ/manageiq/blob/master/CHANGELOG.md
