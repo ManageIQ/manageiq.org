@@ -21,7 +21,7 @@ First, some statistics about the blog entries for Last Week in ManageIQ:
 
 Usually these blog entries review the PRs from last week. However, I’d like to talk about an important aspect of our [ManageIQ repos](https://github.com/ManageIQ/),..and that is, changelogs. According to [keepachangelog.com][keepachangelog], “A changelog is a file which contains a curated, chronologically ordered list of notable changes for each version of a project.”
 
-Here at ManageIQ we follow the guiding principles and format as described at [keepachangelog.com][keepachangelog] This is no easy task and takes a concerted effort,...but the end result is meant to help you, the community user of ManageIQ.
+Here at ManageIQ we follow the guiding principles and format as described at [keepachangelog.com][keepachangelog]. This is no easy task and takes a concerted effort,...but the end result is meant to help you, the community user of ManageIQ.
 
 Let’s take a look at the [ManageIQ repo](https://github.com/ManageIQ/manageiq)’s [changelog][miqchangelog] and see what’s there. The first three lines come directly from the standards described at [keepachangelog.com][keepachangelog]
 
@@ -46,4 +46,4 @@ I hope this helped and until next time!
 
 [keepachangelog]: http://keepachangelog.com/en/1.0.0/
 [nickpr]: https://github.com/ManageIQ/manageiq/pull/15819
-[miqchangelog]: https://github.com/ManageIQ/manageiq/blob/master/CHANGELOG.md
+[miqchangelog]: https://github.com/ManageIQ/manageiq/blob/d0b9e45a1d3e9f132b301027ad6f343bd28af75d/CHANGELOG.md
