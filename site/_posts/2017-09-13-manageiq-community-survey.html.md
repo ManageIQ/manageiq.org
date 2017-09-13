@@ -2,7 +2,7 @@
 title: ManageIQ Community Survey - we'd like to hear from you!
 author: cybette
 date: 2017-09-13
-collaboration: tags
+tags: collaboration
 comments: true
 published: true
 ---
