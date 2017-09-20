@@ -17,7 +17,7 @@ If you take a look at the [PRs merged][manageiq-ui-service PRs merged] in this r
 
 ## Iron fists
 
-When it comes to paying technical debt, sometimes one has got to be ruthless. A bunch of constants [were][UI PR 2138] [placed][UI PR 2139] [on][UI PR 2141] [the][UI PR 2142] [chopping][UI PR 2145] [board][UI PR 2158], decreed to be removed from UiConstants. As those constants found new homes in appropriate modules, the UiConstants module was also [permanently deleted][UI PR 2165].
+When it comes to paying technical debt, sometimes one has got to be ruthless. A bunch of constants [were][UI PR 2138] [placed][UI PR 2139] [on][UI PR 2141] [the][UI PR 2142] [chopping][UI PR 2145] [block][UI PR 2158], decreed to be removed from UiConstants. As those constants found new homes in appropriate modules, the UiConstants module was also [permanently deleted][UI PR 2165].
 
 ## White knuckles
 
@@ -29,7 +29,7 @@ On the graphing front, [Graph refresh is turned on][manageiq-providers-amazon PR
 
 ## Monkey tail
 
-Well, I selected some PRs I thought were interesting, in a totally unqualified way. If you could not make hands or tails out of it, or if you have other comments/suggestions for the project, please leave a feedback in our ongoing [ManageIQ Community Survey][miq survey], available for another week. As always, you're welcome to check out the progress we are making on [GitHub][miq github], and lend a hand!
+Well, I selected some PRs I thought were interesting, in a totally unqualified way. If you could not make hands or tails out of it, or if you have other comments/suggestions for the project, please leave some feedback in our ongoing [ManageIQ Community Survey][miq survey], available for another week. As always, you're welcome to check out the progress we are making on [GitHub][miq github], and lend a hand!
 
 
 [lwimiq tag]: /blog/tags/LWIMIQ
