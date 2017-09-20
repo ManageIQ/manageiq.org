@@ -7,7 +7,7 @@ published: true
 tags: LWIMIQ
 ---
 
-Last week, all engineering hands were busy in ManageIQ Engineering All-Hands meeting. A few stray hands still found the opportunity to submit some PRs, but there were no available fingers for typing up an entry for ["Last week in ManageIQ"][lwimiq tag]. So please allow me, [Carol][carol github], to paw in a few words in this edition.
+Last week, most engineering hands were busy in an internal Engineering All-Hands meeting. A few stray hands still found the opportunity to submit some PRs, but there were no available fingers for typing up an entry for ["Last week in ManageIQ"][lwimiq tag]. So please allow me, [Carol][carol github], to paw in a few words in this edition.
 
 ## Green thumbs
 
