@@ -186,3 +186,5 @@ We opened a ruby bug that Tempfile's finalizer can be interrupted by Timeout's `
 This is a reminder to rid your codebase and dependencies of `Timeout` and perhaps `Timeout`, which still lives in Ruby's
 standard library, will be fixed or replaced.
 
+Finally, there's a [guide on how to configure safe timeouts in various libraries](https://github.com/ankane/the-ultimate-guide-to-ruby-timeouts).  Please try it out and contribute
+to it.
