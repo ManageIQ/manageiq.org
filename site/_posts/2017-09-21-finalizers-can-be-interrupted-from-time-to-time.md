@@ -82,9 +82,9 @@ I find it funny.  I'm sure Beni didn't.
 Basically, he discovered that his test would sporadically hang when run in the full test suite but not when
 run in isolation.
 
-After some serious git spelunking via bisect, he found the hang would occur
-when another test created a `Tempfile`.  As soon as he put a `Tempfile.new('x')` in
-the timeout workaround test, the test would hang "sometimes".
+After some serious spelunking via rspec bisect and manually minimizing the reproducer by commenting out parts of
+the remaining tests, he found the hang would occur when another test created a `Tempfile`.  As soon as he put
+a `Tempfile.new('x')` in the timeout workaround test, the test would hang "sometimes".
 
 ## That's it, I'm done
 
