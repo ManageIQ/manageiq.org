@@ -56,10 +56,19 @@ Note, I even filtered out some of the results below:
 Those are only gems used by ManageIQ.  I'm sure there are many other gems used by other
 projects that still use Timeout.
 
-Wait a second.  I didn't actually look at the contents of the `Timeout.timeout` block.
-That's the point, it doesn't matter.  If you hit that code at all, there's a small
+Wait a second.  We didn't actually look at the contents of the `Timeout.timeout` block.
+That's the point, it doesn't matter.  If you hit this code at all, there's a small
 chance it can `Thread#raise` at a very inopportune time in code that will never
 expect it!
+
+You might be thinking, "that's fine, this why I'm wrapping my code with a begin and a rescue or ensure
+to clean things up."  It is a regular exception and we would expect it to be rescued while we are inside the begin
+code.  But don't underestimate Murphy's law.  What if the exception is raised while we're in the cleanup code,
+preventing it from completing?  To top it off, it will find the weirdest possible place to raise and at the most
+unfortunate time, such as Friday at 5pm.  I'll [repeat](http://blog.headius.com/2008/02/rubys-threadraise-threadkill-timeoutrb.html)
+the [links](http://www.mikeperham.com/2015/05/08/timeout-rubys-most-dangerous-api/) listed [above](https://jvns.ca/blog/2015/11/27/why-rubys-timeout-is-dangerous-and-thread-dot-raise-is-terrifying/) for convenience
+because this is exactly what they show: `Thread#raise` can raise while in your ensure/rescue cleanup code.
+
 
 ## Fun times
 
