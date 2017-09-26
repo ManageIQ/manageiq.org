@@ -31,10 +31,10 @@ The main menus are available in
     expanded when needed. You can pin a secondary or tertiary menu to
     easily navigate through its elements.
 
-![screenshot0002](/assets/images/docs/screenshot_0002.png)
+![screenshot0002](/assets/images/docs/screenshot_0002.png){:.large_img}
 
 ###  4. Change options
-Go to Settings → Configuration to change how the appliance behaves:
+In the example below, click on the upper right hand: EVM → Configuration to change how the appliance behaves:
 
 #### 1. Select the appliance to configure ####
 - ***CFME Region: Region 0*** → ***Zones*** → ***Zone: Default zone(current)*** → ***Server: EVM\[1\](current)*** should be
@@ -51,6 +51,8 @@ Go to Settings → Configuration to change how the appliance behaves:
 ![screenshot0003](/assets/images/docs/screenshot_0003.png){:.large_img}
 
 #### 2. Choose functions for this appliance ####
+In the example below, click on the upper right hand: EVM → My Settings to cahnge the functions of this appliance.
+
 Server control defines what roles each appliance executes in a
         multi-appliance deployment. For now, as we have only one
         appliance, select all C&U and Notification options. Don’t select
