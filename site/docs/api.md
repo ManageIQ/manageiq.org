@@ -5,4 +5,4 @@ permalink: /docs/api
 title: API Documenation
 ---
 
-This guide provides web services available to integrate ManageIQ with external applications. It details the specification of the ManageIQ REST API, which is implemented as standard REST HTTP requests and responses of content type JSON.
+On the panel to the left, you will find a detailed overview of REST API, reference material, appendices, and plenty of examples. The guides provide information on how to integrate ManageIQ with external applications. It details the specification of the ManageIQ REST API, which is implemented as standard REST HTTP requests and responses of content type JSON.
