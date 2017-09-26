@@ -51,7 +51,7 @@ In the example below, click on the upper right hand: EVM → Configuration to ch
 ![screenshot0003](/assets/images/docs/screenshot_0003.png){:.large_img}
 
 #### 2. Choose functions for this appliance ####
-In the example below, click on the upper right hand: EVM → My Settings to cahnge the functions of this appliance.
+In the example below, click on the upper right hand: EVM → My Settings to change the functions of this appliance.
 
 Server control defines what roles each appliance executes in a
         multi-appliance deployment. For now, as we have only one
