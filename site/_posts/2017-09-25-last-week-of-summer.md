@@ -52,14 +52,14 @@ YAML format content is now accepted as an OrchestrationTemplate [PR 298](https:/
 
 After the Automate [PR 15951,](https://github.com/ManageIQ/manageiq/pull/15951) the manual placement selection will support only the use of "VMware clusters" and only the use of "VMware folders".
 
-We are getting ready for Ruby 2.4 - [PR15987](https://github.com/ManageIQ/manageiq/pull/15987) replaces the deprecated Fixnum|Bignum with integer.
+We are getting ready for Ruby 2.4: [PR15987](https://github.com/ManageIQ/manageiq/pull/15987) replaces the deprecated Fixnum\|Bignum with integer.
 
 [Here](https://github.com/ManageIQ/manageiq/pull/14475) is the initial work for putting the documentation that exists in the source code into a browsable format.
 
 
 ## Deleted
 
-The deletion of the week, [PR16005](https://github.com/ManageIQ/manageiq/pull/16005) - removes 'format_by_(class|column)', as these are no longer used.
+The deletion of the week, [PR16005](https://github.com/ManageIQ/manageiq/pull/16005) removes 'format_by_(class\|column)', as these are no longer used.
 
 
 ## Product Tools
