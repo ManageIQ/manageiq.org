@@ -45,9 +45,9 @@ In the example below, click on the upper right hand: EVM → Configuration to ch
         the interface. ***Change it to ManageIQ***
 -       Select your time zone, and, if you want, you can change the Default Locale.
 -       Server control defines what roles each appliance executes in a multi-appliance deployment.
-	For now, as we have only one appliance, select all C&U and Notification options. Don’t select
+        For now, as we have only one appliance, select all C&U and Notification options. Don’t select
         Database synchronization, Git Repositories Owner, RHN Mirror or Smart Proxy unless you need
-	them.
+        them.
 
 ![screenshot0003](/assets/images/docs/screenshot_0003.png){:.large_img}
 
