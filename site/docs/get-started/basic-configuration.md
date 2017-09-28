@@ -46,18 +46,22 @@ In the example below, click on the upper right hand: EVM → Configuration to ch
 -         You can change the *Company Name* to whatever you want, the change will be reflected in the interface.  ***Change it to ManageIQ***
 
 -         ***Select your time zone***, and,
-        if you want, you can change the language default.
-
-![screenshot0003](/assets/images/docs/screenshot_0003.png){:.large_img}
-
-#### 2. Choose functions for this appliance ####
-In the example below, click on the upper right hand: EVM → My Settings to change the functions of this appliance.
+        if you want, you can change the Default Locale.
 
 Server control defines what roles each appliance executes in a
         multi-appliance deployment. For now, as we have only one
         appliance, select all C&U and Notification options. Don’t select
         Database synchronization, Git Repositories Owner, RHN Mirror or
         Smart Proxy unless you need them.
+
+![screenshot0003](/assets/images/docs/screenshot_0003.png){:.large_img}
+
+#### 2. Choose Visual preferences and Default views ####
+In the example below, click on the upper right hand: EVM → My Settings to change the functions of this appliance.
+
+Here you can select your personal preferences on how the User Interface
+	appears to you. Change the  Default Items Per Page, as well as
+	the Default Start Page shown at Login.
 
 ![screenshot0004](/assets/images/docs/screenshot_0004.png){:.large_img}
 
