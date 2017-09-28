@@ -17,41 +17,39 @@ it's still around in the libraries we use.
 
 Note, I even filtered out some of the results below:
 
-```
-05:34:38 ~/Code/manageiq (master) (2.4.2) + grep -r -E "\bTimeout.timeout\b" /Users/joerafaniello/.gem/ruby/2.4.2/gems
-/Users/joerafaniello/.gem/ruby/2.4.2/gems/brakeman-3.7.2/bundle/ruby/2.3.0/gems/ruby_parser-3.10.1/lib/ruby_parser_extras.rb:    Timeout.timeout time do
-/Users/joerafaniello/.gem/ruby/2.4.2/gems/capybara-2.5.0/lib/capybara/server.rb:        Timeout.timeout(60) { @server_thread.join(0.1) until responsive? }
-/Users/joerafaniello/.gem/ruby/2.4.2/gems/dalli-2.7.6/lib/dalli/socket.rb:      Timeout.timeout(options[:socket_timeout]) do
-/Users/joerafaniello/.gem/ruby/2.4.2/gems/excon-0.59.0/lib/excon/socket.rb:        Timeout.timeout(@data[:read_timeout]) do
-/Users/joerafaniello/.gem/ruby/2.4.2/gems/excon-0.59.0/lib/excon/unix_socket.rb:          Timeout.timeout(@data[:connect_timeout]) do
-/Users/joerafaniello/.gem/ruby/2.4.2/gems/fog-core-1.45.0/lib/fog/compute/models/server.rb:        result = ready? && !ssh_ip_address.nil? && !!Timeout.timeout(sshable_timeout) { ssh("pwd", options) }
-/Users/joerafaniello/.gem/ruby/2.4.2/gems/hawkular-client-4.1.0/lib/hawkular/operations/operations_api.rb:      Timeout.timeout(@wait_time) { sleep 0.1 until @ws.open? }
-/Users/joerafaniello/.gem/ruby/2.4.2/gems/http-0.9.8/lib/http/timeout/global.rb:        ::Timeout.timeout(time_left, TimeoutError) do
-/Users/joerafaniello/.gem/ruby/2.4.2/gems/http-0.9.8/lib/http/timeout/per_operation.rb:        ::Timeout.timeout(connect_timeout, TimeoutError) do
-/Users/joerafaniello/.gem/ruby/2.4.2/gems/httpclient-2.8.3/lib/httpclient/session.rb:        ::Timeout.timeout(@send_timeout, SendTimeoutError) do
-/Users/joerafaniello/.gem/ruby/2.4.2/gems/httpclient-2.8.3/lib/httpclient/session.rb:        ::Timeout.timeout(@connect_timeout, ConnectTimeoutError) do
-/Users/joerafaniello/.gem/ruby/2.4.2/gems/httpclient-2.8.3/lib/httpclient/session.rb:      ::Timeout.timeout(@receive_timeout, ReceiveTimeoutError) do
-/Users/joerafaniello/.gem/ruby/2.4.2/gems/httpclient-2.8.3/lib/httpclient/session.rb:        ::Timeout.timeout(@receive_timeout, ReceiveTimeoutError) do
-/Users/joerafaniello/.gem/ruby/2.4.2/gems/httpclient-2.8.3/lib/httpclient/session.rb:       ::Timeout.timeout(@receive_timeout, ReceiveTimeoutError) do
-/Users/joerafaniello/.gem/ruby/2.4.2/gems/httpclient-2.8.3/lib/httpclient/session.rb:        ::Timeout.timeout(@receive_timeout, ReceiveTimeoutError) do
-/Users/joerafaniello/.gem/ruby/2.4.2/gems/manageiq-network_discovery-0.1.2/lib/manageiq/network_discovery/port_scanner.rb:          Timeout.timeout(ost.timeout) do
-/Users/joerafaniello/.gem/ruby/2.4.2/gems/manageiq-smartstate-0.1.4/lib/metadata/VmConfig/VmConfig.rb:      Timeout.timeout(60) do
-/Users/joerafaniello/.gem/ruby/2.4.2/gems/multipart-post-2.0.0/test/test_composite_io.rb:      Timeout.timeout(1) do
-/Users/joerafaniello/.gem/ruby/2.4.2/gems/net-ping-1.7.8/lib/net/ping/icmp.rb:        Timeout.timeout(@timeout){
-/Users/joerafaniello/.gem/ruby/2.4.2/gems/net-ping-1.7.8/lib/net/ping/udp.rb:        Timeout.timeout(@timeout){
-/Users/joerafaniello/.gem/ruby/2.4.2/gems/nio4r-2.1.0/spec/nio/selector_spec.rb:        Timeout.timeout(2) do
-/Users/joerafaniello/.gem/ruby/2.4.2/gems/nio4r-2.1.0/spec/spec_helper.rb:      sock = Timeout.timeout(1) { TCPSocket.new("localhost", $current_tcp_port) }
-/Users/joerafaniello/.gem/ruby/2.4.2/gems/open4-1.3.4/lib/open4.rb:    Timeout.timeout(timeout){ yield }
-/Users/joerafaniello/.gem/ruby/2.4.2/gems/rack-2.0.3/test/spec_utils.rb:    Timeout.timeout(1) do
-/Users/joerafaniello/.gem/ruby/2.4.2/gems/ruby-dbus-0.13.0/spec/spec_helper.rb:    Timeout.timeout(10) do
-/Users/joerafaniello/.gem/ruby/2.4.2/gems/snmp-1.2.0/lib/snmp/manager.rb:          Timeout.timeout(@timeout) do
-/Users/joerafaniello/.gem/ruby/2.4.2/gems/vcr-3.0.3/lib/vcr/util/internet_connection.rb:          Timeout.timeout(timeout) do
-/Users/joerafaniello/.gem/ruby/2.4.2/gems/webmock-2.3.2/spec/support/network_connection.rb:    Timeout.timeout(timeout) do
+<pre><code style="white-space: pre">$ grep -r -E "\bTimeout.timeout\b" /Users/joerafaniello/.gem/ruby/2.4.2/gems
+ruby_parser-3.10.1/lib/ruby_parser_extras.rb:                                     Timeout.timeout time do
+capybara-2.5.0/lib/capybara/server.rb:                                            Timeout.timeout(60) { @server_thread.join(0.1) until responsive? }
+dalli-2.7.6/lib/dalli/socket.rb:                                                  Timeout.timeout(options[:socket_timeout]) do
+excon-0.59.0/lib/excon/socket.rb:                                                 Timeout.timeout(@data[:read_timeout]) do
+excon-0.59.0/lib/excon/unix_socket.rb:                                            Timeout.timeout(@data[:connect_timeout]) do
+fog-core-1.45.0/lib/fog/compute/models/server.rb:                                 result = ready? && !ssh_ip_address.nil? && !!Timeout.timeout(sshable_timeout) { ssh("pwd", options) }
+hawkular-client-4.1.0/lib/hawkular/operations/operations_api.rb:                  Timeout.timeout(@wait_time) { sleep 0.1 until @ws.open? }
+http-0.9.8/lib/http/timeout/global.rb:                                            ::Timeout.timeout(time_left, TimeoutError) do
+http-0.9.8/lib/http/timeout/per_operation.rb:                                     ::Timeout.timeout(connect_timeout, TimeoutError) do
+httpclient-2.8.3/lib/httpclient/session.rb:                                       ::Timeout.timeout(@send_timeout, SendTimeoutError) do
+httpclient-2.8.3/lib/httpclient/session.rb:                                       ::Timeout.timeout(@connect_timeout, ConnectTimeoutError) do
+httpclient-2.8.3/lib/httpclient/session.rb:                                       ::Timeout.timeout(@receive_timeout, ReceiveTimeoutError) do
+httpclient-2.8.3/lib/httpclient/session.rb:                                       ::Timeout.timeout(@receive_timeout, ReceiveTimeoutError) do
+httpclient-2.8.3/lib/httpclient/session.rb:                                       ::Timeout.timeout(@receive_timeout, ReceiveTimeoutError) do
+httpclient-2.8.3/lib/httpclient/session.rb:                                       ::Timeout.timeout(@receive_timeout, ReceiveTimeoutError) do
+manageiq-network_discovery-0.1.2/lib/manageiq/network_discovery/port_scanner.rb:  Timeout.timeout(ost.timeout) do
+manageiq-smartstate-0.1.4/lib/metadata/VmConfig/VmConfig.rb:                      Timeout.timeout(60) do
+multipart-post-2.0.0/test/test_composite_io.rb:                                   Timeout.timeout(1) do
+net-ping-1.7.8/lib/net/ping/icmp.rb:                                              Timeout.timeout(@timeout){
+net-ping-1.7.8/lib/net/ping/udp.rb:                                               Timeout.timeout(@timeout){
+nio4r-2.1.0/spec/nio/selector_spec.rb:                                            Timeout.timeout(2) do
+nio4r-2.1.0/spec/spec_helper.rb:                                                  sock = Timeout.timeout(1) { TCPSocket.new("localhost", $current_tcp_port) }
+open4-1.3.4/lib/open4.rb:                                                         Timeout.timeout(timeout){ yield }
+rack-2.0.3/test/spec_utils.rb:                                                    Timeout.timeout(1) do
+ruby-dbus-0.13.0/spec/spec_helper.rb:                                             Timeout.timeout(10) do
+snmp-1.2.0/lib/snmp/manager.rb:                                                   Timeout.timeout(@timeout) do
+vcr-3.0.3/lib/vcr/util/internet_connection.rb:                                    Timeout.timeout(timeout) do
+webmock-2.3.2/spec/support/network_connection.rb:                                 Timeout.timeout(timeout) do
 
-05:36:21 ~/Code/manageiq (master) (2.4.2) + grep -r -E "\bTimeout::timeout\b" /Users/joerafaniello/.gem/ruby/2.4.2/gems
-/Users/joerafaniello/.gem/ruby/2.4.2/gems/fog-core-1.45.0/lib/fog/core/current_machine.rb:    #     Timeout::timeout(5) do
-/Users/joerafaniello/.gem/ruby/2.4.2/gems/open4-1.3.4/lib/open4.rb:          Timeout::timeout(timeout) do
-```
+$ grep -r -E "\bTimeout::timeout\b" /Users/joerafaniello/.gem/ruby/2.4.2/gems
+open4-1.3.4/lib/open4.rb:                                                         Timeout::timeout(timeout) do
+ </code></pre>
 
 Those are only gems used by ManageIQ.  I'm sure there are many other gems used by other
 projects that still use Timeout.
@@ -120,18 +118,16 @@ We ran it with ruby debug `RUBYOPT=-d`.
 
 When it worked, it looked like this:
 
-```
-Exception `Timeout::Error' at /Users/joerafaniello/.rubies/ruby-2.3.4/lib/ruby/2.3.0/timeout.rb:112 - execution expired
+<pre><code style="white-space: pre">Exception `Timeout::Error' at /Users/joerafaniello/.rubies/ruby-2.3.4/lib/ruby/2.3.0/timeout.rb:112 - execution expired
 removing /var/folders/fq/blrz820d3qz7nm7vj8mbtfs40000gq/T/x20170906-57250-s683fs...
 done
-```
+</code></pre>
 
 When it would hang, it looked like this:
 
-```
-Exception `Timeout::Error' at /Users/joerafaniello/.rubies/ruby-2.3.4/lib/ruby/2.3.0/timeout.rb:112 - execution expired
+<pre><code style="white-space: pre">Exception `Timeout::Error' at /Users/joerafaniello/.rubies/ruby-2.3.4/lib/ruby/2.3.0/timeout.rb:112 - execution expired
 removing /var/folders/fq/blrz820d3qz7nm7vj8mbtfs40000gq/T/x20170906-57351-jfeu6l...
-```
+</code></pre>
 
 If you're still reading, you might have noticed that `done` is missing when the
 test hangs. The `done` happens after `Tempfile` wants to [close and unlink the file here](https://github.com/ruby/ruby/blob/820605ba3c10b9f4dafc4e5d6e09765b8b31cbea/lib/tempfile.rb#L255-L257).
@@ -152,23 +148,22 @@ not something we want to troubleshoot at 5pm on a Friday.
 
 It's ok, there aren't many places that define finalizers:
 
-```
-05:33:28 ~/Code/manageiq (master) (2.4.2) + grep -r define_finalizer /Users/joerafaniello/.rubies/ruby-2.4.2
-/Users/joerafaniello/.rubies/ruby-2.4.2/lib/ruby/2.4.0/cgi/session.rb:      ObjectSpace::define_finalizer(self, Session::callback(@dbprot))
-/Users/joerafaniello/.rubies/ruby-2.4.2/lib/ruby/2.4.0/drb/timeridconv.rb:        ObjectSpace.define_finalizer(Object.new) {on_gc}
-/Users/joerafaniello/.rubies/ruby-2.4.2/lib/ruby/2.4.0/tempfile.rb:    ObjectSpace.define_finalizer(self, Remover.new(@tmpfile))
+<pre><code style="white-space: pre">$ grep -r define_finalizer /Users/joerafaniello/.rubies/ruby-2.4.2
+lib/ruby/2.4.0/cgi/session.rb:                                         ObjectSpace::define_finalizer(self, Session::callback(@dbprot))
+lib/ruby/2.4.0/drb/timeridconv.rb:                                     ObjectSpace.define_finalizer(Object.new) {on_gc}
+lib/ruby/2.4.0/tempfile.rb:                                            ObjectSpace.define_finalizer(self, Remover.new(@tmpfile))
 
-05:33:41 ~/Code/manageiq (master) (2.4.2) - grep -r define_finalizer /Users/joerafaniello/.gem/ruby/2.4.2/gems
-/Users/joerafaniello/.gem/ruby/2.4.2/gems/actionview-5.0.6/lib/action_view/template.rb:        ObjectSpace.define_finalizer(self, Finalizer[method_name, mod])
-/Users/joerafaniello/.gem/ruby/2.4.2/gems/concurrent-ruby-1.0.5/lib/concurrent/atomic/ruby_thread_local_var.rb:        ObjectSpace.define_finalizer(me, self.class.thread_finalizer(array))
-/Users/joerafaniello/.gem/ruby/2.4.2/gems/concurrent-ruby-1.0.5/lib/concurrent/atomic/ruby_thread_local_var.rb:      ObjectSpace.define_finalizer(self, self.class.threadlocal_finalizer(@index))
-/Users/joerafaniello/.gem/ruby/2.4.2/gems/ffi-1.9.18/lib/ffi/autopointer.rb:      ObjectSpace.define_finalizer(self, @releaser)
-/Users/joerafaniello/.gem/ruby/2.4.2/gems/http-cookie-1.0.3/lib/http/cookie_jar/mozilla_store.rb:      ObjectSpace.define_finalizer(self, Callable[@db, :close])
-/Users/joerafaniello/.gem/ruby/2.4.2/gems/logging-2.2.2/lib/logging.rb:ObjectSpace.define_finalizer self, Logging.method(:shutdown)
-/Users/joerafaniello/.gem/ruby/2.4.2/gems/tins-1.15.0/lib/tins/thread_local.rb:      ObjectSpace.define_finalizer(self, @@cleanup)
-/Users/joerafaniello/.gem/ruby/2.4.2/gems/vcr-3.0.3/lib/vcr/library_hooks/webmock.rb:        ObjectSpace.define_finalizer(Thread.current, lambda {
-/Users/joerafaniello/.gem/ruby/2.4.2/gems/winrm-2.2.3/lib/winrm/shells/base.rb:        ObjectSpace.define_finalizer(
-```
+$ grep -r define_finalizer /Users/joerafaniello/.gem/ruby/2.4.2/gems
+actionview-5.0.6/lib/action_view/template.rb:                          ObjectSpace.define_finalizer(self, Finalizer[method_name, mod])
+concurrent-ruby-1.0.5/lib/concurrent/atomic/ruby_thread_local_var.rb:  ObjectSpace.define_finalizer(me, self.class.thread_finalizer(array))
+concurrent-ruby-1.0.5/lib/concurrent/atomic/ruby_thread_local_var.rb:  ObjectSpace.define_finalizer(self, self.class.threadlocal_finalizer(@index))
+ffi-1.9.18/lib/ffi/autopointer.rb:                                     ObjectSpace.define_finalizer(self, @releaser)
+http-cookie-1.0.3/lib/http/cookie_jar/mozilla_store.rb:                ObjectSpace.define_finalizer(self, Callable[@db, :close])
+logging-2.2.2/lib/logging.rb:                                          ObjectSpace.define_finalizer self, Logging.method(:shutdown)
+tins-1.15.0/lib/tins/thread_local.rb:                                  ObjectSpace.define_finalizer(self, @@cleanup)
+vcr-3.0.3/lib/vcr/library_hooks/webmock.rb:                            ObjectSpace.define_finalizer(Thread.current, lambda {
+winrm-2.2.3/lib/winrm/shells/base.rb:                                  ObjectSpace.define_finalizer(
+</code></pre>
 
 It's a small list but libraries like tempfile, concurrent-ruby, ffi, actionview,
 etc. are pretty common.  Again, this is only in the gems that ManageIQ uses.  This
