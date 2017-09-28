@@ -37,8 +37,8 @@ The main menus are available in
 In the example below, click on the upper right hand: EVM → Configuration to change how the appliance behaves:
 
 #### 1. Select the appliance to configure ####
--       ***CFME Region: Region 0*** → ***Zones*** → ***Zone: Default zone(current)*** →
-        ***Server: EVM\[1\](current)*** should be selected by default.  
+-       ***CFME Region: Region 0 → Zones → Zone: Default zone(current) →
+        Server: EVM\[1\](current)*** should be selected by default.  
 -       The hostname and IP address of the appliance will be shown here, be careful as in some
         cases this will be the internal IP address and not the one you connected to.  
 -       You can change the *Company Name* to whatever you want, the change will be reflected in
@@ -64,6 +64,6 @@ In the example below, click on the upper right hand: EVM → My Settings to chan
 ![screenshot0005](/assets/images/docs/screenshot_0005.png){:.large_img}
 
 #### 4. Save your changes ####
-**Press Save*** to save your changes
+***Press Save*** to save your changes
 
 ## Next: [Add A Provider](/docs/get-started/add-a-provider)
