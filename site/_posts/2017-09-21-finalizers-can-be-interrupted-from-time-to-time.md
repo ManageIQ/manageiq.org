@@ -1,7 +1,7 @@
 ---
 title: Finalizers can be interrupted from time to time
 author: jrafanie
-date: 2017-09-21 15:36:39 UTC
+date: 2017-09-28 19:05:09 UTC
 comments: true
 published: true
 tags: developers
