@@ -12,7 +12,7 @@ You can find installation guides for different platforms in the [documentation](
 
 Learn all the capabilities for [administration and integration](/docs/reference)
 
-Check the [API Reference](/docs/api-reference)
+Check the [API Reference](/docs/api)
 
 ## Leverage the community
 

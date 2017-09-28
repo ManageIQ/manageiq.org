@@ -16,9 +16,9 @@ Get a more in-depth look at the usage of ManageIQ, with installation instruction
 
 The Automate feature in ManageIQ is a huge topic in itself, so [Peter McGowan](https://github.com/pemcg) wrote a book on it. This tutorial style book will guide you through the steps of doing something in automate, with a lot of code samples.
 
-## [API Docs](reference/latest/api/overview/auth.html)
+## [API Docs](api)
 
-This guide provides web services available to integrate ManageIQ with external applications. It details the specification of the ManageIQ RESTful API, which is implemented as standard REST HTTP requests and responses of content type JSON.
+In this guide you will find a detailed overview of REST API, reference material, appendices, and plenty of examples. The guides provide information on how to integrate ManageIQ with external applications. It details the specification of the ManageIQ REST API, which is implemented as standard REST HTTP requests and responses of content type JSON.
 
 ## [Developer Guides](guides/architecture)
 
