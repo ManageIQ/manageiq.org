@@ -18,7 +18,7 @@ The Automate feature in ManageIQ is a huge topic in itself, so [Peter McGowan](h
 
 ## [API Docs](reference/latest/api/overview/auth.html)
 
-This guide provides web services available to integrate ManageIQ with external applications. It details the specification of the ManageIQ RESTful API, which is implemented as standard REST HTTP requests and responses of content type JSON.
+In this guide you will find a detailed overview of REST API, reference material, appendices, and plenty of examples. The guides provide information on how to integrate ManageIQ with external applications. It details the specification of the ManageIQ REST API, which is implemented as standard REST HTTP requests and responses of content type JSON.
 
 ## [Developer Guides](guides/architecture)
 
