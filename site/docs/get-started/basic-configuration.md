@@ -11,7 +11,7 @@ setting ssh keys)
 
 1.  The appliance database has already been configured in the Docker and
     Vagrant installations. If you are using other types of appliances
-    (like OpenStack, VMware or Openstack) follow the documentation for
+    (like OpenStack or VMware) follow the documentation for
     your provider to configure.
 2.  Point your browser to its IP address
 
