@@ -4,7 +4,7 @@ author: jvlcek
 date: 2017-09-29
 comments: true
 published: true
-tags: instruction
+tags: tutorials
 ---
 
 How does one user the *miqldap_to_sssd* conversion tool?
