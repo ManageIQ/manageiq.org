@@ -7,7 +7,7 @@ published: true
 tags: tutorials
 ---
 
-How does one user the *miqldap_to_sssd* conversion tool?
+How does one use the *miqldap_to_sssd* conversion tool?
 
 # MiqLdap To SSSD Conversion Tool
 
@@ -28,7 +28,7 @@ How does one user the *miqldap_to_sssd* conversion tool?
 
 Why did the *miqldap_to_sssd* conversion tool come to be?
 
-MiQ is delivered with the built in LDAP client, *MiqLdap*. Maintaining our own LDAP
+ManageIQ (MiQ) is delivered with the built in LDAP client, *MiqLdap*. Maintaining our own LDAP
 client is unnecessary as there are multiple mechanisms built into the operating system that provide an interface to an LDAP directory.
 
 **The How**
@@ -160,7 +160,7 @@ Screenshot showing the appliance configuration for Mode: LDAP:
 **Snapshot your ManageIQ Virtual machine.**
 ---------------------------------------------------------------------
 
-**I feel compled to repeat this.**
+**I feel compelled to repeat this.**
 
 The miqldap_to_sssd conversion is **not reversible**.
 
@@ -223,7 +223,7 @@ Screenshot showing the appliance configuration for Mode: LDAP:
 **Snapshot your ManageIQ Virtual machine.**
 ---------------------------------------------------------------------
 
-**I feel compled to repeat this.**
+**I feel compelled to repeat this.**
 
 The miqldap_to_sssd conversion is **not reversible**.
 
@@ -309,7 +309,7 @@ For more help diagnosing failures see the instructions for manually configuring 
 
 This document has diagnostics tips, including:
   - How to use **ldapsearch**, with usage examples.
-  - Hot to use **dbus-send**, with usage examples
+  - How to use **dbus-send**, with usage examples
   - Adding **debug_level=9** to the sssd.conf to produce more sssd logging information
 
 
