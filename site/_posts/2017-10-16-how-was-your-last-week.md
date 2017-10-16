@@ -37,7 +37,7 @@ Targeted refresh for containers and we are using data of events for the refresh.
 **Is it beneficial?**
 
 Yes, definitely. Without events, you can miss situation that container has been started and stopped (in short time) 
-between 2 refresh and usage of events could handle this situation.
+between 2 refreshes and usage of events could handle this situation.
 
 **When you remove container, is it removed from database?**
 
@@ -56,7 +56,7 @@ Also I was adding new ones related to users, tenants and container nodes.
 **Nice. What else? I heard about that your open source contribution is not only about the code.**
 
 Yes. Me and [MartinH][himdel] are teaching students on some university in Brno. Last week we had a lesson where we teach them about git and
-creaing pull requests.
+creating pull requests.
 
 **How it is related to open source?**
 
@@ -73,7 +73,7 @@ I am working in UI team and I am intern.
 
 **How was your last week in ManageIQ ?**
 
-I was working topology graphs.
+I was working on topology graphs.
 
 **What did you do with them?**
 
