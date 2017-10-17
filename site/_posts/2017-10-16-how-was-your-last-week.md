@@ -7,8 +7,6 @@ published: true
 tags: LWIMIQ
 ---
 
-<intro>
-
 Hi all!
 
 It's me [Libor][lpichler]. I am from Brno, Czech Republic. In this blog entry you can see last week in ManageIQ from developer's point of view
@@ -143,8 +141,6 @@ Yes. [Aparna][Aparna] did lot of work on generic objects UI.
 Thanks Martin for answering also!
 
 ---
-
-<outro>
 
 Hopefully, you had also exciting last week as we have had. 
 But if no, you can always took any of our [issues](https://github.com/ManageIQ/manageiq/issues)
