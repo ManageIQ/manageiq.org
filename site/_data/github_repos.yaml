@@ -28,6 +28,9 @@
 - name: manageiq-providers-lenovo
   description: ManageIQ plugin for the Lenovo XClarity provider
 
+- name: manageiq-providers-hawkular
+  description: ManageIQ plugin for the Hawkular provider
+
 - name: manageiq-api-client
   description: Ruby client library to the ManageIQ REST API
 
