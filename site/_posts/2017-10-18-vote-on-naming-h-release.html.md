@@ -7,7 +7,7 @@ comments: true
 published: true
 ---
 
-Vote for the H-Release!!! Here is the [Poll](http://talk.manageiq.org/t/voting-on-name-of-h-release/????) on talk.manageiq.org
+Vote for the H-Release!!! Here is the [Poll](http://talk.manageiq.org/t/voting-on-name-of-h-release/2865) on talk.manageiq.org
 
 While we close in on the Gaprindashvili release, it’s time to think about what we'll name the H-Release.  In keeping with our nomenclature of using chess grandmasters and world champions as release names, here are the proposed names for the H-Release, as well some interesting background data:
 
