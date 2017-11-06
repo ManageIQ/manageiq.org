@@ -2,7 +2,7 @@
 title: Voting on Name of H Release
 author: chessbyte
 date: 2017-11-06 09:02:24 UTC
-tags: collaboration 
+tags: collaboration releases
 comments: true
 published: true
 ---
@@ -22,6 +22,6 @@ During the 1960s and 1970s, Hort was one of the world's strongest players and re
 - [Hou, Yifan](https://en.wikipedia.org/wiki/Hou_Yifan) (February 27, 1994 – ) Peak rating 2686 (March 2015)
 Hou has been the Women's World Chess Champion three times, the youngest ever to win the title, as well as the youngest female player ever to qualify for the title of Grandmaster. Hou is the third woman ever to be rated among the world's top 100 players, after Maia Chiburdanidze and Judit Polgár, in the August 2014 FIDE rating list. She is widely regarded as the best active female chess player. She is the current top-rated female player.
 
-Vote [HERE](http://talk.manageiq.org/t/voting-on-name-of-h-release/???) for your favorite by making a selection in the corresponding talk topic for this post! You are welcome to write in any player you want (as long as their last name starts with the letter H) by replying to the topic with your choice.  Here are the [top 100 active players](http://2700chess.com/?per-page=100) and [all grandmasters - past and present](https://en.wikipedia.org/wiki/List_of_chess_grandmasters).
+Vote [HERE](http://talk.manageiq.org/t/voting-on-name-of-h-release/2865) for your favorite by making a selection in the corresponding talk topic for this post! You are welcome to write in any player you want (as long as their last name starts with the letter H) by replying to the topic with your choice.  Here are the [top 100 active players](http://2700chess.com/?per-page=100) and [all grandmasters - past and present](https://en.wikipedia.org/wiki/List_of_chess_grandmasters).
 
 Votes entered by Friday, November 17 will be tallied and the name will be announced on Monday November 20.
