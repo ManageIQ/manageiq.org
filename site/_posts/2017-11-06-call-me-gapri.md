@@ -7,7 +7,7 @@ published: true
 tags: LWIMIQ
 ---
 
-Wohoo! It's here again! All the features we were working on in last truly _Fine_ summer, are now released in new version, **Gaprindashvili**.
+Wohoo! It's here again! All the features we were working on over the truly _Fine_ summer, are now released in new version, **Gaprindashvili**.
 
 [Roman](https://github.com/romanblanco) from UI team here, with my second LWIMIQ article. Lets see what happened last week.
 
@@ -18,7 +18,7 @@ Last week [Bill](https://github.com/bzwei) has improved [Ansible playbook loggin
 
 ## Fixed
 
-With new features may also unfortunately come bugs. Last week [Adam](https://github.com/agrare) has helped ManageIQ to be less buggy by [fixing SCVMM credential validation](https://github.com/ManageIQ/manageiq-ui-classic/pull/2575), [David](https://github.com/ManageIQ/manageiq-ui-classic/pull/2573) updated GTL lists to [use custom pictures](https://github.com/ManageIQ/manageiq-ui-classic/pull/2573) and [Drew](https://github.com/d-m-u) fixed [Custom buttons with subclasses](https://github.com/ManageIQ/manageiq/pull/16378)
+With new features may also unfortunately come bugs. Last week [Adam](https://github.com/agrare) has helped ManageIQ to be less buggy by [fixing SCVMM credential validation](https://github.com/ManageIQ/manageiq-ui-classic/pull/2575), [David](https://github.com/skateman) updated GTL lists to [use custom pictures](https://github.com/ManageIQ/manageiq-ui-classic/pull/2573) and [Drew](https://github.com/d-m-u) fixed [Custom buttons with subclasses](https://github.com/ManageIQ/manageiq/pull/16378)
 
 ## New
 
