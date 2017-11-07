@@ -3,10 +3,10 @@ stable:
   tag: fine-4
   filename: fine-4
 
-# prerelease:
-#  name: Fine-1-RC1
-#  tag: fine-1-rc1
-#  filename: fine-1-rc1
+prerelease:
+ name: Gaprindashvili-1-Beta1
+ tag: gaprindashvili-1-beta1
+ filename: gaprindashvili-1-beta1
 
 devel:
   name: Nightly
