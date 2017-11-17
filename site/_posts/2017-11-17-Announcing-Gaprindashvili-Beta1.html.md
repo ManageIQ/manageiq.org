@@ -1,7 +1,7 @@
 ---
 title: Announcing Gaprindashvili Beta Release
 author: chessbyte
-date: 2017-11-15 07:49:24 UTC
+date: 2017-11-17 07:49:24 UTC
 comments: true
 published: true
 tags: releases announcements
