@@ -21,4 +21,4 @@ The following table shows the final vote tally.
 
 Now a little background information on our winner:
 
-**Hammer, John Ludvig** (June 02,1990 – ) Peak rating 2705 (February 2016) Hammer was Norwegian Chess Champion in 2013 and 2017. He was the main second for Magnus Carlsen in the World Chess Championship 2013. Hammer has been described as taking chess very seriously, playing very often online, in tournaments, or practicing. In 2009, Hammer announced he would not pursue a professional chess career and would study economics. In 2012, he switched to journalism, writing for Science Nordic as part of his degree studies.
+**Hammer, Jon Ludvig** (June 02,1990 – ) Peak rating 2705 (February 2016) Hammer was Norwegian Chess Champion in 2013 and 2017. He was the main second for Magnus Carlsen in the World Chess Championship 2013. Hammer has been described as taking chess very seriously, playing very often online, in tournaments, or practicing. In 2009, Hammer announced he would not pursue a professional chess career and would study economics. In 2012, he switched to journalism, writing for Science Nordic as part of his degree studies.

@@ -11,7 +11,7 @@ Vote for the H-Release!!! Here is the [Poll](http://talk.manageiq.org/t/voting-o
 
 While we close in on the Gaprindashvili release, it’s time to think about what we'll name the H-Release.  In keeping with our nomenclature of using chess grandmasters and world champions as release names, here are the proposed names for the H-Release, as well some interesting background data:
 
-- [Hammer, John Ludvig](https://en.wikipedia.org/wiki/Jon_Ludvig_Hammer) (June 02,1990 – ) Peak rating 2705 (February 2016)
+- [Hammer, Jon Ludvig](https://en.wikipedia.org/wiki/Jon_Ludvig_Hammer) (June 02,1990 – ) Peak rating 2705 (February 2016)
 Hammer was Norwegian Chess Champion in 2013 and 2017. He was the main second for Magnus Carlsen in the World Chess Championship 2013. Hammer has been described as taking chess very seriously, playing very often online, in tournaments, or practicing. In 2009, Hammer announced he would not pursue a professional chess career and would study economics. In 2012, he switched to journalism, writing for Science Nordic as part of his degree studies.
 - [Harikrishna, Pentala](https://en.wikipedia.org/wiki/Pentala_Harikrishna) (May 10, 1986 – ) Peak rating 2770 (December 2016)
 Harikrishna became the youngest grandmaster from India on September 12, 2001. Harikrishna has represented India at seven Chess Olympiads, making his debut at the age of 14 years 5 months during the 34th Chess Olympiad held in Istanbul.
