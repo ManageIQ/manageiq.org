@@ -1,0 +1,216 @@
+---
+distro:         ManageIQ
+version:        Nightly Build
+
+group_id:       RestApi
+group_title:    REST API
+
+subgroup_id:    RestApi::Reference
+subgroup_title: Reference
+
+topic_id:       RestApi::Reference::Actions
+topic_title:    Actions
+
+article_title:  "Actions"
+
+breadcrumb_group: REST API
+breadcrumb_topic: Actions
+---
+
+<div class="sect1">
+<h2 id="actions"><a class="anchor" href="#actions"></a>Actions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Management of actions is provided via the following collection:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">/api/actions</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Full CRUD actions on resources is available:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#querying-actions">Querying Actions</a></p>
+</li>
+<li>
+<p><a href="#creating-actions">Creating Actions</a></p>
+</li>
+<li>
+<p><a href="#editing-actions">Editing Actions</a></p>
+</li>
+<li>
+<p><a href="#deleting-actions">Deleting Actions</a></p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="querying-actions"><a class="anchor" href="#querying-actions"></a>Querying Actions</h3>
+<div class="paragraph">
+<p>Querying all actions in the system is simply:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/actions</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Getting details on a specific Action:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/actions/:id</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="creating-actions"><a class="anchor" href="#creating-actions"></a>Creating Actions</h3>
+<div class="paragraph">
+<p>Actions can be created via a POST to the actions collection or via the <strong>create</strong> action
+signature which also allows creation of multiple actions in a single request.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>POST /api/actions</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">sample_action</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Sample Action</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action_type</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">custom_automation</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>options</span><span style="color:#404">&quot;</span></span> : {
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>ae_message</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">message</span><span style="color:#710">&quot;</span></span>,
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>ae_request</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">request</span><span style="color:#710">&quot;</span></span>,
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>ae_hash</span><span style="color:#404">&quot;</span></span> : { <span style="color:#606"><span style="color:#404">&quot;</span><span>sample_key</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">sample_value</span><span style="color:#710">&quot;</span></span> }
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or creating multiple actions:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">create</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>resources</span><span style="color:#404">&quot;</span></span> : [
+    { <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">action_1</span><span style="color:#710">&quot;</span></span>, <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Action 1</span><span style="color:#710">&quot;</span></span>, <span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span> },
+    { <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">action_2</span><span style="color:#710">&quot;</span></span>, <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Action 2</span><span style="color:#710">&quot;</span></span>, <span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span> },
+    <span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span>
+  ]
+}</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Please refer to the <a href="../appendices/resource_attributes.html#actions">Resource Attributes</a>
+page for a list of available attributes when creating actions.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="editing-actions"><a class="anchor" href="#editing-actions"></a>Editing Actions</h3>
+<div class="listingblock">
+<div class="content">
+<pre>POST /api/actions/:id</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">edit</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>resource</span><span style="color:#404">&quot;</span></span> : {
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Updated Description</span><span style="color:#710">&quot;</span></span>
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or editing multiple actions:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>POST /api/actions</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">edit</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>resources</span><span style="color:#404">&quot;</span></span> : [
+    {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/actions/101</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Updated Description 1</span><span style="color:#710">&quot;</span></span>
+    },
+    {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/actions/102</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Updated Description 2</span><span style="color:#710">&quot;</span></span>
+    },
+    <span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span>
+  ]
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-actions"><a class="anchor" href="#deleting-actions"></a>Deleting Actions</h3>
+<div class="paragraph">
+<p>Actions can be deleted via either the <strong>delete</strong> POST action or via the DELETE HTTP method.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>POST /api/actions/101</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or simply:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>DELETE /api/actions/101</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Deleting multiple actions can be done as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>POST /api/actions</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>resources</span><span style="color:#404">&quot;</span></span> : [
+    { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/actions/101</span><span style="color:#710">&quot;</span></span> },
+    { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/actions/102</span><span style="color:#710">&quot;</span></span> },
+    <span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span>
+  ]
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>

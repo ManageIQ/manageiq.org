@@ -1,0 +1,906 @@
+---
+distro:         ManageIQ
+version:        Nightly Build
+
+group_id:       InstallingManageiqOnRedHatVirtualization
+group_title:    Installing ManageIQ on Red Hat Virtualization
+
+subgroup_id:    InstallingManageiqOnRedHatVirtualization::TableOfContents
+subgroup_title: Table of Contents
+
+topic_id:       InstallingManageiqOnRedHatVirtualization::TableOfContents::Index
+topic_title:    Index
+
+article_title:  "Installing ManageIQ on Red Hat Virtualization"
+
+breadcrumb_group: Installing ManageIQ on Red Hat Virtualization
+breadcrumb_topic: Index
+---
+
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#installing-cloudforms">1. Installing ManageIQ</a>
+<ul class="sectlevel2">
+<li><a href="#obtaining-the-appliance">1.1. Obtaining the appliance</a></li>
+<li><a href="#uploading-the-appliance-on-red-hat-virtualization">1.2. Uploading the Appliance on Red Hat Virtualization</a>
+<ul class="sectlevel3">
+<li><a href="#uploading-the-appliance-using-the-admin-portal">1.2.1. Uploading the Appliance Using the Administration Portal</a></li>
+<li><a href="#uploading-the-appliance-with-the-image-uploader">1.2.2. Uploading the Appliance with the Image Uploader</a></li>
+<li><a href="#uploading-the-appliance-manually">1.2.3. Uploading the Appliance Manually</a></li>
+</ul>
+</li>
+<li><a href="#running">1.3. Running ManageIQ</a></li>
+</ul>
+</li>
+<li><a href="#Configuring-cloudforms">2. Configuring ManageIQ</a>
+<ul class="sectlevel2">
+<li><a href="#accessing-appliance-console">2.1. Accessing the Appliance Console</a></li>
+<li><a href="#configuring-a-worker-appliance">2.2. Configuring a Worker Appliance</a></li>
+</ul>
+</li>
+<li><a href="#Initial_Login">3. Logging In After Installing ManageIQ</a>
+<ul class="sectlevel2">
+<li><a href="#changing-the-default-login-password">3.1. Changing the Default Login Password</a></li>
+</ul>
+</li>
+<li><a href="#appendix">Appendix A: Appendix</a>
+<ul class="sectlevel2">
+<li><a href="#appliance-console-cli">A.1. Appliance Console Command-Line Interface (CLI)</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="installing-cloudforms"><a class="anchor" href="#installing-cloudforms"></a>1. Installing ManageIQ</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Installing ManageIQ consists of the following steps:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Downloading the appliance for your environment as a virtual machine image template.</p>
+</li>
+<li>
+<p>Setting up a virtual machine based on the appliance.</p>
+</li>
+<li>
+<p>Configuring the ManageIQ appliance.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>After you have completed all the procedures in this guide, you will have a working environment on which additional customizations and configurations can be performed.</p>
+</div>
+<div class="sect2">
+<h3 id="obtaining-the-appliance"><a class="anchor" href="#obtaining-the-appliance"></a>1.1. Obtaining the appliance</h3>
+<div class="paragraph">
+<p>The following procedure outlines how to obtain a copy of the appliance from the ManageIQ homepage.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>In a browser, navigate to <a href="manageiq.org/download" class="bare">manageiq.org/download</a>.</p>
+</li>
+<li>
+<p>Select <strong>Red Hat Virtualization</strong> from the <strong>--Choose your platform--</strong> list.</p>
+</li>
+<li>
+<p>Select <strong>Stable</strong> from the <strong>--Choose a release--</strong> list.</p>
+</li>
+<li>
+<p>Follow the instructions to download the appliance.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="uploading-the-appliance-on-red-hat-virtualization"><a class="anchor" href="#uploading-the-appliance-on-red-hat-virtualization"></a>1.2. Uploading the Appliance on Red Hat Virtualization</h3>
+<div class="paragraph">
+<p>The method for uploading the ManageIQ appliance differs depending on the Red Hat Virtualization version you are using.</p>
+</div>
+<div class="paragraph">
+<p>In Red Hat Virtualization 4.0 and newer, upload the <code>QCOW2</code> appliance image using the Red Hat Virtualization Administration Portal.</p>
+</div>
+<div class="paragraph">
+<p>In Red Hat Enterprise Virtualization 3.6 and earlier, upload the <code>OVA</code> appliance image using the image uploader tool. You can also use this method for Red Hat Virtualization 4.0 systems.</p>
+</div>
+<div class="paragraph">
+<p>Uploading the ManageIQ appliance file to Red Hat Virtualization requires:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>44 GB of storage space on both the export domain and the local partition where <code>/tmp</code> resides, as the <code>OVF</code> archive is locally expanded into that directory.</p>
+</li>
+<li>
+<p>12 GB RAM.</p>
+</li>
+<li>
+<p>4 vCPUs.</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="uploading-the-appliance-using-the-admin-portal"><a class="anchor" href="#uploading-the-appliance-using-the-admin-portal"></a>1.2.1. Uploading the Appliance Using the Administration Portal</h4>
+<div class="paragraph">
+<p>In Red Hat Virtualization 4.0 and newer, upload the <code>QCOW2</code> appliance image using the Red Hat Virtualization Administration Portal.
+After uploading the image, create a disk and attach it to a virtual machine.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites:</div>
+<ul>
+<li>
+<p>You must configure the Image I/O Proxy when running <code>engine-setup</code>. See <a href="https://access.redhat.com/documentation/en-us/red_hat_virtualization/4.1/html/installation_guide/red_hat_enterprise_virtualization_manager_configuration_overview">Configuring the Red Hat Virtualization Manager</a> in the  <em>Red Hat Virtualization Installation Guide</em> for more information.</p>
+</li>
+<li>
+<p>Internet Explorer 10, Firefox 35, or Chrome 13 or greater is required to perform this upload procedure. Previous browser versions do not support the required HTML5 APIs.</p>
+</li>
+<li>
+<p>You must import the required certificate authority into the web browser used to access the Administration Portal.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>To import the certificate authority, browse to <code>https://&lt;engine_address&gt;/ovirt-engine/services/pki-resource?resource=ca-certificate&amp;format=X509-PEM-CA</code> and select all the trust settings. Refer to the instructions to install the certificate authority in <a href="https://access.redhat.com/solutions/95103">Firefox</a>, <a href="https://access.redhat.com/solutions/17864">Internet Explorer</a>, or <a href="https://access.redhat.com/solutions/1168383">Google Chrome</a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">To upload the appliance</dt>
+<dd>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Log in to the Administration Portal.</p>
+</li>
+<li>
+<p>Click the <strong>Disks</strong> tab.</p>
+</li>
+<li>
+<p>Select <strong>Start</strong> from the <strong>Upload</strong> menu.</p>
+</li>
+<li>
+<p>Click <strong>Browse</strong>, and select the image on the local disk.</p>
+</li>
+<li>
+<p>Set <strong>Image Type</strong> to <strong>QCOW2</strong>.</p>
+</li>
+<li>
+<p>Fill in the <strong>Disk Option</strong> fields. See <a href="https://access.redhat.com/documentation/en-us/red_hat_virtualization/4.1-beta/html-single/administration_guide/#Add_Virtual_Disk_dialogue_entries">Explanation of Settings in the New Virtual Disk Window</a> in the <em>Red Hat Virtualization Administration Guide</em> for a description of the relevant fields.</p>
+</li>
+<li>
+<p>Click <strong>OK</strong>.</p>
+</li>
+</ol>
+</div>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>A progress bar will indicate the status of the upload. You can also pause, cancel, or resume uploads from the <strong>Upload</strong> menu.</p>
+</div>
+<div class="paragraph">
+<p>See the <a href="https://access.redhat.com/documentation/en-us/red_hat_virtualization/4.1-beta/html-single/administration_guide/#Uploading_a_Disk_Image_to_a_Storage_Domain">Uploading a Disk Image to a Storage Domain</a> in the <em>Red Hat Virtualization Administration Guide</em> for more information.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="uploading-the-appliance-with-the-image-uploader"><a class="anchor" href="#uploading-the-appliance-with-the-image-uploader"></a>1.2.2. Uploading the Appliance with the Image Uploader</h4>
+<div class="paragraph">
+<p>In Red Hat Enterprise Virtualization 3.6 and earlier, upload the appliance as an <code>OVA</code> image using the image uploader tool. Red Hat Virtualization 4.0 supports this method as well.</p>
+</div>
+<div class="paragraph">
+<p>Refer to
+<a href="https://access.redhat.com/documentation/en-us/red_hat_virtualization/4.1-beta/html-single/administration_guide/#sect-The_Image_Uploader_Tool">The Image Uploader Tool</a> in the <em>Red Hat Virtualization Administration Guide</em> for more details on using the image uploader.</p>
+</div>
+<div class="paragraph">
+<p>To install the image uploader, install the <code>rhevm-image-uploader</code> package containing the <code>engine-image-uploader</code> script to your local machine:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre># yum install rhevm-image-uploader</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Upload the ManageIQ appliance using the image uploader:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Change to the directory containing the ManageIQ appliance.</p>
+</li>
+<li>
+<p>Run the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre># engine-image-uploader -N `newimagename` -e `myexportdomain` -v -m upload cfme-rhevm-5.3-15.x86_64.rhevm.ova</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Substitute <code>newimagename</code> with your chosen name for the image, and substitute <code>myexportdomain</code> with your chosen export storage domain.</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+It is recommended to use <code>-v</code> (verbose logging) when using the <code>engine-image-uploader</code> script to see the progression of the upload.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p>Enter the password of the default administrative user for your Red Hat Enterprise Virtualization Manager when prompted.</p>
+<div class="listingblock">
+<div class="content">
+<pre>Please provide the REST API password for the admin@internal oVirt Engine user (CTRL+D to abort): **********</pre>
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Ensure your Red Hat Enterprise Virtualization Manager has administrator access to the chosen export storage domain.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>It takes approximately 90 minutes to upload the ManageIQ appliance file to the Red Hat Enterprise Virtualization Manager. Once the <code>OVA</code> is uploaded and imported as a template, add a network adapter to the template itself.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="uploading-the-appliance-manually"><a class="anchor" href="#uploading-the-appliance-manually"></a>1.2.3. Uploading the Appliance Manually</h4>
+<div class="paragraph">
+<p>The following procedure provides manual upload instructions if the image uploader tool is not available or fails to upload.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Log in to a host in your Red Hat Virtualization system with a mount to the export storage domain.</p>
+</li>
+<li>
+<p>Change to the export storage domain&#8217;s directory.</p>
+</li>
+<li>
+<p>Copy the ManageIQ appliance <code>OVF</code> archive to this directory.</p>
+</li>
+<li>
+<p>Run the <code>ls</code> command to locate the directory named after a GUID, and change to that directory.</p>
+</li>
+<li>
+<p>Extract the <code>OVF</code> file using the <code>tar</code> command, substituting the <code>.ova</code> filename with your download. For example:</p>
+<div class="listingblock">
+<div class="content">
+<pre>[root@localhost 4a8fc2b1-0a57-47fd-b622-7e170981305b]# tar xvf ../cfme-rhevm-5.9.0.17-1.x86_64.rhevm.ova
+images/
+images/896d49ac-a5e4-4b73-8448-9778bb76ce32/
+images/896d49ac-a5e4-4b73-8448-9778bb76ce32/26e85696-78a4-4a82-aedd-bf60a4aa7dae.meta
+images/896d49ac-a5e4-4b73-8448-9778bb76ce32/26e85696-78a4-4a82-aedd-bf60a4aa7dae
+master/
+master/vms/
+master/vms/647d5765-17fe-436d-aff1-82243e79976a/
+master/vms/647d5765-17fe-436d-aff1-82243e79976a/647d5765-17fe-436d-aff1-82243e79976a.ovf</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Change ownership of the <code>images</code> and <code>master</code> export directories so the appliance can be imported as a template:</p>
+<div class="listingblock">
+<div class="content">
+<pre>[root@localhost 4a8fc2b1-0a57-47fd-b622-7e170981305b]# chown -R 36:36 master/
+[root@localhost 4a8fc2b1-0a57-47fd-b622-7e170981305b]# chown -R 36:36 images/</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The Red Hat Virtualization export domain shows the ManageIQ appliance in the administration portal.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="running"><a class="anchor" href="#running"></a>1.3. Running ManageIQ</h3>
+<div class="paragraph">
+<p>After uploading the appliance to the export storage domain, import it as a template and create a virtual machine.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Import the appliance image from the export storage domain as a template in a Red Hat Virtualization data storage domain:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Click the <strong>Storage</strong> tab, then select the export storage domain you uploaded the image to.</p>
+</li>
+<li>
+<p>From the details pane, click the <strong>Template Import</strong> tab, and select the image (<code>newimagename</code>) you uploaded.</p>
+</li>
+<li>
+<p>Click <strong>Import</strong>, and specify the <strong>Cluster</strong> and <strong>CPU Profile</strong> as desired.</p>
+</li>
+<li>
+<p>Click <strong>OK</strong>.</p>
+<div class="paragraph">
+<p>You can check the import status on the <strong>Events</strong> tab. See <a href="https://access.redhat.com/documentation/en-us/red_hat_virtualization/4.1-beta/html-single/virtual_machine_management_guide/#sect-Exporting_and_Importing_Virtual_Machines_and_Templates">Exporting and Importing Virtual Machines and Templates</a> in the Red Hat Virtualization <em>Virtual Machine Management Guide</em> for additional information.</p>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Check if the template has a network interface (NIC). If the template does not include one, create a NIC for it:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>From the <strong>Templates</strong> tab, select the template you imported to view its details.</p>
+</li>
+<li>
+<p>From the details pane, click the <strong>Network Interfaces</strong> tab to check if a NIC is listed. If there is an existing NIC, continue to the next step. If no existing NIC is shown:</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Create a NIC by clicking <strong>New</strong> in the <strong>Network Interfaces</strong> tab.</p>
+</li>
+<li>
+<p>In the <strong>New Network Interface</strong> dialog, specify any values as desired or leave the defaults.</p>
+</li>
+<li>
+<p>Click <strong>OK</strong>.</p>
+<div class="paragraph">
+<p>The new NIC shows in the <strong>Network Interfaces</strong> tab.</p>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Create a new virtual machine using the ManageIQ appliance template as a basis:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>From the <strong>Templates</strong> tab, select the ManageIQ template.</p>
+</li>
+<li>
+<p>Click <strong>New VM</strong> to open the <strong>New Virtual Machine</strong> dialog.</p>
+</li>
+<li>
+<p>Specify a name for the virtual machine, and any other details as desired.</p>
+</li>
+<li>
+<p>Click <strong>OK</strong>.</p>
+<div class="paragraph">
+<p>The virtual machine is created. To view the virtual machine, select the data center, then the <strong>Virtual Machines</strong> tab to view a list of all virtual machines.</p>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Add a database disk if you are hosting the database on the same machine as the appliance:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>To add a disk, select your virtual machine from the <strong>Virtual Machines</strong> tab.</p>
+</li>
+<li>
+<p>From the details pane, click the <strong>Disks</strong> tab.</p>
+</li>
+<li>
+<p>Click <strong>New</strong> to open the <strong>New Virtual Disk</strong> dialog.</p>
+</li>
+<li>
+<p>Specify a <strong>Size</strong> in GB for the disk that allows sufficient space for your database. See "Database Requirements" in the <em>Deployment Planning Guide</em> for size considerations.</p>
+</li>
+<li>
+<p>Set the <strong>Allocation Policy</strong> to <code>Preallocated</code> (thick provisioning) for best performance.</p>
+</li>
+<li>
+<p>Specify any other values as desired.</p>
+</li>
+<li>
+<p>Click <strong>OK</strong> to create the disk.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>To start the ManageIQ appliance, select the virtual machine from the <strong>Virtual Machines</strong> tab and click <span class="image"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAABHNCSVQICAgIfAhkiAAAABl0RVh0U29mdHdhcmUAZ25vbWUtc2NyZWVuc2hvdO8Dvz4AAADySURBVDiN3ZM9agIBEEbf7hbuFlqIBxCinWfQe3gCr+ENFARP4D3SpAgJRAshRTQLm90gQlKZ/Uv8UiwGdPGPWPnggylmHlPMGJLEBTEvKbsi4eh1RHvcxku84806wiJaqH5bV2VSUe+9p2SdHOw/KFzGS1UfqsJFPKPCU0H9oK/oOzpfOP+aqzatiU9EgHhBTJBz72jgDbRKV6cL3dBVw20IIRLEB+It25JHVLwraugPFf6EuVlD2j5sP/ZpTVvMzBkICHcSZympRLfZpXPTwbbsv/mcMFVKEAc4ppMJN6zztWVZlO0yBsZ+4X+5kk85h19SG0AfGe2z1wAAAABJRU5ErkJggg==" alt="greentriangle"></span> (<strong>Run</strong>).</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Your Red Hat Virtualization environment now contains a running ManageIQ appliance.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="Configuring-cloudforms"><a class="anchor" href="#Configuring-cloudforms"></a>2. Configuring ManageIQ</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>After installing ManageIQ and running it for the first time, you must perform some basic configuration. To configure ManageIQ, you must at a minimum:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Add a disk to the infrastructure hosting your appliance.</p>
+</li>
+<li>
+<p>Configure the database.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Configure the ManageIQ appliance using the internal appliance console.</p>
+</div>
+<div class="sect2">
+<h3 id="accessing-appliance-console"><a class="anchor" href="#accessing-appliance-console"></a>2.1. Accessing the Appliance Console</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Start the appliance and open a terminal console.</p>
+</li>
+<li>
+<p>After starting the appliance, log in with a user name of <code>root</code> and the default password of <code>smartvm</code>. This displays the Bash prompt for the <code>root</code> user.</p>
+</li>
+<li>
+<p>Enter the <code>appliance_console</code> command. The ManageIQ appliance summary screen displays.</p>
+</li>
+<li>
+<p>Press <code>Enter</code> to manually configure settings.</p>
+</li>
+<li>
+<p>Press the number for the item you want to change, and press <code>Enter</code>. The options for your selection are displayed.</p>
+</li>
+<li>
+<p>Follow the prompts to make the changes.</p>
+</li>
+<li>
+<p>Press <code>Enter</code> to accept a setting where applicable.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The ManageIQ appliance console automatically logs out after five minutes of inactivity.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="configuring-a-worker-appliance"><a class="anchor" href="#configuring-a-worker-appliance"></a>2.2. Configuring a Worker Appliance</h3>
+<div class="paragraph">
+<p>You can use multiple appliances to facilitate horizontal scaling, as well as for dividing up work by roles. Accordingly, configure an appliance to handle work for one or many roles, with workers within the appliance carrying out the duties for which they are configured. You can configure a worker appliance through the terminal. The following steps demonstrate how to join a worker appliance to an appliance that already has a region configured with a database.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Start the appliance and open a terminal console.</p>
+</li>
+<li>
+<p>After starting the appliance, log in with a user name of <code>root</code> and the default password of <code>smartvm</code>. This displays the Bash prompt for the <code>root</code> user.</p>
+</li>
+<li>
+<p>Enter the <code>appliance_console</code> command. The ManageIQ appliance summary screen displays.</p>
+</li>
+<li>
+<p>Press <strong>Enter</strong> to manually configure settings.</p>
+</li>
+<li>
+<p>Select <strong>5) Configure Database</strong> from the menu.</p>
+</li>
+<li>
+<p>You are prompted to create or fetch a security key. Since this is not the first ManageIQ appliance, choose <strong>2) Fetch key from remote machine</strong>. For worker and multi-region setups, use this option to copy key from another appliance.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>All ManageIQ appliances in a multi-region deployment must use the same key.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Choose <strong>2) Create Region in External Database</strong> for the database location.</p>
+</li>
+<li>
+<p>Enter the database hostname or IP address when prompted.</p>
+</li>
+<li>
+<p>Enter the database name or leave blank for the default (<code>vmdb_production</code>).</p>
+</li>
+<li>
+<p>Enter the database username or leave blank for the default (<code>root</code>).</p>
+</li>
+<li>
+<p>Enter the chosen database user&#8217;s password.</p>
+</li>
+<li>
+<p>Confirm the configuration if prompted.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="Initial_Login"><a class="anchor" href="#Initial_Login"></a>3. Logging In After Installing ManageIQ</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Once ManageIQ is installed, you can log in and perform administration tasks.</p>
+</div>
+<div class="paragraph">
+<p>Log in to ManageIQ for the first time after installing by:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Navigate to the URL for the login screen. (<a href="https://xx.xx.xx.xx" class="bare">https://xx.xx.xx.xx</a> on the virtual machine instance)</p>
+</li>
+<li>
+<p>Enter the default credentials (Username: <strong>admin</strong> | Password: <strong>smartvm</strong>) for the initial login.</p>
+</li>
+<li>
+<p>Click <strong>Login</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="sect2">
+<h3 id="changing-the-default-login-password"><a class="anchor" href="#changing-the-default-login-password"></a>3.1. Changing the Default Login Password</h3>
+<div class="paragraph">
+<p>Change your password to ensure more private and secure access to ManageIQ.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Navigate to the URL for the login screen. (<a href="https://xx.xx.xx.xx" class="bare">https://xx.xx.xx.xx</a> on the virtual machine instance)</p>
+</li>
+<li>
+<p>Click <strong>Update Password</strong> beneath the <strong>Username</strong> and <strong>Password</strong> text fields.</p>
+</li>
+<li>
+<p>Enter your current <strong>Username</strong> and <strong>Password</strong> in the text fields.</p>
+</li>
+<li>
+<p>Input a new password in the <strong>New Password</strong> field.</p>
+</li>
+<li>
+<p>Repeat your new password in the <strong>Verify Password</strong> field.</p>
+</li>
+<li>
+<p>Click <strong>Login</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="appendix"><a class="anchor" href="#appendix"></a>Appendix A: Appendix</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="appliance-console-cli"><a class="anchor" href="#appliance-console-cli"></a>A.1. Appliance Console Command-Line Interface (CLI)</h3>
+<div class="paragraph">
+<p>Currently, the <code>appliance_console_cli</code> feature is a subset of the full functionality of the <code>appliance_console</code> itself, and covers functions most likely to be scripted using the command-line interface (CLI).</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>After starting the ManageIQ appliance, log in with a user name of <code>root</code> and the default password of <code>smartvm</code>. This displays the Bash prompt for the root user.</p>
+</li>
+<li>
+<p>Enter the <code>appliance_console_cli</code> or <code>appliance_console_cli --help</code> command to see a list of options available with the command, or simply enter <code>appliance_console_cli --option &lt;argument&gt;</code> directly to use a specific option.</p>
+</li>
+</ol>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 1. Database Configuration Options</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Option</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--region (-r)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">region number (create a new region in the database - requires database credentials passed)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--internal (-i)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">internal database (create a database on the current appliance)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--dbdisk</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">database disk device path (for configuring an internal database)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--hostname (-h)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">database hostname</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--port</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">database port (defaults to <code>5432</code>)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--username (-U)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">database username (defaults to <code>root</code>)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--password (-p)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">database password</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--dbname (-d)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">database name (defaults to <code>vmdb_production</code>)</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 2. v2_key Options</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Option</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--key (-k)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">create a new v2_key</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--fetch-key (-K)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fetch the v2_key from the given host</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--force-key (-f)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">create or fetch the key even if one exists</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--sshlogin</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ssh username for fetching the v2_key (defaults to <code>root</code>)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--sshpassword</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ssh password for fetching the v2_key</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 3. IPA Server Options</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Option</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--host (-H)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">set the appliance hostname to the given name</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--ipaserver (-e)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IPA server FQDN</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--ipaprincipal (-n)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IPA server principal (default: <code>admin</code>)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--ipapassword (-w)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IPA server password</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--ipadomain (-o)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IPA server domain (optional). Will be based on the appliance domain name if not specified.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--iparealm (-l)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IPA server realm (optional). Will be based on the domain name of the ipaserver if not specified.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--uninstall-ipa (-u)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">uninstall IPA client</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>In order to configure authentication through an IPA server, in addition to using <strong>Configure External Authentication (httpd)</strong> in the <code>appliance_console</code>, external authentication can be optionally configured via the <code>appliance_console_cli</code> (command-line interface).</p>
+</li>
+<li>
+<p>Specifying <strong>--host</strong> will update the hostname of the appliance. If this step was already performed via the <code>appliance_console</code> and the necessary updates made to <code>/etc/hosts</code> if DNS is not properly configured, the <strong>--host</strong> option can be omitted.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 4. Certificate Options</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Option</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--ca (-c)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CA name used for certmonger (default: <code>ipa</code>)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--postgres-client-cert (-g)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">install certs for postgres client</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--postgres-server-cert</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">install certs for postgres server</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--http-cert</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">install certs for http server (to create certs/httpd* values for a unique key)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--extauth-opts (-x)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">external authentication options</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The certificate options augment the functionality of the <code>certmonger</code> tool and enable creating a certificate signing request (CSR), and specifying <code>certmonger</code> the directories to store the keys.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 5. Other Options</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Option</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--logdisk (-l)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">log disk path</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--tmpdisk</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">initialize the given device for temp storage (volume mounted at <code>/var/www/miq_tmp</code>)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--verbose (-v)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">print more debugging info</p></td>
+</tr>
+</tbody>
+</table>
+<div class="listingblock">
+<div class="title">Example Usage</div>
+<div class="content">
+<pre>$ ssh root@appliance.test.company.com</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To create a new database locally on the server using <code>/dev/sdb</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre># appliance_console_cli --internal --dbdisk /dev/sdb --region 0 --password smartvm</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To copy the v2_key from a host <em>some.example.com</em> to local machine:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre># appliance_console_cli --fetch-key some.example.com --sshlogin root --sshpassword smartvm</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You could combine the two to join a region where <em>db.example.com</em> is the appliance hosting the database:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre># appliance_console_cli --fetch-key db.example.com --sshlogin root --sshpassword smartvm --hostname db.example.com --password mydatabasepassword</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To configure external authentication:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre># appliance_console_cli --host appliance.test.company.com
+                        --ipaserver ipaserver.test.company.com
+                        --ipadomain test.company.com
+                        --iparealm TEST.COMPANY.COM
+                        --ipaprincipal admin
+                        --ipapassword smartvm1</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To uninstall external authentication:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre># appliance_console_cli  --uninstall-ipa</pre>
+</div>
+</div>
+</div>
+</div>
+</div>

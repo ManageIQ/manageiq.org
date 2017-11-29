@@ -1,0 +1,360 @@
+---
+distro:         ManageIQ
+version:        Nightly Build
+
+group_id:       RestApi
+group_title:    REST API
+
+subgroup_id:    RestApi::Reference
+subgroup_title: Reference
+
+topic_id:       RestApi::Reference::RequestSupport
+topic_title:    Request Support
+
+article_title:  "Request Support"
+
+breadcrumb_group: REST API
+breadcrumb_topic: Request Support
+---
+
+<div class="sect1">
+<h2 id="requests"><a class="anchor" href="#requests"></a>Request Support</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Support for Requests in the API is provided and implemented by specific request types
+as listed here:</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 60%;">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">API Collection</th>
+<th class="tableblock halign-left valign-top">Request Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/api/automation_requests</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="automation_requests.html">Automation Requests</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/api/provision_requests</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="provision_requests.html">Provision Requests</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/api/service_requests</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="services.html#service-requests">Service Requests</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>A lower level support for creating and updating requests is also provided
+by the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">/api/requests</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#creating-requests">Creating Requests</a></p>
+</li>
+<li>
+<p><a href="#querying-requests">Querying Requests</a></p>
+</li>
+<li>
+<p><a href="#editing-requests">Editing Requests</a></p>
+</li>
+<li>
+<p><a href="#approving-denying-requests">Approving or Denying Requests</a></p>
+</li>
+<li>
+<p><a href="#request-types">Request Types</a></p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="creating-requests"><a class="anchor" href="#creating-requests"></a>Creating Requests</h3>
+<div class="paragraph">
+<p>Either by specifying a <em>create</em> action or by posting the request directly
+to <strong>/api/requests</strong>.</p>
+</div>
+<div class="paragraph">
+<p>As an example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">POST /api/requests</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>options</span><span style="color:#404">&quot;</span></span> : {
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>request_type</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">service_reconfigure</span><span style="color:#710">&quot;</span></span>,
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>src_id</span><span style="color:#404">&quot;</span></span> : <span style="color:#00D">4</span>,
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>service_param1</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">updated_value1</span><span style="color:#710">&quot;</span></span>,
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>service_param2</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">updated_value2</span><span style="color:#710">&quot;</span></span>
+  },
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>requester</span><span style="color:#404">&quot;</span></span> : {
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>user_name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">admin</span><span style="color:#710">&quot;</span></span>
+  },
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>auto_approve</span><span style="color:#404">&quot;</span></span> : <span style="color:#088">true</span> <span style="color:#F00;background-color:#FAA">|</span> <span style="color:#088">false</span>
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Response:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>results</span><span style="color:#404">&quot;</span></span>: [
+    {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">97</span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Service Reconfigure for: svc4</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>approval_state</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">pending_approval</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ServiceReconfigureRequest</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>created_on</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2016-11-10T21:39:08Z</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>updated_on</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2016-11-10T21:39:08Z</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>requester_id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">1</span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>requester_name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Administrator</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>request_type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">service_reconfigure</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>request_state</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">pending</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>message</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Service Reconfigure - Request Created</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>status</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Ok</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>options</span><span style="color:#404">&quot;</span></span>: {
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>request_type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">service_reconfigure</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>src_id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">4</span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>service_param1</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">updated_value1</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>service_param2</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">updated_value2</span><span style="color:#710">&quot;</span></span>
+      },
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>userid</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">admin</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>source_id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">4</span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>source_type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Service</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>tenant_id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">1</span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>process</span><span style="color:#404">&quot;</span></span>: <span style="color:#088">true</span>
+    }
+  ]
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="querying-requests"><a class="anchor" href="#querying-requests"></a>Querying Requests</h3>
+<div class="paragraph">
+<p>Once a request is created, the response result as shown above will include the id of request itself.</p>
+</div>
+<div class="paragraph">
+<p>In the above example, the request could be queried periodically until the <strong>request_state</strong> reaches the <strong>finished</strong> state.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/requests/97</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>NOTE</strong>: The requests tasks of a request can also be queried by expanding the request_tasks subcollection:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/requests/:id?expand=request_tasks</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>An alias <strong>tasks</strong> is also defined and can be queried as such:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/requests/:id?expand=tasks</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="editing-requests"><a class="anchor" href="#editing-requests"></a>Editing Requests</h3>
+<div class="paragraph">
+<p>Updating requests is provided by specifying an <em>edit</em> action as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">POST /api/requests/97</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">edit</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>resource</span><span style="color:#404">&quot;</span></span> : {
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>options</span><span style="color:#404">&quot;</span></span> : {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>service_param1</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">new_updated_value1</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>service_param2</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">new_updated_value2</span><span style="color:#710">&quot;</span></span>
+    },
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>requester</span><span style="color:#404">&quot;</span></span> : {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>user_name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">admin</span><span style="color:#710">&quot;</span></span>
+    }
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Response:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/requests/97</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">97</span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>options</span><span style="color:#404">&quot;</span></span>: {
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>request_type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">service_reconfigure</span><span style="color:#710">&quot;</span></span>,
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>src_id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">4</span>,
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>service_param1</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">new_updated_value1</span><span style="color:#710">&quot;</span></span>,
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>service_param2</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">new_updated_value2</span><span style="color:#710">&quot;</span></span>
+  },
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Service Reconfigure for: svc3</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>approval_state</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">pending_approval</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ServiceReconfigureRequest</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>created_on</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2016-11-10T21:39:08Z</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>updated_on</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2016-11-10T22:11:03Z</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>requester_id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">1</span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>requester_name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Administrator</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>request_type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">service_reconfigure</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>request_state</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">pending</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>message</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Service Reconfigure - Request Created</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>status</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Ok</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>userid</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">admin</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>source_id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">4</span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>source_type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Service</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>tenant_id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">1</span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>process</span><span style="color:#404">&quot;</span></span>: <span style="color:#088">true</span>
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="approving-denying-requests"><a class="anchor" href="#approving-denying-requests"></a>Approving or Denying Requests</h3>
+<div class="paragraph">
+<p>If a request is not auto approved, it can be approved or denied via the actions <em>approve</em> and <em>deny</em> on the
+request resource.</p>
+</div>
+<div class="sect3">
+<h4 id="approving-request"><a class="anchor" href="#approving-request"></a>Approving a Request</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">POST /api/requests/:id</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">approve</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>reason</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">reason for approval</span><span style="color:#710">&quot;</span></span>
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="denying-request"><a class="anchor" href="#denying-request"></a>Denying a Request</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">POST /api/requests/:id</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">deny</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>reason</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">reason for denial</span><span style="color:#710">&quot;</span></span>
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="request-types"><a class="anchor" href="#request-types"></a>Request Types</h3>
+<div class="paragraph">
+<p>The details for creating each type of request using the lower level
+API, including validation of <em>request_type</em> and necessary options is
+driven by the model.</p>
+</div>
+<div class="paragraph">
+<p>The basic structure for creating the request is as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>options</span><span style="color:#404">&quot;</span></span> : {
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>request_type</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">...</span><span style="color:#710">&quot;</span></span>,
+    <span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span>
+  },
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>requester</span><span style="color:#404">&quot;</span></span> : {
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>user_name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">...</span><span style="color:#710">&quot;</span></span>
+  },
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>auto_approve</span><span style="color:#404">&quot;</span></span> : <span style="color:#088">true</span> <span style="color:#F00;background-color:#FAA">|</span> <span style="color:#088">false</span>
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The list of supported <em>request_type</em> values as of this writing is shown here below:</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 60%;">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">request_type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">automation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Automation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">clone_to_service</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Service Provision</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">clone_to_template</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VM Publish</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">clone_to_vm</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VM Clone</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">host_pxe_install</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Host Provision</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">provision_via_foreman</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Foreman Provision</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">service_reconfigure</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Service Reconfigure</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">template</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VM Provision</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">vm_migrate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VM Migrate</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">vm_reconfigure</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VM Reconfigure</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>

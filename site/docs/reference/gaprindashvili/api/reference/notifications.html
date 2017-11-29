@@ -1,0 +1,310 @@
+---
+distro:         ManageIQ
+version:        Gaprindashvili
+
+group_id:       RestApi
+group_title:    REST API
+
+subgroup_id:    RestApi::Reference
+subgroup_title: Reference
+
+topic_id:       RestApi::Reference::NotificationsSupport
+topic_title:    Notifications Support
+
+article_title:  "Notifications Support"
+
+breadcrumb_group: REST API
+breadcrumb_topic: Notifications Support
+---
+
+<div class="sect1">
+<h2 id="notifications-support"><a class="anchor" href="#notifications-support"></a>Notifications Support</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Support for Notifications to the authenticated user is provided via the following collection:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">/api/notifications</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#querying-notifications">Querying Notifications</a></p>
+</li>
+<li>
+<p><a href="#mark-notifications-as-seen">Marking Notifications as Seen</a></p>
+</li>
+<li>
+<p><a href="#deleting-notifications">Deleting Notifications</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="querying-notifications"><a class="anchor" href="#querying-notifications"></a>Querying Notifications</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following fetches the current notifications for the authenticated user:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">GET /api/notifications</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">notifications</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>count</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">3</span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>subcount</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">3</span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>resources</span><span style="color:#404">&quot;</span></span>: [
+    {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/notifications/44</span><span style="color:#710">&quot;</span></span>
+    },
+    {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/notifications/45</span><span style="color:#710">&quot;</span></span>
+    },
+    {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/notifications/46</span><span style="color:#710">&quot;</span></span>
+    }
+  ],
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>actions</span><span style="color:#404">&quot;</span></span>: [
+    {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">mark_as_seen</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>method</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">post</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/notifications</span><span style="color:#710">&quot;</span></span>
+    },
+    {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>method</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">post</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/notifications</span><span style="color:#710">&quot;</span></span>
+    }
+  ]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Or fetching additional details on the notifications as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">GET /api/notifications?expand=resources&amp;attributes=details</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">notifications</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>count</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">3</span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>subcount</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">3</span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>resources</span><span style="color:#404">&quot;</span></span>: [
+    {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/notifications/44</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">44</span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>user_id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">1</span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>seen</span><span style="color:#404">&quot;</span></span>: <span style="color:#088">false</span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>details</span><span style="color:#404">&quot;</span></span>: {
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>level</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">info</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>created_at</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2016-11-03T17:23:29Z</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>text</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Vm [aab-test] was powered on</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>bindings</span><span style="color:#404">&quot;</span></span>: {
+          <span style="color:#606"><span style="color:#404">&quot;</span><span>initiator</span><span style="color:#404">&quot;</span></span>: {
+            <span style="color:#606"><span style="color:#404">&quot;</span><span>link</span><span style="color:#404">&quot;</span></span>: {
+              <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">1</span>,
+              <span style="color:#606"><span style="color:#404">&quot;</span><span>model</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">User</span><span style="color:#710">&quot;</span></span>
+            },
+            <span style="color:#606"><span style="color:#404">&quot;</span><span>text</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Administrator</span><span style="color:#710">&quot;</span></span>
+          }
+        },
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>seen</span><span style="color:#404">&quot;</span></span>: <span style="color:#088">false</span>
+      },
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>actions</span><span style="color:#404">&quot;</span></span>: [
+        {
+          <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">mark_as_seen</span><span style="color:#710">&quot;</span></span>,
+          <span style="color:#606"><span style="color:#404">&quot;</span><span>method</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">post</span><span style="color:#710">&quot;</span></span>,
+          <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/notifications/44</span><span style="color:#710">&quot;</span></span>
+        },
+        {
+          <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>,
+          <span style="color:#606"><span style="color:#404">&quot;</span><span>method</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">post</span><span style="color:#710">&quot;</span></span>,
+          <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/notifications/44</span><span style="color:#710">&quot;</span></span>
+        }
+      ]
+    },
+    {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/notifications/45</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">45</span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>notification_id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">22</span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>user_id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">1</span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>seen</span><span style="color:#404">&quot;</span></span>: <span style="color:#088">true</span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>details</span><span style="color:#404">&quot;</span></span>: {
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>level</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">info</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>created_at</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2016-11-03T17:23:29Z</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>text</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Vm [aab-test2] was powered on</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>bindings</span><span style="color:#404">&quot;</span></span>: {
+          <span style="color:#606"><span style="color:#404">&quot;</span><span>initiator</span><span style="color:#404">&quot;</span></span>: {
+            <span style="color:#606"><span style="color:#404">&quot;</span><span>link</span><span style="color:#404">&quot;</span></span>: {
+              <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">1</span>,
+              <span style="color:#606"><span style="color:#404">&quot;</span><span>model</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">User</span><span style="color:#710">&quot;</span></span>
+            },
+            <span style="color:#606"><span style="color:#404">&quot;</span><span>text</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Administrator</span><span style="color:#710">&quot;</span></span>
+          }
+        },
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>seen</span><span style="color:#404">&quot;</span></span>: <span style="color:#088">true</span>
+      },
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>actions</span><span style="color:#404">&quot;</span></span>: [
+        {
+          <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">mark_as_seen</span><span style="color:#710">&quot;</span></span>,
+          <span style="color:#606"><span style="color:#404">&quot;</span><span>method</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">post</span><span style="color:#710">&quot;</span></span>,
+          <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/notifications/45</span><span style="color:#710">&quot;</span></span>
+        },
+        {
+          <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>,
+          <span style="color:#606"><span style="color:#404">&quot;</span><span>method</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">post</span><span style="color:#710">&quot;</span></span>,
+          <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/notifications/45</span><span style="color:#710">&quot;</span></span>
+        }
+      ]
+    },
+    {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/notifications/46</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">46</span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>notification_id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">23</span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>user_id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">1</span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>seen</span><span style="color:#404">&quot;</span></span>: <span style="color:#088">false</span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>details</span><span style="color:#404">&quot;</span></span>: {
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>level</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">info</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>created_at</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2016-11-03T17:23:54Z</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>text</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Vm [aab-dev] was powered off</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>bindings</span><span style="color:#404">&quot;</span></span>: {
+          <span style="color:#606"><span style="color:#404">&quot;</span><span>initiator</span><span style="color:#404">&quot;</span></span>: {
+            <span style="color:#606"><span style="color:#404">&quot;</span><span>link</span><span style="color:#404">&quot;</span></span>: {
+              <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">1</span>,
+              <span style="color:#606"><span style="color:#404">&quot;</span><span>model</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">User</span><span style="color:#710">&quot;</span></span>
+            },
+            <span style="color:#606"><span style="color:#404">&quot;</span><span>text</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Administrator</span><span style="color:#710">&quot;</span></span>
+          }
+        },
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>seen</span><span style="color:#404">&quot;</span></span>: <span style="color:#088">false</span>
+      },
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>actions</span><span style="color:#404">&quot;</span></span>: [
+        {
+          <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">mark_as_seen</span><span style="color:#710">&quot;</span></span>,
+          <span style="color:#606"><span style="color:#404">&quot;</span><span>method</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">post</span><span style="color:#710">&quot;</span></span>,
+          <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/notifications/46</span><span style="color:#710">&quot;</span></span>
+        },
+        {
+          <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>,
+          <span style="color:#606"><span style="color:#404">&quot;</span><span>method</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">post</span><span style="color:#710">&quot;</span></span>,
+          <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/notifications/46</span><span style="color:#710">&quot;</span></span>
+        }
+      ]
+    }
+  ],
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>actions</span><span style="color:#404">&quot;</span></span>: [
+    {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">mark_as_seen</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>method</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">post</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/notifications</span><span style="color:#710">&quot;</span></span>
+    },
+    {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>method</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">post</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/notifications</span><span style="color:#710">&quot;</span></span>
+    }
+  ]
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="mark-notifications-as-seen"><a class="anchor" href="#mark-notifications-as-seen"></a>Marking Notifications as Seen</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Marking Notifications as seen for the authenticated user is done via the <strong>mark_as_seen</strong> action as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">POST /api/notifications/:id</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">mark_as_seen</span><span style="color:#710">&quot;</span></span>
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Or, marking several notifications as seen in a single call as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">POST /api/notifications</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">mark_as_seen</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>resources</span><span style="color:#404">&quot;</span></span> : [
+    { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/notifications/44</span><span style="color:#710">&quot;</span></span> },
+    { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/notifications/45</span><span style="color:#710">&quot;</span></span> },
+    <span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span>
+  ]
+}</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-notifications"><a class="anchor" href="#deleting-notifications"></a>Deleting Notifications</h3>
+<div class="paragraph">
+<p>Deleting a notification is available via the <strong>delete</strong> action or DELETE on the
+individual notification as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">POST /api/notifications/:id</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Or simply:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">DELETE /api/notifications/:id</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Also, deleting multiple notifications is available via the <strong>delete</strong> action
+on the collection passing in references to the different notifications:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">POST /api/notifications</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>resources</span><span style="color:#404">&quot;</span></span> : [
+    { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/notifications/44</span><span style="color:#710">&quot;</span></span> },
+    { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/notifications/45</span><span style="color:#710">&quot;</span></span> },
+    <span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span>
+  ]
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>

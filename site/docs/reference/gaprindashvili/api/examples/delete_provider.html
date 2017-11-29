@@ -1,0 +1,148 @@
+---
+distro:         ManageIQ
+version:        Gaprindashvili
+
+group_id:       RestApiExamples
+group_title:    REST API Examples
+
+subgroup_id:    RestApiExamples::Providers
+subgroup_title: Providers
+
+topic_id:       RestApiExamples::Providers::DeleteProvider
+topic_title:    Delete Provider
+
+article_title:  "Delete Provider"
+
+breadcrumb_group: REST API Examples
+breadcrumb_topic: Delete Provider
+---
+
+<div class="sect2">
+<h3 id="delete-provider"><a class="anchor" href="#delete-provider"></a>Delete Provider</h3>
+<div class="sect3">
+<h4 id="deleting-a-single-provider"><a class="anchor" href="#deleting-a-single-provider"></a>Deleting a single Provider</h4>
+<div class="sect4">
+<h5 id="request"><a class="anchor" href="#request"></a>Request:</h5>
+<div class="listingblock">
+<div class="content">
+<pre>DELETE /api/provider/105</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Or via the delete action as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>POST /api/provider/105</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="response"><a class="anchor" href="#response"></a>Response:</h5>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>success</span><span style="color:#404">&quot;</span></span>: <span style="color:#088">true</span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>message</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Provider id:106 name:'rhevm102' deleting</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>task_id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">625</span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>task_href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/tasks/625</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/providers/106</span><span style="color:#710">&quot;</span></span>
+}</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Delete actions are done asynchronously as it could take
+a while to complete. The delete task can be queried if needed as follows
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="request-2"><a class="anchor" href="#request-2"></a>Request:</h5>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/tasks/625</pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="response-2"><a class="anchor" href="#response-2"></a>Response:</h5>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/tasks/625</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">625</span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Provider id:106 name:'rhevm102' deleting</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>state</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Finished</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>status</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Ok</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>message</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Task completed successfully</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>userid</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">admin</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>created_on</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2015-05-06T14:02:26Z</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>updated_on</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2015-05-06T14:02:32Z</span><span style="color:#710">&quot;</span></span>
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="deleting-multiple-providers"><a class="anchor" href="#deleting-multiple-providers"></a>Deleting multiple Providers</h4>
+<div class="sect4">
+<h5 id="request-3"><a class="anchor" href="#request-3"></a>Request:</h5>
+<div class="listingblock">
+<div class="content">
+<pre>POST /api/providers</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>resources</span><span style="color:#404">&quot;</span></span> : [
+    { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/providers/107</span><span style="color:#710">&quot;</span></span> },
+    { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/providers/108</span><span style="color:#710">&quot;</span></span> }
+  ]
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="response-3"><a class="anchor" href="#response-3"></a>Response:</h5>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>results</span><span style="color:#404">&quot;</span></span>: [
+    {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>success</span><span style="color:#404">&quot;</span></span>: <span style="color:#088">true</span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>message</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Provider id:107 name:'rhevm102' deleting</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>task_id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">626</span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>task_href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/tasks/626</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/providers/107</span><span style="color:#710">&quot;</span></span>
+    },
+    {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>success</span><span style="color:#404">&quot;</span></span>: <span style="color:#088">true</span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>message</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Provider id:108 name:'rhevm103' deleting</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>task_id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">627</span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>task_href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/tasks/627</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/providers/108</span><span style="color:#710">&quot;</span></span>
+    }
+  ]
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>

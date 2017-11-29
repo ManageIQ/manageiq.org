@@ -94,6 +94,20 @@ defaults:
       doc_group: api
 
   - scope:
+      path: "docs/reference/gaprindashvili"
+      type: "pages"
+    values:
+      layout: doc_page
+      permalink: /:path/:basename
+      doc_group: user
+
+  - scope:
+      path: "docs/reference/gaprindashvili/api"
+    values:
+      layout: doc_page
+      doc_group: api
+
+  - scope:
       path: "docs/reference/fine"
       type: "pages"
     values:
