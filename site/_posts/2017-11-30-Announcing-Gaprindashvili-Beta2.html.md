@@ -16,7 +16,7 @@ Gaprindashvili is the next milestone release for ManageIQ cloud and virtualizati
 * Replication - Prevent replication subscription to the same region as the current region [(#16446)](https://github.com/ManageIQ/manageiq/pull/16446)
 * RBAC - Standalone ServiceUI product features require, updating affected roles [(#16329)](https://github.com/ManageIQ/manageiq/pull/16329)
 * Providers - Refresh new target do not run post_refresh [(#16436)](https://github.com/ManageIQ/manageiq/pull/16436)
-* i18n - Add Middleware Server EAP/Wildfly translation [(#16492)](https://github.com/ManageIQ/manageiq/blob/gaprindashvili/CHANGELOG.md/)
+* i18n - Add Middleware Server EAP/Wildfly translation [(#16492)](https://github.com/ManageIQ/manageiq/pull/16492)
 
 If you want to hear about features, improvements, and fixes directly from the developers, check out the [Last Week in ManageIQ blog posts](http://manageiq.org/blog/tags/LWIMIQ/).
 
