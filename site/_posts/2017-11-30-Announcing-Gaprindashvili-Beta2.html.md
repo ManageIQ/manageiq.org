@@ -1,5 +1,5 @@
 ---
-title: Announcing Gaprindashvili Beta Release
+title: Announcing Gaprindashvili Beta2 Release
 author: chessbyte
 date: 2017-11-30 07:49:24 UTC
 comments: true
