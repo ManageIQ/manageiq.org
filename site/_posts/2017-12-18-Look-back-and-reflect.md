@@ -10,23 +10,23 @@ tags: LWIMIQ
 HELLO Folks! [Aparna](https://github.com/AparnaKarve) here with a special year-end edition for the 'Last Week in ManageIQ'.  Strap on your seat belts as we get into the time portal machine and review what made 2017 special.
 
 
-- The Great Split
+## The Great Split
 
 About a year ago, the UI team delivered 'Hallelujah' moments  by doing a successful split of the UI Classic repository from the unwieldy ManageIQ repository to give birth to the new [ManageIQ/manageiq-ui-classic](https://github.com/ManageIQ/manageiq-ui-classic) repository. Pretty soon, other repositories followed suit and were separated out from the monolith. We have close to 25 modular repositories today, that are our way of life. With this 'Separation of concerns' implementation, life is a lot easier for issue isolation and overall debug (Hallelujah!)
 
 
-- APIs – 'Must-Have' for UI Forms  
+## APIs – 'Must-Have' for UI Forms  
 
 The REST API based UI forms for the CRUD operations have delivered manageable and elegant code. 
 Newer APIs get added regularly making the [ManageIQ/manageiq-api](https://github.com/ManageIQ/manageiq-api) repository, a rich collection of APIs capable of handling a multitude of tasks. It's a Win-Win.
 
 
-- The CodeClimate Factor
+## The CodeClimate Factor
 
 Good Behavior (clean-ups, removing duplications, checking for re-factors) is inherently promoted with the deployment of CodeClimate in most of our repositories -- and good behavior always leads to more goodies (and not a lump of coal) in our Christmas Stocking!  (T’is the season to be Jolly after all)
 
 
-- Winds of Change - The Re-Architecture Effort 
+## Winds of Change - The Re-Architecture Effort 
 
 "To improve is to change; to be perfect is to change often." –- Sir Winston Churchill
 
@@ -37,7 +37,7 @@ Meanwhile, the UI team has also been embracing change and moving toward UI plugg
 [This PR](https://github.com/ManageIQ/manageiq-ui-classic/pull/2504) that is currently in the works lays the foundation for [Redux](https://redux.js.org/) in the Classic UI.  Looking forward to welcoming [Redux](https://redux.js.org/) as one of our mainstream front-end technologies being leveraged effectively in the Classic UI
 
 
-And now...for the Showstopper event... (drum roll here!) 
+## And now...for the Showstopper event... (drum roll here!) 
 
 `Fine` released in May 2017 and `Gaprindashvili` -- scheduled for a GA release early next year.
 
