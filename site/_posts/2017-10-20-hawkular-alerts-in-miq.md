@@ -4,8 +4,11 @@ author: israel-hdez
 date: 2017-10-20
 comments: true
 published: true
-tags: tutorials middleware
+tags: tutorials
 ---
+
+_**Note:** Hawkular was deprecated as of December 18th, 2017. New releases of
+ManageIQ won't include support for Hawkular as a Middleware Provider._
 
 Hello! This is [Edgar][IsraelHdez] from the Middleware team. This is my first
 time writing in the ManageIQ blog. Nevertheless, I hope you'll enjoy this post
