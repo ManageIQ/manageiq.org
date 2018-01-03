@@ -1,0 +1,275 @@
+---
+distro:         ManageIQ
+version:        Gaprindashvili
+
+group_id:       RestApi
+group_title:    REST API
+
+subgroup_id:    RestApi::Reference
+subgroup_title: Reference
+
+topic_id:       RestApi::Reference::ServiceQueries
+topic_title:    Service Queries
+
+article_title:  "Service Queries"
+
+breadcrumb_group: REST API
+breadcrumb_topic: Service Queries
+---
+
+<div class="sect1">
+<h2 id="service-queries"><a class="anchor" href="#service-queries"></a>Service Queries</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Queries to services and related service dialogs are provided via the following collections:</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 50%;">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Path</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/api/services</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Services</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/api/service_requests</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Service Requests</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/api/service_templates</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Service Templates</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/api/service_dialogs</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Service Dialogs</p></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#querying-pictures">Querying Pictures</a></p>
+</li>
+<li>
+<p><a href="#querying-provision-dialogs">Querying Provision Dialogs</a></p>
+</li>
+<li>
+<p><a href="#querying-resource-actions">Querying Resource Actions</a></p>
+</li>
+<li>
+<p><a href="#querying-service-provision-dialogs">Querying Service and Provision Dialogs</a></p>
+</li>
+<li>
+<p><a href="#querying-service-dialogs">Querying Service Dialogs</a></p>
+</li>
+<li>
+<p><a href="#querying-users">Querying Users</a></p>
+</li>
+<li>
+<p><a href="#querying-vms">Querying VMs</a></p>
+</li>
+<li>
+<p><a href="#querying-orchestration-stacks">Querying Orchestration Stacks</a></p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="querying-pictures"><a class="anchor" href="#querying-pictures"></a>Querying Pictures pertaining to services</h3>
+<div class="paragraph">
+<p>Access to pictures for service related collections is made available with the <em>picture</em>
+virtual attribute and related <em>image_href</em> attribute.</p>
+</div>
+<div class="paragraph">
+<p>Querying all resources:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/services?expand=resources&amp;attributes=picture,picture.image_href
+
+GET /api/service_requests?expand=resources&amp;attributes=picture,picture.image_href
+
+GET /api/service_templates?expand=resources&amp;attributes=picture,picture.image_href</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Querying specific resources:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/services/:id?attributes=picture,picture.image_href
+
+GET /api/service_requests/:id?attributes=picture,picture.image_href
+
+GET /api/service_templates/:id?attributes=picture,picture.image_href</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="querying-provision-dialogs"><a class="anchor" href="#querying-provision-dialogs"></a>Querying Provision Dialogs on services and service requests</h3>
+<div class="paragraph">
+<p>Querying provision dialogs on ordered services and related service_requests is provided
+by the <em>provision_dialog</em> virtual attribute:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/services/:id?attributes=provision_dialog
+
+GET /api/service_requests/:id?attributes=provision_dialog</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="querying-resource-actions"><a class="anchor" href="#querying-resource-actions"></a>Querying Resource Actions</h3>
+<div class="paragraph">
+<p>Querying resource_actions is provided as a subcollection of service_templates as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/service_templates/:id/resource_actions</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This allows queries like:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/service_templates/:id/resource_actions
+GET /api/service_templates/:id/resource_actions/:resource_action_id
+GET /api/service_templates/:id/resource_actions?expand=resources
+GET /api/service_templates/:id/resource_actions?expand=resources&amp;filter[]=action='Provision'</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="querying-service-provision-dialogs"><a class="anchor" href="#querying-service-provision-dialogs"></a>Querying Service and Provision Dialogs</h3>
+<div class="paragraph">
+<p>Access to service and provision dialogs is provided by the primary collections:</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 50%;">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/api/service_dialogs</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/api/provision_dialogs</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="querying-service-dialogs"><a class="anchor" href="#querying-service-dialogs"></a>Querying Service Dialogs</h3>
+<div class="paragraph">
+<p>Service dialogs can be queried directly from the primary collection:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/service_dialogs
+GET /api/service_dialogs/:id</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Or from the Service Template where they are defined and from the related ordered services
+as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/service_templates/:id/service_dialogs
+GET /api/service_templates/:id/service_dialogs/:service_dialog_id
+
+GET /api/services/:id/service_dialogs
+GET /api/services/:id/service_dialogs/:service_dialog_id</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="querying-users"><a class="anchor" href="#querying-users"></a>Querying Users that ordered services</h3>
+<div class="paragraph">
+<p>This is made available via the <em>user</em> virtual attribute which reflect the user object.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/services/:id?attributes=user
+
+GET /api/service_requests/:id?attributes=user</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Optionally, specific user attribute can also be queried as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/services/:id?attributes=user.name,user.email
+GET /api/services/:id?attributes=user.name,user.email</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="querying-vms"><a class="anchor" href="#querying-vms"></a>Querying VMs of Services</h3>
+<div class="paragraph">
+<p>This is made available via the <em>vms</em> subcollection of services as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/services/:id/vms
+
+GET /api/services/:id?expand=vms</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>It is also possible to fetch additional attributes for the vms of a service all within
+the same request by using the <em>vms.</em> prefix in the attributes specification as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/services/:id?expand=vms&amp;attributes=vms.num_cpu</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Accessing decorators for VM resources is also made available here as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/services/:id?expand=vms&amp;attributes=vms.num_cpu&amp;decorators=vms.supports_console?</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="querying-orchestration-stacks"><a class="anchor" href="#querying-orchestration-stacks"></a>Querying Orchestration Stacks of Services</h3>
+<div class="paragraph">
+<p>This is made available via the <em>orchestration_stacks</em> subcollection of services as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/services/:id/orchestration_stacks</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Fetching the orchestration stacks in addition to the service as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/services/:id?expand=orchestration_stacks</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Accessing a specific orchestration stack of a service as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/services/:id/orchestration_stacks/:orchestration_stack_id</pre>
+</div>
+</div>
+</div>
+</div>
+</div>

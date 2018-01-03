@@ -1,0 +1,266 @@
+---
+distro:         ManageIQ
+version:        Nightly Build
+
+group_id:       RestApi
+group_title:    REST API
+
+subgroup_id:    RestApi::Reference
+subgroup_title: Reference
+
+topic_id:       RestApi::Reference::SnapshotManagement
+topic_title:    Snapshot Management
+
+article_title:  "Snapshot Management"
+
+breadcrumb_group: REST API
+breadcrumb_topic: Snapshot Management
+---
+
+<div class="sect1">
+<h2 id="snapshot-management"><a class="anchor" href="#snapshot-management"></a>Snapshot Management</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Management of snapshots is provided for virtual machines and instances via the snapshots subcollection:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">/api/vms/:id/snapshots</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">/api/instances/:id/snapshots</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="snapshot-actions"><a class="anchor" href="#snapshot-actions"></a>Snapshot Actions</h3>
+<div class="paragraph">
+<p>The following snapshot actions are available for the supported resources:</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 50%;">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Snapshot Action</th>
+<th class="tableblock halign-left valign-top">Vms</th>
+<th class="tableblock halign-left valign-top">Instances</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">create</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">revert</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#query-snapshots">Querying Snapshots</a></p>
+</li>
+<li>
+<p><a href="#create-snapshots">Creating Snapshots</a></p>
+</li>
+<li>
+<p><a href="#revert-snapshots">Reverting Snapshots</a></p>
+</li>
+<li>
+<p><a href="#delete-snapshots">Deleting Snapshots</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="query-snapshots"><a class="anchor" href="#query-snapshots"></a>Querying Snapshots</h3>
+<div class="paragraph">
+<p>Snapshots of machines are queried via the subcollection of vms and instances as follows:</p>
+</div>
+<div class="paragraph">
+<p>Querying all snapshots of a VM:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">GET /api/vms/:id/snapshots</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Querying all snapshots of an Instance:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">GET /api/instances/:id/snapshots</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Filtering, sorting and paging on the subcollection as mentioned on the
+<a href="../overview/query.html">Querying</a> page.</p>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">GET /api/vms/11/snapshots?expand=resources&amp;filter[]=name=test*</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>One can also fetch a single snapshot by id:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">GET /api/vms/:id/snapshots/:snapshot_id</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">GET /api/instances/:id/snapshots/:snapshot_id</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="create-snapshots"><a class="anchor" href="#create-snapshots"></a>Creating Snapshots</h3>
+<div class="paragraph">
+<p>Creating snapshots on Vms and Instances is done by posting the request to the snapshots subcollection.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">POST /api/vms/:id/snapshots</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">POST /api/instances/:id/snapshots</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">name_of_new_snapshot</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Description of new Snapshot</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>memory</span><span style="color:#404">&quot;</span></span> : <span style="color:#088">false</span>
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In the above example, only <em>name</em> is required. <em>memory</em> can be set to true to have the snapshot include physical memory.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="revert-snapshots"><a class="anchor" href="#revert-snapshots"></a>Reverting Snapshots</h3>
+<div class="paragraph">
+<p>Reverting snapshots is only available for Vms.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">POST /api/vms/:id/snapshots/:snapshot_id</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">revert</span><span style="color:#710">&quot;</span></span>
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="delete-snapshots"><a class="anchor" href="#delete-snapshots"></a>Deleting Snapshots</h3>
+<div class="paragraph">
+<p>Individual snapshots of Vms and Instances can be deleted via the DELETE method as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">DELETE /api/vms/:id/snapshots/:snapshot_id</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">DELETE /api/instances/:id/snapshots/:snapshot_id</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As well as the <em>delete</em> POST action as follows for VMs:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">POST /api/vms/:id/snapshots/:snapshot_id</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or instances:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">POST /api/instances/:id/snapshots/:snapshot_id</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Snapshots can also be deleted in bulk via the <em>delete</em> action on the snapshots subcollection as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">POST /api/vms/11/snapshots</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>resources</span><span style="color:#404">&quot;</span></span> : [
+    { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/vms/11/snapshots/3</span><span style="color:#710">&quot;</span></span> },
+    { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/vms/11/snapshots/4</span><span style="color:#710">&quot;</span></span> },
+    { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/vms/11/snapshots/5</span><span style="color:#710">&quot;</span></span> }
+  ]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As well as for instances:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">POST /api/instances/201/snapshots</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>resources</span><span style="color:#404">&quot;</span></span> : [
+    { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/instances/201/snapshots/7</span><span style="color:#710">&quot;</span></span> },
+    { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/instances/201/snapshots/8</span><span style="color:#710">&quot;</span></span> }
+  ]
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>

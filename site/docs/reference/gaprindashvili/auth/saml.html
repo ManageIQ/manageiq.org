@@ -1,0 +1,547 @@
+---
+distro:         ManageIQ
+version:        Gaprindashvili
+
+group_id:       Authentication
+group_title:    Authentication
+
+subgroup_id:    
+subgroup_title: 
+
+topic_id:       Authentication::ConfiguringExternalAuthenticationWithSaml
+topic_title:    Configuring External Authentication with SAML
+
+article_title:  "SAML"
+
+breadcrumb_group: <a href="../auth/active_directory.html">Authentication</a>
+breadcrumb_topic: Configuring External Authentication with SAML
+---
+
+<div class="sect1">
+<h2 id="saml"><a class="anchor" href="#saml"></a>SAML</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>External Authentication on the Appliance has been enhanced to support SAML.
+The SAML implementation has been tested with KeyCloak 1.8.</p>
+</div>
+<div class="paragraph">
+<p>In this guide we will cover how to manually configure an Appliance&#8217;s
+external authentication to work with SAML. The SAML implementation has been
+tested with KeyCloak but is implemented generically using Apache&#8217;s mod_auth_mellon
+module and should work with other SAML Identity Providers.</p>
+</div>
+<div class="paragraph">
+<p>The current implementation only secures the Appliance&#8217;s Web administrative UI with SAML.</p>
+</div>
+<div class="paragraph">
+<p><strong>Note:</strong> The REST API and Self-Service UI do not currently support SAML.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="#requirements">Requirements</a></p>
+</li>
+<li>
+<p><a href="#configuring-saml">Configuring SAML</a></p>
+</li>
+<li>
+<p><a href="#configuring-admin-ui">Configuring the Administrative UI</a></p>
+</li>
+<li>
+<p><a href="#re-enabling-local-login">Re-Enabling Local Login</a></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="requirements"><a class="anchor" href="#requirements"></a>Requirements</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following is needed in order to enable SAML Authentication to the Appliance:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A CentOS/RHEL 7.2 based Appliance</p>
+</li>
+<li>
+<p>A SAML Identity Provider, (e.g. KeyCloak 1.8 or Later)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="configure-saml"><a class="anchor" href="#configure-saml"></a>Configure SAML</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>All SAML related certificates and keys are accessed from /etc/httpd/saml2/</p>
+</div>
+<div class="paragraph">
+<p>First ssh to the appliance as root, then create that directory:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code># mkdir -p /etc/httpd/saml2</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="apache-configuration"><a class="anchor" href="#apache-configuration"></a>Apache Configuration</h3>
+<div class="paragraph">
+<p>Copy the Apache remote user and SAML template configuration files:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code># TEMPLATE_DIR="/var/www/miq/system/TEMPLATE"
+# cp ${TEMPLATE_DIR}/etc/httpd/conf.d/manageiq-remote-user.conf        \
+    /etc/httpd/conf.d/
+# cp ${TEMPLATE_DIR}/etc/httpd/conf.d/manageiq-external-auth-saml.conf \
+    /etc/httpd/conf.d/</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="saml-configuration"><a class="anchor" href="#saml-configuration"></a>SAML Configuration</h3>
+<div class="paragraph">
+<p>Notable defaults in the <em>manageiq-external-auth-saml.conf</em> file:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Identity Provider Files</strong> (i.e. KeyCloak)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Metadata File</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/etc/httpd/saml2/idp-metadata.xml</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Service Provider Files</strong> (i.e. mod_auth_mellon)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Private Key File</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/etc/httpd/saml2/miqsp-key.key</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Certificate File</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/etc/httpd/saml2/miqsp-cert.cert</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Metadata File</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/etc/httpd/saml2/miqsp-metadata.xml</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Other mod_auth_mellon parameters must not be modified as the Appliance expects them
+to be defined as such, i.e. End points, Protected URL, etc.</p>
+</div>
+<div class="paragraph">
+<p>For the Service Provider files on the Appliance, these can be generated using
+the mod_auth_mellon command <em>mellon_create_metadata.sh</em> as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code># cd /etc/httpd/saml2
+# /usr/libexec/mod_auth_mellon/mellon_create_metadata.sh https://&lt;miq-appliance&gt; https://&lt;miq-appliance&gt;/saml2</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The mellon_create_metadata.sh script creates file names based on the appliance URL but
+can be renamed to match the expected file names from the <em>manageiq-external-auth-saml.conf</em> file:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code># mv https_&lt;miq-appliance&gt;.key  miqsp-key.key
+# mv https_&lt;miq-appliance&gt;.cert miqsp-cert.cert
+# mv https_&lt;miq-appliance&gt;.xml  miqsp-metadata.xml</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>With the service provider metadata.xml file generated, the Service Provider definition
+can now be defined in the Identity Provider.</p>
+</div>
+<div class="paragraph">
+<p>For KeyCloak, a Realm can be created for one or more Appliances with individual Clients
+defined one per Appliance where the Client ID is essentially the URL of the appliance.</p>
+</div>
+<div class="paragraph">
+<p>Adding a Client in the KeyCloak ManageIQ Realm:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Select and Import the miqsp-metadata.xml file created for mod_auth_mellon.</p>
+</li>
+<li>
+<p>Set Client ID as <a href="https://&lt;miq-appliance>" class="bare">https://&lt;miq-appliance></a></p>
+</li>
+<li>
+<p>Set Client protocol as <strong>saml</strong>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The Client definition for the appliance can then be updated with the following:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name ID Format</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">username</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Valid Redirect URIs</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://&lt;miq-appliance&gt;/saml2/paosResponse" class="bare">https://&lt;miq-appliance&gt;/saml2/paosResponse</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://&lt;miq-appliance&gt;/saml2/postResponse" class="bare">https://&lt;miq-appliance&gt;/saml2/postResponse</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Base URL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://&lt;miq-appliance&gt;/" class="bare">https://&lt;miq-appliance&gt;/</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Master SAML Processing URL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://&lt;miq-appliance&gt;/saml2" class="bare">https://&lt;miq-appliance&gt;/saml2</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Assertion Consumer Service POST Binding URL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://&lt;miq-appliance&gt;/saml2/postResponse" class="bare">https://&lt;miq-appliance&gt;/saml2/postResponse</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Assertion Consumer Service Redirect Binding URL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://&lt;miq-appliance&gt;/saml2/postResponse" class="bare">https://&lt;miq-appliance&gt;/saml2/postResponse</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Logout Service Redirect Binding URL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://&lt;miq-appliance&gt;/saml2/logout" class="bare">https://&lt;miq-appliance&gt;/saml2/logout</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The Identity Provider&#8217;s Metadata file idp-metadata.xml can then be obtained as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code># cd /etc/httpd/saml2
+# curl -s -o idp-metadata.xml \
+    http://&lt;keycloak-server&gt;:8080/auth/realms/&lt;miq-realm&gt;/protocol/saml/descriptor</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Finally, restart Apache on the appliance as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code># systemctl restart httpd</code></pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="saml-assertions"><a class="anchor" href="#saml-assertions"></a>SAML Assertions</h4>
+<div class="paragraph">
+<p>For authenticating to the appliance, the following remote user parameters are looked at by
+the appliance upon a successful login and redirect from the Identity Provider.</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 70%;">
+<colgroup>
+<col style="width: 66.6666%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">HTTP Environment</th>
+<th class="tableblock halign-left valign-top">SAML Assertion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">REMOTE_USER</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">username</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">REMOTE_USER_EMAIL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">email</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">REMOTE_USER_FIRSTNAME</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">firstname</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">REMOTE_USER_LASTNAME</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lastname</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">REMOTE_USER_FULLNAME</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fullname</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">REMOTE_USER_GROUPS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">groups</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>For KeyCloak, the above SAML Assertions can be created for the Appliance Client in KeyCloak as
+Mappers.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">Name</th>
+<th class="tableblock halign-center valign-top">Mapper Type</th>
+<th class="tableblock halign-center valign-top">Property</th>
+<th class="tableblock halign-center valign-top">Friendly Name</th>
+<th class="tableblock halign-center valign-top">SAML Attribute Name</th>
+<th class="tableblock halign-center valign-top">SAML Attribute Name Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">username</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">User Property</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">username</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">username</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">username</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Basic</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">email</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">User Property</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">email</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">email</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">email</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Basic</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">firstname</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">User Property</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">firstName</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">firstname</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">firstname</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Basic</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">lastname</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">User Property</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">lastName</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">lastname</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">lastname</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Basic</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">Name</th>
+<th class="tableblock halign-center valign-top">Mapper Type</th>
+<th class="tableblock halign-center valign-top">User Attribute</th>
+<th class="tableblock halign-center valign-top">Friendly Name</th>
+<th class="tableblock halign-center valign-top">SAML Attribute Name</th>
+<th class="tableblock halign-center valign-top">SAML Attribute Name Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">fullname</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">User Attribute</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">fullName</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">fullname</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">fullname</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Basic</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">Name</th>
+<th class="tableblock halign-center valign-top">Mapper Type</th>
+<th class="tableblock halign-center valign-top">Group attribute name</th>
+<th class="tableblock halign-center valign-top">Friendly Name</th>
+<th class="tableblock halign-center valign-top">SAML Attribute Name</th>
+<th class="tableblock halign-center valign-top">SAML Attribute Name Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">groups</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Group List</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">groups</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">groups</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">groups</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Basic</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><strong>Note:</strong> The fullName attribute was not available in the default database as of this writing
+and must be added to each user as a user attribute.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="configure-admin-ui"><a class="anchor" href="#configure-admin-ui"></a>Configure Administrative UI</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>After having configured Apache for SAML, the next step is to update the Appliance Administrative UI
+to be SAML aware and function accordingly.</p>
+</div>
+<div class="paragraph">
+<p>Login as admin, then in <em>Configure&#8594;Configuration&#8594;Authentication</em></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Set mode to External (httpd)</p>
+</li>
+<li>
+<p>Check: <em>Enable Single Signon</em> - With this option enabled, initial access to the Appliance Administrative UI will
+redirect to the SAML Identity Provider authentication screen.  Note that logouts from the Appliance will
+return the user to the Appliance login screen allowing them to login as admin unless <em>Disable Local Login</em>
+is checked below.</p>
+</li>
+<li>
+<p>Check: <em>Enable SAML</em> - This enables the SAML login button on the login screen, the redirects
+to the SAML protected page for authentication, and supports the SAML logout process.</p>
+</li>
+<li>
+<p>Optional: Check: <em>Disable Local Login</em> - Do this <strong>only</strong> if you need to disable <em>admin</em> login to appliance and only
+allow SAML based authentication.  Note that if there are issues with the Identity Provider or you need
+admin access to the appliance you won&#8217;t be able to login until you re-enable the Local Login
+as described below.</p>
+</li>
+<li>
+<p>Check: <em>Get User Groups from External Authentication (httpd)</em></p>
+</li>
+<li>
+<p>Click Save.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The above steps need to be done on each UI enabled appliance.</p>
+</div>
+<div class="paragraph">
+<p>in <em>Configure&#8594;Configuration&#8594;Access Control</em></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Make sure the user&#8217;s groups are created on the Appliance and appropriate roles assigned to those groups.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="re-enabling-local-login"><a class="anchor" href="#re-enabling-local-login"></a>Re-Enabling Local Login</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If the Local Login has been disabled in the Administrative UI and there is a need to be able
+to login as <em>admin</em>, the Local Login can be re-enabled as follows:</p>
+</div>
+<div class="sect2">
+<h3 id="administrative-ui"><a class="anchor" href="#administrative-ui"></a>Administrative UI:</h3>
+<div class="paragraph">
+<p>This option is available if the Identity Provider is available and one can login using a user
+with enough administrative privileges to update it:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Login as administrative user,</p>
+</li>
+<li>
+<p>In then in <em>Configure&#8594;Configuration&#8594;Authentication</em> uncheck <em>Disable Local Login</em> and save.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="appliance-console-interface"><a class="anchor" href="#appliance-console-interface"></a>Appliance Console Interface:</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>ssh to the appliance as root</p>
+</li>
+<li>
+<p>Run <em>appliance_console</em></p>
+</li>
+<li>
+<p>Select menu entry <em>Update External Authentication Options</em></p>
+</li>
+<li>
+<p>Select <em>Enable Local Login</em></p>
+</li>
+<li>
+<p>then <em>Apply updates</em></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="appliance-console-cli"><a class="anchor" href="#appliance-console-cli"></a>Appliance Console CLI:</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>ssh to the appliance as root</p>
+</li>
+<li>
+<p>Run <em>appliance_console_cli --extauth-opts</em> <strong>local_login_disabled=false</strong></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>

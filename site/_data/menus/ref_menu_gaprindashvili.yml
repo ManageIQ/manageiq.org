@@ -1,0 +1,304 @@
+---
+RestApi:
+  title: REST API
+  children:
+  - title: Appendices
+    children:
+    - title: Advanced Provisioning Attributes
+      path: "/docs/reference/gaprindashvili/api/appendices/advanced_provisioning"
+    - title: Collection Metadata
+      path: "/docs/reference/gaprindashvili/api/appendices/collection_metadata"
+    - title: Deprecated Resource Attributes
+      path: "/docs/reference/gaprindashvili/api/appendices/deprecated_resource_attributes"
+    - title: Provider Types
+      path: "/docs/reference/gaprindashvili/api/appendices/provider_types"
+    - title: Provision Request Supported Attributes
+      path: "/docs/reference/gaprindashvili/api/appendices/provision_attributes"
+    - title: Quick Reference
+      path: "/docs/reference/gaprindashvili/api/appendices/quick_reference"
+    - title: Resource Attributes
+      path: "/docs/reference/gaprindashvili/api/appendices/resource_attributes"
+    - title: SOAP to REST Mapping
+      path: "/docs/reference/gaprindashvili/api/appendices/soap_to_rest"
+  - title: Overview
+    children:
+    - title: Authentication
+      path: "/docs/reference/gaprindashvili/api/overview/auth"
+    - title: Authorization
+      path: "/docs/reference/gaprindashvili/api/overview/authorization"
+    - title: Bulk Querying
+      path: "/docs/reference/gaprindashvili/api/overview/bulk_query"
+    - title: CRUD
+      path: "/docs/reference/gaprindashvili/api/overview/crud"
+    - title: Filtering
+      path: "/docs/reference/gaprindashvili/api/overview/filtering"
+    - title: HTTP Basics
+      path: "/docs/reference/gaprindashvili/api/overview/http"
+    - title: Json Convention
+      path: "/docs/reference/gaprindashvili/api/overview/json"
+    - title: Password Updates
+      path: "/docs/reference/gaprindashvili/api/overview/password"
+    - title: Querying
+      path: "/docs/reference/gaprindashvili/api/overview/query"
+    - title: Version History
+      path: "/docs/reference/gaprindashvili/api/overview/versioning"
+  - title: Reference
+    children:
+    - title: Actions
+      path: "/docs/reference/gaprindashvili/api/reference/actions"
+    - title: Alert Management
+      path: "/docs/reference/gaprindashvili/api/reference/alerts"
+    - title: Arbitration Profiles
+      path: "/docs/reference/gaprindashvili/api/reference/arbitration_profiles"
+    - title: Arbitration Rules
+      path: "/docs/reference/gaprindashvili/api/reference/arbitration_rules"
+    - title: Arbitration Settings
+      path: "/docs/reference/gaprindashvili/api/reference/arbitration_settings"
+    - title: Authentication Management
+      path: "/docs/reference/gaprindashvili/api/reference/authentications"
+    - title: Automate Model
+      path: "/docs/reference/gaprindashvili/api/reference/automate"
+    - title: Automate Domains
+      path: "/docs/reference/gaprindashvili/api/reference/automate_domains"
+    - title: Automation Requests
+      path: "/docs/reference/gaprindashvili/api/reference/automation_requests"
+    - title: Blueprint Support
+      path: "/docs/reference/gaprindashvili/api/reference/blueprints"
+    - title: Categories & Tags
+      path: "/docs/reference/gaprindashvili/api/reference/categories_tags"
+    - title: Chargebacks & Rates
+      path: "/docs/reference/gaprindashvili/api/reference/chargebacks_rates"
+    - title: Primary Collections
+      path: "/docs/reference/gaprindashvili/api/reference/collections"
+    - title: Conditions
+      path: "/docs/reference/gaprindashvili/api/reference/conditions"
+    - title: Configuration Script Source Management
+      path: "/docs/reference/gaprindashvili/api/reference/configuration_script_sources"
+    - title: VM Custom Attributes
+      path: "/docs/reference/gaprindashvili/api/reference/custom_attributes"
+    - title: Group Management
+      path: "/docs/reference/gaprindashvili/api/reference/groups"
+    - title: Host Management
+      path: "/docs/reference/gaprindashvili/api/reference/hosts"
+    - title: Instance Management
+      path: "/docs/reference/gaprindashvili/api/reference/instances"
+    - title: Notifications Support
+      path: "/docs/reference/gaprindashvili/api/reference/notifications"
+    - title: Orchestration Support
+      path: "/docs/reference/gaprindashvili/api/reference/orchestration"
+    - title: Setting Ownership
+      path: "/docs/reference/gaprindashvili/api/reference/ownership"
+    - title: Picture Management
+      path: "/docs/reference/gaprindashvili/api/reference/pictures"
+    - title: Policies & Policy Profiles
+      path: "/docs/reference/gaprindashvili/api/reference/policies"
+    - title: Policy Collections
+      path: "/docs/reference/gaprindashvili/api/reference/policy_collections"
+    - title: Provider Custom Attributes
+      path: "/docs/reference/gaprindashvili/api/reference/provider_custom_attributes"
+    - title: Provider Support
+      path: "/docs/reference/gaprindashvili/api/reference/providers"
+    - title: Provision Requests
+      path: "/docs/reference/gaprindashvili/api/reference/provision_requests"
+    - title: Reports Support
+      path: "/docs/reference/gaprindashvili/api/reference/reports"
+    - title: Request Support
+      path: "/docs/reference/gaprindashvili/api/reference/requests"
+    - title: Role Management
+      path: "/docs/reference/gaprindashvili/api/reference/roles"
+    - title: Service Custom Actions
+      path: "/docs/reference/gaprindashvili/api/reference/service_custom_actions"
+    - title: Service Dialogs
+      path: "/docs/reference/gaprindashvili/api/reference/service_dialogs"
+    - title: Service Orders (Shopping Carts)
+      path: "/docs/reference/gaprindashvili/api/reference/service_orders"
+    - title: Service Queries
+      path: "/docs/reference/gaprindashvili/api/reference/service_queries"
+    - title: Service Management
+      path: "/docs/reference/gaprindashvili/api/reference/services"
+    - title: Snapshot Management
+      path: "/docs/reference/gaprindashvili/api/reference/snapshots"
+    - title: Tags & Tagging
+      path: "/docs/reference/gaprindashvili/api/reference/tagging"
+    - title: Tenant Management
+      path: "/docs/reference/gaprindashvili/api/reference/tenants"
+    - title: User Management
+      path: "/docs/reference/gaprindashvili/api/reference/users"
+    - title: VM Management
+      path: "/docs/reference/gaprindashvili/api/reference/vms"
+RestApiExamples:
+  title: REST API Examples
+  children:
+  - title: VM Management
+    children:
+    - title: Add event to a VM
+      path: "/docs/reference/gaprindashvili/api/examples/add_event_vm"
+    - title: Add lifecycle event to a VM
+      path: "/docs/reference/gaprindashvili/api/examples/add_lifecycle_event_vm"
+    - title: Delete a VM
+      path: "/docs/reference/gaprindashvili/api/examples/delete_vm"
+    - title: Scan a VM
+      path: "/docs/reference/gaprindashvili/api/examples/scan_vm"
+    - title: Set owner of a VM
+      path: "/docs/reference/gaprindashvili/api/examples/set_owner_vm"
+    - title: Start a VM
+      path: "/docs/reference/gaprindashvili/api/examples/start_vm"
+    - title: Stop a VM
+      path: "/docs/reference/gaprindashvili/api/examples/stop_vm"
+    - title: Suspend a VM
+      path: "/docs/reference/gaprindashvili/api/examples/suspend_vm"
+  - title: Service Catalogs
+    children:
+    - title: Add a Service Catalog
+      path: "/docs/reference/gaprindashvili/api/examples/add_service_catalog"
+    - title: Add multiple Service Catalogs
+      path: "/docs/reference/gaprindashvili/api/examples/add_service_catalogs"
+    - title: Assign Service Templates
+      path: "/docs/reference/gaprindashvili/api/examples/assign_service_templates"
+    - title: Delete Service Catalogs
+      path: "/docs/reference/gaprindashvili/api/examples/delete_service_catalogs"
+    - title: Edit a Service Catalog
+      path: "/docs/reference/gaprindashvili/api/examples/edit_service_catalog"
+    - title: Edit Service Catalogs
+      path: "/docs/reference/gaprindashvili/api/examples/edit_service_catalogs"
+    - title: Unassign Service Templates
+      path: "/docs/reference/gaprindashvili/api/examples/unassign_service_templates"
+  - title: Tag Management
+    children:
+    - title: Assign Tags
+      path: "/docs/reference/gaprindashvili/api/examples/assign_tags"
+    - title: Assign Tags to Service Template
+      path: "/docs/reference/gaprindashvili/api/examples/assign_tags_to_service_template"
+    - title: Unassign Tags
+      path: "/docs/reference/gaprindashvili/api/examples/unassign_tags"
+    - title: Unassign Tags from a Service Template
+      path: "/docs/reference/gaprindashvili/api/examples/unassign_tags_from_service_template"
+  - title: Automation Requests
+    children:
+    - title: Create an Automation Request
+      path: "/docs/reference/gaprindashvili/api/examples/automation_request"
+    - title: Create multiple Automation Requests
+      path: "/docs/reference/gaprindashvili/api/examples/automation_requests"
+  - title: Providers
+    children:
+    - title: Create a Provider
+      path: "/docs/reference/gaprindashvili/api/examples/create_provider"
+    - title: Create a Provider with multiple credentials
+      path: "/docs/reference/gaprindashvili/api/examples/create_provider_compound_credentials"
+    - title: Delete Provider
+      path: "/docs/reference/gaprindashvili/api/examples/delete_provider"
+    - title: Refresh Provider
+      path: "/docs/reference/gaprindashvili/api/examples/refresh_provider"
+    - title: Update a Provider
+      path: "/docs/reference/gaprindashvili/api/examples/update_provider"
+  - title: Services
+    children:
+    - title: Trigger a Custom Action on a Service
+      path: "/docs/reference/gaprindashvili/api/examples/custom_action_service"
+    - title: Delete Services
+      path: "/docs/reference/gaprindashvili/api/examples/delete_services"
+    - title: Edit a Service
+      path: "/docs/reference/gaprindashvili/api/examples/edit_service"
+    - title: Edit Service via PATCH
+      path: "/docs/reference/gaprindashvili/api/examples/edit_service_via_patch"
+    - title: Edit Service via PUT
+      path: "/docs/reference/gaprindashvili/api/examples/edit_service_via_put"
+    - title: Edit Services
+      path: "/docs/reference/gaprindashvili/api/examples/edit_services"
+    - title: Order a Service
+      path: "/docs/reference/gaprindashvili/api/examples/order_service"
+    - title: Order multiple Services
+      path: "/docs/reference/gaprindashvili/api/examples/order_services"
+    - title: Reconfigure Service
+      path: "/docs/reference/gaprindashvili/api/examples/reconfigure_service"
+    - title: Refresh Service Template Dialog Fields
+      path: "/docs/reference/gaprindashvili/api/examples/refresh_dialog_fields"
+    - title: Refresh Service Dialog Fields
+      path: "/docs/reference/gaprindashvili/api/examples/refresh_service_dialog_fields"
+    - title: Retire a Service
+      path: "/docs/reference/gaprindashvili/api/examples/retire_service"
+    - title: Retire multiple Services
+      path: "/docs/reference/gaprindashvili/api/examples/retire_services"
+  - title: Service Templates
+    children:
+    - title: Delete Service Templates
+      path: "/docs/reference/gaprindashvili/api/examples/delete_service_templates"
+    - title: Edit a Service Template
+      path: "/docs/reference/gaprindashvili/api/examples/edit_service_template"
+    - title: Edit Service Templates
+      path: "/docs/reference/gaprindashvili/api/examples/edit_service_templates"
+  - title: Foundation
+    children:
+    - title: Paging Queries
+      path: "/docs/reference/gaprindashvili/api/examples/paging_queries"
+    - title: Querying Examples
+      path: "/docs/reference/gaprindashvili/api/examples/queries"
+  - title: Provisioning Requests
+    children:
+    - title: Create a Provision Request
+      path: "/docs/reference/gaprindashvili/api/examples/provision_request"
+    - title: Create multliple Provision Requests
+      path: "/docs/reference/gaprindashvili/api/examples/provision_requests"
+Authentication:
+  title: Authentication
+  children:
+  - title: 
+    children:
+    - title: Configuring External Authentication with Active Directory
+      path: "/docs/reference/gaprindashvili/auth/active_directory"
+    - title: External Authentication using 2-Factor-Authentication with IPA
+      path: "/docs/reference/gaprindashvili/auth/ipa_2fa"
+    - title: External Authentication with IPA/AD Trust
+      path: "/docs/reference/gaprindashvili/auth/ipa_ad_trust"
+    - title: Configuring External Authentication with LDAP
+      path: "/docs/reference/gaprindashvili/auth/ldap"
+    - title: Configuring External Authentication with SAML
+      path: "/docs/reference/gaprindashvili/auth/saml"
+InstallingManageiqOnGoogleComputeEngine:
+  title: Installing ManageIQ on Google Compute Engine
+  path: "/docs/reference/gaprindashvili/doc-Installing_on_Google_Compute_Engine/miq"
+InstallingManageiqOnMicrosoftAzure:
+  title: Installing ManageIQ on Microsoft Azure
+  path: "/docs/reference/gaprindashvili/doc-Installing_on_Microsoft_Azure/miq"
+InstallingManageiqOnRedHatEnterpriseLinuxOpenstackPlatform:
+  title: Installing ManageIQ on Red Hat Enterprise Linux OpenStack Platform
+  path: "/docs/reference/gaprindashvili/doc-Installing_on_Red_Hat_Enterprise_Linux_OpenStack_Platform/miq"
+InstallingManageiqOnRedHatVirtualization:
+  title: Installing ManageIQ on Red Hat Virtualization
+  path: "/docs/reference/gaprindashvili/doc-Installing_on_Red_Hat_Virtualization/miq"
+IntegrationWithAwsCloudformationAndOpenstackHeat:
+  title: Integration with AWS CloudFormation and OpenStack Heat
+  path: "/docs/reference/gaprindashvili/doc-Integration_with_AWS_CloudFormation_and_OpenStack_Heat/miq"
+IntegrationWithServicenow:
+  title: Integration with ServiceNow
+  path: "/docs/reference/gaprindashvili/doc-Integration_with_ServiceNow/miq"
+IntroductionToTheSelfservicePortal:
+  title: Introduction to the Self Service Portal
+  path: "/docs/reference/gaprindashvili/doc-Introduction_to_Self_Service_Portal/miq"
+ManagingInfrastructureAndInventory:
+  title: Managing Infrastructure and Inventory
+  path: "/docs/reference/gaprindashvili/doc-Managing_Infrastructure_and_Inventory/miq"
+ManagingProviders:
+  title: Managing Providers
+  path: "/docs/reference/gaprindashvili/doc-Managing_Providers/miq"
+MethodsAvailableForAutomation:
+  title: Methods Available for Automation
+  path: "/docs/reference/gaprindashvili/doc-Methods_Available_for_Automation/miq"
+MonitoringAlertsAndReporting:
+  title: Monitoring, Alerts, and Reporting
+  path: "/docs/reference/gaprindashvili/doc-Monitoring_Alerts_and_Reporting/miq"
+PoliciesAndProfilesGuide:
+  title: Policies and Profiles Guide
+  path: "/docs/reference/gaprindashvili/doc-Policies_and_Profiles_Guide/miq"
+ProvisioningVirtualMachinesAndHosts:
+  title: Provisioning Virtual Machines and Hosts
+  path: "/docs/reference/gaprindashvili/doc-Provisioning_Virtual_Machines_and_Hosts/miq"
+ManageiqRestApi:
+  title: ManageIQ REST API
+  path: "/docs/reference/gaprindashvili/doc-REST_API/miq"
+ScriptingActionsInManageiq:
+  title: Scripting Actions in ManageIQ
+  path: "/docs/reference/gaprindashvili/doc-Scripting_Actions/miq"
+welcome:
+  title: Welcome
+  path: "/docs/reference/gaprindashvili/welcome"

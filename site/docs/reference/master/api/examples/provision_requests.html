@@ -1,0 +1,559 @@
+---
+distro:         ManageIQ
+version:        Nightly Build
+
+group_id:       RestApiExamples
+group_title:    REST API Examples
+
+subgroup_id:    RestApiExamples::ProvisioningRequests
+subgroup_title: Provisioning Requests
+
+topic_id:       RestApiExamples::ProvisioningRequests::CreateMultlipleProvisionRequests
+topic_title:    Create multliple Provision Requests
+
+article_title:  "Trigger multiple Provision Requests"
+
+breadcrumb_group: REST API Examples
+breadcrumb_topic: Create multliple Provision Requests
+---
+
+<div class="sect2">
+<h3 id="trigger-multiple-provision-requests"><a class="anchor" href="#trigger-multiple-provision-requests"></a>Trigger multiple Provision Requests</h3>
+<div class="paragraph">
+<p><em>In the provision requests</em>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>version defaults to "1.1" if not specified.</p>
+</li>
+<li>
+<p>user_name defaults to the REST API authenticated user if not specified.</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="request"><a class="anchor" href="#request"></a>Request:</h4>
+<div class="listingblock">
+<div class="content">
+<pre>POST /api/provision_requests</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">create</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>resources</span><span style="color:#404">&quot;</span></span> : [
+    {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>version</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">1.1</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>template_fields</span><span style="color:#404">&quot;</span></span> : { <span style="color:#606"><span style="color:#404">&quot;</span><span>guid</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">afe6e8a0-89fd-11e3-b6ac-b8e85646e742</span><span style="color:#710">&quot;</span></span> },
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>vm_fields</span><span style="color:#404">&quot;</span></span> : {
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>vm_name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">jdoe_rest_vm1</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>number_of_cpus</span><span style="color:#404">&quot;</span></span> : <span style="color:#00D">1</span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>vm_memory</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">1024</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>vlan</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">nic1</span><span style="color:#710">&quot;</span></span>
+      },
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>requester</span><span style="color:#404">&quot;</span></span> : {
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>user_name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">jdoe</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>owner_first_name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">John</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>owner_last_name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Doe</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>owner_email</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">jdoe@sample.com</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>auto_approve</span><span style="color:#404">&quot;</span></span> : <span style="color:#088">true</span>
+      },
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>tags</span><span style="color:#404">&quot;</span></span> : {
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>network_location</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Internal</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>cc</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">001</span><span style="color:#710">&quot;</span></span>
+      },
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>additional_values</span><span style="color:#404">&quot;</span></span> : { <span style="color:#606"><span style="color:#404">&quot;</span><span>request_id</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">1001</span><span style="color:#710">&quot;</span></span> },
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>ems_custom_attributes</span><span style="color:#404">&quot;</span></span> : { },
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>miq_custom_attributes</span><span style="color:#404">&quot;</span></span> : { }
+    },
+    {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>template_fields</span><span style="color:#404">&quot;</span></span> : { <span style="color:#606"><span style="color:#404">&quot;</span><span>guid</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">afe6e8a0-89fd-11e3-b6ac-b8e85646e742</span><span style="color:#710">&quot;</span></span> },
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>vm_fields</span><span style="color:#404">&quot;</span></span> : {
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>vm_name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">jdoe_rest_vm2</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>number_of_cpus</span><span style="color:#404">&quot;</span></span> : <span style="color:#00D">1</span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>vm_memory</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2048</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>vlan</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">nic1</span><span style="color:#710">&quot;</span></span>
+      },
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>requester</span><span style="color:#404">&quot;</span></span> : {
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>owner_first_name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">John</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>owner_last_name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Doe</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>owner_email</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">jdoe@sample.com</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>auto_approve</span><span style="color:#404">&quot;</span></span> : <span style="color:#088">true</span>
+      },
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>tags</span><span style="color:#404">&quot;</span></span> : {
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>network_location</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Internal</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>cc</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">001</span><span style="color:#710">&quot;</span></span>
+      },
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>additional_values</span><span style="color:#404">&quot;</span></span> : { <span style="color:#606"><span style="color:#404">&quot;</span><span>request_id</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">1002</span><span style="color:#710">&quot;</span></span> }
+    },
+    {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>template_fields</span><span style="color:#404">&quot;</span></span> : { <span style="color:#606"><span style="color:#404">&quot;</span><span>guid</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">afe6e8a0-89fd-11e3-b6ac-b8e85646e742</span><span style="color:#710">&quot;</span></span> },
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>vm_fields</span><span style="color:#404">&quot;</span></span> : {
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>vm_name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">jdoe_rest_vm3</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>number_of_cpus</span><span style="color:#404">&quot;</span></span> : <span style="color:#00D">1</span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>vm_memory</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">4096</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>vlan</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">nic1</span><span style="color:#710">&quot;</span></span>
+      },
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>requester</span><span style="color:#404">&quot;</span></span> : {
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>owner_first_name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">John</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>owner_last_name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Doe</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>owner_email</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">jdoe@sample.com</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>auto_approve</span><span style="color:#404">&quot;</span></span> : <span style="color:#088">true</span>
+      },
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>tags</span><span style="color:#404">&quot;</span></span> : {
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>network_location</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Internal</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>cc</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">001</span><span style="color:#710">&quot;</span></span>
+      },
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>additional_values</span><span style="color:#404">&quot;</span></span> : { <span style="color:#606"><span style="color:#404">&quot;</span><span>request_id</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">1003</span><span style="color:#710">&quot;</span></span> }
+    }
+  ]
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="response"><a class="anchor" href="#response"></a>Response:</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>results</span><span style="color:#404">&quot;</span></span>: [
+    {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">19</span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Provision from [bd-clone-template] to [aab_rest_vm1]</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>approval_state</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">pending_approval</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">MiqProvisionRequest</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>created_on</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2015-05-08T18:25:25Z</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>updated_on</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2015-05-08T18:25:26Z</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>requester_id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">1</span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>requester_name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">jdoe</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>request_type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">template</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>request_state</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">pending</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>message</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">VM Provisioning - Request Created</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>status</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Ok</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>options</span><span style="color:#404">&quot;</span></span>: {
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>use_pre_dialog</span><span style="color:#404">&quot;</span></span>: <span style="color:#088">false</span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>request_type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">template</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>miq_request_dialog_name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">miq_provision_redhat_dialogs_template</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>owner_first_name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">John</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>owner_last_name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Doe</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>owner_email</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">jdoe@sample.com</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>vm_tags</span><span style="color:#404">&quot;</span></span>: [
+          <span style="color:#00D">62</span>,
+          <span style="color:#00D">58</span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>addr_mode</span><span style="color:#404">&quot;</span></span>: [
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">static</span><span style="color:#710">&quot;</span></span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Static</span><span style="color:#710">&quot;</span></span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>placement_cluster_name</span><span style="color:#404">&quot;</span></span>: [
+          <span style="color:#088">null</span>,
+          <span style="color:#088">null</span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>cluster_filter</span><span style="color:#404">&quot;</span></span>: [
+          <span style="color:#088">null</span>,
+          <span style="color:#088">null</span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>placement_auto</span><span style="color:#404">&quot;</span></span>: [
+          <span style="color:#088">true</span>,
+          <span style="color:#00D">1</span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>placement_dc_name</span><span style="color:#404">&quot;</span></span>: [
+          <span style="color:#088">null</span>,
+          <span style="color:#088">null</span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>number_of_vms</span><span style="color:#404">&quot;</span></span>: [
+          <span style="color:#00D">1</span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">1</span><span style="color:#710">&quot;</span></span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>src_vm_id</span><span style="color:#404">&quot;</span></span>: [
+          <span style="color:#00D">1947</span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">bd-clone-template</span><span style="color:#710">&quot;</span></span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>provision_type</span><span style="color:#404">&quot;</span></span>: [
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">native_clone</span><span style="color:#710">&quot;</span></span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Native Clone</span><span style="color:#710">&quot;</span></span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>linked_clone</span><span style="color:#404">&quot;</span></span>: [
+          <span style="color:#088">null</span>,
+          <span style="color:#088">null</span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>vm_name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">aab_rest_vm1</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>pxe_server_id</span><span style="color:#404">&quot;</span></span>: [
+          <span style="color:#088">null</span>,
+          <span style="color:#088">null</span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>schedule_type</span><span style="color:#404">&quot;</span></span>: [
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">immediately</span><span style="color:#710">&quot;</span></span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Immediately on Approval</span><span style="color:#710">&quot;</span></span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>vm_auto_start</span><span style="color:#404">&quot;</span></span>: [
+          <span style="color:#088">true</span>,
+          <span style="color:#00D">1</span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>schedule_time</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2015-05-09T14:25:25-04:00</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>retirement</span><span style="color:#404">&quot;</span></span>: [
+          <span style="color:#00D">0</span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Indefinite</span><span style="color:#710">&quot;</span></span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>retirement_warn</span><span style="color:#404">&quot;</span></span>: [
+          <span style="color:#00D">604800</span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">1 Week</span><span style="color:#710">&quot;</span></span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>stateless</span><span style="color:#404">&quot;</span></span>: [
+          <span style="color:#088">false</span>,
+          <span style="color:#00D">0</span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>vlan</span><span style="color:#404">&quot;</span></span>: [
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">rhevm</span><span style="color:#710">&quot;</span></span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">rhevm</span><span style="color:#710">&quot;</span></span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>disk_format</span><span style="color:#404">&quot;</span></span>: [
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">default</span><span style="color:#710">&quot;</span></span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Default</span><span style="color:#710">&quot;</span></span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>number_of_sockets</span><span style="color:#404">&quot;</span></span>: [
+          <span style="color:#00D">1</span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">1</span><span style="color:#710">&quot;</span></span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>cores_per_socket</span><span style="color:#404">&quot;</span></span>: [
+          <span style="color:#00D">1</span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">1</span><span style="color:#710">&quot;</span></span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>vm_memory</span><span style="color:#404">&quot;</span></span>: [
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">1024</span><span style="color:#710">&quot;</span></span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">1024</span><span style="color:#710">&quot;</span></span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>network_adapters</span><span style="color:#404">&quot;</span></span>: [
+          <span style="color:#00D">1</span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">1</span><span style="color:#710">&quot;</span></span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>placement_host_name</span><span style="color:#404">&quot;</span></span>: [
+          <span style="color:#088">null</span>,
+          <span style="color:#088">null</span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>placement_ds_name</span><span style="color:#404">&quot;</span></span>: [
+          <span style="color:#088">null</span>,
+          <span style="color:#088">null</span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>src_vm_nics</span><span style="color:#404">&quot;</span></span>: [
+
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>src_vm_lans</span><span style="color:#404">&quot;</span></span>: [
+
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>customize_enabled</span><span style="color:#404">&quot;</span></span>: [
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">enabled</span><span style="color:#710">&quot;</span></span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>src_ems_id</span><span style="color:#404">&quot;</span></span>: [
+          <span style="color:#00D">105</span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">rhevm230</span><span style="color:#710">&quot;</span></span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>auto_approve</span><span style="color:#404">&quot;</span></span>: <span style="color:#088">false</span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>ws_values</span><span style="color:#404">&quot;</span></span>: {
+          <span style="color:#606"><span style="color:#404">&quot;</span><span>request_id</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">1001</span><span style="color:#710">&quot;</span></span>
+        },
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>ws_ems_custom_attributes</span><span style="color:#404">&quot;</span></span>: {
+        },
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>ws_miq_custom_attributes</span><span style="color:#404">&quot;</span></span>: {
+        }
+      },
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>userid</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">jdoe</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>source_id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">1947</span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>source_type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">VmOrTemplate</span><span style="color:#710">&quot;</span></span>
+    },
+    {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">20</span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Provision from [bd-clone-template] to [aab_rest_vm2]</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>approval_state</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">pending_approval</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">MiqProvisionRequest</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>created_on</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2015-05-08T18:25:28Z</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>updated_on</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2015-05-08T18:25:29Z</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>requester_id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">1</span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>requester_name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">jdoe</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>request_type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">template</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>request_state</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">pending</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>message</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">VM Provisioning - Request Created</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>status</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Ok</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>options</span><span style="color:#404">&quot;</span></span>: {
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>use_pre_dialog</span><span style="color:#404">&quot;</span></span>: <span style="color:#088">false</span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>request_type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">template</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>miq_request_dialog_name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">miq_provision_redhat_dialogs_template</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>owner_first_name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">John</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>owner_last_name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Doe</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>owner_email</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">jdoe@sample.com</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>vm_tags</span><span style="color:#404">&quot;</span></span>: [
+          <span style="color:#00D">62</span>,
+          <span style="color:#00D">58</span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>addr_mode</span><span style="color:#404">&quot;</span></span>: [
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">static</span><span style="color:#710">&quot;</span></span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Static</span><span style="color:#710">&quot;</span></span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>placement_cluster_name</span><span style="color:#404">&quot;</span></span>: [
+          <span style="color:#088">null</span>,
+          <span style="color:#088">null</span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>cluster_filter</span><span style="color:#404">&quot;</span></span>: [
+          <span style="color:#088">null</span>,
+          <span style="color:#088">null</span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>placement_auto</span><span style="color:#404">&quot;</span></span>: [
+          <span style="color:#088">true</span>,
+          <span style="color:#00D">1</span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>placement_dc_name</span><span style="color:#404">&quot;</span></span>: [
+          <span style="color:#088">null</span>,
+          <span style="color:#088">null</span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>number_of_vms</span><span style="color:#404">&quot;</span></span>: [
+          <span style="color:#00D">1</span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">1</span><span style="color:#710">&quot;</span></span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>src_vm_id</span><span style="color:#404">&quot;</span></span>: [
+          <span style="color:#00D">1947</span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">bd-clone-template</span><span style="color:#710">&quot;</span></span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>provision_type</span><span style="color:#404">&quot;</span></span>: [
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">native_clone</span><span style="color:#710">&quot;</span></span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Native Clone</span><span style="color:#710">&quot;</span></span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>linked_clone</span><span style="color:#404">&quot;</span></span>: [
+          <span style="color:#088">null</span>,
+          <span style="color:#088">null</span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>vm_name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">aab_rest_vm2</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>pxe_server_id</span><span style="color:#404">&quot;</span></span>: [
+          <span style="color:#088">null</span>,
+          <span style="color:#088">null</span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>schedule_type</span><span style="color:#404">&quot;</span></span>: [
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">immediately</span><span style="color:#710">&quot;</span></span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Immediately on Approval</span><span style="color:#710">&quot;</span></span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>vm_auto_start</span><span style="color:#404">&quot;</span></span>: [
+          <span style="color:#088">true</span>,
+          <span style="color:#00D">1</span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>schedule_time</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2015-05-09T14:25:28-04:00</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>retirement</span><span style="color:#404">&quot;</span></span>: [
+          <span style="color:#00D">0</span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Indefinite</span><span style="color:#710">&quot;</span></span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>retirement_warn</span><span style="color:#404">&quot;</span></span>: [
+          <span style="color:#00D">604800</span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">1 Week</span><span style="color:#710">&quot;</span></span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>stateless</span><span style="color:#404">&quot;</span></span>: [
+          <span style="color:#088">false</span>,
+          <span style="color:#00D">0</span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>vlan</span><span style="color:#404">&quot;</span></span>: [
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">rhevm</span><span style="color:#710">&quot;</span></span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">rhevm</span><span style="color:#710">&quot;</span></span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>disk_format</span><span style="color:#404">&quot;</span></span>: [
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">default</span><span style="color:#710">&quot;</span></span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Default</span><span style="color:#710">&quot;</span></span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>number_of_sockets</span><span style="color:#404">&quot;</span></span>: [
+          <span style="color:#00D">1</span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">1</span><span style="color:#710">&quot;</span></span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>cores_per_socket</span><span style="color:#404">&quot;</span></span>: [
+          <span style="color:#00D">1</span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">1</span><span style="color:#710">&quot;</span></span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>vm_memory</span><span style="color:#404">&quot;</span></span>: [
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">1024</span><span style="color:#710">&quot;</span></span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">1024</span><span style="color:#710">&quot;</span></span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>network_adapters</span><span style="color:#404">&quot;</span></span>: [
+          <span style="color:#00D">1</span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">1</span><span style="color:#710">&quot;</span></span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>placement_host_name</span><span style="color:#404">&quot;</span></span>: [
+          <span style="color:#088">null</span>,
+          <span style="color:#088">null</span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>placement_ds_name</span><span style="color:#404">&quot;</span></span>: [
+          <span style="color:#088">null</span>,
+          <span style="color:#088">null</span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>src_vm_nics</span><span style="color:#404">&quot;</span></span>: [
+
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>src_vm_lans</span><span style="color:#404">&quot;</span></span>: [
+
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>customize_enabled</span><span style="color:#404">&quot;</span></span>: [
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">enabled</span><span style="color:#710">&quot;</span></span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>src_ems_id</span><span style="color:#404">&quot;</span></span>: [
+          <span style="color:#00D">105</span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">rhevm230</span><span style="color:#710">&quot;</span></span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>auto_approve</span><span style="color:#404">&quot;</span></span>: <span style="color:#088">false</span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>ws_values</span><span style="color:#404">&quot;</span></span>: {
+          <span style="color:#606"><span style="color:#404">&quot;</span><span>request_id</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">1001</span><span style="color:#710">&quot;</span></span>
+        },
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>ws_ems_custom_attributes</span><span style="color:#404">&quot;</span></span>: {
+        },
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>ws_miq_custom_attributes</span><span style="color:#404">&quot;</span></span>: {
+        }
+      },
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>userid</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">jdoe</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>source_id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">1947</span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>source_type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">VmOrTemplate</span><span style="color:#710">&quot;</span></span>
+    },
+    {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">21</span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Provision from [bd-clone-template] to [aab_rest_vm3]</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>approval_state</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">pending_approval</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">MiqProvisionRequest</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>created_on</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2015-05-08T18:25:32Z</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>updated_on</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2015-05-08T18:25:32Z</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>requester_id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">1</span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>requester_name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">jdoe</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>request_type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">template</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>request_state</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">pending</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>message</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">VM Provisioning - Request Created</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>status</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Ok</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>options</span><span style="color:#404">&quot;</span></span>: {
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>use_pre_dialog</span><span style="color:#404">&quot;</span></span>: <span style="color:#088">false</span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>request_type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">template</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>miq_request_dialog_name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">miq_provision_redhat_dialogs_template</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>owner_first_name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">John</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>owner_last_name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Doe</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>owner_email</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">jdoe@sample.com</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>vm_tags</span><span style="color:#404">&quot;</span></span>: [
+          <span style="color:#00D">62</span>,
+          <span style="color:#00D">58</span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>addr_mode</span><span style="color:#404">&quot;</span></span>: [
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">static</span><span style="color:#710">&quot;</span></span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Static</span><span style="color:#710">&quot;</span></span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>placement_cluster_name</span><span style="color:#404">&quot;</span></span>: [
+          <span style="color:#088">null</span>,
+          <span style="color:#088">null</span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>cluster_filter</span><span style="color:#404">&quot;</span></span>: [
+          <span style="color:#088">null</span>,
+          <span style="color:#088">null</span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>placement_auto</span><span style="color:#404">&quot;</span></span>: [
+          <span style="color:#088">true</span>,
+          <span style="color:#00D">1</span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>placement_dc_name</span><span style="color:#404">&quot;</span></span>: [
+          <span style="color:#088">null</span>,
+          <span style="color:#088">null</span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>number_of_vms</span><span style="color:#404">&quot;</span></span>: [
+          <span style="color:#00D">1</span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">1</span><span style="color:#710">&quot;</span></span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>src_vm_id</span><span style="color:#404">&quot;</span></span>: [
+          <span style="color:#00D">1947</span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">bd-clone-template</span><span style="color:#710">&quot;</span></span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>provision_type</span><span style="color:#404">&quot;</span></span>: [
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">native_clone</span><span style="color:#710">&quot;</span></span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Native Clone</span><span style="color:#710">&quot;</span></span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>linked_clone</span><span style="color:#404">&quot;</span></span>: [
+          <span style="color:#088">null</span>,
+          <span style="color:#088">null</span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>vm_name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">aab_rest_vm3</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>pxe_server_id</span><span style="color:#404">&quot;</span></span>: [
+          <span style="color:#088">null</span>,
+          <span style="color:#088">null</span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>schedule_type</span><span style="color:#404">&quot;</span></span>: [
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">immediately</span><span style="color:#710">&quot;</span></span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Immediately on Approval</span><span style="color:#710">&quot;</span></span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>vm_auto_start</span><span style="color:#404">&quot;</span></span>: [
+          <span style="color:#088">true</span>,
+          <span style="color:#00D">1</span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>schedule_time</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2015-05-09T14:25:31-04:00</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>retirement</span><span style="color:#404">&quot;</span></span>: [
+          <span style="color:#00D">0</span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Indefinite</span><span style="color:#710">&quot;</span></span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>retirement_warn</span><span style="color:#404">&quot;</span></span>: [
+          <span style="color:#00D">604800</span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">1 Week</span><span style="color:#710">&quot;</span></span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>stateless</span><span style="color:#404">&quot;</span></span>: [
+          <span style="color:#088">false</span>,
+          <span style="color:#00D">0</span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>vlan</span><span style="color:#404">&quot;</span></span>: [
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">rhevm</span><span style="color:#710">&quot;</span></span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">rhevm</span><span style="color:#710">&quot;</span></span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>disk_format</span><span style="color:#404">&quot;</span></span>: [
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">default</span><span style="color:#710">&quot;</span></span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Default</span><span style="color:#710">&quot;</span></span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>number_of_sockets</span><span style="color:#404">&quot;</span></span>: [
+          <span style="color:#00D">1</span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">1</span><span style="color:#710">&quot;</span></span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>cores_per_socket</span><span style="color:#404">&quot;</span></span>: [
+          <span style="color:#00D">1</span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">1</span><span style="color:#710">&quot;</span></span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>vm_memory</span><span style="color:#404">&quot;</span></span>: [
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">1024</span><span style="color:#710">&quot;</span></span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">1024</span><span style="color:#710">&quot;</span></span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>network_adapters</span><span style="color:#404">&quot;</span></span>: [
+          <span style="color:#00D">1</span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">1</span><span style="color:#710">&quot;</span></span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>placement_host_name</span><span style="color:#404">&quot;</span></span>: [
+          <span style="color:#088">null</span>,
+          <span style="color:#088">null</span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>placement_ds_name</span><span style="color:#404">&quot;</span></span>: [
+          <span style="color:#088">null</span>,
+          <span style="color:#088">null</span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>src_vm_nics</span><span style="color:#404">&quot;</span></span>: [
+
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>src_vm_lans</span><span style="color:#404">&quot;</span></span>: [
+
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>customize_enabled</span><span style="color:#404">&quot;</span></span>: [
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">enabled</span><span style="color:#710">&quot;</span></span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>src_ems_id</span><span style="color:#404">&quot;</span></span>: [
+          <span style="color:#00D">105</span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">rhevm230</span><span style="color:#710">&quot;</span></span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>auto_approve</span><span style="color:#404">&quot;</span></span>: <span style="color:#088">false</span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>ws_values</span><span style="color:#404">&quot;</span></span>: {
+          <span style="color:#606"><span style="color:#404">&quot;</span><span>request_id</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">1001</span><span style="color:#710">&quot;</span></span>
+        },
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>ws_ems_custom_attributes</span><span style="color:#404">&quot;</span></span>: {
+        },
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>ws_miq_custom_attributes</span><span style="color:#404">&quot;</span></span>: {
+        }
+      },
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>userid</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">jdoe</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>source_id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">1947</span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>source_type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">VmOrTemplate</span><span style="color:#710">&quot;</span></span>
+    }
+  ]
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
