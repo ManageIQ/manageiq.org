@@ -60,7 +60,7 @@ ENV MIQ_ENV=production
 # MIQ_LOG_DEST
 
 # Absolute path for Bundler
-ENV MIQ_BUNDLER=/opt/rubies/ruby-2.3.1/bin/bundler
+ENV MIQ_BUNDLER=/usr/local/bin/bundler
 
 ENV MIQ_BASE_DIR=/srv/build
 ENV MIQ_DOCS_DIR=/srv/build/site/docs
