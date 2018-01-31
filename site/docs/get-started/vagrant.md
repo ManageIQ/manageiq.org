@@ -20,7 +20,7 @@ Execute the following commands to create a new Vagrant box:
 ```bash
 $ mkdir manageiq
 $ cd manageiq
-$ vagrant init manageiq/fine
+$ vagrant init manageiq/gaprindashvili
 ```
 
 There is now a `Vagrantfile` in the current directory.
