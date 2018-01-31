@@ -49,7 +49,7 @@ And as a shift away from real time metrics for alerts, ManageIQ can now receive 
 
 ## All Good Things...
 
-We are deprecating the MiqLdap client in this release, which provides support for the Authentication Mode: LDAP and LDAPS. An automated conversion script, call `miqldap_to_sssd`, is provided to convert ManageIQ Authentication configurations that use the MiqLdap client to using External authentication with SSSD. See this [blog post](/blog/2017/09/miqldap-to-sssd/) describing how to use the `miqldap_to_sssd` conversion tool.
+We are deprecating the MiqLdap client in this release, which provides support for the Authentication Mode: LDAP and LDAPS. An automated conversion script, called `miqldap_to_sssd`, is provided that will convert ManageIQ Authentication configurations from using the MiqLdap client into Authentication configurations that will use External authentication with SSSD. See this [blog post](/blog/2017/09/miqldap-to-sssd/) describing how to use the `miqldap_to_sssd` conversion tool.
 
 Another change, which you might have noticed, is the discontinuation of the [weekly development updates](/blog/tags/LWIMIQ/) series. So far we've had 69 posts over 17 months, and we're switching to a new format this year. New frequency I should say, as we will now publish "Last Month in ManageIQ" monthly posts. I will probably resume the [Sprint summary posts](/blog/tags/sprints/), while they felt a bit redundant when weekly updates are available, they might prove more useful with the new setup.
 
