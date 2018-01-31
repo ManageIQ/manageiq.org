@@ -17,7 +17,7 @@ title: Download ManageIQ
     <tr>
       <td><a href="https://hub.docker.com/r/manageiq/manageiq/" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'outbound', eventLabel: 'Docker {{release.name}}', transport: 'beacon' });">Docker (tag {{release.tag}})</a></td>
       <td>docker</td>
-      <td>0.8 GB</td>
+      <td>0.9 GB</td>
     </tr>
     {% for type in site.data.download_types %}
     <tr>
@@ -31,9 +31,9 @@ title: Download ManageIQ
     </tr>
     {% endfor %}
     <tr>
-      <td><a href="https://app.vagrantup.com/manageiq/boxes/fine" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'outbound', eventLabel: 'Vagrant {{release.name}}', transport: 'beacon' });">Vagrant</a></td>
+      <td><a href="https://app.vagrantup.com/manageiq/boxes/gaprindashvili" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'outbound', eventLabel: 'Vagrant {{release.name}}', transport: 'beacon' });">Vagrant</a></td>
       <td>vagrant</td>
-      <td>1.3 GB</td>
+      <td>1.5 GB</td>
     </tr>
   </table>
 </div>
@@ -95,7 +95,7 @@ title: Download ManageIQ
     <tr>
       <td><a href="https://hub.docker.com/r/manageiq/manageiq/" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'outbound', eventLabel: 'Docker {{release.name}}', transport: 'beacon' });">Docker (tag {{release.tag}})</a></td>
       <td>docker</td>
-      <td>0.8 GB</td>
+      <td>0.9 GB</td>
     </tr>
     {% for type in site.data.download_types %}
     <tr>
