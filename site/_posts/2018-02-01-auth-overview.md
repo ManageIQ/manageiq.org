@@ -1,7 +1,7 @@
 ---
 title: "ManageIQ Authentication Overview"
 author: jvlcek
-date: 2018-01-29
+date: 2018-02-01
 comments: true
 published: true
 tags: tutorials

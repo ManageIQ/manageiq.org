@@ -1,7 +1,7 @@
---
+---
 title: "Troubleshooting ManageIQ Authentication"
 author: jvlcek
-date: 2018-01-28
+date: 2018-01-31
 comments: true
 published: true
 tags: tutorials
