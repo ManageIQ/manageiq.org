@@ -125,7 +125,7 @@ A summary of how to configure ***IPA AD Trust*** with IPA is as follows:
 
   The identity provider tool, [Keycloak](http://www.keycloak.org/), has been used to test the SAML functionality.
 
-  A summary of how to configure an ManageIQ appliance to work with SAML is as follows:
+  A summary of how to configure a ManageIQ appliance to work with SAML is as follows:
 
   1. Configuration Apache 
   1. Configure SAML with mellon_create_metadata script

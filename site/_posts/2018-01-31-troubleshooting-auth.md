@@ -54,7 +54,7 @@ Below is a list of the technologies used to implement each of the authentication
 ### **Mode: LDAP and Mode: LDAPS**
 
   ManageIQ configurations: **Mode: LDAP and Mode: LDAPS**, are implemented with the MiqLdap driver, which queries LDAP
-  IdP servers directly via the [**net-ldap Rubygem**](https://rubygems.org/gems/net-ldap/).
+  servers directly via the [**net-ldap Rubygem**](https://rubygems.org/gems/net-ldap/).
 
   + See: [**Confirming LDAP Configuration**](#confirming-ldap-configuration) for tips on how to verify an LDAP configuration.
 
@@ -204,7 +204,7 @@ the authentication configuration settings, group and user information from the d
     group reported by this command. If not one must be manually added using the ManageIQ UI.
 
   <pre><code style="white-space: pre">
-  miq_bash> /var/www/miq/vmdb/bin/rails runner 'MiqGroup.all.map { |u| puts "  #{u[:description]}" }'
+  miq_bash> /var/www/miq/vmdb/bin/rails runner 'puts MiqGroup.pluck(:description)'
   </code></pre>
 
   + This shell command can be used to query the database for the list of known ***users***:
@@ -212,7 +212,7 @@ the authentication configuration settings, group and user information from the d
   + ManageIQ will auto create authenticated and authorized users if **Get User Groups** from the IdP is configured on the ManageIQ Authentication page.
 
   <pre><code style="white-space: pre">
-  miq_bash> /var/www/miq/vmdb/bin/rails runner 'User.all.map { |u| puts "  #{u[:userid]}" }'
+  miq_bash> /var/www/miq/vmdb/bin/rails runner 'puts User.pluck(:userid)'
   </code></pre>
 
 ## Confirming LDAP Configuration
