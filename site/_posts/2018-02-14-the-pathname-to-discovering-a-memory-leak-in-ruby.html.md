@@ -115,8 +115,8 @@ tests outside the context of the application.
 Step 3:  First Observations
 ---------------------------
 
-The tricks from `1.5` were applied at this point, and we started making some
-more nuanced observations about what affected the leak:
+The tricks from step #1.5 were applied at this point, and we started making
+some more nuanced observations about what affected the leak:
 
 * The server seemed to leak faster with more workers forked and monitored by
   the server process. This meant to us that it was probably calling a method
