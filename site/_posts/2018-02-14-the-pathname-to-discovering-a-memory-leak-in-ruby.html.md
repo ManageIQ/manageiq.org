@@ -2,7 +2,7 @@
 title: The Path[name] to discovering a memory leak in Ruby
 author: NickLaMuro
 date: 2018-02-14
-tags: ruby development
+tags: ruby developers
 comments: true
 published: true
 ---
