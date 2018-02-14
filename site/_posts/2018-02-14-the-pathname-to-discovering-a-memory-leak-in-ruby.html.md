@@ -104,7 +104,7 @@ commented out all of the steps above to confirm the leak stopped (it did,
 thankfully).  We then worked our way back to the baseline by re-adding the
 methods one by one, and observing if the leak returned.  After doing that a few
 times, we eventually determined that uncommenting the
-`MiqServer#monitor_workers` code (`4.` from the list above) was the cause.
+`MiqServer#monitor_workers` code (step #4 from the list above) was the cause.
 Progress!
 
 Now, `MiqServer#monitor_workers` is [pretty dense][8], so this wasn't the end
