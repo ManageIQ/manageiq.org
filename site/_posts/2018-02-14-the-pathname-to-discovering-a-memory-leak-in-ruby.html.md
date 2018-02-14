@@ -410,7 +410,7 @@ definitely a team effort over many months.
 * \*\*\*\* Note, Ruby 2.5.0 might not leak but Pathnames are much slower in the
   `$LOAD_PATH` than strings, perhaps, because they're not cached as mentioned
   [here][13].
-* \*\*\*\*\* Over selling this quite a bit here... | (• ◡•)|/\\(❍ᴥ❍ʋ)
+* \*\*\*\*\* Over selling this quite a bit here... \| (• ◡•)\|/\\(❍ᴥ❍ʋ)
 
 
 
