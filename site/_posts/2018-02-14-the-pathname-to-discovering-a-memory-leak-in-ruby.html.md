@@ -258,7 +258,7 @@ Well crap...
 
 That is when Keenan Brock (who I was pairing with at the time) had a brilliant
 idea, where he suggested that we include a call to `require
-config/environment.rb` to load and initialize our Rails app, and then run the
+'config/environment.rb'` to load and initialize our Rails app, and then run the
 script again.  What do you know, it leaked!  And on a regular basis as well!
 
 From there, we narrowed down what the core components of `.processInfo` were,
