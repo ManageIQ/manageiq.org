@@ -51,7 +51,7 @@ I'll present 3 examples:
   + Authentication *Mode LDAP* and with *Get User Groups from LDAP* **checked**
 - **Example 2:** A case with a small complication:
   + Authentication *Mode LDAP* but with *Get User Groups from LDAP* **un-checked**
-- **Example 3:** A caser with a different small complication:
+- **Example 3:** A case with a different small complication:
   + Authentication *Mode LDAPS* using certificate files 
 
 **Example 1:** The simple Case:
@@ -61,7 +61,7 @@ Prior to running the *miqldap_to_sssd* conversion the appliance is configured wi
 
 Authentication *Mode LDAP* and with *Get User Groups from LDAP* **checked**
 
-Authenticaiton Configuration Settings:
+Authentication Configuration Settings:
 
 |                               |                 |
 |:-----------------------------:|:----------------|
@@ -95,14 +95,15 @@ Screenshot showing usernames in **Distinguished Name** form
 
 The miqldap_to_sssd conversion is **not reversible**.
 
-It is recommended that your ManageIQ appliance be backed up and/or a snapshot be made of the virtual machine prior to running the *miqldap_to_sssd* conversion tool.
+It is recommended that your ManageIQ appliance be backed up and/or a snapshot be made of the virtual machine prior to
+running the *miqldap_to_sssd* conversion tool.
 
 **Run the conversion**
 ---------------------------------------------------------------------
 
 To run the conversion from this *simple* *MiqLdap* configuration simply execute the command *miqldap_to_sssd* with no arguments
 
-Note the warning regarding the unsecure LDAP and unencrypted passwords. To avoid this start by using
+Note the warning regarding the unsecured LDAP and not encrypted passwords. To avoid this start by using
 LDAPS with certificates or, after running *miqldap_to_sssd*, update the */etc/sssd/sssd.conf* file to
 include certificates. See the LDAPS example below and the SSSD(8) man page for more information about
 certificates.
@@ -139,10 +140,10 @@ Now that conversion to external authentication has completed the username field 
 
 Prior to running the *miqldap_to_sssd* conversion the appliance is configured with Authentication *Mode LDAP* but, and
 this creates the *small complication*,  with *Get User Groups from LDAP* **un-checked**. The reason this creates the
-*small complication* is because without  *Get User Groups from LDAP* checked the **Base DN** is not prompted for and the
-*miqldap_to_sssd* conversion tool requires a **Base DN**
+*small complication* is because without  *Get User Groups from LDAP* checked the **Base DN**, **Bind DN** and **Bind PWD**
+are not prompted for and the *miqldap_to_sssd* conversion tool requires values for these.
 
-Authenticaiton Configuration Settings:
+Authentication Configuration Settings:
 
 |                               |                 |
 |:-----------------------------:|:----------------|
@@ -164,28 +165,33 @@ Screenshot showing the appliance configuration for Mode: LDAP:
 
 The miqldap_to_sssd conversion is **not reversible**.
 
-It is recommended that your ManageIQ appliance be backed up and/or a snapshot be made of the virtual machine prior to running the *miqldap_to_sssd* conversion tool.
+It is recommended that your ManageIQ appliance be backed up and/or a snapshot be made of the virtual machine prior to
+running the *miqldap_to_sssd* conversion tool.
 
 **Run the conversion**
 ---------------------------------------------------------------------
 
-To run the conversion from this *MiqLdap* configuration the *miqldap_to_sssd* command needs to be passed the **--basedn-domain** argument.
-This is because the **Base DN** is not available in the appliance configuration.
+To run the conversion from this *MiqLdap* configuration the *miqldap_to_sssd* command needs to be passed
+the **domain**, **bind-dn** and **bind-pwd** arguments.
+This is because, with this configuration, values for these items are not available in the appliance database.
 
-*miqldap_to_sssd* supports 5 arguments. This example uses the **--basedn-domain** argument.
+*miqldap_to_sssd* supports 7 arguments. This example uses the **domain**, **bind-dn** and **bind-pwd** arguments.
 <pre><code style="white-space: pre">
-miqldap_to_sssd --help
+miq> miqldap_to_sssd --help
 Usage: ruby tools/miqldap_to_sssd.rb [options]
-  -d, --basedn-domain=                       The Base DN domain name, e.g. example.com
-  -c, --tls-cacert=                          Path to certificate file
+  -d, --domain                               The domain name for the Base DN, e.g. example.com
+  -b, --bind-dn                              The Bind DN, credential to use to authenticate against LDAP e.g.
+                                             cn=Manager,dc=example,dc=com
+  -p, --bind-pwd                             The password for the Bind DN.
+  -c, --tls-cacert                           Path to certificate file
   -n, --only-change-userids                  normalize the userids then exit
-  -s, --skip-post-coversion-userid-change    Do the MiqLdap to SSSD conversion but skip the normalizing of the userids
+  -s, --skip-post-conversion-userid-change   Do the MiqLdap to SSSD conversion but skip the normalizing of the userids
   -h, --help                                 Show this message
 </code></pre>
 
 **Note:** The Base DN must be in "dot" form e.g.: *example.com*
 <pre><code style="white-space: pre">
-miq> miqldap_to_sssd --basedn-domain example.com
+miq> miqldap_to_sssd --domain example.com --bind-dn cn=Manager,dc=example,dc=com --bind-pwd password
 Converting from unsecured LDAP authentication to SSSD. This is dangerous. Passwords are not encrypted
 tools/miqldap_to_sssd.rb Conversion Completed
 miq> 
@@ -205,7 +211,7 @@ The *miqldap_to_sssd* will reconfigure the appliance for authentication **Mode: 
 Prior to running the *miqldap_to_sssd* conversion the appliance is configured with Authentication Mode LDAP**S** for secure LDAP.
 The source of the certificates must be passed to the *miqldap_to_sssd* conversion tool.
 
-Authenticaiton Configuration Settings:
+Authentication Configuration Settings:
 
 |                               |                 |
 |:-----------------------------:|:----------------|
@@ -227,7 +233,8 @@ Screenshot showing the appliance configuration for Mode: LDAP:
 
 The miqldap_to_sssd conversion is **not reversible**.
 
-It is recommended that your ManageIQ appliance be backed up and/or a snapshot be made of the virtual machine prior to running the *miqldap_to_sssd* conversion tool.
+It is recommended that your ManageIQ appliance be backed up and/or a snapshot be made of the virtual machine prior to
+running the *miqldap_to_sssd* conversion tool.
 
 **Run the conversion**
 ---------------------------------------------------------------------
@@ -235,18 +242,21 @@ It is recommended that your ManageIQ appliance be backed up and/or a snapshot be
 To run the conversion from this *MiqLdap* configuration the *miqldap_to_sssd* command needs to be passed the **--tls-cacert** argument
 with the path to the certificate file.
 
-*miqldap_to_sssd* supports 5 arguments. This example uses the **--tls-cacert** argument.
+*miqldap_to_sssd* supports 7 arguments. This example uses the **--tls-cacert** argument.
 
-Note the warning, regarding the unsecure LDAP and unencrypted passwords, is not displayed because the conversion from LDAP**S**
+Note the warning regarding the unsecured LDAP and not encrypted passwords, is not displayed because the conversion from LDAP**S**
 preserves the certificate security.
 
 <pre><code style="white-space: pre">
-miqldap_to_sssd --help
+miq> miqldap_to_sssd --help
 Usage: ruby tools/miqldap_to_sssd.rb [options]
-  -d, --basedn-domain=                       The Base DN domain name, e.g. example.com
-  -c, --tls-cacert=                          Path to certificate file
+  -d, --domain                               The domain name for the Base DN, e.g. example.com
+  -b, --bind-dn                              The Bind DN, credential to use to authenticate against LDAP e.g.
+                                             cn=Manager,dc=example,dc=com
+  -p, --bind-pwd                             The password for the Bind DN.
+  -c, --tls-cacert                           Path to certificate file
   -n, --only-change-userids                  normalize the userids then exit
-  -s, --skip-post-coversion-userid-change    Do the MiqLdap to SSSD conversion but skip the normalizing of the userids
+  -s, --skip-post-conversion-userid-change   Do the MiqLdap to SSSD conversion but skip the normalizing of the userids
   -h, --help                                 Show this message
 </code></pre>
 
@@ -266,18 +276,21 @@ The *miqldap_to_sssd* will reconfigure the appliance for authentication **Mode: 
 **The other miqldap_to_sssd arguments**
 =====================================================================
 
-So far only 3 of the 5 arguments supported by *miqldap_to_sssd* have been used.
+So far only 5 of the 7 arguments supported by *miqldap_to_sssd* have been used.
 The other 2 will be explained here.
 
-Again the 5 supported argument are:
+Again the 7 supported argument are:
 
 <pre><code style="white-space: pre">
-miqldap_to_sssd --help
+miq> miqldap_to_sssd --help
 Usage: ruby tools/miqldap_to_sssd.rb [options]
-  -d, --basedn-domain=                       The Base DN domain name, e.g. example.com
-  -c, --tls-cacert=                          Path to certificate file
+  -d, --domain                               The domain name for the Base DN, e.g. example.com
+  -b, --bind-dn                              The Bind DN, credential to use to authenticate against LDAP e.g.
+                                             cn=Manager,dc=example,dc=com
+  -p, --bind-pwd                             The password for the Bind DN.
+  -c, --tls-cacert                           Path to certificate file
   -n, --only-change-userids                  normalize the userids then exit
-  -s, --skip-post-coversion-userid-change    Do the MiqLdap to SSSD conversion but skip the normalizing of the userids
+  -s, --skip-post-conversion-userid-change   Do the MiqLdap to SSSD conversion but skip the normalizing of the userids
   -h, --help                                 Show this message
 </code></pre>
 
@@ -292,7 +305,7 @@ After the conversion to external authentication the username field stored in the
 To ensure that the username field stored in the MiQ database will always be **User Principal Name** the *miqldap_to_sssd* conversion
 tool will convert the username fields to **User Principal Name** if they are not.
 
-If for any reason this conversion of the username field to  **User Principal Name** is not desired the --skip-post-coversion-userid-change
+If for any reason this conversion of the username field to  **User Principal Name** is not desired the --skip-post-conversion-userid-change
 argument can be used.
 
 If, on the other hand, the conversion from authentication **Mode: LDAP(s):** to **Mode: External (httpd)**
