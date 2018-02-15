@@ -172,16 +172,17 @@ running the *miqldap_to_sssd* conversion tool.
 ---------------------------------------------------------------------
 
 To run the conversion from this *MiqLdap* configuration the *miqldap_to_sssd* command needs to be passed
-the **basedn-domain**, **bind-dn** and **bind-pwd** arguments.
+the **domain**, **bind-dn** and **bind-pwd** arguments.
 This is because, with this configuration, values for these items are not available in the appliance database.
 
-*miqldap_to_sssd* supports 7 arguments. This example uses the **basedn-domain**, **bind-dn** and **bind-pwd** arguments.
+*miqldap_to_sssd* supports 7 arguments. This example uses the **domain**, **bind-dn** and **bind-pwd** arguments.
 <pre><code style="white-space: pre">
-miqldap_to_sssd --help
+miq> miqldap_to_sssd --help
 Usage: ruby tools/miqldap_to_sssd.rb [options]
-  -d, --basedn-domain                        The Base DN domain name, e.g. example.com
-  -b, --bind-dn                              The Bind DN, credential to use to authenticate against LDAP e.g. cn=Manager,dc=example,dc=com
-  -p, --bind-pwd                             The Base DN domain name, e.g. example.com
+  -d, --domain                               The domain name for the Base DN, e.g. example.com
+  -b, --bind-dn                              The Bind DN, credential to use to authenticate against LDAP e.g.
+                                             cn=Manager,dc=example,dc=com
+  -p, --bind-pwd                             The password for the Bind DN.
   -c, --tls-cacert                           Path to certificate file
   -n, --only-change-userids                  normalize the userids then exit
   -s, --skip-post-conversion-userid-change   Do the MiqLdap to SSSD conversion but skip the normalizing of the userids
@@ -190,7 +191,7 @@ Usage: ruby tools/miqldap_to_sssd.rb [options]
 
 **Note:** The Base DN must be in "dot" form e.g.: *example.com*
 <pre><code style="white-space: pre">
-miq> miqldap_to_sssd --basedn-domain example.com --bind-dn cn=Manager,dc=example,dc=com --bind-pwd password
+miq> miqldap_to_sssd --domain example.com --bind-dn cn=Manager,dc=example,dc=com --bind-pwd password
 Converting from unsecured LDAP authentication to SSSD. This is dangerous. Passwords are not encrypted
 tools/miqldap_to_sssd.rb Conversion Completed
 miq> 
@@ -247,11 +248,12 @@ Note the warning regarding the unsecured LDAP and not encrypted passwords, is no
 preserves the certificate security.
 
 <pre><code style="white-space: pre">
-miqldap_to_sssd --help
+miq> miqldap_to_sssd --help
 Usage: ruby tools/miqldap_to_sssd.rb [options]
-  -d, --basedn-domain                        The Base DN domain name, e.g. example.com
-  -b, --bind-dn                              The Bind DN, credential to use to authenticate against LDAP e.g. cn=Manager,dc=example,dc=com
-  -p, --bind-pwd                             The Base DN domain name, e.g. example.com
+  -d, --domain                               The domain name for the Base DN, e.g. example.com
+  -b, --bind-dn                              The Bind DN, credential to use to authenticate against LDAP e.g.
+                                             cn=Manager,dc=example,dc=com
+  -p, --bind-pwd                             The password for the Bind DN.
   -c, --tls-cacert                           Path to certificate file
   -n, --only-change-userids                  normalize the userids then exit
   -s, --skip-post-conversion-userid-change   Do the MiqLdap to SSSD conversion but skip the normalizing of the userids
@@ -280,11 +282,12 @@ The other 2 will be explained here.
 Again the 7 supported argument are:
 
 <pre><code style="white-space: pre">
-miqldap_to_sssd --help
+miq> miqldap_to_sssd --help
 Usage: ruby tools/miqldap_to_sssd.rb [options]
-  -d, --basedn-domain                        The Base DN domain name, e.g. example.com
-  -b, --bind-dn                              The Bind DN, credential to use to authenticate against LDAP e.g. cn=Manager,dc=example,dc=com
-  -p, --bind-pwd                             The Base DN domain name, e.g. example.com
+  -d, --domain                               The domain name for the Base DN, e.g. example.com
+  -b, --bind-dn                              The Bind DN, credential to use to authenticate against LDAP e.g.
+                                             cn=Manager,dc=example,dc=com
+  -p, --bind-pwd                             The password for the Bind DN.
   -c, --tls-cacert                           Path to certificate file
   -n, --only-change-userids                  normalize the userids then exit
   -s, --skip-post-conversion-userid-change   Do the MiqLdap to SSSD conversion but skip the normalizing of the userids
