@@ -2,7 +2,7 @@
 title: The Path[name] to discovering a memory leak in Ruby
 author: NickLaMuro
 date: 2018-02-14
-tags: ruby development
+tags: ruby developers
 comments: true
 published: true
 ---
@@ -104,7 +104,7 @@ commented out all of the steps above to confirm the leak stopped (it did,
 thankfully).  We then worked our way back to the baseline by re-adding the
 methods one by one, and observing if the leak returned.  After doing that a few
 times, we eventually determined that uncommenting the
-`MiqServer#monitor_workers` code (`4.` from the list above) was the cause.
+`MiqServer#monitor_workers` code (step #4 from the list above) was the cause.
 Progress!
 
 Now, `MiqServer#monitor_workers` is [pretty dense][8], so this wasn't the end
@@ -115,8 +115,8 @@ tests outside the context of the application.
 Step 3:  First Observations
 ---------------------------
 
-The tricks from `1.5` were applied at this point, and we started making some
-more nuanced observations about what affected the leak:
+The tricks from step #1.5 were applied at this point, and we started making
+some more nuanced observations about what affected the leak:
 
 * The server seemed to leak faster with more workers forked and monitored by
   the server process. This meant to us that it was probably calling a method
@@ -258,7 +258,7 @@ Well crap...
 
 That is when Keenan Brock (who I was pairing with at the time) had a brilliant
 idea, where he suggested that we include a call to `require
-config/environment.rb` to load and initialize our Rails app, and then run the
+'config/environment.rb'` to load and initialize our Rails app, and then run the
 script again.  What do you know, it leaked!  And on a regular basis as well!
 
 From there, we narrowed down what the core components of `.processInfo` were,
@@ -410,7 +410,7 @@ definitely a team effort over many months.
 * \*\*\*\* Note, Ruby 2.5.0 might not leak but Pathnames are much slower in the
   `$LOAD_PATH` than strings, perhaps, because they're not cached as mentioned
   [here][13].
-* \*\*\*\*\* Over selling this quite a bit here... | (• ◡•)|/\\(❍ᴥ❍ʋ)
+* \*\*\*\*\* Over selling this quite a bit here... \| (• ◡•)\|/\\(❍ᴥ❍ʋ)
 
 
 
