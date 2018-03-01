@@ -1,12 +1,12 @@
 ---
-title: Help Us Improve!
-date: 2018-02-26 09:05 EST
+title: Quad Icons: Help Us Improve!
+date: 2018-03-1 09:05 EST
 tags: collaboration
 author: terezanovotna
 ---
 
 
-### Help Us Improve
+### Quad Icons: Help Us Improve!
 
 We’re always working on new ways to improve the ManageIQ experience. We are trying to understand how quad icons are being used in the product.  We want to understand what’s currently working for you and what isn’t.
 
