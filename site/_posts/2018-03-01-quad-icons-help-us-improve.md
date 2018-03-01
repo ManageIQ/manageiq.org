@@ -1,5 +1,5 @@
 ---
-title: Quad Icons: Help Us Improve!
+title: "Quad Icons: Help Us Improve!"
 date: 2018-03-01 09:05 EST
 tags: collaboration
 author: terezanovotna
