@@ -5,6 +5,13 @@
 
   summary {
     display: list-item;
+    margin-bottom: 1em;
+  }
+
+  details {
+    p {
+      margin-left: 1em;
+    }
   }
 }
 
