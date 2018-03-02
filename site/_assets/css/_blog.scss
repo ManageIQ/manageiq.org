@@ -2,6 +2,10 @@
 
 .blog {
   background-color: #fff;
+
+  summary {
+    display: list-item;
+  }
 }
 
 .archive_month_title {
