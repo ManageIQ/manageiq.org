@@ -47,6 +47,14 @@
   display: none;
 }
 
+.blog .footnotes {
+  font-size: 75%;
+
+  li {
+    margin-bottom: 0px;
+  }
+}
+
 @media only screen and (min-width: #{$bp-desk0}) {
   .blog {
     padding: 6em 0 12em;
