@@ -1,7 +1,7 @@
 ---
-title: Announcing Fine-3
+title: Announcing Gaprindashvili-2
 author: jprause
-date: 2018-05-08 08:35:39 UTC
+date: 2018-03-06 08:35:39 UTC
 comments: true
 published: true
 tags: releases announcements
