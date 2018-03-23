@@ -293,7 +293,7 @@ Follow these steps to run ldapsearch.
   Specify `ldap` protocol and port but do not specify binddn or password will result in a TLS exchange.
 
   <pre><code style="white-space: pre">
-  miq_bash> ldapsearch -x -H ldap://ldaphost.example.com:389  -b "dc=jvlcek,dc=com"
+  miq_bash> ldapsearch -x -H ldap://ldaphost.example.com:389  -b "dc=example,dc=com"
   </code></pre>
 
   + Step 6. Run `ldapsearch` using Secure Sockets Layer ***SSL***
@@ -301,7 +301,7 @@ Follow these steps to run ldapsearch.
   Specify `ldaps` protocol and port will result in SSL exchange.
 
   <pre><code style="white-space: pre">
-  miq_bash> ldapsearch -x -H ldaps://ldaphost.example.com:636  -b "dc=jvlcek,dc=com"
+  miq_bash> ldapsearch -x -H ldaps://ldaphost.example.com:636  -b "dc=example,dc=com"
   </code></pre>
 
   The `-d` flag can be used to produce debugging information.
@@ -331,10 +331,12 @@ by ManageIQ authentication are correctly provided by the underlying technology.
   --print-reply \
   --system \
   --dest=org.freedesktop.sssd.infopipe /org/freedesktop/sssd/infopipe org.freedesktop.sssd.infopipe.GetUserAttr \
-  string:mshiffrin array:string:mail,givenname,sn,displayname
+  string:mshiffrin array:string:mail,givenname,sn,displayname,domainname
 </code></pre>
 
 The output from the above ***dbus-send / GetUserAttr*** command should look similar to the following:
+
+`Note:` The ***domainname*** attribute is only available in newer releases of ManageIQ.
 
 <pre><code style="white-space: pre">
 method return sender=:1.40 -> dest=:1.48 reply_serial=2
@@ -361,6 +363,12 @@ method return sender=:1.40 -> dest=:1.48 reply_serial=2
          string "displayname"
          variant             array [
                string "Mikaela Shiffrin"
+            ]
+      )
+      dict entry(
+         string "domainname"
+         variant             array [
+               string "example.com"
             ]
       )
    ]
