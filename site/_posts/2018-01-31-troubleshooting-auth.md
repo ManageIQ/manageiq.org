@@ -336,7 +336,7 @@ by ManageIQ authentication are correctly provided by the underlying technology.
 
 The output from the above ***dbus-send / GetUserAttr*** command should look similar to the following:
 
-`Note:` The ***domainname*** attribute is only available in newer releases of ManageIQ.
+`Note:` The ***domainname*** attribute became available in the Gaprindashvili release and is not available in older releases of ManageIQ.
 
 <pre><code style="white-space: pre">
 method return sender=:1.40 -> dest=:1.48 reply_serial=2
