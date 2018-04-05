@@ -13,12 +13,12 @@ ManageIQ is an upstream Open Source Cloud Management Platform which Red Hat prod
 
 ## Managing the cloud
 NFV Orchestrators maybe deeply integrated with a specific cloud such as Openstack while only partially aware of other clouds. To support a truly [hybrid cloud](https://www.redhat.com/en/about/videos/why-what-and-how-hybrid-cloud) strategy, ManageIQ, with its consistent set of northbound REST APIs, can integrate with NFV Orchestrators and provide them a convenient way to interface with all different public or private clouds as well as virtualization technologies while managing the south bound connectivity. Platforms pre integrated with ManageIQ include:
-1. Openstack (Multiple disctributions)
+1. Openstack (Multiple distributions)
 2. Amazon Web Services
 3. Google Compute Engine
 4. Microsoft Azure
 5. VMWare vCenter
-6. Ovirt/Red Hat Virtualization
+6. Red Hat Virtualization
 
 ## Brownfield Discovery
 Cloud technologies may not have a well defined API into NFV Infrastructure to extract Virtual Network Function (VNF) components or individual Virtual Machine (VM) information. VMs therefore cannot be linked together to create a VNF definition for any VNFs not instantiated by the NFV-O. This also poses a challange to create Network Service definition by linking VNFs together. ManageIQ, via its customization, can assign [tags](https://blog.rackspace.com/tagging-taxonomy-red-hat-cloudforms) to existing VMs based on specific properties and present them as single VNF to NFV-Os. It can also tag VNFs together to present them as a single Network Service.
