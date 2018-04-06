@@ -1,5 +1,5 @@
 ---
-title: Last Month in ManageIQ: quandaries
+title: "Last Month in ManageIQ: quandaries"
 author: d-m-u
 date: 2018-04-04
 comments: true
