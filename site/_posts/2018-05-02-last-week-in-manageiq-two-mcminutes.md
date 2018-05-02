@@ -1,5 +1,5 @@
 ---
-title: "Last Week in ManageIQ: Two McMinutes"
+title: "Last Month in ManageIQ: Two McMinutes"
 author: d-m-u
 date: 2018-05-01
 comments: true
