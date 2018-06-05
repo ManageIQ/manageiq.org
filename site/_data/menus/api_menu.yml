@@ -18,6 +18,8 @@
     path: "/docs/reference/latest/api/overview/bulk_query"
   - title: Filtering
     path: "/docs/reference/latest/api/overview/filtering"
+  - title: Pagination
+    path: "/docs/reference/latest/api/overview/pagination"
   - title: Version History
     path: "/docs/reference/latest/api/overview/versioning"
 
@@ -25,28 +27,58 @@
   children:
   - title: Primary Collections
     path: "/docs/reference/latest/api/reference/collections"
+  - title: Actions
+    path: "/docs/reference/latest/api/reference/actions"
+  - title: Alert Management
+    path: "/docs/reference/latest/api/reference/alerts"
+  - title: Authentication Management
+    path: "/docs/reference/latest/api/reference/authentications"
   - title: Automate Model
     path: "/docs/reference/latest/api/reference/automate"
   - title: Automate Domains
     path: "/docs/reference/latest/api/reference/automate_domains"
   - title: Automation Requests
     path: "/docs/reference/latest/api/reference/automation_requests"
+  - title: Automate Workspaces
+    path: "/docs/reference/latest/api/reference/automate_workspaces"
   - title: Categories & Tags
     path: "/docs/reference/latest/api/reference/categories_tags"
   - title: Chargebacks & Rates
     path: "/docs/reference/latest/api/reference/chargebacks_rates"
+  - title: Cloud Volumes
+    path: "/docs/reference/latest/api/reference/cloud_volumes"
+  - title: Conditions
+    path: "/docs/reference/latest/api/reference/conditions"
+  - title: Configuration Script Source Management
+    path: "/docs/reference/latest/api/reference/configuration_script_source"
+  - title: Custom Actions
+    path: "/docs/reference/latest/api/reference/custom_actions"
   - title: Custom Attributes
     path: "/docs/reference/latest/api/reference/custom_attributes"
+  - title: Custom Button Management
+    path: "/docs/reference/latest/api/reference/custom_buttons"
+  - title: Event Streams
+    path: "/docs/reference/latest/api/reference/event_streams"
+  - title: Flavor Management
+    path: "/docs/reference/latest/api/reference/flavors"
+  - title: Generic Object Management
+    path: "/docs/reference/latest/api/reference/generic_objects"
   - title: Group Management
     path: "/docs/reference/latest/api/reference/groups"
   - title: Host Management
     path: "/docs/reference/latest/api/reference/hosts"
   - title: Instance Management
     path: "/docs/reference/latest/api/reference/instances"
+  - title: Metric Rollups
+    path: "/docs/reference/latest/api/reference/metric_rollups"
+  - title: Network Routers
+    path: "/docs/reference/latest/api/reference/network_routers"
   - title: Notifications Support
     path: "/docs/reference/latest/api/reference/notifications"
   - title: Orchestration Support
     path: "/docs/reference/latest/api/reference/orchestration"
+  - title: Physical Servers
+    path: "/docs/reference/latest/api/reference/physical_servers"
   - title: Picture Management
     path: "/docs/reference/latest/api/reference/pictures"
   - title: Policies & Policy Profiles
@@ -63,6 +95,8 @@
     path: "/docs/reference/latest/api/reference/reports"
   - title: Role Management
     path: "/docs/reference/latest/api/reference/roles"
+  - title: Security Groups
+    path: "/docs/reference/latest/api/reference/security_groups"
   - title: Service Management
     path: "/docs/reference/latest/api/reference/services"
   - title: Service Queries
@@ -75,8 +109,14 @@
     path: "/docs/reference/latest/api/reference/service_orders"
   - title: Setting Ownership
     path: "/docs/reference/latest/api/reference/ownership"
+  - title: Settings Management
+    path: "/docs/reference/latest/api/reference/settings"
+  - title: Snapshot Management
+    path: "/docs/reference/latest/api/reference/snapshots"
   - title: Tags & Tagging
     path: "/docs/reference/latest/api/reference/tagging"
+  - title: Tasks
+    path: "/docs/reference/latest/api/reference/tasks"
   - title: Tenant Management
     path: "/docs/reference/latest/api/reference/tenants"
   - title: User Management
@@ -100,6 +140,8 @@
     path: "/docs/reference/latest/api/appendices/advanced_provisioning"
   - title: SOAP to REST Mapping
     path: "/docs/reference/latest/api/appendices/soap_to_rest"
+  - title: Deprecated Types
+    path: "/docs/reference/latest/api/appendices/deprecated_types"
   - title: Deprecated Resource Attributes
     path: "/docs/reference/latest/api/appendices/deprecated_resource_attributes"
 
