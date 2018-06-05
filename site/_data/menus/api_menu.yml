@@ -25,22 +25,18 @@
   children:
   - title: Primary Collections
     path: "/docs/reference/latest/api/reference/collections"
-  - title: Arbitration Rules
-    path: "/docs/reference/latest/api/reference/arbitration_rules"
-  - title: Arbitration Settings
-    path: "/docs/reference/latest/api/reference/arbitration_settings"
   - title: Automate Model
     path: "/docs/reference/latest/api/reference/automate"
   - title: Automate Domains
     path: "/docs/reference/latest/api/reference/automate_domains"
   - title: Automation Requests
     path: "/docs/reference/latest/api/reference/automation_requests"
-  - title: Blueprint Support
-    path: "/docs/reference/latest/api/reference/blueprints"
   - title: Categories & Tags
     path: "/docs/reference/latest/api/reference/categories_tags"
   - title: Chargebacks & Rates
     path: "/docs/reference/latest/api/reference/chargebacks_rates"
+  - title: Custom Attributes
+    path: "/docs/reference/latest/api/reference/custom_attributes"
   - title: Group Management
     path: "/docs/reference/latest/api/reference/groups"
   - title: Host Management
@@ -59,8 +55,6 @@
     path: "/docs/reference/latest/api/reference/policy_collections"
   - title: Provider Support
     path: "/docs/reference/latest/api/reference/providers"
-  - title: Provider Custom Attributes
-    path: "/docs/reference/latest/api/reference/provider_custom_attributes"
   - title: Provision Requests
     path: "/docs/reference/latest/api/reference/provision_requests"
   - title: Request Support
@@ -89,8 +83,6 @@
     path: "/docs/reference/latest/api/reference/users"
   - title: VM Management
     path: "/docs/reference/latest/api/reference/vms"
-  - title: VM Custom Attributes
-    path: "/docs/reference/latest/api/reference/custom_attributes"
 
 - title: Appendices
   children:
