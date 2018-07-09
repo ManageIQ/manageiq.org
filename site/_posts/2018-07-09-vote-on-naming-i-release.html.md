@@ -11,7 +11,7 @@ Vote for the I-Release!!! Here is the [Poll](http://talk.manageiq.org/t/name-of-
 
 While we close in on the Hammer release, it’s time to think about what we'll name the I-Release.  In keeping with our nomenclature of using chess grandmasters and world champions as release names, here are the proposed names for the I-Release, as well some interesting background data:
 
-- [Ibragimov, Ilda](https://en.wikipedia.org/wiki/Ildar_Ibragimov) Peak rating 2637 (April 2006)
+- [Ibragimov, Ildar](https://en.wikipedia.org/wiki/Ildar_Ibragimov) Peak rating 2637 (April 2006)
 Ibragimov is a chess Grandmaster. He played in the bronze medal-winning USA team in the 2006 Chess Olympiad. He was ranked No. 73 in January 2006 with a rating of 2635. Ibragimov was awarded the Grandmaster title in 1993.
 - [Ioseliani, Nana](https://en.wikipedia.org/wiki/Nana_Ioseliani) Peak rating 2520 (July 1997)
 Ioseliani has held the FIDE Woman Grandmaster title since 1980, and the International Master title since 1993. She has won the Women's Soviet Chess Championship four times. She also played in 8 Women's Chess Olympiads between 1980 and 2002, winning team gold 5 times in total, twice with Russia (in 1980 and 1982) and three times with Georgia (1992, 1994 and 1996).
