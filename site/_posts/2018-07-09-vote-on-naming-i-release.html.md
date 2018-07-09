@@ -22,6 +22,6 @@ Iturrizaga is a Venezuelan chess player who achieved the title of Grandmaster in
 - [Ivanchuck, Vassily](https://en.wikipedia.org/wiki/Vassily_Ivanchuk) Peak rating 2787 (October 2007)
 A leading player since 1988, Ivanchuk was ranked No. 2 three times (July 1991, July 1992, October 2007). His erratic results have seen him drop as low as 30th in July 2009, but he returned to the top ten in the next list.
 
-Vote [HERE](add url once page created) for your favorite by making a selection in the corresponding talk topic for this post! You are welcome to write in any player you want (as long as their last name starts with the letter I) by replying to the topic with your choice.  Here are the [top 100 active players](http://2700chess.com/?per-page=100) and [all grandmasters - past and present](https://en.wikipedia.org/wiki/List_of_chess_grandmasters).
+You are welcome to write in any player you want (as long as their last name starts with the letter I) by replying to the topic with your choice.  Here are the [top 100 active players](http://2700chess.com/?per-page=100) and [all grandmasters - past and present](https://en.wikipedia.org/wiki/List_of_chess_grandmasters).
 
 Votes entered by Friday, July 20 will be tallied and the name will be announced on Monday, July 23.
