@@ -7,7 +7,7 @@ comments: true
 published: true
 ---
 
-Vote for the I-Release!!! Here is the [Poll](ihttp://talk.manageiq.org/t/name-of-i-release/3604) on talk.manageiq.org
+Vote for the I-Release!!! Here is the [Poll](http://talk.manageiq.org/t/name-of-i-release/3604) on talk.manageiq.org
 
 While we close in on the Hammer release, it’s time to think about what we'll name the I-Release.  In keeping with our nomenclature of using chess grandmasters and world champions as release names, here are the proposed names for the I-Release, as well some interesting background data:
 
