@@ -1,13 +1,13 @@
 ---
 title: Voting on Name of I Release
 author: jprause
-date: 2018-07-16 09:02:24 UTC
+date: 2018-07-09 09:02:24 UTC
 tags: collaboration releases
 comments: true
 published: true
 ---
 
-Vote for the I-Release!!! Here is the [Poll](need to create poll and then add url here) on talk.manageiq.org
+Vote for the I-Release!!! Here is the [Poll](ihttp://talk.manageiq.org/t/name-of-i-release/3604) on talk.manageiq.org
 
 While we close in on the Hammer release, it’s time to think about what we'll name the I-Release.  In keeping with our nomenclature of using chess grandmasters and world champions as release names, here are the proposed names for the I-Release, as well some interesting background data:
 
@@ -24,4 +24,4 @@ A leading player since 1988, Ivanchuk was ranked No. 2 three times (July 1991, J
 
 Vote [HERE](add url once page created) for your favorite by making a selection in the corresponding talk topic for this post! You are welcome to write in any player you want (as long as their last name starts with the letter I) by replying to the topic with your choice.  Here are the [top 100 active players](http://2700chess.com/?per-page=100) and [all grandmasters - past and present](https://en.wikipedia.org/wiki/List_of_chess_grandmasters).
 
-Votes entered by Friday, July 13 will be tallied and the name will be announced on Monday, July 16.
+Votes entered by Friday, July 20 will be tallied and the name will be announced on Monday, July 23.
