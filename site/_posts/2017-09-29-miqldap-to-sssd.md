@@ -108,12 +108,12 @@ LDAPS with certificates or, after running *miqldap_to_sssd*, update the */etc/ss
 include certificates. See the LDAPS example below and the SSSD(8) man page for more information about
 certificates.
 
-<pre><code style="white-space: pre">
-miq> miqldap_to_sssd 
+```
+$ miqldap_to_sssd 
 Converting from unsecured LDAP authentication to SSSD. This is dangerous. Passwords are not encrypted
 tools/miqldap_to_sssd.rb Conversion Completed
-miq> 
-</code></pre>
+$
+```
 
 
 **miqldap_to_sssd log**
@@ -176,8 +176,8 @@ the **domain**, **bind-dn** and **bind-pwd** arguments.
 This is because, with this configuration, values for these items are not available in the appliance database.
 
 *miqldap_to_sssd* supports 7 arguments. This example uses the **domain**, **bind-dn** and **bind-pwd** arguments.
-<pre><code style="white-space: pre">
-miq> miqldap_to_sssd --help
+```console
+$ miqldap_to_sssd --help
 Usage: ruby tools/miqldap_to_sssd.rb [options]
   -d, --domain                               The domain name for the Base DN, e.g. example.com
   -b, --bind-dn                              The Bind DN, credential to use to authenticate against LDAP e.g.
@@ -187,15 +187,15 @@ Usage: ruby tools/miqldap_to_sssd.rb [options]
   -n, --only-change-userids                  normalize the userids then exit
   -s, --skip-post-conversion-userid-change   Do the MiqLdap to SSSD conversion but skip the normalizing of the userids
   -h, --help                                 Show this message
-</code></pre>
+```
 
 **Note:** The Base DN must be in "dot" form e.g.: *example.com*
-<pre><code style="white-space: pre">
-miq> miqldap_to_sssd --domain example.com --bind-dn cn=Manager,dc=example,dc=com --bind-pwd password
+```console
+$ miqldap_to_sssd --domain example.com --bind-dn cn=Manager,dc=example,dc=com --bind-pwd password
 Converting from unsecured LDAP authentication to SSSD. This is dangerous. Passwords are not encrypted
 tools/miqldap_to_sssd.rb Conversion Completed
-miq> 
-</code></pre>
+$
+```
 
 **Authentication Mode External(httpd)**
 ---------------------------------------------------------------------
@@ -247,8 +247,8 @@ with the path to the certificate file.
 Note the warning regarding the unsecured LDAP and not encrypted passwords, is not displayed because the conversion from LDAP**S**
 preserves the certificate security.
 
-<pre><code style="white-space: pre">
-miq> miqldap_to_sssd --help
+```console
+$ miqldap_to_sssd --help
 Usage: ruby tools/miqldap_to_sssd.rb [options]
   -d, --domain                               The domain name for the Base DN, e.g. example.com
   -b, --bind-dn                              The Bind DN, credential to use to authenticate against LDAP e.g.
@@ -258,13 +258,13 @@ Usage: ruby tools/miqldap_to_sssd.rb [options]
   -n, --only-change-userids                  normalize the userids then exit
   -s, --skip-post-conversion-userid-change   Do the MiqLdap to SSSD conversion but skip the normalizing of the userids
   -h, --help                                 Show this message
-</code></pre>
+```
 
-<pre><code style="white-space: pre">
-miq> miqldap_to_sssd --tls-cacert  /etc/openldap/certs/cacert.pem
+```conosle
+$ miqldap_to_sssd --tls-cacert  /etc/openldap/certs/cacert.pem
 tools/miqldap_to_sssd.rb Conversion Completed
-miq> 
-</code></pre>
+$
+```
 
 **Authentication Mode External(httpd)**
 ---------------------------------------------------------------------
@@ -281,8 +281,8 @@ The other 2 will be explained here.
 
 Again the 7 supported argument are:
 
-<pre><code style="white-space: pre">
-miq> miqldap_to_sssd --help
+```console
+$ miqldap_to_sssd --help
 Usage: ruby tools/miqldap_to_sssd.rb [options]
   -d, --domain                               The domain name for the Base DN, e.g. example.com
   -b, --bind-dn                              The Bind DN, credential to use to authenticate against LDAP e.g.
@@ -292,7 +292,7 @@ Usage: ruby tools/miqldap_to_sssd.rb [options]
   -n, --only-change-userids                  normalize the userids then exit
   -s, --skip-post-conversion-userid-change   Do the MiqLdap to SSSD conversion but skip the normalizing of the userids
   -h, --help                                 Show this message
-</code></pre>
+```
 
 As mentioned earlier :
 

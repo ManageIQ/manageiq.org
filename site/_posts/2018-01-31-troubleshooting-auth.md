@@ -180,11 +180,11 @@ Be sure to include the "h" flag, as indicated below when generating the tar ball
 
 These shell commands shows how to generate the tar ball and verify it's contents:
 
-<pre><code style="white-space: pre">
-  miq_bash> cd /var/www/miq/vmdb
-  miq_bash> tar cvfzh my_log_files.tar.gz log 
-  miq_bash> tar ztvf my_log_files.tar.gz 
-</code></pre>
+```console
+$ cd /var/www/miq/vmdb
+$ tar cvfzh my_log_files.tar.gz log
+$ tar ztvf my_log_files.tar.gz
+```
 
 ## Capturing Authentication Data From ManageIQ DB
 ---------------------------------------------------------------------
@@ -193,27 +193,27 @@ The below commands can be used on the appliance where the database resides to ca
 the authentication configuration settings, group and user information from the database.
 
   + This shell command can be used to query the database for the ***authentication settings***:
-
-  <pre><code style="white-space: pre">
-  miq_bash> /var/www/miq/vmdb/bin/rails runner 'puts Settings.authentication'
-  </code></pre>
-
+    
+    ```console
+    $ /var/www/miq/vmdb/bin/rails runner 'puts Settings.authentication'
+    ```
+    
   + This shell command can be used to query the database for the list of known ***groups***:
-
+    
   + The groups returned from the IdP for users expected to be authenticated on ManageIQ must match at least one
     group reported by this command. If not one must be manually added using the ManageIQ UI.
-
-  <pre><code style="white-space: pre">
-  miq_bash> /var/www/miq/vmdb/bin/rails runner 'puts MiqGroup.pluck(:description)'
-  </code></pre>
-
+    
+    ```console
+    $ /var/www/miq/vmdb/bin/rails runner 'puts MiqGroup.pluck(:description)'
+    ```
+    
   + This shell command can be used to query the database for the list of known ***users***:
-
+    
   + ManageIQ will auto create authenticated and authorized users if **Get User Groups** from the IdP is configured on the ManageIQ Authentication page.
-
-  <pre><code style="white-space: pre">
-  miq_bash> /var/www/miq/vmdb/bin/rails runner 'puts User.pluck(:userid)'
-  </code></pre>
+    
+    ```console
+    $ /var/www/miq/vmdb/bin/rails runner 'puts User.pluck(:userid)'
+    ```
 
 ## Confirming LDAP Configuration
 ---------------------------------------------------------------------
@@ -225,88 +225,88 @@ The LDAPSEARCH(1) man page can be found by searching for ***ldapsearch*** in the
 Follow these steps to run ldapsearch.
 
   + Step 1. Get the certs from the OpenLdap Serve if using secure LDAP**S** *These commands may vary depending on how the certs are managed on the LDAP server.*
+    
+    ```console
+     # Remove any old certs
+    $ rm /etc/openldap/certs/&ast;
 
-  <pre><code style="white-space: pre">
-  # Remove any old certs
-  miq_bash> rm /etc/openldap/certs/&ast;
+     # Copy the certs from the LDAP server:
+    $ scp root@ldaphost.example.com:/etc/pki/tls/certs/cacert.pem  /etc/openldap/certs/
+    $ scp root@ldaphost.example.com:/etc/pki/tls/certs/server&ast;.pem /etc/openldap/certs/
 
-  # Copy the certs from the LDAP server:
-  miq_bash> scp root@ldaphost.example.com:/etc/pki/tls/certs/cacert.pem  /etc/openldap/certs/
-  miq_bash> scp root@ldaphost.example.com:/etc/pki/tls/certs/server&ast;.pem /etc/openldap/certs/
-
-  # Rehash the certs
-  miq_bash> /usr/sbin/cacertdir_rehash /etc/openldap/certs/
-  </code></pre>
-
+     # Rehash the certs
+    $ /usr/sbin/cacertdir_rehash /etc/openldap/certs/
+    ```
+    
   + Step 2. Update `/etc/openldap/ldap.conf` to:
-
-  Here is an example of an `ldap.conf`. *The values will vary depending on how the certs are managed on the LDAP server.*
-
-  <pre><code style="white-space: pre">
-  SASL_NOCANON    on
-  URI             https://ldaphost.example.com:636
-  BASE            dc=example,dc=com
-  TLS_REQCERT     demand
-  TLS_CACERTDIR   /etc/openldap/certs
-  TLS_CACERT      /etc/openldap/certs/cacert.pem
-  </code></pre>
-
+    
+    Here is an example of an `ldap.conf`. *The values will vary depending on how the certs are managed on the LDAP server.*
+    
+    ```console
+    SASL_NOCANON    on
+    URI             https://ldaphost.example.com:636
+    BASE            dc=example,dc=com
+    TLS_REQCERT     demand
+    TLS_CACERTDIR   /etc/openldap/certs
+    TLS_CACERT      /etc/openldap/certs/cacert.pem
+    ```
+    
   + Step 3. Verify the cert with openssl and LDAP configuration with openssl. For example:
-
-  <pre><code style="white-space: pre">
-  miq_bash> openssl s_client -connect ldaphost.example.com:636 -CAfile /etc/openldap/certs/cacert.pem
-  miq_bash> openssl s_client -showcerts -connect ldaphost.example.com:636
-  </code></pre>
-
+    
+    ```console
+    $ openssl s_client -connect ldaphost.example.com:636 -CAfile /etc/openldap/certs/cacert.pem
+    $ openssl s_client -showcerts -connect ldaphost.example.com:636
+    ```
+    
   + The flags used in the `ldapsearch` examples are:
+    
+    ```console
+    -x Use simple authentication instead of SASL.
 
-  <pre><code style="white-space: pre">
-  -x Use simple authentication instead of SASL.
+    -H ldaphost
 
-  -H ldaphost
+    -b searchbase
+       Use  searchbase  as the starting point for the search instead of the default.
 
-  -b searchbase
-     Use  searchbase  as the starting point for the search instead of the default.
+    -D binddn
+       Use the Distinguished Name binddn to bind to the LDAP directory.
+       For SASL binds, the server is expected to ignore this value.
 
-  -D binddn
-     Use the Distinguished Name binddn to bind to the LDAP directory.
-     For SASL binds, the server is expected to ignore this value.
+    -w passwd
+       Use passwd as the password for simple authentication.
 
-  -w passwd
-     Use passwd as the password for simple authentication.
-
-  -d debuglevel
-     Set the LDAP debugging level to debuglevel. ldapsearch must be compiled with
-     LDAP_DEBUG defined for this option to have any effect.
-  </code></pre>
-
+    -d debuglevel
+       Set the LDAP debugging level to debuglevel. ldapsearch must be compiled with
+       LDAP_DEBUG defined for this option to have any effect.
+    ```
+  
   + Step 4. Run non-secure `ldapsearch`
-
-  Specify `ldap` protocol and port with a binddn and password
-
-  <pre><code style="white-space: pre">
-  miq_bash> ldapsearch -x -H ldap://ldaphost.example.com:389  -b "dc=example,dc=com"  -D "cn=Manager,dc=example,dc=com" -w password
-  </code></pre>
-
+    
+    Specify `ldap` protocol and port with a binddn and password
+    
+    ```console
+    $ ldapsearch -x -H ldap://ldaphost.example.com:389  -b "dc=example,dc=com"  -D "cn=Manager,dc=example,dc=com" -w password
+    ```
+  
   + Step 5. Run `ldapsearch` using Transport Layer Security ***TLS***
-
-  Specify `ldap` protocol and port but do not specify binddn or password will result in a TLS exchange.
-
-  <pre><code style="white-space: pre">
-  miq_bash> ldapsearch -x -H ldap://ldaphost.example.com:389  -b "dc=example,dc=com"
-  </code></pre>
-
+    
+    Specify `ldap` protocol and port but do not specify binddn or password will result in a TLS exchange.
+    
+    ```console
+    $ ldapsearch -x -H ldap://ldaphost.example.com:389  -b "dc=example,dc=com"
+    ```
+  
   + Step 6. Run `ldapsearch` using Secure Sockets Layer ***SSL***
-
-  Specify `ldaps` protocol and port will result in SSL exchange.
-
-  <pre><code style="white-space: pre">
-  miq_bash> ldapsearch -x -H ldaps://ldaphost.example.com:636  -b "dc=example,dc=com"
-  </code></pre>
-
-  The `-d` flag can be used to produce debugging information.
-
-  Diagnosing `ldapsearch` failures is beyond the scope of this blog.
+    
+    Specify `ldaps` protocol and port will result in SSL exchange.
+    
+    ```console
+    $ ldapsearch -x -H ldaps://ldaphost.example.com:636  -b "dc=example,dc=com"
+    ```
+    
+    The `-d` flag can be used to produce debugging information.
+    
+    Diagnosing `ldapsearch` failures is beyond the scope of this blog.
 
 ## Confirming SSSD Configuration
 ---------------------------------------------------------------------
@@ -326,19 +326,19 @@ Follow these steps to run ldapsearch.
 This ***dbus-send / GetUserAttr*** command can be used to confirm all of the user attributes used
 by ManageIQ authentication are correctly provided by the underlying technology.
 
-<pre><code style="white-space: pre">
-  miq_bash> dbus-send \
+```console
+$ dbus-send \
   --print-reply \
   --system \
   --dest=org.freedesktop.sssd.infopipe /org/freedesktop/sssd/infopipe org.freedesktop.sssd.infopipe.GetUserAttr \
   string:mshiffrin array:string:mail,givenname,sn,displayname,domainname
-</code></pre>
+```
 
 The output from the above ***dbus-send / GetUserAttr*** command should look similar to the following:
 
 `Note:` The ***domainname*** attribute became available in the Gaprindashvili release and is not available in older releases of ManageIQ.
 
-<pre><code style="white-space: pre">
+```console
 method return sender=:1.40 -> dest=:1.48 reply_serial=2
    array [
       dict entry(
@@ -372,29 +372,29 @@ method return sender=:1.40 -> dest=:1.48 reply_serial=2
             ]
       )
    ]
-</code></pre>
+```
 
 ### ***dbus-send / GetUserGroups***
 
 This ***dbus-send / GetUserGroups*** command can be used to confirm all of the user's groups are correctly provided by the underlying technology.
 
-<pre><code style="white-space: pre">
-  miq_bash> dbus-send \
+```console
+$ dbus-send \
   --print-reply \
   --system \
   --dest=org.freedesktop.sssd.infopipe /org/freedesktop/sssd/infopipe org.freedesktop.sssd.infopipe.GetUserGroups \
   string:mshiffrin
-</code></pre>
+```
 
 The output from the above ***dbus-send / GetUserAttr*** command should look similar to the following:
 
-<pre><code style="white-space: pre">
+```console
 method return sender=:1.40 -> dest=:1.189 reply_serial=2
    array [
       string "evmgroup-super_administrator"
       string "gs-group"
    ]
-</code></pre>
+```
 
 + If these dbus-send commands fail to return the required information the SSSD configuration must be diagnosed and fixed before attempting to use ManageIQ.
   See: [**Diagnosing Failed dbus Commands**](#diagnosing-failed-dbus-commands)
@@ -406,28 +406,29 @@ If the ***dbus-send*** commands described in section [**Confirming SSSD Configur
 do not succeed the SSSD configuration can be diagnosed by doing the following:
 
   + Add ***debug_level=9*** to each of the sections of the SSSD configuration file: ***/etc/sssd/sssd.conf***
-
+    
   + Restart the sssd service and confirm it is running.
-
-  If it does not restart there could be errors in the `/etd/sssd/sssd.conf` file that need to be addressed.
-
-  <pre><code style="white-space: pre">
-  miq_bash> systemctl restart sssd.service
-  miq_bash> systemctl status sssd.service
-  </code></pre>
-
+    
+    If it does not restart there could be errors in the `/etd/sssd/sssd.conf` file that need to be addressed.
+    
+    ```console
+    $ systemctl restart sssd.service
+    $ systemctl status sssd.service
+    ```
+    
   + `Note:` If updates are done to the  ***/etc/sssd/sssd.conf*** file and not immediately seen when authenticating,
      then clean the SSSD cache as follows and restart the service:
-
-  <pre><code style="white-space: pre">
-  miq_bash> sss_cache -E
-  </code></pre>
-
+    
+    ```console
+    $ sss_cache -E
+    ```
+    
   + tail the sssd log files
-  <pre><code style="white-space: pre">
-  tail -f /var/log/sssd/&ast;.log
-  </code></pre>
-
+    
+    ```console
+    $ tail -f /var/log/sssd/&ast;.log
+    ```
+    
   + Rerun the ***dbus-send*** commands described in section [**Confirming SSSD configuration**](#confirming-sssd-configuration)
 
 ## Adding Groups In ManageIQ

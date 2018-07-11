@@ -17,7 +17,8 @@ it's still around in the libraries we use.
 
 Note, I even filtered out some of the results below:
 
-<pre><code style="white-space: pre">$ grep -r -E "\bTimeout.timeout\b" /Users/joerafaniello/.gem/ruby/2.4.2/gems
+```console
+$ grep -r -E "\bTimeout.timeout\b" /Users/joerafaniello/.gem/ruby/2.4.2/gems
 ruby_parser-3.10.1/lib/ruby_parser_extras.rb:                                     Timeout.timeout time do
 capybara-2.5.0/lib/capybara/server.rb:                                            Timeout.timeout(60) { @server_thread.join(0.1) until responsive? }
 dalli-2.7.6/lib/dalli/socket.rb:                                                  Timeout.timeout(options[:socket_timeout]) do
@@ -49,7 +50,7 @@ webmock-2.3.2/spec/support/network_connection.rb:                               
 
 $ grep -r -E "\bTimeout::timeout\b" /Users/joerafaniello/.gem/ruby/2.4.2/gems
 open4-1.3.4/lib/open4.rb:                                                         Timeout::timeout(timeout) do
- </code></pre>
+```
 
 Those are only gems used by ManageIQ.  I'm sure there are many other gems used by other
 projects that still use Timeout.
@@ -118,16 +119,18 @@ We ran it with ruby debug `RUBYOPT=-d`.
 
 When it worked, it looked like this:
 
-<pre><code style="white-space: pre">Exception `Timeout::Error' at /Users/joerafaniello/.rubies/ruby-2.3.4/lib/ruby/2.3.0/timeout.rb:112 - execution expired
+```console
+Exception `Timeout::Error' at /Users/joerafaniello/.rubies/ruby-2.3.4/lib/ruby/2.3.0/timeout.rb:112 - execution expired
 removing /var/folders/fq/blrz820d3qz7nm7vj8mbtfs40000gq/T/x20170906-57250-s683fs...
 done
-</code></pre>
+```
 
 When it would hang, it looked like this:
 
-<pre><code style="white-space: pre">Exception `Timeout::Error' at /Users/joerafaniello/.rubies/ruby-2.3.4/lib/ruby/2.3.0/timeout.rb:112 - execution expired
+```console
+Exception `Timeout::Error' at /Users/joerafaniello/.rubies/ruby-2.3.4/lib/ruby/2.3.0/timeout.rb:112 - execution expired
 removing /var/folders/fq/blrz820d3qz7nm7vj8mbtfs40000gq/T/x20170906-57351-jfeu6l...
-</code></pre>
+```
 
 If you're still reading, you might have noticed that `done` is missing when the
 test hangs. The `done` happens after `Tempfile` wants to [close and unlink the file here](https://github.com/ruby/ruby/blob/820605ba3c10b9f4dafc4e5d6e09765b8b31cbea/lib/tempfile.rb#L255-L257).
@@ -148,7 +151,8 @@ not something we want to troubleshoot at 5pm on a Friday.
 
 It's ok, there aren't many places that define finalizers:
 
-<pre><code style="white-space: pre">$ grep -r define_finalizer /Users/joerafaniello/.rubies/ruby-2.4.2
+```console
+$ grep -r define_finalizer /Users/joerafaniello/.rubies/ruby-2.4.2
 lib/ruby/2.4.0/cgi/session.rb:                                         ObjectSpace::define_finalizer(self, Session::callback(@dbprot))
 lib/ruby/2.4.0/drb/timeridconv.rb:                                     ObjectSpace.define_finalizer(Object.new) {on_gc}
 lib/ruby/2.4.0/tempfile.rb:                                            ObjectSpace.define_finalizer(self, Remover.new(@tmpfile))
@@ -163,7 +167,7 @@ logging-2.2.2/lib/logging.rb:                                          ObjectSpa
 tins-1.15.0/lib/tins/thread_local.rb:                                  ObjectSpace.define_finalizer(self, @@cleanup)
 vcr-3.0.3/lib/vcr/library_hooks/webmock.rb:                            ObjectSpace.define_finalizer(Thread.current, lambda {
 winrm-2.2.3/lib/winrm/shells/base.rb:                                  ObjectSpace.define_finalizer(
-</code></pre>
+```
 
 It's a small list but libraries like tempfile, concurrent-ruby, ffi, actionview,
 etc. are pretty common.  Again, this is only in the gems that ManageIQ uses.  This
