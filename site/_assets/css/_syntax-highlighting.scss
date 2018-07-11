@@ -1,6 +1,19 @@
 /**
  * Syntax highlighting styles
  */
+
+/**
+ * bootstrap/code override
+ *
+ * Prevents codeblocks from wrapping their content, and allows them to
+ * `overflow: auto` as expected.
+ */
+pre {
+  code {
+    white-space: pre;
+  }
+}
+
 .highlight {
     background: #fff;
 
