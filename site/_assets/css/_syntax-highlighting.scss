@@ -14,6 +14,30 @@ pre {
   }
 }
 
+// console specific colorings, dark theme
+//
+// Taken from the "Monokai Remastered" theme
+$console_bg: #222;
+
+@mixin console_color_0      { color: #1a1a1a           }
+@mixin console_color_1      { color: #f4005f           }
+@mixin console_color_2      { color: #98e024           }
+@mixin console_color_3      { color: #fd971f           }
+@mixin console_color_4      { color: #9d65ff           }
+@mixin console_color_5      { @include console_color_1 }
+@mixin console_color_6      { color: #58d1eb           }
+@mixin console_color_7      { color: #c4c5b5           }
+
+@mixin console_color_0_bold { color: #625e4c;           font-weight: bold }
+@mixin console_color_1_bold { @include console_color_1; font-weight: bold }
+@mixin console_color_2_bold { @include console_color_2; font-weight: bold }
+@mixin console_color_3_bold { color: #e0d561;           font-weight: bold }
+@mixin console_color_4_bold { @include console_color_4; font-weight: bold }
+@mixin console_color_5_bold { @include console_color_5; font-weight: bold }
+@mixin console_color_6_bold { @include console_color_6; font-weight: bold }
+@mixin console_color_7_bold { color: #f6f6ef;           font-weight: bold }
+
+
 .highlight {
     background: #fff;
 
@@ -80,4 +104,17 @@ pre {
     .vg    { color: #008080 } // Name.Variable.Global
     .vi    { color: #008080 } // Name.Variable.Instance
     .il    { color: #099 } // Literal.Number.Integer.Long
+}
+
+.language-console {
+  pre code { @include console_color_7; }
+
+  &.highlighter-rouge .highlight {
+    background: $console_bg;
+  }
+
+  .w  { @include console_color_4_bold; } // Prompt
+  .nc { @include console_color_1_bold; } // Command
+  .kv { @include console_color_7_bold; } // Extra args
+  .c  { @include console_color_0_bold; } // comment
 }
