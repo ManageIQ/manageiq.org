@@ -13,7 +13,7 @@ Here are just a few of the things added since Gaprindashvili-3 release:
 - ADDED
   * Introduce support for multi-tab orchestration dialogs [(#17342)](https://github.com/ManageIQ/manageiq/pull/17342)
   * Support for hidden columns in reports and views [(#17133)](https://github.com/ManageIQ/manageiq/pull/17133)
-  * v2v plugin [(#17529)](https://github.com/ManageIQ/manageiq/pull/17529)
+  * Add V2V plugin for migration of VMs between different providers [(#17529)](https://github.com/ManageIQ/manageiq/pull/17529)
 
 - FIXED 
   * Add cloud volumes for selecting assigned tagged resources [(#17271)](https://github.com/ManageIQ/manageiq/pull/17271)
