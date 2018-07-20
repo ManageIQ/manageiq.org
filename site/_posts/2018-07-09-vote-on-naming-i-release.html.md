@@ -19,7 +19,7 @@ Ioseliani has held the FIDE Woman Grandmaster title since 1980, and the Internat
 Ipatov is a Ukrainian-born Turkish chess grandmaster. He is the top ranked chess player of Turkey. Ipatov was world junior champion in 2012 and Turkish champion in 2014 and 2015. Since 2012, he has played for the Turkish national team in the Chess Olympiad, World Team Chess Championship and European Team Chess Championship.
 - [Iturrizaga, Eduardo](https://en.wikipedia.org/wiki/Eduardo_Iturrizaga) Peak Rating 2671 (April 2017)
 Iturrizaga is a Venezuelan chess player who achieved the title of Grandmaster in 2008, making him the first and, to date, only Venezuelan chess grandmaster. He competed in the FIDE World Cup in 2007, 2009, 2013 and 2015.
-- [Ivanchuck, Vassily](https://en.wikipedia.org/wiki/Vassily_Ivanchuk) Peak rating 2787 (October 2007)
+- [Ivanchuk, Vassily](https://en.wikipedia.org/wiki/Vassily_Ivanchuk) Peak rating 2787 (October 2007)
 A leading player since 1988, Ivanchuk was ranked No. 2 three times (July 1991, July 1992, October 2007). His erratic results have seen him drop as low as 30th in July 2009, but he returned to the top ten in the next list.
 
 You are welcome to write in any player you want (as long as their last name starts with the letter I) by replying to the topic with your choice.  Here are the [top 100 active players](http://2700chess.com/?per-page=100) and [all grandmasters - past and present](https://en.wikipedia.org/wiki/List_of_chess_grandmasters).
