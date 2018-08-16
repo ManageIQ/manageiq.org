@@ -31,7 +31,7 @@ Why did the *miqldap_to_sssd* conversion tool come to be?
 
 ManageIQ (MiQ) is delivered with the built in LDAP client, *MiqLdap*. There are multiple, more robust and
 customizable, mechanisms built into the operating system that provide an interface to an LDAP directory.
-The  *miqldap_to_sssd* conversion tool is intended to automate and simplify moving to them.
+The  *miqldap_to_sssd* conversion tool is intended to automate and simplify moving to the SSSD authentication mechanism.
 
 **The How**
 =====================================================================
@@ -326,7 +326,7 @@ The  *miqldap_to_sssd* conversion tool populates this parameter in the **SSSD** 
 
 **ldap_default_authtok** is a string that represents the authentication token of the default bind DN. Currently only clear text passwords are supported.
 Although the **SSSD** configuration file **/etc/sssd/sssd.conf** has limited ownership flags, some may want to obfuscate this.
-To accomplish this one could investigate [sss_obfuscate(8)](https://linux.die.net/man/8/sss_obfuscate)
+To accomplish this one could leverage the tool [sss_obfuscate(8)](https://linux.die.net/man/8/sss_obfuscate)
 
 **Debugging Failed Conversions**
 =====================================================================
