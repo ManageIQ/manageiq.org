@@ -23,6 +23,7 @@ How does one use the *miqldap_to_sssd* conversion tool?
 - [**The other miqldap_to_sssd arguments**](#the-other-miqldap_to_sssd-arguments)
 - [**Customizing The Generated Configuration**](#customizing-the-generated-configuration)
 - [**Debugging Failed Conversions**](#debugging-failed-conversions)
+- [**Edge Cases**](#edge-cases)
 
 **A brief Why before The How**
 =====================================================================
@@ -110,7 +111,7 @@ LDAPS with certificates or, after running *miqldap_to_sssd*, update the */etc/ss
 include certificates. See the LDAPS example below and the SSSD(8) man page for more information about
 certificates.
 
-```
+```console
 $ miqldap_to_sssd 
 Converting from unsecured LDAP authentication to SSSD. This is dangerous. Passwords are not encrypted
 tools/miqldap_to_sssd.rb Conversion Completed
@@ -261,7 +262,7 @@ Usage: ruby tools/miqldap_to_sssd.rb [options]
   -h, --help                                 Show this message
 ```
 
-```conosle
+```console
 $ miqldap_to_sssd --tls-cacert  /etc/openldap/certs/cacert.pem
 tools/miqldap_to_sssd.rb Conversion Completed
 $
@@ -341,5 +342,43 @@ This document has diagnostics tips, including:
   - How to use **ldapsearch**, with usage examples.
   - How to use **dbus-send**, with usage examples
   - Adding **debug_level=9** to the sssd.conf to produce more sssd logging information
+
+**Edge Cases**
+=====================================================================
+
+The *miqldap_to_sssd* conversion tool attempts to make assumptions about the initial configuration in order to produce a working SSSD configuration.
+Because there are so many different possible these authentication configurations assumptions may not be completely accurate, resulting in
+an SSSD configuration that my not work correctly.
+
+Updating the *miqldap_to_sssd* conversion tool to handle each edge cases, as they are identified, could result in the  *miqldap_to_sssd* conversion tool
+becoming bloated and unwieldy. For this reason it was decided to document edge cases, especially those not likely to be encountered by many users, here.
+
+**Edge Cases 1:** *Active Directory* configured with an atypical *User Type*
+---------------------------------------------------------------------
+
+**Cause:**
+  1. MiqLdap was configured with an *Active Directory* host.
+  1. An atypical *Active Directory* User Type, of *Distinguished Name (CN=<user>* was specifed.
+  1. When *miqldap_to_sssd* is run it makes the incorrect assumption the that backing directly is *LDAP* because the specified User Type is typical for *LDAP*.
+  1. *miqldap_to_sssd* generates an *SSSD* configuration with a typical *LDAP* group object class of *groupOfNames*
+
+**Fix:**
+  1. The fix is to simply update the one line in the *SSSD* configuration file, */etc/sssd/sssd.conf*.
+
+```
+      From: ldap_group_object_class = groupOfNames
+        To: ldap_group_object_class = group
+```
+
+  1. Restart
+
+```console
+     $ systemctl restart sssd.service
+     $ systemctl status sssd.service
+     $ sss_cache -E
+```
+
+
+
 
 
