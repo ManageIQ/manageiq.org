@@ -347,19 +347,19 @@ This document has diagnostics tips, including:
 =====================================================================
 
 The *miqldap_to_sssd* conversion tool attempts to make assumptions about the initial configuration in order to produce a working SSSD configuration.
-Because there are so many different possible these authentication configurations assumptions may not be completely accurate, resulting in
+Because there are so many different possibilities these authentication configurations assumptions may not be completely accurate, resulting in
 an SSSD configuration that my not work correctly.
 
-Updating the *miqldap_to_sssd* conversion tool to handle each edge cases, as they are identified, could result in the  *miqldap_to_sssd* conversion tool
+Updating the *miqldap_to_sssd* conversion tool to handle each edge case, as they are identified, could result in the  *miqldap_to_sssd* conversion tool
 becoming bloated and unwieldy. For this reason it was decided to document edge cases, especially those not likely to be encountered by many users, here.
 
-**Edge Cases 1:** *Active Directory* configured with an atypical *User Type*
+**Edge Case 1:** *Active Directory* configured with an atypical *User Type*
 ---------------------------------------------------------------------
 
 **Cause:**
   1. MiqLdap was configured with an *Active Directory* host.
   1. An atypical *Active Directory* User Type, of *Distinguished Name (CN=<user>* was specifed.
-  1. When *miqldap_to_sssd* is run it makes the incorrect assumption the that backing directly is *LDAP* because the specified User Type is typical for *LDAP*.
+  1. When *miqldap_to_sssd* is run it makes the incorrect assumption the that backing directory is *LDAP* because the specified User Type is typical for *LDAP*.
   1. *miqldap_to_sssd* generates an *SSSD* configuration with a typical *LDAP* group object class of *groupOfNames*
 
 **Fix:**
