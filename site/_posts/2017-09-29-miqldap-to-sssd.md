@@ -347,7 +347,7 @@ This document has diagnostics tips, including:
 =====================================================================
 
 The *miqldap_to_sssd* conversion tool attempts to make assumptions about the initial configuration in order to produce a working SSSD configuration.
-Because there are so many different possibilities these authentication configurations assumptions may not be completely accurate, resulting in
+Because there are so many different possibilities, these authentication configuration assumptions may not be completely accurate, resulting in
 an SSSD configuration that my not work correctly.
 
 Updating the *miqldap_to_sssd* conversion tool to handle each edge case, as they are identified, could result in the  *miqldap_to_sssd* conversion tool
