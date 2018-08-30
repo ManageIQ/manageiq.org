@@ -348,7 +348,7 @@ This document has diagnostics tips, including:
 
 The *miqldap_to_sssd* conversion tool attempts to make assumptions about the initial configuration in order to produce a working SSSD configuration.
 Because there are so many different possibilities, these authentication configuration assumptions may not be completely accurate, resulting in
-an SSSD configuration that my not work correctly.
+an SSSD configuration that may not work correctly.
 
 Updating the *miqldap_to_sssd* conversion tool to handle each edge case, as they are identified, could result in the  *miqldap_to_sssd* conversion tool
 becoming bloated and unwieldy. For this reason it was decided to document edge cases, especially those not likely to be encountered by many users, here.
@@ -373,9 +373,10 @@ becoming bloated and unwieldy. For this reason it was decided to document edge c
   1. Restart
 
 ```console
-     $ systemctl restart sssd.service
-     $ systemctl status sssd.service
+     $ systemctl stop sssd.service
      $ sss_cache -E
+     $ systemctl start sssd.service
+     $ systemctl status sssd.service
 ```
 
 
