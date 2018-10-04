@@ -27,7 +27,7 @@ $ sudo docker pull manageiq/manageiq:{{release.tag}}
 ### Step 2: Run the container
 
 ```bash
-$ sudo docker run --privileged -d -p 8443:443 manageiq/manageiq:{{release.tag}}
+$ sudo docker run -d -p 8443:443 manageiq/manageiq:{{release.tag}}
 ```
 
 ManageIQ is now up and running.
