@@ -1,9 +1,9 @@
 - name: Amazon AWS EC2
   download_platform: ec2
-  ext: vhd
-  size_stable: 4.4 GB
-  size_pre: 4.4 GB
-  size_devel: 4.6 GB
+  ext: zip
+  size_stable: 1.5 GB
+  size_pre: 2.0 GB
+  size_devel: 2.0 GB
 
 - name: Google Cloud Platform
   download_platform: gce
@@ -14,17 +14,17 @@
 
 - name: Microsoft Azure
   download_platform: azure
-  ext: vhd
-  size_stable: 4.4 GB
-  size_pre: 4.4 GB
-  size_devel: 4.9 GB
+  ext: zip
+  size_stable: 1.5 GB
+  size_pre: 1.8 GB
+  size_devel: 1.8 GB
 
 - name: Microsoft SCVMM
   download_platform: hyperv
-  ext: vhd
-  size_stable: 4.4 GB
-  size_pre: 4.4 GB
-  size_devel: 4.9 GB
+  ext: zip
+  size_stable: 1.5 GB
+  size_pre: 2.0 GB
+  size_devel: 2.0 GB
 
 - name: OpenStack
   download_platform: openstack
