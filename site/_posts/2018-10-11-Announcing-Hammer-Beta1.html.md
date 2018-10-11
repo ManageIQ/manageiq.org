@@ -1,7 +1,7 @@
 ---
 title: Announcing Hammer Beta Release
 author: jprause
-date: 2018-10-01 07:49:24 UTC
+date: 2018-10-11 07:49:24 UTC
 comments: true
 published: true
 tags: releases announcements
