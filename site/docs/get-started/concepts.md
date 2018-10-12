@@ -21,7 +21,7 @@ API
 : Application programming interface.
 
 Appliance
-: ManageIQ is distributed as a fully installed virtual machine and comes preconfigured with CentOS 7.2, PostgreSQL 9.4, Rails 4.2.5, the ManageIQ application, and all associated Ruby gems pre-installed. An appliance is downloadable as a virtual machine image template in formats suitable for VMware, Red Hat Enterprise Virtualization, OpenStack, or Microsoft System Center Virtual Machine Manager.
+: ManageIQ is distributed as a fully installed virtual machine and comes preconfigured with CentOS 7.5, PostgreSQL 9.5, Rails 5, the ManageIQ application, and all associated Ruby gems pre-installed. An appliance is downloadable as a virtual machine image template in formats suitable for VMware, Red Hat Enterprise Virtualization, OpenStack, or Microsoft System Center Virtual Machine Manager.
 
 Automate
 : Is the ManageIQ capability or product feature, and automation is the thing that Automate allows us to do. The Automation Engine allows us to create intelligent automation workflows and run automation scripts written in Ruby.
