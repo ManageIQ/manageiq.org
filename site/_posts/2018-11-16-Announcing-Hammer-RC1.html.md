@@ -1,7 +1,7 @@
 ---
 title: Announcing Hammer RC1 Release
 author: jprause
-date: 2018-11-12 07:49:24 UTC
+date: 2018-11-16 07:49:24 UTC
 comments: true
 published: true
 tags: releases announcements
