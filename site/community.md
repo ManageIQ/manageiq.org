@@ -10,7 +10,8 @@ ManageIQ is open source and open for contributions. There are many ways to get i
 
 <div class="row">
   <div class="col-md-6">
-    <br /><script type='text/javascript' src='https://www.openhub.net/p/manageiq/widgets/project_basic_stats?format=js'></script>
+    <br />
+    <iframe src="https://www.openhub.net/p/manageiq/widgets/project_basic_stats" scrolling="no" marginHeight="0" marginWidth="0" style="height: 225px; width: 350px; border: none"></iframe>
   </div>
 
   <div class="col-md-6">
