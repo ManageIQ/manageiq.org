@@ -22,7 +22,7 @@ Here are just a few of the things added since Gaprindashvili-6 release:
 
 You can download the Gaprindashvili-7 release [here](http://manageiq.org/download/).
 
-Here is the complete changelog:
+Here is the changelog:
 [Gaprindashvili-7](https://github.com/ManageIQ/manageiq/blob/gaprindashvili/CHANGELOG.md)
 
 For questions or support,
