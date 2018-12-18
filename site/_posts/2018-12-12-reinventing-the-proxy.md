@@ -68,7 +68,7 @@ class Proxy
           write, translate = @pairing[read]
 
           # Skip the transmission if the other end is not writable
-          next unless writes.include?(writes)
+          next unless writes.include?(write)
 
           # Do the transmission in a non-blocking way
           data = read.read_nonblock(1024)
