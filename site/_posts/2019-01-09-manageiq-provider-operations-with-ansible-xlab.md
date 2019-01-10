@@ -28,3 +28,6 @@ This second post describes how mind-blowingly powerful it is to implement fronte
 The last post in the series shows how easy it is to run Ansible playbooks triggered by events that are routed through the ManageIQ Automate engine. This post focuses on acquiring the data required by the playbook to actually invoke the operation against the correct inventory item. These data include the event payload and provider's credentials. To show you the complete process, it includes a video with a step-by-step tutorial.
 
 Enjoy the read! You may contact XLAB at sddc&#64;xlab.si if you have any questions. Or as they like to say... **Get IT done.**
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">When you think you&#39;re taking a picture, but ... 🙈😂<br>Anyway, we&#39;re proud to be part of the <a href="https://twitter.com/manageiq?ref_src=twsrc%5Etfw">@manageiq</a> G Release &amp; have something new to wear 👕😄 <a href="https://t.co/zL53EHt3Pl">pic.twitter.com/zL53EHt3Pl</a></p>&mdash; XLAB Slovenia (@xlab_si) <a href="https://twitter.com/xlab_si/status/995961850067083264?ref_src=twsrc%5Etfw">May 14, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
