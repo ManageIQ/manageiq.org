@@ -1,12 +1,12 @@
 stable:
-  name: Gaprindashvili-7
-  tag: gaprindashvili-7
-  filename: gaprindashvili-7
+  name: Hammer-1
+  tag: hammer-1
+  filename: hammer-1
 
-prerelease:
-  name: Hammer-1-RC2
-  tag: hammer-1-rc2
-  filename: hammer-1-rc2
+# prerelease:
+#   name: Hammer-1-RC2
+#   tag: hammer-1-rc2
+#   filename: hammer-1-rc2
 
 devel:
   name: Nightly
