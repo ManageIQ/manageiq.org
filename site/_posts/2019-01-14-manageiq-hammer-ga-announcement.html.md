@@ -21,7 +21,7 @@ We have introduced automation with [Ansible](https://github.com/ansible/ansible)
 
 From a Workflow, you can now create a Service Dialog, which automatically populates the dialog fields with its parameters. Tower workflows are also available as Service Catalog items. Under the “Job” tab for a service based on the Workflow, you will see the output of the Tower job, which brings feature parity with the Embedded Ansible.
 
-Speaking of the Embedded Ansible, most of the changes are in the backend (and thus may not be user visible), including the update to the latest Ansible version 2.7.4. The manageiq-automate and manageiq-vmdb roles are provided with the default ManageIQ content without the need to fetch them separately from Ansible Galaxy.
+Speaking of the Embedded Ansible, most of the changes are in the backend (and thus may not be user visible), including the update to the latest Ansible version 2.7.4. The `manageiq-automate` and `manageiq-vmdb` roles are provided with the default ManageIQ content without the need to fetch them separately from Ansible Galaxy.
 
 We can now get a history of Custom button events (where custom buttons are supported) to show which button has been clicked and when, as well as what playbook has been run against the current object. This is a work in progress so keep a lookout for more features!
 
