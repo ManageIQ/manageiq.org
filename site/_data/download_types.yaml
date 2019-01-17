@@ -12,6 +12,13 @@
   size_pre: 1.4 GB
   size_devel: 2.3 GB
 
+- name: libvirt
+  download_platform: libvirt
+  ext: qc2
+  size_stable: 1.9 GB
+  size_pre: 2.3 GB
+  size_devel: 2.3 GB
+
 - name: Microsoft Azure
   download_platform: azure
   ext: zip
