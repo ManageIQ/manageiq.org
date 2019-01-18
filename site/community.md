@@ -38,7 +38,7 @@ ManageIQ is open source and open for contributions. There are many ways to get i
       <p>Find us in your favorite social channel so you can be in the loop with announcements and happenings.</p>
       <ul>
         <li><a href="https://twitter.com/manageiq" class="twitter-follow-button" data-show-screen-name="false" data-show-count="false">Follow @manageiq</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script> <a href="https://twitter.com/manageiq">@manageiq on Twitter</a></li>
-        <li><iframe src="https://www.facebook.com/plugins/follow.php?href=https%3A%2F%2Fwww.facebook.com%2Fmanageiq&width=63&height=65&layout=button&size=small&show_faces=false&appId" width="63" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe> <a href="https://www.facebook.com/manageiq">ManageIQ on Facebook</a></li>
+        <li><iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&width=100&layout=button&action=like&size=small&show_faces=true&share=false&height=65&appId" width="65" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe> <a href="https://www.facebook.com/manageiq">ManageIQ on Facebook</a></li>
         <li><script type="IN/FollowCompany" data-id="56141"></script> <a href="https://www.linkedin.com/company/manageiq">ManageIQ on LinkedIn</a></li>
         <li><div class="g-follow" data-annotation="none" data-height="20" data-href="https://plus.google.com/107788933173548514771" data-rel="publisher"></div> <a href="https://plus.google.com/+ManageIQorg">ManageIQ on Google+</a></li>
       </ul>
