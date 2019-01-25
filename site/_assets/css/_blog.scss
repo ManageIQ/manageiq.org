@@ -21,17 +21,12 @@
   border-bottom: 1px solid lighten($heading-line, 10%);
 }
 
-.blog_container {
-  margin: 1em 1em 12em;
-  display: flex;
-}
-
 .blog_link {
   width: 100%;
 }
 
 .blog_header {
-  margin: 1em;
+  padding: 2em 0;
 
   h1 {
     margin: 0;
@@ -40,10 +35,6 @@
 }
 
 .pagination-container {
-  display: none;
-}
-
-.blog_side {
   display: none;
 }
 
@@ -56,35 +47,15 @@
 }
 
 @media only screen and (min-width: #{$bp-desk0}) {
-  .blog {
-    padding: 6em 0 12em;
-  }
 
   .blog_header {
-    max-width: 64em;
-    padding: 2em 0;
-    margin: 0 auto;
-
     h1 {
       font-size: 20px;
     }
   }
 
-  .blog_container {
-    max-width: 64em;
-    margin: 0 auto;
-  }
-
   .blog_main {
-    width: 44em;
-
     border-right: 1px solid lighten($heading-line, 10%);
-    margin-right: 2em;
-  }
-
-  .blog_side {
-    display: block;
-    width: (64em - 48);
   }
 
   .blog_side-group {

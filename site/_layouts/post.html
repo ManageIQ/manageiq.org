@@ -3,44 +3,56 @@ layout: default
 ---
 
 <div class="blog">
-  <div class="blog_container">
-    <div class="blog_main">
-      <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-        <header class="post-header">
-          <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
-
-          <div class="post-meta">
-            <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-              {{ page.date | date: "%b %-d, %Y" }}
-            </time>
-
-            {% if page.author %}
-            <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-              by
-              <i itemprop="name">
-                {{ page.author }}
-              </i>
-            </span>
-            {% endif %}
-
-            <ul class="post-tags">
-              {% for tag in page.tags %}
-              <li>
-                <a href="/blog/tags/{{ tag }}">{{ tag }}</a>
-              </li>
-              {% endfor %}
-            </ul>
-          </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10">
+        <header class="blog_header">
+          <h1>
+            ManageIQ Blog
+          </h1>
         </header>
-
-        <div class="post-content" itemprop="articleBody">
-          {{ content }}
-        </div>
-      </article>
+      </div>
     </div>
+    <div class="row"> 
+      <div class="col-xs-12 col-sm-10 blog_main">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+          <header class="post-header">
+            <h1 class="page-title" itemprop="name headline">{{ page.title }}</h1>
 
-    <div class="blog_side">
-      {% include blog/side.html %}
+            <div class="post-meta">
+              <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+                {{ page.date | date: "%b %-d, %Y" }}
+              </time>
+
+              {% if page.author %}
+              <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                by
+                <i itemprop="name">
+                  {{ page.author }}
+                </i>
+              </span>
+              {% endif %}
+
+              <ul class="post-tags">
+                {% for tag in page.tags %}
+                <li>
+                  <a href="/blog/tags/{{ tag }}">{{ tag }}</a>
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </header>
+
+          <div class="post-content" itemprop="articleBody">
+            {{ content }}
+          </div>
+        </article>
+      </div>
+
+      <div class="col-xs-12 col-sm-2 blog_side">
+          {% include blog/side.html %}
+      </div>
+
     </div>
   </div>
 </div>
