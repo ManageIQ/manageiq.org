@@ -3,29 +3,35 @@ layout: default
 ---
 
 <div class="blog tag_index">
-  <header class="blog_header">
-    <h1>Tagged with {{ page.title }}</h1>
-  </header>
-
-  <div class="blog_container">
-    <div class="blog_main">
-      <div class="tag_index posts">
-        {% for post in page.pages %}
-        <article class="post_excerpt">
-          <header class="post-header">
-            <h1><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
-          </header>
-
-          <div class="post-content">
-            {{ post.excerpt }}
-          </div>
-        </article>
-        {% endfor %}
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10">
+        <header class="blog_header">
+          <h1>
+            ManageIQ Blog
+          </h1>
+           <p><br><i>Tagged with {{ page.title }}</i></p>
+        </header>
       </div>
     </div>
-
-    <div class="blog_side">
-      {% include blog/side.html %}
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 blog_main">
+        <div class="tag_index posts">
+          {% for post in page.pages %}
+            <article class="post_excerpt">
+              <header class="post-header">
+                <h1><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
+              </header>
+              <div class="post-content">
+                {{ post.excerpt }}
+              </div>
+            </article>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-2 blog_side">
+        {% include blog/side.html %}
+      </div>
     </div>
   </div>
 </div>

@@ -4,34 +4,38 @@ title: ManageIQ Blog
 ---
 
 <div class="blog">
-  <header class="blog_header">
-    <h1>{{ page.title }}</h1>
-  </header>
-
-  <div class="blog_container">
-    <div class="blog_main">
-      {% for post in paginator.posts %}
-      <article class="post_excerpt">
-        <header class="post-header">
-          <h1><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
-          <div class="post-meta">
-            <time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">
-              {{ post.date | date: "%b %-d, %Y" }}
-            </time>
-          </div>
+  <div class="container blog_container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10">
+        <header class="blog_header">
+          <h1>
+            {{ page.title }}
+          </h1>
         </header>
-
-        <div class="post-content">
-          {{ post.excerpt }}
-        </div>
-      </article>
-      {% endfor %}
-
-      {% include blog/pagination.html %}
+      </div>
     </div>
-
-    <div class="blog_side">
-      {% include blog/side.html %}
+    <div class="row">  
+      <div class="col-xs-12 col-sm-10 blog_main">
+        {% for post in paginator.posts %}
+        <article class="post_excerpt">
+          <header class="post-header">
+            <h1><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
+            <div class="post-meta">
+              <time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">
+                {{ post.date | date: "%b %-d, %Y" }}
+              </time>
+            </div>
+          </header>
+          <div class="post-content">
+            {{ post.excerpt }}
+          </div>
+        </article>
+        {% endfor %}
+        {% include blog/pagination.html %}
+      </div>
+      <div class="col-xs-12 col-sm-2 blog_side">
+        {% include blog/side.html %}
+      </div>
     </div>
   </div>
 </div>
