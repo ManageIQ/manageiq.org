@@ -1,22 +1,23 @@
-<header class="site-header">
-  <a href="/" class="brand">
-    <span class="brand-name">ManageIQ</span>
-    <img class="brand-logo" src="/assets/images/manageiq-logo-inverse.svg" alt="ManageIQ Logo">
-  </a>
-
-  <div id="site_header-nav_toggle">
-    <a href="#" class="off_canvas-show" data-behavior="off_canvas-toggle">
-      <i class="fa fa-bars"></i>
-    </a>
-  </div>
-
-  <div class="off_canvas">
-    <header class="off_canvas-header">
-      <a href="#" class="off_canvas-hide" data-behavior="off_canvas-toggle">
-        <i class="fa fa-times"></i>
+<nav class="navbar {% if page.body_class == "home" %} navbar-fixed-top {% else %} navbar-static-top {% endif %} navbar-inverse navbar-miq" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">
+        <img class="brand-logo" src="/assets/images/manageiq-logo-inverse.svg" alt="ManageIQ Logo">
       </a>
-    </header>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        {% include site_nav.html %}
+      </ul>
+    </div><!-- /.nav-collapse -->
+  </div><!-- /.container -->
+</nav><!-- /.navbar -->
 
-    {% include site_nav.html %}
-  </div>
-</header>
+
+

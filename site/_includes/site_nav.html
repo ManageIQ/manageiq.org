@@ -1,14 +1,12 @@
-<ul class="site_nav">
-  <li {% if page.url == "/download/" %}class="active"{% endif %}>
-    <a href="/download/">Download</a>
-  </li>
-  <li {% if page.url == "/docs/" %}class="active"{% endif %}>
-    <a href="/docs/">Documentation</a>
-  </li>
-  <li {% if page.url == "/community/" %}class="active"{% endif %}>
-    <a href="/community/">Community</a>
-  </li>
-  <li {% if page.url contains "/blog/" %}class="active"{% endif %}>
-    <a href="/blog/">Blog</a>
-  </li>
-</ul>
+<li {% if page.url == "/download/" %}class="active"{% endif %}>
+  <a href="/download/">Download</a>
+</li>
+<li {% if page.url == "/docs/" %}class="active"{% endif %}>
+  <a href="/docs/">Documentation</a>
+</li>
+<li {% if page.url == "/community/" %}class="active"{% endif %}>
+  <a href="/community/">Community</a>
+</li>
+<li {% if page.url contains "/blog/" %}class="active"{% endif %}>
+  <a href="/blog/">Blog</a>
+</li>

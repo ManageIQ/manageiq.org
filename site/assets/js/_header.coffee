@@ -1,7 +1,7 @@
 # Header animation
 
 miq.setup_header_ani = ->
-  miq.header = miq.select(".site-header")
+  miq.header = miq.select(".navbar-miq")
   miq.triad  = miq.select(".triad")
   miq.title  = miq.select(".banner h1")
 

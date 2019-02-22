@@ -5,15 +5,16 @@
 
   <body{% if page.body_class %} class="{{ page.body_class }}"{% endif %}>
     {% include header.html %}
-
-    <main data-url="{{page.url}}">
-      {{ content }}
-    </main>
-
+    <div ="container">
+      <main data-url="{{page.url}}">
+        {{ content }}
+      </main>
+    </div>
     {% include footer.html %}
     {% include lightbox.html %}
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/assets/js/bootstrap.js" charset="utf-8"></script>  
     <script src="/assets/js/main.js" charset="utf-8"></script>
     {% if jekyll.environment == 'production' %}
     {% include analytics.html %}

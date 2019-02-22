@@ -1,102 +1,52 @@
+$site-header-sm-pad: 10px;
 
-
-.menu {
-  padding: 0;
-  margin-bottom: 0;
-
-  ul {
-    padding: 0;
-    margin: 0;
-  }
-
-  li {
-    margin: 0;
-  }
-
-  li > ul {
-    overflow: auto;
-    max-height: 0vh;
-
-    transition: max-height 0.5s;
-
-    li {
-      opacity: 0;
-      transition: opacity 0.8s;
-    }
-  }
-
-  li.menu-open > ul {
-    max-height: 200vh; // Some max-height needed for expansion animation
-
-    li {
-      opacity: 1;
-    }
-  }
-
-  li.active > a {
-    background-color: lighten($grey-dark, 8%);
-  }
-
-  a {
-    display: block;
-    padding: 1em $menu-level-pad;
-    line-height: 1.4;
-
-    color: $menu-link-color;
-
-    &:hover {
-      background-color: lighten($grey-dark, 10%);
-      text-decoration: none;
-    }
-
-    &:active {
-      text-decoration: none;
-    }
-  }
-
-  li > ul > li > a {
-    padding-left: $menu-level-pad * 1.5;
-  }
-
-  // 3rd level
-  li > ul > li > ul > li > a {
-    padding-left: $menu-level-pad * 2;
-  }
+.navbar-inverse {
+  background: none;
 }
 
-.menu-parent {
-  // font-weight: bold;
+.navbar-miq, .navbar-inverse {
+  border-bottom: 0;
+  border-top: 3px solid $blue-lite;
+  padding: $site-header-sm-pad;
+  @include banner_grad;
 
-  > a {
-    color: #fff;
-
-    &:before {
-      @include fa_type;
-      content: $fa-var-chevron-right;
-
-      display: inline-block;
-      font-size: 9px;
-      color: lighten($grey-dark, 30%);
-      margin-left: -1em;
-
-      position: relative;
-      top: -2px;
+  .navbar-brand {
+    padding:0;
+    .brand-logo {
+      display: block;
+      width: 120px;
+      height: auto;
     }
   }
 
-  &.active, &.menu-open {
-    > a:before {
-      content: $fa-var-chevron-down;
+  .navbar-toggle:hover, 
+  .navbar-toggle:focus{
+    @include link_background_hover;
+  }
+
+  .navbar-nav {
+    li > a {
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      color:#fff;
+      @include link_background_hover;
     }
   }
-}
+} 
 
-.menu-toplevel {
-  > li {
-    border-left: $menu-highlight-bar solid $grey-dark;
-  }
 
-  > li.menu-open {
-    border-left-color: $blue-lite;
+@media only screen and (min-width: #{$bp-desk0}) {
+  .navbar-miq {
+    .brand-logo {
+      width: 160px;
+    }
+    .navbar-nav {
+      float: right;
+      li > a {
+        padding: 0.5em 1em;
+        border-radius: 10px;
+        border-bottom: none;
+        @include link_background_hover;
+      }
+    }
   }
-}
+} // @media

@@ -19,7 +19,6 @@ $font-size-base: 16px;
  */
 html {
   font-size: 62.5%;
-  overflow-x: hidden; // deals with off-canvas issue
 }
 
 // Breakpoints, mobile first
@@ -51,9 +50,7 @@ $menu-level-pad: 36px;
   "colors",
   "type",
   "page",   // page containers and colors
-  "menu",
   "site_nav",
-  "off_canvas",
   "header",
   "footer",
   "lightbox",
