@@ -56,6 +56,8 @@ authentication:
       path: "/docs/reference/latest/auth/ldap"
     - title: SAML
       path: "/docs/reference/latest/auth/saml"
+    - title: OpenID-Connect
+      path: "/docs/reference/latest/auth/openid_connect"
 
 integration:
   title: Integration

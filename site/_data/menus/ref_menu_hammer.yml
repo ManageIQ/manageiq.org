@@ -56,6 +56,8 @@ authentication:
       path: "/docs/reference/hammer/auth/ldap"
     - title: SAML
       path: "/docs/reference/hammer/auth/saml"
+    - title: OpenID-Connect
+      path: "/docs/reference/hammer/auth/openid_connect"
 
 integration:
   title: Integration
