@@ -47,7 +47,9 @@ module Miq
     def branch_paths
       Miq.doc_branches.each_with_object({}) do |branch, hsh|
         branch = "latest" if branch == "master"
-        hsh[branch.to_s] = branch_path_for(branch)
+        path = branch_path_for(branch)
+        next unless File.exist?(File.join("site", path))
+        hsh[branch.to_s] = path
       end
     end
 
