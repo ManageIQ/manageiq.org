@@ -22,6 +22,14 @@ doc_branch: latest
 
 {% endfor %}
 
+## Authentication
+
+{% for item in site.data["menus"]["ref_menu_latest"]["authentication"]["children"] %}
+### [{{item.title}}]({{item.path}})
+{{item.desc}}
+
+{% endfor %}
+
 ## Integration
 
 {% for item in site.data["menus"]["ref_menu_latest"]["integration"]["children"] %}

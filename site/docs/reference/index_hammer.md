@@ -22,6 +22,14 @@ doc_branch: hammer
 
 {% endfor %}
 
+## Authentication
+
+{% for item in site.data["menus"]["ref_menu_hammer"]["authentication"]["children"] %}
+### [{{item.title}}]({{item.path}})
+{{item.desc}}
+
+{% endfor %}
+
 ## Integration
 
 {% for item in site.data["menus"]["ref_menu_hammer"]["integration"]["children"] %}

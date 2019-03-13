@@ -22,6 +22,14 @@ doc_branch: euwe
 
 {% endfor %}
 
+## Authentication
+
+{% for item in site.data["menus"]["ref_menu_euwe"]["authentication"]["children"] %}
+### [{{item.title}}]({{item.path}})
+{{item.desc}}
+
+{% endfor %}
+
 ## Integration
 
 {% for item in site.data["menus"]["ref_menu_euwe"]["integration"]["children"] %}

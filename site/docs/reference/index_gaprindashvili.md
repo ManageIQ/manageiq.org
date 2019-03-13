@@ -22,6 +22,14 @@ doc_branch: gaprindashvili
 
 {% endfor %}
 
+## Authentication
+
+{% for item in site.data["menus"]["ref_menu_gaprindashvili"]["authentication"]["children"] %}
+### [{{item.title}}]({{item.path}})
+{{item.desc}}
+
+{% endfor %}
+
 ## Integration
 
 {% for item in site.data["menus"]["ref_menu_gaprindashvili"]["integration"]["children"] %}

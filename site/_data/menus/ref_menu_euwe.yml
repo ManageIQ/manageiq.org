@@ -48,14 +48,19 @@ authentication:
   children:
     - title: Active Directory
       path: "/docs/reference/euwe/auth/active_directory"
+      desc: "How to manually configure an Appliance’s external authentication to work against Active Directory."
     - title: 2-Factor-Authentication with IPA
       path: "/docs/reference/euwe/auth/ipa_2fa"
+      desc: "How to manually configure an Appliance’s external authentication to work with 2-Factor Authentication with IPA."
     - title: IPA/AD Trust
       path: "/docs/reference/euwe/auth/ipa_ad_trust"
+      desc: "How to manually configure an Appliance’s external authentication to work with AD Trust Authentication using IPA."
     - title: LDAP
       path: "/docs/reference/euwe/auth/ldap"
+      desc: "How to manually configure an Appliance’s external authentication to work against LDAP."
     - title: SAML
       path: "/docs/reference/euwe/auth/saml"
+      desc: "How to manually configure an Appliance’s external authentication to work with SAML."
 
 integration:
   title: Integration
