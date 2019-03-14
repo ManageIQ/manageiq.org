@@ -32,13 +32,24 @@ children:
   - title: Installation
     path: "/docs/guides/external_auth/installation"
 
+- title: User Interface
+  children:
+  - title: UI Patterns
+    path: "/docs/guides/ui/patterns"
+  - title: UI Plugins
+    path: "/docs/guides/ui/plugins"
+  - title: Shared React Component API
+    path: "/docs/guides/ui/register_react_component"    
+  - title: Report Data API
+    path: "/docs/guides/ui/report_data_api"
+
 - title: Providers
   children:
   - title: Providers Overview
     path: "/docs/guides/architecture/providers_overview"
   - title: Providers Database Architecture
     path: "/docs/guides/architecture/providers_database_architecture.html"
-  - title: Amazon Aws Config
+  - title: Amazon AWS Config
     path: "/docs/guides/providers/amazon_aws_config"
   - title: Containers
     path: "/docs/guides/providers/containers"
