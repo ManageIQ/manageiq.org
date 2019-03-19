@@ -87,6 +87,7 @@ module Miq
           rsync_copy(branch)
         end
 
+        shell "rm -rf #{dst_dir}/latest"
         shell "mv #{dst_dir}/master #{dst_dir}/latest"
       else
         logger.error "Reference docs source directory not present."
