@@ -22,6 +22,8 @@ children:
     path: "/docs/guides/developer_setup/minimal_mode"
   - title: Running Test Suites
     path: "/docs/guides/developer_setup/running_test_suites"
+  - title: Interactive debugging
+    path: "/docs/guides/developer_setup/debugging"
 
 - title: External Auth
   children:
