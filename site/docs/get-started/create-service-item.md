@@ -27,8 +27,7 @@ Press ***Configuration → Add a New Dialog***
 
 Choose a name for it
 
-Add a Tab, a Box and a Element to your Dialog using the + symbol on a
-circle on top.
+Dialogs require a Tab, a Box and a Element. The Dialog loads with a Tab and Box, so you will need to add an Element to your Dialog.
 
 We will be adding a checkbox that prints "Are you sure?" with a checkbox, but we won't be doing anything with the answer...
 
