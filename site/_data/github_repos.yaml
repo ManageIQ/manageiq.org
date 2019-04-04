@@ -16,6 +16,9 @@
 - name: manageiq-content
   description: Default ManageIQ content
 
+- name: manageiq-decorators
+  description: Model decorators with the related SVG assets for ManageIQ
+
 - name: manageiq-gems-pending
   description: Gems Pending to be extracted for ManageIQ project
 
@@ -43,9 +46,18 @@
 - name: integration_tests
   description: ManageIQ integration tests
 
+- name: react-ui-components
+  description: ManageIQ React-based UI components
+
 - name: ui-components
-  description: Angular UI Components for ManageIQ
+  description: ManageIQ Angular-based UI components
 
 - name: manageiq.org
   description: Website for the ManageIQ Cloud Management Platform
+
+- name: font-fabulous
+  description: A fabulous iconset packaged as a font
+
+- name: guides
+  description: ManageIQ guides and developer documentation
 
