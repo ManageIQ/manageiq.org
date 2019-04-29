@@ -3,9 +3,9 @@ layout: doc_page
 title: Add A Provider
 ---
 
-In this chapter we will use ManageIQ with the google [Cloud Platform](https://console.cloud.google.com/).
+In this chapter we will use ManageIQ with the [Google Cloud Platform](https://console.cloud.google.com/).
 
-Many other platforms are available including Amazon Web Server, VMware
+Many other platforms are available including Amazon Web Services, VMware
 vSphere and OpenStack.
 
 Capabilities between providers can be different
