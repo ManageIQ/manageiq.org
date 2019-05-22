@@ -1,7 +1,7 @@
 ---
 title: Announcing Hammer-6
 author: jprause
-date: 2019-04-23 08:35:39 UTC
+date: 2019-05-22 08:35:39 UTC
 comments: true
 published: true
 tags: releases announcements
