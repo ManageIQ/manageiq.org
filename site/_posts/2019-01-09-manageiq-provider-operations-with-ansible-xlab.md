@@ -15,15 +15,15 @@ Because XLAB was implementing all of these in parallel to the ongoing work by th
 
 The following three blog posts highlight the essence of the approaches they took. I think these are wonderful resources for anyone trying to get started with provider operations adopting the new model.
 
-## [Implementing ManageIQ Provider Operations with Ansible](https://tech.xlab.si/posts/nuage-ansible-operations/)
+## [Implementing ManageIQ Provider Operations with Ansible](https://steampunk.si/posts/nuage-ansible-operations/)
 
 The first post introduces you to the method of adding ManageIQ provider operations using Ansible playbooks and roles. It is based on a real-world example and shows the code that will be part of the CloudForms release.
 
-## [Dynamic UI for ManageIQ Provider Operations](https://tech.xlab.si/posts/nuage-react-component/)
+## [Dynamic UI for ManageIQ Provider Operations](https://steampunk.si/posts/nuage-react-component/)
 
 This second post describes how mind-blowingly powerful it is to implement frontend for provider operations using React Components. These live in a provider codebase and are totally independent of the other ManageIQ providers' UIs. You'll learn about this new era of ManageIQ frontend where you can define your own UIs without affecting the core.
 
-## [Ansible Playbook as an Event Callback in CloudForms](https://tech.xlab.si/posts/nuage-ansible-in-automate/)
+## [Ansible Playbook as an Event Callback in CloudForms](https://steampunk.si/posts/nuage-ansible-in-automate/)
 
 The last post in the series shows how easy it is to run Ansible playbooks triggered by events that are routed through the ManageIQ Automate engine. This post focuses on acquiring the data required by the playbook to actually invoke the operation against the correct inventory item. These data include the event payload and provider's credentials. To show you the complete process, it includes a video with a step-by-step tutorial.
 
