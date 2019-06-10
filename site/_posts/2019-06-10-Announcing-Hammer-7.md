@@ -16,7 +16,7 @@ Here are just a few of the things added since Hammer-6 release:
 - FIXED 
   * Doesn't count with selection of belongsto filter if any object doesn't exist in the filter sentence
   * Allow ssh auth for RHV
-  * [V2V] Add default credentials to ansible_playbook method (#18724)
+  * [V2V] Add default credentials to ansible_playbook method
 
 You can download the Hammer-7 release [here](http://manageiq.org/download/).
 
