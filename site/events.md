@@ -8,22 +8,17 @@ permalink: /community/events/
 
 Here are some opportunities to meet with members of the community to learn and share about ManageIQ, whether online or in person, at international conferences or local meetups. Materials from past events will be made available here as well.
 
-### Upcoming Events
-
-<div class="row">
-  <div class="col-md-6">
-    <p><img src="/assets/images/events/rhsummit2019.png" alt="Red Hat Summit Boston 2019" /></p>
-    <p><a href="https://www.redhat.com/en/summit/2019">
-    Red Hat Summit</a> <br /> May 7-9, 2019 in Boston, MA, USA</p>
-  </div>
-</div>
-
 ### Past Events
 
 <div class="row">
   <div class="col-md-6">
     <p><img src="/assets/images/events/foss-north2019.png" alt="Foss-north Gothenburg 2019" /></p>
     <p><a href="https://foss-north.se/2019/">Foss-north</a> <br /> April 8-9, 2019 in Gothenburg, Sweden</p>
+  </div>
+  <div class="col-md-6">
+    <p><img src="/assets/images/events/rhsummit2019.png" alt="Red Hat Summit Boston 2019" /></p>
+    <p><a href="https://www.redhat.com/en/summit/2019">
+    Red Hat Summit</a> <br /> May 7-9, 2019 in Boston, MA, USA</p>
   </div>
 </div>
 
