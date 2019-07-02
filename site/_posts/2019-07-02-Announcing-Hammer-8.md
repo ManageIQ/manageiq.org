@@ -16,7 +16,7 @@ Here are just a few of the things added since Hammer-7 release:
 - FIXED 
   * Group AND expressions properly to account for nesting
   * [V2V] Modify active_tasks so that it always reloads
-  * EvmDatabaseOps] Fix .validate_free_space target
+  * [EvmDatabaseOps] Fix .validate_free_space target
 
 You can download the Hammer-8 release [here](http://manageiq.org/download/).
 
