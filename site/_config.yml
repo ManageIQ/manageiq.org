@@ -148,3 +148,17 @@ defaults:
     values:
       layout: doc_page
       doc_group: api
+
+  - scope:
+      path: "docs/reference/ivanchuk"
+      type: "pages"
+    values:
+      layout: doc_page
+      permalink: /:path/:basename
+      doc_group: user
+
+  - scope:
+      path: "docs/reference/ivanchuk/api"
+    values:
+      layout: doc_page
+      doc_group: api
