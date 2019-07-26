@@ -7,7 +7,7 @@ published: true
 tags: releases announcements
 ---
 
-On behalf of the ManageIQ team, we're pleased to announce the Beta1 release for ManageIQ Ivanchuk! You can download the Hammer Beta1 Release [here](http://manageiq.org/download/)
+On behalf of the ManageIQ team, we're pleased to announce the Beta1 release for ManageIQ Ivanchuk! You can download the Ivanchuk Beta1 Release [here](http://manageiq.org/download/)
 
 Ivanchuk is the next milestone release for ManageIQ hybrid IT management platform. With each release, ManageIQ gets more robust and feature complete across providers. Here are just a few of the new or updated features.
 
