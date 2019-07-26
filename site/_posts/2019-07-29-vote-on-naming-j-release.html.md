@@ -20,7 +20,7 @@ Jansa is from the Czech Rebublic and learned chess while in the hospital at the 
 - [Johannessen, Leif Erlend](https://en.wikipedia.org/wiki/Leif_Erlend_Johannessen) Peak Rating 2564 (October 2005)
 Johannessen is a Norwegian chess player, and Norway's fifth grandmaster. He received his title in 2002, and was at the time Norway's second youngest grandmaster of all time. He picked up his first norm in Oslo, the second at Bermuda and finally the third in the Sigeman tournament in Malmö.
 - [Jones, Gawain](https://en.wikipedia.org/wiki/Gawain_Jones) Peak rating 2702 (May 2019)
-Jones ia British chess player and began playing at the age of four, competing in his first tournaments at six. In early 1997 he hit the headlines and was featured on the front page of The Guardian newspaper when he became the youngest player in the world ever to beat an International Master in an official tournament game.
+Jones is a British chess player and began playing at the age of four, competing in his first tournaments at six. In early 1997 he hit the headlines and was featured on the front page of The Guardian newspaper when he became the youngest player in the world ever to beat an International Master in an official tournament game.
 
 You are welcome to write in any player you want (as long as their last name starts with the letter J) by replying to the topic with your choice.  Here are the [top 100 active players](http://2700chess.com/?per-page=100) and [all grandmasters - past and present](https://en.wikipedia.org/wiki/List_of_chess_grandmasters).
 
