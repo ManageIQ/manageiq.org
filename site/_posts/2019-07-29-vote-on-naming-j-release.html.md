@@ -7,7 +7,7 @@ comments: true
 published: true
 ---
 
-Vote for the J-Release!!! Here is the [Poll](http://talk.manageiq.org/t/name-of-j-release/????) on talk.manageiq.org
+Vote for the J-Release!!! Here is the [Poll](http://talk.manageiq.org/t/take-the-poll-to-choose-the-name-of-the-j-release/4463) on talk.manageiq.org
 
 While we close in on the Ivanchuk release, it’s time to think about what we'll name the J-Release.  In keeping with our nomenclature of using chess grandmasters and world champions as release names, here are the proposed names for the J-Release, as well as some interesting background data:
 
