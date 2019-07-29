@@ -3,10 +3,10 @@ stable:
   tag: hammer-9
   filename: hammer-9
 
-# prerelease:
-#   name: Hammer-1-RC2
-#   tag: hammer-1-rc2
-#   filename: hammer-1-rc2
+prerelease:
+  name: Ivanchuk-1-beta1
+  tag: ivanchuk-1-beta1
+  filename: ivanchuk-1-beta1
 
 devel:
   name: Nightly
