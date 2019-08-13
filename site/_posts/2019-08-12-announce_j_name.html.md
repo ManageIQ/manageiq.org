@@ -7,7 +7,7 @@ comments: true
 published: true
 ---
 
-The results of the poll on the name of the J release are in. **Vlastimail Jansa** is the winner! Looking forward to all the striking features that will come in the **Jansa** release. Thanks to all that voted - we had 69 total votes for the J-Release.
+The results of the poll on the name of the J release are in. **Vlastimil Jansa** is the winner! Looking forward to all the exciting features that will come in the **Jansa** release. Thanks to all that voted - we had 69 total votes for the J-Release.
 
 The following table shows the final vote tally.
 
