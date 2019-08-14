@@ -1,5 +1,5 @@
 # FROM ehayes/manageiq_org_base:latest
-FROM manageiq/ruby:latest
+FROM manageiq/ruby:2.4
 MAINTAINER Eric Hayes <eric@erichayes.net>
 
 RUN yum -y install epel-release
