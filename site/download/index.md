@@ -53,11 +53,11 @@ title: Download ManageIQ
       <th>Format</th>
       <th>Size</th>
     </tr>
-<!--    <tr>
+    <tr>
       <td><a href="https://hub.docker.com/r/manageiq/manageiq/" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'outbound', eventLabel: 'Docker {{release.name}}', transport: 'beacon' });">Docker (tag {{release.tag}})</a></td>
       <td>docker</td>
       <td>0.8 GB</td>
-    </tr> -->
+    </tr> 
     {% for type in site.data.download_types %}
     <tr>
       {% if type.download_platform == 'gce' %}
