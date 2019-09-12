@@ -1,7 +1,7 @@
 ---
 layout: doc_page
 doc_group: api
-permalink: /docs/api
+permalink: /docs/api.html
 title: API Documentation
 ---
 

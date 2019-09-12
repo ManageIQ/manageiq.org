@@ -1,7 +1,7 @@
 ---
 layout: doc_page
 title: Automation Book
-permalink: /docs/automation
+permalink: /docs/automation.html
 ---
 
 ## [Mastering Automation in ManageIQ]({{ site.book_path }})
