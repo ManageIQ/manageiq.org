@@ -1,6 +1,10 @@
 language: ruby
-rvm:
-- '2.4'
-sudo: false
+rvm: '2.5'
 cache: bundler
 script: bundle exec exe/miq build all
+deploy:
+  provider: script
+  skip_cleanup: true
+  script: curl -sSL https://raw.githubusercontent.com/ManageIQ/manageiq.github.io/build/trigger.sh | bash -s
+  on:
+    branch: master
