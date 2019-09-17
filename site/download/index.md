@@ -31,7 +31,7 @@ title: Download ManageIQ
     </tr>
     {% endfor %}
     <tr>
-      <td><a href="https://app.vagrantup.com/manageiq/boxes/hammer" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'outbound', eventLabel: 'Vagrant {{release.name}}', transport: 'beacon' });">Vagrant</a></td>
+      <td><a href="https://app.vagrantup.com/manageiq/boxes/ivanchuk" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'outbound', eventLabel: 'Vagrant {{release.name}}', transport: 'beacon' });">Vagrant</a></td>
       <td>vagrant</td>
       <td>1.9 GB</td>
     </tr>
