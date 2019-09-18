@@ -1,12 +1,12 @@
 stable:
-  name: Hammer-11
-  tag: hammer-11
-  filename: hammer-11
+  name: Ivanchuk-1
+  tag: ivanchuk-1
+  filename: ivanchuk-1
 
-prerelease:
-  name: Ivanchuk-1-rc1
-  tag: ivanchuk-1-rc1
-  filename: ivanchuk-1-rc1
+# prerelease:
+#   name: Ivanchuk-1-rc1
+#   tag: ivanchuk-1-rc1
+#   filename: ivanchuk-1-rc1
 
 devel:
   name: Nightly

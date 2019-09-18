@@ -1,76 +1,76 @@
 - name: Amazon AWS EC2
   download_platform: ec2
   ext: zip
-  size_stable: 1.8 GB
+  size_stable: 2.2 GB
   size_pre: 2.1 GB
-  size_devel: 2.3 GB
+  size_devel: 2.5 GB
 
 - name: Google Cloud Platform
   download_platform: gce
   ext: tar.gz
-  size_stable: 1.8 GB
+  size_stable: 2.2 GB
   size_pre: 2.0 GB
-  size_devel: 2.2 GB
+  size_devel: 2.4 GB
 
 - name: libvirt
   download_platform: libvirt
   ext: qc2
-  size_stable: 2.0 GB
+  size_stable: 2.4 GB
   size_pre: 2.2 GB
-  size_devel: 2.5 GB
+  size_devel: 2.7 GB
 
 - name: Microsoft Azure
   download_platform: azure
   ext: zip
-  size_stable: 1.5 GB
+  size_stable: 1.9 GB
   size_pre: 1.6 GB
-  size_devel: 1.9 GB
+  size_devel: 2.2 GB
 
 - name: Microsoft SCVMM
   download_platform: hyperv
   ext: zip
-  size_stable: 1.8 GB
+  size_stable: 2.1 GB
   size_pre: 2.1 GB
-  size_devel: 2.2 GB
+  size_devel: 2.4 GB
 
 - name: OpenStack
   download_platform: openstack
   ext: qc2
-  size_stable: 2.1 GB
+  size_stable: 2.4 GB
   size_pre: 2.2 GB
-  size_devel: 2.5 GB
+  size_devel: 2.6 GB
 
 - name: oVirt
   download_platform: ovirt
   ext: ova
-  size_stable: 1.8 GB
+  size_stable: 2.1 GB
   size_pre: 2.0 GB
-  size_devel: 2.2 GB
+  size_devel: 2.4 GB
 
 - name: QEmu/KVM
   download_platform: openstack
   ext: qc2
-  size_stable: 2.1 GB
+  size_stable: 2.4 GB
   size_pre: 2.2 GB
-  size_devel: 2.5 GB
+  size_devel: 2.6 GB
 
 - name: Red Hat Virtualization (4.0 and newer)
   download_platform: ovirt
   ext: qc2
-  size_stable: 2.0 GB
+  size_stable: 2.4 GB
   size_pre: 2.2 GB
-  size_devel: 2.5 GB
+  size_devel: 2.6 GB
 
 - name: Red Hat Enterprise Virtualization (3.6 and earlier)
   download_platform: ovirt
   ext: ova
-  size_stable: 1.8 GB
+  size_stable: 2.1 GB
   size_pre: 2.0 GB
-  size_devel: 2.2 GB
+  size_devel: 2.4 GB
 
 - name: VMware vSphere
   download_platform: vsphere
   ext: ova
-  size_stable: 2.0 GB
+  size_stable: 2.2 GB
   size_pre: 2.1 GB
-  size_devel: 2.4 GB
+  size_devel: 2.5 GB

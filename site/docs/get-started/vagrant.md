@@ -4,8 +4,8 @@ title: Easy Install With Vagrant
 ---
 
 You can test ManageIQ with Vagrant using the images that the ManageIQ project
-makes available on [Atlas](https://atlas.hashicorp.com/manageiq). This is a
-great option if you have a Windows PC or a Mac. Note that you need 8GB of
+makes available on [Vagrant Cloud](https://app.vagrantup.com/manageiq). This is
+a great option if you have a Windows PC or a Mac. Note that you need 8GB of
 memory to run ManageIQ!
 
 We will assume that you have Vagrant
@@ -20,7 +20,7 @@ Execute the following commands to create a new Vagrant box:
 ```bash
 $ mkdir manageiq
 $ cd manageiq
-$ vagrant init manageiq/hammer
+$ vagrant init manageiq/ivanchuk
 ```
 
 There is now a `Vagrantfile` in the current directory.
