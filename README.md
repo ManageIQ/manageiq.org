@@ -1,6 +1,6 @@
 # ManageIQ.org website
 
-This is primarily a  [Jekyll](https://github.com/jekyll/jekyll) site, with some tools to collect and pre-process documentation from multiple sources.
+This is primarily a [Jekyll](https://github.com/jekyll/jekyll) site, with some tools to collect and pre-process documentation from multiple sources.
 
 
 ## How To Contribute
