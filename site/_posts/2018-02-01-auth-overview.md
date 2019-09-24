@@ -121,7 +121,7 @@ A summary of how to configure ***IPA AD Trust*** with IPA is as follows:
 # External Authentication with SAML
 ---------------------------------------------------------------------
 
-  Configuring ManageIQ for external authentication using SAML is documented [here](http://manageiq.org/docs/reference/latest/auth/saml)
+  Configuring ManageIQ for external authentication using SAML following the [ManageIQ Authentication SAML documentation](http://manageiq.org/docs/reference/latest/auth/saml)
 
   The identity provider tool, [Keycloak](http://www.keycloak.org/), has been used to test the SAML functionality.
 
@@ -129,7 +129,13 @@ A summary of how to configure ***IPA AD Trust*** with IPA is as follows:
 
   1. Configuration Apache 
   1. Configure SAML with mellon_create_metadata script
-  1. Configure a Client on the Keycloak Administration Console and configure the required SAML Assertions
+  1. Configure a Client on the Keycloak Administration Console following the [ManageIQ Authentication SAML documentation](http://manageiq.org/docs/reference/latest/auth/saml)
+  1. Add the necessary mappers, paying close attention to the case or each field. Follow these screenshots:
+  + [fullname](/assets/images/blog/auth_saml_mapper_fullname.png),
+  [firstname](/assets/images/blog/auth_saml_mapper_firstname.png),
+  [lastname](/assets/images/blog/auth_saml_mapper_lastname.png),
+  [username](/assets/images/blog/auth_saml_mapper_username.png),
+  [email](/assets/images/blog/auth_saml_mapper_email.png),
+  [groups](/assets/images/blog/auth_saml_mapper_groups.png)
   1. Copy the Client Metadata file from the Keycloak server onto the ManageIQ appliance
   1. Configure the ManageIQ appliance to use external authentication
-
