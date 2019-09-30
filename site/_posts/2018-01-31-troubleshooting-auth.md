@@ -163,7 +163,7 @@ a SAML configuration with [**dbus-send**](https://dbus.freedesktop.org/doc/dbus-
     client running the browser used to access the ManageIQ appliance UI.
 
     Also ensure the hostname assigned to the SAML IdP is resolvable on the ManageIQ appliance and the
-    client running the browser used to access the MiQ appliance UI.
+    client running the browser used to access the ManageIQ appliance UI.
 
   - Unsynchronized system times
 
@@ -177,9 +177,9 @@ a SAML configuration with [**dbus-send**](https://dbus.freedesktop.org/doc/dbus-
       SSL Library Error: error:14094416:SSL routines:ssl3_read_bytes:sslv3 alert certificate unknown
       ```
 
-    The ***DATE(1)*** command can be used on the SAML identity provider and the ManageIQ appliance to confirm the dates on each are syncronized.
+    The ***DATE(1)*** command can be used on the SAML identity provider and the ManageIQ appliance to confirm the dates on each are synchronized.
 
-  - Inorrectly configured SAML ***client*** mappers
+  - Incorrectly configured SAML ***client*** mappers
 
     - The SAML client mappers must be appropriately configured, especially the case or each field.
     - Follow these screenshots: [fullname](/assets/images/blog/auth_saml_mapper_fullname.png),

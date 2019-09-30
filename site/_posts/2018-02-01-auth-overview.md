@@ -130,7 +130,7 @@ A summary of how to configure ***IPA AD Trust*** with IPA is as follows:
   1. Configuration Apache 
   1. Configure SAML with mellon_create_metadata script
   1. Configure a Client on the Keycloak Administration Console following the [ManageIQ Authentication SAML documentation](http://manageiq.org/docs/reference/latest/auth/saml)
-  1. Add the necessary mappers, paying close attention to the case or each field. Follow these screenshots:
+  1. Add the necessary mappers, paying close attention to the case for each field. Follow these screenshots:
   + [fullname](/assets/images/blog/auth_saml_mapper_fullname.png),
   [firstname](/assets/images/blog/auth_saml_mapper_firstname.png),
   [lastname](/assets/images/blog/auth_saml_mapper_lastname.png),
