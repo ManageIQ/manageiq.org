@@ -54,19 +54,12 @@
   size_pre: 2.2 GB
   size_devel: 2.6 GB
 
-- name: Red Hat Virtualization (4.0 and newer)
+- name: Red Hat Virtualization
   download_platform: ovirt
   ext: qc2
   size_stable: 2.4 GB
   size_pre: 2.2 GB
   size_devel: 2.6 GB
-
-- name: Red Hat Enterprise Virtualization (3.6 and earlier)
-  download_platform: ovirt
-  ext: ova
-  size_stable: 2.1 GB
-  size_pre: 2.0 GB
-  size_devel: 2.4 GB
 
 - name: VMware vSphere
   download_platform: vsphere
