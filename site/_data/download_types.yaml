@@ -42,10 +42,10 @@
 
 - name: oVirt
   download_platform: ovirt
-  ext: ova
-  size_stable: 2.1 GB
-  size_pre: 2.0 GB
-  size_devel: 2.4 GB
+  ext: qc2
+  size_stable: 2.4 GB
+  size_pre: 2.2 GB
+  size_devel: 2.6 GB
 
 - name: QEmu/KVM
   download_platform: openstack
