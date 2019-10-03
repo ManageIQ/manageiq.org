@@ -110,18 +110,85 @@ ManageIQ authentication related configuration data is maintained in the ManageIQ
 ---------------------------------------------------------------------
 
 Authentication using SAML is a bit of a different beast. Although it is configured in ManageIQ as *Mode: External (httpd)* it does not use *SSSD*.
-Instead, Apache modules are used to make the connection to an Identity Provider (IdP) that supports SAML, e.g. [**Keycloak**](http://www.keycloak.org/).
+Instead, the mod_auth_mellon Apache module is used to make the connection to an Identity Provider (IdP) that supports SAML, e.g. [**Keycloak**](http://www.keycloak.org/).
+
+This [Users Guide](https://jdennis.fedorapeople.org/doc/mellon-user-guide/mellon_user_guide.html) provides an extensive description of mod_auth_mellon.
 
 Because SAML does not use SSSD, unlike the other ManageIQ *Mode: External (httpd)* configurations, it is not possible to verify
 a SAML configuration with [**dbus-send**](https://dbus.freedesktop.org/doc/dbus-send.1.html)
 
-Here is a list of ways to help diagnose SAML configurations independently from ManageIQ.
+### Diagnosing SAML configurations in ManageIQ.
 
   - Use [**SAML tracer**](https://addons.mozilla.org/en-US/firefox/addon/saml-tracer/)  web browser plug in. 
   - Configure Keycloak to ***Do not encrypt assertions*** so **SAML Tracer** can display text
-  - Debugging the Apache modules.
+  - Debugging the Apache modules on an ManageIQ appliance
 
-A future update to this blog will expand this section and provide more information regarding troubleshooting SAML
+    To aid in the debugging of issues encountered when using SAML the Apache log level
+    can be increased to debug on the ManageIQ appliance.
+
+    ```
+    # vim /etc/httpd/conf.d/manageiq-https-application.conf
+    ...
+    LogLevel debug
+    ...
+    ```
+
+    Then restart the httpd service
+    ```
+    # systemctl restart httpd
+    ```
+
+    Then attemp to perform a SAML authentication while tailing the ssl_error.log file.
+    ```
+    # tail -f /var/www/miq/vmdb/log/apache/ssl_error.log
+
+    ```
+
+    NOTE: Once any issues have been resolved return the log level to warn:
+
+    ```
+    # vim /etc/httpd/conf.d/manageiq-https-application.conf
+    ...
+    LogLevel warn
+    ...
+    ```
+
+### Common SAML configuration mistakes:
+
+  - Hostname must be DNS resolvable.
+
+    SAML requires DNS resolvable hostnames, IP addresses and unresolvable hostnames will not work.
+
+    Ensure the hostname assigned to the ManageIQ appliance is resolvable on the SAML identity provider and the
+    client running the browser used to access the ManageIQ appliance UI.
+
+    Also ensure the hostname assigned to the SAML IdP is resolvable on the ManageIQ appliance and the
+    client running the browser used to access the ManageIQ appliance UI.
+
+  - Unsynchronized system times
+
+    A common issue occures when the date on the SAML identity provider and the ManageIQ appliance are out of sync. This configuration error can result in [this ***Bad Request***](/assets/images/blog/auth_saml_bad_request_date_time.png) message being displayed.
+
+
+    If the Apache LogLevel is set to debug, as described above, errors similar to the bellow will be found in the ***/var/www/miq/vmdb/log/apache/ssl_error.log*** log file:
+      ```
+      SubjectConfirmationData was in the past
+        and
+      SSL Library Error: error:14094416:SSL routines:ssl3_read_bytes:sslv3 alert certificate unknown
+      ```
+
+    The ***DATE(1)*** command can be used on the SAML identity provider and the ManageIQ appliance to confirm the dates on each are synchronized.
+
+  - Incorrectly configured SAML ***client*** mappers
+
+    - The SAML client mappers must be appropriately configured, especially the case or each field.
+    - Follow these screenshots: [fullname](/assets/images/blog/auth_saml_mapper_fullname.png),
+    [firstname](/assets/images/blog/auth_saml_mapper_firstname.png),
+    [lastname](/assets/images/blog/auth_saml_mapper_lastname.png),
+    [username](/assets/images/blog/auth_saml_mapper_username.png),
+    [email](/assets/images/blog/auth_saml_mapper_email.png),
+    [groups](/assets/images/blog/auth_saml_mapper_groups.png)
+
 
 # Common Misconceptions
 ---------------------------------------------------------------------
