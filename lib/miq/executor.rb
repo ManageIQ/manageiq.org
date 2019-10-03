@@ -49,8 +49,13 @@ module Miq
     # we need a clean Bundler env.
     # FIXME: This is might be a bit naive
     def run_cmd_with_bundle_env(cmd, clean)
+      # Honor BUNDLE_PATH env var so that gems can go into a common location
+      env = ENV["BUNDLE_PATH"] ? {"BUNDLE_PATH" => ENV["BUNDLE_PATH"]} : {}
+
       if clean || (cmd =~ /cd\ /)
-        Bundler.clean_system(cmd)
+        Bundler.with_clean_env do
+          system(env, cmd)
+        end
       else
         system(cmd)
       end

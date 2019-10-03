@@ -1,6 +1,11 @@
 language: ruby
 rvm: '2.5'
-cache: bundler
+env:
+  global:
+  - BUNDLE_PATH=${TRAVIS_BUILD_DIR}/vendor/bundle
+cache:
+  directories:
+  - ${BUNDLE_PATH}
 script: bundle exec exe/miq build all
 deploy:
   provider: script
