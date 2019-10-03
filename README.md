@@ -16,7 +16,6 @@ The site content has different sources.
 
 | Directory | Contents |
 | --------- | -------- |
-| config    | Nginx config files, used in Docker image |
 | dest      | where the site is built locally |
 | exe       | Command line tool (Thor) |
 | lib       | Ruby code for CLI, processing docs, etc. |
@@ -63,9 +62,6 @@ miq update <all|guides|site|reference>  # Pull changes from origin repos
 ### Working with large images
 
 Images (img) in documents and blog posts should be "responsive" by default, that is their width should not exceed the width of their container. Add the `.large_img` class to give large images zoomability.
-
-### Building a Docker image
-`docker build <your-tag> .`
 
 ### Questions / Suggestions?
 * Chat: https://gitter.im/ManageIQ/manageiq.org
