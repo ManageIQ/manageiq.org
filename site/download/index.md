@@ -3,17 +3,21 @@ layout: page
 title: Download ManageIQ
 ---
 
+{% capture column_title %}
+    <tr>
+      <th>Appliance</th>
+      <th>Format</th>
+      <th>Size</th>
+    </tr>
+{% endcapture %}
+
 {% assign release = site.data.releases["stable"] %}
 
 ### Current stable release ({{ release.name }})
 
 <div class="table-responsive">
   <table class="table table-bordered table-hover">
-    <tr>
-      <th>Appliance</th>
-      <th>Format</th>
-      <th>Size</th>
-    </tr>
+    {{ column_title }}
     {% for type in site.data.download_types %}
     <tr>
       {% if type.download_platform == 'docker' %}
@@ -42,11 +46,7 @@ title: Download ManageIQ
 
 <div class="table-responsive">
   <table class="table table-bordered table-hover">
-    <tr>
-      <th>Appliance</th>
-      <th>Format</th>
-      <th>Size</th>
-    </tr>
+    {{ column_title }}
     {% for type in site.data.download_types %}
     <tr>
       {% if type.download_platform == 'docker' %}
@@ -75,11 +75,7 @@ title: Download ManageIQ
 
 <div class="table-responsive">
   <table class="table table-bordered table-hover">
-    <tr>
-      <th>Appliance</th>
-      <th>Format</th>
-      <th>Size</th>
-    </tr>
+    {{ column_title }}
     {% for type in site.data.download_types %}
     <tr>
       {% if type.download_platform == 'docker' %}
