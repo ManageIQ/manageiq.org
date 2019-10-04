@@ -14,27 +14,21 @@ title: Download ManageIQ
       <th>Format</th>
       <th>Size</th>
     </tr>
-    <tr>
-      <td><a href="https://hub.docker.com/r/manageiq/manageiq/" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'outbound', eventLabel: 'Docker {{release.name}}', transport: 'beacon' });">Docker (tag {{release.tag}})</a></td>
-      <td>docker</td>
-      <td>1.4 GB</td>
-    </tr>
     {% for type in site.data.download_types %}
     <tr>
-      {% if type.download_platform == 'gce' %}
-      <td><a href="https://console.cloud.google.com/storage/browser/manageiq/" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'outbound', eventLabel: '{{type.name}} {{release.name}}', transport: 'beacon' });">{{ type.name }}</a></td>
+      {% if type.download_platform == 'docker' %}
+        <td><a href="https://hub.docker.com/r/manageiq/manageiq/" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'outbound', eventLabel: '{{ type.name }} {{release.name}}', transport: 'beacon' });">{{ type.name }} (tag {{release.tag}})</a></td>
+      {% elsif type.download_platform == 'gce' %}
+        <td><a href="https://console.cloud.google.com/storage/browser/manageiq/" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'outbound', eventLabel: '{{type.name}} {{release.name}}', transport: 'beacon' });">{{ type.name }}</a></td>
+      {% elsif type.download_platform == 'vagrant' %}
+        <td><a href="https://app.vagrantup.com/manageiq/boxes/ivanchuk" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'outbound', eventLabel: '{{ type.name }} {{release.name}}', transport: 'beacon' });">{{ type.name }}</a></td>
       {% else %}
-      <td><a href="http://releases.manageiq.org/manageiq-{{type.download_platform}}-{{release.filename}}.{{type.ext}}" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'download', eventLabel: '{{type.name}} {{release.name}}', transport: 'beacon' });">{{ type.name }}</a></td>
+        <td><a href="http://releases.manageiq.org/manageiq-{{type.download_platform}}-{{release.filename}}.{{type.ext}}" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'download', eventLabel: '{{type.name}} {{release.name}}', transport: 'beacon' });">{{ type.name }}</a></td>
       {% endif %}
       <td>{{ type.download_platform }}</td>
       <td>{{ type.size_stable }}</td>
     </tr>
     {% endfor %}
-    <tr>
-      <td><a href="https://app.vagrantup.com/manageiq/boxes/ivanchuk" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'outbound', eventLabel: 'Vagrant {{release.name}}', transport: 'beacon' });">Vagrant</a></td>
-      <td>vagrant</td>
-      <td>2.2 GB</td>
-    </tr>
   </table>
 </div>
 
@@ -53,27 +47,21 @@ title: Download ManageIQ
       <th>Format</th>
       <th>Size</th>
     </tr>
-    <tr>
-      <td><a href="https://hub.docker.com/r/manageiq/manageiq/" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'outbound', eventLabel: 'Docker {{release.name}}', transport: 'beacon' });">Docker (tag {{release.tag}})</a></td>
-      <td>docker</td>
-      <td>0.8 GB</td>
-    </tr> 
     {% for type in site.data.download_types %}
     <tr>
-      {% if type.download_platform == 'gce' %}
-      <td><a href="https://console.cloud.google.com/storage/browser/manageiq/" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'outbound', eventLabel: '{{type.name}} {{release.name}}', transport: 'beacon' });">{{ type.name }}</a></td>
+      {% if type.download_platform == 'docker' %}
+        <td><a href="https://hub.docker.com/r/manageiq/manageiq/" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'outbound', eventLabel: '{{ type.name }} {{release.name}}', transport: 'beacon' });">{{ type.name }} (tag {{release.tag}})</a></td>
+      {% elsif type.download_platform == 'gce' %}
+        <td><a href="https://console.cloud.google.com/storage/browser/manageiq/" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'outbound', eventLabel: '{{type.name}} {{release.name}}', transport: 'beacon' });">{{ type.name }}</a></td>
+      {% elsif type.download_platform == 'vagrant' %}
+        <td><a href="https://app.vagrantup.com/manageiq/boxes/ivanchuk" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'outbound', eventLabel: '{{ type.name }} {{release.name}}', transport: 'beacon' });">{{ type.name }}</a></td>
       {% else %}
-      <td><a href="http://releases.manageiq.org/manageiq-{{type.download_platform}}-{{release.filename}}.{{type.ext}}" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'download', eventLabel: '{{type.name}} {{release.name}}', transport: 'beacon' });">{{ type.name }}</a></td>
+        <td><a href="http://releases.manageiq.org/manageiq-{{type.download_platform}}-{{release.filename}}.{{type.ext}}" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'download', eventLabel: '{{type.name}} {{release.name}}', transport: 'beacon' });">{{ type.name }}</a></td>
       {% endif %}
       <td>{{ type.download_platform }}</td>
       <td>{{ type.size_pre }}</td>
     </tr>
     {% endfor %}
-    <tr>
-      <td><a href="https://app.vagrantup.com/manageiq/boxes/ivanchuk" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'outbound', eventLabel: 'Vagrant {{release.name}}', transport: 'beacon' });">Vagrant</a></td>
-      <td>vagrant</td>
-      <td>2.1 GB</td>
-    </tr>
   </table>
 </div>
 
@@ -92,14 +80,13 @@ title: Download ManageIQ
       <th>Format</th>
       <th>Size</th>
     </tr>
-    <tr>
-      <td><a href="https://hub.docker.com/r/manageiq/manageiq/" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'outbound', eventLabel: 'Docker {{release.name}}', transport: 'beacon' });">Docker (tag {{release.tag}})</a></td>
-      <td>docker</td>
-      <td>1.3 GB</td>
-    </tr>
     {% for type in site.data.download_types %}
     <tr>
-      <td><a href="http://releases.manageiq.org/manageiq-{{type.download_platform}}-{{release.filename}}.{{type.ext}}" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'download', eventLabel: '{{type.name}} {{release.name}}', transport: 'beacon' });">{{ type.name }}</a></td>
+      {% if type.download_platform == 'docker' %}
+        <td><a href="https://hub.docker.com/r/manageiq/manageiq/" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'outbound', eventLabel: '{{ type.name }} {{release.name}}', transport: 'beacon' });">{{ type.name }} (tag {{release.tag}})</a></td>
+      {% else %}
+        <td><a href="http://releases.manageiq.org/manageiq-{{type.download_platform}}-{{release.filename}}.{{type.ext}}" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'download', eventLabel: '{{type.name}} {{release.name}}', transport: 'beacon' });">{{ type.name }}</a></td>
+      {% endif %}
       <td>{{ type.download_platform }}</td>
       <td>{{ type.size_devel }}</td>
     </tr>

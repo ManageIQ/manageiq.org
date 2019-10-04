@@ -5,6 +5,12 @@
   size_pre: 2.1 GB
   size_devel: 2.5 GB
 
+- name: Docker
+  download_platform: docker
+  size_stable: 1.4 GB
+  size_pre: 1.4 GB
+  size_devel: 1.4 GB
+
 - name: Google Cloud Platform
   download_platform: gce
   ext: tar.gz
@@ -60,6 +66,13 @@
   size_stable: 2.4 GB
   size_pre: 2.2 GB
   size_devel: 2.6 GB
+
+- name: Vagrant
+  download_platform: vagrant
+  ext: box
+  size_stable: 2.2 GB
+  size_pre: 2.4 GB
+  size_devel: 2.4 GB
 
 - name: VMware vSphere
   download_platform: vsphere
