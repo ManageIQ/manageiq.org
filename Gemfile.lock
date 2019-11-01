@@ -104,7 +104,7 @@ GEM
     lumberjack (1.0.12)
     mercenary (0.3.6)
     method_source (0.8.2)
-    mini_portile2 (2.2.0)
+    mini_portile2 (2.4.0)
     minitest (5.10.2)
     minitest-reporters (1.1.14)
       ansi
@@ -113,8 +113,8 @@ GEM
       ruby-progressbar
     multi_json (1.12.1)
     nenv (0.3.0)
-    nokogiri (1.8.0)
-      mini_portile2 (~> 2.2.0)
+    nokogiri (1.10.5)
+      mini_portile2 (~> 2.4.0)
     notiffany (0.1.1)
       nenv (~> 0.1)
       shellany (~> 0.0)
