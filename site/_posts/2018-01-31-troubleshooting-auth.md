@@ -518,7 +518,7 @@ Look up groups for a specific user with ManageIQ by doing:
 ## Example Authentication Config
 ---------------------------------------------------------------------
 
-This example, with screenshots, shows one possible authentication configuring.
+This example, with screenshots, shows one possible authentication configuration.
 
   + This [Authentication Configuration page screenshot](/assets/images/blog/my_ad_miqldap_auth_config.png) shows a configuration for Active Directory with ***Mode: LDAP(s)***, **User Type** of **Sam Account Name** and **Get User Groups from LDAP** set.
 
