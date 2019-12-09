@@ -522,7 +522,7 @@ This example, with screenshots, shows one possible authentication configuring.
 
   + This [Authentication Configuration page screenshot](/assets/images/blog/my_ad_miqldap_auth_config.png) shows a configuration for Active Directory with ***Mode: LDAP(s)***, **User Type** of **Sam Account Name** and **Get User Groups from LDAP** set.
 
-  + This [group add page screenshot](/assets/images/blog/my_ad_miqldap_group_config.png) depicts one exmple of manually adding a new group by looking up the groups for user **testuser1** in the Identity Provider.
+  + This [group add page screenshot](/assets/images/blog/my_ad_miqldap_group_config.png) depicts one example of manually adding a new group by looking up the groups for user **testuser1** in the Identity Provider.
 
     It is a requirement that at least one group reported by the Identity Provider for each user match a group in the ManageIQ database.
     Some default groups are provided, others must be manually created.
