@@ -4,7 +4,7 @@ author: XLAB Steampunk
 date: 2019-12-10 10:30:00 UTC
 comments: true
 published: true
-tags: announcements, collaboration
+tags: announcements collaboration
 ---
 
 With the release of [ManageIQ
@@ -41,6 +41,7 @@ collect resources from your Azure Stack deployment and integrate them into
 ManageIQ inventory.
 
 ![](/assets/images/blog/azure-stack-provider-inventory.png)
+
 ![](/assets/images/blog/azure-stack-instance-details.png)
 
 **Operations**
@@ -60,3 +61,10 @@ The provider creates the initial Service Dialog automatically based on
 using standard ManageIQ functionalities. See the teaser screenshot below:
 
 ![](/assets/images/blog/azure-stack-service-provisioning-dialog.png)
+
+Download the [latest Ivanchuk release of
+ManageIQ](https://www.manageiq.org/download/) and connect your Microsoft Azure
+Stack to test the provider yourself.
+
+To find out more about the provider, get in touch with [XLAB
+Steampunk](https://steampunk.si) at steampunk@xlab.si.
