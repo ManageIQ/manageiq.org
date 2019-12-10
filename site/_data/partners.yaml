@@ -1,4 +1,5 @@
 # Red Hat
+# IBM
 # Booz Allen Hamilton
 # Produban
 # Logicalis
@@ -11,6 +12,10 @@
 - name: Red_Hat
   width: 140
   url: "http://redhat.com/"
+
+- name: IBM
+  width: 120
+  url: "http://ibm.com/"
 
 - name: Booz_Allen_Hamilton
   width: 260
