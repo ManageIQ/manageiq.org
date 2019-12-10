@@ -4,7 +4,7 @@ author: XLAB Steampunk
 date: 2019-12-10 10:30:00 UTC
 comments: true
 published: true
-tags: announcements, collaboration
+tags: announcements collaboration
 ---
 
 With the release of [ManageIQ
