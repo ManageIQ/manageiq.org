@@ -28,6 +28,7 @@ The goal of this blog post is to provide a basic understanding of:
   - [Confirming SSSD Configuration](#confirming-sssd-configuration)
   - [Diagnosing Failed dbus Commands](#diagnosing-failed-dbus-commands)
   - [Adding Groups In ManageIQ](#adding-groups-in-manageiq)
+  - [Example Authentication Config](#example-authentication-config)
 
 
 # Technologies Supporting ManageIQ Authentication Modes
@@ -513,4 +514,43 @@ Look up groups for a specific user with ManageIQ by doing:
   1. Check ***Look up Groups***, provide the credentials if necessary for the specific configuration.
   1. Click *Retrieve*
   1. Near the top of the page a new drop-down should appear populated with group names the specified user is associated with on the IdP
+
+## Example Authentication Config
+---------------------------------------------------------------------
+
+This example, with screenshots, shows one possible authentication configuration.
+
+  + This [Authentication Configuration page screenshot](/assets/images/blog/my_ad_miqldap_auth_config.png) shows a configuration for Active Directory with ***Mode: LDAP(s)***, **User Type** of **Sam Account Name** and **Get User Groups from LDAP** set.
+
+  + This [group add page screenshot](/assets/images/blog/my_ad_miqldap_group_config.png) depicts one example of manually adding a new group by looking up the groups for user **testuser1** in the Identity Provider.
+
+    It is a requirement that at least one group reported by the Identity Provider for each user match a group in the ManageIQ database.
+    Some default groups are provided, others must be manually created.
+     For more information see: [**Adding Groups In ManageIQ**](#adding-groups-in-manageiq)
+
+  + The below examples of the **ldapsearch** command can be used to confirm a user is configured along with group membership associations via the **memberof overlay**.
+
+    When configurng for ***Mode: LDAP(S)*** the [**memberof overlay**](https://technicalnotes.wordpress.com/2014/04/19/openldap-setup-with-memberof-overlay/) is required by default.
+
+  + ldapsearch example using userPrincipalName
+
+    ```
+    $ ldapsearch -x -LLL \
+        -H ldap://MY-AD-server.example.lab.eng.rdu2.redhat.com:389 \
+        -b "DC=MY-AD,DC=example,DC=lab,DC=eng,DC=redhat,DC=com" \
+        -D "my-ad\testuser1" \
+        -w ******** \
+        -s sub "(userPrincipalName=testuser1@MY-AD.example.lab.eng.rdu2.redhat.com)" '*' memberof
+    ```
+
+  + ldapsearch example using sAMAccountName
+
+    ```
+    $ ldapsearch -x -LLL \
+        -H ldap://MY-AD-server.example.lab.eng.rdu2.redhat.com:389  \
+        -b "DC=MY-AD,DC=example,DC=lab,DC=eng,DC=redhat,DC=com"  \
+        -D "my-ad\testuser1" \
+        -w ******** \
+        -s sub "(sAMAccountName=testuser1)" '*' memberof
+    ```
 
