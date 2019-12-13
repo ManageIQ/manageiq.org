@@ -26,6 +26,10 @@ our virtual appliances](/download) and deploy copies of it onto a
 virtualization platform like OpenStack or VMware. The appliance is then
 configured to connect to the virtualization platform so that it can be managed.
 
+ManageIQ can also be run as a set of containers in either OpenShift or Kubernetes.
+The [manageiq-pods](https://github.com/ManageIQ/manageiq-pods) project includes
+scripts and documentation for deploying to these platforms.
+
 For this getting started guide however, we will focus on a simpler way for you
 to get to know ManageIQ, one that does not require access to a virtualization
 platform. We describe three easy options:
