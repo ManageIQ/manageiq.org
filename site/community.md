@@ -68,15 +68,14 @@ ManageIQ is open source and open for contributions. There are many ways to get i
   </div>
 </div>
 
-## Let's Meet
-
-Here are some opportunities to meet with members of the community to learn and share about ManageIQ, whether online or in person, at international conferences or local meetups. Materials from past events will be made available here as well.
 
 ### Sprint reviews
 
 There is a ManageIQ Sprint review every 2 weeks open to the community. To join the online video conference, please use this [Bluejeans link](https://bluejeans.com/598633815/).
 
 You can import the [ManageIQ community calendar](https://calendar.google.com/calendar/embed?src=contact%40manageiq.org) to be notified about ManageIQ events and Sprint reviews.
+
+Check out [Sprint Reviews Artifacts](https://docs.google.com/document/d/1bbBXy9OLOowZ2rYcAehLaW5ccSeSOHC-OxfONEGQ9mE/edit?usp=sharing) for links to previous Sprint Reviews and Slide Decks.
 
 <script>
   ((window.gitter = {}).chat = {}).options = {
