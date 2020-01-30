@@ -22,8 +22,6 @@ title: Download ManageIQ
     <tr>
       {% if type.download_platform == 'docker' %}
         <td><a href="https://hub.docker.com/r/manageiq/manageiq/" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'outbound', eventLabel: '{{ type.name }} {{release.name}}', transport: 'beacon' });">{{ type.name }} (tag {{release.tag}})</a></td>
-      {% elsif type.download_platform == 'gce' %}
-        <td><a href="https://console.cloud.google.com/storage/browser/manageiq/" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'outbound', eventLabel: '{{type.name}} {{release.name}}', transport: 'beacon' });">{{ type.name }}</a></td>
       {% elsif type.download_platform == 'vagrant' %}
         <td><a href="https://app.vagrantup.com/manageiq/boxes/ivanchuk" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'outbound', eventLabel: '{{ type.name }} {{release.name}}', transport: 'beacon' });">{{ type.name }}</a></td>
       {% else %}
@@ -51,8 +49,6 @@ title: Download ManageIQ
     <tr>
       {% if type.download_platform == 'docker' %}
         <td><a href="https://hub.docker.com/r/manageiq/manageiq/" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'outbound', eventLabel: '{{ type.name }} {{release.name}}', transport: 'beacon' });">{{ type.name }} (tag {{release.tag}})</a></td>
-      {% elsif type.download_platform == 'gce' %}
-        <td><a href="https://console.cloud.google.com/storage/browser/manageiq/" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'outbound', eventLabel: '{{type.name}} {{release.name}}', transport: 'beacon' });">{{ type.name }}</a></td>
       {% elsif type.download_platform == 'vagrant' %}
         <td><a href="https://app.vagrantup.com/manageiq/boxes/ivanchuk" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'outbound', eventLabel: '{{ type.name }} {{release.name}}', transport: 'beacon' });">{{ type.name }}</a></td>
       {% else %}
