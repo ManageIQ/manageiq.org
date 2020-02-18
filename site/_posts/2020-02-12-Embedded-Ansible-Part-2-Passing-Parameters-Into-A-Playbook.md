@@ -84,7 +84,7 @@ The *get_method_parameters* function reads the full list of input parameters wit
 ```
 - name: Get the full list of method parameters (get_method_parameters)
   manageiq_automate:
-    workspace: "{{ workspace }}"
+    workspace: {% raw %}"{{ workspace }}"{% endraw %}
     get_method_parameters: yes
   register: get_method_parameters
 - debug: msg="Result:{{ get_method_parameters.value }}"
@@ -108,7 +108,7 @@ The *method_parameter_exists* function checks if a method parameter with a given
 ```
 - name: Check if a method parameter called 'ipam_url' exists (method_parameter_exists)
   manageiq_automate:
-    workspace: "{{ workspace }}"
+    workspace: {% raw %}"{{ workspace }}"{% endraw %}
     method_parameter_exists:
       parameter: "ipam_url"
   register: method_parameter_exists

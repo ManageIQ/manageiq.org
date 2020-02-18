@@ -43,7 +43,7 @@ The `get_object_names` function retrieves the names of the objects currently loa
 ```
 - name: Get the full list of objects/instances in the workspace (get_object_names)
   manageiq_automate:
-    workspace: "{{ workspace }}"
+    workspace: {% raw %}"{{ workspace }}"{% endraw %}
     get_object_names: yes
   register: workspace_object_names
 - debug: msg="Result:{{ workspace_object_names.value }}"
@@ -90,7 +90,7 @@ This example lists the queryable attributes in the configuration domain `/Config
 ```
 - name: Get the full list of configuration domain attribute names (get_object_attribute_names)
   manageiq_automate:
-    workspace: "{{ workspace }}"
+    workspace: {% raw %}"{{ workspace }}"{% endraw %}
     get_object_attribute_names:
       object: "/Configuration/OpenShift/Parameters/default"
   register: configuration_domain_attribute_names
@@ -115,7 +115,7 @@ Rather than list all readable attributes of a loaded workspace object, it is pos
 ```
 - name: Check if an object/instance attribute exists (attribute_exists)
   manageiq_automate:
-    workspace: "{{ workspace }}"
+    workspace: {% raw %}"{{ workspace }}"{% endraw %}
     attribute_exists:
       object: "/Configuration/OpenShift/Parameters/default"
       attribute: "rhel_subscription_pool"
@@ -141,7 +141,7 @@ The `get_attribute` function allows the playbook to read an attribute from an ob
 ```
 - name: Get the "rhel_subscription_pool" attribute from a configuration domain instance (get_attribute)
   manageiq_automate:
-    workspace: "{{ workspace }}"
+    workspace: {% raw %}"{{ workspace }}"{% endraw %}
     get_attribute:
       object: "/Configuration/OpenShift/Parameters/default"
       attribute: "rhel_subscription_pool"
@@ -166,7 +166,7 @@ The previous example read an attribute statically defined in a configuration dom
 ```
 - name: Get the value of the "ipam_passwd" attribute defined by a prior Ruby method (get_attribute)
   manageiq_automate:
-    workspace: "{{ workspace }}"
+    workspace: {% raw %}"{{ workspace }}"{% endraw %}
     get_attribute:
       object: root
       attribute: "ipam_passwd"
@@ -181,7 +181,7 @@ If an attribute of type “password” has been stored in an instance then it ca
 ```
 - name: Get the "ldap_user_password" encrypted attribute from a configuration domain instance (get_decrypted_attribute)
   manageiq_automate:
-    workspace: "{{ workspace }}"
+    workspace: {% raw %}"{{ workspace }}"{% endraw %}
     get_decrypted_attribute:
       object: "/Configuration/OpenShift/Parameters/default"
       attribute: "ldap_user_password"
@@ -205,7 +205,7 @@ Attributes can also be written back into workspace objects (usually the root obj
 ```
 - name: Set a "domain_name" root attribute (set_attribute)
   manageiq_automate:
-    workspace: "{{ workspace }}"
+    workspace: {% raw %}"{{ workspace }}"{% endraw %}
     set_attribute:
       object: "root"
       attribute: "domain_name"
@@ -216,7 +216,7 @@ Attributes can also be written back into workspace objects (usually the root obj
 ```
 - name: Set several IPAM-related root attributes (set_attributes)
   manageiq_automate:
-    workspace: "{{ workspace }}"
+    workspace: {% raw %}"{{ workspace }}"{% endraw %}
     set_attributes:
       object: "root"
       attributes:
@@ -229,7 +229,7 @@ Attributes can also be written back into workspace objects (usually the root obj
 ```
 - name: Encrypt a "root_passwd" object attribute (set_encrypted_attribute)
   manageiq_automate:
-    workspace: "{{ workspace }}"
+    workspace: {% raw %}"{{ workspace }}"{% endraw %}
     set_encrypted_attribute:
       object: root
       attribute: "root_passwd"
@@ -260,14 +260,14 @@ The manageiq-vmdb role can be used to update the provisioning task’s options h
   tasks:   
   - name: Update task with new IP information
     manageiq_vmdb:
-      href: "{{ manageiq.request_task }}"
+      href: {% raw %}"{{ manageiq.request_task }}" {% endraw %}
       action: edit
       data:
         options:
           addr_mode: ["static", "Static"]
-          ip_addr: "{{ ip_addr }}"
-          subnet_mask: "{{ netmask }}"
-          gateway: "{{ gateway }}"
+          ip_addr: {% raw %}"{{ ip_addr }}"{% endraw %}
+          subnet_mask: {% raw %}"{{ netmask }}"{% endraw %}
+          gateway: {% raw %}"{{ gateway }}"{% endraw %}
 ```
 
 ## Summary
