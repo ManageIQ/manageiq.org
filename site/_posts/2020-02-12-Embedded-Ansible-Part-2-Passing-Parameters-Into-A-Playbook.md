@@ -163,7 +163,7 @@ An input parameter can be defined as being of type “password”, for example:
 ![input_params](/assets/images/blog/input_params-embedded-2.5.jpg)
 
 
-A parameter of this type is decrypted automatically and is available to the playbook as the named extra variable, for example “{{ scrambled_this }}”. It should be noted that an input parameter that has the text string “password” anywhere in the name will not be passed as a method parameter, and so will not appear in the list of method parameters returned by the `get_method_parameters` function. The variable will however be available as an extra_var with the password value decrypted correctly.
+A parameter of this type is decrypted automatically and is available to the playbook as the named extra variable, for example {% raw %}"{{ scrambled_this }}"{% endraw %}. It should be noted that an input parameter that has the text string “password” anywhere in the name will not be passed as a method parameter, and so will not appear in the list of method parameters returned by the `get_method_parameters` function. The variable will however be available as an extra_var with the password value decrypted correctly.
 
 #### Password Defined Earlier in Workflow
 A variable encrypted earlier in the workflow (for example when input into a service dialog) can generally be identified as having a name prefixed by the string “password::”. This signifies that the object is of type *MiqPassword*. 
