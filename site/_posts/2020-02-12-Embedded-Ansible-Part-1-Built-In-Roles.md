@@ -34,7 +34,7 @@ The following is an example of how the role can be used:
   tasks:
   - name: Get the "rhel_subscription_pool" attribute from a configuration domain instance
     manageiq_automate:
-      workspace: "{{ workspace }}"
+      workspace: {% raw %}"{{ workspace }}"{% endraw %}
       get_attribute:
         object: "/Configuration/OpenShift/Parameters"
         attribute: "rhel_subscription_pool"
@@ -90,7 +90,7 @@ The `get_*` and `*_exists` functions return their values into a variable using t
 ```
 - name: Get the "rhel_subscription_pool" attribute from a configuration domain
   manageiq_automate:
-    workspace: "{{ workspace }}"
+    workspace: {% raw %}"{{ workspace }}"{% endraw %}
     get_attribute:
       object: "/Configuration/OpenShift/Parameters"
       attribute: "rhel_subscription_pool"
@@ -114,7 +114,7 @@ Some of the functions return an object. For example, *get_decrypted_attribute* r
 ```
 - name: Get the "ldap_user_password" encrypted attribute from a configuration domain
   manageiq_automate:
-    workspace: "{{ workspace }}"
+    workspace: {% raw %}"{{ workspace }}"{% endraw %}
     get_decrypted_attribute:
       object: "/Configuration/OpenShift/Parameters"
       attribute: "ldap_user_password"
@@ -146,7 +146,7 @@ The following is an example of how the role can be used:
   tasks:
   - name: Get the service object
     manageiq_vmdb:
-      href: "{{ manageiq.service }}"
+      href: {% raw %}"{{ manageiq.service }}"{% endraw %}
     register: service
 
   - name: Get the VM object
@@ -156,19 +156,19 @@ The following is an example of how the role can be used:
 
   - name: Rename the service
     manageiq_vmdb:
-      vmdb: "{{ service }}"
+      vmdb: {% raw %}"{{ service }}"{% endraw %}
       action: edit
       data:
         name: "New Engineering VM"
-        description: "VM created on {{ lookup('pipe', 'date +%Y-%m-%d\\ %H:%M') }}"
+        description: {% raw %}"VM created on {{ lookup('pipe', 'date +%Y-%m-%d\\ %H:%M') }}"{% endraw %}
 
   - name: Add the VM to the service
     manageiq_vmdb:
-      vmdb: "{{ service }}"
+      vmdb: {% raw %}"{{ service }}"{% endraw %}
       action: add_resource
       data:
         resource:
-          href: "{{ vm.href }}"
+          href: {% raw %}"{{ vm.href }}"{% endraw %}
 ```
 
 The actions available to an object are those described in the API reference guide.
