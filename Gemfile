@@ -9,7 +9,7 @@ gem "jekyll-coffeescript"
 gem "jekyll-paginate"
 gem "jekyll-sitemap"
 gem "jemoji"
-gem "therubyracer"
+gem "mini_racer"
 gem "thor"
 
 group :test, :development do
