@@ -95,7 +95,7 @@ GEM
       html-pipeline (~> 2.2)
       jekyll (>= 3.0)
     kramdown (1.17.0)
-    libv8 (7.3.492.27.1-x86_64-linux)
+    libv8 (7.3.492.27.1)
     libv8 (7.3.492.27.1-x86_64-darwin-18)
     liquid (4.0.3)
     listen (3.2.1)
@@ -115,7 +115,7 @@ GEM
       ruby-progressbar
     multi_json (1.12.1)
     nenv (0.3.0)
-    nokogiri (1.10.5)
+    nokogiri (1.10.8)
       mini_portile2 (~> 2.4.0)
     notiffany (0.1.1)
       nenv (~> 0.1)
