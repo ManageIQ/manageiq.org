@@ -95,9 +95,13 @@ COPY config/manageiq_org.conf /etc/nginx/conf.d/
 
 # Site
 RUN mkdir -p ${MIQ_SITE_DEST} ${MIQ_BASE_DIR}
-COPY / ${MIQ_BASE_DIR}
+
+# Bundle prior to copying the rest of the files (saves time on repeated builds)
+COPY /Gemfile /Gemfile.lock ${MIQ_BASE_DIR}/
 WORKDIR ${MIQ_BASE_DIR}
 RUN ${MIQ_BUNDLER} install --without development test
+
+COPY / ${MIQ_BASE_DIR}
 
 # Build site (working dir == /srv/build)
 RUN /bin/bash -l -c "exe/miq build all"
