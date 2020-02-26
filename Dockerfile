@@ -1,5 +1,5 @@
 # FROM ehayes/manageiq_org_base:latest
-FROM manageiq/ruby:latest
+FROM manageiq/ruby:latest AS builder
 
 RUN yum -y install epel-release
 RUN yum -y install \
@@ -22,18 +22,6 @@ RUN yum -y install \
   wget \
   zlib-devel
 
-# Install Nginx & setup
-# ----------------------------------------
-RUN yum -y install nginx
-
-# forward request and error logs to docker log collector
-RUN ln -sf /dev/stdout /var/log/nginx/access.log \
-    && ln -sf /dev/stderr /var/log/nginx/error.log
-
-
-# Install Certbot for SSL renewal
-# ----------------------------------------
-RUN yum -y install certbot
 
 # Install Bundler
 # ----------------------------------------
@@ -87,11 +75,6 @@ WORKDIR /srv/base
 RUN ${MIQ_BUNDLER} install
 RUN gem install ascii_binder
 
-# Nginx configs
-RUN mv /etc/nginx/nginx.conf /etc/nginx/nginx.conf.dist
-COPY config/nginx.conf /etc/nginx/nginx.conf
-COPY config/manageiq_org.conf /etc/nginx/conf.d/
-
 # Site
 RUN mkdir -p ${MIQ_SITE_DEST} ${MIQ_BASE_DIR}
 
@@ -104,9 +87,26 @@ COPY / ${MIQ_BASE_DIR}
 
 # Build site (working dir == /srv/build)
 RUN /bin/bash -l -c "exe/miq build all"
-RUN chown -R nginx: ${MIQ_SITE_DEST}
+
+
+########## RUN CONTAINER ##########
+
+FROM nginx:alpine
+
+ENV MIQ_SITE_DEST=/srv/manageiq_org
+
+COPY config/nginx.conf /etc/nginx/nginx.conf
+COPY config/manageiq_org.conf /etc/nginx/conf.d/
+COPY --chown=nginx:nginx --from=builder ${MIQ_SITE_DEST} ${MIQ_SITE_DEST}
+
+# Nginx configuration:
+#
+# - add certbot-nginx package (unfortunately, 117MiB in size...)
+# - forward request and error logs to docker log collector
+RUN apk add --no-cache certbot-nginx              && \
+    ln -sf /dev/stdout /var/log/nginx/access.log  && \
+    ln -sf /dev/stderr /var/log/nginx/error.log
 
 # Run webserver
 VOLUME "/etc/letsencrypt"
 EXPOSE 80 443
-CMD ["nginx", "-g", "daemon off;"]
