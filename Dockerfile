@@ -38,7 +38,7 @@ RUN yum -y install certbot
 
 # Install Bundler
 # ----------------------------------------
-RUN gem install bundler
+RUN gem install bundler -v 1.15.1
 
 # ENV vars
 # ----------------------------------------
