@@ -9,7 +9,7 @@ tags: releases announcements
 
 ManageIQ is getting ready to release an alpha version of the Jansa release.  Additionally, we are moving to a faster release cadence - approximately once every 3 months to keep up with the rate of change of all the providers that ManageIQ interacts with.  We hope to release Jansa GA by June and the K-release by September.  You will notice new milestones in the ManageIQ community to help us keep track of the features being planned for a particular release.  The milestones and the [roadmap](https://github.com/orgs/ManageIQ/projects/13) should help keep us all on track!
 
-At this point in time, we usually offer the community an opportunity to vote on the next release name.  An exception is being made to the name of the K-release to honor one of my all-time favorite world chess champions - Garry Kasparov.  
+At this point in time, we usually offer the community an opportunity to vote on the next release name.  An exception is being made to the name of the K-release to honor one of my all-time favorite world chess champions - [Garry Kasparov](https://en.wikipedia.org/wiki/Garry_Kasparov).  
 
 As you can imagine, he broke many records.
 
