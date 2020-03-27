@@ -1,7 +1,7 @@
 ---
 title: Announcing Ivanchuk-4
 author: mfeifer
-date: 2020-03-29 19:12:13 UTC
+date: 2020-03-26 19:12:13 UTC
 comments: true
 published: true
 tags: releases announcements
