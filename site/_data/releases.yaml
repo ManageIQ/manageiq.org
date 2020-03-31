@@ -3,10 +3,10 @@ stable:
   tag: ivanchuk-4
   filename: ivanchuk-4
 
-# prerelease:
-#   name: Ivanchuk-1-rc1
-#   tag: ivanchuk-1-rc1
-#   filename: ivanchuk-1-rc1
+prerelease:
+  name: Jansa-1-alpha1
+  tag: jansa-1-alpha1
+  filename: jansa-1-alpha1
 
 devel:
   name: Nightly
