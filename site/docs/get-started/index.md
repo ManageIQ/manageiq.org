@@ -30,13 +30,14 @@ ManageIQ can also be run as a set of containers in either OpenShift or Kubernete
 The [manageiq-pods](https://github.com/ManageIQ/manageiq-pods) project includes
 scripts and documentation for deploying to these platforms.
 
-For this getting started guide however, we will focus on a simpler way for you
+For this getting started guide, we will focus on a simpler way for you
 to get to know ManageIQ, one that does not require access to a virtualization
-platform. We describe three easy options:
+platform. We describe four easy options:
 
  - [Vagrant](/docs/get-started/vagrant) -- run ManageIQ as a Vagrant Box
  - [Docker](/docs/get-started/docker) -- run ManageIQ as a Docker container
  - [Public Cloud](/docs/get-started/cloud) -- run ManageIQ in the cloud
+ - [Kubernetes](/docs/get-started/kubernetes) -- run ManageIQ in Kubernetes
 
 We will use the Google Cloud Platform as the platform to manage (but you can
 use any public cloud supported by ManageIQ).
