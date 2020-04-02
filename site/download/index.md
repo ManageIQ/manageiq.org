@@ -50,7 +50,7 @@ title: Download ManageIQ
       {% if type.download_platform == 'docker' %}
         <td><a href="https://hub.docker.com/r/manageiq/manageiq/" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'outbound', eventLabel: '{{ type.name }} {{release.name}}', transport: 'beacon' });">{{ type.name }} (tag {{release.tag}})</a></td>
       {% elsif type.download_platform == 'vagrant' %}
-        <td><a href="https://app.vagrantup.com/manageiq/boxes/ivanchuk" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'outbound', eventLabel: '{{ type.name }} {{release.name}}', transport: 'beacon' });">{{ type.name }}</a></td>
+        <td><a href="https://app.vagrantup.com/manageiq/boxes/jansa" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'outbound', eventLabel: '{{ type.name }} {{release.name}}', transport: 'beacon' });">{{ type.name }}</a></td>
       {% else %}
         <td><a href="http://releases.manageiq.org/manageiq-{{type.download_platform}}-{{release.filename}}.{{type.ext}}" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'download', eventLabel: '{{type.name}} {{release.name}}', transport: 'beacon' });">{{ type.name }}</a></td>
       {% endif %}
