@@ -2,13 +2,16 @@ stable:
   name: Ivanchuk-4
   tag: ivanchuk-4
   filename: ivanchuk-4
+  branch: ivanchuk
 
 prerelease:
   name: Jansa-1-alpha1
   tag: jansa-1-alpha1
   filename: jansa-1-alpha1
+  branch: jansa
 
 devel:
   name: Nightly
   tag: latest
   filename: devel
+  branch: master
