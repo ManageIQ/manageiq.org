@@ -33,7 +33,7 @@ title: Download ManageIQ
         <td><a href="{{ url }}" onClick="{{ type.download_platform | on_click_for_download: type.name, release.name }}">{{ type.name }}</a></td>
       {% endif %}
       <td>{{ type.download_platform }}</td>
-      <td>{{ type.size_stable }}</td>
+      <td>{{ url | file_size_from_url: type.download_platform }}</td>
     </tr>
     {% endfor %}
   </table>
@@ -63,7 +63,7 @@ title: Download ManageIQ
         <td><a href="{{ url }}" onClick="{{ type.download_platform | on_click_for_download: type.name, release.name }}">{{ type.name }}</a></td>
       {% endif %}
       <td>{{ type.download_platform }}</td>
-      <td>{{ type.size_pre }}</td>
+      <td>{{ url | file_size_from_url: type.download_platform }}</td>
     </tr>
     {% endfor %}
   </table>
@@ -90,7 +90,7 @@ title: Download ManageIQ
         <td><a href="{{ url }}" onClick="{{ type.download_platform | on_click_for_download: type.name, release.name }}">{{ type.name }}</a></td>
       {% endif %}
       <td>{{ type.download_platform }}</td>
-      <td>{{ type.size_devel }}</td>
+      <td>{{ url | file_size_from_url: type.download_platform }}</td>
     </tr>
     {% endfor %}
   </table>
