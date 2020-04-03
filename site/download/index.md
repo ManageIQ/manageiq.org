@@ -24,13 +24,13 @@ title: Download ManageIQ
     <tr>
       {% if type.download_platform == 'docker' %}
         {% assign url = url_for_docker %}
-        <td><a href="{{ url }}"  onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'outbound', eventLabel: '{{ type.name }} {{release.name}}', transport: 'beacon' });">{{ type.name }} (tag {{release.tag}})</a></td>
+        <td><a href="{{ url }}" onClick="{{ type.download_platform | on_click_for_download: type.name, release.name }}">{{ type.name }} (tag {{release.tag}})</a></td>
       {% elsif type.download_platform == 'vagrant' %}
         {% assign url =  release.branch | url_for_vagrant %}
-        <td><a href="{{ url }}" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'outbound', eventLabel: '{{ type.name }} {{release.name}}', transport: 'beacon' });">{{ type.name }}</a></td>
+        <td><a href="{{ url }}" onClick="{{ type.download_platform | on_click_for_download: type.name, release.name }}">{{ type.name }}</a></td>
       {% else %}
         {% assign url = type.download_platform | url_for_appliance: release.filename, type.ext %}
-        <td><a href="{{ url }}" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'download', eventLabel: '{{type.name}} {{release.name}}', transport: 'beacon' });">{{ type.name }}</a></td>
+        <td><a href="{{ url }}" onClick="{{ type.download_platform | on_click_for_download: type.name, release.name }}">{{ type.name }}</a></td>
       {% endif %}
       <td>{{ type.download_platform }}</td>
       <td>{{ type.size_stable }}</td>
@@ -54,13 +54,13 @@ title: Download ManageIQ
     <tr>
       {% if type.download_platform == 'docker' %}
         {% assign url = url_for_docker %}
-        <td><a href="{{ url }}" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'outbound', eventLabel: '{{ type.name }} {{release.name}}', transport: 'beacon' });">{{ type.name }} (tag {{release.tag}})</a></td>
+        <td><a href="{{ url }}" onClick="{{ type.download_platform | on_click_for_download: type.name, release.name }}">{{ type.name }} (tag {{release.tag}})</a></td>
       {% elsif type.download_platform == 'vagrant' %}
         {% assign url =  release.branch | url_for_vagrant %}
-        <td><a href="{{ url }}" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'outbound', eventLabel: '{{ type.name }} {{release.name}}', transport: 'beacon' });">{{ type.name }}</a></td>
+        <td><a href="{{ url }}" onClick="{{ type.download_platform | on_click_for_download: type.name, release.name }}">{{ type.name }}</a></td>
       {% else %}
         {% assign url = type.download_platform | url_for_appliance: release.filename, type.ext %}
-        <td><a href="{{ url }}" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'download', eventLabel: '{{type.name}} {{release.name}}', transport: 'beacon' });">{{ type.name }}</a></td>
+        <td><a href="{{ url }}" onClick="{{ type.download_platform | on_click_for_download: type.name, release.name }}">{{ type.name }}</a></td>
       {% endif %}
       <td>{{ type.download_platform }}</td>
       <td>{{ type.size_pre }}</td>
@@ -84,10 +84,10 @@ title: Download ManageIQ
     <tr>
       {% if type.download_platform == 'docker' %}
         {% assign url = url_for_docker %}
-        <td><a href="{{ url }}" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'outbound', eventLabel: '{{ type.name }} {{release.name}}', transport: 'beacon' });">{{ type.name }} (tag {{release.tag}})</a></td>
+        <td><a href="{{ url }}" onClick="{{ type.download_platform | on_click_for_download: type.name, release.name }}">{{ type.name }} (tag {{release.tag}})</a></td>
       {% else %}
         {% assign url = type.download_platform | url_for_appliance: release.filename, type.ext %}
-        <td><a href="{{ url }}" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'download', eventLabel: '{{type.name}} {{release.name}}', transport: 'beacon' });">{{ type.name }}</a></td>
+        <td><a href="{{ url }}" onClick="{{ type.download_platform | on_click_for_download: type.name, release.name }}">{{ type.name }}</a></td>
       {% endif %}
       <td>{{ type.download_platform }}</td>
       <td>{{ type.size_devel }}</td>
