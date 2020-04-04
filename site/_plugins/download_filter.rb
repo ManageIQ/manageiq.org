@@ -3,16 +3,16 @@ require 'active_support'
 
 module Jekyll
   module DownloadFilter
-    def url_for_docker
+    def url_at_docker
       "https://hub.docker.com/r/manageiq/manageiq/"
     end
 
-    def url_for_vagrant(branch)
+    def url_at_vagrant(branch)
       "https://app.vagrantup.com/manageiq/boxes/#{branch}"
     end
 
-    def url_for_appliance(platform, filename, extension)
-      "http://releases.manageiq.org/manageiq-#{platform}-#{filename}.#{extension}"
+    def url_at_releases(platform, filename, extension)
+      "#{RELEASES_URL_PREFIX}/manageiq-#{platform}-#{filename}.#{extension}"
     end
 
     def on_click_for_download(platform, type_name, release_name)
@@ -20,8 +20,8 @@ module Jekyll
       "ga('send', 'event', { eventCategory: 'Appliance', eventAction: '#{action}', eventLabel: '#{type_name} #{release_name}', transport: 'beacon' });"
     end
 
-    def file_size_from_url(url, platform)
-      return "NA" unless downloadable?(platform)
+    def file_size_from_url(url)
+      return "NA" unless url.start_with?(RELEASES_URL_PREFIX)
       uri = URI(url)
       Net::HTTP.start(uri.host, uri.port) do |http|
         response = http.request_head(uri.path)
@@ -38,6 +38,8 @@ module Jekyll
     end
 
     private
+
+    RELEASES_URL_PREFIX = "http://releases.manageiq.org"
 
     def downloadable?(platform)
       !["docker", "vagrant"].include?(platform)
