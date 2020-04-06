@@ -3,6 +3,8 @@ _site
 .jekyll-metadata
 .env
 
+Gemfile.lock
+
 dest/
 site/docs/guides
 site/docs/reference/latest/

@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
 
 gem "activesupport", :require => false
-gem "bootstrap-sass"
-gem "font-awesome-sass"
-gem "jekyll"
+gem "bootstrap-sass", "~> 3.x"
+gem "font-awesome-sass", "~> 4.x"
+gem "jekyll", "~> 3.x"
 gem "jekyll-assets"
 gem "jekyll-coffeescript"
 gem "jekyll-paginate"
@@ -22,7 +22,3 @@ group :test, :development do
   gem "pry-byebug"
   gem "rake"
 end
-
-# source 'https://rails-assets.org' do
-#   gem 'rails-assets-BOWER_PACKAGE_NAME'
-# end
