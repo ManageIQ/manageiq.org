@@ -11,6 +11,8 @@ title: Download ManageIQ
     </tr>
 {% endcapture %}
 
+{% assign url_at_docker = "https://hub.docker.com/r/manageiq/manageiq/" %}
+
 {% assign release = site.data.releases["stable"] %}
 
 ### Current stable release ({{ release.name }})
@@ -21,14 +23,18 @@ title: Download ManageIQ
     {% for type in site.data.download_types %}
     <tr>
       {% if type.download_platform == 'docker' %}
-        <td><a href="https://hub.docker.com/r/manageiq/manageiq/" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'outbound', eventLabel: '{{ type.name }} {{release.name}}', transport: 'beacon' });">{{ type.name }} (tag {{release.tag}})</a></td>
+        {% assign url = url_at_docker %}
+        <td><a href="{{ url }}" onClick="{{ type.download_platform | on_click_for_download: type.name, release.name }}">{{ type.name }} (tag {{release.tag}})</a></td>
       {% elsif type.download_platform == 'vagrant' %}
-        <td><a href="https://app.vagrantup.com/manageiq/boxes/{{release.branch}}" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'outbound', eventLabel: '{{ type.name }} {{release.name}}', transport: 'beacon' });">{{ type.name }}</a></td>
+        {% assign url = release.branch | url_at_vagrant %}
+        <td><a href="{{ url }}" onClick="{{ type.download_platform | on_click_for_download: type.name, release.name }}">{{ type.name }}</a></td>
+        {% assign url = type.download_platform | url_at_releases: release.filename, type.ext %}
       {% else %}
-        <td><a href="http://releases.manageiq.org/manageiq-{{type.download_platform}}-{{release.filename}}.{{type.ext}}" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'download', eventLabel: '{{type.name}} {{release.name}}', transport: 'beacon' });">{{ type.name }}</a></td>
+        {% assign url = type.download_platform | url_at_releases: release.filename, type.ext %}
+        <td><a href="{{ url }}" onClick="{{ type.download_platform | on_click_for_download: type.name, release.name }}">{{ type.name }}</a></td>
       {% endif %}
       <td>{{ type.download_platform }}</td>
-      <td>{{ type.size_stable }}</td>
+      <td>{{ url | file_size_from_url }}</td>
     </tr>
     {% endfor %}
   </table>
@@ -48,14 +54,18 @@ title: Download ManageIQ
     {% for type in site.data.download_types %}
     <tr>
       {% if type.download_platform == 'docker' %}
-        <td><a href="https://hub.docker.com/r/manageiq/manageiq/" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'outbound', eventLabel: '{{ type.name }} {{release.name}}', transport: 'beacon' });">{{ type.name }} (tag {{release.tag}})</a></td>
+        {% assign url = url_at_docker %}
+        <td><a href="{{ url }}" onClick="{{ type.download_platform | on_click_for_download: type.name, release.name }}">{{ type.name }} (tag {{release.tag}})</a></td>
       {% elsif type.download_platform == 'vagrant' %}
-        <td><a href="https://app.vagrantup.com/manageiq/boxes/{{release.branch}}" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'outbound', eventLabel: '{{ type.name }} {{release.name}}', transport: 'beacon' });">{{ type.name }}</a></td>
+        {% assign url = release.branch | url_at_vagrant %}
+        <td><a href="{{ url }}" onClick="{{ type.download_platform | on_click_for_download: type.name, release.name }}">{{ type.name }}</a></td>
+        {% assign url = type.download_platform | url_at_releases: release.filename, type.ext %}
       {% else %}
-        <td><a href="http://releases.manageiq.org/manageiq-{{type.download_platform}}-{{release.filename}}.{{type.ext}}" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'download', eventLabel: '{{type.name}} {{release.name}}', transport: 'beacon' });">{{ type.name }}</a></td>
+        {% assign url = type.download_platform | url_at_releases: release.filename, type.ext %}
+        <td><a href="{{ url }}" onClick="{{ type.download_platform | on_click_for_download: type.name, release.name }}">{{ type.name }}</a></td>
       {% endif %}
       <td>{{ type.download_platform }}</td>
-      <td>{{ type.size_pre }}</td>
+      <td>{{ url | file_size_from_url }}</td>
     </tr>
     {% endfor %}
   </table>
@@ -75,12 +85,14 @@ title: Download ManageIQ
     {% for type in site.data.download_types %}
     <tr>
       {% if type.download_platform == 'docker' %}
-        <td><a href="https://hub.docker.com/r/manageiq/manageiq/" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'outbound', eventLabel: '{{ type.name }} {{release.name}}', transport: 'beacon' });">{{ type.name }} (tag {{release.tag}})</a></td>
+        {% assign url = url_at_docker %}
+        <td><a href="{{ url }}" onClick="{{ type.download_platform | on_click_for_download: type.name, release.name }}">{{ type.name }} (tag {{release.tag}})</a></td>
       {% else %}
-        <td><a href="http://releases.manageiq.org/manageiq-{{type.download_platform}}-{{release.filename}}.{{type.ext}}" onClick="ga('send', 'event', { eventCategory: 'Appliance', eventAction: 'download', eventLabel: '{{type.name}} {{release.name}}', transport: 'beacon' });">{{ type.name }}</a></td>
+        {% assign url = type.download_platform | url_at_releases: release.filename, type.ext %}
+        <td><a href="{{ url }}" onClick="{{ type.download_platform | on_click_for_download: type.name, release.name }}">{{ type.name }}</a></td>
       {% endif %}
       <td>{{ type.download_platform }}</td>
-      <td>{{ type.size_devel }}</td>
+      <td>{{ url | file_size_from_url }}</td>
     </tr>
     {% endfor %}
   </table>
