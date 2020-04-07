@@ -40,7 +40,8 @@ module Miq
     def remove_ext(str)
       str.gsub(MD_LINK) do |link|
         title, path = link.match(MD_LINK)[1..2]
-        external_link?(path) ? "[#{title}](#{path})" : "[#{title}](#{path.gsub(".md", '')})"
+        path.gsub!(".md", '') unless external_link?(path)
+        "[#{title}](#{path})"
       end
     end
 
