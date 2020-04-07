@@ -25,4 +25,11 @@ class MdLinkConverterTest < Minitest::Test
 
     assert_equal expected, Miq::MdLinkConverter.new(original).convert
   end
+
+  def test_converting_external_md_href
+    original = "[Title](https://github.com/ManageIQ/ui-components/blob/master/README.md)"
+    expected = "[Title](https://github.com/ManageIQ/ui-components/blob/master/README.md)"
+
+    assert_equal expected, Miq::MdLinkConverter.new(original).convert
+  end
 end

@@ -1,3 +1,5 @@
+require 'uri'
+
 module Miq
   class MdLinkConverter
     MD_LINK = /\[([^\]]*)\]\((.*)\)/
@@ -24,10 +26,21 @@ module Miq
 
     private
 
+    def external_link?(url)
+      begin
+        uri = URI(url)
+      rescue
+        return false # in case caller does not pass in valid URL
+      end
+      return false if uri.scheme.nil? || uri.host.nil?
+      return false if uri.host.start_with?("manageiq.org") || uri.host.start_with?("www.manageiq.org")
+      return true
+    end
+
     def remove_ext(str)
       str.gsub(MD_LINK) do |link|
         title, path = link.match(MD_LINK)[1..2]
-        "[#{title}](#{path.gsub(".md", '')})"
+        external_link?(path) ? "[#{title}](#{path})" : "[#{title}](#{path.gsub(".md", '')})"
       end
     end
 
