@@ -3,18 +3,27 @@
 installation:
   title: Installation
   children:
-    - title: Google Compute Engine
-      path: "/docs/reference/latest/doc-Installing_on_Google_Compute_Engine/miq"
-      desc: "How to install and configure the ManageIQ Management Engine appliance on a Google Compute Engine environment"
+    - title: Amazon Web Services (AWS)
+      path: "/docs/reference/latest/doc-Installing_on_AWS/miq"
+      desc: "How to install and configure the ManageIQ Management Engine appliance on Amazon Web Services (AWS)"
     - title: Microsoft Azure
       path: "/docs/reference/latest/doc-Installing_on_Microsoft_Azure/miq"
-      desc: "How to install and configure the ManageIQ Management Engine appliance on a Microsoft Azure cloud environment"
-    - title: Red Hat Enterprise Linux OpenStack Platform
+      desc: "How to install and configure the ManageIQ Management Engine appliance on Microsoft Azure"
+    - title: Google Compute Engine
+      path: "/docs/reference/latest/doc-Installing_on_Google_Compute_Engine/miq"
+      desc: "How to install and configure the ManageIQ Management Engine appliance on Google Compute Engine"
+    - title: VMware vSphere
+      path: "/docs/reference/latest/doc-Installing_on_VMware_vSphere/miq"
+      desc: "How to install and configure the ManageIQ Management Engine appliance on VMware vSphere"
+    - title: Red Hat Enterprise OpenStack Platform
       path: "/docs/reference/latest/doc-Installing_on_Red_Hat_Enterprise_Linux_OpenStack_Platform/miq"
-      desc: "How to install and configure the ManageIQ Management Engine appliance on a Red Hat OpenStack Platform environment"
+      desc: "How to install and configure the ManageIQ Management Engine appliance on Red Hat OpenStack Platform"
     - title: Red Hat Enterprise Virtualization
       path: "/docs/reference/latest/doc-Installing_on_Red_Hat_Virtualization/miq"
-      desc: "How to install and configure the ManageIQ Management Engine appliance on a Red Hat Enterprise Virtualization environment"
+      desc: "How to install and configure the ManageIQ Management Engine appliance on Red Hat Enterprise Virtualization"
+    - title: Microsoft System Center Virtual Machine Manager (SCVMM)
+      path: "/docs/reference/latest/doc-Installing_on_SCVMM/miq"
+      desc: "How to install and configure the ManageIQ Management Engine appliance on Microsoft System Center Virtual Machine Manager (SCVMM)"
 
 administration:
   title: Administration
