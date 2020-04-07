@@ -25,6 +25,22 @@ installation:
       path: "/docs/reference/latest/doc-Installing_on_SCVMM/miq"
       desc: "How to install and configure the ManageIQ Management Engine appliance on Microsoft System Center Virtual Machine Manager (SCVMM)"
 
+configuration:
+  title: Configuration
+  children:
+    - title: Deployment Planning Guide
+      path: "/docs/reference/latest/doc-Deployment_Planning_Guide/miq"
+      desc: "ManageIQ Deployment Planning Guide"
+    - title: General Configuration
+      path: "/docs/reference/latest/doc-General_Configuration/miq"
+      desc: "ManageIQ General Configuration"
+    - title: High Availability Guide
+      path: "/docs/reference/latest/doc-High_Availability_Guide/miq"
+      desc: "ManageIQ High Availability Guide"
+    - title: Appliance Hardening Guide
+      path: "/docs/reference/latest/doc-Appliance_Hardening_Guide/miq"
+      desc: "ManageIQ Appliance Hardening Guide"
+
 administration:
   title: Administration
   children:
