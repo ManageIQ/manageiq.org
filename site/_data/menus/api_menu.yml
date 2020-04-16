@@ -159,6 +159,12 @@
       path: "/docs/reference/latest/api/examples/queries"
     - title: Paging Queries
       path: "/docs/reference/latest/api/examples/paging_queries"
+  - title: Automation Requests
+    children:
+    - title: Create an Automation Request
+      path: "/docs/reference/latest/api/examples/automation_request"
+    - title: Create multiple Automation Requests
+      path: "/docs/reference/latest/api/examples/automation_requests"
   - title: Providers
     children:
     - title: Create a Provider
@@ -257,9 +263,7 @@
       path: "/docs/reference/latest/api/examples/unassign_tags"
     - title: Unassign Tags from a Service Template
       path: "/docs/reference/latest/api/examples/unassign_tags_from_service_template"
-  - title: Automation Requests
+  - title: Usage Flows
     children:
-    - title: Create an Automation Request
-      path: "/docs/reference/latest/api/examples/automation_request"
-    - title: Create multiple Automation Requests
-      path: "/docs/reference/latest/api/examples/automation_requests"
+    - title: Compliance Policy Flow
+      path: "/docs/reference/latest/api/examples/compliance_policy_flow"
