@@ -111,7 +111,7 @@ module Miq
 
     # Relative to src_dir
     def exclude_files
-      []
+      ["bin"]
     end
     # /Guides
   end
