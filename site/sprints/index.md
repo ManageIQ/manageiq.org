@@ -1,0 +1,50 @@
+---
+layout: page
+title: Sprints
+---
+
+## Sprint Artifacts
+
+{% capture column_title %}
+    <tr>
+        <th>Sprint</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Review Date</th>
+        <th>Merged PRs</th>
+        <th>Slides</th>
+        <th>Recording</th>
+    </tr>
+{% endcapture %}
+{% assign github_url_prefix = "https://github.com/issues?utf8=%E2%9C%93&q=org%3AManageiq+merged%3A" %}
+
+<div class="table-responsive">
+    <table class="table table-bordered table-hover">
+        {{ column_title }}
+        {% for sprint in site.data.sprint_artifacts %}
+            {% capture github_url %}
+                {{ github_url_prefix }}{{ sprint.start_date | date: "%F" }}..{{ sprint.end_date | date: "%F" }}
+            {% endcapture %}
+            <tr>
+                <td>{{ sprint.number }}</td>
+                <td>{{ sprint.start_date   | date: "%B %e, %Y" }}</td>
+                <td>{{ sprint.end_date     | date: "%B %e, %Y" }}</td>
+                <td>{{ sprint.review_date  | date: "%B %e, %Y" }}</td>
+                <td><a href="{{ github_url }}">PRs</a></td>
+                {% if sprint.slides %}
+                    <td><a href="{{ sprint.slides }}">Slides</a></td>
+                {% else %}
+                    <td>NA</td>
+                {% endif %}
+                {% if sprint.recording %}
+                    <td><a href="{{ sprint.recording }}">Recording</a></td>
+                {% else %}
+                    <td>NA</td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+
+<p>Complete List of Slide Decks can be found on <a href="https://www.slideshare.net/ManageIQ">SlideShare</a></p>
+<p>Complete List of Recordings can be found on the <a href="https://www.youtube.com/channel/UCrEhyZG3rr5o0IMH9A5PLSQ">ManageIQ YouTube Channel</a></p>
