@@ -48,12 +48,23 @@ exclude:
   - setup.sh
   - "*.yaml"
 
+collections:
+  sprints:
+    permalink: /sprints/:name
+    output: true
+
 defaults:
   - scope:
       path: ""
       type: posts
     values:
       layout: post
+
+  - scope:
+      path: ""
+      type: sprints
+    values:
+      layout: sprint
 
   - scope:
       path: "docs/get-started"

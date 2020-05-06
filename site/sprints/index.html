@@ -3,8 +3,6 @@ layout: page
 title: Sprints
 ---
 
-## Sprint Artifacts
-
 {% capture column_title %}
     <tr>
         <th>Sprint</th>
@@ -14,6 +12,7 @@ title: Sprints
         <th>Merged PRs</th>
         <th>Slides</th>
         <th>Recording</th>
+        <th>Details</th>
     </tr>
 {% endcapture %}
 {% assign github_url_prefix = "https://github.com/issues?utf8=%E2%9C%93&q=org%3AManageiq+merged%3A" %}
@@ -25,6 +24,13 @@ title: Sprints
             {% capture github_url %}
                 {{ github_url_prefix }}{{ sprint.start_date | date: "%F" }}..{{ sprint.end_date | date: "%F" }}
             {% endcapture %}
+            {% assign sprint_details_url = nil %}
+            {% for item in site.sprints %}
+                {% if item.sprint_number == sprint.number %}
+                    {% assign sprint_details_url = item.url %}
+                    {% break %}
+                {% endif %}
+            {% endfor %}
             <tr>
                 <td>{{ sprint.number }}</td>
                 <td>{{ sprint.start_date   | date: "%B %e, %Y" }}</td>
@@ -38,6 +44,11 @@ title: Sprints
                 {% endif %}
                 {% if sprint.recording %}
                     <td><a href="{{ sprint.recording }}">Recording</a></td>
+                {% else %}
+                    <td>NA</td>
+                {% endif %}
+                {% if sprint_details_url %}
+                    <td><a href="{{ sprint_details_url }}">Details</a></td>
                 {% else %}
                     <td>NA</td>
                 {% endif %}
