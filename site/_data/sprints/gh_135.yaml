@@ -1,0 +1,4343 @@
+---
+- repo_slug: Ansible/ansible_tower_client_ruby
+  repo_url: http://github.com/Ansible/ansible_tower_client_ruby
+  prs:
+    created: []
+    still_open:
+    - 87
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 1
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open:
+    - 68
+    - 95
+    - 121
+    - 125
+    - 129
+    - 133
+    closed: []
+    counts:
+      created: 0
+      still_open: 6
+      closed: 0
+- repo_slug: ManageIQ/.github
+  repo_url: http://github.com/ManageIQ/.github
+  prs:
+    created:
+    - 1
+    - 2
+    - 3
+    still_open: []
+    closed: []
+    merged:
+    - 1
+    - 2
+    - 3
+    merged_labels:
+      bug: 2
+      enhancement: 1
+    counts:
+      created: 3
+      still_open: 0
+      closed: 0
+      merged: 3
+  issues:
+    created: []
+    still_open: []
+    closed: []
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+- repo_slug: ManageIQ/activerecord-id_regions
+  repo_url: http://github.com/ManageIQ/activerecord-id_regions
+  prs:
+    created: []
+    still_open: []
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open:
+    - 11
+    closed: []
+    counts:
+      created: 0
+      still_open: 1
+      closed: 0
+- repo_slug: ManageIQ/activerecord-virtual_attributes
+  repo_url: http://github.com/ManageIQ/activerecord-virtual_attributes
+  prs:
+    created:
+    - 67
+    still_open:
+    - 15
+    closed: []
+    merged:
+    - 67
+    merged_labels:
+      enhancement: 1
+    counts:
+      created: 1
+      still_open: 1
+      closed: 0
+      merged: 1
+  issues:
+    created: []
+    still_open:
+    - 7
+    - 11
+    closed: []
+    counts:
+      created: 0
+      still_open: 2
+      closed: 0
+- repo_slug: ManageIQ/amazon_ssa_support
+  repo_url: http://github.com/ManageIQ/amazon_ssa_support
+  prs:
+    created: []
+    still_open: []
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open:
+    - 8
+    - 38
+    closed: []
+    counts:
+      created: 0
+      still_open: 2
+      closed: 0
+- repo_slug: ManageIQ/ansible-manageiq-automate
+  repo_url: http://github.com/ManageIQ/ansible-manageiq-automate
+  prs:
+    created: []
+    still_open: []
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open:
+    - 4
+    - 5
+    closed: []
+    counts:
+      created: 0
+      still_open: 2
+      closed: 0
+- repo_slug: ManageIQ/ansible-manageiq-vmdb
+  repo_url: http://github.com/ManageIQ/ansible-manageiq-vmdb
+  prs:
+    created: []
+    still_open: []
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open: []
+    closed: []
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+- repo_slug: ManageIQ/awesome_spawn
+  repo_url: http://github.com/ManageIQ/awesome_spawn
+  prs:
+    created: []
+    still_open:
+    - 32
+    - 41
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 2
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open: []
+    closed: []
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+- repo_slug: ManageIQ/azure-armrest
+  repo_url: http://github.com/ManageIQ/azure-armrest
+  prs:
+    created: []
+    still_open:
+    - 254
+    - 356
+    - 381
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 3
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open: []
+    closed: []
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+- repo_slug: ManageIQ/azure-signature
+  repo_url: http://github.com/ManageIQ/azure-signature
+  prs:
+    created: []
+    still_open: []
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open: []
+    closed: []
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+- repo_slug: ManageIQ/binary_struct
+  repo_url: http://github.com/ManageIQ/binary_struct
+  prs:
+    created: []
+    still_open:
+    - 12
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 1
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open:
+    - 8
+    - 10
+    - 14
+    closed: []
+    counts:
+      created: 0
+      still_open: 3
+      closed: 0
+- repo_slug: ManageIQ/bundler-inject
+  repo_url: http://github.com/ManageIQ/bundler-inject
+  prs:
+    created: []
+    still_open: []
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open:
+    - 10
+    - 11
+    - 12
+    closed: []
+    counts:
+      created: 0
+      still_open: 3
+      closed: 0
+- repo_slug: ManageIQ/container-amazon-smartstate
+  repo_url: http://github.com/ManageIQ/container-amazon-smartstate
+  prs:
+    created: []
+    still_open:
+    - 4
+    closed: []
+    merged:
+    - 7
+    - 8
+    merged_labels:
+      bug: 2
+    counts:
+      created: 0
+      still_open: 1
+      closed: 0
+      merged: 2
+  issues:
+    created: []
+    still_open:
+    - 6
+    closed: []
+    counts:
+      created: 0
+      still_open: 1
+      closed: 0
+- repo_slug: ManageIQ/container-embedded-ansible
+  repo_url: http://github.com/ManageIQ/container-embedded-ansible
+  prs:
+    created: []
+    still_open: []
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open: []
+    closed: []
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+- repo_slug: ManageIQ/container-httpd
+  repo_url: http://github.com/ManageIQ/container-httpd
+  prs:
+    created:
+    - 45
+    still_open: []
+    closed: []
+    merged:
+    - 45
+    merged_labels:
+      enhancement: 1
+    counts:
+      created: 1
+      still_open: 0
+      closed: 0
+      merged: 1
+  issues:
+    created: []
+    still_open: []
+    closed: []
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+- repo_slug: ManageIQ/container-httpd-init
+  repo_url: http://github.com/ManageIQ/container-httpd-init
+  prs:
+    created: []
+    still_open: []
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open:
+    - 1
+    closed: []
+    counts:
+      created: 0
+      still_open: 1
+      closed: 0
+- repo_slug: ManageIQ/container-kafka
+  repo_url: http://github.com/ManageIQ/container-kafka
+  prs:
+    created: []
+    still_open: []
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open: []
+    closed: []
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+- repo_slug: ManageIQ/container-memcached
+  repo_url: http://github.com/ManageIQ/container-memcached
+  prs:
+    created: []
+    still_open: []
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open: []
+    closed: []
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+- repo_slug: ManageIQ/container-postgresql
+  repo_url: http://github.com/ManageIQ/container-postgresql
+  prs:
+    created: []
+    still_open: []
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open:
+    - 7
+    closed: []
+    counts:
+      created: 0
+      still_open: 1
+      closed: 0
+- repo_slug: ManageIQ/container-ruby
+  repo_url: http://github.com/ManageIQ/container-ruby
+  prs:
+    created: []
+    still_open: []
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open:
+    - 2
+    closed: []
+    counts:
+      created: 0
+      still_open: 1
+      closed: 0
+- repo_slug: ManageIQ/dbus_api_service
+  repo_url: http://github.com/ManageIQ/dbus_api_service
+  prs:
+    created: []
+    still_open: []
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open: []
+    closed: []
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+- repo_slug: ManageIQ/ffi-vix_disk_lib
+  repo_url: http://github.com/ManageIQ/ffi-vix_disk_lib
+  prs:
+    created: []
+    still_open: []
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open:
+    - 15
+    closed: []
+    counts:
+      created: 0
+      still_open: 1
+      closed: 0
+- repo_slug: ManageIQ/font-fabulous
+  repo_url: http://github.com/ManageIQ/font-fabulous
+  prs:
+    created: []
+    still_open: []
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open: []
+    closed: []
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+- repo_slug: ManageIQ/foreman_api_client
+  repo_url: http://github.com/ManageIQ/foreman_api_client
+  prs:
+    created: []
+    still_open: []
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open: []
+    closed: []
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+- repo_slug: ManageIQ/guides
+  repo_url: http://github.com/ManageIQ/guides
+  prs:
+    created:
+    - 417
+    - 418
+    still_open:
+    - 356
+    - 418
+    closed: []
+    merged:
+    - 417
+    merged_labels: {}
+    counts:
+      created: 2
+      still_open: 2
+      closed: 0
+      merged: 1
+  issues:
+    created: []
+    still_open:
+    - 1
+    - 83
+    - 111
+    - 216
+    - 275
+    - 281
+    - 332
+    - 370
+    closed: []
+    counts:
+      created: 0
+      still_open: 8
+      closed: 0
+- repo_slug: ManageIQ/httpd_configmap_generator
+  repo_url: http://github.com/ManageIQ/httpd_configmap_generator
+  prs:
+    created: []
+    still_open: []
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open:
+    - 5
+    - 25
+    closed: []
+    counts:
+      created: 0
+      still_open: 2
+      closed: 0
+- repo_slug: ManageIQ/integration_tests
+  repo_url: http://github.com/ManageIQ/integration_tests
+  prs:
+    created:
+    - 10052
+    - 10053
+    - 10054
+    - 10055
+    - 10056
+    - 10057
+    - 10058
+    - 10059
+    - 10060
+    - 10061
+    - 10062
+    - 10063
+    - 10064
+    - 10065
+    - 10066
+    - 10067
+    - 10068
+    - 10069
+    - 10070
+    - 10071
+    - 10072
+    - 10073
+    - 10074
+    - 10075
+    - 10076
+    - 10077
+    - 10078
+    - 10079
+    - 10080
+    still_open:
+    - 5967
+    - 7674
+    - 7935
+    - 8018
+    - 8137
+    - 8327
+    - 8383
+    - 8458
+    - 8555
+    - 8677
+    - 8876
+    - 8911
+    - 9070
+    - 9076
+    - 9085
+    - 9110
+    - 9184
+    - 9231
+    - 9247
+    - 9303
+    - 9349
+    - 9376
+    - 9402
+    - 9417
+    - 9439
+    - 9445
+    - 9478
+    - 9488
+    - 9510
+    - 9522
+    - 9553
+    - 9612
+    - 9621
+    - 9623
+    - 9641
+    - 9664
+    - 9673
+    - 9692
+    - 9705
+    - 9706
+    - 9708
+    - 9721
+    - 9734
+    - 9761
+    - 9762
+    - 9771
+    - 9801
+    - 9802
+    - 9826
+    - 9833
+    - 9869
+    - 9908
+    - 9912
+    - 9915
+    - 9917
+    - 9925
+    - 9927
+    - 9931
+    - 9934
+    - 9938
+    - 9949
+    - 9952
+    - 9956
+    - 9960
+    - 9967
+    - 9973
+    - 9983
+    - 9985
+    - 9994
+    - 10015
+    - 10033
+    - 10039
+    - 10040
+    - 10047
+    - 10054
+    - 10056
+    - 10061
+    - 10064
+    - 10071
+    - 10074
+    - 10077
+    - 10078
+    - 10079
+    - 10080
+    closed: []
+    merged:
+    - 9870
+    - 10014
+    - 10037
+    - 10043
+    - 10048
+    - 10049
+    - 10052
+    - 10053
+    - 10055
+    - 10057
+    - 10058
+    - 10059
+    - 10060
+    - 10062
+    - 10063
+    - 10065
+    - 10066
+    - 10067
+    - 10068
+    - 10069
+    - 10070
+    - 10072
+    - 10073
+    - 10075
+    - 10076
+    merged_labels:
+      WIP-testing: 1
+      blockers-only: 1
+      enhancement: 2
+      fix-test: 5
+      infra-related: 1
+      issue-bug: 1
+      lint-ok: 25
+      manual: 4
+      other: 2
+      test-automation: 4
+      test-cleanup: 6
+    counts:
+      created: 29
+      still_open: 84
+      closed: 0
+      merged: 25
+  issues:
+    created: []
+    still_open:
+    - 1140
+    - 2499
+    - 3002
+    - 3018
+    - 3040
+    - 3198
+    - 3295
+    - 3784
+    - 4052
+    - 4114
+    - 4250
+    - 4401
+    - 4415
+    - 4635
+    - 4787
+    - 4795
+    - 4863
+    - 5027
+    - 5071
+    - 5134
+    - 5172
+    - 5182
+    - 5185
+    - 5215
+    - 5329
+    - 5335
+    - 5342
+    - 5434
+    - 5509
+    - 5690
+    - 5754
+    - 5763
+    - 5813
+    - 5970
+    - 5973
+    - 5975
+    - 6102
+    - 6268
+    - 6385
+    - 6465
+    - 6653
+    - 6801
+    - 6829
+    - 6876
+    - 6981
+    - 7015
+    - 7104
+    - 7143
+    - 7145
+    - 7157
+    - 7165
+    - 7166
+    - 7243
+    - 7687
+    - 7703
+    - 8128
+    - 8131
+    - 8140
+    - 8152
+    - 8157
+    - 8186
+    - 8210
+    - 8595
+    - 8662
+    - 8798
+    - 8820
+    - 9723
+    - 9968
+    - 9969
+    closed: []
+    counts:
+      created: 0
+      still_open: 69
+      closed: 0
+- repo_slug: ManageIQ/integration_tests_playbooks
+  repo_url: http://github.com/ManageIQ/integration_tests_playbooks
+  prs:
+    created: []
+    still_open: []
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open: []
+    closed: []
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+- repo_slug: ManageIQ/inventory_refresh
+  repo_url: http://github.com/ManageIQ/inventory_refresh
+  prs:
+    created:
+    - 92
+    still_open: []
+    closed: []
+    merged:
+    - 92
+    merged_labels:
+      bug: 1
+    counts:
+      created: 1
+      still_open: 0
+      closed: 0
+      merged: 1
+  issues:
+    created: []
+    still_open:
+    - 53
+    - 54
+    - 55
+    - 56
+    - 57
+    - 58
+    - 85
+    closed: []
+    counts:
+      created: 0
+      still_open: 7
+      closed: 0
+- repo_slug: ManageIQ/large_file_linux
+  repo_url: http://github.com/ManageIQ/large_file_linux
+  prs:
+    created: []
+    still_open: []
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open: []
+    closed: []
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+- repo_slug: ManageIQ/linux_admin
+  repo_url: http://github.com/ManageIQ/linux_admin
+  prs:
+    created: []
+    still_open: []
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open:
+    - 9
+    - 56
+    - 57
+    - 142
+    - 171
+    closed: []
+    counts:
+      created: 0
+      still_open: 5
+      closed: 0
+- repo_slug: ManageIQ/linux_block_device
+  repo_url: http://github.com/ManageIQ/linux_block_device
+  prs:
+    created: []
+    still_open: []
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open: []
+    closed: []
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+- repo_slug: ManageIQ/log_decorator
+  repo_url: http://github.com/ManageIQ/log_decorator
+  prs:
+    created: []
+    still_open: []
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open: []
+    closed: []
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+- repo_slug: ManageIQ/manageiq
+  repo_url: http://github.com/ManageIQ/manageiq
+  prs:
+    created:
+    - 20072
+    - 20073
+    - 20074
+    - 20075
+    - 20076
+    - 20077
+    - 20078
+    - 20079
+    - 20080
+    - 20081
+    - 20082
+    - 20085
+    - 20086
+    - 20087
+    - 20089
+    - 20090
+    - 20093
+    - 20094
+    - 20095
+    - 20096
+    - 20097
+    - 20098
+    - 20100
+    - 20102
+    - 20105
+    - 20107
+    - 20108
+    still_open:
+    - 12427
+    - 16634
+    - 18165
+    - 18280
+    - 18354
+    - 18355
+    - 18412
+    - 18590
+    - 18659
+    - 18699
+    - 18739
+    - 19217
+    - 19274
+    - 19276
+    - 19278
+    - 19341
+    - 19377
+    - 19472
+    - 19492
+    - 19512
+    - 19531
+    - 19547
+    - 19550
+    - 19565
+    - 19611
+    - 19613
+    - 19689
+    - 19697
+    - 19702
+    - 19742
+    - 19751
+    - 19797
+    - 19802
+    - 19836
+    - 19949
+    - 19983
+    - 19993
+    - 19994
+    - 20008
+    - 20023
+    - 20050
+    - 20051
+    - 20057
+    - 20065
+    - 20075
+    - 20076
+    - 20079
+    - 20085
+    - 20086
+    - 20087
+    - 20102
+    - 20107
+    - 20108
+    closed:
+    - 20089
+    merged:
+    - 20052
+    - 20070
+    - 20072
+    - 20073
+    - 20074
+    - 20077
+    - 20078
+    - 20080
+    - 20081
+    - 20082
+    - 20090
+    - 20093
+    - 20094
+    - 20095
+    - 20096
+    - 20097
+    - 20098
+    - 20100
+    - 20105
+    merged_labels:
+      api: 2
+      bug: 9
+      core: 4
+      core/authentication: 1
+      core/reporting: 1
+      dependencies: 1
+      documentation: 2
+      enhancement: 4
+      ivanchuk/backported: 1
+      ivanchuk/yes: 4
+      jansa/backported: 15
+      pluggability: 1
+      providers: 2
+      rails5.2: 1
+      test: 2
+      ui: 1
+      v2v: 2
+    counts:
+      created: 27
+      still_open: 53
+      closed: 1
+      merged: 19
+  issues:
+    created:
+    - 20071
+    - 20083
+    - 20088
+    - 20091
+    - 20092
+    - 20099
+    - 20101
+    - 20103
+    - 20106
+    still_open:
+    - 1151
+    - 1226
+    - 1581
+    - 5547
+    - 7990
+    - 10178
+    - 11507
+    - 11533
+    - 12453
+    - 12459
+    - 12460
+    - 12819
+    - 13564
+    - 14244
+    - 14818
+    - 14924
+    - 14950
+    - 15144
+    - 15350
+    - 15882
+    - 16244
+    - 17201
+    - 17316
+    - 17328
+    - 17338
+    - 17587
+    - 17752
+    - 17873
+    - 17984
+    - 18098
+    - 18100
+    - 18130
+    - 18222
+    - 18317
+    - 18321
+    - 18455
+    - 18499
+    - 18517
+    - 18818
+    - 18865
+    - 18885
+    - 19029
+    - 19057
+    - 19110
+    - 19198
+    - 19392
+    - 19434
+    - 19440
+    - 19454
+    - 19471
+    - 19483
+    - 19501
+    - 19546
+    - 19548
+    - 19562
+    - 19582
+    - 19586
+    - 19587
+    - 19588
+    - 19589
+    - 19590
+    - 19591
+    - 19592
+    - 19594
+    - 19596
+    - 19597
+    - 19598
+    - 19632
+    - 19650
+    - 19654
+    - 19655
+    - 19659
+    - 19676
+    - 19678
+    - 19687
+    - 19707
+    - 19716
+    - 19718
+    - 19719
+    - 19723
+    - 19724
+    - 19727
+    - 19729
+    - 19730
+    - 19731
+    - 19747
+    - 19753
+    - 19755
+    - 19756
+    - 19760
+    - 19771
+    - 19826
+    - 19827
+    - 19828
+    - 19842
+    - 19853
+    - 19858
+    - 19863
+    - 19866
+    - 19867
+    - 19876
+    - 19878
+    - 19894
+    - 19895
+    - 19896
+    - 19897
+    - 19898
+    - 19899
+    - 19900
+    - 19901
+    - 19902
+    - 19903
+    - 19904
+    - 19905
+    - 19906
+    - 19907
+    - 19913
+    - 19925
+    - 19929
+    - 19940
+    - 19943
+    - 19950
+    - 19952
+    - 19957
+    - 19966
+    - 19977
+    - 19985
+    - 19992
+    - 19999
+    - 20014
+    - 20017
+    - 20027
+    - 20028
+    - 20032
+    - 20033
+    - 20042
+    - 20043
+    - 20048
+    - 20071
+    - 20083
+    - 20088
+    - 20091
+    - 20092
+    - 20099
+    - 20101
+    - 20103
+    - 20106
+    closed:
+    - 20001
+    - 20041
+    counts:
+      created: 9
+      still_open: 147
+      closed: 2
+- repo_slug: ManageIQ/manageiq-api
+  repo_url: http://github.com/ManageIQ/manageiq-api
+  prs:
+    created:
+    - 799
+    - 802
+    - 803
+    - 804
+    - 806
+    - 807
+    - 808
+    - 809
+    - 810
+    - 811
+    - 812
+    - 813
+    - 814
+    - 815
+    - 816
+    still_open:
+    - 647
+    - 667
+    - 712
+    - 731
+    - 734
+    - 770
+    - 807
+    - 810
+    - 813
+    - 814
+    closed:
+    - 796
+    merged:
+    - 799
+    - 802
+    - 803
+    - 804
+    - 806
+    - 808
+    - 809
+    - 811
+    - 812
+    - 815
+    - 816
+    merged_labels:
+      bug: 4
+      enhancement: 6
+      ivanchuk/yes: 2
+      jansa/backported: 10
+      refactoring: 1
+      test: 2
+      v2v: 1
+    counts:
+      created: 15
+      still_open: 10
+      closed: 1
+      merged: 11
+  issues:
+    created:
+    - 800
+    - 801
+    - 805
+    still_open:
+    - 26
+    - 491
+    - 574
+    - 585
+    - 601
+    - 620
+    - 637
+    - 641
+    - 649
+    - 699
+    - 700
+    - 704
+    - 717
+    - 718
+    - 722
+    - 724
+    - 726
+    - 781
+    - 782
+    - 790
+    - 794
+    - 798
+    - 800
+    - 801
+    - 805
+    closed:
+    - 653
+    - 797
+    counts:
+      created: 3
+      still_open: 25
+      closed: 2
+- repo_slug: ManageIQ/manageiq-api-client
+  repo_url: http://github.com/ManageIQ/manageiq-api-client
+  prs:
+    created: []
+    still_open:
+    - 63
+    - 79
+    - 80
+    - 90
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 4
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open:
+    - 14
+    - 31
+    - 32
+    - 35
+    - 42
+    - 43
+    - 44
+    - 45
+    - 46
+    - 50
+    - 62
+    - 68
+    - 69
+    - 72
+    - 76
+    - 81
+    - 83
+    closed: []
+    counts:
+      created: 0
+      still_open: 17
+      closed: 0
+- repo_slug: ManageIQ/manageiq-api-client-python
+  repo_url: http://github.com/ManageIQ/manageiq-api-client-python
+  prs:
+    created: []
+    still_open:
+    - 41
+    - 49
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 2
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open:
+    - 1
+    - 2
+    - 3
+    - 38
+    closed: []
+    counts:
+      created: 0
+      still_open: 4
+      closed: 0
+- repo_slug: ManageIQ/manageiq-appliance
+  repo_url: http://github.com/ManageIQ/manageiq-appliance
+  prs:
+    created:
+    - 279
+    - 280
+    still_open:
+    - 277
+    closed: []
+    merged:
+    - 278
+    - 279
+    - 280
+    merged_labels:
+      bug: 1
+      cleanup: 1
+      enhancement: 1
+      ivanchuk/backported: 1
+      jansa/backported: 2
+    counts:
+      created: 2
+      still_open: 1
+      closed: 0
+      merged: 3
+  issues:
+    created: []
+    still_open:
+    - 88
+    - 170
+    - 274
+    closed: []
+    counts:
+      created: 0
+      still_open: 3
+      closed: 0
+- repo_slug: ManageIQ/manageiq-appliance-build
+  repo_url: http://github.com/ManageIQ/manageiq-appliance-build
+  prs:
+    created:
+    - 412
+    still_open:
+    - 392
+    - 412
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 1
+      still_open: 2
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open:
+    - 106
+    - 107
+    - 127
+    - 130
+    - 147
+    - 148
+    - 151
+    - 152
+    - 158
+    - 190
+    - 374
+    - 393
+    - 408
+    - 411
+    closed: []
+    counts:
+      created: 0
+      still_open: 14
+      closed: 0
+- repo_slug: ManageIQ/manageiq-appliance-dev-setup
+  repo_url: http://github.com/ManageIQ/manageiq-appliance-dev-setup
+  prs:
+    created: []
+    still_open: []
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+      merged: 0
+  issues:
+    created:
+    - 5
+    still_open: []
+    closed:
+    - 5
+    counts:
+      created: 1
+      still_open: 0
+      closed: 1
+- repo_slug: ManageIQ/manageiq-appliance_console
+  repo_url: http://github.com/ManageIQ/manageiq-appliance_console
+  prs:
+    created: []
+    still_open: []
+    closed: []
+    merged:
+    - 114
+    merged_labels:
+      enhancement: 1
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+      merged: 1
+  issues:
+    created: []
+    still_open:
+    - 7
+    - 8
+    - 110
+    closed: []
+    counts:
+      created: 0
+      still_open: 3
+      closed: 0
+- repo_slug: ManageIQ/manageiq-automation_engine
+  repo_url: http://github.com/ManageIQ/manageiq-automation_engine
+  prs:
+    created: []
+    still_open:
+    - 430
+    - 439
+    closed: []
+    merged:
+    - 440
+    merged_labels:
+      bug: 1
+      jansa/backported: 1
+      test: 1
+    counts:
+      created: 0
+      still_open: 2
+      closed: 0
+      merged: 1
+  issues:
+    created:
+    - 441
+    still_open:
+    - 2
+    - 44
+    - 291
+    - 337
+    - 341
+    - 392
+    - 410
+    - 411
+    - 418
+    - 435
+    - 436
+    - 441
+    closed: []
+    counts:
+      created: 1
+      still_open: 12
+      closed: 0
+- repo_slug: ManageIQ/manageiq-consumption
+  repo_url: http://github.com/ManageIQ/manageiq-consumption
+  prs:
+    created: []
+    still_open:
+    - 172
+    - 173
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 2
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open:
+    - 17
+    - 18
+    - 29
+    - 30
+    - 41
+    - 43
+    - 59
+    - 66
+    - 67
+    - 72
+    - 81
+    - 83
+    - 89
+    - 90
+    - 91
+    - 107
+    - 113
+    closed: []
+    counts:
+      created: 0
+      still_open: 17
+      closed: 0
+- repo_slug: ManageIQ/manageiq-content
+  repo_url: http://github.com/ManageIQ/manageiq-content
+  prs:
+    created: []
+    still_open:
+    - 643
+    - 644
+    - 645
+    - 646
+    closed: []
+    merged:
+    - 652
+    merged_labels:
+      bug: 1
+    counts:
+      created: 0
+      still_open: 4
+      closed: 0
+      merged: 1
+  issues:
+    created:
+    - 654
+    still_open:
+    - 8
+    - 109
+    - 297
+    - 654
+    closed: []
+    counts:
+      created: 1
+      still_open: 4
+      closed: 0
+- repo_slug: ManageIQ/manageiq-cross_repo
+  repo_url: http://github.com/ManageIQ/manageiq-cross_repo
+  prs:
+    created:
+    - 62
+    still_open: []
+    closed:
+    - 62
+    merged:
+    - 61
+    merged_labels:
+      enhancement: 1
+    counts:
+      created: 1
+      still_open: 0
+      closed: 1
+      merged: 1
+  issues:
+    created: []
+    still_open:
+    - 59
+    closed: []
+    counts:
+      created: 0
+      still_open: 1
+      closed: 0
+- repo_slug: ManageIQ/manageiq-cross_repo-tests
+  repo_url: http://github.com/ManageIQ/manageiq-cross_repo-tests
+  prs:
+    created:
+    - 110
+    - 111
+    - 112
+    - 113
+    - 114
+    still_open:
+    - 39
+    - 49
+    - 54
+    - 55
+    - 69
+    - 82
+    - 88
+    - 92
+    - 101
+    - 104
+    - 109
+    - 111
+    - 112
+    - 113
+    - 114
+    closed:
+    - 9
+    - 95
+    - 103
+    - 110
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 5
+      still_open: 15
+      closed: 4
+      merged: 0
+  issues:
+    created: []
+    still_open: []
+    closed: []
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+- repo_slug: ManageIQ/manageiq-decorators
+  repo_url: http://github.com/ManageIQ/manageiq-decorators
+  prs:
+    created: []
+    still_open:
+    - 16
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 1
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open: []
+    closed: []
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+- repo_slug: ManageIQ/manageiq-design
+  repo_url: http://github.com/ManageIQ/manageiq-design
+  prs:
+    created: []
+    still_open:
+    - 23
+    - 44
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 2
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open:
+    - 32
+    - 34
+    - 41
+    - 43
+    closed: []
+    counts:
+      created: 0
+      still_open: 4
+      closed: 0
+- repo_slug: ManageIQ/manageiq-gems-pending
+  repo_url: http://github.com/ManageIQ/manageiq-gems-pending
+  prs:
+    created: []
+    still_open:
+    - 454
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 1
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open:
+    - 231
+    - 403
+    - 404
+    - 444
+    - 459
+    closed: []
+    counts:
+      created: 0
+      still_open: 5
+      closed: 0
+- repo_slug: ManageIQ/manageiq-graphql
+  repo_url: http://github.com/ManageIQ/manageiq-graphql
+  prs:
+    created:
+    - 85
+    still_open: []
+    closed: []
+    merged:
+    - 85
+    merged_labels:
+      bug: 1
+      ivanchuk/backported: 1
+      jansa/backported: 1
+      test: 1
+    counts:
+      created: 1
+      still_open: 0
+      closed: 0
+      merged: 1
+  issues:
+    created: []
+    still_open:
+    - 32
+    closed: []
+    counts:
+      created: 0
+      still_open: 1
+      closed: 0
+- repo_slug: ManageIQ/manageiq-loggers
+  repo_url: http://github.com/ManageIQ/manageiq-loggers
+  prs:
+    created: []
+    still_open: []
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open:
+    - 3
+    closed: []
+    counts:
+      created: 0
+      still_open: 1
+      closed: 0
+- repo_slug: ManageIQ/manageiq-lxca-docs
+  repo_url: http://github.com/ManageIQ/manageiq-lxca-docs
+  prs:
+    created: []
+    still_open:
+    - 32
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 1
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open:
+    - 29
+    closed: []
+    counts:
+      created: 0
+      still_open: 1
+      closed: 0
+- repo_slug: ManageIQ/manageiq-messaging
+  repo_url: http://github.com/ManageIQ/manageiq-messaging
+  prs:
+    created: []
+    still_open: []
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open:
+    - 15
+    - 32
+    - 33
+    - 41
+    closed: []
+    counts:
+      created: 0
+      still_open: 4
+      closed: 0
+- repo_slug: ManageIQ/manageiq-nuage-docs
+  repo_url: http://github.com/ManageIQ/manageiq-nuage-docs
+  prs:
+    created: []
+    still_open: []
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open:
+    - 3
+    - 4
+    closed: []
+    counts:
+      created: 0
+      still_open: 2
+      closed: 0
+- repo_slug: ManageIQ/manageiq-password
+  repo_url: http://github.com/ManageIQ/manageiq-password
+  prs:
+    created: []
+    still_open: []
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open: []
+    closed: []
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+- repo_slug: ManageIQ/manageiq-performance
+  repo_url: http://github.com/ManageIQ/manageiq-performance
+  prs:
+    created:
+    - 62
+    - 63
+    - 64
+    - 65
+    still_open:
+    - 27
+    - 47
+    closed: []
+    merged:
+    - 62
+    - 63
+    - 64
+    - 65
+    merged_labels: {}
+    counts:
+      created: 4
+      still_open: 2
+      closed: 0
+      merged: 4
+  issues:
+    created: []
+    still_open:
+    - 21
+    - 31
+    - 36
+    - 48
+    - 49
+    - 50
+    - 51
+    - 52
+    - 53
+    - 54
+    - 55
+    - 56
+    - 57
+    - 58
+    - 59
+    - 60
+    - 61
+    closed: []
+    counts:
+      created: 0
+      still_open: 17
+      closed: 0
+- repo_slug: ManageIQ/manageiq-pods
+  repo_url: http://github.com/ManageIQ/manageiq-pods
+  prs:
+    created:
+    - 441
+    - 444
+    - 445
+    - 446
+    - 447
+    - 449
+    - 450
+    - 451
+    - 454
+    - 455
+    - 456
+    - 458
+    - 459
+    - 463
+    - 465
+    - 466
+    - 468
+    still_open:
+    - 441
+    closed:
+    - 447
+    merged:
+    - 429
+    - 432
+    - 440
+    - 444
+    - 445
+    - 446
+    - 449
+    - 450
+    - 451
+    - 454
+    - 455
+    - 456
+    - 458
+    - 459
+    - 463
+    - 465
+    - 466
+    - 468
+    merged_labels:
+      bug: 9
+      enhancement: 9
+      jansa/backported: 18
+      operator: 15
+      template: 5
+    counts:
+      created: 17
+      still_open: 1
+      closed: 1
+      merged: 18
+  issues:
+    created:
+    - 442
+    - 443
+    - 448
+    - 452
+    - 453
+    - 457
+    - 460
+    - 461
+    - 462
+    - 464
+    - 467
+    still_open:
+    - 212
+    - 351
+    - 355
+    - 361
+    - 391
+    - 403
+    - 415
+    - 423
+    - 430
+    - 438
+    - 442
+    - 448
+    - 452
+    - 460
+    - 461
+    - 462
+    - 467
+    closed:
+    - 374
+    - 405
+    - 406
+    - 410
+    - 428
+    - 443
+    - 453
+    - 457
+    - 464
+    counts:
+      created: 11
+      still_open: 17
+      closed: 9
+- repo_slug: ManageIQ/manageiq-postgres_ha_admin
+  repo_url: http://github.com/ManageIQ/manageiq-postgres_ha_admin
+  prs:
+    created: []
+    still_open: []
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open: []
+    closed: []
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+- repo_slug: ManageIQ/manageiq-providers-amazon
+  repo_url: http://github.com/ManageIQ/manageiq-providers-amazon
+  prs:
+    created:
+    - 618
+    still_open:
+    - 582
+    - 614
+    closed: []
+    merged:
+    - 618
+    merged_labels:
+      bug: 1
+    counts:
+      created: 1
+      still_open: 2
+      closed: 0
+      merged: 1
+  issues:
+    created:
+    - 619
+    - 620
+    still_open:
+    - 126
+    - 206
+    - 397
+    - 463
+    - 619
+    - 620
+    closed: []
+    counts:
+      created: 2
+      still_open: 6
+      closed: 0
+- repo_slug: ManageIQ/manageiq-providers-ansible_tower
+  repo_url: http://github.com/ManageIQ/manageiq-providers-ansible_tower
+  prs:
+    created:
+    - 218
+    still_open: []
+    closed: []
+    merged:
+    - 218
+    merged_labels:
+      bug: 1
+      jansa/backported: 1
+    counts:
+      created: 1
+      still_open: 0
+      closed: 0
+      merged: 1
+  issues:
+    created: []
+    still_open:
+    - 215
+    closed: []
+    counts:
+      created: 0
+      still_open: 1
+      closed: 0
+- repo_slug: ManageIQ/manageiq-providers-azure
+  repo_url: http://github.com/ManageIQ/manageiq-providers-azure
+  prs:
+    created: []
+    still_open: []
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open:
+    - 301
+    - 375
+    closed: []
+    counts:
+      created: 0
+      still_open: 2
+      closed: 0
+- repo_slug: ManageIQ/manageiq-providers-azure_stack
+  repo_url: http://github.com/ManageIQ/manageiq-providers-azure_stack
+  prs:
+    created: []
+    still_open:
+    - 26
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 1
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open:
+    - 1
+    - 23
+    closed: []
+    counts:
+      created: 0
+      still_open: 2
+      closed: 0
+- repo_slug: ManageIQ/manageiq-providers-dummy_provider
+  repo_url: http://github.com/ManageIQ/manageiq-providers-dummy_provider
+  prs:
+    created: []
+    still_open: []
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open:
+    - 2
+    - 3
+    closed: []
+    counts:
+      created: 0
+      still_open: 2
+      closed: 0
+- repo_slug: ManageIQ/manageiq-providers-foreman
+  repo_url: http://github.com/ManageIQ/manageiq-providers-foreman
+  prs:
+    created: []
+    still_open:
+    - 60
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 1
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open: []
+    closed: []
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+- repo_slug: ManageIQ/manageiq-providers-google
+  repo_url: http://github.com/ManageIQ/manageiq-providers-google
+  prs:
+    created:
+    - 129
+    still_open: []
+    closed: []
+    merged:
+    - 127
+    - 129
+    merged_labels:
+      bug: 2
+      ivanchuk/backported: 1
+      jansa/backported: 1
+    counts:
+      created: 1
+      still_open: 0
+      closed: 0
+      merged: 2
+  issues:
+    created: []
+    still_open: []
+    closed: []
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+- repo_slug: ManageIQ/manageiq-providers-kubernetes
+  repo_url: http://github.com/ManageIQ/manageiq-providers-kubernetes
+  prs:
+    created:
+    - 368
+    - 370
+    - 371
+    still_open:
+    - 348
+    - 366
+    - 367
+    closed: []
+    merged:
+    - 368
+    - 370
+    - 371
+    merged_labels:
+      dependencies: 1
+      jansa/yes: 2
+      refactoring: 2
+      test: 1
+    counts:
+      created: 3
+      still_open: 3
+      closed: 0
+      merged: 3
+  issues:
+    created:
+    - 369
+    still_open:
+    - 114
+    - 124
+    - 183
+    - 196
+    - 215
+    - 225
+    - 333
+    - 369
+    closed: []
+    counts:
+      created: 1
+      still_open: 8
+      closed: 0
+- repo_slug: ManageIQ/manageiq-providers-kubevirt
+  repo_url: http://github.com/ManageIQ/manageiq-providers-kubevirt
+  prs:
+    created:
+    - 160
+    - 161
+    still_open: []
+    closed: []
+    merged:
+    - 160
+    - 161
+    merged_labels:
+      bug: 1
+      dependencies: 1
+    counts:
+      created: 2
+      still_open: 0
+      closed: 0
+      merged: 2
+  issues:
+    created: []
+    still_open: []
+    closed: []
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+- repo_slug: ManageIQ/manageiq-providers-lenovo
+  repo_url: http://github.com/ManageIQ/manageiq-providers-lenovo
+  prs:
+    created: []
+    still_open: []
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+      merged: 0
+  issues:
+    created:
+    - 298
+    still_open:
+    - 298
+    closed: []
+    counts:
+      created: 1
+      still_open: 1
+      closed: 0
+- repo_slug: ManageIQ/manageiq-providers-nsxt
+  repo_url: http://github.com/ManageIQ/manageiq-providers-nsxt
+  prs:
+    created: []
+    still_open: []
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open: []
+    closed: []
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+- repo_slug: ManageIQ/manageiq-providers-nuage
+  repo_url: http://github.com/ManageIQ/manageiq-providers-nuage
+  prs:
+    created:
+    - 209
+    still_open:
+    - 199
+    closed: []
+    merged:
+    - 208
+    - 209
+    merged_labels:
+      test: 2
+    counts:
+      created: 1
+      still_open: 1
+      closed: 0
+      merged: 2
+  issues:
+    created: []
+    still_open: []
+    closed:
+    - 207
+    counts:
+      created: 0
+      still_open: 0
+      closed: 1
+- repo_slug: ManageIQ/manageiq-providers-openshift
+  repo_url: http://github.com/ManageIQ/manageiq-providers-openshift
+  prs:
+    created: []
+    still_open:
+    - 166
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 1
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open: []
+    closed: []
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+- repo_slug: ManageIQ/manageiq-providers-openstack
+  repo_url: http://github.com/ManageIQ/manageiq-providers-openstack
+  prs:
+    created: []
+    still_open:
+    - 510
+    - 515
+    - 525
+    - 556
+    - 568
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 5
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open:
+    - 36
+    - 98
+    - 320
+    - 478
+    - 495
+    - 496
+    - 497
+    - 498
+    - 499
+    - 501
+    - 545
+    closed: []
+    counts:
+      created: 0
+      still_open: 11
+      closed: 0
+- repo_slug: ManageIQ/manageiq-providers-ovirt
+  repo_url: http://github.com/ManageIQ/manageiq-providers-ovirt
+  prs:
+    created: []
+    still_open:
+    - 460
+    - 468
+    - 474
+    - 475
+    - 487
+    - 490
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 6
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open:
+    - 11
+    - 266
+    closed: []
+    counts:
+      created: 0
+      still_open: 2
+      closed: 0
+- repo_slug: ManageIQ/manageiq-providers-redfish
+  repo_url: http://github.com/ManageIQ/manageiq-providers-redfish
+  prs:
+    created: []
+    still_open: []
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open:
+    - 53
+    - 90
+    closed: []
+    counts:
+      created: 0
+      still_open: 2
+      closed: 0
+- repo_slug: ManageIQ/manageiq-providers-scvmm
+  repo_url: http://github.com/ManageIQ/manageiq-providers-scvmm
+  prs:
+    created: []
+    still_open: []
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open:
+    - 17
+    closed: []
+    counts:
+      created: 0
+      still_open: 1
+      closed: 0
+- repo_slug: ManageIQ/manageiq-providers-vmware
+  repo_url: http://github.com/ManageIQ/manageiq-providers-vmware
+  prs:
+    created:
+    - 572
+    still_open:
+    - 522
+    - 552
+    - 561
+    closed: []
+    merged:
+    - 572
+    merged_labels:
+      bug: 1
+      jansa/backported: 1
+    counts:
+      created: 1
+      still_open: 3
+      closed: 0
+      merged: 1
+  issues:
+    created:
+    - 571
+    still_open:
+    - 354
+    - 374
+    - 420
+    - 422
+    - 423
+    - 498
+    - 513
+    - 539
+    - 540
+    - 541
+    - 553
+    - 569
+    - 571
+    closed: []
+    counts:
+      created: 1
+      still_open: 13
+      closed: 0
+- repo_slug: ManageIQ/manageiq-redfish-docs
+  repo_url: http://github.com/ManageIQ/manageiq-redfish-docs
+  prs:
+    created: []
+    still_open:
+    - 3
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 1
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open: []
+    closed: []
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+- repo_slug: ManageIQ/manageiq-release
+  repo_url: http://github.com/ManageIQ/manageiq-release
+  prs:
+    created:
+    - 120
+    - 121
+    - 122
+    still_open:
+    - 84
+    - 105
+    - 108
+    - 121
+    closed: []
+    merged:
+    - 120
+    - 122
+    merged_labels:
+      enhancement: 1
+      technical debt: 1
+    counts:
+      created: 3
+      still_open: 4
+      closed: 0
+      merged: 2
+  issues:
+    created: []
+    still_open:
+    - 12
+    - 102
+    closed: []
+    counts:
+      created: 0
+      still_open: 2
+      closed: 0
+- repo_slug: ManageIQ/manageiq-rpm_build
+  repo_url: http://github.com/ManageIQ/manageiq-rpm_build
+  prs:
+    created:
+    - 6
+    - 11
+    - 12
+    - 13
+    - 15
+    - 16
+    still_open:
+    - 11
+    - 16
+    closed: []
+    merged:
+    - 6
+    - 12
+    - 13
+    - 15
+    merged_labels:
+      bug: 1
+      documentation: 2
+      refactoring: 1
+    counts:
+      created: 6
+      still_open: 2
+      closed: 0
+      merged: 4
+  issues:
+    created:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 7
+    - 8
+    - 9
+    - 10
+    - 14
+    - 17
+    still_open:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 8
+    - 9
+    - 17
+    closed:
+    - 7
+    - 10
+    - 14
+    counts:
+      created: 11
+      still_open: 8
+      closed: 3
+- repo_slug: ManageIQ/manageiq-schema
+  repo_url: http://github.com/ManageIQ/manageiq-schema
+  prs:
+    created:
+    - 467
+    - 468
+    - 469
+    - 471
+    still_open:
+    - 194
+    - 314
+    - 322
+    - 446
+    - 454
+    - 464
+    - 465
+    - 467
+    - 468
+    - 471
+    closed: []
+    merged:
+    - 469
+    merged_labels:
+      bug: 1
+      jansa/backported: 1
+    counts:
+      created: 4
+      still_open: 10
+      closed: 0
+      merged: 1
+  issues:
+    created:
+    - 470
+    still_open:
+    - 3
+    - 4
+    - 26
+    - 152
+    - 323
+    - 423
+    - 434
+    - 470
+    closed: []
+    counts:
+      created: 1
+      still_open: 8
+      closed: 0
+- repo_slug: ManageIQ/manageiq-smartstate
+  repo_url: http://github.com/ManageIQ/manageiq-smartstate
+  prs:
+    created:
+    - 121
+    - 122
+    still_open:
+    - 107
+    - 115
+    closed: []
+    merged:
+    - 118
+    - 121
+    - 122
+    merged_labels:
+      bug: 2
+      dependencies: 1
+      smart state: 1
+    counts:
+      created: 2
+      still_open: 2
+      closed: 0
+      merged: 3
+  issues:
+    created: []
+    still_open:
+    - 5
+    - 77
+    - 84
+    - 106
+    - 110
+    - 113
+    closed: []
+    counts:
+      created: 0
+      still_open: 6
+      closed: 0
+- repo_slug: ManageIQ/manageiq-ssh-util
+  repo_url: http://github.com/ManageIQ/manageiq-ssh-util
+  prs:
+    created: []
+    still_open: []
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open: []
+    closed: []
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+- repo_slug: ManageIQ/manageiq-ui-classic
+  repo_url: http://github.com/ManageIQ/manageiq-ui-classic
+  prs:
+    created:
+    - 6979
+    - 6980
+    - 6981
+    - 6982
+    - 6984
+    - 6985
+    - 6989
+    - 6990
+    - 6992
+    - 6993
+    - 6994
+    - 6997
+    - 6998
+    - 6999
+    - 7001
+    - 7002
+    still_open:
+    - 3152
+    - 4435
+    - 4966
+    - 4988
+    - 5117
+    - 5196
+    - 5219
+    - 5234
+    - 5263
+    - 5280
+    - 5316
+    - 5679
+    - 5862
+    - 5922
+    - 6055
+    - 6296
+    - 6335
+    - 6400
+    - 6401
+    - 6413
+    - 6449
+    - 6452
+    - 6457
+    - 6506
+    - 6523
+    - 6549
+    - 6578
+    - 6667
+    - 6672
+    - 6683
+    - 6698
+    - 6732
+    - 6742
+    - 6753
+    - 6768
+    - 6782
+    - 6814
+    - 6953
+    - 6954
+    - 6963
+    - 6980
+    - 6989
+    - 6990
+    - 6997
+    - 6998
+    - 6999
+    - 7002
+    closed:
+    - 6420
+    - 6993
+    merged:
+    - 6759
+    - 6797
+    - 6810
+    - 6965
+    - 6978
+    - 6979
+    - 6981
+    - 6982
+    - 6984
+    - 6985
+    - 6992
+    - 6994
+    - 7001
+    merged_labels:
+      automation/ansible: 1
+      bug: 8
+      dependencies: 1
+      enhancement: 4
+      jansa/backported: 4
+      jansa/no: 5
+      react: 1
+      services: 2
+      trees: 1
+    counts:
+      created: 16
+      still_open: 47
+      closed: 2
+      merged: 13
+  issues:
+    created:
+    - 6983
+    - 6986
+    - 6987
+    - 6988
+    - 6991
+    - 6995
+    - 6996
+    - 7000
+    still_open:
+    - 1
+    - 3
+    - 65
+    - 97
+    - 163
+    - 375
+    - 485
+    - 491
+    - 569
+    - 835
+    - 892
+    - 967
+    - 1117
+    - 1242
+    - 1365
+    - 1393
+    - 1602
+    - 1786
+    - 1870
+    - 1884
+    - 1943
+    - 1991
+    - 2049
+    - 2079
+    - 2097
+    - 2193
+    - 2529
+    - 2800
+    - 2835
+    - 2840
+    - 2912
+    - 2913
+    - 3097
+    - 3182
+    - 3292
+    - 3316
+    - 3389
+    - 3622
+    - 3678
+    - 3743
+    - 3760
+    - 3761
+    - 3994
+    - 4032
+    - 4190
+    - 4238
+    - 4244
+    - 4595
+    - 4609
+    - 4615
+    - 4631
+    - 4859
+    - 4921
+    - 4963
+    - 5178
+    - 5179
+    - 5300
+    - 5314
+    - 5383
+    - 5498
+    - 5585
+    - 5620
+    - 5625
+    - 5648
+    - 5798
+    - 5812
+    - 5817
+    - 5835
+    - 5853
+    - 5892
+    - 5907
+    - 5910
+    - 5970
+    - 6029
+    - 6031
+    - 6032
+    - 6036
+    - 6037
+    - 6046
+    - 6048
+    - 6062
+    - 6175
+    - 6215
+    - 6216
+    - 6218
+    - 6239
+    - 6258
+    - 6261
+    - 6268
+    - 6305
+    - 6307
+    - 6327
+    - 6333
+    - 6348
+    - 6356
+    - 6377
+    - 6394
+    - 6419
+    - 6521
+    - 6543
+    - 6580
+    - 6625
+    - 6656
+    - 6669
+    - 6694
+    - 6696
+    - 6697
+    - 6701
+    - 6716
+    - 6719
+    - 6724
+    - 6734
+    - 6735
+    - 6738
+    - 6748
+    - 6772
+    - 6783
+    - 6798
+    - 6817
+    - 6818
+    - 6819
+    - 6820
+    - 6821
+    - 6824
+    - 6825
+    - 6826
+    - 6827
+    - 6828
+    - 6829
+    - 6830
+    - 6831
+    - 6832
+    - 6833
+    - 6834
+    - 6835
+    - 6836
+    - 6837
+    - 6838
+    - 6839
+    - 6840
+    - 6841
+    - 6842
+    - 6843
+    - 6845
+    - 6847
+    - 6848
+    - 6849
+    - 6850
+    - 6851
+    - 6852
+    - 6854
+    - 6855
+    - 6856
+    - 6858
+    - 6859
+    - 6861
+    - 6862
+    - 6866
+    - 6867
+    - 6868
+    - 6869
+    - 6870
+    - 6871
+    - 6872
+    - 6873
+    - 6874
+    - 6875
+    - 6876
+    - 6877
+    - 6878
+    - 6879
+    - 6880
+    - 6881
+    - 6896
+    - 6897
+    - 6898
+    - 6899
+    - 6900
+    - 6901
+    - 6902
+    - 6903
+    - 6904
+    - 6905
+    - 6906
+    - 6907
+    - 6909
+    - 6910
+    - 6911
+    - 6912
+    - 6913
+    - 6914
+    - 6915
+    - 6916
+    - 6917
+    - 6918
+    - 6919
+    - 6920
+    - 6921
+    - 6923
+    - 6926
+    - 6929
+    - 6930
+    - 6931
+    - 6932
+    - 6933
+    - 6934
+    - 6935
+    - 6936
+    - 6937
+    - 6938
+    - 6939
+    - 6940
+    - 6941
+    - 6943
+    - 6944
+    - 6945
+    - 6946
+    - 6947
+    - 6948
+    - 6949
+    - 6950
+    - 6968
+    - 6983
+    - 6986
+    - 6988
+    - 6991
+    - 6995
+    - 6996
+    - 7000
+    closed:
+    - 5758
+    - 6039
+    - 6320
+    - 6366
+    - 6480
+    - 6765
+    - 6785
+    - 6959
+    - 6976
+    - 6977
+    - 6987
+    counts:
+      created: 8
+      still_open: 229
+      closed: 11
+- repo_slug: ManageIQ/manageiq-ui-service
+  repo_url: http://github.com/ManageIQ/manageiq-ui-service
+  prs:
+    created:
+    - 1637
+    - 1639
+    still_open:
+    - 1548
+    - 1580
+    - 1639
+    closed: []
+    merged:
+    - 1636
+    - 1637
+    merged_labels:
+      bug: 2
+      jansa/backported: 1
+    counts:
+      created: 2
+      still_open: 3
+      closed: 0
+      merged: 2
+  issues:
+    created:
+    - 1638
+    still_open:
+    - 1463
+    - 1616
+    closed:
+    - 1634
+    - 1638
+    counts:
+      created: 1
+      still_open: 2
+      closed: 2
+- repo_slug: ManageIQ/manageiq-v2v
+  repo_url: http://github.com/ManageIQ/manageiq-v2v
+  prs:
+    created:
+    - 1128
+    still_open:
+    - 1100
+    - 1101
+    - 1120
+    - 1121
+    closed: []
+    merged:
+    - 1128
+    merged_labels:
+      enhancement: 1
+      jansa/backported: 1
+    counts:
+      created: 1
+      still_open: 4
+      closed: 0
+      merged: 1
+  issues:
+    created:
+    - 1127
+    still_open:
+    - 434
+    - 520
+    - 651
+    - 868
+    - 877
+    - 879
+    - 891
+    - 895
+    - 933
+    - 940
+    - 981
+    - 1034
+    - 1047
+    - 1052
+    - 1058
+    - 1078
+    - 1080
+    - 1081
+    - 1094
+    - 1096
+    - 1098
+    - 1126
+    - 1127
+    closed: []
+    counts:
+      created: 1
+      still_open: 23
+      closed: 0
+- repo_slug: ManageIQ/manageiq-v2v-conversion_host
+  repo_url: http://github.com/ManageIQ/manageiq-v2v-conversion_host
+  prs:
+    created:
+    - 49
+    - 50
+    - 51
+    - 52
+    - 53
+    still_open:
+    - 47
+    - 52
+    closed: []
+    merged:
+    - 33
+    - 48
+    - 49
+    - 50
+    - 51
+    - 53
+    merged_labels: {}
+    counts:
+      created: 5
+      still_open: 2
+      closed: 0
+      merged: 6
+  issues:
+    created: []
+    still_open:
+    - 22
+    - 25
+    - 26
+    - 37
+    - 43
+    closed: []
+    counts:
+      created: 0
+      still_open: 5
+      closed: 0
+- repo_slug: ManageIQ/manageiq-v2v-conversion_host-build
+  repo_url: http://github.com/ManageIQ/manageiq-v2v-conversion_host-build
+  prs:
+    created:
+    - 19
+    still_open:
+    - 16
+    - 19
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 1
+      still_open: 2
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open:
+    - 7
+    - 15
+    closed: []
+    counts:
+      created: 0
+      still_open: 2
+      closed: 0
+- repo_slug: ManageIQ/manageiq-vagrant-dev
+  repo_url: http://github.com/ManageIQ/manageiq-vagrant-dev
+  prs:
+    created: []
+    still_open: []
+    closed: []
+    merged:
+    - 7
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+      merged: 1
+  issues:
+    created: []
+    still_open:
+    - 5
+    closed: []
+    counts:
+      created: 0
+      still_open: 1
+      closed: 0
+- repo_slug: ManageIQ/manageiq-vcloud-docs
+  repo_url: http://github.com/ManageIQ/manageiq-vcloud-docs
+  prs:
+    created: []
+    still_open: []
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open: []
+    closed: []
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+- repo_slug: ManageIQ/manageiq.github.io
+  repo_url: http://github.com/ManageIQ/manageiq.github.io
+  prs:
+    created: []
+    still_open: []
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open: []
+    closed: []
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+- repo_slug: ManageIQ/manageiq.org
+  repo_url: http://github.com/ManageIQ/manageiq.org
+  prs:
+    created:
+    - 830
+    - 831
+    still_open:
+    - 710
+    - 742
+    closed: []
+    merged:
+    - 830
+    - 831
+    merged_labels:
+      bug: 1
+      enhancement: 1
+    counts:
+      created: 2
+      still_open: 2
+      closed: 0
+      merged: 2
+  issues:
+    created: []
+    still_open:
+    - 399
+    - 474
+    - 491
+    - 503
+    - 526
+    - 655
+    - 707
+    - 794
+    - 800
+    - 814
+    - 826
+    closed: []
+    counts:
+      created: 0
+      still_open: 11
+      closed: 0
+- repo_slug: ManageIQ/manageiq_build_status
+  repo_url: http://github.com/ManageIQ/manageiq_build_status
+  prs:
+    created: []
+    still_open: []
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open:
+    - 6
+    closed: []
+    counts:
+      created: 0
+      still_open: 1
+      closed: 0
+- repo_slug: ManageIQ/manageiq_docs
+  repo_url: http://github.com/ManageIQ/manageiq_docs
+  prs:
+    created:
+    - 1413
+    - 1414
+    - 1415
+    - 1416
+    - 1417
+    - 1418
+    - 1419
+    - 1420
+    - 1421
+    - 1422
+    - 1424
+    - 1425
+    - 1426
+    - 1427
+    - 1428
+    - 1429
+    - 1430
+    - 1431
+    - 1433
+    - 1434
+    - 1435
+    still_open:
+    - 922
+    - 958
+    - 1044
+    - 1132
+    - 1137
+    - 1180
+    - 1277
+    - 1326
+    - 1395
+    - 1404
+    - 1420
+    - 1428
+    - 1430
+    closed:
+    - 1393
+    - 1417
+    merged:
+    - 1388
+    - 1400
+    - 1411
+    - 1413
+    - 1414
+    - 1415
+    - 1416
+    - 1418
+    - 1419
+    - 1421
+    - 1422
+    - 1424
+    - 1425
+    - 1426
+    - 1427
+    - 1429
+    - 1431
+    - 1433
+    - 1434
+    - 1435
+    merged_labels:
+      bug: 4
+      enhancement: 1
+    counts:
+      created: 21
+      still_open: 13
+      closed: 2
+      merged: 20
+  issues:
+    created:
+    - 1423
+    - 1432
+    - 1436
+    still_open:
+    - 97
+    - 530
+    - 557
+    - 627
+    - 939
+    - 1190
+    - 1271
+    - 1310
+    - 1368
+    - 1423
+    - 1432
+    - 1436
+    closed:
+    - 238
+    - 656
+    - 977
+    counts:
+      created: 3
+      still_open: 12
+      closed: 3
+- repo_slug: ManageIQ/memory_buffer
+  repo_url: http://github.com/ManageIQ/memory_buffer
+  prs:
+    created: []
+    still_open: []
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open: []
+    closed: []
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+- repo_slug: ManageIQ/miq_bot
+  repo_url: http://github.com/ManageIQ/miq_bot
+  prs:
+    created: []
+    still_open:
+    - 221
+    - 405
+    - 406
+    - 412
+    - 424
+    - 448
+    - 452
+    - 454
+    - 469
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 9
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open:
+    - 1
+    - 6
+    - 7
+    - 14
+    - 24
+    - 26
+    - 27
+    - 29
+    - 35
+    - 44
+    - 45
+    - 51
+    - 56
+    - 61
+    - 68
+    - 73
+    - 82
+    - 91
+    - 108
+    - 116
+    - 165
+    - 173
+    - 186
+    - 189
+    - 192
+    - 195
+    - 202
+    - 206
+    - 227
+    - 235
+    - 238
+    - 240
+    - 241
+    - 244
+    - 245
+    - 246
+    - 250
+    - 251
+    - 259
+    - 260
+    - 281
+    - 282
+    - 296
+    - 297
+    - 298
+    - 305
+    - 327
+    - 333
+    - 334
+    - 335
+    - 337
+    - 339
+    - 340
+    - 342
+    - 347
+    - 348
+    - 349
+    - 355
+    - 362
+    - 363
+    - 367
+    - 368
+    - 379
+    - 392
+    - 407
+    - 421
+    - 425
+    - 427
+    - 428
+    - 431
+    - 432
+    - 438
+    - 439
+    - 440
+    - 441
+    - 444
+    - 446
+    - 451
+    - 477
+    - 478
+    - 484
+    - 486
+    closed: []
+    counts:
+      created: 0
+      still_open: 82
+      closed: 0
+- repo_slug: ManageIQ/miq_tools_services
+  repo_url: http://github.com/ManageIQ/miq_tools_services
+  prs:
+    created: []
+    still_open:
+    - 13
+    - 16
+    - 18
+    - 24
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 4
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open: []
+    closed: []
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+- repo_slug: ManageIQ/more_core_extensions
+  repo_url: http://github.com/ManageIQ/more_core_extensions
+  prs:
+    created: []
+    still_open: []
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open:
+    - 9
+    - 10
+    - 69
+    - 77
+    closed: []
+    counts:
+      created: 0
+      still_open: 4
+      closed: 0
+- repo_slug: ManageIQ/net_app_manageability
+  repo_url: http://github.com/ManageIQ/net_app_manageability
+  prs:
+    created: []
+    still_open: []
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open: []
+    closed: []
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+- repo_slug: ManageIQ/optimist
+  repo_url: http://github.com/ManageIQ/optimist
+  prs:
+    created:
+    - 113
+    still_open:
+    - 7
+    - 97
+    - 105
+    closed: []
+    merged:
+    - 113
+    merged_labels: {}
+    counts:
+      created: 1
+      still_open: 3
+      closed: 0
+      merged: 1
+  issues:
+    created:
+    - 111
+    - 112
+    still_open:
+    - 17
+    - 37
+    - 39
+    - 87
+    - 88
+    - 89
+    - 111
+    closed:
+    - 112
+    counts:
+      created: 2
+      still_open: 7
+      closed: 1
+- repo_slug: ManageIQ/ovirt
+  repo_url: http://github.com/ManageIQ/ovirt
+  prs:
+    created: []
+    still_open: []
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open: []
+    closed: []
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+- repo_slug: ManageIQ/ovirt_metrics
+  repo_url: http://github.com/ManageIQ/ovirt_metrics
+  prs:
+    created: []
+    still_open: []
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open:
+    - 1
+    - 15
+    - 24
+    closed: []
+    counts:
+      created: 0
+      still_open: 3
+      closed: 0
+- repo_slug: ManageIQ/pg-dsn_parser
+  repo_url: http://github.com/ManageIQ/pg-dsn_parser
+  prs:
+    created: []
+    still_open: []
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open: []
+    closed: []
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+- repo_slug: ManageIQ/pg-logical_replication
+  repo_url: http://github.com/ManageIQ/pg-logical_replication
+  prs:
+    created: []
+    still_open: []
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open: []
+    closed: []
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+- repo_slug: ManageIQ/pg-pglogical
+  repo_url: http://github.com/ManageIQ/pg-pglogical
+  prs:
+    created: []
+    still_open: []
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open:
+    - 3
+    - 4
+    - 5
+    closed: []
+    counts:
+      created: 0
+      still_open: 3
+      closed: 0
+- repo_slug: ManageIQ/polisher
+  repo_url: http://github.com/ManageIQ/polisher
+  prs:
+    created: []
+    still_open:
+    - 148
+    - 150
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 2
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open:
+    - 7
+    - 11
+    - 14
+    - 16
+    - 17
+    - 22
+    - 23
+    - 25
+    - 26
+    - 28
+    - 29
+    - 30
+    - 31
+    - 32
+    - 33
+    - 34
+    - 35
+    - 36
+    - 38
+    - 39
+    - 65
+    - 79
+    - 80
+    - 81
+    - 82
+    - 88
+    - 92
+    - 103
+    - 113
+    closed: []
+    counts:
+      created: 0
+      still_open: 29
+      closed: 0
+- repo_slug: ManageIQ/query_relation
+  repo_url: http://github.com/ManageIQ/query_relation
+  prs:
+    created: []
+    still_open:
+    - 11
+    - 14
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 2
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open:
+    - 2
+    - 3
+    closed: []
+    counts:
+      created: 0
+      still_open: 2
+      closed: 0
+- repo_slug: ManageIQ/react-ui-components
+  repo_url: http://github.com/ManageIQ/react-ui-components
+  prs:
+    created: []
+    still_open:
+    - 89
+    - 95
+    - 149
+    - 151
+    - 165
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 5
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open:
+    - 112
+    - 113
+    closed: []
+    counts:
+      created: 0
+      still_open: 2
+      closed: 0
+- repo_slug: ManageIQ/sprint_statistics
+  repo_url: http://github.com/ManageIQ/sprint_statistics
+  prs:
+    created:
+    - 41
+    - 42
+    - 43
+    - 44
+    - 45
+    still_open:
+    - 44
+    - 45
+    closed: []
+    merged:
+    - 41
+    - 42
+    - 43
+    merged_labels:
+      enhancement: 1
+    counts:
+      created: 5
+      still_open: 2
+      closed: 0
+      merged: 3
+  issues:
+    created: []
+    still_open: []
+    closed: []
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+- repo_slug: ManageIQ/ui-components
+  repo_url: http://github.com/ManageIQ/ui-components
+  prs:
+    created:
+    - 437
+    still_open:
+    - 435
+    - 436
+    closed:
+    - 429
+    - 432
+    merged:
+    - 437
+    merged_labels:
+      bug: 1
+      ivanchuk/yes: 1
+    counts:
+      created: 1
+      still_open: 2
+      closed: 2
+      merged: 1
+  issues:
+    created: []
+    still_open:
+    - 154
+    - 173
+    - 178
+    - 179
+    - 180
+    - 219
+    - 419
+    closed:
+    - 252
+    counts:
+      created: 0
+      still_open: 7
+      closed: 1
+- repo_slug: ManageIQ/virt_disk
+  repo_url: http://github.com/ManageIQ/virt_disk
+  prs:
+    created: []
+    still_open: []
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open: []
+    closed: []
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+- repo_slug: ManageIQ/virtfs
+  repo_url: http://github.com/ManageIQ/virtfs
+  prs:
+    created: []
+    still_open:
+    - 21
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 1
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open:
+    - 6
+    closed: []
+    counts:
+      created: 0
+      still_open: 1
+      closed: 0
+- repo_slug: ManageIQ/virtfs-camcorderfs
+  repo_url: http://github.com/ManageIQ/virtfs-camcorderfs
+  prs:
+    created: []
+    still_open:
+    - 11
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 1
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open: []
+    closed: []
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+- repo_slug: ManageIQ/virtfs-ext3
+  repo_url: http://github.com/ManageIQ/virtfs-ext3
+  prs:
+    created: []
+    still_open:
+    - 3
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 1
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open: []
+    closed: []
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+- repo_slug: ManageIQ/virtfs-ext4
+  repo_url: http://github.com/ManageIQ/virtfs-ext4
+  prs:
+    created: []
+    still_open:
+    - 1
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 1
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open: []
+    closed: []
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+- repo_slug: ManageIQ/virtfs-fat32
+  repo_url: http://github.com/ManageIQ/virtfs-fat32
+  prs:
+    created: []
+    still_open:
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 5
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open: []
+    closed: []
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+- repo_slug: ManageIQ/virtfs-iso9660
+  repo_url: http://github.com/ManageIQ/virtfs-iso9660
+  prs:
+    created: []
+    still_open: []
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open: []
+    closed: []
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+- repo_slug: ManageIQ/virtfs-ntfs
+  repo_url: http://github.com/ManageIQ/virtfs-ntfs
+  prs:
+    created: []
+    still_open:
+    - 1
+    - 2
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 2
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open: []
+    closed: []
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+- repo_slug: ManageIQ/virtfs-xfs
+  repo_url: http://github.com/ManageIQ/virtfs-xfs
+  prs:
+    created: []
+    still_open:
+    - 1
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 1
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open: []
+    closed: []
+    counts:
+      created: 0
+      still_open: 0
+      closed: 0
+- repo_slug: ManageIQ/vmware_web_service
+  repo_url: http://github.com/ManageIQ/vmware_web_service
+  prs:
+    created: []
+    still_open:
+    - 47
+    - 48
+    - 67
+    closed: []
+    merged: []
+    merged_labels: {}
+    counts:
+      created: 0
+      still_open: 3
+      closed: 0
+      merged: 0
+  issues:
+    created: []
+    still_open:
+    - 68
+    closed: []
+    counts:
+      created: 0
+      still_open: 1
+      closed: 0
