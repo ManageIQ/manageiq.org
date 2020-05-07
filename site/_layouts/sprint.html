@@ -9,7 +9,7 @@ layout: page
     {% endif %}
 {% endfor %}
 
-{% assign sprints_key = page.sprint_number | prepend: "prs_" %}
+{% assign sprints_key = page.sprint_number | prepend: "gh_" %}
 {% assign sprint = site.data.sprints[sprints_key] %}
 
 <h2>Repository Activity between {{ sprint_artifact.start_date }} and {{ sprint_artifact.end_date }}</h2>
@@ -21,43 +21,66 @@ layout: page
             <th>PRs Created</th>
             <th>PRs Merged</th>
             <th>PRs Closed</th>
-            <th>PRs Remaining Open</th>
+            <th>PRs Open when Sprint Ended</th>
+            <th>Issues Created</th>
+            <th>Issues Closed</th>
+            <th>Issues Open when Sprint Ended</th>
         </tr>
         {% for repo in sprint %}
-            {% if repo.counts.opened == 0 and repo.counts.closed_merged == 0 and repo.counts.closed_unmerged == 0 %}
+            {% if repo.prs.counts.created == 0 and repo.prs.counts.merged == 0 and repo.prs.counts.closed == 0 and repo.issues.counts.created == 0 and repo.issues.counts.closed == 0 %}
                 {% continue %}
             {% endif %}
             {% assign github_url_prefix = repo.repo_slug | prepend: "https://github.com/issues?utf8=%E2%9C%93&q=repo%3A" %}
             {% assign github_prs_url_prefix = github_url_prefix | append: "+is:pr" %}
+            {% assign github_issues_url_prefix = github_url_prefix | append: "+is:issue" %}
             {% assign sprint_start = sprint_artifact.start_date | date: "%F" %}
             {% assign sprint_end   = sprint_artifact.end_date   | date: "%F" %}
             {% assign sprint_range = sprint_start | append: ".." | append: sprint_end %}
             <tr>
                 <td><a href="{{ repo.repo_url }}">{{ repo.repo_slug }}</a></td>
-                {% if repo.counts.opened > 0 %}
+                {% if repo.prs.counts.created > 0 %}
                     {% assign github_url = github_prs_url_prefix | append: "+created:" | append: sprint_range %}
-                    <td><a href="{{ github_url }}">{{ repo.counts.opened }}</a></td>
+                    <td><a href="{{ github_url }}">{{ repo.prs.counts.created }}</a></td>
                 {% else %}
-                    <td>{{ repo.counts.opened }}</td>
+                    <td>{{ repo.prs.counts.created }}</td>
                 {% endif %}
-                {% if repo.counts.closed_merged > 0 %}
+                {% if repo.prs.counts.merged > 0 %}
                     {% assign github_url = github_prs_url_prefix | append: "+is:merged+closed:" | append: sprint_range %}
-                    <td><a href="{{ github_url }}">{{ repo.counts.closed_merged }}</a></td>
+                    <td><a href="{{ github_url }}">{{ repo.prs.counts.merged }}</a></td>
                 {% else %}
-                    <td>{{ repo.counts.closed_merged }}</td>
+                    <td>{{ repo.prs.counts.merged }}</td>
                 {% endif %}
-                {% if repo.counts.closed_unmerged > 0 %}
+                {% if repo.prs.counts.closed > 0 %}
                     {% assign github_url = github_prs_url_prefix | append: "+is:unmerged+closed:" | append: sprint_range %}
-                    <td><a href="{{ github_url }}">{{ repo.counts.closed_unmerged }}</a></td>
+                    <td><a href="{{ github_url }}">{{ repo.prs.counts.closed }}</a></td>
                 {% else %}
-                    <td>{{ repo.counts.closed_unmerged }}</td>
+                    <td>{{ repo.prs.counts.closed }}</td>
                 {% endif %}
-                {% if repo.counts.still_open > 0 %}
+                {% if repo.prs.counts.still_open > 0 %}
                     {% assign still_open_url   = github_prs_url_prefix | append: "+state:open+created:<="   | append: sprint_end %}
                     {% assign closed_after_url = github_prs_url_prefix | append: "+state:closed+created:<=" | append: sprint_end | append: "+closed:>" | append: sprint_end %}
-                    <td>{{ repo.counts.still_open }} (<a href="{{ still_open_url }}">Open</a> + <a href="{{ closed_after_url }}">Closed</a>)</td>
+                    <td>{{ repo.prs.counts.still_open }} (<a href="{{ still_open_url }}">Still Open</a> + <a href="{{ closed_after_url }}">Closed Since</a>)</td>
                 {% else %}
-                    <td>{{ repo.counts.still_open }}</td>
+                    <td>{{ repo.prs.counts.still_open }}</td>
+                {% endif %}
+                {% if repo.issues.counts.created > 0 %}
+                    {% assign github_url = github_issues_url_prefix | append: "+created:" | append: sprint_range %}
+                    <td><a href="{{ github_url }}">{{ repo.issues.counts.created }}</a></td>
+                {% else %}
+                    <td>{{ repo.issues.counts.created }}</td>
+                {% endif %}
+                {% if repo.issues.counts.closed > 0 %}
+                    {% assign github_url = github_issues_url_prefix | append: "+closed:" | append: sprint_range %}
+                    <td><a href="{{ github_url }}">{{ repo.issues.counts.closed }}</a></td>
+                {% else %}
+                    <td>{{ repo.issues.counts.closed }}</td>
+                {% endif %}
+                {% if repo.issues.counts.still_open > 0 %}
+                    {% assign still_open_url   = github_issues_url_prefix | append: "+state:open+created:<="   | append: sprint_end %}
+                    {% assign closed_after_url = github_issues_url_prefix | append: "+state:closed+created:<=" | append: sprint_end | append: "+closed:>" | append: sprint_end %}
+                    <td>{{ repo.issues.counts.still_open }} (<a href="{{ still_open_url }}">Still Open</a> + <a href="{{ closed_after_url }}">Closed Since</a>)</td>
+                {% else %}
+                    <td>{{ repo.issues.counts.still_open }}</td>
                 {% endif %}
             </tr>
         {% endfor %}
@@ -70,10 +93,11 @@ layout: page
     <table class="table table-bordered table-hover">
         <tr>
             <th>GitHub Repository</th>
-            <th>PRs Remaining Open</th>
+            <th>PRs Open when Sprint Ended</th>
+            <th>Issues Open when Sprint Ended</th>
         </tr>
         {% for repo in sprint %}
-            {% if repo.counts.opened > 0 or repo.counts.closed_merged > 0 or repo.counts.closed_unmerged > 0 %}
+            {% if repo.prs.counts.created > 0 or repo.prs.counts.merged > 0 or repo.prs.counts.closed > 0 or repo.issues.counts.created > 0 or repo.issues.counts.closed > 0 %}
                 {% continue %}
             {% endif %}
             {% assign github_url_prefix = repo.repo_slug | prepend: "https://github.com/issues?utf8=%E2%9C%93&q=repo%3A" %}
@@ -83,12 +107,19 @@ layout: page
             {% assign sprint_range = sprint_start | append: ".." | append: sprint_end %}
             <tr>
                 <td><a href="{{ repo.repo_url }}">{{ repo.repo_slug }}</a></td>
-                {% if repo.counts.still_open > 0 %}
+                {% if repo.prs.counts.still_open > 0 %}
                     {% assign still_open_url   = github_prs_url_prefix | append: "+state:open+created:<="   | append: sprint_end %}
                     {% assign closed_after_url = github_prs_url_prefix | append: "+state:closed+created:<=" | append: sprint_end | append: "+closed:>" | append: sprint_end %}
-                    <td>{{ repo.counts.still_open }} (<a href="{{ still_open_url }}">Open</a> + <a href="{{ closed_after_url }}">Closed</a>)</td>
+                    <td>{{ repo.prs.counts.still_open }} (<a href="{{ still_open_url }}">Still Open</a> + <a href="{{ closed_after_url }}">Closed Since</a>)</td>
                 {% else %}
-                    <td>{{ repo.counts.still_open }}</td>
+                    <td>{{ repo.prs.counts.still_open }}</td>
+                {% endif %}
+                {% if repo.issues.counts.still_open > 0 %}
+                    {% assign still_open_url   = github_issues_url_prefix | append: "+state:open+created:<="   | append: sprint_end %}
+                    {% assign closed_after_url = github_issues_url_prefix | append: "+state:closed+created:<=" | append: sprint_end | append: "+closed:>" | append: sprint_end %}
+                    <td>{{ repo.issues.counts.still_open }} (<a href="{{ still_open_url }}">Still Open</a> + <a href="{{ closed_after_url }}">Closed Since</a>)</td>
+                {% else %}
+                    <td>{{ repo.issues.counts.still_open }}</td>
                 {% endif %}
             </tr>
         {% endfor %}
