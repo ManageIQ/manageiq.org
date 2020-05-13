@@ -41,7 +41,8 @@ title: Sprints
                 {% else %}
                     <td>NA</td>
                 {% endif %}
-                {% if sprint.url %}
+                {% assign sprints_key_for_github_data = sprint.sprint_number | prepend: "gh_" %}
+                {% if site.data.sprints[sprints_key_for_github_data] %}
                     <td><a href="{{ sprint.url }}">Details</a></td>
                 {% else %}
                     <td>NA</td>
