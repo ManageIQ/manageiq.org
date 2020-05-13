@@ -1,16 +1,19 @@
 stable:
+  type: stable
   name: Ivanchuk-4
   tag: ivanchuk-4
   filename: ivanchuk-4
   branch: ivanchuk
 
 prerelease:
+  type: prerelease
   name: Jansa-1-alpha1
   tag: jansa-1-alpha1
   filename: jansa-1-alpha1
   branch: jansa
 
 devel:
+  type: devel
   name: Nightly
   tag: latest
   filename: devel

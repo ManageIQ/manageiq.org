@@ -3,57 +3,18 @@ layout: page
 title: Download ManageIQ
 ---
 
-{% capture column_title %}
-    <tr>
-      <th>Appliance</th>
-      <th>Format</th>
-      <th>Size</th>
-    </tr>
-{% endcapture %}
-
 {% assign release = site.data.releases["stable"] %}
 
 ### Current stable release ({{ release.name }})
 
-<div class="table-responsive">
-  <table class="table table-bordered table-hover">
-    {{ column_title }}
-    {% for type in site.data.download_types %}
-      {% if type.download_platform == 'podified' %}
-        {% continue %}
-      {% endif %}
-      {% assign data = type.download_platform | data_for: release.branch, release.tag, release.filename, type.ext %}
-      {% assign url = data[0] %}
-      {% assign file_size = data[1] %}
-      <tr>
-        <td><a href="{{ url }}" onClick="{{ type.download_platform | on_click_for_download: type.name, release.name }}">{{ type.name }}</a></td>
-        <td>{{ type.download_platform }}</td>
-        <td>{{ file_size }}</td>
-      </tr>
-    {% endfor %}
-  </table>
-</div>
+{% include download/release_table.md release=release %}
 
 {% assign release = site.data.releases["prerelease"] %}
 {% if release %}
 
 ### Pre-release ({{ release.name }})
 
-<div class="table-responsive">
-  <table class="table table-bordered table-hover">
-    {{ column_title }}
-    {% for type in site.data.download_types %}
-      {% assign data = type.download_platform | data_for: release.branch, release.tag, release.filename, type.ext %}
-      {% assign url = data[0] %}
-      {% assign file_size = data[1] %}
-      <tr>
-        <td><a href="{{ url }}" onClick="{{ type.download_platform | on_click_for_download: type.name, release.name }}">{{ type.name }}</a></td>
-        <td>{{ type.download_platform }}</td>
-        <td>{{ file_size }}</td>
-      </tr>
-    {% endfor %}
-  </table>
-</div>
+{% include download/release_table.md release=release %}
 
 {% endif %}
 
@@ -63,21 +24,7 @@ title: Download ManageIQ
 
 **Warning:** things may be unstable, stuff may break. If you're looking for adventure, please proceed.
 
-<div class="table-responsive">
-  <table class="table table-bordered table-hover">
-    {{ column_title }}
-    {% for type in site.data.download_types %}
-      {% assign data = type.download_platform | data_for: release.branch, release.tag, release.filename, type.ext %}
-      {% assign url = data[0] %}
-      {% assign file_size = data[1] %}
-      <tr>
-        <td><a href="{{ url }}" onClick="{{ type.download_platform | on_click_for_download: type.name, release.name }}">{{ type.name }}</a></td>
-        <td>{{ type.download_platform }}</td>
-        <td>{{ file_size }}</td>
-      </tr>
-    {% endfor %}
-  </table>
-</div>
+{% include download/release_table.md release=release %}
 
 If you don't find what you want in the above lists, try searching from the available images at [releases.manageiq.org][].
 
