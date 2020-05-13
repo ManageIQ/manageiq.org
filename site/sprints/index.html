@@ -20,19 +20,13 @@ title: Sprints
 <div class="table-responsive">
     <table class="table table-bordered table-hover">
         {{ column_title }}
-        {% for sprint in site.data.sprint_artifacts %}
+        {% assign sprint_list = site.sprints | sort:'start_date' | reverse %}
+        {% for sprint in sprint_list %}
             {% capture github_url %}
                 {{ github_url_prefix }}{{ sprint.start_date | date: "%F" }}..{{ sprint.end_date | date: "%F" }}
             {% endcapture %}
-            {% assign sprint_details_url = nil %}
-            {% for item in site.sprints %}
-                {% if item.sprint_number == sprint.number %}
-                    {% assign sprint_details_url = item.url %}
-                    {% break %}
-                {% endif %}
-            {% endfor %}
             <tr>
-                <td>{{ sprint.number }}</td>
+                <td>{{ sprint.sprint_number }}</td>
                 <td>{{ sprint.start_date   | date: "%B %e, %Y" }}</td>
                 <td>{{ sprint.end_date     | date: "%B %e, %Y" }}</td>
                 <td>{{ sprint.review_date  | date: "%B %e, %Y" }}</td>
@@ -47,8 +41,8 @@ title: Sprints
                 {% else %}
                     <td>NA</td>
                 {% endif %}
-                {% if sprint_details_url %}
-                    <td><a href="{{ sprint_details_url }}">Details</a></td>
+                {% if sprint.url %}
+                    <td><a href="{{ sprint.url }}">Details</a></td>
                 {% else %}
                     <td>NA</td>
                 {% endif %}
