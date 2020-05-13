@@ -2,17 +2,10 @@
 layout: page
 ---
 
-{% for sprint in site.data.sprint_artifacts %}
-    {% if sprint.number == page.sprint_number %}
-        {% assign sprint_artifact = sprint %}
-        {% break %}
-    {% endif %}
-{% endfor %}
-
 {% assign sprints_key = page.sprint_number | prepend: "gh_" %}
-{% assign sprint = site.data.sprints[sprints_key] %}
+{% assign github_data = site.data.sprints[sprints_key] %}
 
-<h2>Repository Activity between {{ sprint_artifact.start_date }} and {{ sprint_artifact.end_date }}</h2>
+<h2>Repository Activity between {{ page.start_date }} and {{ page.end_date }}</h2>
 
 <div class="table-responsive">
     <table class="table table-bordered table-hover">
@@ -26,15 +19,15 @@ layout: page
             <th>Issues Closed</th>
             <th>Issues Open when Sprint Ended</th>
         </tr>
-        {% for repo in sprint %}
+        {% for repo in github_data %}
             {% if repo.prs.counts.created == 0 and repo.prs.counts.merged == 0 and repo.prs.counts.closed == 0 and repo.issues.counts.created == 0 and repo.issues.counts.closed == 0 %}
                 {% continue %}
             {% endif %}
             {% assign github_url_prefix = repo.repo_slug | prepend: "https://github.com/issues?utf8=%E2%9C%93&q=repo%3A" %}
             {% assign github_prs_url_prefix = github_url_prefix | append: "+is:pr" %}
             {% assign github_issues_url_prefix = github_url_prefix | append: "+is:issue" %}
-            {% assign sprint_start = sprint_artifact.start_date | date: "%F" %}
-            {% assign sprint_end   = sprint_artifact.end_date   | date: "%F" %}
+            {% assign sprint_start = page.start_date | date: "%F" %}
+            {% assign sprint_end   = page.end_date   | date: "%F" %}
             {% assign sprint_range = sprint_start | append: ".." | append: sprint_end %}
             <tr>
                 <td><a href="{{ repo.repo_url }}">{{ repo.repo_slug }}</a></td>
@@ -102,8 +95,8 @@ layout: page
             {% endif %}
             {% assign github_url_prefix = repo.repo_slug | prepend: "https://github.com/issues?utf8=%E2%9C%93&q=repo%3A" %}
             {% assign github_prs_url_prefix = github_url_prefix | append: "+is:pr" %}
-            {% assign sprint_start = sprint_artifact.start_date | date: "%F" %}
-            {% assign sprint_end   = sprint_artifact.end_date   | date: "%F" %}
+            {% assign sprint_start = page.start_date | date: "%F" %}
+            {% assign sprint_end   = page.end_date   | date: "%F" %}
             {% assign sprint_range = sprint_start | append: ".." | append: sprint_end %}
             <tr>
                 <td><a href="{{ repo.repo_url }}">{{ repo.repo_slug }}</a></td>
