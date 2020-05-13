@@ -9,6 +9,9 @@
   download_platform: gce
   ext: tar.gz
 
+- name: Kubernetes
+  download_platform: podified
+
 - name: libvirt
   download_platform: libvirt
   ext: qc2
@@ -20,6 +23,9 @@
 - name: Microsoft SCVMM
   download_platform: hyperv
   ext: zip
+
+- name: OpenShift
+  download_platform: podified
 
 - name: OpenStack
   download_platform: openstack

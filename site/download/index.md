@@ -11,8 +11,6 @@ title: Download ManageIQ
     </tr>
 {% endcapture %}
 
-{% assign url_at_docker = "https://hub.docker.com/r/manageiq/manageiq/" %}
-
 {% assign release = site.data.releases["stable"] %}
 
 ### Current stable release ({{ release.name }})
@@ -21,29 +19,22 @@ title: Download ManageIQ
   <table class="table table-bordered table-hover">
     {{ column_title }}
     {% for type in site.data.download_types %}
-    <tr>
-      {% if type.download_platform == 'docker' %}
-        {% assign url = url_at_docker %}
-        <td><a href="{{ url }}" onClick="{{ type.download_platform | on_click_for_download: type.name, release.name }}">{{ type.name }} (tag {{release.tag}})</a></td>
-      {% elsif type.download_platform == 'vagrant' %}
-        {% assign url = release.branch | url_at_vagrant %}
-        <td><a href="{{ url }}" onClick="{{ type.download_platform | on_click_for_download: type.name, release.name }}">{{ type.name }}</a></td>
-        {% assign url = type.download_platform | url_at_releases: release.filename, type.ext %}
-      {% else %}
-        {% assign url = type.download_platform | url_at_releases: release.filename, type.ext %}
-        <td><a href="{{ url }}" onClick="{{ type.download_platform | on_click_for_download: type.name, release.name }}">{{ type.name }}</a></td>
+      {% if type.download_platform == 'podified' %}
+        {% continue %}
       {% endif %}
-      <td>{{ type.download_platform }}</td>
-      <td>{{ url | file_size_from_url }}</td>
-    </tr>
+      {% assign data = type.download_platform | data_for: release.branch, release.tag, release.filename, type.ext %}
+      {% assign url = data[0] %}
+      {% assign file_size = data[1] %}
+      <tr>
+        <td><a href="{{ url }}" onClick="{{ type.download_platform | on_click_for_download: type.name, release.name }}">{{ type.name }}</a></td>
+        <td>{{ type.download_platform }}</td>
+        <td>{{ file_size }}</td>
+      </tr>
     {% endfor %}
   </table>
 </div>
 
-
-
 {% assign release = site.data.releases["prerelease"] %}
-
 {% if release %}
 
 ### Pre-release ({{ release.name }})
@@ -52,21 +43,14 @@ title: Download ManageIQ
   <table class="table table-bordered table-hover">
     {{ column_title }}
     {% for type in site.data.download_types %}
-    <tr>
-      {% if type.download_platform == 'docker' %}
-        {% assign url = url_at_docker %}
-        <td><a href="{{ url }}" onClick="{{ type.download_platform | on_click_for_download: type.name, release.name }}">{{ type.name }} (tag {{release.tag}})</a></td>
-      {% elsif type.download_platform == 'vagrant' %}
-        {% assign url = release.branch | url_at_vagrant %}
+      {% assign data = type.download_platform | data_for: release.branch, release.tag, release.filename, type.ext %}
+      {% assign url = data[0] %}
+      {% assign file_size = data[1] %}
+      <tr>
         <td><a href="{{ url }}" onClick="{{ type.download_platform | on_click_for_download: type.name, release.name }}">{{ type.name }}</a></td>
-        {% assign url = type.download_platform | url_at_releases: release.filename, type.ext %}
-      {% else %}
-        {% assign url = type.download_platform | url_at_releases: release.filename, type.ext %}
-        <td><a href="{{ url }}" onClick="{{ type.download_platform | on_click_for_download: type.name, release.name }}">{{ type.name }}</a></td>
-      {% endif %}
-      <td>{{ type.download_platform }}</td>
-      <td>{{ url | file_size_from_url }}</td>
-    </tr>
+        <td>{{ type.download_platform }}</td>
+        <td>{{ file_size }}</td>
+      </tr>
     {% endfor %}
   </table>
 </div>
@@ -83,17 +67,14 @@ title: Download ManageIQ
   <table class="table table-bordered table-hover">
     {{ column_title }}
     {% for type in site.data.download_types %}
-    <tr>
-      {% if type.download_platform == 'docker' %}
-        {% assign url = url_at_docker %}
-        <td><a href="{{ url }}" onClick="{{ type.download_platform | on_click_for_download: type.name, release.name }}">{{ type.name }} (tag {{release.tag}})</a></td>
-      {% else %}
-        {% assign url = type.download_platform | url_at_releases: release.filename, type.ext %}
+      {% assign data = type.download_platform | data_for: release.branch, release.tag, release.filename, type.ext %}
+      {% assign url = data[0] %}
+      {% assign file_size = data[1] %}
+      <tr>
         <td><a href="{{ url }}" onClick="{{ type.download_platform | on_click_for_download: type.name, release.name }}">{{ type.name }}</a></td>
-      {% endif %}
-      <td>{{ type.download_platform }}</td>
-      <td>{{ url | file_size_from_url }}</td>
-    </tr>
+        <td>{{ type.download_platform }}</td>
+        <td>{{ file_size }}</td>
+      </tr>
     {% endfor %}
   </table>
 </div>
@@ -106,6 +87,7 @@ Take a look at our [Quick Start Guide][] for an overview of ManageIQ concepts to
 
 - [Docker][]
 - [Vagrant][]
+- [Kubernetes][]
 
 To go more in-depth, check out the [User Reference][].
 
@@ -121,6 +103,7 @@ By downloading ManageIQ software, you acknowledge that you understand all of the
 [Quick Start Guide]:     /docs/get-started/
 [Docker]:                /docs/get-started/docker
 [Vagrant]:               /docs/get-started/vagrant
+[Kubernetes]:            /docs/get-started/kubernetes
 [User Reference]:        /docs/reference/
 [documentation page]:    /docs/
 [ManageIQ community]:    /community/
