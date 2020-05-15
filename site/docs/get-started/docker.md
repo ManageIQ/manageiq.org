@@ -13,7 +13,7 @@ is available).
 If you are on Linux, make sure the Docker service is running:
 
 ```bash
-$ sudo service docker start
+$ sudo systemctl start docker
 ```
 
 ### Step 1: Download and deploy the appliance
@@ -21,13 +21,13 @@ $ sudo service docker start
 Pull the ManageIQ docker image:
 
 ```bash
-$ sudo docker pull manageiq/manageiq:{{release.tag}}
+$ docker pull manageiq/manageiq:{{release.tag}}
 ```
 
 ### Step 2: Run the container
 
 ```bash
-$ sudo docker run -d -p 8443:443 manageiq/manageiq:{{release.tag}}
+$ docker run -d -p 8443:443 manageiq/manageiq:{{release.tag}}
 ```
 
 ManageIQ is now up and running.
