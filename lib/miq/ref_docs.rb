@@ -69,7 +69,7 @@ module Miq
       logger.info "Installing Ascii Binder"
       shell [
         "cd #{tmp_dir}",
-        "git checkout master",
+        "git checkout jansa",
         "#{bundler} install"
       ].join(" && ")
     end
@@ -88,7 +88,7 @@ module Miq
         end
 
         shell "rm -rf #{dst_dir}/latest"
-        shell "mv #{dst_dir}/master #{dst_dir}/latest"
+        shell "mv #{dst_dir}/jansa #{dst_dir}/latest"
       else
         logger.error "Reference docs source directory not present."
       end
