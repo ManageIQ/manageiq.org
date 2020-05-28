@@ -1,35 +1,35 @@
 ---
 - title: Get started
-  path: /docs/get-started/
+  path: /docs/get-started/index.html
 
 - title: Get ManageIQ
   children:
     - title: Vagrant
-      path: /docs/get-started/vagrant
+      path: /docs/get-started/vagrant.html
     - title: Docker
-      path: /docs/get-started/docker
+      path: /docs/get-started/docker.html
     - title: Public Cloud
-      path: /docs/get-started/cloud
+      path: /docs/get-started/cloud.html
     - title: Kubernetes
-      path: /docs/get-started/kubernetes
+      path: /docs/get-started/kubernetes.html
 
 - title: Configuration
-  path: /docs/get-started/basic-configuration
+  path: /docs/get-started/basic-configuration.html
 
 - title: Add A Provider
-  path: /docs/get-started/add-a-provider
+  path: /docs/get-started/add-a-provider.html
 
 - title: Review Provider Details
-  path: /docs/get-started/review-provider
+  path: /docs/get-started/review-provider.html
 
 - title: Provision Your First Machine
-  path: /docs/get-started/provision-machine
+  path: /docs/get-started/provision-machine.html
 
 - title: Create Your First Service Item
-  path: /docs/get-started/create-service-item
+  path: /docs/get-started/create-service-item.html
 
 - title: Where to go from here
-  path: /docs/get-started/where-to-go-from-here
+  path: /docs/get-started/where-to-go-from-here.html
 
 - title: Concepts Guide
-  path: /docs/get-started/concepts
+  path: /docs/get-started/concepts.html

@@ -6,63 +6,63 @@ children:
   - title: Overview
     path: "/docs/guides/architecture.html"
   - title: Capacity And Utilization Collection Explanation
-    path: "/docs/guides/architecture/capacity_and_utilization_collection_explanation"
+    path: "/docs/guides/architecture/capacity_and_utilization_collection_explanation.html"
   - title: Enterprise
-    path: "/docs/guides/architecture/enterprise"
+    path: "/docs/guides/architecture/enterprise.html"
   - title: Source Code Layout
-    path: "/docs/guides/architecture/source_code_layout"
+    path: "/docs/guides/architecture/source_code_layout.html"
 
 - title: Developer Setup
   children:
   - title: Overview
     path: "/docs/guides/developer_setup.html"
   - title: Plugins
-    path: "/docs/guides/developer_setup/plugins"
+    path: "/docs/guides/developer_setup/plugins.html"
   - title: Minimal Mode
-    path: "/docs/guides/developer_setup/minimal_mode"
+    path: "/docs/guides/developer_setup/minimal_mode.html"
   - title: Running Test Suites
-    path: "/docs/guides/developer_setup/running_test_suites"
+    path: "/docs/guides/developer_setup/running_test_suites.html"
   - title: Interactive debugging
-    path: "/docs/guides/developer_setup/debugging"
+    path: "/docs/guides/developer_setup/debugging.html"
 
 - title: External Auth
   children:
   - title: Overview
     path: "/docs/guides/external_auth.html"
   - title: Configuration
-    path: "/docs/guides/external_auth/configuration"
+    path: "/docs/guides/external_auth/configuration.html"
   - title: Installation
-    path: "/docs/guides/external_auth/installation"
+    path: "/docs/guides/external_auth/installation.html"
 
 - title: User Interface
   children:
   - title: UI Patterns
-    path: "/docs/guides/ui/patterns"
+    path: "/docs/guides/ui/patterns.html"
   - title: UI Plugins
-    path: "/docs/guides/ui/plugins"
+    path: "/docs/guides/ui/plugins.html"
   - title: Shared React Component API
-    path: "/docs/guides/ui/register_react_component"    
+    path: "/docs/guides/ui/register_react_component.html"
   - title: Report Data API
-    path: "/docs/guides/ui/report_data_api"
+    path: "/docs/guides/ui/report_data_api.html"
 
 - title: Providers
   children:
   - title: Providers Overview
-    path: "/docs/guides/architecture/providers_overview"
+    path: "/docs/guides/architecture/providers_overview.html"
   - title: Providers Database Architecture
     path: "/docs/guides/architecture/providers_database_architecture.html"
   - title: Amazon AWS Config
-    path: "/docs/guides/providers/amazon_aws_config"
+    path: "/docs/guides/providers/amazon_aws_config.html"
   - title: Containers
-    path: "/docs/guides/providers/containers"
+    path: "/docs/guides/providers/containers.html"
   - title: Openshift
-    path: "/docs/guides/providers/openshift"
+    path: "/docs/guides/providers/openshift.html"
   - title: Openstack Infra Provider
-    path: "/docs/guides/providers/openstack_infra_provider"
+    path: "/docs/guides/providers/openstack_infra_provider.html"
 
 - title: Windows Imaging
-  path: "/docs/guides/provisioning/windows_imaging"
+  path: "/docs/guides/provisioning/windows_imaging.html"
 - title: Coding Style And Standards
-  path: "/docs/guides/coding_style_and_standards"
+  path: "/docs/guides/coding_style_and_standards.html"
 - title: I18n
-  path: "/docs/guides/i18n"
+  path: "/docs/guides/i18n.html"

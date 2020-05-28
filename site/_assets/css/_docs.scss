@@ -112,7 +112,7 @@
     margin: 0 0 2em;
   }
 
-  .doc-content {
+  .doc-content, .legacy-doc-content {
     h1:first-child, h2:first-child {
       margin-top: 0;
     }
@@ -176,7 +176,31 @@
 
   // User Ref Docs
 
-  .user_doc .doc-content {
+  .user_doc .doc-content, .api_doc .doc-content {
+    margin-right: 30%;
+
+    h1 {
+      font-size: 32px;
+    }
+  }
+
+  .doc-content {
+    .section-nav {
+      font-size: 14px;
+      border-left: 1px solid $doc-line-lite;
+      width: 25%;
+      position: absolute;
+      right: 1em;
+
+      ul {
+        padding-left: 2em;
+      }
+    }
+  }
+
+  // Legacy User Ref Docs
+
+  .user_doc .legacy-doc-content {
     margin-right: 35%;
   }
 
@@ -232,6 +256,8 @@
   #toctitle {
     margin-bottom: 1em;
   }
+
+  // All User Ref Docs
 
   .user_doc {
     span.image {

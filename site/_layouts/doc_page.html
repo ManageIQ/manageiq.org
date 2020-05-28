@@ -16,17 +16,19 @@ layout: default
       </header>
       {% endif %}
 
-      <div class="doc-content">
+      <div class="{% if page.legacy %}legacy-{% endif %}doc-content">
         {% if page.doc_group == "user" %}
         <div class="doc-versions">
           <span class="label">Versions: </span>
           {% for path in page.branch_paths %}
-          <span{% if page.branch == path[0] %} class="active" {% endif %}>
-            <a href="{{ path[1] }}">
-              {{ path[0] | titleize }}
-            </a>
-          </span>
-          <span class="separator">/</span>
+            <span{% if page.branch == path[0] %} class="active" {% endif %}>
+              <a href="{{ path[1] }}">
+                {{ path[0] | titleize }}
+              </a>
+            </span>
+            {% if forloop.last != true %}
+              <span class="separator">/</span>
+            {% endif %}
           {% endfor %}
         </div>
         {% endif %}
