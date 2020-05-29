@@ -15,8 +15,8 @@ A few quick stats before we dig in:
     * [UI Classic](https://github.com/ManageIQ/manageiq-ui-classic)
     * [ManageIQ](https://github.com/ManageIQ/manageiq)
     * [Integration Tests](https://github.com/ManageIQ/integration_tests)
-    * [ManageIQ Docs](https://github.com/ManageIQ/manageiq_docs)
-* Downstream version updated from 4.5 to 4.6 [here](https://github.com/ManageIQ/manageiq_docs/pull/491)
+    * [ManageIQ Docs](https://github.com/ManageIQ/manageiq-documentation)
+* Downstream version updated from 4.5 to 4.6 [here](https://github.com/ManageIQ/manageiq-documentation/pull/491)
 
 Okay okay so let's get into it.
 ## Featured
@@ -27,7 +27,7 @@ Now it includes a [`Number of Containers` column](https://github.com/ManageIQ/ma
 It was requested [in ManageIQ/manageiq-api#3](https://github.com/ManageIQ/manageiq-api/pull/3#discussion_r132476373) and fulfilled [by ManageIQ here](https://github.com/ManageIQ/manageiq/pull/15799), a metadata function that should return the description of the data stored in the options field was added!
 Cross repo collaboration is the name of our game.
 ### Operational Alerts Table Documentation
-Can not forget da docs!  Operational alerts table docs were improved [here](https://github.com/ManageIQ/manageiq_docs/pull/486)
+Can not forget da docs!  Operational alerts table docs were improved [here](https://github.com/ManageIQ/manageiq-documentation/pull/486)
 ### Code Cleanliness
 Hot darn, code cleanliness improved! While not in the forefront of most users minds, ensuring code is clean, neat, and standardized is essential to developer sanity!
 [We saw quite a bit of cleanup happen in the Classic UI](https://github.com/ManageIQ/manageiq-ui-classic/pull/2022) and [also in the Service UI](https://github.com/ManageIQ/manageiq-ui-service/pull/886).

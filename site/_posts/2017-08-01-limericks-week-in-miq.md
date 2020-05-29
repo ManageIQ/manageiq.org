@@ -58,7 +58,7 @@ Some catalogue BZs have been closed
 Doc notes have been newly composed  
 Azure items are easy  
 And Amazon breezy  
-The details have [here](https://github.com/ManageIQ/manageiq_docs/pull/441) been exposed.  
+The details have [here](https://github.com/ManageIQ/manageiq-documentation/pull/441) been exposed.  
 
 Logo rendering has now been adjusted  
 As spacing had been somewhat busted  
