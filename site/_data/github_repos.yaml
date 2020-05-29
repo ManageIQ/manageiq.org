@@ -40,7 +40,7 @@
 - name: manageiq-pods
   description: ManageIQ on OpenShift
 
-- name: manageiq_docs
+- name: manageiq-documentation
   description: Documentation for the ManageIQ Cloud Management Platform
 
 - name: integration_tests

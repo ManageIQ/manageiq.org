@@ -18,13 +18,13 @@ module Miq
 
     def initialize
       # Where do the docs live?
-      @repo     = ENV["MIQ_REF_REPO"] || "https://github.com/ManageIQ/manageiq_docs.git"
+      @repo     = ENV["MIQ_REF_REPO"] || "https://github.com/ManageIQ/manageiq-documentation.git"
 
       # What branches to copy?
       @branches = Miq.doc_branches
 
       # Where should we cache and build?
-      @tmp_dir  = ENV["MIQ_REF_TMP"]  || "/tmp/manageiq_docs"
+      @tmp_dir  = ENV["MIQ_REF_TMP"]  || "/tmp/manageiq-documentation"
 
       # Where are the built files that we want?
       @src_dir  = ENV["MIQ_REF_SRC"]  || "_package/community"

@@ -39,7 +39,7 @@ On Tuesday, X finds an obscure URL and discovers ten pull requests. On Thursday,
 [4]: https://github.com/ManageIQ/guides/pull/271
 [5]: https://github.com/ManageIQ/manageiq-api/pull/199
 [6]: https://github.com/ManageIQ/manageiq-api/pull/180
-[7]: https://github.com/ManageIQ/manageiq_docs/pull/570
+[7]: https://github.com/ManageIQ/manageiq-documentation/pull/570
 [8]: https://github.com/ManageIQ/manageiq-ui-classic/pull/2696
 [9]: https://github.com/ManageIQ/manageiq-appliance/pull/146
 [10]: https://github.com/ManageIQ/manageiq-performance/pull/30

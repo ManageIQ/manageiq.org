@@ -32,10 +32,10 @@ Contributions are welcome to each of these, here's where you can help:
 Docs in the getting started group are part of this repo, find them under [site/docs/get-started](/site/docs/get-started)
 
 #### User reference
-The user reference docs are hosted at https://github.com/ManageIQ/manageiq_docs. They are written in [Asciidoc](http://asciidoc.org/) and organized in [AsciiBinder](http://www.asciibinder.org/) By default they are built in a temp directory and copied (rsync) to `/site/docs/reference/latest`.
+The user reference docs are hosted at https://github.com/ManageIQ/manageiq-documentation. They are written in [Asciidoc](http://asciidoc.org/) and organized in [AsciiBinder](http://www.asciibinder.org/) By default they are built in a temp directory and copied (rsync) to `/site/docs/reference/latest`.
 
 #### API Docs
-The API Docs are hosted in the same repo as the User Reference, [under the api directory](https://github.com/ManageIQ/manageiq_docs/tree/master/api)
+The API Docs are hosted in the same repo as the User Reference, [under the api directory](https://github.com/ManageIQ/manageiq-documentation/tree/master/api)
 
 #### Developer Guides
 These guides describe how to work with and contribute to the source code of ManageIQ itself. They are found in this repo: https://github.com/ManageIQ/guides.

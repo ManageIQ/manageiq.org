@@ -43,7 +43,7 @@ We'll ro-o-oll the old chariot along!
 We'll ro-o-oll the old chariot along!    
 And we'll all hang on behind!    
  
-[Enabling AWS events](https://github.com/ManageIQ/manageiq_docs/pull/867) wouldn't do us any harm    
+[Enabling AWS events](https://github.com/ManageIQ/manageiq-documentation/pull/867) wouldn't do us any harm    
 Oh, enabling AWS events wouldn't do us any harm    
 Woah, enabling AWS events wouldn't do us any harm    
 And we'll all hang on behind...    
