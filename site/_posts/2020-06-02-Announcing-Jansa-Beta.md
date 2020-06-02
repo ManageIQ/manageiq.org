@@ -12,7 +12,7 @@ The first beta release of ManageIQ Jansa is here!  It has a bunch of interesting
 ### Builds and Installation
 - Switch to [RPM-based builds](https://github.com/ManageIQ/manageiq-appliance-build/issues/411) means that the ManageIQ builds are created from *exactly* the same components, to be included in multiple flavors of builds - appliance and podified
 - Because ManageIQ now leverages RPMs, going forward, you should be able to pull in updates via the `yum update` command
-- Created [ManageIQ Operator](https://github.com/ManageIQ/manageiq-pods/issues/355) to deploy ManageIQ on Kubernetes and OpenShift
+- Created [ManageIQ Operator](https://github.com/ManageIQ/manageiq-pods/tree/jansa/manageiq-operator) to deploy ManageIQ on Kubernetes and OpenShift
 
 ### Dependencies and Componentry
 - Run on [Rails 5.2](https://github.com/ManageIQ/manageiq/issues/20032) means that ManageIQ is now on a supported version of Rails again
