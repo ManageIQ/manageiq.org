@@ -20,7 +20,7 @@ The first beta release of ManageIQ Jansa is here!  It has a bunch of interesting
 
 ### Core
 - [OpenID-Connect or OIDC Authentication](https://github.com/ManageIQ/manageiq/issues/19867) support for both appliance and podified, for both UI and API
-- Improvements to Chargeback [API](https://github.com/ManageIQ/manageiq-api/issues/781) and [Deep Linking in UI](https://github.com/ManageIQ/manageiq/issues/20162)
+- Improvements to Chargeback [API](https://github.com/ManageIQ/manageiq-api/issues/781) and [Deep Linking in UI](https://github.com/ManageIQ/manageiq/issues/20162).  Watch the [demo](https://www.youtube.com/watch?v=uUgw50EeN2A)!
 - Automate Engine Performance was improved [here](https://github.com/ManageIQ/manageiq-automation_engine/issues/409) and [here](https://github.com/ManageIQ/manageiq-automation_engine/issues/410)
 - Added [Account Lockout Policy](https://github.com/ManageIQ/manageiq/issues/20043) to enforce account lockout after several failed login attempts
 
