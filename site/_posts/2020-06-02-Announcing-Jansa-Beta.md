@@ -26,8 +26,8 @@ The first beta release of ManageIQ Jansa is here!  It has a bunch of interesting
 
 ### Providers
 - VMware inventory collection should be _much_ faster and more resource-efficient with [Streaming Refresh](https://youtu.be/qW_oQrTAGEw?t=882)
-- Kubernetes [optimized targeted refresh of inventory](https://github.com/ManageIQ/manageiq-providers-kubernetes/issues/369) by leveraging the Kubernetes Watch API to receive efficient change notifications.
-- [Added support for OpenShift 4.x](https://github.com/ManageIQ/manageiq-providers-openshift/issues/139) including the leveraging of [Kubernetes Watches](https://github.com/ManageIQ/manageiq-providers-openshift/issues/171)
+- Kubernetes [optimized targeted refresh of inventory](https://github.com/ManageIQ/manageiq-providers-kubernetes/issues/369) by leveraging the Kubernetes Watch API to receive efficient change notifications.  Watch the [demo](https://youtu.be/Sy1fs41PxL0)!
+- [Added support for OpenShift 4.x](https://github.com/ManageIQ/manageiq-providers-openshift/issues/139) including the leveraging of [Kubernetes Watches](https://github.com/ManageIQ/manageiq-providers-openshift/issues/171).  Watch the [demo](https://youtu.be/JBdDoTOl42c)!
 - Optional syndication of [events](https://github.com/ManageIQ/manageiq/issues/19583) and [metrics](https://github.com/ManageIQ/manageiq/issues/19584) over Kafka on both [podified](https://github.com/ManageIQ/manageiq/issues/20007) and [appliance](https://github.com/ManageIQ/manageiq/issues/20001)
 - [Added support for Pluggable Configuration Managers](https://github.com/ManageIQ/manageiq/issues/19992) in preparation for [Terraform Integration](https://github.com/ManageIQ/manageiq/issues/20196)
 
