@@ -42,7 +42,7 @@ module Miq
     end
 
     def serve
-      shell "#{bundler} exec jekyll serve -s #{source_dir} -d #{dest_dir} --incremental --watch", clean: true
+      shell "#{bundler} exec jekyll serve -s #{source_dir} -d #{dest_dir} --incremental --watch --livereload", clean: true
     end
   end
 end
