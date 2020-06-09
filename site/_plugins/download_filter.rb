@@ -44,6 +44,8 @@ module Jekyll
     end
 
     def file_size_from_url(url)
+      return "NA" if ENV["SKIP_FILE_SIZES"]
+
       uri = URI(url)
       Net::HTTP.start(uri.host, uri.port) do |http|
         response = http.request_head(uri.path)
