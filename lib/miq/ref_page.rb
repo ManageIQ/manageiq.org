@@ -9,7 +9,7 @@ module Miq
     end
 
     # Useful for troubleshooting
-    attr_reader :source, :branch
+    attr_reader :source, :branch, :legacy
 
     # Initialize a new Page.
     #
@@ -22,35 +22,15 @@ module Miq
       @source = Pathname.new(dir).join(name).to_s
 
       # Determine branch early
-      @branch = Miq.doc_branches.detect { |b| @source.include?(b) } || "latest"
+      @branch = Miq.all_doc_branches.detect { |b| @source.include?(b) } || "latest"
+      @legacy = Miq.legacy_doc_branches.include?(@branch)
 
       super
 
       data['source'] = @source
       data['branch'] = @branch || data['doc_branch']
-      data['branch_paths'] = branch_paths
-    end
-
-    # Returns the path for a given branch
-    #
-    def branch_path_for(given_branch)
-      if name =~ /index.*\.md$/
-        "/" + path.sub(name, '') + given_branch
-      else
-        source.sub(branch, given_branch)
-      end
-    end
-
-    # Collect branches in a hash for the branch menu at the top of pages
-    # For historical/SEO reasons, master docs are under "/latest", and renamed such
-    #
-    def branch_paths
-      Miq.doc_branches.each_with_object({}) do |branch, hsh|
-        branch = "latest" if branch == "master"
-        path = branch_path_for(branch)
-        next unless File.exist?(File.join("site", path))
-        hsh[branch.to_s] = path
-      end
+      data['legacy'] = @legacy
+      data['branch_paths'] = RefVersions.instance.paths_for(@source)
     end
 
     # Only render with liquid if markdown file

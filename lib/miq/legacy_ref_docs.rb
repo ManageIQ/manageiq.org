@@ -1,7 +1,7 @@
 require 'fileutils'
 
 module Miq
-  class RefDocs < Executor
+  class LegacyRefDocs < Executor
     def self.reset
       new.reset
     end
@@ -14,20 +14,21 @@ module Miq
       new.update
     end
 
-    attr_reader :repo, :branches, :tmp_dir, :src_dir, :dst_dir
+    attr_reader :repo, :branches, :primary_branch, :tmp_dir, :src_dir, :dst_dir
 
     def initialize
       # Where do the docs live?
       @repo     = ENV["MIQ_REF_REPO"] || "https://github.com/ManageIQ/manageiq-documentation.git"
 
       # What branches to copy?
-      @branches = Miq.doc_branches
+      @branches = Miq.legacy_doc_branches
+      @primary_branch = @branches.first
 
       # Where should we cache and build?
-      @tmp_dir  = ENV["MIQ_REF_TMP"]  || "/tmp/manageiq-documentation"
+      @tmp_dir  = ENV["MIQ_REF_TMP"]  || "/tmp/legacy-manageiq-documentation"
 
       # Where are the built files that we want?
-      @src_dir  = ENV["MIQ_REF_SRC"]  || "_site"
+      @src_dir  = ENV["MIQ_REF_SRC"]  || "_package/community"
 
       # Where should the files end up?
       @dst_dir  = ENV["MIQ_REF_DIR"]  || Miq.docs_dir.join("reference")
@@ -40,20 +41,18 @@ module Miq
       unless debug?
         rm_dir(tmp_dir)
 
-        Dir["#{dst_dir}/*"].each do |path|
-          rm_dir(path) if File.directory?(path)
+        branches.each do |branch|
+          dir = dst_dir.join(branch)
+          rm_dir(dir) if dir.directory?
         end
       end
     end
 
     def build
       clone_or_update_repo
-      bundle_install
-      branches.each do |branch|
-        build_and_sync(branch)
-      end
-      make_master_latest
-      add_front_matter
+      setup_ascii_binder
+      build_ref_docs
+      sync_files
     end
 
     def update
@@ -68,50 +67,31 @@ module Miq
       end
     end
 
-    def bundle_install
-      logger.info "Installing gems"
+    def setup_ascii_binder
+      logger.info "Installing Ascii Binder"
       shell [
         "cd #{tmp_dir}",
+        "git checkout #{primary_branch}",
+        "git branch -D master",
+        "git checkout -b master",
         "#{bundler} install"
       ].join(" && ")
     end
 
-    def build_and_sync(branch)
-      if File.directory?("#{tmp_dir}") || debug?
+    def build_ref_docs
+      logger.info "Building legacy ref docs"
+      shell "cd #{tmp_dir} && #{bundler} exec asciibinder package"
+    end
+
+    def sync_files
+      if File.directory?("#{tmp_dir}/#{src_dir}") || debug?
         prep dst_dir
 
-        logger.info "Building ref docs for #{branch}"
-        shell [
-          "cd #{tmp_dir}",
-          "git checkout #{branch}",
-          "#{bundler} exec rake clean build"
-        ].join(" && ")
-        rsync_copy(branch)
+        branches.each do |branch|
+          rsync_copy(branch)
+        end
       else
         logger.error "Reference docs source directory not present."
-      end
-    end
-
-    def make_master_latest
-      if File.directory?("#{dst_dir}/master") || debug?
-        shell "rm -rf #{dst_dir}/latest"
-        shell "mv #{dst_dir}/master #{dst_dir}/latest"
-      end
-    end
-
-    # Adds YAML front matter for Jekyll compat
-    def add_front_matter
-      logger.info "Adding front matter"
-
-      Dir["#{dst_dir}/**/*.html"].each do |path|
-        content = File.readlines(path)
-
-        unless content[0] == "---\n"
-          File.open(path, "w") do |f|
-            f.puts "---\n" * 2
-            content.each { |line| f.puts line }
-          end
-        end
       end
     end
 
@@ -119,11 +99,11 @@ module Miq
 
     # Relative to src_dir
     def exclude_files
-      []
+      ["_stylesheets", "/index.html", "sitemap.xml"]
     end
 
     def rsync_copy(branch)
-      source = "#{tmp_dir}/#{src_dir}/*"
+      source = "#{tmp_dir}/#{src_dir}/#{branch}/*"
       dest   = "#{dst_dir}/#{branch}"
 
       logger.info "Syncing files to #{dest}"

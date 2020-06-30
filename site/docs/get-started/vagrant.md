@@ -20,7 +20,7 @@ Execute the following commands to create a new Vagrant box:
 ```bash
 $ mkdir manageiq
 $ cd manageiq
-$ vagrant init manageiq/ivanchuk
+$ vagrant init manageiq/{{site.data.releases["stable"].branch}}
 ```
 
 There is now a `Vagrantfile` in the current directory.

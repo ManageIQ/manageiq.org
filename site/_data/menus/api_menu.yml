@@ -1,153 +1,153 @@
 - title: Overview
   children:
   - title: Authentication
-    path: "/docs/reference/latest/api/overview/auth"
+    path: "/docs/reference/latest/api/overview/auth.html"
   - title: Authorization
-    path: "/docs/reference/latest/api/overview/authorization"
+    path: "/docs/reference/latest/api/overview/authorization.html"
   - title: Password Updates
-    path: "/docs/reference/latest/api/overview/password"
+    path: "/docs/reference/latest/api/overview/password.html"
   - title: CRUD
-    path: "/docs/reference/latest/api/overview/crud"
+    path: "/docs/reference/latest/api/overview/crud.html"
   - title: HTTP Basics
-    path: "/docs/reference/latest/api/overview/http"
+    path: "/docs/reference/latest/api/overview/http.html"
   - title: Json Convention
-    path: "/docs/reference/latest/api/overview/json"
+    path: "/docs/reference/latest/api/overview/json.html"
   - title: Querying
-    path: "/docs/reference/latest/api/overview/query"
+    path: "/docs/reference/latest/api/overview/query.html"
   - title: Bulk Querying
-    path: "/docs/reference/latest/api/overview/bulk_query"
+    path: "/docs/reference/latest/api/overview/bulk_query.html"
   - title: Filtering
-    path: "/docs/reference/latest/api/overview/filtering"
+    path: "/docs/reference/latest/api/overview/filtering.html"
   - title: Pagination
-    path: "/docs/reference/latest/api/overview/pagination"
+    path: "/docs/reference/latest/api/overview/pagination.html"
   - title: Version History
-    path: "/docs/reference/latest/api/overview/versioning"
+    path: "/docs/reference/latest/api/overview/versioning.html"
 
 - title: Reference
   children:
   - title: Primary Collections
-    path: "/docs/reference/latest/api/reference/collections"
+    path: "/docs/reference/latest/api/reference/collections.html"
   - title: Actions
-    path: "/docs/reference/latest/api/reference/actions"
+    path: "/docs/reference/latest/api/reference/actions.html"
   - title: Alert Management
-    path: "/docs/reference/latest/api/reference/alerts"
+    path: "/docs/reference/latest/api/reference/alerts.html"
   - title: Authentication Management
-    path: "/docs/reference/latest/api/reference/authentications"
+    path: "/docs/reference/latest/api/reference/authentications.html"
   - title: Automate Model
-    path: "/docs/reference/latest/api/reference/automate"
+    path: "/docs/reference/latest/api/reference/automate.html"
   - title: Automate Domains
-    path: "/docs/reference/latest/api/reference/automate_domains"
+    path: "/docs/reference/latest/api/reference/automate_domains.html"
   - title: Automation Requests
-    path: "/docs/reference/latest/api/reference/automation_requests"
+    path: "/docs/reference/latest/api/reference/automation_requests.html"
   - title: Automate Workspaces
-    path: "/docs/reference/latest/api/reference/automate_workspaces"
+    path: "/docs/reference/latest/api/reference/automate_workspaces.html"
   - title: Categories & Tags
-    path: "/docs/reference/latest/api/reference/categories_tags"
+    path: "/docs/reference/latest/api/reference/categories_tags.html"
   - title: Chargebacks & Rates
-    path: "/docs/reference/latest/api/reference/chargebacks_rates"
+    path: "/docs/reference/latest/api/reference/chargebacks_rates.html"
   - title: Cloud Volumes
-    path: "/docs/reference/latest/api/reference/cloud_volumes"
+    path: "/docs/reference/latest/api/reference/cloud_volumes.html"
   - title: Conditions
-    path: "/docs/reference/latest/api/reference/conditions"
+    path: "/docs/reference/latest/api/reference/conditions.html"
   - title: Configuration Script Source Management
-    path: "/docs/reference/latest/api/reference/configuration_script_sources"
+    path: "/docs/reference/latest/api/reference/configuration_script_sources.html"
   - title: Conversion Hosts
-    path: "/docs/reference/latest/api/reference/conversion_hosts"
+    path: "/docs/reference/latest/api/reference/conversion_hosts.html"
   - title: Custom Actions
-    path: "/docs/reference/latest/api/reference/custom_actions"
+    path: "/docs/reference/latest/api/reference/custom_actions.html"
   - title: Custom Attributes
-    path: "/docs/reference/latest/api/reference/custom_attributes"
+    path: "/docs/reference/latest/api/reference/custom_attributes.html"
   - title: Custom Button Management
-    path: "/docs/reference/latest/api/reference/custom_buttons"
+    path: "/docs/reference/latest/api/reference/custom_buttons.html"
   - title: Event Streams
-    path: "/docs/reference/latest/api/reference/event_streams"
+    path: "/docs/reference/latest/api/reference/event_streams.html"
   - title: Flavor Management
-    path: "/docs/reference/latest/api/reference/flavors"
+    path: "/docs/reference/latest/api/reference/flavors.html"
   - title: Generic Object Management
-    path: "/docs/reference/latest/api/reference/generic_objects"
+    path: "/docs/reference/latest/api/reference/generic_objects.html"
   - title: Group Management
-    path: "/docs/reference/latest/api/reference/groups"
+    path: "/docs/reference/latest/api/reference/groups.html"
   - title: Host Management
-    path: "/docs/reference/latest/api/reference/hosts"
+    path: "/docs/reference/latest/api/reference/hosts.html"
   - title: Instance Management
-    path: "/docs/reference/latest/api/reference/instances"
+    path: "/docs/reference/latest/api/reference/instances.html"
   - title: Metric Rollups
-    path: "/docs/reference/latest/api/reference/metric_rollups"
+    path: "/docs/reference/latest/api/reference/metric_rollups.html"
   - title: Network Routers
-    path: "/docs/reference/latest/api/reference/network_routers"
+    path: "/docs/reference/latest/api/reference/network_routers.html"
   - title: Notifications Support
-    path: "/docs/reference/latest/api/reference/notifications"
+    path: "/docs/reference/latest/api/reference/notifications.html"
   - title: Orchestration Support
-    path: "/docs/reference/latest/api/reference/orchestration"
+    path: "/docs/reference/latest/api/reference/orchestration.html"
   - title: Physical Servers
-    path: "/docs/reference/latest/api/reference/physical_servers"
+    path: "/docs/reference/latest/api/reference/physical_servers.html"
   - title: Picture Management
-    path: "/docs/reference/latest/api/reference/pictures"
+    path: "/docs/reference/latest/api/reference/pictures.html"
   - title: Policies & Policy Profiles
-    path: "/docs/reference/latest/api/reference/policies"
+    path: "/docs/reference/latest/api/reference/policies.html"
   - title: Policy Collections
-    path: "/docs/reference/latest/api/reference/policy_collections"
+    path: "/docs/reference/latest/api/reference/policy_collections.html"
   - title: Provider Support
-    path: "/docs/reference/latest/api/reference/providers"
+    path: "/docs/reference/latest/api/reference/providers.html"
   - title: Provision Requests
-    path: "/docs/reference/latest/api/reference/provision_requests"
+    path: "/docs/reference/latest/api/reference/provision_requests.html"
   - title: Request Support
-    path: "/docs/reference/latest/api/reference/requests"
+    path: "/docs/reference/latest/api/reference/requests.html"
   - title: Reports Support
-    path: "/docs/reference/latest/api/reference/reports"
+    path: "/docs/reference/latest/api/reference/reports.html"
   - title: Role Management
-    path: "/docs/reference/latest/api/reference/roles"
+    path: "/docs/reference/latest/api/reference/roles.html"
   - title: Security Groups
-    path: "/docs/reference/latest/api/reference/security_groups"
+    path: "/docs/reference/latest/api/reference/security_groups.html"
   - title: Service Management
-    path: "/docs/reference/latest/api/reference/services"
+    path: "/docs/reference/latest/api/reference/services.html"
   - title: Service Queries
-    path: "/docs/reference/latest/api/reference/service_queries"
+    path: "/docs/reference/latest/api/reference/service_queries.html"
   - title: Service Custom Actions
-    path: "/docs/reference/latest/api/reference/service_custom_actions"
+    path: "/docs/reference/latest/api/reference/service_custom_actions.html"
   - title: Service Dialogs
-    path: "/docs/reference/latest/api/reference/service_dialogs"
+    path: "/docs/reference/latest/api/reference/service_dialogs.html"
   - title: Service Orders (Shopping Carts)
-    path: "/docs/reference/latest/api/reference/service_orders"
+    path: "/docs/reference/latest/api/reference/service_orders.html"
   - title: Setting Ownership
-    path: "/docs/reference/latest/api/reference/ownership"
+    path: "/docs/reference/latest/api/reference/ownership.html"
   - title: Settings Management
-    path: "/docs/reference/latest/api/reference/settings"
+    path: "/docs/reference/latest/api/reference/settings.html"
   - title: Snapshot Management
-    path: "/docs/reference/latest/api/reference/snapshots"
+    path: "/docs/reference/latest/api/reference/snapshots.html"
   - title: Tags & Tagging
-    path: "/docs/reference/latest/api/reference/tagging"
+    path: "/docs/reference/latest/api/reference/tagging.html"
   - title: Tasks
-    path: "/docs/reference/latest/api/reference/tasks"
+    path: "/docs/reference/latest/api/reference/tasks.html"
   - title: Tenant Management
-    path: "/docs/reference/latest/api/reference/tenants"
+    path: "/docs/reference/latest/api/reference/tenants.html"
   - title: Transformation Mappings
-    path: "/docs/reference/latest/api/reference/transformation_mappings"
+    path: "/docs/reference/latest/api/reference/transformation_mappings.html"
   - title: User Management
-    path: "/docs/reference/latest/api/reference/users"
+    path: "/docs/reference/latest/api/reference/users.html"
   - title: VM Management
-    path: "/docs/reference/latest/api/reference/vms"
+    path: "/docs/reference/latest/api/reference/vms.html"
 
 - title: Appendices
   children:
   - title: Quick Reference
-    path: "/docs/reference/latest/api/appendices/quick_reference"
+    path: "/docs/reference/latest/api/appendices/quick_reference.html"
   - title: Collection Metadata
-    path: "/docs/reference/latest/api/appendices/collection_metadata"
+    path: "/docs/reference/latest/api/appendices/collection_metadata.html"
   - title: Resource Attributes
-    path: "/docs/reference/latest/api/appendices/resource_attributes"
+    path: "/docs/reference/latest/api/appendices/resource_attributes.html"
   - title: Provider Types
-    path: "/docs/reference/latest/api/appendices/provider_types"
+    path: "/docs/reference/latest/api/appendices/provider_types.html"
   - title: Provision Request Supported Attributes
-    path: "/docs/reference/latest/api/appendices/provision_attributes"
+    path: "/docs/reference/latest/api/appendices/provision_attributes.html"
   - title: Advanced Provisioning Attributes
-    path: "/docs/reference/latest/api/appendices/advanced_provisioning"
+    path: "/docs/reference/latest/api/appendices/advanced_provisioning.html"
   - title: SOAP to REST Mapping
-    path: "/docs/reference/latest/api/appendices/soap_to_rest"
+    path: "/docs/reference/latest/api/appendices/soap_to_rest.html"
   - title: Deprecated Types
-    path: "/docs/reference/latest/api/appendices/deprecated_types"
+    path: "/docs/reference/latest/api/appendices/deprecated_types.html"
   - title: Deprecated Resource Attributes
-    path: "/docs/reference/latest/api/appendices/deprecated_resource_attributes"
+    path: "/docs/reference/latest/api/appendices/deprecated_resource_attributes.html"
 
 
 
@@ -156,114 +156,114 @@
   - title: Foundation
     children:
     - title: Querying Examples
-      path: "/docs/reference/latest/api/examples/queries"
+      path: "/docs/reference/latest/api/examples/queries.html"
     - title: Paging Queries
-      path: "/docs/reference/latest/api/examples/paging_queries"
+      path: "/docs/reference/latest/api/examples/paging_queries.html"
   - title: Automation Requests
     children:
     - title: Create an Automation Request
-      path: "/docs/reference/latest/api/examples/automation_request"
+      path: "/docs/reference/latest/api/examples/automation_request.html"
     - title: Create multiple Automation Requests
-      path: "/docs/reference/latest/api/examples/automation_requests"
+      path: "/docs/reference/latest/api/examples/automation_requests.html"
   - title: Providers
     children:
     - title: Create a Provider
-      path: "/docs/reference/latest/api/examples/create_provider"
+      path: "/docs/reference/latest/api/examples/create_provider.html"
     - title: Create a Provider with multiple credentials
-      path: "/docs/reference/latest/api/examples/create_provider_compound_credentials"
+      path: "/docs/reference/latest/api/examples/create_provider_compound_credentials.html"
     - title: Update a Provider
-      path: "/docs/reference/latest/api/examples/update_provider"
+      path: "/docs/reference/latest/api/examples/update_provider.html"
     - title: Refresh Provider
-      path: "/docs/reference/latest/api/examples/refresh_provider"
+      path: "/docs/reference/latest/api/examples/refresh_provider.html"
     - title: Delete Provider
-      path: "/docs/reference/latest/api/examples/delete_provider"
+      path: "/docs/reference/latest/api/examples/delete_provider.html"
   - title: Provisioning Requests
     children:
     - title: Create a Provision Request
-      path: "/docs/reference/latest/api/examples/provision_request"
+      path: "/docs/reference/latest/api/examples/provision_request.html"
     - title: Create multliple Provision Requests
-      path: "/docs/reference/latest/api/examples/provision_requests"
+      path: "/docs/reference/latest/api/examples/provision_requests.html"
   - title: Service Catalogs
     children:
     - title: Add a Service Catalog
-      path: "/docs/reference/latest/api/examples/add_service_catalog"
+      path: "/docs/reference/latest/api/examples/add_service_catalog.html"
     - title: Add multiple Service Catalogs
-      path: "/docs/reference/latest/api/examples/add_service_catalogs"
+      path: "/docs/reference/latest/api/examples/add_service_catalogs.html"
     - title: Edit a Service Catalog
-      path: "/docs/reference/latest/api/examples/edit_service_catalog"
+      path: "/docs/reference/latest/api/examples/edit_service_catalog.html"
     - title: Edit Service Catalogs
-      path: "/docs/reference/latest/api/examples/edit_service_catalogs"
+      path: "/docs/reference/latest/api/examples/edit_service_catalogs.html"
     - title: Assign Service Templates
-      path: "/docs/reference/latest/api/examples/assign_service_templates"
+      path: "/docs/reference/latest/api/examples/assign_service_templates.html"
     - title: Unassign Service Templates
-      path: "/docs/reference/latest/api/examples/unassign_service_templates"
+      path: "/docs/reference/latest/api/examples/unassign_service_templates.html"
     - title: Delete Service Catalogs
-      path: "/docs/reference/latest/api/examples/delete_service_catalogs"
+      path: "/docs/reference/latest/api/examples/delete_service_catalogs.html"
   - title: Service Templates
     children:
     - title: Edit a Service Template
-      path: "/docs/reference/latest/api/examples/edit_service_template"
+      path: "/docs/reference/latest/api/examples/edit_service_template.html"
     - title: Edit Service Templates
-      path: "/docs/reference/latest/api/examples/edit_service_templates"
+      path: "/docs/reference/latest/api/examples/edit_service_templates.html"
     - title: Delete Service Templates
-      path: "/docs/reference/latest/api/examples/delete_service_templates"
+      path: "/docs/reference/latest/api/examples/delete_service_templates.html"
   - title: Services
     children:
     - title: Order a Service
-      path: "/docs/reference/latest/api/examples/order_service"
+      path: "/docs/reference/latest/api/examples/order_service.html"
     - title: Order multiple Services
-      path: "/docs/reference/latest/api/examples/order_services"
+      path: "/docs/reference/latest/api/examples/order_services.html"
     - title: Edit a Service
-      path: "/docs/reference/latest/api/examples/edit_service"
+      path: "/docs/reference/latest/api/examples/edit_service.html"
     - title: Edit Service via PATCH
-      path: "/docs/reference/latest/api/examples/edit_service_via_patch"
+      path: "/docs/reference/latest/api/examples/edit_service_via_patch.html"
     - title: Edit Service via PUT
-      path: "/docs/reference/latest/api/examples/edit_service_via_put"
+      path: "/docs/reference/latest/api/examples/edit_service_via_put.html"
     - title: Edit Services
-      path: "/docs/reference/latest/api/examples/edit_services"
+      path: "/docs/reference/latest/api/examples/edit_services.html"
     - title: Reconfigure Service
-      path: "/docs/reference/latest/api/examples/reconfigure_service"
+      path: "/docs/reference/latest/api/examples/reconfigure_service.html"
     - title: Refresh Service Template Dialog Fields
-      path: "/docs/reference/latest/api/examples/refresh_dialog_fields"
+      path: "/docs/reference/latest/api/examples/refresh_dialog_fields.html"
     - title: Refresh Service Dialog Fields
-      path: "/docs/reference/latest/api/examples/refresh_service_dialog_fields"
+      path: "/docs/reference/latest/api/examples/refresh_service_dialog_fields.html"
     - title: Retire a Service
-      path: "/docs/reference/latest/api/examples/retire_service"
+      path: "/docs/reference/latest/api/examples/retire_service.html"
     - title: Retire multiple Services
-      path: "/docs/reference/latest/api/examples/retire_services"
+      path: "/docs/reference/latest/api/examples/retire_services.html"
     - title: Trigger a Custom Action on a Service
-      path: "/docs/reference/latest/api/examples/custom_action_service"
+      path: "/docs/reference/latest/api/examples/custom_action_service.html"
     - title: Delete Services
-      path: "/docs/reference/latest/api/examples/delete_services"
+      path: "/docs/reference/latest/api/examples/delete_services.html"
   - title: VM Management
     children:
     - title: Start a VM
-      path: "/docs/reference/latest/api/examples/start_vm"
+      path: "/docs/reference/latest/api/examples/start_vm.html"
     - title: Stop a VM
-      path: "/docs/reference/latest/api/examples/stop_vm"
+      path: "/docs/reference/latest/api/examples/stop_vm.html"
     - title: Suspend a VM
-      path: "/docs/reference/latest/api/examples/suspend_vm"
+      path: "/docs/reference/latest/api/examples/suspend_vm.html"
     - title: Scan a VM
-      path: "/docs/reference/latest/api/examples/scan_vm"
+      path: "/docs/reference/latest/api/examples/scan_vm.html"
     - title: Set owner of a VM
-      path: "/docs/reference/latest/api/examples/set_owner_vm"
+      path: "/docs/reference/latest/api/examples/set_owner_vm.html"
     - title: Add event to a VM
-      path: "/docs/reference/latest/api/examples/add_event_vm"
+      path: "/docs/reference/latest/api/examples/add_event_vm.html"
     - title: Add lifecycle event to a VM
-      path: "/docs/reference/latest/api/examples/add_lifecycle_event_vm"
+      path: "/docs/reference/latest/api/examples/add_lifecycle_event_vm.html"
     - title: Delete a VM
-      path: "/docs/reference/latest/api/examples/delete_vm"
+      path: "/docs/reference/latest/api/examples/delete_vm.html"
   - title: Tag Management
     children:
     - title: Assign Tags
-      path: "/docs/reference/latest/api/examples/assign_tags"
+      path: "/docs/reference/latest/api/examples/assign_tags.html"
     - title: Assign Tags to Service Template
-      path: "/docs/reference/latest/api/examples/assign_tags_to_service_template"
+      path: "/docs/reference/latest/api/examples/assign_tags_to_service_template.html"
     - title: Unassign Tags
-      path: "/docs/reference/latest/api/examples/unassign_tags"
+      path: "/docs/reference/latest/api/examples/unassign_tags.html"
     - title: Unassign Tags from a Service Template
-      path: "/docs/reference/latest/api/examples/unassign_tags_from_service_template"
+      path: "/docs/reference/latest/api/examples/unassign_tags_from_service_template.html"
   - title: Usage Flows
     children:
     - title: Compliance Policy Flow
-      path: "/docs/reference/latest/api/examples/compliance_policy_flow"
+      path: "/docs/reference/latest/api/examples/compliance_policy_flow.html"
