@@ -89,7 +89,7 @@ layout: page
             <th>PRs Open when Sprint Ended</th>
             <th>Issues Open when Sprint Ended</th>
         </tr>
-        {% for repo in sprint %}
+        {% for repo in github_data %}
             {% if repo.prs.counts.created > 0 or repo.prs.counts.merged > 0 or repo.prs.counts.closed > 0 or repo.issues.counts.created > 0 or repo.issues.counts.closed > 0 %}
                 {% continue %}
             {% endif %}
