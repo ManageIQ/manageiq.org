@@ -26,4 +26,17 @@ class RefVersionsTest < Minitest::Test
     assert_equal "latest", paths.keys.first
     assert_equal "euwe",   paths.keys.last
   end
+
+  def test_canonical_path_for_with_ref_doc
+    path = Miq::RefVersions.instance.canonical_path_for("/docs/reference/latest/installing_on_google_compute_engine/index.html")
+    assert_equal "/docs/reference/latest/installing_on_google_compute_engine/index.html", path
+
+    path = Miq::RefVersions.instance.canonical_path_for("/docs/reference/jansa/installing_on_google_compute_engine/index.html")
+    assert_equal "/docs/reference/latest/installing_on_google_compute_engine/index.html", path
+  end
+
+  def test_canonical_path_for_with_legacy_ref_doc
+    path = Miq::RefVersions.instance.canonical_path_for("/docs/reference/ivanchuk/doc-Installing_on_Google_Compute_Engine/miq/index.html")
+    assert_equal "/docs/reference/latest/installing_on_google_compute_engine/index.html", path
+  end
 end

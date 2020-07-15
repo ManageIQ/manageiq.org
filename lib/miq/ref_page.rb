@@ -31,6 +31,7 @@ module Miq
       data['branch'] = @branch || data['doc_branch']
       data['legacy'] = @legacy
       data['branch_paths'] = RefVersions.instance.paths_for(@source)
+      data['canonical_url'] = RefVersions.instance.canonical_path_for(@source)
     end
 
     # Only render with liquid if markdown file

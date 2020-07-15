@@ -21,7 +21,12 @@ module Miq
 
     def canonical_path_for(path)
       recent_path = self[path].first
-      path_version(recent_path) == "latest" ? recent_path : nil
+
+      # TODO: This case should not happen, but some docs do not conform to versioned docs (e.g. /api/)
+      #       Remove this when all docs conform.
+      recent_path ||= path.to_s.sub(%r{/docs/reference/(?:\w+)/}, "/docs/reference/latest/")
+
+      recent_path
     end
 
     private
