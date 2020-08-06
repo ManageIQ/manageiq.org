@@ -9,6 +9,7 @@ gem "jekyll-coffeescript"
 gem "jekyll-paginate"
 gem "jekyll-sitemap"
 gem "jemoji"
+gem "kramdown-parser-gfm"
 gem "mini_racer"
 gem "thor"
 
