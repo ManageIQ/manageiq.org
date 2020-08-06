@@ -104,6 +104,10 @@ integration:
 reference:
   title: Reference
   children:
+    - title: Capabilities Matrix
+      path: "/docs/reference/latest/capabilities_matrix/index.html"
+      desc: Capabilities across Providers
+
     - title: ManageIQ REST API
       path: "/docs/reference/latest/rest_api/index.html"
       desc: Systems management
