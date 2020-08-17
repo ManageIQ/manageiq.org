@@ -1,15 +1,15 @@
 stable:
   type: stable
-  name: Ivanchuk-6
-  tag: ivanchuk-6
-  filename: ivanchuk-6
+  name: Ivanchuk-7
+  tag: ivanchuk-7
+  filename: ivanchuk-7
   branch: ivanchuk
 
 prerelease:
   type: prerelease
-  name: Jansa-1-rc1
-  tag: jansa-1-rc1
-  filename: jansa-1-rc1
+  name: Jansa-1-rc2
+  tag: jansa-1-rc2
+  filename: jansa-1-rc2
   branch: jansa
 
 devel:
