@@ -84,7 +84,7 @@ module Miq
     desc "site", "Build Jekyll site"
     def site
       say "Building Jekyll site", :green
-      Site.build
+      Site.build options[:trace]
     end
 
     desc "reference", "Build Reference Docs"
@@ -138,6 +138,7 @@ module Miq
     subcommand "update", Update
 
     desc "build <all|guides|site|reference>", "Build or process an aspect of the site"
+    option :trace, :type => :boolean, :default => false
     subcommand "build", Build
 
     desc "generate lwimiq YYYY-MM-DD", "Generate a new blog post"

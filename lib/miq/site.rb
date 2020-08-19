@@ -8,8 +8,8 @@ module Miq
       new.update
     end
 
-    def self.build
-      new.build
+    def self.build(trace = false)
+      new(trace).build
     end
 
     def self.serve
@@ -18,7 +18,7 @@ module Miq
 
     attr_reader :source_dir, :dest_dir, :branch
 
-    def initialize
+    def initialize(trace = false)
       # Where is the site directory?
       @source_dir = Miq.site_dir
 
@@ -27,6 +27,9 @@ module Miq
 
       # Which branch to pull (useful for development)
       @branch     = ENV["MIQ_SITE_BRANCH"]  || `git rev-parse --abbrev-ref HEAD`
+
+      # Tracing enabled?
+      @trace      = trace
     end
 
     def reset
@@ -38,7 +41,9 @@ module Miq
     end
 
     def build
-      shell "#{bundler} exec jekyll build -s #{source_dir} -d #{dest_dir}", clean: true
+      cmd  = "#{bundler} exec jekyll build -s #{source_dir} -d #{dest_dir}"
+      cmd += " --trace" if @trace
+      shell cmd, clean: true
     end
 
     def serve
