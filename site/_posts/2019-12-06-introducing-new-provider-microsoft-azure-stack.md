@@ -67,4 +67,4 @@ ManageIQ](https://www.manageiq.org/download/) and connect your Microsoft Azure
 Stack to test the provider yourself.
 
 To find out more about the provider, get in touch with [XLAB
-Steampunk](https://steampunk.si) at steampunk@xlab.si.
+Steampunk](https://steampunk.si/redhat-integrations/) at steampunk@xlab.si.
