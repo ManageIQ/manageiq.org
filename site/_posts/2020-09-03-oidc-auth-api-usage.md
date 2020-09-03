@@ -26,7 +26,7 @@ All the content in this blog post is only relevant when ManageIQ is configured f
 ---------------------------------------------------------------------
 
 ManageIQ uses Apache’s <em>mod_auth_openidc</em> module to support OpenID-Connect authentication.
-The instructions for configuring Apache’s <em>mod_auth_openidc</em> for ManageIQ	differ for the
+The instructions for configuring Apache’s <em>mod_auth_openidc</em> for ManageIQ differ for the
 appliance deployment and the podified (Kubernetes) deployment.
 
   + The instructions for configuring OpenID-Connect for a ManageIQ appliance can be found here:
@@ -55,8 +55,9 @@ When configured for OpenID-Connect there are three different authentication mode
 ---------------------------------------------------------------------
 
 The below examples are BASH(1) shell script commands. They assume the
-*JQ(1)*  <em>Command-line JSON processor</em> is available and the following
-variable be defined:
+*JQ(1)*  <em>Command-line JSON processor</em> is available, the client
+has been created in Keycloak with the realm name miq and the following
+variables are defined:
 
 ```bash
 # The user to be authenticated
@@ -93,7 +94,7 @@ This example details the steps for using a Java Web Token (JWT) obtained from th
 The steps are:
 1. Request the JWT Token from the OpenID-Connect provider
 1. Retrieve the access_token from the JWT
-1. (OPTIONAL) Use the access_token to do Introspection
+1. (OPTIONAL) Use the access_token to do an introspection to get the details for the user associated with the JWT
 1. Accessing MiQ API using the access_token in the header
 
 The bash example commands:
@@ -107,9 +108,8 @@ The bash example commands:
    # Step 2: Retrieve the access_token from the JWT
    access_token=$(echo $jwt_token | jq -r '.access_token')
 
-   # Step 3 (OPTIONAL) Use the access_token to do Introspection
+   # Step 3 (OPTIONAL) Use the access_token to do an introspection to get the details for the user associated with the JWT
    curl -k -L --user ${oidc_client_id}:${oidc_client_secret} -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "token=${access_token}" ${oidc_auth_introspection_endpoint}
-
 
    # Step 4: Accessing MiQ API using the access_token in the header
    curl -L -vvv -k -X GET -H "Authorization: Bearer ${access_token}" https://${miq_server_name}/api/users | jq
@@ -124,7 +124,6 @@ This example details the steps for using a ManageIQ API Auth Token for a non-adm
 The steps are:
 1. Request the JWT Token from the OpenID-Connect provider
 1. Retrieve the access_token from the JWT
-1. (OPTIONAL) Use the access_token to do Introspection
 1. Request an MiQ API Authentication Token using the access_token in the header:
 1. Retrieve the API authentication token from the result
 1. Accessing MiQ API Using the MiQ API Auth Token
@@ -140,16 +139,13 @@ The bash example commands:
    # Step 2: Retrieve the access_token from the JWT
    access_token=$(echo $jwt_token | jq -r '.access_token')
 
-   # Step 3: (OPTIONAL) Use the access_token to do Introspection
-   curl -k -L --user ${oidc_client_id}:${oidc_client_secret} -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "token=${access_token}" ${oidc_auth_introspection_endpoint}
-
-   # Step 4: Request an MiQ API Authentication Token:
+   # Step 3: Request an MiQ API Authentication Token:
    result=$(curl -L -vvv -k -X GET -H "Authorization: Bearer ${access_token}" https://${miq_server_name}/api/auth)
 
-   # Step 5: Retrieve the API authentication token from the result
+   # Step 4: Retrieve the API authentication token from the result
    api_auth_token=`echo $result | jq -r '.auth_token'`
 
-   # Step 6: Accessing MiQ API Using the MiQ API Auth Token:
+   # Step 5: Accessing MiQ API Using the MiQ API Auth Token:
    curl -L -vvv -k -X GET  -H "Accept: application/json" -H "X-Auth-Token: ${api_auth_token}" https://${miq_server_name}/api/users | jq
 
 ```
@@ -158,8 +154,11 @@ The bash example commands:
 ---------------------------------------------------------------------
 
 The ManageIQ OpenID-Connect is configured to treat the admin user as a special case.
-The admin user is not authenticated by the OpenID-Connect provider. The admin user is
-the only mode where basic authentication is supported.
+The admin user is not authenticated by the OpenID-Connect provider. 
+
+More examples of basic and token based auth in the API can be found in the [REST API Authentication Documentation]( https://www.manageiq.org/docs/reference/latest/api/overview/auth.html)
+Keep in mind that, when configured for OpenID-Connect authentication, the admin user is the only user where basic authentication is supported.
+
 
 The bash example command:
 
