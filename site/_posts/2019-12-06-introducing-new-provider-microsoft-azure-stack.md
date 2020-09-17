@@ -11,7 +11,7 @@ With the release of [ManageIQ
 Ivanchuk](https://www.manageiq.org/blog/2019/09/manageiq-ivanchuk-ga-announcement/),
 we are introducing new integrated provider: [Microsoft Azure
 Stack](https://azure.microsoft.com/en-us/overview/azure-stack/). Integration
-was developed by [XLAB Steampunk](https://steampunk.si/), a trusted Red Hat
+was developed by [XLAB Steampunk](https://steampunk.si/redhat-integrations/), a trusted Red Hat
 partner specialized in integrating third-party technologies with Red Hat
 CloudForms and Red Hat Ansible Automation Platform.
 
