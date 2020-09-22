@@ -109,7 +109,7 @@ The bash example commands:
    access_token=$(echo $jwt_token | jq -r '.access_token')
 
    # Step 3 (OPTIONAL) Use the access_token to do an introspection to get the details for the user associated with the JWT
-   curl -k -L --user ${oidc_client_id}:${oidc_client_secret} -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "token=${access_token}" ${oidc_auth_introspection_endpoint}
+   curl -k -L --user ${oidc_client_id}:${oidc_client_secret} -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "token=${access_token}" ${oidc_auth_introspection_endpoint} | jq
 
    # Step 4: Accessing MiQ API using the access_token in the header
    curl -L -vvv -k -X GET -H "Authorization: Bearer ${access_token}" https://${miq_server_name}/api/users | jq
