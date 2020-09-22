@@ -103,7 +103,7 @@ The bash example commands:
 # Accessing the ManageIQ API with the access_token from a JWT Token
 
    # Step 1: Request the JWT Token from the OpenID-Connect provider
-   jwt_token=$(curl -k -L --user ${user}:${password} -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "grant_type=password" -d "client_id=${oidc_client_id}" -d "client_secret=${oidc_client_secret}" -d "username=${user}" -d "password=${password}" ${oidc_provider_token_endpoint} )
+   jwt_token=$(curl -k -L --user ${user}:${password} -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "grant_type=password" -d "client_id=${oidc_client_id}" -d "client_secret=${oidc_client_secret}" -d "username=${user}" -d "password=${password}" -d "scope=openid" ${oidc_provider_token_endpoint} )
 
    # Step 2: Retrieve the access_token from the JWT
    access_token=$(echo $jwt_token | jq -r '.access_token')
@@ -134,7 +134,7 @@ The bash example commands:
 # Accessing the ManageIQ API using a ManageIQ API Auth Token
 
    # Step 1: Request the JWT Token from the OpenID-Connect provider
-   jwt_token=$(curl -k -L --user ${user}:${password} -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "grant_type=password" -d "client_id=${oidc_client_id}" -d "client_secret=${oidc_client_secret}" -d "username=${user}" -d "password=${password}" ${oidc_provider_token_endpoint} )
+   jwt_token=$(curl -k -L --user ${user}:${password} -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "grant_type=password" -d "client_id=${oidc_client_id}" -d "client_secret=${oidc_client_secret}" -d "username=${user}" -d "password=${password}" -d "scope=openid" ${oidc_provider_token_endpoint} )
 
    # Step 2: Retrieve the access_token from the JWT
    access_token=$(echo $jwt_token | jq -r '.access_token')
