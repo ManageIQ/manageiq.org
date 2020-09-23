@@ -7,7 +7,7 @@ comments: true
 published: true
 ---
 
-On behalf of the ManageIQ team, I'm happy to announce the release of **ManageIQ Jansa**!  This release is named after Czech chess grandmaster [Vlastimil Jansa](https://en.wikipedia.org/wiki/Vlastimil_Jansa).  You can download the Jansa-1 release on our [downloads page](/downloads).
+On behalf of the ManageIQ team, I'm happy to announce the release of **ManageIQ Jansa**!  This release is named after Czech chess grandmaster [Vlastimil Jansa](https://en.wikipedia.org/wiki/Vlastimil_Jansa).  You can download the Jansa-1 release on our [downloads page](/download).
 
 Here are the highlights of the [Jansa release](https://github.com/orgs/ManageIQ/projects/13#column-7337345):
 
@@ -33,4 +33,4 @@ Here are the highlights of the [Jansa release](https://github.com/orgs/ManageIQ/
 
 * **Account lockout policy** - ManageIQ now supports a basic account lockout policy for non-external-auth based logins.  This feature is designed to prevent brute-force attacks on a user's login.  By default, a user has 3 attempts to log in, and if all attempts are used they will be locked out for 2 minutes.  This lockout policy is configurable via Advanced Settings, and can be disabled if desired.
 
-There are many more changes that would be impossible to detail in a single blog post.  Many thanks goes to all of the community members for their contributions!  We've already started on the next round of features for the ManageIQ Kasparov release.  If you're interested in getting involved, check out our [roadmap](/roadmap), check out our [community page](/community), ask questions in our [talk forum](https://talk.manageiq.org), or chat with us in [Gitter](https://gitter.im/ManageIQ/manageiq).  We look forward to hearing from you!
+There are many more changes that would be impossible to detail in a single blog post.  Many thanks goes to all of the community members for their contributions!  We've already started on the next round of features for the ManageIQ Kasparov release.  If you're interested in getting involved, check out our [roadmap](/roadmap), check out our [community page](/community), ask questions in our [talk forum](http://talk.manageiq.org), or chat with us in [Gitter](https://gitter.im/ManageIQ/manageiq).  We look forward to hearing from you!
