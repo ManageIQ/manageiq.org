@@ -30,9 +30,9 @@ The examples were generated using OpenShift.
 # Configure ManageIQ For OpenID-Connect Authentication
 ---------------------------------------------------------------------
 
-Currently Containerized ManageIQ only support the OpenID-Connect authentication configuration.
+Currently Containerized ManageIQ only supports the OpenID-Connect authentication configuration.
 
-ManageIQ uses Apache’s <em>mod_auth_openidc</em> module to supports OpenID-Connect authentication.
+ManageIQ uses Apache’s <em>mod_auth_openidc</em> module to support OpenID-Connect authentication.
 The instructions for configuring Apache’s <em>mod_auth_openidc</em> for ManageIQ differ for the
 appliance deployment and the podified (Kubernetes) deployment.
 
