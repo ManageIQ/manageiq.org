@@ -1,6 +1,7 @@
 ---
 title: "Troubleshooting OpenID-Connect Authentication on Containers"
-author: jvlcek date: 2020-09-21
+author: jvlcek
+date: 2020-09-21
 comments: true
 published: true
 tags: tutorials
