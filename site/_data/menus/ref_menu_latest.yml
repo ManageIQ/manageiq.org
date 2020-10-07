@@ -6,6 +6,9 @@ installation:
     - title: Amazon Web Services (AWS)
       path: "/docs/reference/latest/installing_on_aws/index.html"
       desc: "How to install and configure the ManageIQ Management Engine appliance on Amazon Web Services (AWS)"
+    - title: Kubernetes
+      path: "/docs/reference/latest/installing_on_kubernetes/index.html"
+      desc: "How to install and configure ManageIQ on Kubernetes"
     - title: Microsoft Azure
       path: "/docs/reference/latest/installing_on_microsoft_azure/index.html"
       desc: "How to install and configure the ManageIQ Management Engine appliance on Microsoft Azure"
