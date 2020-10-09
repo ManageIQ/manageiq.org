@@ -18,9 +18,10 @@ All the content in this blog post is only relevant when ManageIQ is configured f
 - [**Using The ManageIQ REST API**](#using-the-manageiq-rest-api)
 - [**The OpenID-Connect REST API Authentication Modes**](#the-openid-connect-rest-api-authentication-modes)
 - [**Examples**](#examples)
-  - [Example: Using a JWT Token](#example:-using-a-jwt-token)
-  - [Example: Using a ManageIQ API Auth Token](#example:-using-a-manageiq-api-auth-token)
-  - [Example: Using Basic Auth For Admin](#example:-using-basic-auth-for-admin)
+  - [Example Variables](#example-variables)
+  - [Example Using a JWT Token](#example-using-a-jwt-token)
+  - [Example Using a ManageIQ API Auth Token](#example-using-a-manageiq-api-auth-token)
+  - [Example Using Basic Auth For Admin](#example-using-basic-auth-for-admin)
 
 # Configure ManageIQ For OpenID-Connect Authentication
 ---------------------------------------------------------------------
@@ -56,8 +57,12 @@ When configured for OpenID-Connect there are three different authentication mode
 
 The below examples are BASH(1) shell script commands. They assume the
 *JQ(1)*  <em>Command-line JSON processor</em> is available, the client
-has been created in Keycloak with the realm name miq and the following
-variables are defined:
+has been created in Keycloak with the realm name miq 
+
+## Example Variables
+---------------------------------------------------------------------
+
+The following variables must be defined for each of the examples:
 
 ```bash
 # The user to be authenticated
@@ -80,13 +85,39 @@ oidc_client_id="my-oidc-client"
 
 # OIDCOauthIntrospectionEndpoint from the OpenID-Connect configuration
 oidc_auth_introspection_endpoint="https://keycloak.example.com/auth/realms/miq/protocol/openid-connect/token/introspect"
+```
 
-# OIDCProviderTokenEndpoint from the OpenID-Connect configurationt
-# Sometimes OIDCOauthIntrospectionEndpoint without the trailing "introspect"
+  * The value of **oidc_provider_token_endpoint** varies based on the configuration and the OpenID-Connect Provider being used. 
+
+  * When using IBM's Identiy Access Management (IAM) for the OpenID-Connect Provider, the value for **oidc_provider_token_endpoint** will be the value of OIDCProviderTokenEndpoint from the OpenID-Connect configuration with **token** replace with **identitytoken**.
+
+  * **e.g.: Using IBM's Identiy Access Management (IAM) with the following OpenID-Connect configuration:**
+
+```bash
+OIDCProviderTokenEndpoint https://cp-console.apps.joevocplusmcmim.cp.fyre.ibm.com/idprovider/v1/auth/token
+```
+
+  * Then **oidc_provider_token_endpoint** will be:
+
+```bash
+oidc_provider_token_endpoint="https://cp-console.apps.joevocplusmcmim.cp.fyre.ibm.com/idprovider/v1/auth/identitytoken"
+```
+
+  * When using Keycloak for the OpenID-Connect Provider the value for **oidc_provider_token_endpoint** will be the value of OIDCOauthIntrospectionEndpoint without the trailing **introspect**
+
+  * **e.g.: Using Keycloak with the following OpenID-Connect configuration:**
+
+```bash
+OIDCOAuthIntrospectionEndpoint https://keycloak.example.com/auth/realms/miq/protocol/openid-connect/token/introspect 
+```
+
+  * Then **oidc_provider_token_endpoint** will be:
+
+```bash
 oidc_provider_token_endpoint="https://keycloak.example.com/auth/realms/miq/protocol/openid-connect/token/"
 ```
 
-## Example: Using a JWT Token
+## Example Using a JWT Token
 ---------------------------------------------------------------------
 
 This example details the steps for using a Java Web Token (JWT) obtained from the OpenID-Connect provider for a non-admin user.
@@ -150,7 +181,7 @@ The bash example commands:
 
 ```
 
-## Example: Using Basic Auth For Admin
+## Example Using Basic Auth For Admin
 ---------------------------------------------------------------------
 
 The ManageIQ OpenID-Connect is configured to treat the admin user as a special case.
