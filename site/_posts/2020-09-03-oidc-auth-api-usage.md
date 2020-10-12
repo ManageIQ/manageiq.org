@@ -88,7 +88,7 @@ oidc_client_id="my-oidc-client"
 Each OpenID-Connect Provider defines its own endpoints for token generation and introspection. Consequently
 the value of these variables depend on the OpenID-Connect Provider being used.
 
-**Example for IBM's Identiy Access Management (IAM):**
+**Example for IBM's Identity Access Management (IAM):**
 
 > Given this configuration:
 > ```bash
