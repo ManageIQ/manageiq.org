@@ -83,39 +83,37 @@ oidc_client_secret="12345678-1234-1234-1234-01234567abcd"
 # OIDCClientID from the OpenID-Connect configuration.
 oidc_client_id="my-oidc-client"
 
-# OIDCOauthIntrospectionEndpoint from the OpenID-Connect configuration
-oidc_auth_introspection_endpoint="https://keycloak.example.com/auth/realms/miq/protocol/openid-connect/token/introspect"
 ```
 
-  * The value of **oidc_provider_token_endpoint** varies based on the configuration and the OpenID-Connect Provider being used. 
+Each OpenID-Connect Provider defines its own endpoints for token generation and introspection. Consequently
+the value of these variables depend on the OpenID-Connect Provider being used.
 
-  * When using IBM's Identiy Access Management (IAM) for the OpenID-Connect Provider, the value for **oidc_provider_token_endpoint** will be the value of OIDCProviderTokenEndpoint from the OpenID-Connect configuration with **token** replace with **identitytoken**.
+**Example for IBM's Identiy Access Management (IAM):**
 
-  * **e.g.: Using IBM's Identiy Access Management (IAM) with the following OpenID-Connect configuration:**
+> Given this configuration:
+> ```bash
+> OIDCOAuthIntrospectionEndpoint https://cp-console.apps.iam.example.com/idprovider/v1/auth/introspect
+> OIDCProviderTokenEndpoint      https://cp-console.apps.iam.example.com/idprovider/v1/auth/token
+> ```
+>
+> Then **oidc_auth_introspection_endpoint** and **oidc_provider_token_endpoint** will be:
+> ```bash
+> oidc_auth_introspection_endpoint="https://cp-console.apps.iam.example.com/idprovider/v1/auth/introspect"
+> oidc_provider_token_endpoint="https://cp-console.apps.iam.example.com/idprovider/v1/auth/identitytoken"
+> ```
 
-```bash
-OIDCProviderTokenEndpoint https://cp-console.apps.joevocplusmcmim.cp.fyre.ibm.com/idprovider/v1/auth/token
-```
+**Example for Keycloak:**
 
-  * Then **oidc_provider_token_endpoint** will be:
-
-```bash
-oidc_provider_token_endpoint="https://cp-console.apps.joevocplusmcmim.cp.fyre.ibm.com/idprovider/v1/auth/identitytoken"
-```
-
-  * When using Keycloak for the OpenID-Connect Provider the value for **oidc_provider_token_endpoint** will be the value of OIDCOauthIntrospectionEndpoint without the trailing **introspect**
-
-  * **e.g.: Using Keycloak with the following OpenID-Connect configuration:**
-
-```bash
-OIDCOAuthIntrospectionEndpoint https://keycloak.example.com/auth/realms/miq/protocol/openid-connect/token/introspect 
-```
-
-  * Then **oidc_provider_token_endpoint** will be:
-
-```bash
-oidc_provider_token_endpoint="https://keycloak.example.com/auth/realms/miq/protocol/openid-connect/token/"
-```
+> Given this configuration:
+> ```bash
+> OIDCOAuthIntrospectionEndpoint https://keycloak.example.com/auth/realms/miq/protocol/openid-connect/token/introspect 
+> ```
+> 
+> Then **oidc_auth_introspection_endpoint** and **oidc_provider_token_endpoint** will be:
+> ```bash
+> oidc_auth_introspection_endpoint="https://keycloak.example.com/auth/realms/miq/protocol/openid-connect/token/introspect"
+> oidc_provider_token_endpoint="https://keycloak.example.com/auth/realms/miq/protocol/openid-connect/token/"
+> ```
 
 ## Example Using a JWT Token
 ---------------------------------------------------------------------
