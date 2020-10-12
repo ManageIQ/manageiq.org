@@ -18,9 +18,10 @@ All the content in this blog post is only relevant when ManageIQ is configured f
 - [**Using The ManageIQ REST API**](#using-the-manageiq-rest-api)
 - [**The OpenID-Connect REST API Authentication Modes**](#the-openid-connect-rest-api-authentication-modes)
 - [**Examples**](#examples)
-  - [Example: Using a JWT Token](#example:-using-a-jwt-token)
-  - [Example: Using a ManageIQ API Auth Token](#example:-using-a-manageiq-api-auth-token)
-  - [Example: Using Basic Auth For Admin](#example:-using-basic-auth-for-admin)
+  - [Example Variables](#example-variables)
+  - [Example Using a JWT Token](#example-using-a-jwt-token)
+  - [Example Using a ManageIQ API Auth Token](#example-using-a-manageiq-api-auth-token)
+  - [Example Using Basic Auth For Admin](#example-using-basic-auth-for-admin)
 
 # Configure ManageIQ For OpenID-Connect Authentication
 ---------------------------------------------------------------------
@@ -56,8 +57,12 @@ When configured for OpenID-Connect there are three different authentication mode
 
 The below examples are BASH(1) shell script commands. They assume the
 *JQ(1)*  <em>Command-line JSON processor</em> is available, the client
-has been created in Keycloak with the realm name miq and the following
-variables are defined:
+has been created in Keycloak with the realm name miq 
+
+## Example Variables
+---------------------------------------------------------------------
+
+The following variables must be defined for each of the examples:
 
 ```bash
 # The user to be authenticated
@@ -78,15 +83,39 @@ oidc_client_secret="12345678-1234-1234-1234-01234567abcd"
 # OIDCClientID from the OpenID-Connect configuration.
 oidc_client_id="my-oidc-client"
 
-# OIDCOauthIntrospectionEndpoint from the OpenID-Connect configuration
-oidc_auth_introspection_endpoint="https://keycloak.example.com/auth/realms/miq/protocol/openid-connect/token/introspect"
-
-# OIDCProviderTokenEndpoint from the OpenID-Connect configurationt
-# Sometimes OIDCOauthIntrospectionEndpoint without the trailing "introspect"
-oidc_provider_token_endpoint="https://keycloak.example.com/auth/realms/miq/protocol/openid-connect/token/"
 ```
 
-## Example: Using a JWT Token
+Each OpenID-Connect Provider defines its own endpoints for token generation and introspection. Consequently
+the value of these variables depend on the OpenID-Connect Provider being used.
+
+**Example for IBM's Identity Access Management (IAM):**
+
+> Given this configuration:
+> ```bash
+> OIDCOAuthIntrospectionEndpoint https://cp-console.apps.iam.example.com/idprovider/v1/auth/introspect
+> OIDCProviderTokenEndpoint      https://cp-console.apps.iam.example.com/idprovider/v1/auth/token
+> ```
+>
+> Then **oidc_auth_introspection_endpoint** and **oidc_provider_token_endpoint** will be:
+> ```bash
+> oidc_auth_introspection_endpoint="https://cp-console.apps.iam.example.com/idprovider/v1/auth/introspect"
+> oidc_provider_token_endpoint="https://cp-console.apps.iam.example.com/idprovider/v1/auth/identitytoken"
+> ```
+
+**Example for Keycloak:**
+
+> Given this configuration:
+> ```bash
+> OIDCOAuthIntrospectionEndpoint https://keycloak.example.com/auth/realms/miq/protocol/openid-connect/token/introspect 
+> ```
+> 
+> Then **oidc_auth_introspection_endpoint** and **oidc_provider_token_endpoint** will be:
+> ```bash
+> oidc_auth_introspection_endpoint="https://keycloak.example.com/auth/realms/miq/protocol/openid-connect/token/introspect"
+> oidc_provider_token_endpoint="https://keycloak.example.com/auth/realms/miq/protocol/openid-connect/token/"
+> ```
+
+## Example Using a JWT Token
 ---------------------------------------------------------------------
 
 This example details the steps for using a Java Web Token (JWT) obtained from the OpenID-Connect provider for a non-admin user.
@@ -150,7 +179,7 @@ The bash example commands:
 
 ```
 
-## Example: Using Basic Auth For Admin
+## Example Using Basic Auth For Admin
 ---------------------------------------------------------------------
 
 The ManageIQ OpenID-Connect is configured to treat the admin user as a special case.
