@@ -31,7 +31,7 @@ ManageIQ is open source and open for contributions. There are many ways to get i
       <li> <a href="/docs/guides/architecture">Developer Guides</a></li>
       <li> <a href="/roadmap">ManageIQ Roadmap</a></li>
     </ul>
-    <p>In addition, you don't have to be a developer to be able to contribute. Filing <a href="https://github.com/ManageIQ/manageiq/issues/new">issues/bugs</a> is a great way to help. The ManageIQ project also welcomes <a href="https://translate.zanata.org/project/view/manageiq">translations</a>!</p>
+    <p>In addition, you don't have to be a developer to be able to contribute. Filing <a href="https://github.com/ManageIQ/manageiq/issues/new">issues/bugs</a> is a great way to help. The ManageIQ project also welcomes <a href="https://www.transifex.com/manageiq/">translations</a>!</p>
   </div>
 
 
