@@ -27,6 +27,14 @@
           Forum
         </a>
       </li>
+      {% unless page.path contains "docs" %}
+      <li>
+        <a href="https://github.com/ManageIQ/manageiq.org/edit/master/site/{{ page.path }}">
+          <i class="fa fa-pencil"></i>
+          Edit this page
+        </a>
+      </li>
+      {% endunless %}
     </ul>
   </div>
 
