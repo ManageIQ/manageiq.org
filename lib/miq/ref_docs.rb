@@ -86,7 +86,9 @@ module Miq
           "git checkout #{branch}",
           "#{bundler} exec rake clean build"
         ].join(" && ")
+
         rsync_copy(branch)
+        copy_menu(branch)
       else
         logger.error "Reference docs source directory not present."
       end
@@ -94,8 +96,12 @@ module Miq
 
     def make_master_latest
       if File.directory?("#{dst_dir}/master") || debug?
+        # Move content
         shell "rm -rf #{dst_dir}/latest"
         shell "mv #{dst_dir}/master #{dst_dir}/latest"
+
+        # Move menu
+        shell "mv #{Miq.menus_dir.join("ref_menu_master.yml")} #{Miq.menus_dir.join("ref_menu_latest.yml")}"
       end
     end
 
@@ -131,6 +137,14 @@ module Miq
       cmd = ["rsync -av ", rsync_excludes, source, dest].join(' ')
 
       shell cmd
+    end
+
+    def copy_menu(branch)
+      menu = Miq.menus_dir.join("ref_menu_#{branch}.yml")
+
+      logger.info "Syncing menu to #{menu}"
+
+      FileUtils.cp(File.join(tmp_dir, "_data", "site_menu.yml"), menu)
     end
 
     def branch_paths
