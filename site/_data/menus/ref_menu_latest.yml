@@ -9,6 +9,9 @@ installation:
     - title: Kubernetes
       path: "/docs/reference/latest/installing_on_kubernetes/index.html"
       desc: "How to install and configure ManageIQ on Kubernetes"
+    - title: IBM Cloud
+      path: "/docs/reference/latest/installing_on_ibm_cloud/index.html"
+      desc: "How to install and configure the ManageIQ Management Engine appliance on IBM Cloud"
     - title: Microsoft Azure
       path: "/docs/reference/latest/installing_on_microsoft_azure/index.html"
       desc: "How to install and configure the ManageIQ Management Engine appliance on Microsoft Azure"
