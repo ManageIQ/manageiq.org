@@ -42,11 +42,11 @@ module Miq
     end
 
     def menus
-      @menus ||= begin
-        menus = Miq.site_dir.join("_data", "menus").glob("ref_menu_*.yml").sort.map(&:to_s)
-        latest = menus.index { |m| m.include?("ref_menu_latest.yml") }
-        menus << menus.delete_at(latest)
-      end
+      @menus ||=
+        Miq.menus_dir.glob("ref_menu_*.yml").sort.map(&:to_s).tap do |menus|
+          latest = menus.index { |m| m.include?("ref_menu_latest.yml") }
+          menus << menus.delete_at(latest) if latest
+        end
     end
 
     def menu_version(menu)

@@ -6,6 +6,7 @@ _site
 Gemfile.lock
 
 dest/
+site/_data/menus/ref_menu_*.yml
 site/docs/guides
 site/docs/reference/latest/
 site/docs/reference/jansa/

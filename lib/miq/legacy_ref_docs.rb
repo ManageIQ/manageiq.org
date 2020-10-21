@@ -89,6 +89,7 @@ module Miq
 
         branches.each do |branch|
           rsync_copy(branch)
+          copy_menu(branch)
         end
       else
         logger.error "Reference docs source directory not present."
@@ -111,6 +112,15 @@ module Miq
       cmd = ["rsync -av ", rsync_excludes, source, dest].join(' ')
 
       shell cmd
+    end
+
+    def copy_menu(branch)
+      menu = Miq.menus_dir.join("ref_menu_#{branch}.yml")
+
+      logger.info "Syncing menu to #{menu}"
+
+      shell "cd #{tmp_dir} && git checkout #{branch}"
+      FileUtils.cp(File.join(tmp_dir, "site_menu.yml"), menu)
     end
 
     def branch_paths

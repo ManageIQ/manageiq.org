@@ -48,6 +48,10 @@ module Miq
     Pathname.new ENV.fetch("MIQ_DOCS_DIR", site_dir.join("docs"))
   end
 
+  def self.menus_dir
+    site_dir.join("_data", "menus")
+  end
+
   def self.tmp_dir
     working_dir.join(ENV["MIQ_TMP_DIR"] || "tmp")
   end
