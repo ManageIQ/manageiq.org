@@ -8,9 +8,6 @@
       <th>MD5</th>
     </tr>
     {% for type in site.data.download_types %}
-      {% if release.type == "stable" and type.download_platform == "podified" %}
-        {% continue %}
-      {% endif %}
       {% assign data = type.download_platform | data_for: release.branch, release.tag, release.filename, type.ext %}
       {% assign url = data[0] %}
       {% assign file_size = data[1]["size"] %}
