@@ -259,7 +259,7 @@ The following example shows how to check for the user's request headers from the
 ## Adjusting Log Level
 ---------------------------------------------------------------------
 
-To gain additional insight to authentication issues adjust the log level to **debug** of the httpd pod,
+To gain additional insight to authentication issues adjust the log level to **debug** on the httpd pod,
 which can be done with the following commands:
 
   + Login
@@ -271,7 +271,7 @@ which can be done with the following commands:
   + Edit the httpd configmap:
 
   ```bash
-  $ oc edit configmaps/httpd-configs -n joev-miq
+  $ oc edit configmaps/httpd-configs -n my-miq-project
   ``` 
 
   + This command will open an editor where you can adjust the log level:
