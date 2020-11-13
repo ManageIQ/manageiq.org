@@ -289,7 +289,7 @@ which can be done with the following commands:
   + Delete this httpd pod, which will result in a new one being created.
 
   ```bash
-  $ oc delete pod httpd-abcdef1234-12345
+  $ oc delete pod httpd-abcdef1234-12345 -n my-miq-project
   ```
 
   + Within a short time a new httpd pod will be created with the new LogLevel
@@ -302,7 +302,7 @@ which can be done with the following commands:
   + Now the httpd logs will have additinal debug information
 
   ```bash
-  $ oc logs -f httpd-abcdef7892-65432
+  $ oc logs -f httpd-abcdef7892-65432 -n my-miq-project
   ```
 
 # Reporting Issues
