@@ -25,6 +25,7 @@ The examples were generated using OpenShift.
   - [**ManageIQ HTTPD Pod Log**](#manageiq-httpd-pod-log)
   - [**OpenID-Connect Provider Accessible**](#openid-connect-provider-accessible)
   - [**Capturing User Request Headers**](#capturing-user-request-headers)
+  - [**Adjusting Log Level**](#adjusting-log-level)
 - [**Reporting Issues**](#reporting-issues)
 - [**Known Issues**](#known-issues)
 
@@ -253,6 +254,55 @@ The following example shows how to check for the user's request headers from the
   ... "message":"MIQ(Authenticator::Httpd#log_auth_debug)   X-REMOTE-USER-EMAIL      = \"byouruncle@byouruncle.example.com\""}
   ... "message":"MIQ(Authenticator::Httpd#log_auth_debug)   X-REMOTE-USER-DOMAIN     = \"byouruncle.example.com\""}
   ... "message":"MIQ(Authenticator::Httpd#log_auth_debug)   X-REMOTE-USER-GROUPS     = \"EvmGroup-super_administrator\""}
+  ```
+
+## Adjusting Log Level
+---------------------------------------------------------------------
+
+To gain additional insight to authentication issues adjust the log level to **debug** on the httpd pod,
+which can be done with the following commands:
+
+  + Login
+
+  ```bash
+  $ oc login -u admin -p <pw> https://<my-container-host>/
+  ```
+
+  + Edit the httpd configmap:
+
+  ```bash
+  $ oc edit configmaps/httpd-configs -n my-miq-project
+  ``` 
+
+  + This command will open an editor where you can adjust the log level:
+
+  Search for **LogLevel** and change it from: **LogLevel warn** To: **LogLevel debug**, 
+  and save the changes.
+
+  + Get the name of the httpd pod
+
+  ```bash
+  $ oc get pods -n my-miq-project | grep httpd
+    httpd-abcdef1234-12345               1/1     Running   0          22d
+  ```
+
+  + Delete this httpd pod, which will result in a new one being created.
+
+  ```bash
+  $ oc delete pod httpd-abcdef1234-12345 -n my-miq-project
+  ```
+
+  + Within a short time a new httpd pod will be created with the new LogLevel
+
+  ```bash
+  $ oc get pods -n my-miq-project | grep httpd
+    httpd-abcdef7892-65432               1/1     Running   0          22d
+  ```
+
+  + Now the httpd logs will have additinal debug information
+
+  ```bash
+  $ oc logs -f httpd-abcdef7892-65432 -n my-miq-project
   ```
 
 # Reporting Issues
