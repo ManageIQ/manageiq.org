@@ -5,12 +5,12 @@ stable:
   filename: jansa-2
   branch: jansa
 
-# prerelease:
-#   type: prerelease
-#   name: Jansa-1-rc2
-#   tag: jansa-1-rc2
-#   filename: jansa-1-rc2
-#   branch: jansa
+prerelease:
+  type: prerelease
+  name: Kasparov-1-alpha1
+  tag: kasparov-1-alpha1
+  filename: kasparov-1-alpha1
+  branch: kasparov
 
 devel:
   type: devel
