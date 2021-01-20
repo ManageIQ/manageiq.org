@@ -37,7 +37,7 @@ module Jekyll
 
     private
 
-    RELEASES_URL_PREFIX = "http://releases.manageiq.org"
+    RELEASES_URL_PREFIX = "https://releases.manageiq.org"
 
     def url_at_releases(platform, filename, ext)
       "#{RELEASES_URL_PREFIX}/manageiq-#{platform}-#{filename}.#{ext}"
@@ -46,7 +46,7 @@ module Jekyll
     def file_info_from_url(url)
       return no_file_info if ENV["SKIP_FILE_INFO"]
       uri = URI(url)
-      Net::HTTP.start(uri.host, uri.port) do |http|
+      Net::HTTP.start(uri.host, uri.port, :use_ssl => uri.scheme == 'https') do |http|
         response = http.request_head(uri.path)
         if response.code != '200'
           Jekyll.logger.error("Jekyll::DownloadFilter.file_info_from_url(#{url})", "code=#{response.code}, message=#{response.message}")
