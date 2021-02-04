@@ -1,16 +1,16 @@
 stable:
   type: stable
-  name: Jansa-3
-  tag: jansa-3
-  filename: jansa-3
-  branch: jansa
-
-prerelease:
-  type: prerelease
-  name: Kasparov-1-Beta1.1
-  tag: kasparov-1-beta1.1
-  filename: kasparov-1-beta1.1
+  name: Kasparov-1
+  tag: kasparov-1
+  filename: kasparov-1
   branch: kasparov
+
+# prerelease:
+#   type: prerelease
+#   name: Kasparov-1-Beta1.1
+#   tag: kasparov-1-beta1.1
+#   filename: kasparov-1-beta1.1
+#   branch: kasparov
 
 devel:
   type: devel
