@@ -31,9 +31,9 @@ Here are the highlights of the [Kasparov release](https://github.com/orgs/Manage
   * Many forms converted to React
   * API driven, pluggable, provider creation and validation
 
-* **Default to systemd-based workers in appliance** - While systemd-based worker were available as a configuration option in previous versions, in this release we changed appliances to use systemd by default.  As such, you can also use the diagnostic tools you may already be familiar with, in order to inspect the health of the systemd processes.
+* **Default to systemd-based workers in appliance** - While systemd-based workers were available as a configuration option in previous versions, in this release we changed appliances to use systemd by default.  As such, you can also use the diagnostic tools you may already be familiar with, in order to inspect the health of the systemd processes.
 
-* **Backup and Restore in podified** - This release adds backup and restore capability for podified deployments when using the [Velero](https://velero.io) and Restic(https://restic.net) backup tools.  The operator will label all resources that need backups, allowing Velero to do it's thing.
+* **Backup and Restore in podified** - This release adds backup and restore capability for podified deployments when using the [Velero](https://velero.io) and [Restic](https://restic.net) backup tools.  The operator will label all resources that need backups, allowing Velero to do its thing.
 
 * **Support for PostgreSQL 12** - PostgreSQL 12 is now supported as a target database.  While the internal database is still using PostgreSQL 10, if you are using an external database, you can upgrade it to PostgreSQL 12 and it will continue to work with ManageIQ.
 
