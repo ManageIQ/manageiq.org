@@ -111,6 +111,7 @@ defaults:
       layout: doc_page
       permalink: /:path/:basename
       doc_group: user
+      sitemap: false
 
   - scope:
       path: "docs/reference/fine/api"
@@ -125,6 +126,7 @@ defaults:
       layout: doc_page
       permalink: /:path/:basename
       doc_group: user
+      sitemap: false
 
   - scope:
       path: "docs/reference/euwe/api"
@@ -139,6 +141,7 @@ defaults:
       layout: doc_page
       permalink: /:path/:basename
       doc_group: user
+      sitemap: false
 
   - scope:
       path: "docs/reference/gaprindashvili/api"
@@ -153,6 +156,7 @@ defaults:
       layout: doc_page
       permalink: /:path/:basename
       doc_group: user
+      sitemap: false
 
   - scope:
       path: "docs/reference/hammer/api"
@@ -167,6 +171,7 @@ defaults:
       layout: doc_page
       permalink: /:path/:basename
       doc_group: user
+      sitemap: false
 
   - scope:
       path: "docs/reference/ivanchuk/api"
@@ -181,6 +186,7 @@ defaults:
       layout: doc_page
       permalink: /:path/:basename
       doc_group: user
+      sitemap: false
 
   - scope:
       path: "docs/reference/jansa/api"
