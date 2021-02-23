@@ -9,6 +9,10 @@
   download_platform: gce
   ext: tar.gz
 
+- name: IBM Cloud
+  download_platform: openstack
+  ext: qc2
+
 - name: Kubernetes
   download_platform: podified
 
