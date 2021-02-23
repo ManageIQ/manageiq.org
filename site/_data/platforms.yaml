@@ -1,4 +1,3 @@
-
 - id: vmware
   name: VMWare vSphere
   img: /assets/images/providers/vmware.svg
@@ -31,6 +30,10 @@
   name: Microsoft Azure
   img: /assets/images/platforms/azure.svg
 
+- id: ibm_cloud
+  name: IBM Cloud
+  img: "/assets/images/platforms/ibm_cloud.png"
+
 - id: ansible_tower
   name: Ansible Tower By Red Hat
   img: /assets/images/platforms/ansible_tower.svg
@@ -46,4 +49,3 @@
 - id: openshift_origin
   name: OpenShift Origin
   img: /assets/images/platforms/openshift_origin.svg
-
