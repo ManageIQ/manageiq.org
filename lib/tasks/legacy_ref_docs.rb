@@ -3,15 +3,16 @@ require_relative '../miq/executor'
 
 module Miq
   class LegacyRefDocs < Executor
-    attr_reader :repo, :branches, :primary_branch, :tmp_dir, :src_dir, :dst_dir
+    BRANCHES = %w[ivanchuk hammer gaprindashvili fine euwe].freeze
 
-    def initialize(branches = %w[ivanchuk hammer gaprindashvili fine euwe])
+    attr_reader :repo, :branches, :tmp_dir, :src_dir, :dst_dir
+
+    def initialize(branches = nil)
       # Where do the docs live?
       @repo     = ENV["MIQ_REF_REPO"] || "https://github.com/ManageIQ/manageiq-documentation.git"
 
       # What branches to copy?
-      @branches = branches
-      @primary_branch = @branches.first
+      @branches = (branches.nil? || branches.empty?) ? BRANCHES : branches
 
       # Where should we cache and build?
       @tmp_dir  = ENV["MIQ_REF_TMP"]  || "/tmp/legacy-manageiq-documentation"
@@ -26,15 +27,16 @@ module Miq
     end
 
     def reset
+      return if debug?
+
       logger.info "Removing #{tmp_dir}"
-      logger.info "Removing directories from #{dst_dir}"
+      rm_dir(tmp_dir)
 
-      unless debug?
-        rm_dir(tmp_dir)
-
-        branches.each do |branch|
-          dir = dst_dir.join(branch)
-          rm_dir(dir) if dir.directory?
+      branches.each do |branch|
+        dir = dst_dir.join(branch)
+        if dir.directory?
+          logger.info "Removing #{dir}"
+          rm_dir(dir)
         end
       end
     end
@@ -60,12 +62,18 @@ module Miq
 
     def setup_ascii_binder
       logger.info "Installing Ascii Binder"
+      primary_branch = BRANCHES.first
+
       shell [
         "cd #{tmp_dir}",
+        # Pretend that the primary branch is master for installation purposes
         "git checkout #{primary_branch}",
         "git branch -D master",
         "git checkout -b master",
-        "#{bundler} install"
+        # Install ascii_binder and dependencies
+        "#{bundler} install",
+        # Remove the primary branch if it's not one of the requested branches
+        branches.include?(primary_branch) ? "true" : "git branch -D #{primary_branch}"
       ].join(" && ")
     end
 
