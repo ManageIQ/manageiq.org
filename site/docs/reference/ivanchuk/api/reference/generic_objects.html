@@ -1,0 +1,814 @@
+---
+distro:         ManageIQ
+version:        Ivanchuk
+
+group_id:       RestApi
+group_title:    REST API
+
+subgroup_id:    RestApi::Reference
+subgroup_title: Reference
+
+topic_id:       RestApi::Reference::GenericObjectManagement
+topic_title:    Generic Object Management
+
+article_title:  "Generic Object Management"
+
+breadcrumb_group: REST API
+breadcrumb_topic: Generic Object Management
+---
+
+<div class="sect1">
+<h2 id="generic-object-management"><a class="anchor" href="#generic-object-management"></a>Generic Object Management</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Management of Generic Objects is provided with the following collections:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">/api/generic_object_definitions
+/api/generic_objects</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#generic-object-definitions">Managing Generic Object Definitions</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#querying-generic-object-definitions">Querying Generic Object Definitions</a></p>
+</li>
+<li>
+<p><a href="#creating-generic-object-definitions">Creating Generic Object Definitions</a></p>
+</li>
+<li>
+<p><a href="#editing-generic-object-definitions">Editing Generic Object Definitions</a></p>
+</li>
+<li>
+<p><a href="#deleting-generic-object-definitions">Deleting Generic Object Definitions</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="#generic-objects">Managing Generic Objects</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#querying-generic-objects">Querying Generic Objects</a></p>
+</li>
+<li>
+<p><a href="#creating-generic-objects">Creating Generic Objects</a></p>
+</li>
+<li>
+<p><a href="#editing-generic-objects">Editing Generic Objects</a></p>
+</li>
+<li>
+<p><a href="#calling-generic-object-methods">Calling Generic Object Methods</a></p>
+</li>
+<li>
+<p><a href="#deleting-generic-objects">Deleting Generic Objects</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="generic-object-definitions"><a class="anchor" href="#generic-object-definitions"></a>Generic Object Definitions</h3>
+<div class="sect3">
+<h4 id="querying-generic-object-definitions"><a class="anchor" href="#querying-generic-object-definitions"></a>Querying Generic Object Definitions</h4>
+<div class="paragraph">
+<p>Querying all available Generic Object Definitions:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/generic_object_definitions</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Getting details on a specific Generic Object Definition:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/generic_object_definitions/:id</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Getting details on a specific Generic Object Definition by name:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/generic_object_definitions/:name</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Querying all the Generic Objects defined for a specific Generic Object Definition:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/generic_object_definitions/:id/generic_objects</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Getting a specific Generic Object defined for a Generic Object Definition:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/generic_object_definitions/:id/generic_objects/:generic_object_id</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Fetching the vms associations for a specific Generic Object:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/generic_object_definitions/:id/generic_objects/:generic_object_id?associations=vms</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="creating-generic-object-definitions"><a class="anchor" href="#creating-generic-object-definitions"></a>Creating Generic Object Definitions</h4>
+<div class="paragraph">
+<p>Generic Object Definitions can be created as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">POST /api/generic_object_definitions</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span>        : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">LoadBalancer</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">LoadBalancer description</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>properties</span><span style="color:#404">&quot;</span></span>  : {
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>attributes</span><span style="color:#404">&quot;</span></span>  : {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>address</span><span style="color:#404">&quot;</span></span>      : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">string</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>last_restart</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">datetime</span><span style="color:#710">&quot;</span></span>
+    },
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>associations</span><span style="color:#404">&quot;</span></span> : {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>vms</span><span style="color:#404">&quot;</span></span>      : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Vm</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>services</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Service</span><span style="color:#710">&quot;</span></span>
+    },
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>methods</span><span style="color:#404">&quot;</span></span> : [
+      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">add_vm</span><span style="color:#710">&quot;</span></span>,
+      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">remove_vm</span><span style="color:#710">&quot;</span></span>
+    ]
+  },
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>picture</span><span style="color:#404">&quot;</span></span>     : {
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>extension</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">png</span><span style="color:#710">&quot;</span></span>,
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>content</span><span style="color:#404">&quot;</span></span>   : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGP</span><span style="color:#710">&quot;</span></span><span style="color:#F00;background-color:#FAA">\</span>
+      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">C/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3Cc</span><span style="color:#710">&quot;</span></span><span style="color:#F00;background-color:#FAA">\</span>
+      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ulE8AAAACXBIWXMAAAsTAAALEwEAmpwYAAABWWlUWHRYTUw6Y29tLmFkb2Jl</span><span style="color:#710">&quot;</span></span><span style="color:#F00;background-color:#FAA">\</span>
+      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">LnhtcAAAAAAAPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIg</span><span style="color:#710">&quot;</span></span><span style="color:#F00;background-color:#FAA">\</span>
+      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">eDp4bXB0az0iWE1QIENvcmUgNS40LjAiPgogICA8cmRmOlJERiB4bWxuczpy</span><span style="color:#710">&quot;</span></span><span style="color:#F00;background-color:#FAA">\</span>
+      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1u</span><span style="color:#710">&quot;</span></span><span style="color:#F00;background-color:#FAA">\</span>
+      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">cyMiPgogICAgICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIgogICAg</span><span style="color:#710">&quot;</span></span><span style="color:#F00;background-color:#FAA">\</span>
+      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ICAgICAgICB4bWxuczp0aWZmPSJodHRwOi8vbnMuYWRvYmUuY29tL3RpZmYv</span><span style="color:#710">&quot;</span></span><span style="color:#F00;background-color:#FAA">\</span>
+      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">MS4wLyI+CiAgICAgICAgIDx0aWZmOk9yaWVudGF0aW9uPjE8L3RpZmY6T3Jp</span><span style="color:#710">&quot;</span></span><span style="color:#F00;background-color:#FAA">\</span>
+      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ZW50YXRpb24+CiAgICAgIDwvcmRmOkRlc2NyaXB0aW9uPgogICA8L3JkZjpS</span><span style="color:#710">&quot;</span></span><span style="color:#F00;background-color:#FAA">\</span>
+      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">REY+CjwveDp4bXBtZXRhPgpMwidZAAAADUlEQVQIHWNgYGCwBQAAQgA+3N0+</span><span style="color:#710">&quot;</span></span><span style="color:#F00;background-color:#FAA">\</span>
+      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">xQAAAABJRU5ErkJggg==</span><span style="color:#710">&quot;</span></span>
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Example of creating a Generic Object Definition with a picture reference:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span>        : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">LoadBalancer</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">LoadBalancer description</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>properties</span><span style="color:#404">&quot;</span></span>  : {
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>attributes</span><span style="color:#404">&quot;</span></span>  : {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>address</span><span style="color:#404">&quot;</span></span>      : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">string</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>last_restart</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">datetime</span><span style="color:#710">&quot;</span></span>
+    },
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>associations</span><span style="color:#404">&quot;</span></span> : {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>vms</span><span style="color:#404">&quot;</span></span>      : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Vm</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>services</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Service</span><span style="color:#710">&quot;</span></span>
+    },
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>methods</span><span style="color:#404">&quot;</span></span> : [
+      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">add_vm</span><span style="color:#710">&quot;</span></span>,
+      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">remove_vm</span><span style="color:#710">&quot;</span></span>
+    ]
+  },
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>picture</span><span style="color:#404">&quot;</span></span>     : {
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/pictures/11</span><span style="color:#710">&quot;</span></span>
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><em>Note:</em> picture references can be by <em>href</em> or <em>id</em>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="editing-generic-object-definitions"><a class="anchor" href="#editing-generic-object-definitions"></a>Editing Generic Object Definitions</h4>
+<div class="paragraph">
+<p>Updating Generic Object Definitions can be done via the <em>edit</em> action as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">POST /api/generic_object_definitions/:id</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or by name:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">POST /api/generic_object_definitions/:name</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">edit</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>resource</span><span style="color:#404">&quot;</span></span> : {
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Latest LoadBalancer Description</span><span style="color:#710">&quot;</span></span>
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Generic object definitions can also be updated with the PUT method as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">PUT /api/generic_object_definitions/:id</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">New LoadBalancer Name</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">New LoadBalancer Description</span><span style="color:#710">&quot;</span></span>
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Pictures can be removed from Generic Object Definitions by sending in an empty
+picture reference via any of the edit methods, for example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">POST /api/generic_object_definitions/:name</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">edit</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>resource</span><span style="color:#404">&quot;</span></span> : {
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>picture</span><span style="color:#404">&quot;</span></span> : {}
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Generic Object Definitions can be edited by href, id or name in bulk as in the
+following example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">POST /api/generic_object_definitions</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">edit</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>resources</span><span style="color:#404">&quot;</span></span> : [
+    {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Load Balancer</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>resource</span><span style="color:#404">&quot;</span></span> : {
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Enhanced Load Balancer</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Description for Enhanced Load Balancer</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>picture</span><span style="color:#404">&quot;</span></span> : { <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">16</span><span style="color:#710">&quot;</span></span> }
+      }
+    },
+    {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/generic_object_definitions/12</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>resource</span><span style="color:#404">&quot;</span></span> : {
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">NetworkScanner</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Description for Network Scanner</span><span style="color:#710">&quot;</span></span>
+      }
+    },
+    {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">13</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>resource</span><span style="color:#404">&quot;</span></span> : {
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">NetworkFirewall</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Description for Network Firewall</span><span style="color:#710">&quot;</span></span>
+      }
+    }
+  ]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Editing Generic Object Definitions can also be done by using one of the following
+actions for updating <em>attributes</em>, <em>methods</em> and <em>associations</em>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#add-attributes">add_attributes</a></p>
+</li>
+<li>
+<p><a href="#remove-attributes">remove_attributes</a></p>
+</li>
+<li>
+<p><a href="#add-methods">add_methods</a></p>
+</li>
+<li>
+<p><a href="#remove-methods">remove_methods</a></p>
+</li>
+<li>
+<p><a href="#add-associations">add_associations</a></p>
+</li>
+<li>
+<p><a href="#remove-associations">remove_associations</a></p>
+</li>
+</ul>
+</div>
+<div class="sect4">
+<h5 id="add-attributes"><a class="anchor" href="#add-attributes"></a>Add Attributes</h5>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">POST /api/generic_object_definitions/:id</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">add_attributes</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>resource</span><span style="color:#404">&quot;</span></span> : {
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>attributes</span><span style="color:#404">&quot;</span></span> : {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>optional_attribute1</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">string</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>optional_attribute2</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">boolean</span><span style="color:#710">&quot;</span></span>
+    }
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="remove-attributes"><a class="anchor" href="#remove-attributes"></a>Remove Attributes</h5>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">POST /api/generic_object_definitions/:id</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">remove_attributes</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>resource</span><span style="color:#404">&quot;</span></span> : {
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>attributes</span><span style="color:#404">&quot;</span></span> : {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>unused_attribute9</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">string</span><span style="color:#710">&quot;</span></span>
+    }
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="add-methods"><a class="anchor" href="#add-methods"></a>Add Methods</h5>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">POST /api/generic_object_definitions/:id</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">add_methods</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>resource</span><span style="color:#404">&quot;</span></span> : {
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>methods</span><span style="color:#404">&quot;</span></span> : [ <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">go_method1</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">go_method2</span><span style="color:#710">&quot;</span></span> ]
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="remove-methods"><a class="anchor" href="#remove-methods"></a>Remove Methods</h5>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">POST /api/generic_object_definitions/:id</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">remove_methods</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>resource</span><span style="color:#404">&quot;</span></span> : {
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>methods</span><span style="color:#404">&quot;</span></span> : [ <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">go_method3</span><span style="color:#710">&quot;</span></span> ]
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="add-associations"><a class="anchor" href="#add-associations"></a>Add Associations</h5>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">POST /api/generic_object_definitions/:id</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">add_associations</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>resource</span><span style="color:#404">&quot;</span></span> : {
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>associations</span><span style="color:#404">&quot;</span></span> : {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>az</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">AvailabilityZone</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>chargeback</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ChargebackVm</span><span style="color:#710">&quot;</span></span>
+    }
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="remove-associations"><a class="anchor" href="#remove-associations"></a>Remove Associations</h5>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">POST /api/generic_object_definitions/:id</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">remove_associations</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>resource</span><span style="color:#404">&quot;</span></span> : {
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>associations</span><span style="color:#404">&quot;</span></span> : {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>chargeback</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ChargebackVm</span><span style="color:#710">&quot;</span></span>
+    }
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="deleting-generic-object-definitions"><a class="anchor" href="#deleting-generic-object-definitions"></a>Deleting Generic Object Definitions</h4>
+<div class="paragraph">
+<p>Generic Object Definitions can be deleted via the <em>delete</em> action as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">POST /api/generic_object_definitions/:id</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or by name:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">POST /api/generic_object_definitions/:name</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Multiple Generic Object Definitions can also be deleted in a single request as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">POST /api/generic_object_definitions</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>resources</span><span style="color:#404">&quot;</span></span> : [
+    { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/generic_object_definitions/11</span><span style="color:#710">&quot;</span></span> },
+    { <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">12</span><span style="color:#710">&quot;</span></span> }
+  ]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Single Generic Object Definitions can also be deleted with the DELETE method as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">DELETE /api/generic_object_definitions/:id</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or by name:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">DELETE /api/generic_object_definitions/:name</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="generic-objects"><a class="anchor" href="#generic-objects"></a>Generic Objects</h3>
+<div class="sect3">
+<h4 id="querying-generic-objects"><a class="anchor" href="#querying-generic-objects"></a>Querying Generic Objects</h4>
+<div class="paragraph">
+<p>Querying all available Generic Objects:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/generic_objects</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Getting details on a specific Generic Object:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/generic_objects/:id</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Querying all the Generic Objects defined for a specific Service:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/services/:id/generic_objects</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Querying Generic Objects and related picture and image_href for a specific Service:</p>
+</div>
+<div class="sect4">
+<h5 id="request"><a class="anchor" href="#request"></a>Request:</h5>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/services/:id?expand=generic_objects&amp;attributes=generic_objects.picture</pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="response"><a class="anchor" href="#response"></a>Response:</h5>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/services/645</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">645</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Test Azure Service</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Azure</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>guid</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">6ce8f6c2-7f93-4a7e-b618-da9acab470ac</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>options</span><span style="color:#404">&quot;</span></span>: {  },
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>display</span><span style="color:#404">&quot;</span></span>: <span style="color:#088">false</span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>created_at</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2017-08-07T16:52:46Z</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>updated_at</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2017-08-07T16:52:46Z</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>miq_group_id</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">1</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>retired</span><span style="color:#404">&quot;</span></span>: <span style="color:#088">false</span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>tenant_id</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">1</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>initiator</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">user</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>generic_objects</span><span style="color:#404">&quot;</span></span>: [
+    {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/services/645/generic_objects/1</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">1</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">generic_object_1</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>generic_object_definition_id</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">1</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>created_at</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2017-08-15T17:35:08Z</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>updated_at</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2017-09-07T12:05:14Z</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>properties</span><span style="color:#404">&quot;</span></span>: {
+         <span style="color:#606"><span style="color:#404">&quot;</span><span>vms</span><span style="color:#404">&quot;</span></span> : [ <span style="color:#00D">615</span> ],
+         <span style="color:#606"><span style="color:#404">&quot;</span><span>start</span><span style="color:#404">&quot;</span></span> : <span style="color:#088">true</span>
+      },
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>picture</span><span style="color:#404">&quot;</span></span> : {
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/picture/1</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">1</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>resource_id</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">1</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>resource_type</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">GenericObjectDefinition</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>image_href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/pictures/1.png</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>extension</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">png</span><span style="color:#710">&quot;</span></span>
+      }
+    }
+  ],
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>actions</span><span style="color:#404">&quot;</span></span> : {
+    <span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span>
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="creating-generic-objects"><a class="anchor" href="#creating-generic-objects"></a>Creating Generic Objects</h4>
+<div class="paragraph">
+<p>Generic Objects can be created as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">POST /api/generic_objects</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>generic_object_definition</span><span style="color:#404">&quot;</span></span> : { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/generic_object_definitions/11</span><span style="color:#710">&quot;</span></span> },
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">go1_name</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>uid</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">optional_uid</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>property_attributes</span><span style="color:#404">&quot;</span></span> : {
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>widget</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">widget value</span><span style="color:#710">&quot;</span></span>,
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>supports_feature_a</span><span style="color:#404">&quot;</span></span> : <span style="color:#088">false</span>
+  },
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>associations</span><span style="color:#404">&quot;</span></span> : {
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>vms</span><span style="color:#404">&quot;</span></span> : [
+      { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/vms/11</span><span style="color:#710">&quot;</span></span> },
+      { <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">12 }
+    ]
+  }
+}</span></span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Generic Objects can also be directly created for a specific Generic Object Definition type
+as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">POST /api/generic_object_definitions/:id/generic_objects</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">go1_name</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>uid</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">optional_uid</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>property_attributes</span><span style="color:#404">&quot;</span></span> : {
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>widget</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">widget value</span><span style="color:#710">&quot;</span></span>,
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>supports_feature_a</span><span style="color:#404">&quot;</span></span> : <span style="color:#088">false</span>
+  },
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>associations</span><span style="color:#404">&quot;</span></span> : {
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>vms</span><span style="color:#404">&quot;</span></span> : [
+      { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/vms/11</span><span style="color:#710">&quot;</span></span> },
+      { <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">12 }
+    ]
+  }
+}</span></span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In which case, the generic_object_definition reference is not needed.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="editing-generic-objects"><a class="anchor" href="#editing-generic-objects"></a>Editing Generic Objects</h4>
+<div class="paragraph">
+<p>Updating Generic Objects can be done via the <em>edit</em> action as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">POST /api/generic_objects/:id</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">edit</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>resource</span><span style="color:#404">&quot;</span></span> : {
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">updated_name</span><span style="color:#710">&quot;</span></span>,
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>property_attributes</span><span style="color:#404">&quot;</span></span> : {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>widget</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">updated_widget</span><span style="color:#710">&quot;</span></span>
+    }
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="calling-generic-object-methods"><a class="anchor" href="#calling-generic-object-methods"></a>Calling Generic Object Methods</h4>
+<div class="paragraph">
+<p>When generic objects have methods defined in their definitions, those methods are exposed with the
+generic objects as actions.</p>
+</div>
+<div class="paragraph">
+<p>The following example shows a generic object with two methods <em>method_a</em> and
+<em>method_b</em>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">GET /api/generic_objects/101</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/generic_objects/101</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span>   : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">101</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">sample_object</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>generic_object_definition_id</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">5</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>property_attributes</span><span style="color:#404">&quot;</span></span> : {
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>widget</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">a sample widget</span><span style="color:#710">&quot;</span></span>,
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>object_flag</span><span style="color:#404">&quot;</span></span> : <span style="color:#088">true</span>
+  },
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>actions</span><span style="color:#404">&quot;</span></span> : [
+    {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">edit</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>method</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">post</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/generic_objects/101</span><span style="color:#710">&quot;</span></span>
+    },
+    {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>method</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">post</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/generic_objects/101</span><span style="color:#710">&quot;</span></span>
+    },
+    {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>method</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/generic_objects/101</span><span style="color:#710">&quot;</span></span>
+    },
+    {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">method_a</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>method</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">post</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/generic_objects/101</span><span style="color:#710">&quot;</span></span>
+    },
+    {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">method_b</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>method</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">post</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/generic_objects/101</span><span style="color:#710">&quot;</span></span>
+    }
+  ]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>With the above sample generic object, the custom methods can be invoked like any other action as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">POST /api/generic_objects/101</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">method_a</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>resource</span><span style="color:#404">&quot;</span></span> : {
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>attr1</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">value 1</span><span style="color:#710">&quot;</span></span>,
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>attr2</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">value 2</span><span style="color:#710">&quot;</span></span>
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="deleting-generic-objects"><a class="anchor" href="#deleting-generic-objects"></a>Deleting Generic Objects</h4>
+<div class="paragraph">
+<p>Generic Objects can be deleted via the <em>delete</em> action as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">POST /api/generic_objects/:id</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Multiple Generic Objects can also be deleted in a single request as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">POST /api/generic_objects</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>resources</span><span style="color:#404">&quot;</span></span> : [
+    { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/generic_objects/21</span><span style="color:#710">&quot;</span></span> },
+    { <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">22</span><span style="color:#710">&quot;</span></span> },
+    { <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">23</span><span style="color:#710">&quot;</span></span> }
+  ]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Single Generic Objects can also be deleted with the DELETE method as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">DELETE /api/generic_objects/:id</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>

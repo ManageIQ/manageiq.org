@@ -1,0 +1,308 @@
+---
+distro:         ManageIQ
+version:        Euwe
+
+group_id:       RestApiExamples
+group_title:    REST API Examples
+
+subgroup_id:    RestApiExamples::Services
+subgroup_title: Services
+
+topic_id:       RestApiExamples::Services::TriggerACustomActionOnAService
+topic_title:    Trigger a Custom Action on a Service
+
+article_title:  "Trigger a Custom Action on a Service"
+
+breadcrumb_group: REST API Examples
+breadcrumb_topic: Trigger a Custom Action on a Service
+---
+
+<div class="sect2">
+<h3 id="custom-action-on-service"><a class="anchor" href="#custom-action-on-service"></a>Trigger a Custom Action on a Service</h3>
+<div class="paragraph">
+<p>This page shows an ordered service that has a custom button with a dialog and
+how the custom action is triggered.</p>
+</div>
+<div class="paragraph">
+<p>Here is the ordered service with the expanded custom actions:</p>
+</div>
+<div class="sect3">
+<h4 id="request"><a class="anchor" href="#request"></a>Request:</h4>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/services/110?attributes=custom_actions</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="response"><a class="anchor" href="#response"></a>Response:</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/services/110</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">110</span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">SampleServiceTemplate</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Sample Service Template</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>guid</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">a3ab175c-8ca1-11e5-939f-000a27020067</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>service_template_id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">9</span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>options</span><span style="color:#404">&quot;</span></span>: {
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>button_order</span><span style="color:#404">&quot;</span></span>: [
+      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">cb-10</span><span style="color:#710">&quot;</span></span>
+    ],
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>dialog</span><span style="color:#404">&quot;</span></span>: {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>dialog_hostname</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">myhostname</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>dialog_ipaddress</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">192.168.100.1</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>dialog_environmenttype</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">medium</span><span style="color:#710">&quot;</span></span>
+    }
+  },
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>display</span><span style="color:#404">&quot;</span></span>: <span style="color:#088">true</span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>created_at</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2015-11-16T20:35:56Z</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>updated_at</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2015-11-16T20:35:56Z</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>evm_owner_id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">1</span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>miq_group_id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">1</span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>tenant_id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">1</span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>custom_actions</span><span style="color:#404">&quot;</span></span>: {
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>buttons</span><span style="color:#404">&quot;</span></span>: [
+      {
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">10</span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>guid</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">cdcec41c-8ca0-11e5-8c79-000a27020067</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Query VM</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>applies_to_class</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ServiceTemplate</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>options</span><span style="color:#404">&quot;</span></span>: {
+          <span style="color:#606"><span style="color:#404">&quot;</span><span>button_image</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">4</span>,
+          <span style="color:#606"><span style="color:#404">&quot;</span><span>display</span><span style="color:#404">&quot;</span></span>: <span style="color:#088">true</span>
+        },
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>userid</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">admin</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>created_on</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2015-11-16T20:29:58Z</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>updated_on</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2015-11-16T20:29:58Z</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">QueryVM</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>visibility</span><span style="color:#404">&quot;</span></span>: {
+          <span style="color:#606"><span style="color:#404">&quot;</span><span>roles</span><span style="color:#404">&quot;</span></span>: [
+            <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">_ALL_</span><span style="color:#710">&quot;</span></span>
+          ]
+        },
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>applies_to_id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">9</span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>resource_action</span><span style="color:#404">&quot;</span></span>: {
+          <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">38</span>,
+          <span style="color:#606"><span style="color:#404">&quot;</span><span>dialog_id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">4</span>,
+          <span style="color:#606"><span style="color:#404">&quot;</span><span>resource_id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">10</span>,
+          <span style="color:#606"><span style="color:#404">&quot;</span><span>resource_type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CustomButton</span><span style="color:#710">&quot;</span></span>,
+          <span style="color:#606"><span style="color:#404">&quot;</span><span>created_at</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2015-11-16T20:29:58Z</span><span style="color:#710">&quot;</span></span>,
+          <span style="color:#606"><span style="color:#404">&quot;</span><span>updated_at</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2015-11-16T20:29:58Z</span><span style="color:#710">&quot;</span></span>,
+          <span style="color:#606"><span style="color:#404">&quot;</span><span>ae_namespace</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">SYSTEM</span><span style="color:#710">&quot;</span></span>,
+          <span style="color:#606"><span style="color:#404">&quot;</span><span>ae_class</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">PROCESS</span><span style="color:#710">&quot;</span></span>,
+          <span style="color:#606"><span style="color:#404">&quot;</span><span>ae_instance</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Request</span><span style="color:#710">&quot;</span></span>,
+          <span style="color:#606"><span style="color:#404">&quot;</span><span>ae_attributes</span><span style="color:#404">&quot;</span></span>: {
+            <span style="color:#606"><span style="color:#404">&quot;</span><span>attr1</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">value1</span><span style="color:#710">&quot;</span></span>,
+            <span style="color:#606"><span style="color:#404">&quot;</span><span>attr2</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">value2</span><span style="color:#710">&quot;</span></span>,
+            <span style="color:#606"><span style="color:#404">&quot;</span><span>request</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">System/Project/InspectME</span><span style="color:#710">&quot;</span></span>
+          },
+          <span style="color:#606"><span style="color:#404">&quot;</span><span>dialog</span><span style="color:#404">&quot;</span></span>: {
+            <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Sample Dialog Description</span><span style="color:#710">&quot;</span></span>,
+            <span style="color:#606"><span style="color:#404">&quot;</span><span>buttons</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">submit</span><span style="color:#710">&quot;</span></span>,
+            <span style="color:#606"><span style="color:#404">&quot;</span><span>label</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">SampleDialog</span><span style="color:#710">&quot;</span></span>,
+            <span style="color:#606"><span style="color:#404">&quot;</span><span>dialog_tabs</span><span style="color:#404">&quot;</span></span>: [
+              {
+                <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">VM Tab Description</span><span style="color:#710">&quot;</span></span>,
+                <span style="color:#606"><span style="color:#404">&quot;</span><span>display</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">edit</span><span style="color:#710">&quot;</span></span>,
+                <span style="color:#606"><span style="color:#404">&quot;</span><span>label</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">VMTabLabel</span><span style="color:#710">&quot;</span></span>,
+                <span style="color:#606"><span style="color:#404">&quot;</span><span>position</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">0</span>,
+                <span style="color:#606"><span style="color:#404">&quot;</span><span>dialog_groups</span><span style="color:#404">&quot;</span></span>: [
+                  {
+                    <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Vm Info Description</span><span style="color:#710">&quot;</span></span>,
+                    <span style="color:#606"><span style="color:#404">&quot;</span><span>display</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">edit</span><span style="color:#710">&quot;</span></span>,
+                    <span style="color:#606"><span style="color:#404">&quot;</span><span>label</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">VmInfoLabel</span><span style="color:#710">&quot;</span></span>,
+                    <span style="color:#606"><span style="color:#404">&quot;</span><span>position</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">0</span>,
+                    <span style="color:#606"><span style="color:#404">&quot;</span><span>dialog_fields</span><span style="color:#404">&quot;</span></span>: [
+                      {
+                        <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">hostname</span><span style="color:#710">&quot;</span></span>,
+                        <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Hostname of the VM</span><span style="color:#710">&quot;</span></span>,
+                        <span style="color:#606"><span style="color:#404">&quot;</span><span>type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">DialogFieldTextBox</span><span style="color:#710">&quot;</span></span>,
+                        <span style="color:#606"><span style="color:#404">&quot;</span><span>display</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">edit</span><span style="color:#710">&quot;</span></span>,
+                        <span style="color:#606"><span style="color:#404">&quot;</span><span>display_method_options</span><span style="color:#404">&quot;</span></span>: {
+                        },
+                        <span style="color:#606"><span style="color:#404">&quot;</span><span>required</span><span style="color:#404">&quot;</span></span>: <span style="color:#088">false</span>,
+                        <span style="color:#606"><span style="color:#404">&quot;</span><span>required_method_options</span><span style="color:#404">&quot;</span></span>: {
+                        },
+                        <span style="color:#606"><span style="color:#404">&quot;</span><span>default_value</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">default_hostname</span><span style="color:#710">&quot;</span></span>,
+                        <span style="color:#606"><span style="color:#404">&quot;</span><span>values_method_options</span><span style="color:#404">&quot;</span></span>: {
+                        },
+                        <span style="color:#606"><span style="color:#404">&quot;</span><span>options</span><span style="color:#404">&quot;</span></span>: {
+                          <span style="color:#606"><span style="color:#404">&quot;</span><span>protected</span><span style="color:#404">&quot;</span></span>: <span style="color:#088">false</span>
+                        },
+                        <span style="color:#606"><span style="color:#404">&quot;</span><span>label</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">HostNameLabel</span><span style="color:#710">&quot;</span></span>,
+                        <span style="color:#606"><span style="color:#404">&quot;</span><span>position</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">0</span>,
+                        <span style="color:#606"><span style="color:#404">&quot;</span><span>dynamic</span><span style="color:#404">&quot;</span></span>: <span style="color:#088">false</span>,
+                        <span style="color:#606"><span style="color:#404">&quot;</span><span>read_only</span><span style="color:#404">&quot;</span></span>: <span style="color:#088">false</span>,
+                        <span style="color:#606"><span style="color:#404">&quot;</span><span>resource_action</span><span style="color:#404">&quot;</span></span>: {
+                          <span style="color:#606"><span style="color:#404">&quot;</span><span>resource_type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">DialogField</span><span style="color:#710">&quot;</span></span>,
+                          <span style="color:#606"><span style="color:#404">&quot;</span><span>ae_attributes</span><span style="color:#404">&quot;</span></span>: {
+                          }
+                        }
+                      },
+                      {
+                        <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ipaddress</span><span style="color:#710">&quot;</span></span>,
+                        <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">IP Address of VM</span><span style="color:#710">&quot;</span></span>,
+                        <span style="color:#606"><span style="color:#404">&quot;</span><span>type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">DialogFieldTextBox</span><span style="color:#710">&quot;</span></span>,
+                        <span style="color:#606"><span style="color:#404">&quot;</span><span>display</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">edit</span><span style="color:#710">&quot;</span></span>,
+                        <span style="color:#606"><span style="color:#404">&quot;</span><span>display_method_options</span><span style="color:#404">&quot;</span></span>: {
+                        },
+                        <span style="color:#606"><span style="color:#404">&quot;</span><span>required</span><span style="color:#404">&quot;</span></span>: <span style="color:#088">false</span>,
+                        <span style="color:#606"><span style="color:#404">&quot;</span><span>required_method_options</span><span style="color:#404">&quot;</span></span>: {
+                        },
+                        <span style="color:#606"><span style="color:#404">&quot;</span><span>default_value</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#710">&quot;</span></span>,
+                        <span style="color:#606"><span style="color:#404">&quot;</span><span>values_method_options</span><span style="color:#404">&quot;</span></span>: {
+                        },
+                        <span style="color:#606"><span style="color:#404">&quot;</span><span>options</span><span style="color:#404">&quot;</span></span>: {
+                          <span style="color:#606"><span style="color:#404">&quot;</span><span>protected</span><span style="color:#404">&quot;</span></span>: <span style="color:#088">false</span>
+                        },
+                        <span style="color:#606"><span style="color:#404">&quot;</span><span>label</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">IpaddressLabel</span><span style="color:#710">&quot;</span></span>,
+                        <span style="color:#606"><span style="color:#404">&quot;</span><span>position</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">1</span>,
+                        <span style="color:#606"><span style="color:#404">&quot;</span><span>dynamic</span><span style="color:#404">&quot;</span></span>: <span style="color:#088">false</span>,
+                        <span style="color:#606"><span style="color:#404">&quot;</span><span>read_only</span><span style="color:#404">&quot;</span></span>: <span style="color:#088">false</span>,
+                        <span style="color:#606"><span style="color:#404">&quot;</span><span>resource_action</span><span style="color:#404">&quot;</span></span>: {
+                          <span style="color:#606"><span style="color:#404">&quot;</span><span>resource_type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">DialogField</span><span style="color:#710">&quot;</span></span>,
+                          <span style="color:#606"><span style="color:#404">&quot;</span><span>ae_attributes</span><span style="color:#404">&quot;</span></span>: {
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Environment Tab Description</span><span style="color:#710">&quot;</span></span>,
+                <span style="color:#606"><span style="color:#404">&quot;</span><span>display</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">edit</span><span style="color:#710">&quot;</span></span>,
+                <span style="color:#606"><span style="color:#404">&quot;</span><span>label</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">EnvironmentTab</span><span style="color:#710">&quot;</span></span>,
+                <span style="color:#606"><span style="color:#404">&quot;</span><span>position</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">1</span>,
+                <span style="color:#606"><span style="color:#404">&quot;</span><span>dialog_groups</span><span style="color:#404">&quot;</span></span>: [
+                  {
+                    <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Environment Box Description</span><span style="color:#710">&quot;</span></span>,
+                    <span style="color:#606"><span style="color:#404">&quot;</span><span>display</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">edit</span><span style="color:#710">&quot;</span></span>,
+                    <span style="color:#606"><span style="color:#404">&quot;</span><span>label</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">EnvironmentBoxLabel</span><span style="color:#710">&quot;</span></span>,
+                    <span style="color:#606"><span style="color:#404">&quot;</span><span>position</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">0</span>,
+                    <span style="color:#606"><span style="color:#404">&quot;</span><span>dialog_fields</span><span style="color:#404">&quot;</span></span>: [
+                      {
+                        <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">environmenttype</span><span style="color:#710">&quot;</span></span>,
+                        <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Environment Type Description</span><span style="color:#710">&quot;</span></span>,
+                        <span style="color:#606"><span style="color:#404">&quot;</span><span>type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">DialogFieldRadioButton</span><span style="color:#710">&quot;</span></span>,
+                        <span style="color:#606"><span style="color:#404">&quot;</span><span>data_type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">string</span><span style="color:#710">&quot;</span></span>,
+                        <span style="color:#606"><span style="color:#404">&quot;</span><span>display</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">edit</span><span style="color:#710">&quot;</span></span>,
+                        <span style="color:#606"><span style="color:#404">&quot;</span><span>display_method_options</span><span style="color:#404">&quot;</span></span>: {
+                        },
+                        <span style="color:#606"><span style="color:#404">&quot;</span><span>required</span><span style="color:#404">&quot;</span></span>: <span style="color:#088">true</span>,
+                        <span style="color:#606"><span style="color:#404">&quot;</span><span>required_method_options</span><span style="color:#404">&quot;</span></span>: {
+                        },
+                        <span style="color:#606"><span style="color:#404">&quot;</span><span>values</span><span style="color:#404">&quot;</span></span>: [
+                          [
+                            <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">large</span><span style="color:#710">&quot;</span></span>,
+                            <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Large Environment</span><span style="color:#710">&quot;</span></span>
+                          ],
+                          [
+                            <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">medium</span><span style="color:#710">&quot;</span></span>,
+                            <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Medium Environment</span><span style="color:#710">&quot;</span></span>
+                          ],
+                          [
+                            <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">small</span><span style="color:#710">&quot;</span></span>,
+                            <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Small Environment</span><span style="color:#710">&quot;</span></span>
+                          ]
+                        ],
+                        <span style="color:#606"><span style="color:#404">&quot;</span><span>values_method_options</span><span style="color:#404">&quot;</span></span>: {
+                        },
+                        <span style="color:#606"><span style="color:#404">&quot;</span><span>options</span><span style="color:#404">&quot;</span></span>: {
+                          <span style="color:#606"><span style="color:#404">&quot;</span><span>sort_by</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">description</span><span style="color:#710">&quot;</span></span>,
+                          <span style="color:#606"><span style="color:#404">&quot;</span><span>sort_order</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ascending</span><span style="color:#710">&quot;</span></span>
+                        },
+                        <span style="color:#606"><span style="color:#404">&quot;</span><span>label</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">EnvTypeLabel</span><span style="color:#710">&quot;</span></span>,
+                        <span style="color:#606"><span style="color:#404">&quot;</span><span>position</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">0</span>,
+                        <span style="color:#606"><span style="color:#404">&quot;</span><span>dynamic</span><span style="color:#404">&quot;</span></span>: <span style="color:#088">false</span>,
+                        <span style="color:#606"><span style="color:#404">&quot;</span><span>read_only</span><span style="color:#404">&quot;</span></span>: <span style="color:#088">false</span>,
+                        <span style="color:#606"><span style="color:#404">&quot;</span><span>resource_action</span><span style="color:#404">&quot;</span></span>: {
+                          <span style="color:#606"><span style="color:#404">&quot;</span><span>resource_type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">DialogField</span><span style="color:#710">&quot;</span></span>,
+                          <span style="color:#606"><span style="color:#404">&quot;</span><span>ae_attributes</span><span style="color:#404">&quot;</span></span>: {
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      }
+    ],
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>button_groups</span><span style="color:#404">&quot;</span></span>: [
+
+    ]
+  },
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>actions</span><span style="color:#404">&quot;</span></span>: [
+    {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">edit</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>method</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">post</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/services/110</span><span style="color:#710">&quot;</span></span>
+    },
+    {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">retire</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>method</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">post</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/services/110</span><span style="color:#710">&quot;</span></span>
+    },
+    {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">set_ownership</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>method</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">post</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/services/110</span><span style="color:#710">&quot;</span></span>
+    },
+    {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>method</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/services/110</span><span style="color:#710">&quot;</span></span>
+    },
+    {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">queryvm</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>method</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">post</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/services/110</span><span style="color:#710">&quot;</span></span>
+    }
+  ]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Showing the <strong>queryvm</strong> custom action being returned in the actions list.</p>
+</div>
+<div class="paragraph">
+<p>The following is the request triggering a <strong>queryvm</strong> action on the service:</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="request-2"><a class="anchor" href="#request-2"></a>Request:</h4>
+<div class="listingblock">
+<div class="content">
+<pre>POST /api/services/110</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">queryvm</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>resource</span><span style="color:#404">&quot;</span></span> : {
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>hostname</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">updated_hostname</span><span style="color:#710">&quot;</span></span>,
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>ipaddress</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">192.168.100.2</span><span style="color:#710">&quot;</span></span>,
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>environmenttype</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">medium</span><span style="color:#710">&quot;</span></span>
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="response-2"><a class="anchor" href="#response-2"></a>Response:</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>success</span><span style="color:#404">&quot;</span></span>: <span style="color:#088">true</span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>message</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Invoked custom dialog action queryvm for services id: 110</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/services/110</span><span style="color:#710">&quot;</span></span>
+}</code></pre>
+</div>
+</div>
+</div>
+</div>

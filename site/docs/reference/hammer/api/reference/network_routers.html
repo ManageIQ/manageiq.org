@@ -1,0 +1,126 @@
+---
+distro:         ManageIQ
+version:        Hammer
+
+group_id:       RestApi
+group_title:    REST API
+
+subgroup_id:    RestApi::Reference
+subgroup_title: Reference
+
+topic_id:       RestApi::Reference::NetworkRouters
+topic_title:    Network Routers
+
+article_title:  "Network Routers"
+
+breadcrumb_group: REST API
+breadcrumb_topic: Network Routers
+---
+
+<div class="sect1">
+<h2 id="network-routers"><a class="anchor" href="#network-routers"></a>Network Routers</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Management of Network Routers is provided via the following collection:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">/api/network_routers</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The following actions are available on Network Routers:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#querying-network-routers">Querying Network Routers</a></p>
+</li>
+<li>
+<p><a href="#deleting-network-routers">Deleting Network Routers</a></p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="querying-network-routers"><a class="anchor" href="#querying-network-routers"></a>Querying Network Routers</h3>
+<div class="paragraph">
+<p>Querying all Network Routers in the system is simply:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/network_routers</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Getting details on a specific Network Router:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/network_routers/:id</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-network-routers"><a class="anchor" href="#deleting-network-routers"></a>Deleting Network Routers</h3>
+<div class="paragraph">
+<p>Network Routers can be deleted via either the <strong>delete</strong> POST action or via the DELETE HTTP method.</p>
+</div>
+<div class="sect3">
+<h4 id="request"><a class="anchor" href="#request"></a>Request:</h4>
+<div class="listingblock">
+<div class="content">
+<pre>POST /api/network_routers/101</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="response"><a class="anchor" href="#response"></a>Response:</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>success</span><span style="color:#404">&quot;</span></span> : <span style="color:#088">true</span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>message</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Deleting Networking Router id:101 name: 'test_network_router'</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>task_id</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">33</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>task_href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/tasks/33</span><span style="color:#710">&quot;</span></span>
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or simply:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>DELETE /api/network_routers/101</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Deleting multiple Network Routers can be done as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>POST /api/network_routers</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>resources</span><span style="color:#404">&quot;</span></span> : [
+    { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/network_routers/101</span><span style="color:#710">&quot;</span></span> },
+    { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/network_routers/102</span><span style="color:#710">&quot;</span></span> },
+    <span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span>
+  ]
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>

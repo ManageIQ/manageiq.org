@@ -1,0 +1,131 @@
+---
+distro:         ManageIQ
+version:        Euwe
+
+group_id:       RestApi
+group_title:    REST API
+
+subgroup_id:    RestApi::Appendices
+subgroup_title: Appendices
+
+topic_id:       RestApi::Appendices::DeprecatedResourceAttributes
+topic_title:    Deprecated Resource Attributes
+
+article_title:  "Deprecated Resource Attributes"
+
+breadcrumb_group: REST API
+breadcrumb_topic: Deprecated Resource Attributes
+---
+
+<div class="sect1">
+<h2 id="deprecated-resource-attributes"><a class="anchor" href="#deprecated-resource-attributes"></a>Deprecated Resource Attributes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This page lists the resource attributes that have been deprecated in earlier releases and have
+been either renamed to newer attribute names or simply removed.</p>
+</div>
+<div class="sect2">
+<h3 id="v220-v230"><a class="anchor" href="#v220-v230"></a>API v2.2.0 &#8658; v2.3.0</h3>
+<div class="paragraph">
+<p>For Hardware:</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 80%;">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Old Attribute Name</th>
+<th class="tableblock halign-left valign-top">New Attribute Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">numvcpus</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cpu_sockets</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">memory_cpu</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">memory_mb</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>For Metrics:</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 80%;">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Old Attribute Name</th>
+<th class="tableblock halign-left valign-top">New Attribute Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">v_derived_logical_cpus_used</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">v_derived_cpu_total_cores_used</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>For Provision Workflows:</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 80%;">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Old Attribute Name</th>
+<th class="tableblock halign-left valign-top">New Attribute Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">allowed_datastore_aggregate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>removed</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">allowed_datastore_storage_controller</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>removed</strong></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>For all:</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 80%;">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Old Attribute Name</th>
+<th class="tableblock halign-left valign-top">New Attribute Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cores_per_socket</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cpu_cores_per_socket</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">logical_cpus</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cpu_total_cores</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">aggregate_logical_cpus</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">aggregate_cpu_total_cores</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>

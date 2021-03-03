@@ -1,0 +1,275 @@
+---
+distro:         ManageIQ
+version:        Fine
+
+group_id:       Authentication
+group_title:    Authentication
+
+subgroup_id:    
+subgroup_title: 
+
+topic_id:       Authentication::ConfiguringExternalAuthenticationWithActiveDirectory
+topic_title:    Configuring External Authentication with Active Directory
+
+article_title:  "Active Directory"
+
+breadcrumb_group: <a href="../auth/active_directory.html">Authentication</a>
+breadcrumb_topic: Configuring External Authentication with Active Directory
+---
+
+<div class="sect1">
+<h2 id="active-directory"><a class="anchor" href="#active-directory"></a>Active Directory</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In this guide we will cover how to manually configure a 7.1 Appliance&#8217;s
+external authentication to work against Active Directory. This provides AD users
+access to the Appliance UI as well as the REST API.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="#enabling-nm">Enabling Network Manager</a></p>
+</li>
+<li>
+<p><a href="#discovering-ad-domain">Discovering AD Domain</a></p>
+</li>
+<li>
+<p><a href="#joining-ad-domain">Joining AD Domain</a></p>
+</li>
+<li>
+<p><a href="#allowing-ad-users-login">Allowing AD Users to Login to appliance</a></p>
+</li>
+<li>
+<p><a href="#configure-sssd">Configure SSSD</a></p>
+</li>
+<li>
+<p><a href="#configure-apache">Configure Apache</a></p>
+</li>
+<li>
+<p><a href="#configure-admin-ui">Configure Administrative UI</a></p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>In these examples, the AD Domain shown will be EXAMPLE.COM</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="enabling-nm"><a class="anchor" href="#enabling-nm"></a>Enabling Network Manager</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This is an <strong>optional</strong> step for allowing realm to discover the Active Directory domain. If not enabled, one
+can still join an AD domain if known by the domain name.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre># systemctl enable NetworkManager
+# systemctl start NetworkManager
+# sed -i '/^NM_CONTROLLED=.*/d;$aNM_CONTROLLED=yes' /etc/sysconfig/network-scripts/ifcfg-eth0
+# systemctl restart network</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="discovering-ad-domain"><a class="anchor" href="#discovering-ad-domain"></a>Discovering AD Domains</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This only works if Network Manager is enabled.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre># realm discover
+example.com
+  type: kerberos
+  realm-name: EXAMPLE.COM
+  domain-name: example.com
+  configured: kerberos-member
+  server-software: active-directory
+  client-software: sssd
+  required-package: oddjob
+  required-package: oddjob-mkhomedir
+  required-package: sssd
+  required-package: adcli
+  required-package: samba-common
+  login-formats: %U@example.com
+  login-policy: allow-realm-logins</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="joining-ad-domain"><a class="anchor" href="#joining-ad-domain"></a>Joining AD Domain</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When joining an AD domain, specify a user that has enough permission to be able to browse the directory.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre># realm join example.com -U user
+Password for user: xxxxxxxx
+#</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="allowing-ad-users-login"><a class="anchor" href="#allowing-ad-users-login"></a>Allowing AD Users to Login</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre># realm permit --all</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="configure-sssd"><a class="anchor" href="#configure-sssd"></a>Configure SSSD</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Update the <strong>/etc/sssd/sssd.conf</strong> file as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>    [domain/example.com]
+    ad_domain = example.com
+    krb5_realm = EXAMPLE.COM
+    realmd_tags = manages-system joined-with-samba
+    cache_credentials = True
+    id_provider = ad
+    krb5_store_password_if_offline = True
+    default_shell = /bin/bash
+    ldap_id_mapping = True
+    use_fully_qualified_names = True
+    fallback_homedir = /home/%d/%u
+    access_provider = ad
+=&gt;  ldap_user_extra_attrs = mail, givenname, sn, displayname
+
+=&gt;  [sssd]
+=&gt;  domains = example.com
+=&gt;  config_file_version = 2
+=&gt;  services = nss, pam, ifp
+=&gt;  default_domain_suffix = example.com
+
+=&gt;  [nss]
+=&gt;  homedir_substring = /home
+
+=&gt;  [pam]
+=&gt;  default_domain_suffix = example.com
+
+=&gt;  [ifp]
+=&gt;  default_domain_suffix = example.com
+=&gt;  allowed_uids = apache, root
+=&gt;  user_attributes = +mail, +givenname, +sn, +displayname</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="configure-apache"><a class="anchor" href="#configure-apache"></a>Configure Apache</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Make sure the Kerberos keytab created by <strong>realm join</strong> above is readable by Apache.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre># chgrp apache /etc/krb5.keytab
+# chmod 640    /etc/krb5.keytab</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Create the Apache configuration files</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre># TEMPLATE_DIR="/var/www/miq/system/TEMPLATE"
+# cp ${TEMPLATE_DIR}/etc/pam.d/httpd-auth                         \
+                    /etc/pam.d/httpd-auth
+# cp ${TEMPLATE_DIR}/etc/httpd/conf.d/manageiq-remote-user.conf       \
+                    /etc/httpd/conf.d/
+# cp ${TEMPLATE_DIR}/etc/httpd/conf.d/manageiq-external-auth.conf.erb \
+                    /etc/httpd/conf.d/manageiq-external-auth.conf</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Update the Apache configuration file <strong>/etc/httpd/conf.d/manageiq-external-auth.conf</strong> as follows
+to specify the correct AD domain, and reference the Kerberos keytab appropriately.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>...
+
+    &lt;Location /dashboard/kerberos_authenticate&gt;
+      AuthType           Kerberos
+      AuthName           "Kerberos Login"
+      KrbMethodNegotiate On
+      KrbMethodK5Passwd  Off
+=&gt;    KrbAuthRealms      example.com
+=&gt;    Krb5KeyTab         /etc/krb5.keytab
+=&gt;    KrbServiceName     Any
+      Require            pam-account httpd-auth
+
+      ErrorDocument 401  /proxy_pages/invalid_sso_credentials.js
+    &lt;/Location&gt;
+
+...</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Set appropriate SELinux permissions:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre># setsebool -P allow_httpd_mod_auth_pam on
+# setsebool -P httpd_dbus_sssd          on</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Restart Services</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre># systemctl restart sssd
+# systemctl restart httpd</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="configure-admin-ui"><a class="anchor" href="#configure-admin-ui"></a>Configure Administrative UI</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Login as admin, then in <em>Configure&#8594;Configuration&#8594;Authentication</em></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Set mode to External (httpd)</p>
+</li>
+<li>
+<p>Check: <em>Get User Groups from External Authentication (httpd)</em></p>
+</li>
+<li>
+<p>Check: <em>Enable Single Signon</em> if you want to allow Kerberos SSO to AD.</p>
+</li>
+<li>
+<p>Click Save.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The above steps need to be done on each UI and WebService enabled appliance.</p>
+</div>
+<div class="paragraph">
+<p>in <em>Configure&#8594;Configuration&#8594;Access Control</em></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Make sure the user&#8217;s AD group for the appliance are created and appropriate roles assigned to those groups.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>

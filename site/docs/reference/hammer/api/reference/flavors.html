@@ -1,0 +1,161 @@
+---
+distro:         ManageIQ
+version:        Hammer
+
+group_id:       RestApi
+group_title:    REST API
+
+subgroup_id:    RestApi::Reference
+subgroup_title: Reference
+
+topic_id:       RestApi::Reference::FlavorManagement
+topic_title:    Flavor Management
+
+article_title:  "Flavor Management"
+
+breadcrumb_group: REST API
+breadcrumb_topic: Flavor Management
+---
+
+<div class="sect1">
+<h2 id="flavor-management"><a class="anchor" href="#flavor-management"></a>Flavor Management</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Management of Flavors is available via the following endpoint:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">/api/flavors</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="querying-flavors"><a class="anchor" href="#querying-flavors"></a>Querying Flavors</h3>
+<div class="paragraph">
+<p>Querying all available Flavors:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/flavors</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Getting details on a specific Flavor:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/flavors/:id</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Querying the Flavors for a specific Provider:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/providers/:id/flavors</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Getting details on a specific Flavor of a Provider:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/providers/:id/flavors/:flavor_id</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="managing-flavors"><a class="anchor" href="#managing-flavors"></a>Managing Flavors</h3>
+<div class="paragraph">
+<p>The following actions are available on Flavors of Providers:</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 60%;">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Action</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#create-flavors">create</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create Flavors</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#delete-flavors">delete</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete Flavors</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="create-flavors"><a class="anchor" href="#create-flavors"></a>Create Flavors</h3>
+<div class="paragraph">
+<p>Flavors can be created directly for a Provider as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">POST /api/providers/:id/flavors</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">base-system</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>cpu_cores</span><span style="color:#404">&quot;</span></span> : <span style="color:#00D">2</span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>memory</span><span style="color:#404">&quot;</span></span> :  <span style="color:#00D">4096000000</span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>root_disk_size</span><span style="color:#404">&quot;</span></span> : <span style="color:#00D">16384000000</span>
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="delete-flavors"><a class="anchor" href="#delete-flavors"></a>Delete Flavors</h3>
+<div class="paragraph">
+<p>Flavors of a Provider can be deleted via the <em>delete</em> action:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">POST /api/providers/:id/flavors/:flavor_id</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Multiple Flavors can also be deleted in a single request as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">POST /api/providers/:id/flavors</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>resources</span><span style="color:#404">&quot;</span></span> : [
+    { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/flavors/6</span><span style="color:#710">&quot;</span></span> },
+    { <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">7</span><span style="color:#710">&quot;</span></span> }
+  ]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Single Flavors can also be deleted with the DELETE HTTP method as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">DELETE /api/providers/:id/flavors/:flavor_id</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>

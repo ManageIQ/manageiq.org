@@ -1,0 +1,113 @@
+---
+distro:         ManageIQ
+version:        Fine
+
+group_id:       RestApiExamples
+group_title:    REST API Examples
+
+subgroup_id:    RestApiExamples::VmManagement
+subgroup_title: VM Management
+
+topic_id:       RestApiExamples::VmManagement::DeleteAVm
+topic_title:    Delete a VM
+
+article_title:  "Delete VMs"
+
+breadcrumb_group: REST API Examples
+breadcrumb_topic: Delete a VM
+---
+
+<div class="sect2">
+<h3 id="delete-vms"><a class="anchor" href="#delete-vms"></a>Delete VMs</h3>
+<div class="sect3">
+<h4 id="deleting-a-single-vm"><a class="anchor" href="#deleting-a-single-vm"></a>Deleting a single VM</h4>
+<div class="sect4">
+<h5 id="request"><a class="anchor" href="#request"></a>Request:</h5>
+<div class="listingblock">
+<div class="content">
+<pre>DELETE /api/vms/334</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Upon success, Vm targeted for deletion asynchronously and No Response Content with HTTP status code 204</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="deleting-multiple-vms"><a class="anchor" href="#deleting-multiple-vms"></a>Deleting multiple VMs</h4>
+<div class="sect4">
+<h5 id="request-2"><a class="anchor" href="#request-2"></a>Request:</h5>
+<div class="listingblock">
+<div class="content">
+<pre>DELETE /api/vms</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>resources</span><span style="color:#404">&quot;</span></span> : [
+    { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/vms/348</span><span style="color:#710">&quot;</span></span> },
+    { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/vms/349</span><span style="color:#710">&quot;</span></span> }
+  ]
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="response"><a class="anchor" href="#response"></a>Response:</h5>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>results</span><span style="color:#404">&quot;</span></span>: [
+    {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>success</span><span style="color:#404">&quot;</span></span>: <span style="color:#088">true</span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>message</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">VM id:348 name:'aab-temp1' deleting</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>task_id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">616</span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>task_href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/tasks/616</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/vms/348</span><span style="color:#710">&quot;</span></span>
+    },
+    {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>success</span><span style="color:#404">&quot;</span></span>: <span style="color:#088">true</span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>message</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">VM id:349 name:'aab-temp2' deleting</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>task_id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">617</span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>task_href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/tasks/617</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/vms/349</span><span style="color:#710">&quot;</span></span>
+    }
+  ]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Optionally monitoring the asynchronous Vm deletion by accessing
+the related Task as follows:</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="request-3"><a class="anchor" href="#request-3"></a>Request:</h5>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/tasks/616</pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="response-2"><a class="anchor" href="#response-2"></a>Response:</h5>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/tasks/616</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">616</span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">VM id:348 name:'aab-temp1' deleting</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>state</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Finished</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>status</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Ok</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>message</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Task completed successfully</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>userid</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">admin</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>created_on</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2015-05-05T19:33:35Z</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>updated_on</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2015-05-05T19:33:40Z</span><span style="color:#710">&quot;</span></span>
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>

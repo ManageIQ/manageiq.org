@@ -1,0 +1,128 @@
+---
+distro:         ManageIQ
+version:        Gaprindashvili
+
+group_id:       RestApi
+group_title:    REST API
+
+subgroup_id:    RestApi::Appendices
+subgroup_title: Appendices
+
+topic_id:       RestApi::Appendices::ProviderTypes
+topic_title:    Provider Types
+
+article_title:  "Provider Types"
+
+breadcrumb_group: REST API
+breadcrumb_topic: Provider Types
+---
+
+<div class="sect1">
+<h2 id="provider-types"><a class="anchor" href="#provider-types"></a>Provider Types</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The provider types available with earlier appliances have changed with this release.
+This is what gets specified with the <em>type</em> attribute when creating a new provider:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>POST /api/providers</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">vCenter 5</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>type</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ManageIQ::Providers::Vmware::InfraManager</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>hostname</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">my_vcenter_50</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span>
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The following table lists the type from previous appliance
+releases (<em>v2.0.0</em> of the REST API), and their mapping to the
+new <em>v2.1.0</em> types:</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 80%;">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">v2.0.0 Provider Type</th>
+<th class="tableblock halign-left valign-top">v2.1.0 Provider Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EmsAmazon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ManageIQ::Providers::Amazon::CloudManager</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ManageIQ::Providers::Atomic::ContainerManager (<strong>new</strong>)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ManageIQ::Providers::Azure::CloudManager (<strong>new</strong>)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EmsKubernetes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ManageIQ::Providers::Kubernetes::ContainerManager</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EmsMicrosoft</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ManageIQ::Providers::Microsoft::InfraManager</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ManageIQ::Providers::Openshift::ContainerManager (<strong>new</strong>)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EmsOpenstackInfra</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ManageIQ::Providers::Openstack::InfraManager</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EmsOpenstack</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ManageIQ::Providers::Openstack::CloudManager</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EmsRedhat</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ManageIQ::Providers::Redhat::InfraManager</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EmsVmware</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ManageIQ::Providers::Vmware::InfraManager</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>And when <em>provider-class</em> is set to <strong>provider</strong>, the following
+mapping table applies:</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 80%;">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">v2.0.0 Provider Type</th>
+<th class="tableblock halign-left valign-top">v2.1.0 Provider Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ProviderForeman</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ManageIQ::Providers::Foreman::Provider</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ProviderOpenstack</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ManageIQ::Providers::Openstack::Provider</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>

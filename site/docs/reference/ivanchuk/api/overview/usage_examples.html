@@ -1,0 +1,588 @@
+---
+distro:         ManageIQ
+version:        Ivanchuk
+
+group_id:       RestApi
+group_title:    REST API
+
+subgroup_id:    RestApi::Overview
+subgroup_title: Overview
+
+topic_id:       RestApi::Overview::UsageExamples
+topic_title:    Usage Examples
+
+article_title:  "Usage Examples"
+
+breadcrumb_group: REST API
+breadcrumb_topic: Usage Examples
+---
+
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The below examples illustrate how to use the ManageIQ REST API with the Client for URLs (cURL), Ruby and Python.
+All examples shown use the default admin credentials with insecure methods.</p>
+</div>
+<div class="paragraph">
+<p>Three basic examples will be shown, a <strong>GET</strong>, a <strong>POST</strong> with a simple payload and a
+<strong>GET</strong> with filtering</p>
+</div>
+<div class="paragraph">
+<p>All examples use IP Address <strong>192.0.2.0</strong> to represent the ManageIQ appliance, with the default HTTPS port omitted.</p>
+</div>
+<hr>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#curl">cURL</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#curl-example1">Example 1: A simple <strong>GET</strong> with cURL</a></p>
+</li>
+<li>
+<p><a href="#curl-example2">Example 2: Using <strong>POST</strong> to edit a group with cURL</a></p>
+</li>
+<li>
+<p><a href="#curl-example3">Example 3: A <strong>GET</strong> using filtering with cURL</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="#ruby">Ruby</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#ruby-example1">Example 1: A simple <strong>GET</strong> with Ruby</a></p>
+</li>
+<li>
+<p><a href="#ruby-example2">Example 2: Using <strong>POST</strong> to edit a group with Ruby</a></p>
+</li>
+<li>
+<p><a href="#ruby-example3">Example 3: A <strong>GET</strong> using filtering with Ruby</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="#python">Python</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#python-example1">Example 1: A simple <strong>GET</strong> with Python</a></p>
+</li>
+<li>
+<p><a href="#python-example2">Example 2: Using <strong>POST</strong> to edit a group with Python</a></p>
+</li>
+<li>
+<p><a href="#python-example3">Example 3: A <strong>GET</strong> using filtering with Python</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="curl"><a class="anchor" href="#curl"></a>cURL</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The cURL command can be used from the shell. However the shell&#8217;s interpretation of some characters, for example <strong>&amp;</strong>, can make it awkward to use for complex cases.
+To help alleviate this the payload can be passed to cURL using the <strong>--data</strong> flag, where the JSON payload is provided in a file.</p>
+</div>
+<div class="paragraph">
+<p>The JSON returned is formated in the examples using <strong>python -m json.tool</strong></p>
+</div>
+<div class="sect3">
+<h4 id="curl-example1"><a class="anchor" href="#curl-example1"></a>Example 1: A simple <strong>GET</strong> with cURL</h4>
+<div class="paragraph">
+<p>Get the collection <strong>groups</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>curl --user admin:smartvm --insecure --request GET https://192.0.2.0/api/groups | python -m json.tool</pre>
+</div>
+</div>
+<div class="sect4">
+<h5 id="example-1-result"><a class="anchor" href="#example-1-result"></a>Example 1: Result</h5>
+<div class="paragraph">
+<p>Result truncated and showing only the returned <strong>resources</strong>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>{
+    ...
+    "resources": [
+        {
+            "href": "https://192.0.2.0/api/groups/2"
+        },
+        {
+            "href": "https://192.0.2.0/api/groups/3"
+        },
+        ...
+        {
+            "href": "https://192.0.2.0/api/groups/23"
+        }
+    ],
+    ...
+}</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="curl-example2"><a class="anchor" href="#curl-example2"></a>Example 2: Using <strong>POST</strong> to edit a group with cURL</h4>
+<div class="paragraph">
+<p>Edit an instance of the collection <strong>groups</strong></p>
+</div>
+<div class="paragraph">
+<p>In this example the payload <strong>data</strong> is read from a file.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ cat request.json
+{
+  "action" : "edit",
+  "resource" : {
+    "description" : "updated group description from cURL"
+  }
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Use the data in file request.json to edit an instance of the collection <strong>groups</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>curl --data @request.json \
+     --header "Content-Type: application/json" \
+     --user admin:smartvm \
+     --insecure \
+     --request POST https://192.0.2.0/api/groups/23 | python -m json.tool</pre>
+</div>
+</div>
+<div class="sect4">
+<h5 id="example-2-result"><a class="anchor" href="#example-2-result"></a>Example 2: Result</h5>
+<div class="listingblock">
+<div class="content">
+<pre>{
+    "created_on": "2019-04-15T19:49:42Z",
+    "description": "updated group description from cURL",
+    "group_type": "user",
+    "href": "https://192.0.2.0/api/groups/23",
+    "id": "23",
+    "sequence": 22,
+    "settings": null,
+    "tenant_id": "2",
+    "updated_on": "2019-06-19T19:15:51Z"
+}</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="curl-example3"><a class="anchor" href="#curl-example3"></a>Example 3: A <strong>GET</strong> using filtering with cURL</h4>
+<div class="paragraph">
+<p>Filtering can be done by passing parameters in the URL. Parameters are preceded by the <strong>&amp;</strong> character, which can cause problems as the shell interprets the <strong>&amp;</strong> character as an instruction to: <strong>run this command in the background</strong>. To avoid this the parameters can instead be passed to curl using the <strong>--get</strong> flag combined with each parameter being passed with the <strong>--data</strong> flags.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>curl --user admin:smartvm \
+     --insecure \
+     --request GET \
+     --header "Content-Type: application/json" https://192.0.2.0/api/groups \
+     --get \
+     --data "expand=resources" \
+     --data "attributes=description,miq_user_role_name" \
+     --data "filter[]=miq_user_role_name='*user*'" | python -m json.tool</pre>
+</div>
+</div>
+<div class="sect4">
+<h5 id="example-3-result"><a class="anchor" href="#example-3-result"></a>Example 3: Result</h5>
+<div class="paragraph">
+<p>Result truncated and showing only the returned <strong>resources</strong>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>...
+  "resources": [
+      {
+          "description": "EvmGroup-user",
+          "href": "https://192.0.2.0/api/groups/4",
+          "id": "4",
+          "miq_user_role_name": "EvmRole-user"
+      },
+      {
+          "description": "EvmGroup-vm_user",
+          "href": "https://192.0.2.0/api/groups/9",
+          "id": "9",
+          "miq_user_role_name": "EvmRole-vm_user"
+      },
+      {
+          "description": "EvmGroup-user_self_service",
+          "href": "https://192.0.2.0/api/groups/12",
+          "id": "12",
+          "miq_user_role_name": "EvmRole-user_self_service"
+      },
+      {
+          "description": "EvmGroup-user_limited_self_service",
+          "href": "https://192.0.2.0/api/groups/13",
+          "id": "13",
+          "miq_user_role_name": "EvmRole-user_limited_self_service"
+      }
+  ],
+...</pre>
+</div>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="ruby"><a class="anchor" href="#ruby"></a>Ruby</h3>
+<div class="paragraph">
+<p>The same three examples shown above are illustrated here using Ruby.</p>
+</div>
+<div class="paragraph">
+<p>The ManageIQ hostname or IP Address is being made available through the environment variable <strong>MIQ</strong> :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>export MIQ="192.0.2.0"</pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="ruby-example1"><a class="anchor" href="#ruby-example1"></a>Example 1: A simple <strong>GET</strong> with Ruby</h4>
+<div class="paragraph">
+<p>Get the collection <strong>groups</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>#!/usr/bin/env ruby
+
+require 'json'
+require 'net/http'
+require 'openssl'
+require 'uri'
+
+uri = URI.parse("https://#{ENV['MIQ']}/api/groups")
+
+http = Net::HTTP.new(uri.host, uri.port)
+http.use_ssl = true
+http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+request = Net::HTTP::Get.new(uri.request_uri)
+request.basic_auth("admin", "smartvm")
+
+response = http.request(request)
+
+puts "Reply:\n " + JSON.pretty_generate(JSON.parse(response.body.strip))</pre>
+</div>
+</div>
+<div class="sect4">
+<h5 id="example-1-result-2"><a class="anchor" href="#example-1-result-2"></a>Example 1: Result</h5>
+<div class="paragraph">
+<p>Result truncated and showing only the returned <strong>resources</strong>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>{
+    ...
+    "resources": [
+        {
+            "href": "https://192.0.2.0/api/groups/2"
+        },
+        {
+            "href": "https://192.0.2.0/api/groups/3"
+        },
+        ...
+        {
+            "href": "https://192.0.2.0/api/groups/23"
+        }
+    ],
+    ...
+}</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="ruby-example2"><a class="anchor" href="#ruby-example2"></a>Example 2: Using <strong>POST</strong> to edit a group with Ruby</h4>
+<div class="paragraph">
+<p>Edit an instance of the collection <strong>groups</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>#!/usr/bin/env ruby
+
+require 'json'
+require 'net/http'
+require 'openssl'
+require 'uri'
+
+uri = URI.parse("https://#{ENV['MIQ']}/api/groups/23")
+
+http = Net::HTTP.new(uri.host, uri.port)
+http.use_ssl = true
+http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+request = Net::HTTP::Post.new(uri.request_uri)
+request.basic_auth("admin", "smartvm")
+request.body = '
+{
+  "action" : "edit",
+  "resource" : {
+    "description" : "updated group description from ruby"
+  }
+}
+'
+response = http.request(request)
+puts JSON.pretty_generate(JSON.parse(response.body.strip))</pre>
+</div>
+</div>
+<div class="sect4">
+<h5 id="example-2-result-2"><a class="anchor" href="#example-2-result-2"></a>Example 2: Result</h5>
+<div class="listingblock">
+<div class="content">
+<pre>{
+  "href": "https://192.0.2.0/api/groups/23",
+  "id": "23",
+  "description": "updated group description from ruby",
+  "tenant_id": "2",
+  "group_type": "user",
+  "sequence": 22,
+  "created_on": "2019-04-15T19:49:42Z",
+  "updated_on": "2019-06-20T18:55:40Z",
+  "settings": null
+}</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="ruby-example3"><a class="anchor" href="#ruby-example3"></a>Example 3: A <strong>GET</strong> using filtering with Ruby</h4>
+<div class="listingblock">
+<div class="content">
+<pre>#!/usr/bin/env ruby
+
+require 'json'
+require 'net/http'
+require 'openssl'
+require 'uri'
+
+
+expand_resources="expand=resources&amp;attributes=description,miq_user_role_name"
+uri = URI.parse("https://#{ENV['MIQ']}/api/groups/?#{expand_resources}&amp;filter[]=miq_user_role_name='*user*'")
+
+http = Net::HTTP.new(uri.host, uri.port)
+http.use_ssl = true
+http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+request = Net::HTTP::Get.new(uri.request_uri)
+request.basic_auth("admin", "smartvm")
+
+response = http.request(request)
+
+puts "Reply:\n " + JSON.pretty_generate(JSON.parse(response.body.strip))</pre>
+</div>
+</div>
+<div class="sect4">
+<h5 id="example-3-result-2"><a class="anchor" href="#example-3-result-2"></a>Example 3: Result</h5>
+<div class="paragraph">
+<p>Result truncated and showing only the returned <strong>resources</strong>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>...
+  "resources": [
+      {
+          "description": "EvmGroup-user",
+          "href": "https://192.0.2.0/api/groups/4",
+          "id": "4",
+          "miq_user_role_name": "EvmRole-user"
+      },
+      {
+          "description": "EvmGroup-vm_user",
+          "href": "https://192.0.2.0/api/groups/9",
+          "id": "9",
+          "miq_user_role_name": "EvmRole-vm_user"
+      },
+      {
+          "description": "EvmGroup-user_self_service",
+          "href": "https://192.0.2.0/api/groups/12",
+          "id": "12",
+          "miq_user_role_name": "EvmRole-user_self_service"
+      },
+      {
+          "description": "EvmGroup-user_limited_self_service",
+          "href": "https://192.0.2.0/api/groups/13",
+          "id": "13",
+          "miq_user_role_name": "EvmRole-user_limited_self_service"
+      }
+  ],
+...</pre>
+</div>
+</div>
+<hr>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="python"><a class="anchor" href="#python"></a>Python</h3>
+<div class="paragraph">
+<p>The same three examples shown above are illustrated here using Python.</p>
+</div>
+<div class="paragraph">
+<p>The ManageIQ hostname or IP Address is being made available through the environment variable <strong>MIQ</strong> :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>export MIQ="192.0.2.0"</pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="python-example1"><a class="anchor" href="#python-example1"></a>Example 1: A simple <strong>GET</strong> with Python</h4>
+<div class="paragraph">
+<p>Get the collection <strong>groups</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>#!/usr/bin/env python
+
+import requests
+import json
+import os
+
+url = 'https://' + str(os.environ["MIQ"]) + '/api/groups'
+response = requests.get(url, auth=('admin', 'smartvm'), verify=False)
+print("Result:\n" + json.dumps(json.loads(response.text), indent=4, sort_keys=True))</pre>
+</div>
+</div>
+<div class="sect4">
+<h5 id="example-1-result-3"><a class="anchor" href="#example-1-result-3"></a>Example 1: Result</h5>
+<div class="paragraph">
+<p>Result truncated and showing only the returned <strong>resources</strong>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>{
+    ...
+    "resources": [
+        {
+            "href": "https://192.0.2.0/api/groups/2"
+        },
+        {
+            "href": "https://192.0.2.0/api/groups/3"
+        },
+        ...
+        {
+            "href": "https://192.0.2.0/api/groups/23"
+        }
+    ],
+    ...
+}</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="python-example2"><a class="anchor" href="#python-example2"></a>Example 2: Using <strong>POST</strong> to edit a group with Python</h4>
+<div class="paragraph">
+<p>Edit an instance of the collection <strong>groups</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>#!/usr/bin/env python
+
+import requests
+import json
+import os
+
+url = 'https://' + str(os.environ["MIQ"]) + '/api/groups/23'
+
+request_body = { 'action':  'edit', 'resource' : { 'description' : 'updated group description from python' } }
+headers = {'Content-type': 'application/json'}
+response = requests.post(url, data=json.dumps(request_body), headers=headers, auth=('admin', 'smartvm'), verify=False)
+print("Result:\n" + json.dumps(json.loads(response.text), indent=4, sort_keys=True))</pre>
+</div>
+</div>
+<div class="sect4">
+<h5 id="example-2-result-3"><a class="anchor" href="#example-2-result-3"></a>Example 2: Result</h5>
+<div class="listingblock">
+<div class="content">
+<pre>{
+    "created_on": "2019-04-15T19:49:42Z",
+    "description": "updated group description from python",
+    "group_type": "user",
+    "href": "https://192.0.2.0/api/groups/23",
+    "id": "23",
+    "sequence": 22,
+    "settings": null,
+    "tenant_id": "2",
+    "updated_on": "2019-06-20T20:48:47Z"
+}</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="python-example3"><a class="anchor" href="#python-example3"></a>Example 3: A <strong>GET</strong> using filtering with Python</h4>
+<div class="listingblock">
+<div class="content">
+<pre>#!/usr/bin/env python
+
+import requests
+import json
+import os
+
+expand_resources="expand=resources&amp;attributes=description,miq_user_role_name"
+url = "https://" + str(os.environ["MIQ"]) + "/api/groups/?" + str(expand_resources) + "&amp;filter[]=miq_user_role_name='*user*'"
+response = requests.get(url, auth=('admin', 'smartvm'), verify=False)
+print("Result:\n" + json.dumps(json.loads(response.text), indent=4, sort_keys=True))</pre>
+</div>
+</div>
+<div class="sect4">
+<h5 id="example-3-result-3"><a class="anchor" href="#example-3-result-3"></a>Example 3: Result</h5>
+<div class="paragraph">
+<p>Result truncated and showing only the returned <strong>resources</strong>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>...
+  "resources": [
+      {
+          "description": "EvmGroup-user",
+          "href": "https://192.0.2.0/api/groups/4",
+          "id": "4",
+          "miq_user_role_name": "EvmRole-user"
+      },
+      {
+          "description": "EvmGroup-vm_user",
+          "href": "https://192.0.2.0/api/groups/9",
+          "id": "9",
+          "miq_user_role_name": "EvmRole-vm_user"
+      },
+      {
+          "description": "EvmGroup-user_self_service",
+          "href": "https://192.0.2.0/api/groups/12",
+          "id": "12",
+          "miq_user_role_name": "EvmRole-user_self_service"
+      },
+      {
+          "description": "EvmGroup-user_limited_self_service",
+          "href": "https://192.0.2.0/api/groups/13",
+          "id": "13",
+          "miq_user_role_name": "EvmRole-user_limited_self_service"
+      }
+  ],
+...</pre>
+</div>
+</div>
+<hr>
+</div>
+</div>
+</div>
+</div>
+</div>

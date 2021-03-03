@@ -1,0 +1,65 @@
+---
+distro:         ManageIQ
+version:        Hammer
+
+group_id:       RestApi
+group_title:    REST API
+
+subgroup_id:    RestApi::Appendices
+subgroup_title: Appendices
+
+topic_id:       RestApi::Appendices::DeprecatedTypes
+topic_title:    Deprecated Types
+
+article_title:  "Deprecated Types"
+
+breadcrumb_group: REST API
+breadcrumb_topic: Deprecated Types
+---
+
+<div class="sect1">
+<h2 id="deprecated-types"><a class="anchor" href="#deprecated-types"></a>Deprecated Types</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This page lists the types that have been deprecated in previous releases and have
+been updated to newer types. They are <em>temporarily</em> supported
+in the listed releases but will be removed in future releases.</p>
+</div>
+<div class="sect2">
+<h3 id="v240-v300"><a class="anchor" href="#v240-v300"></a>API v2.4.0 &#8658; v3.0.0</h3>
+<div class="paragraph">
+<p>For Orchestration Templates:</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 80%;">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Old Type</th>
+<th class="tableblock halign-left valign-top">New Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OrchestrationTemplateAzure</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ManageIQ::Providers::Azure::CloudManager::OrchestrationTemplate</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OrchestrationTemplateHot</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ManageIQ::Providers::Openstack::CloudManager::OrchestrationTemplate</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OrchestrationTemplateCfn</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ManageIQ::Providers::Amazon::CloudManager::OrchestrationTemplate</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OrchestrationTemplateVnfd</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ManageIQ::Providers::Openstack::CloudManager::VnfdTemplate</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>

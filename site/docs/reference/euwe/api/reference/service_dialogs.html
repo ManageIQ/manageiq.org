@@ -1,0 +1,90 @@
+---
+distro:         ManageIQ
+version:        Euwe
+
+group_id:       RestApi
+group_title:    REST API
+
+subgroup_id:    RestApi::Reference
+subgroup_title: Reference
+
+topic_id:       RestApi::Reference::ServiceDialogs
+topic_title:    Service Dialogs
+
+article_title:  "Service Dialogs"
+
+breadcrumb_group: REST API
+breadcrumb_topic: Service Dialogs
+---
+
+<div class="sect1">
+<h2 id="service-dialogs"><a class="anchor" href="#service-dialogs"></a>Service Dialogs</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Management of Service Dialogs is provided via the collection:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">/api/service_dialogs</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The following action is provided on service_dialogs resources:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#deleting-service-dialogs">Deleting Service Dialogs</a></p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="deleting-service-dialogs"><a class="anchor" href="#deleting-service-dialogs"></a>Deleting Service Dialogs</h3>
+<div class="paragraph">
+<p>Deleting a Service Dialog can be done via the <em>delete</em> action as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">POST /api/service_dialogs/:id</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or via the DELETE HTTP method as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">DELETE /api/service_dialogs/:id</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>One can also delete multiple Service Dialogs via the <em>delete</em> action on the
+collection with references to the service dialogs to delete as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">POST /api/service_dialogs</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>resources</span><span style="color:#404">&quot;</span></span> : [
+    { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/service_dialogs/101</span><span style="color:#710">&quot;</span></span> },
+    { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/service_dialogs/102</span><span style="color:#710">&quot;</span></span> },
+    { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/service_dialogs/103</span><span style="color:#710">&quot;</span></span> },
+    <span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span>
+  ]
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>

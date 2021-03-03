@@ -1,0 +1,428 @@
+---
+distro:         ManageIQ
+version:        Euwe
+
+group_id:       Authentication
+group_title:    Authentication
+
+subgroup_id:    
+subgroup_title: 
+
+topic_id:       Authentication::ConfiguringExternalAuthenticationWithLdap
+topic_title:    Configuring External Authentication with LDAP
+
+article_title:  "LDAP"
+
+breadcrumb_group: <a href="../auth/active_directory.html">Authentication</a>
+breadcrumb_topic: Configuring External Authentication with LDAP
+---
+
+<div class="sect1">
+<h2 id="ldap"><a class="anchor" href="#ldap"></a>LDAP</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In this guide we will cover how to manually configure a 7.1 Appliance&#8217;s
+external authentication to work against LDAP. This provides LDAP users
+access to the Appliance UI as well as the REST API.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="#testing-openldap">Testing OpenLDAP</a></p>
+</li>
+<li>
+<p><a href="#configure-sssd">Configure SSSD</a></p>
+</li>
+<li>
+<p><a href="#configure-apache">Configure Apache</a></p>
+</li>
+<li>
+<p><a href="#configure-selinux">Configure SELinux</a></p>
+</li>
+<li>
+<p><a href="#configure-admin-ui">Configure Administrative UI</a></p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>In these examples, the LDAP domain used will be <em>example.com</em></p>
+</div>
+<div class="paragraph">
+<p><strong>Note</strong>: The SSSD and OpenLDAP configurations shown below are simply examples. Depending on the Ldap environment,
+Ldap directory server used, the configurations can widely differ. Many other options are available to
+the <em>authconfig</em> command as well as the <em>sssd.conf</em> configuration file.</p>
+</div>
+<div class="paragraph">
+<p>The following reference are available for customizing SSSD for any LDAP directory:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre># man authconfig
+# man ldap.conf
+# man sssd-ldap</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The document @ <a href="https://onemoretech.wordpress.com/2014/02/23/sssd-for-ldap-auth-on-linux/" class="bare">https://onemoretech.wordpress.com/2014/02/23/sssd-for-ldap-auth-on-linux/</a> is also helpful.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="testing-openldap"><a class="anchor" href="#testing-openldap"></a>Testing OpenLDAP</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="with-ssl"><a class="anchor" href="#with-ssl"></a>With SSL</h3>
+<div class="paragraph">
+<p>For Configuring external authentication to Ldap, the sssd-ldap communication must be secured (SSL or
+Start TLS). So an SSL Certificate needs to be created.</p>
+</div>
+<div class="paragraph">
+<p>The <em>apacheds-cert.pem</em> certificate file is used in the examples below.</p>
+</div>
+<div class="paragraph">
+<p>Update the LDAP Directory Server to point to the keystore for the certificate. This is
+used for both SSL and Start TLS.</p>
+</div>
+<div class="paragraph">
+<p>For SSL, update the <strong>/etc/openldap/ldap.conf</strong> accordingly to test:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>SASL_NOCANON    on
+
+URI             ldaps://ldap-example.com:10636
+BASE            dc=example,dc=com
+TLS_REQCERT     demand
+TLS_CACERTDIR   /etc/openldap/cacerts
+TLS_CACERT      /etc/openldap/cacerts/apacheds-cert.pem</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then try out a search:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre># ldapsearch -x -H ldaps://ldap-example:10636 -LLL \
+       -b "ou=people,dc=example,dc=com" -s sub     \
+       "(objectclass=organizationalPerson)"</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="with-user-bind-dn-and-password"><a class="anchor" href="#with-user-bind-dn-and-password"></a>With User Bind DN and Password</h3>
+<div class="paragraph">
+<p>You can also test the ldap directory by specifying a user Bind DN and password
+on the Ldap search command line as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre># ldapsearch -x -H ldap://ldap-example:389 -LLL                 \
+       -b "ou=people,dc=example,dc=com" -s sub                  \
+       -D "ui=:userid,ou=People,dc=example,dc=com" -w :password \
+       "(objectclass=organizationalPerson)"</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="configure-sssd"><a class="anchor" href="#configure-sssd"></a>Configure SSSD</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Configure the Operating System for SSSD based authentication against an LDAP server.</p>
+</div>
+<div class="paragraph">
+<p><strong>Note</strong>: SSSD must be configured to communicate with LDAP over SSL or Start TLS. Otherwise an
+authentication error will be returned to the Appliance login screen.</p>
+</div>
+<div class="paragraph">
+<p>Configure SSSD based authentication against LDAP via SSL:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>  # authconfig \
+    --enablesssd                                \
+    --enablesssdauth                            \
+    --enablelocauthorize                        \
+    --enableldap                                \
+    --enableldapauth                            \
+    --ldapserver=ldaps://ldap-example.com:10636 \
+    --disableldaptls                            \
+    --ldapbasedn=dc=example,dc=com              \
+    --enablerfc2307bis                          \
+    --enablecachecreds                          \
+    --update</pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="update-sssd-conf"><a class="anchor" href="#update-sssd-conf"></a>Update <strong>sssd.conf</strong></h3>
+<div class="paragraph">
+<p>Edit the different sections in <strong>/etc/sssd/sssd.conf</strong> for the Appliance as in the following
+example, customizing the main <strong>[domain/example.com]</strong> section for the particular Ldap installation.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>=&gt;  [domain/example.com]
+    autofs_provider = ldap
+    id_provider = ldap
+    auth_provider = ldap
+    chpass_provider = ldap
+    ldap_schema = rfc2307bis
+
+    ldap_uri = ldaps://ldap-example.com:10636
+    ldap_id_use_start_tls = False
+=&gt;  ldap_tls_cacertdir = /etc/openldap/cacerts
+=&gt;  ldap_tls_cacert = /etc/openldap/cacerts/apacheds-cert.pem
+
+=&gt;  ldap_pwd_policy = none
+
+    ldap_search_base = dc=example,dc=com
+=&gt;  ldap_network_timeout = 3
+
+=&gt;  ldap_user_search_base = ou=people,dc=example,dc=com
+=&gt;  ldap_user_object_class = posixAccount
+=&gt;  ldap_user_name = uid
+=&gt;  ldap_user_uid_number = uidNumber
+
+=&gt;  ldap_group_object_class = groupOfNames
+=&gt;  ldap_group_search_base = ou=user_groups,dc=example,dc=com
+=&gt;  ldap_group_name = cn
+=&gt;  ldap_group_member = member
+
+    cache_credentials = True
+=&gt;  entry_cache_timeout = 600
+
+=&gt;  ldap_user_extra_attrs = mail, givenname, sn, displayname
+
+    [sssd]
+=&gt;  domains = example.com
+    config_file_version = 2
+=&gt;  services = nss, pam, ifp
+=&gt;  sbus_timeout = 30
+=&gt;  default_domain_suffix = example.com
+
+    [nss]
+    homedir_substring = /home
+
+    [pam]
+=&gt;  default_domain_suffix = example.com
+
+=&gt;  [ifp]
+=&gt;  default_domain_suffix = example.com
+=&gt;  allowed_uids = apache, root
+=&gt;  user_attributes = +mail, +givenname, +sn, +displayname</pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="testing-sssd-updates"><a class="anchor" href="#testing-sssd-updates"></a>Testing SSSD Updates</h4>
+<div class="paragraph">
+<p>The best way to test manual SSSD updates is to query a user via the message bus system (D-Bus) API. When user
+attributes and groups are properly returned, that is a good indication that the External Authentication
+would succeed.</p>
+</div>
+<div class="paragraph">
+<p>For the <em>dbus-send</em> command to succeed when run from command line, SELinux must be in permissive mode.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre># setenforce 0</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>After each update to <strong>sssd.cond</strong>, restart the sssd service before testing the changes.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>systemctl restart sssd</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Example query of user attributes for user evmuser.  This primarily validates the <em>ldap_user_</em> attributes of <strong>sssd.conf</strong>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre># dbus-send --print-reply --system --dest=org.freedesktop.sssd.infopipe /org/freedesktop/sssd/infopipe org.freedesktop.sssd.infopipe.GetUserAttr string:evmuser array:string:mail,givenname,sn,displayname</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Query groups of user evmuser.  This primarily validates the <em>ldap_group_</em> attributes of <strong>sssd.conf</strong>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre># dbus-send --print-reply --system --dest=org.freedesktop.sssd.infopipe /org/freedesktop/sssd/infopipe org.freedesktop.sssd.infopipe.GetUserGroups string:evmuser</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>With logging for each of the <strong>sssd.conf</strong> section in the appropriate /var/log/sssd/ log file. The log files
+of primary interest are:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Log File</th>
+<th class="tableblock halign-left valign-top">Type of debugging</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/var/log/sssd/sssd.log</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SSSD communication with processes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/var/log/sssd/sssd_example.com.log</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sssd-ldap communication to the LDAP server</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/var/log/sssd/sssd_ifp.log</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gathering user and group information from LDAP server</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>For each of the log file here, an debug level attribute (maximum value of 9) can be added to the appropriate
+<strong>sssd.conf</strong> section as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>    [ifp]
+=&gt;  debug_level = 9
+    default_domain_suffix = example.com
+    ...</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When done testing, re-enable SELinux enforcing mode.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre># setenforce 1</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Note:</strong> When testing authentication on the Appliance, if updates are done in LDAP and not immediately seen
+when authenticating, then clean the SSSD cache as follows then retry:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre># sss_cache -E</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="configure-apache"><a class="anchor" href="#configure-apache"></a>Configure Apache</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Create the Apache configuration files</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre># TEMPLATE_DIR="/var/www/miq/system/TEMPLATE"
+# cp ${TEMPLATE_DIR}/etc/pam.d/httpd-auth                         \
+                    /etc/pam.d/httpd-auth
+# cp ${TEMPLATE_DIR}/etc/httpd/conf.d/manageiq-remote-user.conf       \
+                    /etc/httpd/conf.d/
+# cp ${TEMPLATE_DIR}/etc/httpd/conf.d/manageiq-external-auth.conf.erb \
+                    /etc/httpd/conf.d/manageiq-external-auth.conf</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Update the Apache configuration file <strong>/etc/httpd/conf.d/manageiq-external-auth.conf</strong> as follows
+to specify the correct realm:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>...
+
+    &lt;Location /dashboard/kerberos_authenticate&gt;
+      AuthType           Kerberos
+      AuthName           "Kerberos Login"
+      KrbMethodNegotiate On
+      KrbMethodK5Passwd  Off
+=&gt;    KrbAuthRealms      example.com
+      Krb5KeyTab         /etc/http.keytab
+      Require            pam-account httpd-auth
+
+      ErrorDocument 401  /proxy_pages/invalid_sso_credentials.js
+    &lt;/Location&gt;
+
+...</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="configure-selinux"><a class="anchor" href="#configure-selinux"></a>Configure SELinux</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For SSSD to Ldap, assure that non-standard Ldap ports (other than 389 or 636) are allowed:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre># semanage port -a -t ldap_port_t -p tcp 10389
+# semanage port -a -t ldap_port_t -p tcp 10636</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Set appropriate SELinux permissions:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre># setsebool -P allow_httpd_mod_auth_pam on
+# setsebool -P httpd_dbus_sssd          on</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Restart Services</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre># systemctl restart sssd
+# systemctl restart httpd</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="configure-admin-ui"><a class="anchor" href="#configure-admin-ui"></a>Configure Administrative UI</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Login as admin, then in <em>Configure&#8594;Configuration&#8594;Authentication</em></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Set mode to External (httpd)</p>
+</li>
+<li>
+<p>Check: <em>Get User Groups from External Authentication (httpd)</em></p>
+</li>
+<li>
+<p>Do not check: <em>Enable Single Signon</em> since Kerberos is not configured against LDAP.</p>
+</li>
+<li>
+<p>Click Save.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The above steps need to be done on each UI and WebService enabled appliance.</p>
+</div>
+<div class="paragraph">
+<p>in <em>Configure&#8594;Configuration&#8594;Access Control</em></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Make sure the user&#8217;s LDAP group for the appliance are created and appropriate roles assigned to those groups.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>

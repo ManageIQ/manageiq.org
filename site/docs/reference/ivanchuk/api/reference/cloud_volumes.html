@@ -1,0 +1,110 @@
+---
+distro:         ManageIQ
+version:        Ivanchuk
+
+group_id:       RestApi
+group_title:    REST API
+
+subgroup_id:    RestApi::Reference
+subgroup_title: Reference
+
+topic_id:       RestApi::Reference::CloudVolumes
+topic_title:    Cloud Volumes
+
+article_title:  "Cloud Volumes"
+
+breadcrumb_group: REST API
+breadcrumb_topic: Cloud Volumes
+---
+
+<div class="sect1">
+<h2 id="cloud-volumes"><a class="anchor" href="#cloud-volumes"></a>Cloud Volumes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Management of Cloud Volumes is provided via the following collection:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">/api/cloud_volumes</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The following actions are available on cloud_volumes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#querying-cloud-volumes">Querying Cloud Volumes</a></p>
+</li>
+<li>
+<p><a href="#deleting-cloud-volumes">Deleting Cloud Volumes</a></p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="querying-cloud-volumes"><a class="anchor" href="#querying-cloud-volumes"></a>Querying Cloud Volumes</h3>
+<div class="paragraph">
+<p>Querying all cloud volumes in the system is simply:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/cloud_volumes</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And getting details of a specific Cloud Volume is as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/cloud_volumes/:id</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-cloud-volumes"><a class="anchor" href="#deleting-cloud-volumes"></a>Deleting Cloud Volumes</h3>
+<div class="paragraph">
+<p>Cloud Volumes can be deleted via either the <strong>delete</strong> POST action or via the DELETE HTTP method.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>POST /api/cloud_volumes/101</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or simply:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>DELETE /api/cloud_volumes/101</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Deleting multiple Cloud Volumes can be done as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>POST /api/cloud_volumes</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>resources</span><span style="color:#404">&quot;</span></span> : [
+    { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/cloud_volumes/101</span><span style="color:#710">&quot;</span></span> },
+    { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/cloud_volumes/102</span><span style="color:#710">&quot;</span></span> },
+    <span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span>
+  ]
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>

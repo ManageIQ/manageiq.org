@@ -1,0 +1,468 @@
+---
+distro:         ManageIQ
+version:        Ivanchuk
+
+group_id:       RestApi
+group_title:    REST API
+
+subgroup_id:    RestApi::Reference
+subgroup_title: Reference
+
+topic_id:       RestApi::Reference::ReportsSupport
+topic_title:    Reports Support
+
+article_title:  "Reports Support"
+
+breadcrumb_group: REST API
+breadcrumb_topic: Reports Support
+---
+
+<div class="sect1">
+<h2 id="reports-support"><a class="anchor" href="#reports-support"></a>Reports Support</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Support for querying, importing and running Reports is now available. Access to reports
+and report results is through the following collections:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">/api/reports</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">/api/results</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#querying-reports">Querying Reports</a></p>
+</li>
+<li>
+<p><a href="#running-reports">Running Reports</a></p>
+</li>
+<li>
+<p><a href="#importing-reports">Importing Reports</a></p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="querying-reports"><a class="anchor" href="#querying-reports"></a>Querying Reports</h3>
+<div class="paragraph">
+<p>Querying Available Reports</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">GET /api/reports</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Querying a Single Report</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">GET /api/reports/:id</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Querying Results of a Particular Reports</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">GET /api/reports/:id/results</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Optionally, expanding all results</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">GET /api/reports/:id/results?expand=resources</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Querying a single result of a report</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">GET /api/reports/:id/results/:result_id</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Querying report results</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">GET /api/results</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="running-reports"><a class="anchor" href="#running-reports"></a>Running Reports</h3>
+<div class="paragraph">
+<p>Running reports is done via the <strong>run</strong> action on a report resource as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">POST /api/reports/:id</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">{
+  &quot;action&quot; : &quot;run&quot;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Example for running a report on the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">{
+  &quot;href&quot;: &quot;http://localhost:3000/api/reports/80&quot;,
+  &quot;id&quot;: &quot;80&quot;,
+  &quot;name&quot;: &quot;VM Relationships&quot;
+}</code></pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="request"><a class="anchor" href="#request"></a>Request:</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">POST /api/reports/80</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">{
+  &quot;action&quot; : &quot;run&quot;
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="response"><a class="anchor" href="#response"></a>Response:</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">{
+  &quot;success&quot;: true,
+  &quot;message&quot;: &quot;running report 80&quot;,
+  &quot;href&quot;: &quot;http://localhost:3000/api/reports/80&quot;,
+  &quot;result_id&quot;: &quot;27&quot;,
+  &quot;result_href&quot;: &quot;http://localhost:3000/api/results/27&quot;,
+  &quot;task_id&quot;: &quot;726&quot;,
+  &quot;task_href&quot;: &quot;http://localhost:3000/api/tasks/726&quot;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The report run&#8217;s task can be queried periodically via the task_href specified above
+as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">GET /api/tasks/726</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">{
+  &quot;href&quot;: &quot;http://localhost:3000/api/tasks/726&quot;,
+  &quot;id&quot;: &quot;726&quot;,
+  &quot;name&quot;: &quot;Generate Report: 'VM Relationships'&quot;,
+  &quot;state&quot;: &quot;Queued&quot;,
+  &quot;status&quot;: &quot;Ok&quot;,
+  &quot;message&quot;: &quot;Task has been queued&quot;,
+  &quot;userid&quot;: &quot;system&quot;,
+  &quot;created_on&quot;: &quot;2015-11-09T18:44:41Z&quot;,
+  &quot;updated_on&quot;: &quot;2015-11-09T18:44:41Z&quot;
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">{
+  &quot;href&quot;: &quot;http://localhost:3000/api/tasks/726&quot;,
+  &quot;id&quot;: &quot;726&quot;,
+  &quot;name&quot;: &quot;Generate Report: 'VM Relationships'&quot;,
+  &quot;state&quot;: &quot;Finished&quot;,
+  &quot;status&quot;: &quot;Ok&quot;,
+  &quot;message&quot;: &quot;Generating report complete&quot;,
+  &quot;userid&quot;: &quot;system&quot;,
+  &quot;created_on&quot;: &quot;2015-11-09T18:44:41Z&quot;,
+  &quot;updated_on&quot;: &quot;2015-11-09T18:47:13Z&quot;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>With the results queried via the result_href provided above:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">GET /api/results/27</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">{
+  &quot;href&quot;: &quot;http://localhost:3000/api/results/27&quot;,
+  &quot;id&quot;: &quot;27&quot;,
+  &quot;name&quot;: &quot;VM Relationships&quot;,
+  &quot;miq_report_id&quot;: &quot;80&quot;,
+  &quot;miq_task_id&quot;: &quot;726&quot;,
+  &quot;userid&quot;: &quot;system&quot;,
+  &quot;report_source&quot;: &quot;Requested by user&quot;,
+  &quot;db&quot;: &quot;Vm&quot;,
+  &quot;report&quot;: {
+    &quot;name&quot;: &quot;VM Relationships&quot;,
+    &quot;title&quot;: &quot;VM Relationships&quot;,
+    &quot;rpt_group&quot;: &quot;Relationships - Virtual Machines, Folders, Clusters&quot;,
+    &quot;rpt_type&quot;: &quot;Default&quot;,
+    &quot;priority&quot;: 10,
+    &quot;db&quot;: &quot;Vm&quot;,
+    &quot;cols&quot;: [
+      &quot;name&quot;,
+      &quot;v_owning_datacenter&quot;,
+      &quot;v_owning_folder&quot;,
+      &quot;v_owning_resource_pool&quot;
+    ],
+    &quot;include&quot;: {
+      &quot;ext_management_system&quot;: {
+        &quot;columns&quot;: [
+          &quot;name&quot;
+        ]
+      },
+      &quot;host&quot;: {
+        &quot;columns&quot;: [
+          &quot;v_owning_cluster&quot;,
+          &quot;hostname&quot;
+        ]
+      },
+      &quot;storage&quot;: {
+        &quot;columns&quot;: [
+          &quot;name&quot;
+        ]
+      }
+    },
+    &quot;col_order&quot;: [
+      &quot;name&quot;,
+      &quot;ext_management_system.name&quot;,
+      &quot;v_owning_datacenter&quot;,
+      &quot;host.v_owning_cluster&quot;,
+      &quot;host.hostname&quot;,
+      &quot;v_owning_folder&quot;,
+      &quot;v_owning_resource_pool&quot;,
+      &quot;storage.name&quot;
+    ],
+    &quot;headers&quot;: [
+      &quot;VM Name&quot;,
+      &quot;Provider Name&quot;,
+      &quot;Datacenter&quot;,
+      &quot;Cluster&quot;,
+      &quot;Host&quot;,
+      &quot;Folder&quot;,
+      &quot;Resource Pool&quot;,
+      &quot;Datastore&quot;
+    ],
+    &quot;conditions&quot;: {
+      &quot;exp&quot;: {
+        &quot;IS NOT EMPTY&quot;: {
+          &quot;field&quot;: &quot;Vm.host-name&quot;
+        }
+      },
+      &quot;col_details&quot;: {
+        &quot;Vm.host-name&quot;: {
+          &quot;data_type&quot;: &quot;string&quot;,
+          &quot;virtual_reflection&quot;: false,
+          &quot;virtual_column&quot;: false,
+          &quot;excluded_by_preprocess_options&quot;: false,
+          &quot;tag&quot;: false,
+          &quot;include&quot;: {
+            &quot;host&quot;: {
+            }
+          },
+          &quot;format_sub_type&quot;: &quot;string&quot;
+        }
+      },
+      &quot;pexp&quot;: {
+        &quot;IS NOT EMPTY&quot;: {
+          &quot;field&quot;: &quot;Vm.host-name&quot;
+        }
+      },
+      &quot;ruby&quot;: &quot;&lt;value ref=vm, type=string&gt;/virtual/host/name&lt;/value&gt; != \&quot;\&quot;&quot;
+    },
+    &quot;order&quot;: &quot;Ascending&quot;,
+    &quot;sortby&quot;: [
+      &quot;name&quot;
+    ],
+    &quot;filename&quot;: &quot;450_Relationships - Virtual Machines, Folders, Clusters/010_VMs Relationships.yaml&quot;,
+    &quot;file_mtime&quot;: &quot;2015-08-19T13:23:50Z&quot;,
+    &quot;template_type&quot;: &quot;report&quot;,
+    &quot;col_formats&quot;: [
+
+    ],
+    &quot;rpt_options&quot;: {
+    },
+    &quot;extras&quot;: {
+      &quot;total_html_rows&quot;: 1709
+    },
+    &quot;user_categories&quot;: [
+
+    ],
+    &quot;trend_data&quot;: {
+    }
+  },
+  &quot;created_on&quot;: &quot;2015-11-09T18:52:48Z&quot;,
+  &quot;last_run_on&quot;: &quot;2015-11-09T18:52:56Z&quot;,
+  &quot;last_accessed_on&quot;: &quot;2015-11-09T18:52:56Z&quot;,
+  &quot;result_set&quot;: [
+    {
+      &quot;name&quot;: &quot;aab-vm1&quot;,
+      &quot;v_owning_datacenter&quot;: &quot;&quot;,
+      &quot;v_owning_folder&quot;: &quot;&quot;,
+      &quot;v_owning_resource_pool&quot;: &quot;&quot;,
+      &quot;host.v_owning_cluster&quot;: &quot;&quot;,
+      &quot;host.hostname&quot;: &quot;test-host.testdomain.com&quot;,
+      &quot;storage.name&quot;: &quot;StarStorage1&quot;
+      &quot;id&quot;: &quot;320&quot;
+    },
+    {
+      &quot;name&quot;: &quot;aab_demo_vm&quot;,
+      &quot;v_owning_datacenter&quot;: &quot;&quot;,
+      &quot;v_owning_folder&quot;: &quot;&quot;,
+      &quot;v_owning_resource_pool&quot;: &quot;&quot;,
+      &quot;host.v_owning_cluster&quot;: &quot;&quot;,
+      &quot;host.hostname&quot;: &quot;test-host2.testdomain.com&quot;,
+      &quot;storage.name&quot;: &quot;StarStorage2&quot;,
+      &quot;id&quot;: &quot;1&quot;
+    },
+    ...
+  ]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note that one can query all the results run for a report as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">GET /api/reports/80/results?expand=resources&amp;attributes=created_on</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">{
+  &quot;name&quot;: &quot;results&quot;,
+  &quot;count&quot;: 27,
+  &quot;subcount&quot;: 2,
+  &quot;resources&quot;: [
+    {
+      &quot;href&quot;: &quot;http://localhost:3000/api/reports/80/results/27&quot;,
+      &quot;id&quot;: &quot;27&quot;,
+      &quot;created_on&quot;: &quot;2015-11-09T18:52:48Z&quot;
+    },
+    {
+      &quot;href&quot;: &quot;http://localhost:3000/api/reports/80/results/13&quot;,
+      &quot;id&quot;: &quot;13&quot;,
+      &quot;created_on&quot;: &quot;2015-07-29T18:24:35Z&quot;
+    }
+  ]
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="importing-reports"><a class="anchor" href="#importing-reports"></a>Importing Reports</h3>
+<div class="paragraph">
+<p>Importing reports to the system can be done by posting an <strong>import</strong> action to the
+reports collection as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">POST /api/reports</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">{
+  &quot;action&quot; : &quot;import&quot;,
+  &quot;resource&quot; : {
+    &quot;report&quot; : { JSON serialized report },
+    &quot;options&quot; : { &quot;save&quot; : true }
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Here&#8217;s an example:</p>
+</div>
+<div class="sect3">
+<h4 id="request-2"><a class="anchor" href="#request-2"></a>Request:</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">POST /api/reports</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">{
+  &quot;action&quot; : &quot;import&quot;,
+  &quot;resource&quot; : {
+    &quot;report&quot; : {
+      &quot;menu_name&quot; : &quot;Test Report&quot;,
+      &quot;col_order&quot; : [&quot;col1&quot;, &quot;col2&quot;, &quot;col3&quot;],
+      &quot;cols&quot;      : [&quot;col1&quot;, &quot;col2&quot;, &quot;col3&quot;],
+      &quot;rpt_type&quot;  : &quot;Custom&quot;,
+      &quot;title&quot;     : &quot;Test Report&quot;,
+      &quot;db&quot;        : &quot;My::Db&quot;,
+      &quot;rpt_group&quot; : &quot;Custom&quot;
+    },
+    &quot;options&quot; : { &quot;save&quot; : true }
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="response-2"><a class="anchor" href="#response-2"></a>Response:</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">{
+  &quot;results&quot;: [
+    {
+      &quot;success&quot;: true,
+      &quot;message&quot;: &quot;Imported Report: [Test Report]&quot;,
+      &quot;result&quot;: {
+        &quot;id&quot;: &quot;199&quot;,
+        &quot;name&quot;: &quot;Test Report&quot;,
+        &quot;title&quot;: &quot;Test Report&quot;,
+        &quot;rpt_group&quot;: &quot;Custom&quot;,
+        &quot;rpt_type&quot;: &quot;Custom&quot;,
+        &quot;db&quot;: &quot;My::Db&quot;,
+        &quot;cols&quot;: [
+          &quot;col1&quot;,
+          &quot;col2&quot;,
+          &quot;co3l&quot;
+        ],
+        &quot;col_order&quot;: [
+          &quot;col1&quot;,
+          &quot;col2&quot;,
+          &quot;col3&quot;
+        ],
+        &quot;created_on&quot;: &quot;2015-11-09T19:44:37Z&quot;,
+        &quot;updated_on&quot;: &quot;2015-11-09T19:44:37Z&quot;,
+        &quot;miq_group_id&quot;: &quot;1&quot;,
+        &quot;user_id&quot;: &quot;1&quot;
+      }
+    }
+  ]
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>

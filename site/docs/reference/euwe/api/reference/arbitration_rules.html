@@ -1,0 +1,217 @@
+---
+distro:         ManageIQ
+version:        Euwe
+
+group_id:       RestApi
+group_title:    REST API
+
+subgroup_id:    RestApi::Reference
+subgroup_title: Reference
+
+topic_id:       RestApi::Reference::ArbitrationRules
+topic_title:    Arbitration Rules
+
+article_title:  "Arbitration Rule"
+
+breadcrumb_group: REST API
+breadcrumb_topic: Arbitration Rules
+---
+
+<div class="sect1">
+<h2 id="arbitration-rules"><a class="anchor" href="#arbitration-rules"></a>Arbitration Rule</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Management of Arbitration Rules is provided via the following collection:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">/api/arbitration_rules</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Full CRUD actions on arbitration_rules is available:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#querying-arbitration-rules">Querying Arbitration Rules</a></p>
+</li>
+<li>
+<p><a href="#creating-arbitration-rules">Creating Arbitration Rules</a></p>
+</li>
+<li>
+<p><a href="#editing-arbitration-rules">Editing Arbitration Rules</a></p>
+</li>
+<li>
+<p><a href="#deleting-arbitration-rules">Deleting Arbitration Rules</a></p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="querying-arbitration-rules"><a class="anchor" href="#querying-arbitration-rules"></a>Querying Arbitration Rules</h3>
+<div class="paragraph">
+<p>Querying all arbitration rules in the system is simply:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/arbitration_rules</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Getting details on a specific arbitration rule:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/arbitration_rules/:id</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="creating-arbitration-rules"><a class="anchor" href="#creating-arbitration-rules"></a>Creating Arbitration Rules</h3>
+<div class="paragraph">
+<p>Arbitration Rules can be created via a POST to the arbitration_rules collection or via the <strong>create</strong> action
+signature which also allows creation of multiple arbitration_rules in a single request.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>POST /api/arbitration_rules</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">admin rule</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>operation</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">inject</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>arbitration_profile_id</span><span style="color:#404">&quot;</span></span> : <span style="color:#00D">5</span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>expression</span><span style="color:#404">&quot;</span></span> : {
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>EQUAL</span><span style="color:#404">&quot;</span></span> : {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>field</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">User-userid</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>value</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">admin</span><span style="color:#710">&quot;</span></span>
+    }
+  <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">
+}</span></span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or creating multiple arbitration rules:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">create</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>resources</span><span style="color:#404">&quot;</span></span> : [
+    { <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">admin rule</span><span style="color:#710">&quot;</span></span>, <span style="color:#606"><span style="color:#404">&quot;</span><span>operation</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">inject</span><span style="color:#710">&quot;</span></span>, <span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span> },
+    { <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">user rule</span><span style="color:#710">&quot;</span></span>,  <span style="color:#606"><span style="color:#404">&quot;</span><span>operation</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">inject</span><span style="color:#710">&quot;</span></span>, <span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span> },
+    <span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span>
+  ]
+}</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Please refer to the <a href="../appendices/resource_attributes.html#arbitration_rules">Resource Attributes</a>
+page for a list of available attributes when creating Arbitration Rules.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="editing-arbitration-rules"><a class="anchor" href="#editing-arbitration-rules"></a>Editing Arbitration Rules</h3>
+<div class="listingblock">
+<div class="content">
+<pre>POST /api/arbitration_rules/:id</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">edit</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>resource</span><span style="color:#404">&quot;</span></span> : {
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">new admin rule</span><span style="color:#710">&quot;</span></span>
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or editing multiple arbitration_rules:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>POST /api/arbitration_rules</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">edit</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>resources</span><span style="color:#404">&quot;</span></span> : [
+    {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/arbitration_rules/101</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>priority</span><span style="color:#404">&quot;</span></span> : <span style="color:#00D">5</span>
+    },
+    {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/arbitration_rules/102</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>priority</span><span style="color:#404">&quot;</span></span> : <span style="color:#00D">5</span>
+    },
+    <span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span>
+  ]
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-arbitration-rules"><a class="anchor" href="#deleting-arbitration-rules"></a>Deleting Arbitration Rules</h3>
+<div class="paragraph">
+<p>Arbitration Rules can be deleted via either the <strong>delete</strong> POST action or via the DELETE HTTP method.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>POST /api/arbitration_rules/101</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or simply:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>DELETE /api/arbitration_rules/101</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Deleting multiple Arbitration Rules can be done as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>POST /api/arbitration_rules</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>resources</span><span style="color:#404">&quot;</span></span> : [
+    { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/arbitration_rules/101</span><span style="color:#710">&quot;</span></span> },
+    { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/arbitration_rules/102</span><span style="color:#710">&quot;</span></span> },
+    <span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span>
+  ]
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>

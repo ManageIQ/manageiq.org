@@ -1,0 +1,107 @@
+---
+distro:         ManageIQ
+version:        Ivanchuk
+
+group_id:       RestApi
+group_title:    REST API
+
+subgroup_id:    RestApi::Reference
+subgroup_title: Reference
+
+topic_id:       RestApi::Reference::Tasks
+topic_title:    Tasks
+
+article_title:  "Tasks"
+
+breadcrumb_group: REST API
+breadcrumb_topic: Tasks
+---
+
+<div class="sect1">
+<h2 id="tasks"><a class="anchor" href="#tasks"></a>Tasks</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Management of Tasks is available via the following endpoint:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">/api/tasks</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="querying-tasks"><a class="anchor" href="#querying-tasks"></a>Querying Tasks</h3>
+<div class="paragraph">
+<p>Querying all Takss:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/tasks</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Getting details of a specific Task:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/tasks/:id</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The following actions are available on tasks:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#deleting-tasks">Deleting Tasks</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-tasks"><a class="anchor" href="#deleting-tasks"></a>Deleting Tasks</h3>
+<div class="paragraph">
+<p>Tasks can be deleted via either the <strong>delete</strong> POST action or the DELETE HTTP method.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>POST /api/tasks/101</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or simply:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>DELETE /api/tasks/101</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Deleting multiple Tasks can be done as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>POST /api/tasks</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>resources</span><span style="color:#404">&quot;</span></span> : [
+    { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/tasks/101</span><span style="color:#710">&quot;</span></span> },
+    { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/tasks/102</span><span style="color:#710">&quot;</span></span> },
+    <span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span>
+  ]
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>

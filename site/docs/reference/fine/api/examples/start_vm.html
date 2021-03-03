@@ -1,0 +1,80 @@
+---
+distro:         ManageIQ
+version:        Fine
+
+group_id:       RestApiExamples
+group_title:    REST API Examples
+
+subgroup_id:    RestApiExamples::VmManagement
+subgroup_title: VM Management
+
+topic_id:       RestApiExamples::VmManagement::StartAVm
+topic_title:    Start a VM
+
+article_title:  "Start a VM"
+
+breadcrumb_group: REST API Examples
+breadcrumb_topic: Start a VM
+---
+
+<div class="sect2">
+<h3 id="start-a-vm"><a class="anchor" href="#start-a-vm"></a>Start a VM</h3>
+<div class="sect3">
+<h4 id="request"><a class="anchor" href="#request"></a>Request:</h4>
+<div class="listingblock">
+<div class="content">
+<pre>POST /api/vms/1921</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">start</span><span style="color:#710">&quot;</span></span>
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="response"><a class="anchor" href="#response"></a>Response:</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>success</span><span style="color:#404">&quot;</span></span>: <span style="color:#088">true</span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>message</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">VM id:1921 name:'aab_demo_vm' starting</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>task_id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">610</span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>task_href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/tasks/610</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/vms/1921</span><span style="color:#710">&quot;</span></span>
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="querying-task-progress"><a class="anchor" href="#querying-task-progress"></a>Querying task progress:</h3>
+<div class="sect3">
+<h4 id="request-2"><a class="anchor" href="#request-2"></a>Request:</h4>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/tasks/620</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="response-2"><a class="anchor" href="#response-2"></a>Response:</h4>
+<div class="listingblock">
+<div class="content">
+<pre>{
+  "href": "http://localhost:3000/api/tasks/610",
+  "id": 610,
+  "name": "VM id:1921 name:'aab_demo_vm' starting",
+  "state": "Queued",
+  "status": "Ok",
+  "message": "Queued the action: [VM id:1921 name:'aab_demo_vm' starting] being run for user: [admin]",
+  "userid": "admin",
+  "created_on": "2015-05-05T15:58:08Z",
+  "updated_on": "2015-05-05T15:58:08Z"
+}</pre>
+</div>
+</div>
+</div>
+</div>

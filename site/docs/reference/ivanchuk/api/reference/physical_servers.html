@@ -1,0 +1,225 @@
+---
+distro:         ManageIQ
+version:        Ivanchuk
+
+group_id:       RestApi
+group_title:    REST API
+
+subgroup_id:    RestApi::Reference
+subgroup_title: Reference
+
+topic_id:       RestApi::Reference::PhysicalServers
+topic_title:    Physical Servers
+
+article_title:  "Physical Server Management"
+
+breadcrumb_group: REST API
+breadcrumb_topic: Physical Servers
+---
+
+<div class="sect1">
+<h2 id="physical-server-management"><a class="anchor" href="#physical-server-management"></a>Physical Server Management</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Management of Physical Servers is available via the following endpoint:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">/api/physical_servers</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="querying-physical-servers"><a class="anchor" href="#querying-physical-servers"></a>Querying Physical Servers</h3>
+<div class="paragraph">
+<p>Querying all physical servers in the system is simply:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/physical_servers</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Getting details on a specific Physical Server:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/physical_servers/:id</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="managing-physical-servers"><a class="anchor" href="#managing-physical-servers"></a>Managing Physical Servers</h3>
+<div class="paragraph">
+<p>The following actions are available on Physical Servers:</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 60%;">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Action</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#power-on-physical-server">power_on</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Power On</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#power-off-physical-server">power_off</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Power Off</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#power-off-now-physical-server">power_off_now</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Power Off Now</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#refresh-physical-server">refresh_now</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Refresh</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#restart-physical-server">restart</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Restart</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#restart-now-physical-server">restart_now</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Restart Now</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#restart-to-sys-setup-physical-server">restart_to_sys_setup</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Restart to System Setup</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#restart-mgmt-controller-physical-server">restart_mgmt_controller</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Restart Management Controller</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#blink-loc-led-physical-server">blink_loc_led</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Blink the Identify LED</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#turn-on-loc-led-physical-server">turn_on_loc_led</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Turn On the Identify LED</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#turn-off-loc-led-physical-server">turn_off_loc_led</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Turn Off the Identify LED</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="power-on-physical-server"><a class="anchor" href="#power-on-physical-server"></a>Powering On a Physical Server</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">power_on</span><span style="color:#710">&quot;</span></span>
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="power-off-physical-server"><a class="anchor" href="#power-off-physical-server"></a>Powering Off a Physical Server</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">power_off</span><span style="color:#710">&quot;</span></span>
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="power-off-now-physical-server"><a class="anchor" href="#power-off-now-physical-server"></a>Powering Off Now a Physical Server</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">power_off_now</span><span style="color:#710">&quot;</span></span>
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="refresh-physical-server"><a class="anchor" href="#refresh-physical-server"></a>Refresh a Physical Server</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">refresh</span><span style="color:#710">&quot;</span></span>
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="restart-physical-server"><a class="anchor" href="#restart-physical-server"></a>Restart a Physical Server</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">restart</span><span style="color:#710">&quot;</span></span>
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="restart-now-physical-server"><a class="anchor" href="#restart-now-physical-server"></a>Restart Now a Physical Server</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">restart_now</span><span style="color:#710">&quot;</span></span>
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="restart-to-sys-setup-physical-server"><a class="anchor" href="#restart-to-sys-setup-physical-server"></a>Restart a Physical Server to System Setup</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">restart_to_sys_setup</span><span style="color:#710">&quot;</span></span>
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="restart-mgmt-controller-physical-server"><a class="anchor" href="#restart-mgmt-controller-physical-server"></a>Restart Management Controller</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">restart_mgmt_controller</span><span style="color:#710">&quot;</span></span>
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="blink-loc-led-physical-server"><a class="anchor" href="#blink-loc-led-physical-server"></a>Blink the Identify LED</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">blink_loc_led</span><span style="color:#710">&quot;</span></span>
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="turn-on-loc-led-physical-server"><a class="anchor" href="#turn-on-loc-led-physical-server"></a>Turn On the Identify LED</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">turn_on_loc_led</span><span style="color:#710">&quot;</span></span>
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="turn-off-loc-led-physical-server"><a class="anchor" href="#turn-off-loc-led-physical-server"></a>Turn Off the Identify LED</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">turn_off_loc_led</span><span style="color:#710">&quot;</span></span>
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>

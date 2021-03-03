@@ -1,0 +1,213 @@
+---
+distro:         ManageIQ
+version:        Euwe
+
+group_id:       Authentication
+group_title:    Authentication
+
+subgroup_id:    
+subgroup_title: 
+
+topic_id:       Authentication::ExternalAuthenticationUsing2factorauthenticationWithIpa
+topic_title:    External Authentication using 2-Factor-Authentication with IPA
+
+article_title:  "2-Factor Authentication"
+
+breadcrumb_group: <a href="../auth/active_directory.html">Authentication</a>
+breadcrumb_topic: External Authentication using 2-Factor-Authentication with IPA
+---
+
+<div class="sect1">
+<h2 id="two-factor-authentication"><a class="anchor" href="#two-factor-authentication"></a>2-Factor Authentication</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Enabling 2-Factor Authentication on the Appliance is currently supported
+with External Authentication to IPA.</p>
+</div>
+<div class="paragraph">
+<p>In this guide we will cover how to manually configure a 7.1 Appliance&#8217;s
+external authentication to work with 2-Factor Authentication with IPA.
+This provides IPA Users access to the Appliance Administrative UI and the REST API
+using their IPA Password followed by a One-Time-Password.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="#requirements">Requirements</a></p>
+</li>
+<li>
+<p><a href="#configuring-admin-ui">Configuring the Administrative UI</a></p>
+</li>
+<li>
+<p><a href="#configuring-external-auth">Configuring External Authentication</a></p>
+</li>
+<li>
+<p><a href="#enabling-2fa">Enabling 2-Factor Authentication</a></p>
+</li>
+<li>
+<p><a href="#using-2fa">Using 2-Factor Authentication</a></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="requirements"><a class="anchor" href="#requirements"></a>Requirements</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following is needed in order to enable 2-Factor-Authentication to the Appliance:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A CentOS/RHEL 7.1 based Appliance</p>
+</li>
+<li>
+<p>IPA Server based on FreeIPA 4.1.0 or later</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="configure-admin-ui"><a class="anchor" href="#configure-admin-ui"></a>Configure Administrative UI</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Login as admin, then in <em>Configure&#8594;Configuration&#8594;Authentication</em></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Set mode to External (httpd)</p>
+</li>
+<li>
+<p>Check: <em>Get User Groups from External Authentication (httpd)</em></p>
+</li>
+<li>
+<p>Do Not Check: <em>Enable Single Signon</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Note</strong>: Kerberos SSO with OTP is not supported in the current release of FreeIPA 4.1.0 on CentOS/RHEL 7.1</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Click Save.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The above steps need to be done on each UI and WebService enabled appliance.</p>
+</div>
+<div class="paragraph">
+<p>in <em>Configure&#8594;Configuration&#8594;Access Control</em></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Make sure the user&#8217;s groups are created on the Appliance and appropriate roles assigned to those groups.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="configure-external-auth"><a class="anchor" href="#configure-external-auth"></a>Configure External Authentication</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Using the Appliance Console, simply enable external authentication as you currently
+would to IPA.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Login to console as <em>root</em></p>
+</li>
+<li>
+<p>Run <em>appliance_console</em></p>
+</li>
+<li>
+<p>Summary screen should show <strong>External Auth</strong> as <em>not configured</em>, Press any key</p>
+</li>
+<li>
+<p>From the Advanced Setting menu, select the menu item <strong>Configure External Authentication (httpd)</strong></p>
+</li>
+<li>
+<p>Enter the FQDN of the IPA Server, i.e. <em>ipaserver.test.company.com</em></p>
+</li>
+<li>
+<p>Enter the IPA Server domain, i.e. <em>test.company.com</em></p>
+</li>
+<li>
+<p>Enter the IPA Server realm, i.e. <em>TEST.COMPANY.COM</em></p>
+</li>
+<li>
+<p>Press enter to select the default IPA Server Principal, i.e. <em>admin</em></p>
+</li>
+<li>
+<p>Enter the Password of the IPA Server Principal</p>
+</li>
+<li>
+<p>Review details, and Enter <strong>y</strong> to proceed.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="enabling-2fa"><a class="anchor" href="#enabling-2fa"></a>Enabling 2-Factor Authentication</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Enabling 2-Factor Authentication is done using the IPA administrative UI.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The IPA administrator needs to change the User authentication types for the user
+from Password or Radius to <em>Two factor authentication (password + OTP)</em></p>
+</li>
+<li>
+<p>The previous can be done either per user or for all users from the IPA Server
+global Configuration under User Options.</p>
+</li>
+<li>
+<p>The user logs into IPA, then from the OTP Tokens tab,
+add an OTP token - Time-based (TOTP) or Counter-based (HOTP).</p>
+</li>
+<li>
+<p>Specifying a Description for the OTP, then clicking add, brings up a QR Code
+which can then be scanned into an app like <strong>FreeOTP</strong> for example.</p>
+</li>
+<li>
+<p>Then from the main IPA login screen, the user can Synchronize the OTP Token by
+specifying their Username, password and then two OTP&#8217;s generated from the <strong>FreeOTP</strong> app.</p>
+</li>
+<li>
+<p>After which, the user can login to FreeIPA using their Password+OTP.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="using-2fa"><a class="anchor" href="#using-2fa"></a>Using 2-Factor Authentication</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Once the above is done, the user now needs to specify their IPA Username and
+their Password followed by their One-Time-Password as generated by the <strong>FreeOTP</strong> app,
+when:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Logging into the Appliance Administrative UI</p>
+</li>
+<li>
+<p>Accessing the REST API</p>
+</li>
+</ul>
+</div>
+</div>
+</div>

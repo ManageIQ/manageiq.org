@@ -1,0 +1,371 @@
+---
+distro:         ManageIQ
+version:        Fine
+
+group_id:       RestApi
+group_title:    REST API
+
+subgroup_id:    RestApi::Overview
+subgroup_title: Overview
+
+topic_id:       RestApi::Overview::Querying
+topic_title:    Querying
+
+article_title:  "Query Specification"
+
+breadcrumb_group: REST API
+breadcrumb_topic: Querying
+---
+
+<div class="sect1">
+<h2 id="query-specification"><a class="anchor" href="#query-specification"></a>Query Specification</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This specification identifies the controls available when querying
+collections.</p>
+</div>
+<div class="paragraph">
+<p>The controls are specified in the GET URL as attribute value pairs as
+follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/:collection?attr1=val1&amp;attr2=val2&amp;...</pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="control-attributes"><a class="anchor" href="#control-attributes"></a>Control Attributes</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Category</th>
+<th class="tableblock halign-left valign-top">Attribute</th>
+<th class="tableblock halign-left valign-top">Semantics</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Paging</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">offset</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0-based offset of first item to return</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">limit</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">number of items to return. If 0 is specified then the remaining items are returned</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scope</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">filter[]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">One or more filters
+to search on. See <a href="#filtering">Filtering</a> below.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">attributes=atr1,atr2,&#8230;&#8203;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Which attributes
+in addition to id and href to return. If not specified or <em>all</em> (default is
+attributes=<em>all</em>), then all attributes are returned</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">expand=resources</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To expand the resources
+returned in the collection and not just the href. See
+<a href="#expanding-collection">Expanding Collection</a> below</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sorting</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sort_by=atr1,atr2,&#8230;&#8203;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">By which attribute(s) to sort the result by</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sort_order=ascending or descending</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Order of the sort</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sort_options=ignore_case</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Option for case insensitive sort</p></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist">
+<ul>
+<li>
+<p>The <strong>count</strong> attribute in a collection always denotes the total number
+of items in the collection, not the number of items returned.</p>
+</li>
+<li>
+<p>The <strong>subcount</strong> attribute in a collection denotes the number of items
+from the collection that were returned. For example, as a result of a
+paged request.</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="filtering"><a class="anchor" href="#filtering"></a>Filtering</h3>
+<div class="paragraph">
+<p><strong>GET</strong> requests against collections support the following query parameters to enable filtering:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>filter</strong>: The filter to use for querying the collection, i.e.
+filter[]=name='myservice%'.</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/:collection?filter[]=name='myservice%'</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For more information on filter[] please reference the
+<a href="filtering.html">Filtering</a> page</p>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="expanding-collection"><a class="anchor" href="#expanding-collection"></a>Expanding Collection</h3>
+<div class="paragraph">
+<p>While in the JSON serialization example the description says that the
+resource might be a list of references to these resource, using the
+<strong>expand</strong> parameter they can be expanded to return a full JSON
+serialization of the resource instead:</p>
+</div>
+<div class="paragraph">
+<p><strong>GET</strong> <em>/api/vms</em></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">vms</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>count</span><span style="color:#404">&quot;</span></span> : <span style="color:#00D">2</span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>subcount</span><span style="color:#404">&quot;</span></span> : <span style="color:#00D">2</span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>resources</span><span style="color:#404">&quot;</span></span> : [
+    { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/vms/1</span><span style="color:#710">&quot;</span></span> },
+    { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/vms/2</span><span style="color:#710">&quot;</span></span> }
+  ],
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>actions</span><span style="color:#404">&quot;</span></span> : []
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>GET</strong> <em>/api/vms?expand=resources</em></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">vms</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>count</span><span style="color:#404">&quot;</span></span> : <span style="color:#00D">2</span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>subcount</span><span style="color:#404">&quot;</span></span> : <span style="color:#00D">2</span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>resources</span><span style="color:#404">&quot;</span></span> : [
+    {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span> : <span style="color:#00D">1</span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/vms/1</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">My First VM</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span>
+    },
+    {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span> : <span style="color:#00D">2</span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/vms/2</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">My Second VM</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span>
+    }
+  ],
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>actions</span><span style="color:#404">&quot;</span></span> : []
+}</code></pre>
+</div>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="virtual-attributes-and-relationships"><a class="anchor" href="#virtual-attributes-and-relationships"></a>Virtual Attributes and Relationships</h3>
+<div class="paragraph">
+<p>When querying resources, virtual attributes (not database columns) as well as relationships
+can be queried via the attributes parameter.</p>
+</div>
+<div class="paragraph">
+<p>For example, while accounts and software are defined subcollections of vms</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/vms/166?expand=software&amp;attributes=ipaddresses,lans,storage</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/vms/166</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">166</span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>vendor</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">vmware</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Dev Nightly Appl</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>location</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Nightly Appl 201.vmx</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>host_id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">4</span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>created_on</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2014-11-20T19:37:28Z</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>updated_on</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2015-03-07T04:32:33Z</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>storage_id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">12</span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>guid</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">a9409862-70ec-11e4-90c6-b8e85646e742</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>uid_ems</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">422f50c6-2ba6-1059-338d-423cc3daf5b4</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>tools_status</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">toolsNotRunning</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>standby_action</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">checkpoint</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>power_state</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">off</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>state_changed_on</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2014-11-20T19:37:28Z</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>connection_state</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">connected</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>memory_reserve</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">0</span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>memory_reserve_expand</span><span style="color:#404">&quot;</span></span>: <span style="color:#088">false</span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>memory_limit</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">-1</span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>memory_shares</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">40960</span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>memory_shares_level</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">normal</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>raw_power_state</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">poweredOff</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span>
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>ipaddresses</span><span style="color:#404">&quot;</span></span>: [
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">192.168.100.1</span><span style="color:#710">&quot;</span></span>
+  ],
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>lans</span><span style="color:#404">&quot;</span></span>: [
+    {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">8</span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>switch_id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">6</span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">VM Network</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>tag</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">0</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>created_on</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2014-11-20T19:37:23Z</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>updated_on</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2014-11-20T19:37:23Z</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>uid_ems</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">VM Network</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>computed_allow_promiscuous</span><span style="color:#404">&quot;</span></span>: <span style="color:#088">false</span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>computed_forged_transmits</span><span style="color:#404">&quot;</span></span>: <span style="color:#088">true</span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>computed_mac_changes</span><span style="color:#404">&quot;</span></span>: <span style="color:#088">true</span>
+    }
+  ],
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>storage</span><span style="color:#404">&quot;</span></span>: {
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">12</span>,
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">StarM1-Dev</span><span style="color:#710">&quot;</span></span>,
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>store_type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">VMFS</span><span style="color:#710">&quot;</span></span>,
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>total_space</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">2134061875200</span>,
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>free_space</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">385020329984</span>,
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>created_on</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2014-11-20T19:37:22Z</span><span style="color:#710">&quot;</span></span>,
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>updated_on</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2015-03-09T13:36:05Z</span><span style="color:#710">&quot;</span></span>,
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>multiplehostaccess</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">0</span>,
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>location</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">4e43dd32-c6b7543a-32bf-0010187f038c</span><span style="color:#710">&quot;</span></span>,
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>uncommitted</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">845539212800</span>,
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>ems_ref_obj</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">--- !ruby/string:VimString</span><span style="color:#b0b">\n</span><span style="color:#D20">str: datastore-15624</span><span style="color:#b0b">\n</span><span style="color:#D20">xsiType: :ManagedObjectReference</span><span style="color:#b0b">\n</span><span style="color:#D20">vimType: :Datastore</span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span>,
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>directory_hierarchy_supported</span><span style="color:#404">&quot;</span></span>: <span style="color:#088">true</span>,
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>thin_provisioning_supported</span><span style="color:#404">&quot;</span></span>: <span style="color:#088">true</span>,
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>raw_disk_mappings_supported</span><span style="color:#404">&quot;</span></span>: <span style="color:#088">true</span>,
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>master</span><span style="color:#404">&quot;</span></span>: <span style="color:#088">false</span>,
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>ems_ref</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">datastore-15624</span><span style="color:#710">&quot;</span></span>
+  }
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>software</span><span style="color:#404">&quot;</span></span>: [
+    {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/vms/320/software/1</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">1</span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">OpenOffice</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>vendor</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">OpenOffice.org</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>vm_or_template_id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">166</span>
+    }
+  ]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As another example, one can query good details on hosts:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/hosts/8?attributes=custom_attributes,ext_management_system,resource_pools,storages,vms,hardware</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>of course, one needs to be careful with queries like these as list of vms for a host could be quite large.</p>
+</div>
+<div class="paragraph">
+<p>Virtual attributes can also be queried from one-to-one relationships via the dot notation as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/hosts/8?attributes=ext_management_system.id,ext_management_system.guid,ext_management_system.name</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/hosts/8</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">8</span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">test1.sample.com</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>hostname</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">test1.sample.com</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>ipaddress</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">test1.sample.com</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>vmm_vendor</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">vmware</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>vmm_version</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">5.0.0</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>vmm_product</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ESXi</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>vmm_buildnumber</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">515841</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span>
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>ext_management_system</span><span style="color:#404">&quot;</span></span>: {
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">vcenter50</span><span style="color:#710">&quot;</span></span>,
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>guid</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">e84e8c58-bdbd-11e4-8983-b8e85646e742</span><span style="color:#710">&quot;</span></span>,
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">6</span>
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>With attributes, database attributes, virtual attributes and relationships can be specified together
+as in the following example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/vms/166?attributes=name,raw_power_state,ipaddresses,storage.name</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/vms/166</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">166</span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Dev Nightly Appl</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>raw_power_state</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">poweredOff</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>ipaddresses</span><span style="color:#404">&quot;</span></span>: [
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">192.168.253.1</span><span style="color:#710">&quot;</span></span>
+  ],
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>storage</span><span style="color:#404">&quot;</span></span>: {
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">StarM1-Dev</span><span style="color:#710">&quot;</span></span>
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This is helpful when specific information is needed out of resources and helps with response
+time when querying large number of resources as in the following example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">GET /api/vms?limit=1000&amp;offset=1000&amp;expand=resources&amp;
+    attributes=name,raw_power_state,ipaddresses,storage.name</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>

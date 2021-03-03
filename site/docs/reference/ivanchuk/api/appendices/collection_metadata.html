@@ -1,0 +1,284 @@
+---
+distro:         ManageIQ
+version:        Ivanchuk
+
+group_id:       RestApi
+group_title:    REST API
+
+subgroup_id:    RestApi::Appendices
+subgroup_title: Appendices
+
+topic_id:       RestApi::Appendices::CollectionMetadata
+topic_title:    Collection Metadata
+
+article_title:  "Collection Metadata"
+
+breadcrumb_group: REST API
+breadcrumb_topic: Collection Metadata
+---
+
+<div class="sect1">
+<h2 id="collection-metadata"><a class="anchor" href="#collection-metadata"></a>Collection Metadata</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Collection specific metadata can be queried by sending an HTTP OPTIONS request on
+the specific collection:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>OPTIONS /api/:collection</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>What gets returned is the following structure:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>attributes</span><span style="color:#404">&quot;</span></span>: [
+  ],
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>virtual_attributes</span><span style="color:#404">&quot;</span></span>: [
+  ],
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>relationships</span><span style="color:#404">&quot;</span></span>: [
+  ],
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>subcollections</span><span style="color:#404">&quot;</span></span>: [
+  ],
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>data</span><span style="color:#404">&quot;</span></span>: {
+  }
+}</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 80%;">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Entry</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">attributes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Physical attributes of the collection</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">virtual_attributes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Virtual attributes of the collection</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">relationships</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Physical or Virtual associations to other resources</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">subcollections</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Subcollections that can be queried</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional meta-data for the collection</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The following is an example for the <strong>groups</strong> collection:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>OPTIONS /api/groups</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>attributes</span><span style="color:#404">&quot;</span></span>: [
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">created_on</span><span style="color:#710">&quot;</span></span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">description</span><span style="color:#710">&quot;</span></span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">group_type</span><span style="color:#710">&quot;</span></span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">id</span><span style="color:#710">&quot;</span></span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">sequence</span><span style="color:#710">&quot;</span></span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">settings</span><span style="color:#710">&quot;</span></span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">tenant_id</span><span style="color:#710">&quot;</span></span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">updated_on</span><span style="color:#710">&quot;</span></span>
+  ],
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>virtual_attributes</span><span style="color:#404">&quot;</span></span>: [
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">allocated_memory</span><span style="color:#710">&quot;</span></span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">allocated_storage</span><span style="color:#710">&quot;</span></span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">allocated_vcpu</span><span style="color:#710">&quot;</span></span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">custom_1</span><span style="color:#710">&quot;</span></span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">custom_2</span><span style="color:#710">&quot;</span></span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">custom_3</span><span style="color:#710">&quot;</span></span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">custom_4</span><span style="color:#710">&quot;</span></span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">custom_5</span><span style="color:#710">&quot;</span></span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">custom_6</span><span style="color:#710">&quot;</span></span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">custom_7</span><span style="color:#710">&quot;</span></span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">custom_8</span><span style="color:#710">&quot;</span></span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">custom_9</span><span style="color:#710">&quot;</span></span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">href_slug</span><span style="color:#710">&quot;</span></span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">miq_user_role_name</span><span style="color:#710">&quot;</span></span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">provisioned_storage</span><span style="color:#710">&quot;</span></span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">read_only</span><span style="color:#710">&quot;</span></span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">region_description</span><span style="color:#710">&quot;</span></span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">region_number</span><span style="color:#710">&quot;</span></span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">user_count</span><span style="color:#710">&quot;</span></span>
+  ],
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>relationships</span><span style="color:#404">&quot;</span></span>: [
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">active_vms</span><span style="color:#710">&quot;</span></span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">custom_action_buttons</span><span style="color:#710">&quot;</span></span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">custom_actions</span><span style="color:#710">&quot;</span></span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">custom_attributes</span><span style="color:#710">&quot;</span></span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">custom_button_sets</span><span style="color:#710">&quot;</span></span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">custom_buttons</span><span style="color:#710">&quot;</span></span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">entitlement</span><span style="color:#710">&quot;</span></span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">miq_custom_attributes</span><span style="color:#710">&quot;</span></span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">miq_report_results</span><span style="color:#710">&quot;</span></span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">miq_reports</span><span style="color:#710">&quot;</span></span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">miq_templates</span><span style="color:#710">&quot;</span></span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">miq_user_role</span><span style="color:#710">&quot;</span></span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">miq_widget_contents</span><span style="color:#710">&quot;</span></span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">miq_widget_sets</span><span style="color:#710">&quot;</span></span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">taggings</span><span style="color:#710">&quot;</span></span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">tags</span><span style="color:#710">&quot;</span></span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">tenant</span><span style="color:#710">&quot;</span></span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">users</span><span style="color:#710">&quot;</span></span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">vms</span><span style="color:#710">&quot;</span></span>
+  ],
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>subcollections</span><span style="color:#404">&quot;</span></span>: [
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">tags</span><span style="color:#710">&quot;</span></span>
+  ],
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>data</span><span style="color:#404">&quot;</span></span>: {
+  }
+}</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="optional-metadata"><a class="anchor" href="#optional-metadata"></a>Optional Metadata</h3>
+<div class="paragraph">
+<p>Most collections do not declare additional metadata as shown by the empty <em>data</em> hash entry above.
+Optional metadata is made available as needed for API clients. They are generally used to provide additional
+information needed for user-interfaces, help complete or validate data for additional API calls, etc.</p>
+</div>
+<div class="paragraph">
+<p>Currently, optional metadata is made available for the following collections:</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 30%;">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Collection</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/api/authentications</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/api/clusters</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/api/container_deployments</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/api/custom_buttons</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/api/generic_object_definitions</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/api/hosts</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/api/providers</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>There is no enforced structure for the <em>data</em> element as each collection may need to provide
+different types of metadata. The following is a partial meta-data example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">OPTIONS /api/generic_object_definitions</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>attributes</span><span style="color:#404">&quot;</span></span>: [
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">created_at</span><span style="color:#710">&quot;</span></span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">description</span><span style="color:#710">&quot;</span></span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">id</span><span style="color:#710">&quot;</span></span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">name</span><span style="color:#710">&quot;</span></span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">properties</span><span style="color:#710">&quot;</span></span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">updated_at</span><span style="color:#710">&quot;</span></span>
+  ],
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>virtual_attributes</span><span style="color:#404">&quot;</span></span>: [
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">generic_objects_count</span><span style="color:#710">&quot;</span></span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">href_slug</span><span style="color:#710">&quot;</span></span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">region_description</span><span style="color:#710">&quot;</span></span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">region_number</span><span style="color:#710">&quot;</span></span>
+  ],
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>relationships</span><span style="color:#404">&quot;</span></span>: [
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">custom_action_buttons</span><span style="color:#710">&quot;</span></span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">custom_actions</span><span style="color:#710">&quot;</span></span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">custom_button_sets</span><span style="color:#710">&quot;</span></span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">custom_buttons</span><span style="color:#710">&quot;</span></span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">generic_objects</span><span style="color:#710">&quot;</span></span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">picture</span><span style="color:#710">&quot;</span></span>
+  ],
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>subcollections</span><span style="color:#404">&quot;</span></span>: [
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">generic_objects</span><span style="color:#710">&quot;</span></span>
+  ],
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>data</span><span style="color:#404">&quot;</span></span>: {
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>allowed_association_types</span><span style="color:#404">&quot;</span></span>: [
+      [
+        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Availability Zone</span><span style="color:#710">&quot;</span></span>,
+        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">AvailabilityZone</span><span style="color:#710">&quot;</span></span>
+      ],
+      <span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span>
+      [
+        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">VM and Instance</span><span style="color:#710">&quot;</span></span>,
+        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Vm</span><span style="color:#710">&quot;</span></span>
+      ],
+      [
+        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Zone</span><span style="color:#710">&quot;</span></span>,
+        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Zone</span><span style="color:#710">&quot;</span></span>
+      ]
+    ],
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>allowed_types</span><span style="color:#404">&quot;</span></span>: [
+      [
+        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Boolean</span><span style="color:#710">&quot;</span></span>,
+        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">boolean</span><span style="color:#710">&quot;</span></span>
+      ],
+      [
+        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Date/Time</span><span style="color:#710">&quot;</span></span>,
+        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">datetime</span><span style="color:#710">&quot;</span></span>
+      ],
+      [
+        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Float</span><span style="color:#710">&quot;</span></span>,
+        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">float</span><span style="color:#710">&quot;</span></span>
+      ],
+      [
+        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Integer</span><span style="color:#710">&quot;</span></span>,
+        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">integer</span><span style="color:#710">&quot;</span></span>
+      ],
+      [
+        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">String</span><span style="color:#710">&quot;</span></span>,
+        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">string</span><span style="color:#710">&quot;</span></span>
+      ],
+      [
+        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Time</span><span style="color:#710">&quot;</span></span>,
+        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">time</span><span style="color:#710">&quot;</span></span>
+      ]
+    ]
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>

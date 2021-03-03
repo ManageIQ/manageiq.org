@@ -1,0 +1,130 @@
+---
+distro:         ManageIQ
+version:        Ivanchuk
+
+group_id:       RestApi
+group_title:    REST API
+
+subgroup_id:    RestApi::Overview
+subgroup_title: Overview
+
+topic_id:       RestApi::Overview::Pagination
+topic_title:    Pagination
+
+article_title:  "Pagination"
+
+breadcrumb_group: REST API
+breadcrumb_topic: Pagination
+---
+
+<div class="sect1">
+<h2 id="pagination"><a class="anchor" href="#pagination"></a>Pagination</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Pagination is enabled by default. When querying collections and the <em>limit</em> query parameter is not specified, only 1000
+resources are returned by default. This is driven by the new advanced setting:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">:api:
+  :max_results_per_page: 1000</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Example GET with offset and limit specified.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">GET /api/vms?offset=2&amp;limit=2&amp;sort_by=name&amp;expand=resources</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span>      : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">vms</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>count</span><span style="color:#404">&quot;</span></span>     : <span style="color:#00D">7</span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>subcount</span><span style="color:#404">&quot;</span></span>  : <span style="color:#00D">2</span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>pages</span><span style="color:#404">&quot;</span></span>     : <span style="color:#00D">4</span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>resources</span><span style="color:#404">&quot;</span></span> : [
+    {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span>   : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/vms/7254</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span>     :  <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">7254</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>vendor</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">vmware</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span>   : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">test-vm1</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span>
+    },
+    {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span>   : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/vms/7257</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span>     : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">7257</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>vendor</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">vmware</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span>   : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">test-vm2</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span>
+    }
+  ],
+ <span style="color:#606"><span style="color:#404">&quot;</span><span>actions</span><span style="color:#404">&quot;</span></span> : [
+    <span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span>
+  ],
+ <span style="color:#606"><span style="color:#404">&quot;</span><span>links</span><span style="color:#404">&quot;</span></span> : {
+   <span style="color:#606"><span style="color:#404">&quot;</span><span>self</span><span style="color:#404">&quot;</span></span>     : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/vms?offset=2&amp;limit=2&amp;sort_by=name&amp;expand=resources</span><span style="color:#710">&quot;</span></span>,
+   <span style="color:#606"><span style="color:#404">&quot;</span><span>next</span><span style="color:#404">&quot;</span></span>     : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/vms?offset=4&amp;limit=2&amp;sort_by=name&amp;expand=resources</span><span style="color:#710">&quot;</span></span>,
+   <span style="color:#606"><span style="color:#404">&quot;</span><span>previous</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/vms?offset=0&amp;limit=2&amp;sort_by=name&amp;expand=resources</span><span style="color:#710">&quot;</span></span>,
+   <span style="color:#606"><span style="color:#404">&quot;</span><span>first</span><span style="color:#404">&quot;</span></span>    : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/vms?offset=0&amp;limit=2&amp;sort_by=name&amp;expand=resources</span><span style="color:#710">&quot;</span></span>,
+   <span style="color:#606"><span style="color:#404">&quot;</span><span>last</span><span style="color:#404">&quot;</span></span>     : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/vms?offset=6&amp;limit=2&amp;sort_by=name&amp;expand=resources</span><span style="color:#710">&quot;</span></span>
+ }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>With pagination enabled by default, collection queries now return the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>"pages" metadata which is the total number of pages for the <em>limit</em> specified (or the default 1000).</p>
+</li>
+<li>
+<p>"links" metadata section which includes the necessary URL&#8217;s for fetching the current page,
+next and previous pages, as well as the first and last pages.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><em>Notes:</em></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>When the page being returned is the first page (i.e. offset = 0), the <em>previous</em> link is not returned.</p>
+</li>
+<li>
+<p>When the page being returned is the last page, the <em>next</em> page link is not returned.</p>
+</li>
+<li>
+<p>For small result sets where <em>limit</em> is less than max_results_per_page, the <em>limit</em> will be honored.</p>
+</li>
+<li>
+<p>For large result sets where the <em>limit</em> is greater than max_results_per_page, <em>limit</em> will be ignored and
+the result will be limited to the first max_results_per_page resources.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">About max_results_per_page</div>
+<div class="paragraph">
+<p>If the default value for max_results_per_page does not meet your needs, it can be changed using
+the Advanced Settings feature in the UI. It is recommended however that it is not set to some arbitrarily large
+number in an effort to circumvent the pagination feature. The pagination feature is designed to prevent excessive
+load, which is easy to do with collections such as metric rollups and event streams that may have millions of records.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>

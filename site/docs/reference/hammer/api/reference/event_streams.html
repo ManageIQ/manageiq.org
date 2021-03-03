@@ -1,0 +1,115 @@
+---
+distro:         ManageIQ
+version:        Hammer
+
+group_id:       RestApi
+group_title:    REST API
+
+subgroup_id:    RestApi::Reference
+subgroup_title: Reference
+
+topic_id:       RestApi::Reference::EventStreams
+topic_title:    Event Streams
+
+article_title:  "Event Streams"
+
+breadcrumb_group: REST API
+breadcrumb_topic: Event Streams
+---
+
+<div class="sect1">
+<h2 id="event-streams"><a class="anchor" href="#event-streams"></a>Event Streams</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Querying of Event Streams is made available via the following collection:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">/api/event_streams</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Event Streams can be queried as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">GET /api/event_streams</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>An individual Event Stream can also be fetched as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">GET /api/event_streams/:id</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Relevant filter[] parameters when Event Streams are queried:</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 80%;">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">event_type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">event_type=vm_start, event_type=vm_stop</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">timestamp</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">timestamp&gt;2017-01-03, timestamp&lt;2017-12-31</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">target_type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">target_type=VmOrTemplate</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">target_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">target_id=11</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="filtering-by-event-type"><a class="anchor" href="#filtering-by-event-type"></a>Filtering by event type</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">GET /api/event_streams?filter[]=event_type=vm_start</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="filtering-by-timestamp"><a class="anchor" href="#filtering-by-timestamp"></a>Filtering by timestamp</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">GET /api/event_streams?filter[]=timestamp&gt;2017-01-03
+                      &amp;filter[]=timestamp&lt;2017-01-10</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="filtering-by-target-type"><a class="anchor" href="#filtering-by-target-type"></a>Filtering by target type</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">GET /api/event_streams?filter[]=target_type=VmOrTemplate</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="filtering-by-target-type-and-id"><a class="anchor" href="#filtering-by-target-type-and-id"></a>Filtering by target type and id</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">GET /api/event_streams?filter[]=target_type=VmOrTemplate
+                      &amp;filter[]=target_id=21</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
