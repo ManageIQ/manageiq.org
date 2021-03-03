@@ -19,7 +19,6 @@ require_relative "miq/ref_docs"
 require_relative "miq/ref_menu"
 require_relative "miq/ref_page"
 require_relative "miq/ref_versions"
-require_relative "miq/legacy_ref_docs"
 
 require_relative "miq/md_link_converter"
 require_relative "miq/dir_index"
@@ -88,13 +87,5 @@ module Miq
 
   def self.doc_branches
     ENV.fetch('MIQ_REF_BRANCHES', 'master,kasparov,jansa').split(',')
-  end
-
-  def self.legacy_doc_branches
-    ENV.fetch('MIQ_REF_BRANCHES', 'ivanchuk,hammer,gaprindashvili,fine,euwe').split(',')
-  end
-
-  def self.all_doc_branches
-    doc_branches + legacy_doc_branches
   end
 end

@@ -91,7 +91,6 @@ module Miq
     def reference
       say "Building reference docs", :green
       RefDocs.build
-      LegacyRefDocs.build
     end
     map "ref" => "reference"
 

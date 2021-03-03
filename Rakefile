@@ -1,5 +1,7 @@
-require "rake/testtask"
+require "rake"
+Rake.add_rakelib("lib/tasks")
 
+require "rake/testtask"
 Rake::TestTask.new do |t|
   t.libs.push 'test'
   t.pattern = 'test/**/*_test.rb'

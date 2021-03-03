@@ -1,0 +1,122 @@
+---
+distro:         ManageIQ
+version:        Ivanchuk
+
+group_id:       RestApi
+group_title:    REST API
+
+subgroup_id:    RestApi::Reference
+subgroup_title: Reference
+
+topic_id:       RestApi::Reference::MetricRollups
+topic_title:    Metric Rollups
+
+article_title:  "Metric Rollups"
+
+breadcrumb_group: REST API
+breadcrumb_topic: Metric Rollups
+---
+
+<div class="sect1">
+<h2 id="metric-rollups"><a class="anchor" href="#metric-rollups"></a>Metric Rollups</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Querying of Metric Rollups is made available via the following collection:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">/api/metric_rollups</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Supported query parameters:</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 80%;">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">resource_type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VmOrTemplate, Service or any resource type that supports Metric Rollups</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">resource_ids</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[id1,id2,id3, &#8230;&#8203;]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">capture_interval</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">hourly, daily</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">start_date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2018-01-10,  2018-01-10T11:20:00Z</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">end_date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2018-01-17,  2017-12-31T23:59:00Z</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="getting-60-daily-metric-rollups"><a class="anchor" href="#getting-60-daily-metric-rollups"></a>Getting 60 Daily Metric Rollups</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">GET /api/metric_rollups?resource_type=VmOrTemplate
+                      &amp;resource_ids=[101,102,103]
+                      &amp;capture_interval=daily
+                      &amp;start_date='2017-10-01'
+                      &amp;limit=60</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="getting-hourly-metric-rollups-for-a-range-of-dates"><a class="anchor" href="#getting-hourly-metric-rollups-for-a-range-of-dates"></a>Getting Hourly Metric Rollups for a range of Dates</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">GET /api/metric_rollups?resource_type=Service
+                      &amp;resource_ids=[55,56]
+                      &amp;capture_interval=hourly
+                      &amp;start_date='2017-11-15'
+                      &amp;end_date='2017-11-18'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Metric rollups can also be obtained for a specific resource as a subcollection:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">/api/vms/:id/metric_rollups</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">/api/services/:id/metric_rollups</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="getting-hourly-metric-rollups-for-a-service"><a class="anchor" href="#getting-hourly-metric-rollups-for-a-service"></a>Getting Hourly Metric Rollups for a Service</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">GET /api/services/57/metric_rollups?capture_interval=hourly&amp;start_date='2017-06-15'</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="getting-30-daily-metric-rollups-for-a-vm"><a class="anchor" href="#getting-30-daily-metric-rollups-for-a-vm"></a>Getting 30 Daily Metric Rollups for a Vm</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">GET /api/vms/104/metric_rollups?capture_interval=daily&amp;start_date='2017-01-01'&amp;limit=30</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>

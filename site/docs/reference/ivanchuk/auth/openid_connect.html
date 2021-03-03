@@ -1,0 +1,550 @@
+---
+distro:         ManageIQ
+version:        Ivanchuk
+
+group_id:       Authentication
+group_title:    Authentication
+
+subgroup_id:    
+subgroup_title: 
+
+topic_id:       Authentication::ConfiguringExternalAuthenticationWithOpenidconnect
+topic_title:    Configuring External Authentication with OpenID-Connect
+
+article_title:  "OpenID-Connect"
+
+breadcrumb_group: <a href="../auth/active_directory.html">Authentication</a>
+breadcrumb_topic: Configuring External Authentication with OpenID-Connect
+---
+
+<div class="sect1">
+<h2 id="openid-connect"><a class="anchor" href="#openid-connect"></a>OpenID-Connect</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>External Authentication on the Appliance has been enhanced to support OpenID-Connect,
+which will also be referred to as <em>OIDC</em>.</p>
+</div>
+<div class="paragraph">
+<p>The OIDC implementation has been tested with KeyCloak 3.2.1.</p>
+</div>
+<div class="paragraph">
+<p>In this guide we will cover how to manually configure an Appliance&#8217;s
+external authentication to work with OIDC. The OIDC implementation has been
+tested with KeyCloak but is implemented generically using Apache&#8217;s mod_auth_openidc
+module and should work with other OIDC Identity Providers.</p>
+</div>
+<div class="paragraph">
+<p>The current implementation only secures the Appliance&#8217;s Web administrative UI with OIDC.</p>
+</div>
+<div class="paragraph">
+<p><strong>Note:</strong> The REST API and Self-Service UI do not currently support OIDC.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="#requirements">Requirements</a></p>
+</li>
+<li>
+<p><a href="#apache-configuration">Apache Configuration</a></p>
+</li>
+<li>
+<p><a href="#oidc-configuration">OIDC Configuration</a></p>
+</li>
+<li>
+<p><a href="#oidc-assertions">OIDC Assertions</a></p>
+</li>
+<li>
+<p><a href="#configuring-the-administrative-ui">Configuring the Administrative UI</a></p>
+</li>
+<li>
+<p><a href="#re-enabling-local-login">Re-Enabling Local Login</a></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="requirements"><a class="anchor" href="#requirements"></a>Requirements</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following is needed in order to enable OIDC Authentication to the Appliance:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A CentOS/RHEL 7.5 based Appliance</p>
+</li>
+<li>
+<p>A OIDC Identity Provider, (e.g. KeyCloak 3.2.1 or Later)</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="apache-configuration"><a class="anchor" href="#apache-configuration"></a>Apache Configuration</h3>
+<div class="paragraph">
+<p>Copy the Apache OIDC template configuration files:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code># TEMPLATE_DIR="/var/www/miq/system/TEMPLATE"
+# cp ${TEMPLATE_DIR}/etc/httpd/conf.d/manageiq-remote-user-openidc.conf \
+    /etc/httpd/conf.d/
+# cp ${TEMPLATE_DIR}/etc/httpd/conf.d/manageiq-external-auth-openidc.conf \
+    /etc/httpd/conf.d/</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="oidc-configuration"><a class="anchor" href="#oidc-configuration"></a>OIDC Configuration</h3>
+<div class="paragraph">
+<p>The Apache <em>/etc/httpd/conf.d/manageiq-external-auth-openidc.conf</em> configuration files must be updated
+with installation specific values:</p>
+</div>
+<div class="paragraph">
+<p>The defaults in the <em>manageiq-external-auth-oidc.conf</em> file are:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LogLevel</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">warn</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OIDCCryptoPassphrase</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sp-cookie</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OIDCOAuthRemoteUserClaim</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">username</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Installation specific values must be specified in the <em>manageiq-external-auth-oidc.conf</em> file for these values:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ServerName</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://&lt;miq-appliance>" class="bare">https://&lt;miq-appliance></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OIDCProviderMetadataURL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://&lt;openidc" class="bare">http://&lt;openidc</a> server>:&lt;openidc port, usually 8080>/auth/realms/miq/.well-known/openid-configuration</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OIDCCLientID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;openidc client name></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OIDCClientSecret</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;openidc client secret></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OIDCRedirectURI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://&lt;miq-appliance>/oidc_login/redirect_uri" class="bare">https://&lt;miq-appliance>/oidc_login/redirect_uri</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>For KeyCloak, a Realm can be created for one or more Appliances with individual Clients
+defined one per Appliance where the Client ID identifies the individual appliance,
+e.g. the appliance hostname.</p>
+</div>
+<div class="paragraph">
+<p>Adding a Client in the KeyCloak ManageIQ Realm:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Set Client ID as &lt;miq-appliance></p>
+</li>
+<li>
+<p>Set Client protocol as <strong>openid-connect</strong>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The Client definition for the appliance can then be updated with the following:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Client Protocol</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">openid-connect</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Access Type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">confidential</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Valid Redirect URIs</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://&lt;miq-appliance>" class="bare">https://&lt;miq-appliance></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://&lt;miq-appliance>/oidc_login/redirect_uri" class="bare">https://&lt;miq-appliance>/oidc_login/redirect_uri</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">User Info Signed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">unsigned</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Request Object Signature Algorithm</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">any</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The value used for OIDCClientSecret in the <em>manageiq-external-auth-oidc.conf</em> file is taken
+from the Keycloak Client&#8217;s <em>Credentials / Secret</em> value. To generate a new client secret,
+First set the <em>Credentials / Client Authenticator</em> to <em>Client Id and Secret</em>
+. Then <em>Regenerate Secret</em> button.</p>
+</div>
+<div class="paragraph">
+<p>Finally, restart Apache on the appliance as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code># systemctl restart httpd</code></pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="oidc-assertions"><a class="anchor" href="#oidc-assertions"></a>OIDC Assertions</h4>
+<div class="paragraph">
+<p>For authenticating to the appliance, the following remote user parameters are looked at by
+the appliance upon a successful login and redirect from the Identity Provider.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">HTTP Environment</th>
+<th class="tableblock halign-left valign-top">OIDC Assertion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">REMOTE_USER</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">username</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">REMOTE_USER_EMAIL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">email</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">REMOTE_USER_FIRSTNAME</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">firstname</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">REMOTE_USER_LASTNAME</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lastname</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">REMOTE_USER_FULLNAME</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fullname</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">REMOTE_USER_GROUPS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">groups</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>For KeyCloak, the above OIDC Assertions can be created for the Appliance Client in KeyCloak as
+Mappers.</p>
+</div>
+<div class="paragraph">
+<p>The following mappers are automatically generated when the OIDC client is created:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">Name</th>
+<th class="tableblock halign-center valign-top">Category</th>
+<th class="tableblock halign-center valign-top">Mapper Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">email</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Token mapper</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">User Property</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">family name</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Token mapper</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">User Property</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">given name</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Token mapper</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">User Property</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">full name</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Token mapper</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">User&#8217;s full name</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">username</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Token mapper</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">User Property</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The following <em>Group Membership</em> mapper must be manually created:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">Name</th>
+<th class="tableblock halign-center valign-top">Consent Required</th>
+<th class="tableblock halign-center valign-top">Mapper Type</th>
+<th class="tableblock halign-center valign-top">Token Claim Name</th>
+<th class="tableblock halign-center valign-top">Full group path</th>
+<th class="tableblock halign-center valign-top">Add to ID token</th>
+<th class="tableblock halign-center valign-top">Add to access token</th>
+<th class="tableblock halign-center valign-top">Add to userinfo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">groups</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">OFF</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Group Membership</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">groups</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">OFF</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">ON</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">OFF</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">OFF</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The following <em>User Session Note</em> mappers must be manually created:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">Name</th>
+<th class="tableblock halign-center valign-top">Consent Required</th>
+<th class="tableblock halign-center valign-top">Mapper Type</th>
+<th class="tableblock halign-center valign-top">User Session Note</th>
+<th class="tableblock halign-center valign-top">Token Claim Name</th>
+<th class="tableblock halign-center valign-top">Claim JSON Type</th>
+<th class="tableblock halign-center valign-top">Add to ID token</th>
+<th class="tableblock halign-center valign-top">Add to access token</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Client Host</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">OFF</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">User Session Note</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">clientHost</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">clientHost</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">ON</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">ON</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Client ID</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">OFF</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">User Session Note</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">clientId</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">clientId</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">ON</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">ON</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Client IP Address</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">OFF</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">User Session Note</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">clientAddress</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">clientAddress</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">ON</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">ON</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="configuring-the-administrative-ui"><a class="anchor" href="#configuring-the-administrative-ui"></a>Configuring the Administrative UI</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>After having configured Apache for OIDC, the next step is to update the Appliance Administrative UI
+to be OIDC aware and function accordingly.</p>
+</div>
+<div class="paragraph">
+<p>Login as admin, then in <em>Configure&#8594;Configuration&#8594;Authentication</em></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Set mode to External (httpd)</p>
+</li>
+<li>
+<p>Check: <em>Provider Type: Enable Enable OpenID-Connect</em> - This enables the OIDC login button on the login screen, that redirects
+to the OIDC protected page for authentication, and supports the OIDC logout process.</p>
+</li>
+<li>
+<p>Optional: Check: <em>Enable Single Signon</em> - With this option enabled, initial access to the Appliance Administrative UI will
+redirect to the OIDC Identity Provider authentication screen.  Note that logouts from the Appliance will
+return the user to the Appliance login screen allowing them to login as admin unless <em>Disable Local Login</em>
+is checked below.</p>
+</li>
+<li>
+<p>Optional: Check: <em>Disable Local Login</em> - Do this <strong>only</strong> if you need to disable <em>admin</em> login to appliance and only
+allow OIDC based authentication.  Note that if there are issues with the Identity Provider or you need
+admin access to the appliance you won&#8217;t be able to login until you re-enable the Local Login
+as described below.</p>
+</li>
+<li>
+<p>Check: <em>Get User Groups from External Authentication (httpd)</em></p>
+</li>
+<li>
+<p>Click Save.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The above steps need to be done on each UI enabled appliance.</p>
+</div>
+<div class="paragraph">
+<p>In Configure&#8594;Configuration&#8594;Access Control</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Make sure the user&#8217;s groups are created on the Appliance and appropriate roles assigned to those groups.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="re-enabling-local-login"><a class="anchor" href="#re-enabling-local-login"></a>Re-Enabling Local Login</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If the Local Login has been disabled in the Administrative UI and there is a need to be able
+to login as <em>admin</em>, the Local Login can be re-enabled using either of the following methods:</p>
+</div>
+<div class="sect2">
+<h3 id="administrative-ui"><a class="anchor" href="#administrative-ui"></a>Administrative UI:</h3>
+<div class="paragraph">
+<p>This option is available if the Identity Provider is available and one can login using a user
+with enough administrative privileges to update it:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Login as administrative user,</p>
+</li>
+<li>
+<p>In then in <em>Configure&#8594;Configuration&#8594;Authentication</em> uncheck <em>Disable Local Login</em> and save.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="appliance-console-interface"><a class="anchor" href="#appliance-console-interface"></a>Appliance Console Interface:</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>ssh to the appliance as root</p>
+</li>
+<li>
+<p>Run <em>appliance_console</em></p>
+</li>
+<li>
+<p>Select menu entry <em>Update External Authentication Options</em></p>
+</li>
+<li>
+<p>Select <em>Enable Local Login</em></p>
+</li>
+<li>
+<p>then <em>Apply updates</em></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="appliance-console-cli"><a class="anchor" href="#appliance-console-cli"></a>Appliance Console CLI:</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>ssh to the appliance as root</p>
+</li>
+<li>
+<p>Run <em>appliance_console_cli --extauth-opts</em> <strong>local_login_disabled=false</strong></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>

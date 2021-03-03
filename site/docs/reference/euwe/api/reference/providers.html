@@ -1,0 +1,487 @@
+---
+distro:         ManageIQ
+version:        Euwe
+
+group_id:       RestApi
+group_title:    REST API
+
+subgroup_id:    RestApi::Reference
+subgroup_title: Reference
+
+topic_id:       RestApi::Reference::ProviderSupport
+topic_title:    Provider Support
+
+article_title:  "Provider Support"
+
+breadcrumb_group: REST API
+breadcrumb_topic: Provider Support
+---
+
+<div class="sect1">
+<h2 id="provider-support"><a class="anchor" href="#provider-support"></a>Provider Support</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Provider management including CRUD operations as well as the <strong>refresh</strong> action
+is available via the REST API. Management of providers is through:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">/api/providers</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#querying-providers">Querying Providers</a></p>
+</li>
+<li>
+<p><a href="#creating-providers">Creating Providers</a></p>
+</li>
+<li>
+<p><a href="#specifying-credentials">Specifying Credentials</a></p>
+</li>
+<li>
+<p><a href="#editing-providers">Editing Providers</a></p>
+</li>
+<li>
+<p><a href="#deleting-providers">Deleting Providers</a></p>
+</li>
+<li>
+<p><a href="#refresh-providers">Refresh Providers</a></p>
+</li>
+<li>
+<p><a href="#foreman-support">Foreman Support</a></p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="querying-providers"><a class="anchor" href="#querying-providers"></a>Querying Providers</h3>
+<div class="paragraph">
+<p>Providers can be queried as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">GET /api/providers</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A specific provider can also be queried by its id:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">GET /api/providers/:id</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Foreman type providers can be queried by specifying the provider_class as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">GET /api/providers?provider_class=provider</code></pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="cloud-networks"><a class="anchor" href="#cloud-networks"></a>Cloud Networks</h4>
+<div class="paragraph">
+<p>The Cloud Networks of a provider can be queried by asking for the <em>cloud_networks</em> subcollection as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">GET /api/providers/:id/cloud_networks</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">GET /api/providers/:id/cloud_networks/:cloud_network_id</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Or expanding the Cloud Networks in addition to the provider as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">GET /api/providers/:id?expand=cloud_networks</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="creating-providers"><a class="anchor" href="#creating-providers"></a>Creating Providers</h3>
+<div class="paragraph">
+<p>Creating a provider is done via the <strong>create</strong> action as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>POST /api/providers</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">{
+  &quot;action&quot; : &quot;create&quot;,
+  &quot;resource&quot; : {
+    # New Provider JSON
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And like other <strong>create</strong> actions, the new provider data can simply be posted to
+the /api/providers URL.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>POST /api/providers</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">{
+  # New Provider JSON
+}</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Please refer to the <a href="../appendices/resource_attributes.html#providers">Resource Attributes</a>
+page for a list of available attributes when creating Providers.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>For example, creating a VMware type provider:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>POST /api/providers</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">vCenter 5</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>type</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ManageIQ::Providers::Vmware::InfraManager</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>hostname</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">my_vcenter_50</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>ipaddress</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">192.168.150.1</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>zone</span><span style="color:#404">&quot;</span></span> :  { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/zone/1</span><span style="color:#710">&quot;</span></span> },
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>credentials</span><span style="color:#404">&quot;</span></span> :  {
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>userid</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">vcenter_admin</span><span style="color:#710">&quot;</span></span>,
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>password</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">vcenter_password</span><span style="color:#710">&quot;</span></span>
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If zone is not specified, the Default zone will be used.</p>
+</div>
+<div class="paragraph">
+<p>The <strong>type</strong> attribute specifies the supported provider class names which include:</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 60%;">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ManageIQ::Providers::Amazon::CloudManager</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ManageIQ::Providers::Azure::CloudManager</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ManageIQ::Providers::Google::CloudManager</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ManageIQ::Providers::Hawkular::MiddlewareManager</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ManageIQ::Providers::Kubernetes::ContainerManager</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ManageIQ::Providers::Microsoft::InfraManager</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ManageIQ::Providers::Openshift::ContainerManager</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ManageIQ::Providers::OpenshiftEnterprise::ContainerManager</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ManageIQ::Providers::Openstack::CloudManager</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ManageIQ::Providers::Openstack::InfraManager</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ManageIQ::Providers::Redhat::InfraManager</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ManageIQ::Providers::Vmware::CloudManager</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ManageIQ::Providers::Vmware::InfraManager</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Please note that the provider <strong>type</strong> classes have changed in the appliance from earlier
+releases (<em>v2.0.0</em> of the API). Please refer to the <a href="../appendices/provider_types.html">Provider Types</a>
+page for a mapping from the old to the new types.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="specifying-credentials"><a class="anchor" href="#specifying-credentials"></a>Specifying Credentials</h3>
+<div class="paragraph">
+<p>When creating or updating providers, the credentials can be specified as a
+a single default set, or a compound set where additional credentials are necessary
+for let&#8217;s say AMPQ for OpenStack or Metrics for RHEVM.</p>
+</div>
+<div class="paragraph">
+<p>Single default credentials set:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">vCenter 50</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>type</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ManageIQ::Providers::Vmware::InfraManager</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span>
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>credentials</span><span style="color:#404">&quot;</span></span> :  {
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>userid</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">vc_admin</span><span style="color:#710">&quot;</span></span>,
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>password</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">vc_password</span><span style="color:#710">&quot;</span></span>
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Compound credentials set:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">RHEVM</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>type</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20"> ManageIQ::Providers::Redhat::InfraManager</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span>
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>credentials</span><span style="color:#404">&quot;</span></span> : [
+     {
+       <span style="color:#606"><span style="color:#404">&quot;</span><span>userid</span><span style="color:#404">&quot;</span></span>    : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">default_userid</span><span style="color:#710">&quot;</span></span>,
+       <span style="color:#606"><span style="color:#404">&quot;</span><span>password</span><span style="color:#404">&quot;</span></span>  : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">default_password</span><span style="color:#710">&quot;</span></span>
+     },
+     {
+       <span style="color:#606"><span style="color:#404">&quot;</span><span>userid</span><span style="color:#404">&quot;</span></span>    : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">metrics_userid</span><span style="color:#710">&quot;</span></span>,
+       <span style="color:#606"><span style="color:#404">&quot;</span><span>password</span><span style="color:#404">&quot;</span></span>  : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">metrics_password</span><span style="color:#710">&quot;</span></span>,
+       <span style="color:#606"><span style="color:#404">&quot;</span><span>auth_type</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">metrics</span><span style="color:#710">&quot;</span></span>
+     }
+  ]
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="editing-providers"><a class="anchor" href="#editing-providers"></a>Editing Providers</h3>
+<div class="paragraph">
+<p>Editing provider is available via the <strong>edit</strong> action with the <strong>resource</strong> specifying the
+attributes to update for that provider.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>POST /api/providers/:id</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">edit</span><span style="color:#710">&quot;</span></span> ,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>resource</span><span style="color:#404">&quot;</span></span> : {
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>hostname</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">new_vcenter_50</span><span style="color:#710">&quot;</span></span>,
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>ipaddress</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">192.168.150.2</span><span style="color:#710">&quot;</span></span>
+  }
+}</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+type is a restricted attribute and cannot be edited.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-providers"><a class="anchor" href="#deleting-providers"></a>Deleting Providers</h3>
+<div class="paragraph">
+<p>Deleting a provider is done via the delete method:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>DELETE /api/providers/:id</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or via the <strong>delete</strong> action as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>POST /api/providers/:id</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or by href:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>POST /api/providers</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>resources</span><span style="color:#404">&quot;</span></span> : [
+    { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/providers/:id</span><span style="color:#710">&quot;</span></span> }
+  ]
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="refresh-providers"><a class="anchor" href="#refresh-providers"></a>Refresh Providers</h3>
+<div class="paragraph">
+<p>Performing a refresh of providers is done via the <strong>refresh</strong> action.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>POST /api/providers/:id</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">refresh</span><span style="color:#710">&quot;</span></span>
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can also refresh multiple providers:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>POST /api/providers</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">refresh</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>resources</span><span style="color:#404">&quot;</span></span> : [
+    { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/providers/:id</span><span style="color:#710">&quot;</span></span> },
+    { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/providers/:id</span><span style="color:#710">&quot;</span></span> }
+  ]
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="foreman-support"><a class="anchor" href="#foreman-support"></a>Foreman Support</h3>
+<div class="paragraph">
+<p>Management of Foreman providers is provided as a seperate class of providers. This
+is still accessed via the <strong>/api/providers</strong> entry point, but enabled by a
+new parameter:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">  GET|POST|DELETE /api/providers?provider_class=provider</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <strong>provider_class</strong> parameter is supported with <strong>/api/provider</strong> for
+all CRUD operations including the <strong>refresh</strong> action.</p>
+</div>
+<div class="paragraph">
+<p>An example of creating a Foreman provider:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>POST /api/providers?provider_class=provider</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>type</span><span style="color:#404">&quot;</span></span>      : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ManageIQ::Providers::Foreman::Provider</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span>      : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">new_foreman_111</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>url</span><span style="color:#404">&quot;</span></span>       : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">100.200.300.111</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>credentials</span><span style="color:#404">&quot;</span></span> : {
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>userid</span><span style="color:#404">&quot;</span></span>   : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">foreman_admin</span><span style="color:#710">&quot;</span></span>,
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>password</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">foreman_password</span><span style="color:#710">&quot;</span></span>
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When creating providers with provider_class as <em>provider</em>,
+the <strong>type</strong> attribute specifies the supported provider class names which include:</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 60%;">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ManageIQ::Providers::AnsibleTower::Provider</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ManageIQ::Providers::Foreman::Provider</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ManageIQ::Providers::Openstack::Provider</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+When managing providers of <em>provider</em> provider_class, Tagging and Policy management
+does not currently apply. So requests including the tags, policies and policy_profiles
+subcollections will be rejected.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>

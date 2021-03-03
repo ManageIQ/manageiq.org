@@ -1,0 +1,295 @@
+---
+distro:         ManageIQ
+version:        Gaprindashvili
+
+group_id:       RestApi
+group_title:    REST API
+
+subgroup_id:    RestApi::Reference
+subgroup_title: Reference
+
+topic_id:       RestApi::Reference::ProvisionRequests
+topic_title:    Provision Requests
+
+article_title:  "Provision Requests"
+
+breadcrumb_group: REST API
+breadcrumb_topic: Provision Requests
+---
+
+<div class="sect1">
+<h2 id="provision-requests"><a class="anchor" href="#provision-requests"></a>Provision Requests</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Provisioning requests are made available via the following entrypoint.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">/api/provision_requests</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#creating-requests">Creating Requests</a></p>
+</li>
+<li>
+<p><a href="#approving-denying-requests">Approving or Denying Requests</a></p>
+</li>
+<li>
+<p><a href="#monitoring-requests">Monitoring Requests</a></p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="creating-requests"><a class="anchor" href="#creating-requests"></a>Creating Requests</h3>
+<div class="paragraph">
+<p>Either by specifying a <em>create</em> action or by posting the request directly
+to <strong>/api/provision_requests</strong>.</p>
+</div>
+<div class="paragraph">
+<p>As an example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>version</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">1.1</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>template_fields</span><span style="color:#404">&quot;</span></span> : {
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>guid</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">afe6e8a0-89fd-11e3-b6ac-b8e85646e742</span><span style="color:#710">&quot;</span></span>
+  },
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>vm_fields</span><span style="color:#404">&quot;</span></span> : {
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>number_of_cpus</span><span style="color:#404">&quot;</span></span> : <span style="color:#00D">1</span>,
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>vm_name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">aab_test_vm1</span><span style="color:#710">&quot;</span></span>,
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>vm_memory</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">1024</span><span style="color:#710">&quot;</span></span>,
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>vlan</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">nic1</span><span style="color:#710">&quot;</span></span>
+  },
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>requester</span><span style="color:#404">&quot;</span></span> : {
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>user_name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">jdoe</span><span style="color:#710">&quot;</span></span>,
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>owner_first_name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">John</span><span style="color:#710">&quot;</span></span>,
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>owner_last_name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Doe</span><span style="color:#710">&quot;</span></span>,
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>owner_email</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">jdoe@sample.com</span><span style="color:#710">&quot;</span></span>,
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>auto_approve</span><span style="color:#404">&quot;</span></span> : <span style="color:#088">true</span>
+  },
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>tags</span><span style="color:#404">&quot;</span></span> : {
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>network_location</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Internal</span><span style="color:#710">&quot;</span></span>,
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>cc</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">001</span><span style="color:#710">&quot;</span></span>
+  },
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>additional_values</span><span style="color:#404">&quot;</span></span> : {
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>request_id</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">1001</span><span style="color:#710">&quot;</span></span>
+  },
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>ems_custom_attributes</span><span style="color:#404">&quot;</span></span> : { },
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>miq_custom_attributes</span><span style="color:#404">&quot;</span></span> : { }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="provision-requests-attribute-groups"><a class="anchor" href="#provision-requests-attribute-groups"></a>Provision Requests Attribute Groups</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute Group</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">version</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Interface version. Defaults to 1.1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">template_fields</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">hash</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fields used to find template virtual machine. Provide any or all fields. Supply a guid or ems_guid to protect against matching same-named templates on different Providers within the appliance.</p>
+<p class="tableblock">Supported fields are:
+ name=[VM Template Name]  Example: template_1
+ guid=[guid value from vms resource]
+ ems_guid=[uid_ems value from vms resource]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">vm_fields</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">hash</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allows for the setting of properties on the Catalog, Hardware, Network, Customize, and Schedule tabs in the Provisioning dialog</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">requester</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">hash</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allows for the setting of properties on the Requester tab in the Provisioning dialog</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tags</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">hash</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tags to apply to newly created VM</p>
+<p class="tableblock">Example: network_location=Internal
+cc=001</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">additional_values</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">hash</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Additional values are name-value pairs stored with a provision request, but not used by the core provisioning code. These values are usually referenced from automate methods for custom processing</p>
+<p class="tableblock">Example: Store a request_id from an external system so the system can be notified during the provisioning process</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ems_custom_attributes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">hash</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Custom attributes applied to the virtual machine through the Provider as part of provisioning</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">miq_custom_attributes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">hash</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Custom attributes applied to the virtual machine and stored in the database as part of provisioning</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="approving-denying-requests"><a class="anchor" href="#approving-denying-requests"></a>Approving or Denying Requests</h3>
+<div class="paragraph">
+<p>If a provision is not auto approved, it can be approved or denied via the actions <em>approve</em> and <em>deny</em> on the
+provision request resource.</p>
+</div>
+<div class="sect3">
+<h4 id="approving-request"><a class="anchor" href="#approving-request"></a>Approving a Request</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">POST /api/provision_requests/:id</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">approve</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>reason</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">reason for approval</span><span style="color:#710">&quot;</span></span>
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="denying-request"><a class="anchor" href="#denying-request"></a>Denying a Request</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">POST /api/provision_requests/:id</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">deny</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>reason</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">reason for denial</span><span style="color:#710">&quot;</span></span>
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="monitoring-requests"><a class="anchor" href="#monitoring-requests"></a>Monitoring Requests</h3>
+<div class="paragraph">
+<p>Once a provision request is created, the response result will include the queryable
+provision request itself, i.e. <strong>/api/provision_requests/:id</strong></p>
+</div>
+<div class="sect3">
+<h4 id="response"><a class="anchor" href="#response"></a>Response:</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>results</span><span style="color:#404">&quot;</span></span>: [
+    {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">3068</span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Provision from [template1] to [###]</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>approval_state</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">pending_approval</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">MiqProvisionRequest</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>created_on</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2015-04-14T17:36:30Z</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>updated_on</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2015-04-14T17:36:30Z</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>requester_id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">88913</span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>requester_name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">API User</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>request_type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">template</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>request_state</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">pending</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>message</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">VM Provisioning - Request Created</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>status</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Ok</span><span style="color:#710">&quot;</span></span>
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>options</span><span style="color:#404">&quot;</span></span>: {
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>use_pre_dialog</span><span style="color:#404">&quot;</span></span>: <span style="color:#088">false</span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>request_type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">template</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>miq_request_dialog_name</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">miq_provision_dialogs</span><span style="color:#710">&quot;</span></span>,
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>src_vm_id</span><span style="color:#404">&quot;</span></span>: [
+          <span style="color:#00D">109996</span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">template1</span><span style="color:#710">&quot;</span></span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>src_vm_nics</span><span style="color:#404">&quot;</span></span>: [],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>src_vm_lans</span><span style="color:#404">&quot;</span></span>: [],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>src_ems_id</span><span style="color:#404">&quot;</span></span>: [
+          <span style="color:#00D">59136</span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ems_0000000000002</span><span style="color:#710">&quot;</span></span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>placement_auto</span><span style="color:#404">&quot;</span></span>: [
+          <span style="color:#088">true</span>,
+          <span style="color:#00D">1</span>
+        ],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>vm_tags</span><span style="color:#404">&quot;</span></span>: [],
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>ws_values</span><span style="color:#404">&quot;</span></span>: {
+        },
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>ws_ems_custom_attributes</span><span style="color:#404">&quot;</span></span>: {
+        },
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>ws_miq_custom_attributes</span><span style="color:#404">&quot;</span></span>: {
+        },
+        <span style="color:#606"><span style="color:#404">&quot;</span><span>tags</span><span style="color:#404">&quot;</span></span>: {
+        }
+      },
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>userid</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">admin</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>source_id</span><span style="color:#404">&quot;</span></span>: <span style="color:#00D">109996</span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>source_type</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">VmOrTemplate</span><span style="color:#710">&quot;</span></span>
+    }
+  ]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In the above example, the request could be queried periodically
+until the <strong>request_state</strong> reaches the <strong>finished</strong> state. Specifically,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/provision_requests/3068</pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The requests tasks of a provisioning request can also be queried by
+expanding the request_tasks subcollection as follows:
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/provision_requests/:id?expand=request_tasks</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>An alias <strong>tasks</strong> is also defined for the above subcollection:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/provision_requests/:id?expand=tasks</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For a list of attributes available for the provision request attribute groups
+please refer to the <a href="../appendices/provision_attributes.html">Provision Request Supported Attributes</a>
+in the appendices section.</p>
+</div>
+</div>
+</div>
+</div>
+</div>

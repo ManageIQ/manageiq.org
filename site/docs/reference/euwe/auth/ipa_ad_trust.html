@@ -1,0 +1,269 @@
+---
+distro:         ManageIQ
+version:        Euwe
+
+group_id:       Authentication
+group_title:    Authentication
+
+subgroup_id:    
+subgroup_title: 
+
+topic_id:       Authentication::ExternalAuthenticationWithIpaadTrust
+topic_title:    External Authentication with IPA/AD Trust
+
+article_title:  "IPA/AD Trust Authentication"
+
+breadcrumb_group: <a href="../auth/active_directory.html">Authentication</a>
+breadcrumb_topic: External Authentication with IPA/AD Trust
+---
+
+<div class="sect1">
+<h2 id="ipa-ad-trust"><a class="anchor" href="#ipa-ad-trust"></a>IPA/AD Trust Authentication</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Active Directory (AD) Trust Authentication on the Appliance is supported
+with External Authentication to IPA.</p>
+</div>
+<div class="paragraph">
+<p>In this guide we will cover how to manually configure an Appliance&#8217;s
+external authentication to work with AD Trust Authentication using IPA.
+This provides IPA Users access to the Appliance Administrative UI and the REST API
+using their AD credentials.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="#requirements">Requirements</a></p>
+</li>
+<li>
+<p><a href="#configure-ipa-ad-trust-server">Set up and configure an IPA server for AD Trust Authentication</a></p>
+</li>
+<li>
+<p><a href="#enable-external-auth">Enable the MiQ Appliance to use the configued IPA server</a></p>
+</li>
+<li>
+<p><a href="#configure-admin-ui">Configure the MiQ appliance to use external authentication</a></p>
+</li>
+<li>
+<p><a href="#create-group-ui">Create groups on the MiQ appliance</a></p>
+</li>
+<li>
+<p><a href="#use-ad-trust">Use AD Trust Authentication</a></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="requirements"><a class="anchor" href="#requirements"></a>Requirements</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following is needed in order to enable AD Trust Authentication to the Appliance:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A CentOS/RHEL 7.2 based MiQ Appliance</p>
+</li>
+<li>
+<p>Windows Server 2008 R2 or later with configured AD DC and DNS installed locally on the DC</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="configure-ipa-ad-trust-server"><a class="anchor" href="#configure-ipa-ad-trust-server"></a>Set up and configure an IPA server for AD Trust Authentication</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Configure an IPA Server based on FreeIPA 3.3.3 or later</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Instructions for setting up and configuring cross-realm trust between an IPA domain and an AD (Active Directory) domain
+can be found at <a href="http://www.freeipa.org/page/Active_Directory_trust_setup">freeipa.org Active Directory Trust Setup</a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Add necessary user attributes to the SSSD configuration on the IPA server</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The SSSD configuration file on the IPA Server must be updated to list needed user attributes.</p>
+</div>
+<div class="paragraph">
+<p>Add the following entry to the SSSD configuration file /etc/sssd/sssd.conf</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">[ifp]
+user_attributes = +mail, +givenname, +sn, +displayname</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>DNS Configuration Significance</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Special care should be made when configuring DNS as improper DNS configurations can result in poor performance
+and improper functionality.  For more details refer to the following documents:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://www.freeipa.org/page/Active_Directory_trust_setup#DNS_configuration">freeipa.org Active Directory Trust Setup/DNS configuration</a></p>
+</li>
+<li>
+<p><a href="http://www.freeipa.org/page/DNS">freeipa.org DNS</a></p>
+</li>
+<li>
+<p><a href="https://www.freeipa.org/page/Howto/DNSSEC">freeipa.org DNSSEC</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="enable-external-auth"><a class="anchor" href="#enable-external-auth"></a>Enable the MiQ Appliance to use the configued IPA server</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use the Appliance Console to enable external authentication to the IPA Server.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Log in to console as <em>root</em></p>
+</li>
+<li>
+<p>Run <em>appliance_console</em></p>
+</li>
+<li>
+<p>Summary screen should show <strong>External Auth</strong> as <em>not configured</em>, Press any key</p>
+</li>
+<li>
+<p>From the Advanced Setting menu, select the menu item <strong>Configure External Authentication (httpd)</strong></p>
+</li>
+<li>
+<p>Enter the FQDN of the IPA Server, i.e. <em>ipaserver.test.company.com</em></p>
+</li>
+<li>
+<p>Enter the IPA Server domain, i.e. <em>test.company.com</em></p>
+</li>
+<li>
+<p>Enter the IPA Server realm, i.e. <em>TEST.COMPANY.COM</em></p>
+</li>
+<li>
+<p>Press enter to select the default IPA Server Principal, i.e. <em>admin</em></p>
+</li>
+<li>
+<p>Enter the Password of the IPA Server Principal</p>
+</li>
+<li>
+<p>Review details, and Enter <strong>y</strong> to proceed.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="configure-admin-ui"><a class="anchor" href="#configure-admin-ui"></a>Configure the MiQ appliance to use external authentication</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Log in to the MiQ appliance as admin, then in <em>Settings&#8594;Configuration&#8594;Server&#8594;Authentication</em></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Set mode to External (httpd)</p>
+</li>
+<li>
+<p>Check: <em>Get User Groups from External Authentication (httpd)</em></p>
+</li>
+<li>
+<p><em>Optionally</em> Check: <em>Enable Single Signon</em></p>
+</li>
+<li>
+<p>Click Save.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The above steps need to be done on each UI and WebService enabled appliance.</p>
+</div>
+<div class="paragraph">
+<p>in <em>Settings&#8594;Configuration&#8594;Access Control</em></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Make sure the user&#8217;s groups are created on the Appliance and appropriate roles assigned to those groups.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="create-group-ui"><a class="anchor" href="#create-group-ui"></a>Create groups on the MiQ appliance</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The below steps need to be done on each UI and WebService enabled appliance.</p>
+</div>
+<div class="paragraph">
+<p>Log in to the MiQ appliance as admin, then in <em>Settings&#8594;Configuration&#8594;Access Control&#8594;Groups&#8594;Configuration&#8594;Add a new Group</em></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Check: <em>(Look Up LDAP Groups)</em></p>
+</li>
+<li>
+<p>Enter the AD user as the <em>User to Look Up</em> i.e. <em>ipauser@ipaserver.test.company.com</em></p>
+</li>
+<li>
+<p>Click Retrieve.</p>
+</li>
+<li>
+<p>Choose a group from the <em>LDAP Groups for User</em> dropdown.</p>
+</li>
+<li>
+<p>Assign the appropriate roles to the group</p>
+</li>
+<li>
+<p>Click Add.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="use-ad-trust"><a class="anchor" href="#use-ad-trust"></a>Use AD Trust Authentication</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Once the above is done, the user simply needs to specify their AD Username and Password when:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Logging into the Appliance Administrative UI</p>
+</li>
+<li>
+<p>Accessing the REST API</p>
+</li>
+<li>
+<p>Using the Self Service UI</p>
+</li>
+<li>
+<p>Using the Single Sign On (SSO) to access the MiQ appliance after generating a Kerberos ticket by using kinit with AD credentials.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>

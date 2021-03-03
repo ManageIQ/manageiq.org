@@ -1,0 +1,105 @@
+---
+distro:         ManageIQ
+version:        Fine
+
+group_id:       RestApi
+group_title:    REST API
+
+subgroup_id:    RestApi::Overview
+subgroup_title: Overview
+
+topic_id:       RestApi::Overview::Authorization
+topic_title:    Authorization
+
+article_title:  "REST API Authorization"
+
+breadcrumb_group: REST API
+breadcrumb_topic: Authorization
+---
+
+<div class="sect2">
+<h3 id="rest-api-authorization"><a class="anchor" href="#rest-api-authorization"></a>REST API Authorization</h3>
+<div class="paragraph">
+<p>When authenticating to the appliance, the current group of the authenticated user will be used for
+determining the authorization of what the user can see and do using the REST API. While this
+is acceptable when users only belong to a single group, this falls short when users are authenticating
+using their External Authentication credentials (IPA, LDAP or AD) where they may belong to
+multiple groups.</p>
+</div>
+<div class="sect3">
+<h4 id="specifying-authorization-group"><a class="anchor" href="#specifying-authorization-group"></a>Specifying Authorization Group</h4>
+<div class="paragraph">
+<p>This section describes how to specify an authorization group for the user.
+The mechanism described here is honored for both methods of authentication:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Basic Authentication</p>
+</li>
+<li>
+<p>Token based Authentication</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The user&#8217;s group is to be specified in the new HTTP Header:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">X-MIQ-Group</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>and is to contain the user&#8217;s group name.</p>
+</div>
+<div class="paragraph">
+<p>Example request using Basic Authentication:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="sh">$ curl --user username:password
+        -i -X GET -H &quot;Accept: application/json&quot;
+        -H &quot;X-MIQ-Group: auditors&quot;
+        http://localhost:3000/api/vms</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Example request using Token based Authentication:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="sh">$ curl -i -X GET -H &quot;Accept: application/json&quot;
+       -H &quot;X-Auth-Token: 93d98fd44cc5a401ff385ba87b21fd13&quot;
+       -H &quot;X-MIQ-Group: auditors&quot;
+       http://localhost:3000/api/vms</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The validated users&#8217;s group will be in effect for the duration of the REST API request.
+Multiple requests can be made as a particular user but with different authorization groups
+concurrently.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="failed-response-due-to-invalid-group"><a class="anchor" href="#failed-response-due-to-invalid-group"></a>Specifying an Invalid Authorization Group</h4>
+<div class="paragraph">
+<p>In case an invalid authorization group is specified, a 401 Unauthorized is returned:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">HTTP/1.1 401 Unauthorized
+X-Frame-Options: SAMEORIGIN
+...
+
+{
+  &quot;error&quot; : {
+    &quot;kind&quot; : &quot;unauthorized&quot;,
+    &quot;message&quot; : &quot;Invalid Authorization Group &lt;invalid_group_name&gt; specified&quot;,
+    &quot;klass&quot; : &quot;ApiController::AuthenticationError&quot;
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>

@@ -1,0 +1,296 @@
+---
+distro:         ManageIQ
+version:        Gaprindashvili
+
+group_id:       RestApi
+group_title:    REST API
+
+subgroup_id:    RestApi::Reference
+subgroup_title: Reference
+
+topic_id:       RestApi::Reference::AlertManagement
+topic_title:    Alert Management
+
+article_title:  "Alert Management"
+
+breadcrumb_group: REST API
+breadcrumb_topic: Alert Management
+---
+
+<div class="sect1">
+<h2 id="alerts"><a class="anchor" href="#alerts"></a>Alert Management</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Management of alerts, alert actions and alert definitions is provided via the following collections and subcollections:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">/api/alerts
+/api/alerts/:id/alert_actions
+
+/api/alert_definitions</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Queries of alerts:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#querying-alerts">Querying Alerts</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Queries and creation of alert actions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#querying-alert-actions">Querying Alert Actions</a></p>
+</li>
+<li>
+<p><a href="#creating-alert-actions">Creating Alert Actions</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Full CRUD actions on alert definitions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#querying-alert-definitions">Querying Alert Definitions</a></p>
+</li>
+<li>
+<p><a href="#creating-alert-definitions">Creating Alert Definitions</a></p>
+</li>
+<li>
+<p><a href="#editing-alert-definitions">Editing Alert Definitions</a></p>
+</li>
+<li>
+<p><a href="#deleting-alert-definitions">Deleting Alert Definitions</a></p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="querying-alerts"><a class="anchor" href="#querying-alerts"></a>Querying Alerts</h3>
+<div class="paragraph">
+<p>Querying all alerts in the system is simply:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/alerts</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Getting details on a specific alert:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/alerts/:id</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="querying-alert-actions"><a class="anchor" href="#querying-alert-actions"></a>Querying Alert Actions</h3>
+<div class="paragraph">
+<p>Querying all alert actions of a specific alert is done via the subcollection as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/alerts/:alert_id/alert_actions</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Querying an alert action of a specific alert is done via the subcollection resource as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/alerts/:alert_id/alert_actions/:alert_action_id</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="creating-alert-actions"><a class="anchor" href="#creating-alert-actions"></a>Creating Alert Actions</h3>
+<div class="paragraph">
+<p>Creating an alert action for a specific alert can be done by the following POST:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>POST /api/alerts/:alert_id/alert_actions</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action_type</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">custom_automation</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>comment</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Comment about the Alert Action</span><span style="color:#710">&quot;</span></span>
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="querying-alert-definitions"><a class="anchor" href="#querying-alert-definitions"></a>Querying Alert Definitions</h3>
+<div class="paragraph">
+<p>Querying all alert definitions in the system is simply:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/alert_definitions</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Getting details on a specific alert definition:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/alert_definitions/:id</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="creating-alert-definitions"><a class="anchor" href="#creating-alert-definitions"></a>Creating Alert Definitions</h3>
+<div class="paragraph">
+<p>Alert definitions can be created via a POST to the alert definitions collection or via the <strong>create</strong> action
+signature which also allows creation of multiple alert definitions in a single request.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>POST /api/alert_definitions</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Test Alert Definition</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>db</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ContainerNode</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>expression</span><span style="color:#404">&quot;</span></span> : { <span style="color:#606"><span style="color:#404">&quot;</span><span>eval_method</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">dwh_generic</span><span style="color:#710">&quot;</span></span>, <span style="color:#606"><span style="color:#404">&quot;</span><span>mode</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">internal</span><span style="color:#710">&quot;</span></span>, <span style="color:#606"><span style="color:#404">&quot;</span><span>options</span><span style="color:#404">&quot;</span></span> : {} },
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>options</span><span style="color:#404">&quot;</span></span>    : { <span style="color:#606"><span style="color:#404">&quot;</span><span>notifications</span><span style="color:#404">&quot;</span></span> : { <span style="color:#606"><span style="color:#404">&quot;</span><span>delay_next_evaluation</span><span style="color:#404">&quot;</span></span> : <span style="color:#00D">600</span>, <span style="color:#606"><span style="color:#404">&quot;</span><span>evm_event</span><span style="color:#404">&quot;</span></span> : {} } },
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>enabled</span><span style="color:#404">&quot;</span></span>    : <span style="color:#088">true</span>
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or creating multiple alert definitions:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">create</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>resources</span><span style="color:#404">&quot;</span></span> : [
+    { <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Sample Alert Definition 1</span><span style="color:#710">&quot;</span></span>, <span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span> },
+    { <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Sample Alert Definition 2</span><span style="color:#710">&quot;</span></span>, <span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span> },
+    <span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span>
+  ]
+}</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Please refer to the <a href="../appendices/resource_attributes.html#alert-definitions">Resource Attributes</a>
+page for a list of available attributes when creating alert definitions.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="editing-alert-definitions"><a class="anchor" href="#editing-alert-definitions"></a>Editing Alert Definitions</h3>
+<div class="listingblock">
+<div class="content">
+<pre>POST /api/alert_definitions/:id</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">edit</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>resource</span><span style="color:#404">&quot;</span></span> : {
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>options</span><span style="color:#404">&quot;</span></span> : { <span style="color:#606"><span style="color:#404">&quot;</span><span>notifications</span><span style="color:#404">&quot;</span></span> : { <span style="color:#606"><span style="color:#404">&quot;</span><span>delay_next_evaluation</span><span style="color:#404">&quot;</span></span> : <span style="color:#00D">1200</span>, <span style="color:#606"><span style="color:#404">&quot;</span><span>evm:event</span><span style="color:#404">&quot;</span></span> : {} } }
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or editing multiple alert definitions:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>POST /api/alert_definitions</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">edit</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>resources</span><span style="color:#404">&quot;</span></span> : [
+    {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/alert_definitions/101</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>options</span><span style="color:#404">&quot;</span></span> : { <span style="color:#606"><span style="color:#404">&quot;</span><span>notifications</span><span style="color:#404">&quot;</span></span> : { <span style="color:#606"><span style="color:#404">&quot;</span><span>delay_next_evaluation</span><span style="color:#404">&quot;</span></span> : <span style="color:#00D">1200</span>, <span style="color:#606"><span style="color:#404">&quot;</span><span>evm:event</span><span style="color:#404">&quot;</span></span> : {} } }
+    },
+    {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/alert_definitions/102</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>options</span><span style="color:#404">&quot;</span></span> : { <span style="color:#606"><span style="color:#404">&quot;</span><span>notifications</span><span style="color:#404">&quot;</span></span> : { <span style="color:#606"><span style="color:#404">&quot;</span><span>delay_next_evaluation</span><span style="color:#404">&quot;</span></span> : <span style="color:#00D">1200</span>, <span style="color:#606"><span style="color:#404">&quot;</span><span>evm:event</span><span style="color:#404">&quot;</span></span> : {} } }
+    },
+    <span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span>
+  ]
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-alert-definitions"><a class="anchor" href="#deleting-alert-definitions"></a>Deleting Alert Definitions</h3>
+<div class="paragraph">
+<p>Alert definitions can be deleted via either the <strong>delete</strong> POST action or via the DELETE HTTP method.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>POST /api/alert_definitions/101</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or simply:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>DELETE /api/alert_definitions/101</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Deleting multiple alert definitions can be done as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>POST /api/alert_definitions</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>resources</span><span style="color:#404">&quot;</span></span> : [
+    { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/alert_definitions/101</span><span style="color:#710">&quot;</span></span> },
+    { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/alert_definitions/102</span><span style="color:#710">&quot;</span></span> },
+    <span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span>
+  ]
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>

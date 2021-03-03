@@ -1,0 +1,234 @@
+---
+distro:         ManageIQ
+version:        Hammer
+
+group_id:       RestApi
+group_title:    REST API
+
+subgroup_id:    RestApi::Reference
+subgroup_title: Reference
+
+topic_id:       RestApi::Reference::SettingsManagement
+topic_title:    Settings Management
+
+article_title:  "Settings Management"
+
+breadcrumb_group: REST API
+breadcrumb_topic: Settings Management
+---
+
+<div class="sect1">
+<h2 id="settings-management"><a class="anchor" href="#settings-management"></a>Settings Management</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Management of advanced settings is available on servers, zones and regions. They
+are provided with the following collection:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">/api/settings</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>for the server processing the API, or for a particular server, zone or region as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">/api/servers/:id/settings</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">/api/zones/:id/settings</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">/api/regions/:id/settings</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The following actions are available with advanced settings:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#querying-settings">Querying Settings</a></p>
+</li>
+<li>
+<p><a href="#updating-settings">Updating Settings</a></p>
+</li>
+<li>
+<p><a href="#deleting-settings">Deleting Settings</a></p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="querying-settings"><a class="anchor" href="#querying-settings"></a>Querying Settings</h3>
+<div class="paragraph">
+<p>Settings can be queried as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">GET /api/servers</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">GET /api/servers/:id/settings</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">GET /api/zones/:id/settings</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">GET /api/regions/:id/settings</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">Authorization</div>
+<div class="ulist">
+<ul>
+<li>
+<p>For users with an <em>EvmGroup-super_administrator</em> role, the complete advanced settings are returned.</p>
+</li>
+<li>
+<p>For users with roles that include the <em>Configuration Settings</em> feature, only a whitelisted set of settings are returned.</p>
+</li>
+<li>
+<p>Requests from all other users will be rejected with a Forbidden error.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="updating-settings"><a class="anchor" href="#updating-settings"></a>Updating Settings</h3>
+<div class="paragraph">
+<p>Updating settings can only be performed by users with an <em>EvmGroup-super_administrator</em> role.</p>
+</div>
+<div class="paragraph">
+<p>Updates to settings is available with the HTTP PATCH method as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">PATCH /api/servers/:id/settings</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">PATCH /api/zones/:id/settings</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">PATCH /api/regions/:id/settings</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The following is an example updating the policy_events&#8217;s purge_window_size:</p>
+</div>
+<div class="sect3">
+<h4 id="request"><a class="anchor" href="#request"></a>Request:</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">PATCH /api/servers/1/settings</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">{
+  “policy_events” : {
+    “purge_window_size” : 500
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="response"><a class="anchor" href="#response"></a>Response:</h4>
+<div class="paragraph">
+<p>The complete updated settings is returned:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">{
+  &quot;ems&quot;: {
+    &quot;ems_ansible_tower&quot;: {
+      &quot;blacklisted_event_names&quot;: [
+
+      ],
+  ...
+  “policy_events” : {
+    &quot;history&quot;: {
+      &quot;keep_policy_events&quot;: &quot;6.months&quot;,
+      &quot;purge_window_size&quot;: 1000
+    },
+    “purge_window_size” : 500
+  },
+  ...
+  &quot;hawkular_tenant_labels&quot;: {
+    &quot;_hawkular_admin&quot;: &quot;Hawkular Admin&quot;
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-settings"><a class="anchor" href="#deleting-settings"></a>Deleting Settings</h3>
+<div class="paragraph">
+<p>Deleting settings can only be performed by users with an <em>EvmGroup-super_administrator</em> role.</p>
+</div>
+<div class="paragraph">
+<p>Deleting settings is available with the HTTP DELETE method as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">DELETE /api/servers/:id/settings</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">DELETE /api/zones/:id/settings</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">DELETE /api/regions/:id/settings</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Requests must include an array representing the path of the setting to delete.</p>
+</div>
+<div class="sect3">
+<h4 id="example"><a class="anchor" href="#example"></a>Example:</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">DELETE /api/servers/1/settings</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">[ &quot;policy_events&quot;, &quot;purge_window_size&quot; ]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This request deletes the policy_event&#8217;s purge_window_size setting for /api/servers/1 and its value would revert to its default.</p>
+</div>
+</div>
+</div>
+</div>
+</div>

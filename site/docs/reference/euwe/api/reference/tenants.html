@@ -1,0 +1,332 @@
+---
+distro:         ManageIQ
+version:        Euwe
+
+group_id:       RestApi
+group_title:    REST API
+
+subgroup_id:    RestApi::Reference
+subgroup_title: Reference
+
+topic_id:       RestApi::Reference::TenantManagement
+topic_title:    Tenant Management
+
+article_title:  "Tenant Management"
+
+breadcrumb_group: REST API
+breadcrumb_topic: Tenant Management
+---
+
+<div class="sect1">
+<h2 id="tenant-management"><a class="anchor" href="#tenant-management"></a>Tenant Management</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Tenant management including CRUD operations is available via the REST API.
+Management of tenants is through:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">/api/tenants</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#creating-tenants">Creating Tenants</a></p>
+</li>
+<li>
+<p><a href="#editing-tenants">Editing Tenants</a></p>
+</li>
+<li>
+<p><a href="#deleting-tenants">Deleting Tenants</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="tenant-quota-management"><a class="anchor" href="#tenant-quota-management"></a>Tenant Quota Management</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Tenant Quota management is made available via the <em>quotas</em> subcollection of tenant resources
+as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">/api/tenants/:id/quotas</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#creating-tenant-quotas">Creating Tenant Quotas</a></p>
+</li>
+<li>
+<p><a href="#editing-tenant-quotas">Editing Tenant Quotas</a></p>
+</li>
+<li>
+<p><a href="#deleting-tenant-quotas">Deleting Tenant Quotas</a></p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="creating-tenants"><a class="anchor" href="#creating-tenants"></a>Creating Tenants</h3>
+<div class="paragraph">
+<p>Creating a Tenant is done via the <strong>create</strong> action as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>POST /api/tenants</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">{
+  &quot;action&quot; : &quot;create&quot;,
+  &quot;resource&quot; : {
+    # New Tenant JSON
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And like other <strong>create</strong> actions, the new tenant data can simply be posted to
+the /api/tenants URL.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>POST /api/tenants</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="data">{
+  # New Tenant JSON
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For example, creating a new tenant:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>POST /api/tenants</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Test Tenant</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Test Tenant Description</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>parent</span><span style="color:#404">&quot;</span></span> : { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/tenants/1</span><span style="color:#710">&quot;</span></span> }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Parent can be specify by <em>id</em> or <em>href</em></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Please refer to the <a href="../appendices/resource_attributes.html#tenants">Resource Attributes</a>
+page for a list of available attributes when creating Tenants.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="editing-tenants"><a class="anchor" href="#editing-tenants"></a>Editing Tenants</h3>
+<div class="paragraph">
+<p>Editing a Tenant is available via the <strong>edit</strong> action with the <strong>resource</strong> specifying the
+attributes to update for that tenant.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>POST /api/tenants/:id</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">edit</span><span style="color:#710">&quot;</span></span> ,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>resource</span><span style="color:#404">&quot;</span></span> : {
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>description</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Updated Description for Tenant</span><span style="color:#710">&quot;</span></span>
+  }
+}</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+type is a restricted attribute and cannot be edited.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-tenants"><a class="anchor" href="#deleting-tenants"></a>Deleting Tenants</h3>
+<div class="paragraph">
+<p>Deleting a Tenant is done via the delete method:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>DELETE /api/tenants/:id</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or via the <strong>delete</strong> action as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>POST /api/tenants/:id</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or by href:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>POST /api/tenants</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>resources</span><span style="color:#404">&quot;</span></span> : [
+    { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/tenants/:id</span><span style="color:#710">&quot;</span></span> }
+  ]
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="creating-tenant-quotas"><a class="anchor" href="#creating-tenant-quotas"></a>Creating Tenant Quotas</h3>
+<div class="paragraph">
+<p>Creating a quota for a specific tenant is done as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>POST /api/tenants/:id/quotas</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">cpu_allocated</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>value</span><span style="color:#404">&quot;</span></span> : <span style="color:#00D">1</span>
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="editing-tenant-quotas"><a class="anchor" href="#editing-tenant-quotas"></a>Editing Tenant Quotas</h3>
+<div class="listingblock">
+<div class="content">
+<pre>POST /api/tenants/:id/quotas/:quota_id</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">edit</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>resource</span><span style="color:#404">&quot;</span></span> : {
+    <span style="color:#606"><span style="color:#404">&quot;</span><span>value</span><span style="color:#404">&quot;</span></span> : <span style="color:#00D">5</span>
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Multiple quotas for a tenant can also be edited in a single request as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>POST /api/tenants/1/quotas</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">edit</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>resources</span><span style="color:#404">&quot;</span></span> : [
+    {
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/tenants/1/quotas/5</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>value</span><span style="color:#404">&quot;</span></span> : <span style="color:#00D">11</span>
+    },
+    { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/tenants/1/quotas/6</span><span style="color:#710">&quot;</span></span>,
+      <span style="color:#606"><span style="color:#404">&quot;</span><span>value</span><span style="color:#404">&quot;</span></span> : <span style="color:#00D">12</span>
+    },
+    <span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span>
+  ]
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-tenant-quotas"><a class="anchor" href="#deleting-tenant-quotas"></a>Deleting Tenant Quotas</h3>
+<div class="paragraph">
+<p>Quotas of a tenant can be deleted via the <em>delete</em> action as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>POST /api/tenants/:id/quotas/:quota_id</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or via the DELETE HTTP method</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>DELETE /api/tenants/:id/quotas/:quota_id</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Multiple quotas of a tenant can be deleted in a single request
+as shown in the following example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>POST /api/tenants/1/quotas</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>resources</span><span style="color:#404">&quot;</span></span> : [
+    { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/tenants/1/quotas/7</span><span style="color:#710">&quot;</span></span> },
+    { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/tenants/1/quotas/8</span><span style="color:#710">&quot;</span></span> },
+    <span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span>
+  ]
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>

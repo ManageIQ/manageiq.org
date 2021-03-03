@@ -1,0 +1,654 @@
+---
+distro:         ManageIQ
+version:        Gaprindashvili
+
+group_id:       InstallingManageiqOnGoogleComputeEngine
+group_title:    Installing ManageIQ on Google Compute Engine
+
+subgroup_id:    InstallingManageiqOnGoogleComputeEngine::TableOfContents
+subgroup_title: Table of Contents
+
+topic_id:       InstallingManageiqOnGoogleComputeEngine::TableOfContents::Index
+topic_title:    Index
+
+article_title:  "Installing ManageIQ on Google Compute Engine"
+
+breadcrumb_group: Installing ManageIQ on Google Compute Engine
+breadcrumb_topic: Index
+---
+
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#installing-cloudforms">1. Installing ManageIQ</a>
+<ul class="sectlevel2">
+<li><a href="#obtaining-the-appliance">1.1. Obtaining the Appliance</a></li>
+<li><a href="#uploading-the-appliance-on-google-compute-engine">1.2. Uploading the Appliance on Google Compute Engine</a></li>
+</ul>
+</li>
+<li><a href="#Configuring-cloudforms">2. Configuring ManageIQ</a>
+<ul class="sectlevel2">
+<li><a href="#accessing-appliance-console">2.1. Accessing the Appliance Console</a></li>
+<li><a href="#configuring-a-worker-appliance">2.2. Configuring a Worker Appliance</a></li>
+</ul>
+</li>
+<li><a href="#Initial_Login">3. Logging In After Installing ManageIQ</a>
+<ul class="sectlevel2">
+<li><a href="#changing-the-default-login-password">3.1. Changing the Default Login Password</a></li>
+</ul>
+</li>
+<li><a href="#appendix">Appendix A: Appendix</a>
+<ul class="sectlevel2">
+<li><a href="#appliance-console-cli">A.1. Appliance Console Command-Line Interface (CLI)</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="installing-cloudforms"><a class="anchor" href="#installing-cloudforms"></a>1. Installing ManageIQ</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Installing ManageIQ consists of the following steps:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Downloading the appliance for your environment as a virtual machine image template.</p>
+</li>
+<li>
+<p>Setting up a virtual machine based on the appliance.</p>
+</li>
+<li>
+<p>Configuring the ManageIQ appliance.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>After you have completed all the procedures in this guide, you will have a working environment on which additional customizations and configurations can be performed.</p>
+</div>
+<div class="sect2">
+<h3 id="obtaining-the-appliance"><a class="anchor" href="#obtaining-the-appliance"></a>1.1. Obtaining the Appliance</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>In a browser, navigate to <a href="manageiq.org/download" class="bare">manageiq.org/download</a>.</p>
+</li>
+<li>
+<p>Select <strong>Google Compute Engine</strong> from the <strong>--Choose your platform--</strong> list.</p>
+</li>
+<li>
+<p>Select <strong>Stable</strong> from the <strong>--Choose a release--</strong> list.</p>
+</li>
+<li>
+<p>Follow the instructions to download the appliance.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="uploading-the-appliance-on-google-compute-engine"><a class="anchor" href="#uploading-the-appliance-on-google-compute-engine"></a>1.2. Uploading the Appliance on Google Compute Engine</h3>
+<div class="paragraph">
+<p>When the ManageIQ Google Compute Engine appliance has finished downloading to your system, upload the appliance to Google Compute Engine.</p>
+</div>
+<div class="paragraph">
+<p>To upload the ManageIQ Google Compute Engine appliance file you will need:
+* 44 GB of storage space.
+* 12 GB RAM.
+* 4 vCPUs.</p>
+</div>
+<div class="paragraph">
+<p>You can upload the appliance with the following steps:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Log in to the Google Cloud Platform dashboard.</p>
+</li>
+<li>
+<p>Click on <strong>Home</strong> in the top left of the screen.</p>
+</li>
+<li>
+<p>Click <span class="image"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAVCAYAAACkCdXRAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4AYJBwQes/Tl6gAAAOhJREFUOMvtkzFOAkEUhr9/dgibUJhgAtTEyisYr2PBCTyChZ0NhzDhCBRewVhSSTAmoBKEhezOUJhQsDu7FAQbXjmT+ea9//2/bu4nniOV4Yh1hv0zzO4fOA/LtQMUfhRBXFM5LHNw1bH0e5esN8X2q1kxfE14eP7BmBJYZGA8y+j1p7iAlSX4XbkcKAfzHhp1cXsdkwZokcToM+XjO0Gq0AyEFFbs7674IxVl0x+QVonqBXTblqe7JknJAl7eEh4H85xuuc5sJFoXJtidBKuN52vhqn2WZp73aVY+4iFj7mKhc9BPBdsC13JImllmSOAAAAAASUVORK5CYII=" alt="GCE products services"></span> to show the <strong>Products and Services</strong> menu. Click <strong>Storage</strong>.</p>
+</li>
+<li>
+<p>Create a bucket by clicking <strong>Create Bucket</strong>, and configure the following details:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Enter a unique <strong>Name</strong> for the bucket using lower case alphanumeric characters, hyphens, and/or underscores.</p>
+</li>
+<li>
+<p>Configure your location from the dropdown list.</p>
+</li>
+<li>
+<p>Click <strong>Create</strong>.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Click <strong>Upload Files</strong> and browse to the location of the ManageIQ Google Compute Engine appliance you downloaded. Select the <code>tar.gz</code> file on your local machine, and click <strong>Open</strong> to begin the upload.</p>
+</li>
+<li>
+<p>When the upload is complete, click <span class="image"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAVCAYAAACkCdXRAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4AYJBwQes/Tl6gAAAOhJREFUOMvtkzFOAkEUhr9/dgibUJhgAtTEyisYr2PBCTyChZ0NhzDhCBRewVhSSTAmoBKEhezOUJhQsDu7FAQbXjmT+ea9//2/bu4nniOV4Yh1hv0zzO4fOA/LtQMUfhRBXFM5LHNw1bH0e5esN8X2q1kxfE14eP7BmBJYZGA8y+j1p7iAlSX4XbkcKAfzHhp1cXsdkwZokcToM+XjO0Gq0AyEFFbs7674IxVl0x+QVonqBXTblqe7JknJAl7eEh4H85xuuc5sJFoXJtidBKuN52vhqn2WZp73aVY+4iFj7mKhc9BPBdsC13JImllmSOAAAAAASUVORK5CYII=" alt="GCE products services"></span> <span class="menuseq"><b class="menu">Products &amp; services</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Compute Engine</b></span> on the left menu.</p>
+</li>
+<li>
+<p>Create an image by clicking <strong>Images</strong> from the left menu, then <strong>Create Image</strong>. Fill in the following details about the image:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Enter a unique <strong>Name</strong> for the image using lower case alphanumeric characters and/or hyphens.</p>
+</li>
+<li>
+<p>Add a <strong>Description</strong> if desired.</p>
+</li>
+<li>
+<p>Configure <strong>Encryption</strong> if desired. This defaults to <code>Automatic (recommended)</code>.</p>
+</li>
+<li>
+<p>In <strong>Source</strong>, use the dropdown to select <code>Cloud Storage file</code>. This shows the <strong>Cloud Storage file</strong> field.</p>
+</li>
+<li>
+<p>In <strong>Cloud Storage file</strong>, click <strong>Browse</strong> to bring up the <strong>Select object</strong> window. Select the bucket containing the image you uploaded and click the <strong>&gt;</strong> symbol to locate the <code>tar.gz</code> image inside the bucket. Select the image and click <strong>Select</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Create</strong>. Creating the image will take a few minutes. When the image is created, the screen will refresh and the new image will appear in the <strong>Images</strong> list.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Create a virtual machine instance by navigating to <span class="menuseq"><b class="menu">VM instances</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Create Instance</b></span>, and configure the following fields:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Enter a unique <strong>Name</strong> for the virtual machine instance using lower case alphanumeric characters and/or hyphens.</p>
+</li>
+<li>
+<p>Select the <strong>Zone</strong> closest to your location.</p>
+</li>
+<li>
+<p>Under <strong>Boot disk</strong>, click <strong>Change</strong> to bring up the <strong>Boot disk</strong> window. Click the <strong>Your Image</strong> tab and select the disk you previously created. Click <strong>Select</strong>.</p>
+</li>
+<li>
+<p>Under <strong>Firewall</strong>, select the check box for <strong>Allow HTTPS traffic</strong>.</p>
+</li>
+<li>
+<p>Click <span class="image"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAASCAIAAAAL/BNYAAAAA3NCSVQICAjb4U/gAAAAEHRFWHRTb2Z0d2FyZQBTaHV0dGVyY4LQCQAAALpJREFUKM/Fkj0OgkAUhGcRI7GwUltqGz2AHWeGWHIBtKE1XkAbTFx+ZN9YYCJL0GiicepvJvleniKJt+Pgk/TQQgDgO7QQjgIA1VewaCOs6gejC+lIWXSclpttXlQEcNYSJvnuULUB1b6JEFGia4P1YhSnxXQyCJaeekY3hTDRp0z8mRusLBQAaMcIjXC7L0Uo7MbaNsKrgTe8L14KGY8cpf5mGSX6mIk/dztoj2Uj2ljyteXvf/Br9A3Jy8qwAjbAIgAAAABJRU5ErkJggg==" alt="GCE ManagementSSHkeys"></span><strong>Management, disk, networking, SSH keys</strong>. Then, click the <strong>SSH Keys</strong> tab, add your entire SSH public key data in the <strong>Username</strong> box.</p>
+</li>
+<li>
+<p>Configure any other fields as desired, and click <strong>Create</strong>.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Your new virtual machine instance, as well as the external IP address for accessing the ManageIQ interface, appears under <strong>VM instances</strong>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="Configuring-cloudforms"><a class="anchor" href="#Configuring-cloudforms"></a>2. Configuring ManageIQ</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>After installing ManageIQ and running it for the first time, you must perform some basic configuration. To configure ManageIQ, you must at a minimum:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Add a disk to the infrastructure hosting your appliance.</p>
+</li>
+<li>
+<p>Configure the database.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Configure the ManageIQ appliance using the internal appliance console.</p>
+</div>
+<div class="sect2">
+<h3 id="accessing-appliance-console"><a class="anchor" href="#accessing-appliance-console"></a>2.1. Accessing the Appliance Console</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Start the appliance and open a terminal console.</p>
+</li>
+<li>
+<p>Log in to the appliance using the SSH key.</p>
+</li>
+<li>
+<p>Enter the <code>appliance_console</code> command. The ManageIQ appliance summary screen displays.</p>
+</li>
+<li>
+<p>Press <code>Enter</code> to manually configure settings.</p>
+</li>
+<li>
+<p>Press the number for the item you want to change, and press <code>Enter</code>. The options for your selection are displayed.</p>
+</li>
+<li>
+<p>Follow the prompts to make the changes.</p>
+</li>
+<li>
+<p>Press <code>Enter</code> to accept a setting where applicable.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The ManageIQ appliance console automatically logs out after five minutes of inactivity.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="configuring-a-worker-appliance"><a class="anchor" href="#configuring-a-worker-appliance"></a>2.2. Configuring a Worker Appliance</h3>
+<div class="paragraph">
+<p>You can use multiple appliances to facilitate horizontal scaling, as well as for dividing up work by roles. Accordingly, configure an appliance to handle work for one or many roles, with workers within the appliance carrying out the duties for which they are configured. You can configure a worker appliance through the terminal. The following steps demonstrate how to join a worker appliance to an appliance that already has a region configured with a database.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Start the appliance and open a terminal console.</p>
+</li>
+<li>
+<p>Log in to the appliance using the SSH key.</p>
+</li>
+<li>
+<p>Enter the <code>appliance_console</code> command. The ManageIQ appliance summary screen displays.</p>
+</li>
+<li>
+<p>Press <strong>Enter</strong> to manually configure settings.</p>
+</li>
+<li>
+<p>Select <strong>5) Configure Database</strong> from the menu.</p>
+</li>
+<li>
+<p>You are prompted to create or fetch a security key. Since this is not the first ManageIQ appliance, choose <strong>2) Fetch key from remote machine</strong>. For worker and multi-region setups, use this option to copy the security key from another appliance.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>All ManageIQ appliances in a multi-region deployment must use the same key.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Choose <strong>3) Join Region in External Database</strong> for the database location.</p>
+</li>
+<li>
+<p>Enter the database hostname or IP address when prompted.</p>
+</li>
+<li>
+<p>Enter the port number or leave blank for the default (<code>5432</code>).</p>
+</li>
+<li>
+<p>Enter the database name or leave blank for the default (<code>vmdb_production</code>).</p>
+</li>
+<li>
+<p>Enter the database username or leave blank for the default (<code>root</code>).</p>
+</li>
+<li>
+<p>Enter the chosen database user&#8217;s password.</p>
+</li>
+<li>
+<p>Confirm the configuration if prompted.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="Initial_Login"><a class="anchor" href="#Initial_Login"></a>3. Logging In After Installing ManageIQ</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Once ManageIQ is installed, you can log in and perform administration tasks.</p>
+</div>
+<div class="paragraph">
+<p>Log in to ManageIQ for the first time after installing by:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Navigate to the URL for the login screen. (<a href="https://xx.xx.xx.xx" class="bare">https://xx.xx.xx.xx</a> on the virtual machine instance)</p>
+</li>
+<li>
+<p>Enter the default credentials (Username: <strong>admin</strong> | Password: <strong>smartvm</strong>) for the initial login.</p>
+</li>
+<li>
+<p>Click <strong>Login</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="sect2">
+<h3 id="changing-the-default-login-password"><a class="anchor" href="#changing-the-default-login-password"></a>3.1. Changing the Default Login Password</h3>
+<div class="paragraph">
+<p>Change your password to ensure more private and secure access to ManageIQ.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Navigate to the URL for the login screen. (<a href="https://xx.xx.xx.xx" class="bare">https://xx.xx.xx.xx</a> on the virtual machine instance)</p>
+</li>
+<li>
+<p>Click <strong>Update Password</strong> beneath the <strong>Username</strong> and <strong>Password</strong> text fields.</p>
+</li>
+<li>
+<p>Enter your current <strong>Username</strong> and <strong>Password</strong> in the text fields.</p>
+</li>
+<li>
+<p>Input a new password in the <strong>New Password</strong> field.</p>
+</li>
+<li>
+<p>Repeat your new password in the <strong>Verify Password</strong> field.</p>
+</li>
+<li>
+<p>Click <strong>Login</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="appendix"><a class="anchor" href="#appendix"></a>Appendix A: Appendix</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="appliance-console-cli"><a class="anchor" href="#appliance-console-cli"></a>A.1. Appliance Console Command-Line Interface (CLI)</h3>
+<div class="paragraph">
+<p>Currently, the <code>appliance_console_cli</code> feature is a subset of the full functionality of the <code>appliance_console</code> itself, and covers functions most likely to be scripted using the command-line interface (CLI).</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>After starting the ManageIQ appliance, log in with a user name of <code>root</code> and the default password of <code>smartvm</code>. This displays the Bash prompt for the root user.</p>
+</li>
+<li>
+<p>Enter the <code>appliance_console_cli</code> or <code>appliance_console_cli --help</code> command to see a list of options available with the command, or simply enter <code>appliance_console_cli --option &lt;argument&gt;</code> directly to use a specific option.</p>
+</li>
+</ol>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Database Configuration Options</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Option</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--region (-r)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">region number (create a new region in the database - requires database credentials passed)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--internal (-i)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">internal database (create a database on the current appliance)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--dbdisk</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">database disk device path (for configuring an internal database)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--hostname (-h)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">database hostname</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--port</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">database port (defaults to <code>5432</code>)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--username (-U)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">database username (defaults to <code>root</code>)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--password (-p)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">database password</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--dbname (-d)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">database name (defaults to <code>vmdb_production</code>)</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. v2_key Options</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Option</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--key (-k)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">create a new v2_key</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--fetch-key (-K)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fetch the v2_key from the given host</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--force-key (-f)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">create or fetch the key even if one exists</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--sshlogin</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ssh username for fetching the v2_key (defaults to <code>root</code>)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--sshpassword</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ssh password for fetching the v2_key</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 3. IPA Server Options</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Option</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--host (-H)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">set the appliance hostname to the given name</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--ipaserver (-e)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IPA server FQDN</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--ipaprincipal (-n)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IPA server principal (default: <code>admin</code>)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--ipapassword (-w)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IPA server password</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--ipadomain (-o)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IPA server domain (optional). Will be based on the appliance domain name if not specified.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--iparealm (-l)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IPA server realm (optional). Will be based on the domain name of the ipaserver if not specified.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--uninstall-ipa (-u)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">uninstall IPA client</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>In order to configure authentication through an IPA server, in addition to using <strong>Configure External Authentication (httpd)</strong> in the <code>appliance_console</code>, external authentication can be optionally configured via the <code>appliance_console_cli</code> (command-line interface).</p>
+</li>
+<li>
+<p>Specifying <strong>--host</strong> will update the hostname of the appliance. If this step was already performed via the <code>appliance_console</code> and the necessary updates made to <code>/etc/hosts</code> if DNS is not properly configured, the <strong>--host</strong> option can be omitted.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 4. Certificate Options</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Option</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--ca (-c)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CA name used for certmonger (default: <code>ipa</code>)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--postgres-client-cert (-g)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">install certs for postgres client</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--postgres-server-cert</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">install certs for postgres server</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--http-cert</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">install certs for http server (to create certs/httpd* values for a unique key)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--extauth-opts (-x)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">external authentication options</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The certificate options augment the functionality of the <code>certmonger</code> tool and enable creating a certificate signing request (CSR), and specifying <code>certmonger</code> the directories to store the keys.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 5. Other Options</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Option</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--logdisk (-l)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">log disk path</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--tmpdisk</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">initialize the given device for temp storage (volume mounted at <code>/var/www/miq_tmp</code>)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--verbose (-v)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">print more debugging info</p></td>
+</tr>
+</tbody>
+</table>
+<div class="listingblock">
+<div class="title">Example Usage</div>
+<div class="content">
+<pre>$ ssh root@appliance.test.company.com</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To create a new database locally on the server using <code>/dev/sdb</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre># appliance_console_cli --internal --dbdisk /dev/sdb --region 0 --password smartvm</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To copy the v2_key from a host <em>some.example.com</em> to local machine:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre># appliance_console_cli --fetch-key some.example.com --sshlogin root --sshpassword smartvm</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You could combine the two to join a region where <em>db.example.com</em> is the appliance hosting the database:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre># appliance_console_cli --fetch-key db.example.com --sshlogin root --sshpassword smartvm --hostname db.example.com --password mydatabasepassword</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To configure external authentication:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre># appliance_console_cli --host appliance.test.company.com
+                        --ipaserver ipaserver.test.company.com
+                        --ipadomain test.company.com
+                        --iparealm TEST.COMPANY.COM
+                        --ipaprincipal admin
+                        --ipapassword smartvm1</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To uninstall external authentication:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre># appliance_console_cli  --uninstall-ipa</pre>
+</div>
+</div>
+</div>
+</div>
+</div>

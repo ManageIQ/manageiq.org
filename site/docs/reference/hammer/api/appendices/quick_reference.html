@@ -1,0 +1,276 @@
+---
+distro:         ManageIQ
+version:        Hammer
+
+group_id:       RestApi
+group_title:    REST API
+
+subgroup_id:    RestApi::Appendices
+subgroup_title: Appendices
+
+topic_id:       RestApi::Appendices::QuickReference
+topic_title:    Quick Reference
+
+article_title:  "Authentication"
+
+breadcrumb_group: REST API
+breadcrumb_topic: Quick Reference
+---
+
+<div id="quick-reference-guide-v2.0.0" class="paragraph">
+<p>This document presents the currently available features and capabilities
+of the REST API.</p>
+</div>
+<div class="sect1">
+<h2 id="authentication"><a class="anchor" href="#authentication"></a>Authentication</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Mechanism</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Basic Authentication</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Basic HTTP Authorization with user and password</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Token Based Authentication</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- Acquiring Token</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/api/auth with Basic Authentication</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- Authenticating with Token</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X-Auth-Token Header</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="http-headers"><a class="anchor" href="#http-headers"></a>HTTP Headers</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Header</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Authorization</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Basic base64_encoded(user:password)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X-Auth-Token</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Token provided by /api/auth</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X-MIQ-Group</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Group to authorize externally authenticated user</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Accept</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">application/json</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Content-Type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">application/json</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="listing-and-querying-collections-and-sub-collections"><a class="anchor" href="#listing-and-querying-collections-and-sub-collections"></a>Listing and Querying Collections and Sub-Collections</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Feature</th>
+<th class="tableblock halign-left valign-top">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Listing Available Collections</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/api</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Listing Collections</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/api/&lt;collection&gt;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Listing Sub-Collections</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/api/&lt;collection&gt;/&lt;id&gt;/&lt;sub-collection&gt;</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Querying Capability</th>
+<th class="tableblock halign-left valign-top">Query Parameters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Paging</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">offset, limit</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sorting</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sort_by=attr, sort_order=asc|desc</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Can sort by database columns and SQL friendly virtual attributes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Filtering</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">filter[]=&#8230;&#8203;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Querying by Tag</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">i.e. by_tag=/department/finance</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Querying by Multiple Tags</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">i.e. by_tag=/department/finance,/department/engineering</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Expanding Results</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">expand=&lt;what&gt;, i.e.  expand=resources,tags,service_templates,&#8230;&#8203;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Selecting Attributes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">attributes=&lt;attr1&gt;,&lt;attr2&gt;,&#8230;&#8203; i.e.  attributes=id,name,type,&#8230;&#8203;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Attributes can be:</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Database columns</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Virtual attributes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Relationships</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><a href="../examples/queries.html">Example Queries</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="collection-queries"><a class="anchor" href="#collection-queries"></a>Collection Queries:</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For a complete list of supported primary collections please refer
+to the <a href="../reference/collections.html">Primary Collections</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sub-collection-queries"><a class="anchor" href="#sub-collection-queries"></a>Sub-Collection Queries</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When applicable, the following subcollections are available:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Sub-Collection</th>
+<th class="tableblock halign-left valign-top">URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tagging</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/api/&lt;collection&gt;/:id/tags</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Policies</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/api/&lt;collection&gt;/:id/policies</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Policy Profiles</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/api/&lt;collection&gt;/:id/policy_profiles</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Service Requests</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/api/service_templates/:id/service_requests</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Request Tasks</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/api/service_requests/:id/request_tasks</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/api/automation_requests/:id/request_tasks</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/api/provision_requests/:id/request_tasks</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Request Tasks can also be accessed via the tasks alias</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/api/service_requests/:id/tasks</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/api/automation_requests/:id/tasks</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/api/provision_requests/:id/tasks</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>

@@ -1,0 +1,122 @@
+---
+distro:         ManageIQ
+version:        Fine
+
+group_id:       RestApiExamples
+group_title:    REST API Examples
+
+subgroup_id:    RestApiExamples::Foundation
+subgroup_title: Foundation
+
+topic_id:       RestApiExamples::Foundation::QueryingExamples
+topic_title:    Querying Examples
+
+article_title:  "Example Queries:"
+
+breadcrumb_group: REST API Examples
+breadcrumb_topic: Querying Examples
+---
+
+<div class="sect1">
+<h2 id="example-queries"><a class="anchor" href="#example-queries"></a>Example Queries:</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="query-all-vms"><a class="anchor" href="#query-all-vms"></a>Query All VMs</h3>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/vms</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="query-a-specific-vm"><a class="anchor" href="#query-a-specific-vm"></a>Query A Specific VM</h3>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/vms/1386</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="query-all-vms-but-return-only-return-name-and-vendor"><a class="anchor" href="#query-all-vms-but-return-only-return-name-and-vendor"></a>Query all VMs, but return only return name and vendor</h3>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/vms?expand=resources&amp;attributes=name,vendor</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="query-vms-named-sample-and-return-name-and-vendor"><a class="anchor" href="#query-vms-named-sample-and-return-name-and-vendor"></a>Query VMs named sample* and return name and vendor</h3>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/vms?expand=resources&amp;attributes=name,vendor&amp;filter[]=name='sample%'</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="query-vms-but-only-return-the-first-500"><a class="anchor" href="#query-vms-but-only-return-the-first-500"></a>Query VMs but only return the first 500</h3>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/vms?offset=0&amp;limit=500</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="query-vms-but-return-the-second-500"><a class="anchor" href="#query-vms-but-return-the-second-500"></a>Query VMs but return the second 500</h3>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/vms?offset=500&amp;limit=500</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="query-first-1000-vms-named-test-get-name-vendor-and-guid-and-sort-by-name-in-ascending-order"><a class="anchor" href="#query-first-1000-vms-named-test-get-name-vendor-and-guid-and-sort-by-name-in-ascending-order"></a>Query first 1000 VMs, named test*, get name, vendor and guid and sort by name in ascending order</h3>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/vms?offset=0&amp;limit=1000&amp;filter[]=name='test%'
+    &amp;expand=resources&amp;attributes=name,vendor,guid
+    &amp;sort_by=name&amp;sort_order=asc</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="query-services-tagged-for-the-finance-department"><a class="anchor" href="#query-services-tagged-for-the-finance-department"></a>Query Services tagged for the finance department</h3>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/services?by_tag=/department/finance</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="get-details-on-the-tags-of-the-first-service"><a class="anchor" href="#get-details-on-the-tags-of-the-first-service"></a>Get details on the Tags of the first service</h3>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/services/1/tags?expand=resources</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="get-details-of-the-first-service-catalog-and-related-details-on-the-assigned-service-templates"><a class="anchor" href="#get-details-of-the-first-service-catalog-and-related-details-on-the-assigned-service-templates"></a>Get details of the first service catalog and related details on the assigned service templates</h3>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/service_catalogs/1?expand=service_templates</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="get-services-requests-created-from-a-specific-template-and-get-details-on-all-related-request-tasks."><a class="anchor" href="#get-services-requests-created-from-a-specific-template-and-get-details-on-all-related-request-tasks."></a>Get services requests created from a specific template and get details on all related request tasks.</h3>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/service_templates/25/service_requests?expand=resources,request_tasks</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="get-a-specific-provision-request-with-expanded-details-on-the-associated-provision-request-tasks"><a class="anchor" href="#get-a-specific-provision-request-with-expanded-details-on-the-associated-provision-request-tasks"></a>Get a specific provision request with expanded details on the associated provision request tasks</h3>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/provision_requests/120?expand=tasks</pre>
+</div>
+</div>
+</div>
+</div>
+</div>

@@ -1,0 +1,338 @@
+---
+distro:         ManageIQ
+version:        Hammer
+
+group_id:       RestApi
+group_title:    REST API
+
+subgroup_id:    RestApi::Reference
+subgroup_title: Reference
+
+topic_id:       RestApi::Reference::CustomAttributes
+topic_title:    Custom Attributes
+
+article_title:  "Custom Attributes"
+
+breadcrumb_group: REST API
+breadcrumb_topic: Custom Attributes
+---
+
+<div class="sect1">
+<h2 id="custom-attributes"><a class="anchor" href="#custom-attributes"></a>Custom Attributes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Custom Attributes can be managed for several types of resources. This is done via the
+custom_attributes sub-collection as follows:</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 60%;">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Resource Type</th>
+<th class="tableblock halign-left valign-top">Custom Attribute Subcollection</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Virtual Machines</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/api/vms/:id/custom_attributes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cloud Instances</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/api/instances/:id/custom_attributes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Providers</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/api/providers/:id/custom_attributes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Services</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/api/services/:id/custom_attributes</p></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#querying-custom-attributes">Querying Custom Attributes</a></p>
+</li>
+<li>
+<p><a href="#specifying-custom-attributes">Specifying Custom Attributes</a></p>
+</li>
+<li>
+<p><a href="#custom-attribute-actions">Custom Attribute Actions</a></p>
+</li>
+<li>
+<p><a href="#add-custom-attributes">Adding Custom Attributes</a></p>
+</li>
+<li>
+<p><a href="#edit-custom-attributes">Editing Custom Attributes</a></p>
+</li>
+<li>
+<p><a href="#delete-custom-attributes">Deleting Custom Attributes</a></p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="querying-custom-attributes"><a class="anchor" href="#querying-custom-attributes"></a>Querying Custom Attributes</h3>
+<div class="paragraph">
+<p>Custom attributes of a resource can be asked for by expanding the subcollection as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/vms/:id?expand=custom_attributes
+GET /api/instances/:id?expand=custom_attributes
+GET /api/providers/:id?expand=custom_attributes
+GET /api/services/:id?expand=custom_attributes</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Optionally, just the custom attributes of a resource can be queried:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET /api/vms/:id/custom_attributes
+GET /api/instances/:id/custom_attributes
+GET /api/providers/:id/custom_attributes
+GET /api/services/:id/custom_attributes</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="specifying-attribute-actions"><a class="anchor" href="#specifying-attribute-actions"></a>Specifying Attribute Actions</h3>
+<div class="paragraph">
+<p>Custom attributes are specified as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">...</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>value</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">...</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>field_type</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">...</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>source</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">...</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>section</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">...</span><span style="color:#710">&quot;</span></span>,
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For adding custom attributes, <strong>name</strong> field is required.</p>
+</div>
+<div class="paragraph">
+<p><strong>field_type</strong>, <strong>source</strong> and <strong>section</strong> are optional.</p>
+</div>
+<div class="paragraph">
+<p>There is no default value for <strong>field_type</strong>. Allowed values for <strong>field_type</strong> are <strong>DateTime</strong>, <strong>Date</strong> and <strong>Time</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Default value for <strong>source</strong> is <strong>EVM</strong>.  If <strong>source</strong> is set to <strong>VC</strong>, the custom attribute field will be
+updated on the provider.</p>
+</div>
+<div class="paragraph">
+<p>Default value for <strong>section</strong> is <strong>metadata</strong>. Allowed values for <strong>section</strong> include <strong>metadata</strong> and <strong>cluster_settings</strong>.</p>
+</div>
+<div class="paragraph">
+<p>For editing a custom attribute, specify the custom attribute either by <strong>name</strong>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">...</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>value</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">...</span><span style="color:#710">&quot;</span></span>
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Or by <strong>href</strong>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/vms/:id/custom_attributes/:id</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>value</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">...</span><span style="color:#710">&quot;</span></span>
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="custom-attribute-actions"><a class="anchor" href="#custom-attribute-actions"></a>Custom Attribute Actions</h3>
+<table class="tableblock frame-all grid-all" style="width: 60%;">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Action</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Adding Custom Attributes to a Resource</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">edit</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Editing Custom Attributes of a Resource</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deleting Custom Attributes from a Resource</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="add-custom-attributes"><a class="anchor" href="#add-custom-attributes"></a>Adding Custom Attributes</h3>
+<div class="paragraph">
+<p>Adding custom attributes to a Resource:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>POST /api/vms/:id/custom_attributes
+POST /api/instances/:id/custom_attributes
+POST /api/providers/:id/custom_attributes
+POST /api/services/:id/custom_attributes</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">add</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>resources</span><span style="color:#404">&quot;</span></span> : [
+    { <span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span> },
+    { <span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span> },
+    <span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span>
+  ]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For example, adding two custom attributes:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">add</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>resources</span><span style="color:#404">&quot;</span></span> : [
+    { <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ca1</span><span style="color:#710">&quot;</span></span>, <span style="color:#606"><span style="color:#404">&quot;</span><span>value</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">value 1</span><span style="color:#710">&quot;</span></span> },
+    { <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ca2</span><span style="color:#710">&quot;</span></span>, <span style="color:#606"><span style="color:#404">&quot;</span><span>value</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">value 2</span><span style="color:#710">&quot;</span></span> }
+  ]
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="edit-custom-attributes"><a class="anchor" href="#edit-custom-attributes"></a>Editing Custom Attributes</h3>
+<div class="paragraph">
+<p>Editing custom attributes of a Resource:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>POST /api/vms/:id/custom_attributes
+POST /api/instances/:id/custom_attributes
+POST /api/providers/:id/custom_attributes
+POST /api/services/:id/custom_attributes</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">edit</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>resources</span><span style="color:#404">&quot;</span></span> : [
+    { <span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span> },
+    { <span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span> },
+    <span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span>
+  ]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">edit</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>resources</span><span style="color:#404">&quot;</span></span> : [
+    { <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ca_name1</span><span style="color:#710">&quot;</span></span>, <span style="color:#606"><span style="color:#404">&quot;</span><span>value</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">updated custom attribute value 1</span><span style="color:#710">&quot;</span></span> },
+    { <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ca_name2</span><span style="color:#710">&quot;</span></span>, <span style="color:#606"><span style="color:#404">&quot;</span><span>value</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">updated custom attribute value 2</span><span style="color:#710">&quot;</span></span> }
+  ]
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="delete-custom-attributes"><a class="anchor" href="#delete-custom-attributes"></a>Deleting Custom Attributes</h3>
+<div class="paragraph">
+<p>Deleting custom attributes of a Resource:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>POST /api/vms/:id/custom_attributes
+POST /api/instances/:id/custom_attributes
+POST /api/providers/:id/custom_attributes
+POST /api/services/:id/custom_attributes</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>resources</span><span style="color:#404">&quot;</span></span> : [
+    { <span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span> },
+    { <span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span> },
+    <span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span><span style="color:#F00;background-color:#FAA">.</span>
+  ]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In the following example, a request to delete custom attributes of a VM by name and by href:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>,
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>resources</span><span style="color:#404">&quot;</span></span> : [
+    { <span style="color:#606"><span style="color:#404">&quot;</span><span>name</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ca_name1</span><span style="color:#710">&quot;</span></span> },
+    { <span style="color:#606"><span style="color:#404">&quot;</span><span>href</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">http://localhost:3000/api/vms/:id/custom_attributes/:id</span><span style="color:#710">&quot;</span></span> }
+  ]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Custom attributes can be deleted via a <em>delete</em> action as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>POST /api/vms/:id/custom_attributes/:ca_id
+POST /api/instances/:id/custom_attributes/:ca_id
+POST /api/providers/:id/custom_attributes/:ca_id
+POST /api/services/:id/custom_attributes/:ca_id</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span style="color:#606"><span style="color:#404">&quot;</span><span>action</span><span style="color:#404">&quot;</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">delete</span><span style="color:#710">&quot;</span></span>
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>They can also be deleted via the DELETE method:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>DELETE /api/vms/:id/custom_attributes/:ca_id
+DELETE /api/instances/:id/custom_attributes/:ca_id
+DELETE /api/providers/:id/custom_attributes/:ca_id
+DELETE /api/services/:id/custom_attributes/:ca_id</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
