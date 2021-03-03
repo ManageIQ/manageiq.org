@@ -1,27 +1,16 @@
 require 'fileutils'
+require_relative '../miq/executor'
 
 module Miq
   class LegacyRefDocs < Executor
-    def self.reset
-      new.reset
-    end
-
-    def self.build
-      new.build
-    end
-
-    def self.update
-      new.update
-    end
-
     attr_reader :repo, :branches, :primary_branch, :tmp_dir, :src_dir, :dst_dir
 
-    def initialize
+    def initialize(branches = %w[ivanchuk hammer gaprindashvili fine euwe])
       # Where do the docs live?
       @repo     = ENV["MIQ_REF_REPO"] || "https://github.com/ManageIQ/manageiq-documentation.git"
 
       # What branches to copy?
-      @branches = Miq.legacy_doc_branches
+      @branches = branches
       @primary_branch = @branches.first
 
       # Where should we cache and build?
@@ -31,7 +20,9 @@ module Miq
       @src_dir  = ENV["MIQ_REF_SRC"]  || "_package/community"
 
       # Where should the files end up?
-      @dst_dir  = ENV["MIQ_REF_DIR"]  || Miq.docs_dir.join("reference")
+      @dst_dir  = ENV["MIQ_REF_DIR"]  || Pathname.new(__dir__).join("../../site/docs/reference").expand_path
+
+      @menus_dir = Pathname.new(__dir__).join("../../site/_data/menus").expand_path
     end
 
     def reset
@@ -115,7 +106,7 @@ module Miq
     end
 
     def copy_menu(branch)
-      menu = Miq.menus_dir.join("ref_menu_#{branch}.yml")
+      menu = @menus_dir.join("ref_menu_#{branch}.yml")
 
       logger.info "Syncing menu to #{menu}"
 

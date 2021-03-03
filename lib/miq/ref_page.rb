@@ -22,8 +22,8 @@ module Miq
       @source = Pathname.new(dir).join(name).to_s
 
       # Determine branch early
-      @branch = Miq.all_doc_branches.detect { |b| @source.include?(b) } || "latest"
-      @legacy = Miq.legacy_doc_branches.include?(@branch)
+      @branch = Miq.doc_branches.detect { |b| @source.include?(b) } || "latest"
+      @legacy = @branch != "latest" && !Miq.doc_branches.include?(@branch)
 
       super
 
