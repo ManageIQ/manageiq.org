@@ -87,7 +87,7 @@ module Miq
   end
 
   def self.doc_branches
-    ENV.fetch('MIQ_REF_BRANCHES', 'master,jansa').split(',')
+    ENV.fetch('MIQ_REF_BRANCHES', 'master,kasparov,jansa').split(',')
   end
 
   def self.legacy_doc_branches
