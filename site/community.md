@@ -49,7 +49,7 @@ ManageIQ is open source and open for contributions. There are many ways to get i
 
     <h3>Sprint Reviews</h3>
 
-    <p>There is a ManageIQ Sprint review every 2 weeks open to the community. To join the online video conference, please use this <a href="https://meet.google.com/nwr-oyqu-ukh">Google Meet link</a>.</p>
+    <p>There is a ManageIQ Sprint review every 2 weeks open to the community. To join the online video conference, please use this <a href="https://zoom.us/j/3660261582?pwd=aGNRYVRFQ3kxWU0rZDNvaUdDS0VmZz09">Zoom link</a>.</p>
 
     <p>You can import the <a href="https://calendar.google.com/calendar/embed?src=content.admin%40manageiq.org">ManageIQ community calendar</a> to be notified about ManageIQ events and Sprint reviews.</p>
 
