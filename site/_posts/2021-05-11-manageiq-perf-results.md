@@ -42,7 +42,7 @@ For these measurements, up to 13 providers were added in a single, default zone:
 * 10 additional VMware infrastructure providers simulated with the vCenter Server Simulator (VCSIM) tool, which is an unsupported tool available for free from VMware.  Each simulated vCenter runs on a separate VM.  
 
 ### Steady state CPU utilization
-<img src="/assets/images/blog/PodSteadyStateCPU.png" width="250"></a>
+<img src="/assets/images/blog/PodSteadyStateCPU.png" width="250">
 ![](/assets/images/blog/PodSteadyStateCPU.png)
 
 The figure above shows the average process/pod CPU usage over a 2 hour period with the VMware provider running.  The appliance results (in blue) show the process-level CPU utilization based on data from the Linux ps command.   The podified results (in orange) show the pod-level CPU utilization from prometheus/grafana.  For most worker pods, CPU utilization in podified mode is consistently 8-9% higher than appliance mode.  In investigating this difference, the development team found that the extra overhead was caused by the liveness probe.  [Rewriting and optimizing the liveness check](https://github.com/ManageIQ/manageiq/pull/688) resulted in a 20x speedup.  The podified results with the optimized liveness check show up as gray bars in the figure.  The worker pods each show an 8-9% reduction in steady state CPU utilization.  This performance improvement are included in the Lasker branch. 
