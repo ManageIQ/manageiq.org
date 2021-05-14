@@ -11,7 +11,7 @@ Thad Jennings (performance engineer)
 
 # Introduction
 
-This document decribes performance measurements for the ManageIQ Kasparov release in both podified and appliance mode, and performance improvements that have been made as a result.  The purpose of these measurements was to show the behavior of ManageIQ as the number of providers and managed resources are increased, and to look for inhibitors to scalability.  Podified measurements were taken on Red Hat OpenShift Container Platform (OCP) running on a VMware vSphere cluster dedicated to performance measurements.  Appliance measurements were taken on a VM running on the same VMware vSphere cluster.  
+This document describes performance measurements for the ManageIQ Kasparov release in both podified and appliance mode, and performance improvements that have been made as a result.  The purpose of these measurements was to show the behavior of ManageIQ as the number of providers and managed resources are increased, and to look for inhibitors to scalability.  Podified measurements were taken on Red Hat OpenShift Container Platform (OCP) running on a VMware vSphere cluster dedicated to performance measurements.  Appliance measurements were taken on a VM running on the same VMware vSphere cluster.  
 
 ## Measurement configuration
 
@@ -68,10 +68,10 @@ The biggest tables in the vmdb database are related to metric collection.  The f
   * The average row size for metric_rollups is 680 bytes, based on observations with the VMware data provider.
 * vim_performance_states table
   * This table gets one row, per resource per hour, for each resource with records in the metric_rollups tables.  The rows in this table represent the state of the resource when the rollup was performed. 
-  * The average row size for the vim_performance_state table is 716 bytes, base on observations with the VMware data providier.
+  * The average row size for the vim_performance_state table is 716 bytes, base on observations with the VMware data provider.
 If metric collection is enabled, the above tables will be by far the biggest contributors to the vmdb database size.  
 To estimate the size of the metric collection portion of the database, you could use the following formula to estimate the storage in MB for one year for a given number of resources.
-    (number of resources) * ((180 raw rows/hour * 4 hours * 715 bytes/row) +  (25 rollup rows/day  * 365 days * (680 bytes/row) + (25 vim_performanced_states rows/day * 365 days * 716 bytes/row))) / 1024 /1024
+    (number of resources) * ((180 raw rows/hour * 4 hours * 715 bytes/row) +  (25 rollup rows/day  * 365 days * (680 bytes/row) + (25 vim_performance_states rows/day * 365 days * 716 bytes/row))) / 1024 /1024
 Which reduces to 
     (number of resources) * 12.6 MB 
 For 1,000 resources, the tables related to metric collection should grow to about 12 GB.
