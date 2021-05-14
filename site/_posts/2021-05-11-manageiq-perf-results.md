@@ -79,7 +79,7 @@ If metric collection is enabled, the above tables will be by far the biggest con
 To estimate the size of the metric collection portion of the database, you could use the following formula to estimate the storage in MB for one year for a given number of resources.
     (number of resources) * ((180 raw rows/hour * 4 hours * 715 bytes/row) +  (25 rollup rows/day  * 365 days * (680 bytes/row) + (25 vim_performanced_states rows/day * 365 days * 716 bytes/row))) / 1024 /1024
 Which reduces to 
- (number of resources) * 12.6 MB 
+    (number of resources) * 12.6 MB 
 For 1,000 resources, the tables related to metric collection should grow to about 12 GB.
 
 ### Conclusion
