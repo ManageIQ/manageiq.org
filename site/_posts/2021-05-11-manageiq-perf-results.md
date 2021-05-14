@@ -7,17 +7,13 @@ comments: true
 published: true
 ---
 
-
-# ManageIQ performance results and improvements
-
 Thad Jennings (performance engineer)
 
-
-## Introduction
+# Introduction
 
 This document decribes performance measurements for the ManageIQ Kasparov release in both podified and appliance mode, and performance improvements that have been made as a result.  The purpose of these measurements was to show the behavior of ManageIQ as the number of providers and managed resources are increased, and to look for inhibitors to scalability.  Podified measurements were taken on Red Hat OpenShift Container Platform (OCP) running on a VMware vSphere cluster dedicated to performance measurements.  Appliance measurements were taken on a VM running on the same VMware vSphere cluster.  
 
-### Measurement configuration
+## Measurement configuration
 
 These measurements were taken on a vCenter dedicated to performance measurements with the following configuration:
 * Hypervisor:		VMware ESXi, 6.7.0, 15160138
@@ -41,7 +37,7 @@ For these measurements, up to 13 providers were added in a single, default zone:
 * 1 VMware infrastructure provider
 * 10 additional VMware infrastructure providers simulated with the vCenter Server Simulator (VCSIM) tool, which is an unsupported tool available for free from VMware.  Each simulated vCenter runs on a separate VM.  
 
-### Steady state CPU utilization
+## Steady state CPU utilization
 <img src="/assets/images/blog/PodSteadyStateCPU.png">
 
 The figure above shows the average process/pod CPU usage over a 2 hour period with the VMware provider running.  The appliance results (in blue) show the process-level CPU utilization based on data from the Linux ps command.   The podified results (in orange) show the pod-level CPU utilization from prometheus/grafana.  For most worker pods, CPU utilization in podified mode is consistently 8-9% higher than appliance mode.  In investigating this difference, the development team found that the extra overhead was caused by the liveness probe.  [Rewriting and optimizing the liveness check](https://github.com/ManageIQ/manageiq/pull/688) resulted in a 20x speedup.  The podified results with the optimized liveness check show up as gray bars in the figure.  The worker pods each show an 8-9% reduction in steady state CPU utilization.  This performance improvement is included in the Lasker branch. 
@@ -56,7 +52,7 @@ The figure above shows the total steady state ManageIQ CPU usage across all proc
 * 13 providers
 For each workload scenario, the podified CPU usage is dramatically reduced (ranging from 74 to 94% lower) with the liveness probe improvement.  With the improvement, total ManageIQ podified CPU usage is lower than appliance mode in each case.
 
-### VMDB database measurements
+## VMDB database measurements
 The ManageIQ architecture includes the Virtual Management Database (VMDB), which is "the definitive source of intelligence collected about your Virtual Infrastructure".  During our performance measurements, we collected postgres statistics to see the total size, number of rows and activity for each of the 300+ tables in the VMDB database.
 
 The biggest tables in the vmdb database are related to metric collection.  The following observations are based on the postgres stats and discussion with development:
@@ -80,5 +76,5 @@ Which reduces to
     (number of resources) * 12.6 MB 
 For 1,000 resources, the tables related to metric collection should grow to about 12 GB.
 
-### Conclusion
+## Conclusion
 This article describes results from our recent performance measurements of the ManageIQ Kasparov branch, including performance improvements that were made based on these findings.  The results show that, with these improvements, ManageIQ in podified mode can perform as well or better than appliance mode.
