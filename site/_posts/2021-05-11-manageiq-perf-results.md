@@ -3,8 +3,8 @@ title: "ManageIQ performance results and improvements"
 author: Thad Jennings
 date: 2021-05-11
 tags: performance
-comments: false
-published: false
+comments: true
+published: true
 ---
 
 
