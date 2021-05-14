@@ -7,8 +7,6 @@ comments: true
 published: true
 ---
 
-Thad Jennings (performance engineer)
-
 # Introduction
 
 This document describes performance measurements for the ManageIQ Kasparov release in both podified and appliance mode, and performance improvements that have been made as a result.  The purpose of these measurements was to show the behavior of ManageIQ as the number of providers and managed resources are increased, and to look for inhibitors to scalability.  Podified measurements were taken on Red Hat OpenShift Container Platform (OCP) running on a VMware vSphere cluster dedicated to performance measurements.  Appliance measurements were taken on a VM running on the same VMware vSphere cluster.  
