@@ -64,7 +64,7 @@ The ManageIQ architecture includes the Virtual Management Database (VMDB), which
 The biggest tables in the vmdb database are related to metric collection.  The following observations are based on the postgres stats and discussion with development:
 * 24 raw tables, one per hour (metrics_00, metrics_01 … metrics_23)
   * Only the most recent four hours of raw metrics are kept, and every hour, the table with data older than 4 hours is dropped.
-  * For each resource, metrics are collected every 20 seconds.  Each resource gets one metric row per collection interval, with up to 180 rows collected per hour.  
+  * For each resource, metrics are collected in 20 second intervals.  Each resource gets one metric row per collection interval, with up to 180 rows collected per hour.  
   * For the VMware data provider, collected resources are clusters, hosts and VMs.  
   * For the AWS data provider, the collected resources are online instances (not offline or suspended)
   * For the Azure data provider, metrics are not collected unless the Microsoft.Insights resource provider is enabled, which was not the case in our measurements
