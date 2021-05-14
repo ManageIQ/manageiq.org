@@ -73,7 +73,7 @@ The biggest tables in the vmdb database are related to metric collection.  The f
   * Each resource gets one metric_rollups row per hour and another metric_rollup row per day.
   * The average row size for metric_rollups is 680 bytes, based on observations with the VMware data provider.
 * vim_performance_states table
-  * This table gets one row for each insert into the metric_rollups tables.  The rows in this table represent the state of the resource when the rollup was performed. 
+  * This table gets one row, per resource per hour, for each resource with records in the metric_rollups tables.  The rows in this table represent the state of the resource when the rollup was performed. 
   * The average row size for the vim_performance_state table is 716 bytes, base on observations with the VMware data providier.
 If metric collection is enabled, the above tables will be by far the biggest contributors to the vmdb database size.  
 To estimate the size of the metric collection portion of the database, you could use the following formula to estimate the storage in MB for one year for a given number of resources.
