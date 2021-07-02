@@ -2,7 +2,7 @@
 title: CloudForms Database High Availability Explained 
 date: 2018-02-23
 tags: cloudforms internal 
-author: ConnorJGilchrist
+author: Giovanni Fontana
 ---
 
 In this article, we describe how High Availability (HA) works natively in Red Hat CloudForms. The mechanism uses PostgreSQL feature, and does not require external tools like Virtual IP (VIP), HAProxy, or Load Balancer. We will use a two-node active/passive architecture as an example to investigate what is happening when failover occurs.

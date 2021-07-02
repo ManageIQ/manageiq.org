@@ -2,7 +2,7 @@
 title: Container Management with CloudForms – Financial Management
 date: 2017-10-25
 tags: cloudforms container management operations cloudforms, container, management, openshift, operations
-author: ConnorJGilchrist
+author: Jerome Marc
 ---
 
 This blog is part 5 of our series on Container Management with CloudForms].
