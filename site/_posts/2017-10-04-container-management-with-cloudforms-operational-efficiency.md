@@ -2,7 +2,7 @@
 title: Container Management with CloudForms – Operational Efficiency
 date: 2017-10-04
 tags: cloudforms container management operations cloudforms, container, containers, management, openshift
-author: ConnorJGilchrist
+author: Jerome Marc
 ---
 
 This blog is part 2 of our series on Container Management with CloudForms.
