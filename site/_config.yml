@@ -208,3 +208,18 @@ defaults:
     values:
       layout: doc_page
       doc_group: api
+
+  - scope:
+      path: "docs/reference/lasker"
+      type: "pages"
+    values:
+      layout: doc_page
+      permalink: /:path/:basename
+      doc_group: user
+      sitemap: false
+
+  - scope:
+      path: "docs/reference/lasker/api"
+    values:
+      layout: doc_page
+      doc_group: api
