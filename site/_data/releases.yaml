@@ -1,16 +1,16 @@
 stable:
   type: stable
-  name: Kasparov-1
-  tag: kasparov-1
-  filename: kasparov-1
-  branch: kasparov
-
-prerelease:
-  type: prerelease
-  name: Lasker-1-Beta1
-  tag: lasker-1-beta1
-  filename: lasker-1-beta1
+  name: Lasker-1
+  tag: lasker-1
+  filename: lasker-1
   branch: lasker
+
+# prerelease:
+#   type: prerelease
+#   name: Lasker-1-Beta1
+#   tag: lasker-1-beta1
+#   filename: lasker-1-beta1
+#   branch: lasker
 
 devel:
   type: devel
