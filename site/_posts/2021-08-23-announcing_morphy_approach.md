@@ -11,7 +11,7 @@ We have been working on a number of interesting features.  Typically, the way th
 
 We are working on the Morphy release (named after [Paul Morphy](https://en.wikipedia.org/wiki/Paul_Morphy)).  This entails creating `morphy` branches to build from.  Instead of basing these branches off of `master` (as is usually the case), we will be basing the `morphy` branches off of `lasker` - with the sole exception being new provider repos that have not been released before (thus they do not have a `lasker` branch, but currently only a `master` branch).
 
-As we work towards creating the Morphy branches leading to a release, we needed to come up with a name for the N release - and that will be named after [Miguel Najdorf](https://en.wikipedia.org/wiki/Miguel_Najdorf).  We will adjust our roadmap (http://manageiq.org/roadmap) accordingly to reflect what gets into Morphy vs Najdorf releases.
+As we work towards creating the Morphy branches leading to a release, we needed to come up with a name for the N release - and that will be named after [Miguel Najdorf](https://en.wikipedia.org/wiki/Miguel_Najdorf).  We will adjust the [ManageIQ roadmap](http://manageiq.org/roadmap) accordingly to reflect what gets into Morphy vs Najdorf releases.
 
 Some of the rules we are following for this release are that we will *not* add any SQL Schema migrations and that we will only include those features which we think are low risk and provide value to the community.
 
