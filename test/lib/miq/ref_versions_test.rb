@@ -27,6 +27,18 @@ class RefVersionsTest < Minitest::Test
     assert_equal "euwe",   paths.keys.last
   end
 
+  def test_paths_for_non_doc_references
+    paths = Miq::RefVersions.instance.paths_for("/docs/api")
+
+    assert_equal "/docs/api",                                  paths["latest"]
+    assert_equal "/docs/reference/lasker/rest_api/index.html", paths["lasker"]
+    assert_equal "/docs/reference/jansa/rest_api/index.html",  paths["jansa"]
+
+    # Check that the list is sorted in reverse chronological order
+    assert_equal "latest", paths.keys.first
+    assert_equal "euwe",   paths.keys.last
+  end
+
   def test_canonical_path_for_with_ref_doc
     path = Miq::RefVersions.instance.canonical_path_for("/docs/reference/latest/installing_on_google_compute_engine/index.html")
     assert_equal "/docs/reference/latest/installing_on_google_compute_engine/index.html", path
