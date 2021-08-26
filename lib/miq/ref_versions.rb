@@ -87,7 +87,11 @@ module Miq
     end
 
     def path_version(path)
-      path.to_s.match(%r{/docs/reference/(\w+)/}).captures[0]
+      if match = path.to_s.match(%r{/docs/reference/(\w+)/})
+        match.captures[0]
+      else
+        "latest"
+      end
     end
 
     def prior_path_for(path)
