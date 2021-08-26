@@ -49,11 +49,15 @@ module Miq
     # we need a clean Bundler env.
     # FIXME: This is might be a bit naive
     def run_cmd_with_bundle_env(cmd, clean)
-      if clean || (cmd =~ /cd\ /)
-        Bundler.clean_system(cmd)
-      else
-        system(cmd)
-      end
+      success =
+        if clean || (cmd =~ /cd\ /)
+          Bundler.clean_system(cmd)
+        else
+          system(cmd)
+        end
+
+      exit 1 unless success
+      success
     end
   end
 end
