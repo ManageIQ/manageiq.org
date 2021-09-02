@@ -14,13 +14,13 @@ The site content has different sources.
 
 ### Source Overview
 
-| Directory | Contents |
-| --------- | -------- |
-| dest      | where the site is built locally |
-| exe       | Command line tool (Thor) |
+| Directory | Contents                                 |
+| --------- | ---------------------------------------- |
+| dest      | where the site is built locally          |
+| exe       | Command line tool (Thor)                 |
 | lib       | Ruby code for CLI, processing docs, etc. |
-| site      | Site content |
-| test      | Tests for Ruby code |
+| site      | Site content                             |
+| test      | Tests for Ruby code                      |
 
 
 ### Documentation groups
@@ -32,7 +32,14 @@ Contributions are welcome to each of these, here's where you can help:
 Docs in the getting started group are part of this repo, find them under [site/docs/get-started](/site/docs/get-started)
 
 #### User reference
-The user reference docs are hosted at https://github.com/ManageIQ/manageiq-documentation. They are written in [Asciidoc](http://asciidoc.org/) and organized in [AsciiBinder](http://www.asciibinder.org/) By default they are built in a temp directory and copied (rsync) to `/site/docs/reference/latest`.
+The user reference docs are hosted at https://github.com/ManageIQ/manageiq-documentation.
+
+There are two formats that the documentation can be written in:
+
+- For releases `kasparov` and newer, they are written in `markdown` and build like the rest of the project.
+- For releases `jansa` and prior (legacy), they are written in [Asciidoc](http://asciidoc.org/) and organized in [AsciiBinder](http://www.asciibinder.org/).
+
+But regardless of the format they are sourced as, they are built in a temp directory and copied (`rsync`) to `/site/docs/reference/latest`.
 
 #### API Docs
 The API Docs are hosted in the same repo as the User Reference, [under the api directory](https://github.com/ManageIQ/manageiq-documentation/tree/master/api)
