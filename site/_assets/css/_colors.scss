@@ -48,3 +48,18 @@ $glphy_img: url("/assets/images/logo/banner-glyph.svg") 173% 50% no-repeat;
   background: #{$glphy_img}, #{$opera_linear_grad};
   background: #{$glphy_img}, #{$linear_grad};
 }
+
+@import "themes/light";
+@import "themes/dark";
+
+@include light_theme;
+
+@media (prefers-color-scheme: dark) {
+	@include light_theme($selector: ".light-theme");
+	@include dark_theme($selector: ":root, .dark-theme");
+}
+
+@media (prefers-color-scheme: light) {
+	@include light_theme($selector: ":root, .light-theme");
+	@include dark_theme($selector: ".dark-theme");
+}
