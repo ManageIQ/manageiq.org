@@ -14,13 +14,13 @@ The site content has different sources.
 
 ### Source Overview
 
-| Directory | Contents |
-| --------- | -------- |
-| dest      | where the site is built locally |
-| exe       | Command line tool (Thor) |
+| Directory | Contents                                 |
+| --------- | ---------------------------------------- |
+| dest      | where the site is built locally          |
+| exe       | Command line tool (Thor)                 |
 | lib       | Ruby code for CLI, processing docs, etc. |
-| site      | Site content |
-| test      | Tests for Ruby code |
+| site      | Site content                             |
+| test      | Tests for Ruby code                      |
 
 
 ### Documentation groups
