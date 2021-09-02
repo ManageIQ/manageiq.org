@@ -34,7 +34,7 @@
   }
 
   li.active > a {
-    background-color: lighten($grey-dark, 8%);
+    background-color: var(--color-bg-menu-active);
   }
 
   a {
@@ -42,10 +42,10 @@
     padding: 1em $menu-level-pad;
     line-height: 1.4;
 
-    color: $menu-link-color;
+    color: var(--color-bg-menu-active);
 
     &:hover {
-      background-color: lighten($grey-dark, 10%);
+      background-color: var(--color-bg-menu-hover);
       text-decoration: none;
     }
 
@@ -68,7 +68,7 @@
   // font-weight: bold;
 
   > a {
-    color: #fff;
+    color: var(--color-text-doc-menu);
 
     &:before {
       @include fa_type;

@@ -41,7 +41,7 @@ $site-header-sm-pad: 10px;
   top: $site-header-sm-pad;
 
   a {
-    color: #fff;
+    color: var(--color-text-banner);
   }
 }
 
@@ -54,7 +54,7 @@ $site-header-sm-pad: 10px;
 
     .brand {
       float: left;
-      color: #fff;
+      color: var(--color-text-banner);
       display: block;
     }
 

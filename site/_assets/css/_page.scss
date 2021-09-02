@@ -1,6 +1,6 @@
 body {
-  background-color: $site-bg;
-  border-top: 3px solid $blue-lite;
+  background-color: var(--color-bg-primary);
+  border-top: 3px solid var(--color-border-header-top);
   display: flex;
   min-height: 100vh;
   flex-direction: column;
@@ -24,6 +24,10 @@ main img {
   @include responsive_img;
 }
 
+hr {
+  border-top-color: var(--color-border-primary);
+}
+
 .gsc-control-cse {
   padding: 0 !important;
   td {
@@ -41,7 +45,7 @@ table.gsc-input {
   margin: 2px 0 0 5px !important;
 }
 
-.gsst_a .gscb_a {color: #292e33 !important} // 
+.gsst_a .gscb_a {color: var(--color-text-secondary) !important}
 
 .gsc-search-button-v2 {
   background: none !important;

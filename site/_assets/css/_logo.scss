@@ -41,12 +41,22 @@
   }
 }
 
-#logos_inverse {
+#logos_standard, #logos_bw, #glyph {
   .logo_example {
-    background-color: $grey-dark;
+    background-color: var(--color-bg-logo-light);
 
     h3 {
-      color: #fff;
+      color: var(--color-text-logo-light);
+    }
+  }
+}
+
+#logos_inverse {
+  .logo_example {
+    background-color: var(--color-bg-logo-dark);
+
+    h3 {
+      color: var(--color-text-logo-dark);
     }
   }
 }
