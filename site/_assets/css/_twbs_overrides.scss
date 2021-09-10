@@ -1,0 +1,54 @@
+.btn-default {
+  color: var(--color-text-btn);                  // #333
+  background-color: var(--color-bg-btn);         // #fff
+  border-color: var(--color-border-btn);         // #ccc
+
+  &:active,
+  &.active,
+  &:focus,
+  &.focus,
+  &:hover {
+		color: var(--color-text-btn);                // #333
+		background-color: var(--color-bg-btn-hover); // #e6e6e6
+		border-color: var(--color-border-btn-hover); // #adadad
+	}
+
+  &:focus,
+  &.focus {
+    border-color: var(--color-border-btn-active); // #8c8c8c
+  }
+
+  &:active,
+  &.active {
+		background-image: none;
+	}
+
+  &:active:hover,
+  &:active:focus,
+  &:active.focus,
+  &.active:hover,
+  &.active:focus,
+  &.active.focus {
+		color: var(--color-text-btn);                 // #333
+    background-color: var(--color-bg-btn-active); // #d4d4d4
+    border-color: var(--color-border-btn-active); // #8c8c8c
+  }
+}
+
+
+.page-header {
+  border-bottom-color: var(--color-border-primary);
+}
+
+.table-hover > tbody > tr:hover {
+  background-color: var(--color-bg-secondary);
+}
+
+.table-bordered > thead > tr > th,
+.table-bordered > thead > tr > td,
+.table-bordered > tbody > tr > th,
+.table-bordered > tbody > tr > td,
+.table-bordered > tfoot > tr > th,
+.table-bordered > tfoot > tr > td {
+  border-color: var(--color-border-primary);
+}

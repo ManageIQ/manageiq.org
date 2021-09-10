@@ -3,6 +3,9 @@
   --color-bg-primary:        #F9F9F9; // $site-bg
   --color-bg-secondary:      #FFFFFF;
   --color-bg-tertiary:       #EFEFEF; // darken($site-bg, 4%)
+  --color-bg-btn:            #FFFFFF;
+  --color-bg-btn-hover:      #E6E6E6;
+  --color-bg-btn-active:     #d4d4d4;
   --color-bg-docs-tbl-even:  #EBEDEF;
   --color-bg-header:         ;
   --color-bg-footer:         #063452; // $blue-dark
@@ -19,6 +22,9 @@
   --color-border-primary:    #EBEDEF; // lighten($heading-line, 10%) (repaces $grey-lite && $grey-lite2)
   --color-border-secondary:  #DDE1E4; // $doc-line-lite
   --color-border-tertiary:   #CFD4D8; // $heading-line
+  --color-border-btn:        #CCCCCC;
+  --color-border-btn-hover:  #CFD4D8;
+  --color-border-btn-active: #8c8c8c;
   --color-border-header-top: #00a6e6; // $blue-lite
   --color-border-header-mid: #094e7a;
   --color-border-header-bot: #22262b;
@@ -28,6 +34,7 @@
   --color-text-primary:      #444444; // $text-black
   --color-text-secondary:    #292E33; // $grey-dark
   --color-text-tertiary:     #7a7a7a; // $text-subdued (replaces "lighten($text-black, 10%)")
+  --color-text-btn:          #333333;
   --color-text-banner:       #FFFFFF; // (no var)
   --color-text-banner-2:     #ABDAF9; // $blue-white
   --color-text-doc-menu:     #FFFFFF; // (no var)
