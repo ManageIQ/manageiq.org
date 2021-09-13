@@ -38,8 +38,8 @@ ManageIQ is open source and open for contributions. There are many ways to get i
   <div class="col-md-6">
     <h3>Discuss</h3>
     <p>Join the active ManageIQ community on <a href="http://talk.manageiq.org/">ManageIQ Talk forum</a> with your questions and discussions, or chat with us anytime on <a href="https://gitter.im/ManageIQ/manageiq">Gitter</a> (sign in with your GitHub account).</p>
-    <p><button class="js-gitter-toggle-chat-button" data-gitter-toggle-chat-state="true">Open Chat</button>
-    <button class="js-gitter-toggle-chat-button" data-gitter-toggle-chat-state="false">Close Chat</button></p>
+    <p><button class="btn btn-default js-gitter-toggle-chat-button" data-gitter-toggle-chat-state="true">Open Chat</button>
+    <button class="btn btn-default js-gitter-toggle-chat-button" data-gitter-toggle-chat-state="false">Close Chat</button></p>
     <br />
     <p>Check out the <a href="/blog/">ManageIQ blog</a> and comment on the latest community news.</p>
 

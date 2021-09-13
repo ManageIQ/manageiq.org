@@ -1,0 +1,102 @@
+table.gsc-input { 
+  background-color: transparent;
+  font-size: 9px !important;
+  height: 28px !important;
+  margin: 2px 0 0 5px !important;
+}
+
+.gsst_a .gscb_a {color: var(--color-text-secondary) !important}
+
+.gsc-search-button-v2 {
+  background: none !important;
+  border: none !important;
+  padding: 6px !important;
+  svg {
+    width: 16px !important;
+    height: 16px !important;
+  }
+}
+
+input.gsc-input,
+.gsc-input-box,
+.gsc-input-box-hover,
+.gsc-input-box-focus {
+  background: var(--color-bg-secondary) !important;
+  border-color: var(--color-border-secondary) !important;
+}
+
+.gsc-control-cse {
+  padding: 0 !important;
+  td {
+    padding: 0 5px 0 0 !important;
+  }
+  table tr:nth-child(odd) td {
+    background-color: transparent !important;
+  }
+}
+
+.gsc-modal-background-image {
+  background-color: var(--color-bg-overlay) !important;
+}
+
+.gsc-results,
+.gsc-results-wrapper-overlay,
+.gsc-webResult.gsc-result,
+.gsc-results .gsc-imageResult,
+.gsc-control-cse .gsc-option-menu,
+.gsc-cursor-box,
+.gsc-results .gsc-cursor-box .gsc-cursor-page {
+  background-color: var(--color-bg-secondary) !important;
+}
+
+.gsc-selected-option-container {
+  background-color: var(--color-bg-menu) !important;
+  border-color: var(--color-border-primary) !important;
+  color: var(--color-text-primary) !important;
+}
+
+.gsc-option-menu-item-highlighted {
+  background-color: var(--color-bg-tertiary) !important;
+}
+
+.gsc-option-menu-item,
+.gsc-orderby-label {
+  color: var(--color-text-tertiary) !important;
+}
+
+.gsc-option-menu-item-highlighted {
+  color: var(--color-text-primary) !important;
+}
+
+.gsc-above-wrapper-area,
+.gsc-control-cse .gsc-option-menu {
+  border-color: var(--color-border-primary) !important;
+}
+
+.gsc-webResult.gsc-result,
+.gsc-results .gsc-imageResult {
+  border-color: var(--color-bg-secondary) !important;
+}
+
+.gs-webResult div.gs-visibleUrl,
+.gs-webResult.gs-result a.gs-title:link,
+.gs-webResult.gs-result a.gs-title:link b,
+.gs-webResult.gs-result a.gs-title:visited,
+.gs-webResult.gs-result a.gs-title:visited b,
+.gs-imageResult a.gs-title:link,
+.gs-imageResult a.gs-title:link b,
+.gs-imageResult a.gs-title:visited,
+.gs-imageResult a.gs-title:visited b,
+.gsc-results .gsc-cursor-box .gsc-cursor-page,
+.gcsc-find-more-on-google,
+.gs-webResult:not(.gs-no-results-result):not(.gs-error-result) .gs-snippet, .gs-fileFormatType {
+  color: var(--color-text-primary) !important;
+}
+
+.gsc-result-info {
+  color: var(--color-text-tertiary) !important;
+}
+
+.gcsc-find-more-on-google-magnifier {
+  fill: var(--color-text-primary) !important;
+}

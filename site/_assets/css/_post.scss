@@ -12,7 +12,7 @@
 
 .post-header {
   padding-bottom: 1em;
-  border-bottom: 1px solid $doc-line-lite;
+  border-bottom: 1px solid var(--color-border-secondary);
   margin-bottom: 1em;
 
   h1 {
@@ -23,7 +23,7 @@
 }
 
 .post-meta {
-  color: $text-subdued;
+  color: var(--color-text-tertiary);
 }
 
 .post-tags {
@@ -55,12 +55,12 @@
     margin-bottom: 0;
 
     a {
-      color: $text-black;
+      color: var(--color-text-primary);
       transition: color 0.5s;
     }
 
     a:hover, a:active {
-      color: $blue-lite;
+      color: var(--color-text-link-hover);
       text-decoration: none;
     }
   }
@@ -73,13 +73,13 @@
 @media only screen and (min-width: #{$bp-desk0}) {
   .post_excerpt {
     padding: 0 2em 2em 0;
-    border-bottom: 1px solid lighten($heading-line, 10%);
+    border-bottom: 1px solid var(--color-border-primary);
     margin-bottom: 3em;
   }
 
   .post-header {
     padding: 0 2em 1em 0;
-    border-bottom: 1px solid $doc-line-lite;
+    border-bottom: 1px solid var(--color-border-secondary);
     margin-bottom: 2em;
 
     h1 {

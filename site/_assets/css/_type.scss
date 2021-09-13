@@ -3,15 +3,15 @@
 body {
   font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
   line-height: 1.4;
-  color: $text-black;
+  color: var(--color-text-primary);
 }
 
 a {
-  color: $link-blue;
+  color: var(--color-text-link);
   padding-bottom: 0.01em;
 
   &:hover {
-    color: lighten($link-blue, 10%);
+    color: var(--color-text-link-hover);
     text-decoration: none;
   }
 
@@ -21,7 +21,7 @@ a {
 }
 
 h1, h2, h3, h4 {
-  color: $grey-dark;
+  color: var(--color-text-secondary);
   font-weight: 500;
   text-rendering: optimizeLegibility;
   font-feature-settings: "kern";
@@ -62,7 +62,7 @@ table {
 }
 
 tr:nth-child(odd) td {
-  background-color: darken($site-bg, 4%);
+  background-color: var(--color-bg-tertiary);
 }
 
 td, th {
@@ -70,7 +70,7 @@ td, th {
 }
 
 th {
-  border-bottom: 1px solid $heading-line;
+  border-bottom: 1px solid var(--color-border-heading);
 }
 
 ul {

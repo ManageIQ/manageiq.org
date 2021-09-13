@@ -21,13 +21,13 @@ $banner_height_lg: 440px;
     font-size: 24px;
     font-weight: 500;
     line-height: 1.3;
-    color: #fff;
+    color: var(--color-text-banner);
     margin: 0.5em auto;
   }
 
   h2 {
     font-size: 14px;
-    color: $blue-white;
+    color: var(--color-text-banner-2);
     margin: 0 auto;
   }
 }

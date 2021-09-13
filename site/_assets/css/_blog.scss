@@ -1,7 +1,7 @@
 // See _post.scss for .post styles
 
 .blog {
-  background-color: #fff;
+  background-color: var(--color-bg-primary);
 
   summary {
     display: list-item;
@@ -18,7 +18,7 @@
 .archive_month_title {
   font-style: italic;
   padding: 0 0 0.5em 0;
-  border-bottom: 1px solid lighten($heading-line, 10%);
+  border-bottom: 1px solid var(--color-border-primary);
 }
 
 .blog_link {
@@ -55,12 +55,12 @@
   }
 
   .blog_main {
-    border-right: 1px solid lighten($heading-line, 10%);
+    border-right: 1px solid var(--color-border-primary);
   }
 
   .blog_side-group {
     padding-bottom: 1em;
-    border-bottom: 1px solid lighten($heading-line, 10%);
+    border-bottom: 1px solid var(--color-border-primary);
     margin-bottom: 2em;
   }
 

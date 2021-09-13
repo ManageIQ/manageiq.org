@@ -1,5 +1,5 @@
 section.partners {
-  border-top: 1px solid $grey-lite2;
+  border-top: 1px solid var(--color-border-primary);
   padding: 3em 0;
 }
 
@@ -20,8 +20,8 @@ section.partners {
   width: 100%;
 
   img {
-    @include grayscale;
-    opacity: 0.8;
+    filter: var(--partner-img-filter);
+    opacity: var(--partner-img-opacity);
   }
 }
 

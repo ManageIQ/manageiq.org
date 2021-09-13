@@ -1,8 +1,8 @@
 .doc_tabs {
-  background-color: $blue-dark;
-  border-top: 1px solid darken($banner-grad-lite, 9%);
-  border-bottom: 1px solid darken($grey-dark, 3%);
-  box-shadow: 0 1px 4px -1px darken($grey-dark, 3%);
+  background-color: var(--color-bg-footer);
+  border-top: 1px solid var(--color-border-header-mid);
+  border-bottom: 1px solid var(--color-border-header-bot);
+  box-shadow: 0 1px 4px -1px var(--color-border-header-bot);
   @include clearfix;
 
   ul {
@@ -16,10 +16,10 @@
       a {
         display: block;
         padding: 1em;
-        color: mix($blue-dark, #fff, 50%);
+        color: var(--color-text-link-header);
 
         &:hover {
-          color: #fff;
+          color: var(--color-text-banner);
           text-decoration: none;
         }
       }
@@ -28,9 +28,9 @@
 }
 
 .doc_menu {
-  color: #fff;
+  color: var(--color-text-doc-menu);
   padding-right: 0;
-  background-color: $grey-dark;
+  background-color: var(--color-bg-menu);
 
   .menu {
     font-size: 14px;
@@ -42,12 +42,12 @@
   }
 
   a {
-    color: #fff;
+    color: var(--color-text-doc-menu);
   }
 }
 
 .doc_menu-heading {
-  color: mix(#fff, $grey-dark, 50%);
+  color: var(--color-text-doc-menu-hdr);
   padding: 1em $menu-level-pad;
 }
 
@@ -57,7 +57,7 @@
 
 .doc-header {
   padding-bottom: 2em;
-  border-bottom: 1px solid $doc-line-lite;
+  border-bottom: 1px solid var(--color-border-secondary);
   margin: 4em 0 2em;
 
   h1 {
@@ -78,7 +78,7 @@
 
       li.active {
         a {
-          color: #fff;
+          color: var(--color-text-banner);
           background-color: lighten($blue-dark, 10%);
         }
       }
@@ -126,13 +126,13 @@
       margin-bottom: 1em;
 
       th {
-        border-bottom: 1px solid $doc-line-lite;
+        border-bottom: 1px solid var(--color-border-secondary);
       }
 
       td, th {
         font-size: 14px;
         padding: 1em;
-        border-right: 1px solid $doc-line-lite;
+        border-right: 1px solid var(--color-border-secondary);
         vertical-align: middle;
 
         &:last-child {
@@ -148,7 +148,7 @@
 
       tr:nth-child(even) {
         td {
-          background-color: lighten($grey-dark, 75%);
+          background-color: var(--color-bg-docs-tbl-even);
         }
       }
     }
@@ -156,11 +156,11 @@
 
   .doc-versions {
     padding-bottom: 1em;
-    border-bottom: 1px solid $doc-line-lite;
+    border-bottom: 1px solid var(--color-border-secondary);
     margin-bottom: 1em;
 
     .label, .separator {
-      color: $text-subdued;
+      color: var(--color-text-tertiary);
     }
 
     .active {
@@ -187,7 +187,7 @@
   .doc-content {
     .section-nav {
       font-size: 14px;
-      border-left: 1px solid $doc-line-lite;
+      border-left: 1px solid var(--color-border-secondary);
       width: 25%;
       position: absolute;
       right: 1em;
@@ -213,7 +213,7 @@
   .toc {
     font-size: 14px;
     padding: 0 1em 1em 1em;
-    border-left: 1px solid $doc-line-lite;
+    border-left: 1px solid var(--color-border-secondary);
     margin: 0 0 2em 2em;
     width: 25%;
     position: absolute;

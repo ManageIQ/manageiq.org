@@ -14,7 +14,7 @@
   display: flex;
   align-items: center;
   height: 4em;
-  border-bottom: 1px solid $heading-line;
+  border-bottom: 1px solid var(--color-border-primary);
 }
 
 .triad-col:last-child .triad-item {
@@ -32,8 +32,8 @@
 
 .download {
   padding: 1em 0;
-  border-top: 1px solid $heading-line;
-  border-bottom: 1px solid $heading-line;
+  border-top: 1px solid var(--color-border-primary);
+  border-bottom: 1px solid var(--color-border-primary);
 
   h4 {
     text-align: center;
@@ -50,7 +50,7 @@
     position: relative;
     top: $triad-offset;
 
-    background-color: #fff;
+    background-color: var(--color-bg-secondary);
     box-shadow: 0 1px 3px rgba(0,0,0,0.25);
   }
 
@@ -66,7 +66,7 @@
   .triad-col {
     @include make-md-column(4, $triad-gutter);
 
-    border-right: 1px solid $grey-lite;
+    border-right: 1px solid var(--color-border-primary);
 
     &:last-child {
       border-right: none;
