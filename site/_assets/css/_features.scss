@@ -14,8 +14,23 @@
 .feature-img {
   width: 100px;
   height: 100px;
-  margin-top: 15px;
   margin-right: 30px;
+
+  svg {
+    width: 100%;
+
+    #appliance, #box, #cancel, #magnifier, #outline, #symbol, #vm {
+      fill: var(--color-text-primary);
+    }
+
+    #agent, #vms {
+      fill: var(--color-text-tertiary);
+    }
+
+    #box_color {
+      fill: var(--color-bg-tertiary);
+    }
+  }
 }
 
 .feature-text {
