@@ -1,51 +1,64 @@
 - id: vmware
+  inline: true
   name: VMWare vSphere
-  img: /assets/images/providers/vmware.svg
+  img: inline_svg/platforms/vmware.svg
 
 - id: msscvmm
+  inline: true
   name: Microsoft System Center Virtual Machine Manager
-  img: /assets/images/platforms/msscvmm.svg
+  img: inline_svg/platforms/msscvmm.svg
 
 - id: ovirt
+  inline: true
   name: oVirt
-  img: /assets/images/platforms/ovirt.svg
+  img: inline_svg/platforms/ovirt.svg
 
 - id: openstack
+  inline: true
   name: OpenStack
-  img: /assets/images/platforms/openstack.svg
+  img: inline_svg/platforms/openstack.svg
 
 - id: vmware_vcloud
+  inline: false
   name: VMWare vCloud Network
-  img: /assets/images/platforms/vmw_vcloud.png
+  img: /assets/images/providers/vmw_vcloud.png
 
 - id: gcp
+  inline: true
   name: Google Cloud Platform
-  img: /assets/images/platforms/gcp.svg
+  img: inline_svg/platforms/gcp.svg
 
 - id: aws
+  inline: true
   name: Amazon Web Services
-  img: /assets/images/platforms/aws.svg
+  img: inline_svg/platforms/aws.svg
 
 - id: azure
+  inline: true
   name: Microsoft Azure
-  img: /assets/images/platforms/azure.svg
+  img: inline_svg/platforms/azure.svg
 
 - id: ibm_cloud
+  inline: true
   name: IBM Cloud
-  img: "/assets/images/platforms/ibm_cloud.png"
+  img: inline_svg/platforms/ibm_cloud.svg
 
 - id: ansible_tower
+  inline: true
   name: Ansible Tower By Red Hat
-  img: /assets/images/platforms/ansible_tower.svg
+  img: inline_svg/platforms/ansible_tower.svg
 
 - id: foreman
+  inline: true
   name: Foreman
-  img: /assets/images/platforms/foreman.svg
+  img: inline_svg/platforms/foreman.svg
 
 - id: kubernetes
+  inline: true
   name: Kubernetes
-  img: /assets/images/platforms/kubernetes.svg
+  img: inline_svg/platforms/kubernetes.svg
 
 - id: openshift_origin
+  inline: true
   name: OpenShift Origin
-  img: /assets/images/platforms/openshift_origin.svg
+  img: inline_svg/platforms/openshift_origin.svg

@@ -31,6 +31,11 @@
   --color-border-heading:    #193344;
   --color-border-code-pre:   #0D1F2B;
 
+  --color-fill-foreman-1:    #8c8c8c;
+  --color-fill-foreman-2:    #FFFFFF;
+  --color-fill-openstack-1:  var(--color-text-primary);
+  --color-fill-openstack-2:  var(--color-text-primary);
+
   --color-text-primary:      #F9F9F9;
   --color-text-secondary:    #FFFFFF;
   --color-text-tertiary:     #AAAAAA;
@@ -83,5 +88,6 @@
 
   --partner-img-filter:      invert(100%) contrast(.5) saturate(2) brightness(1.5) grayscale(100%);
   --partner-img-opacity:     0.6;
+  --platforms-vcloud-bright: 3;
 }
 }
