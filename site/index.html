@@ -36,7 +36,11 @@ body_class: home
     <div class="platforms-container">
       {% for platform in site.data.platforms %}
       <div id="platform_{{platform.id}}" class="platform_brand">
-        <img src="{{platform.img}}" alt="{{platform.name}}">
+        {%- if platform.inline -%}
+          {% include {{ platform.img }} css_class=platform.id %}
+        {%- else -%}
+          <img src="{{platform.img}}" alt="{{platform.name}}">
+        {%- endif -%}
       </div>
       {% endfor %}
     </div>

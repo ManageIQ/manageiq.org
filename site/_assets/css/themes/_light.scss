@@ -31,6 +31,11 @@
   --color-border-heading:    #CFD4D8; // lighten($grey-dark, 65%);
   --color-border-code-pre:   #CCCCCC;
 
+  --color-fill-foreman-1:    #000000;
+  --color-fill-foreman-2:    #61625F;
+  --color-fill-openstack-1:  #6f6e6f;
+  --color-fill-openstack-2:  #c43827;
+
   --color-text-primary:      #444444; // $text-black
   --color-text-secondary:    #292E33; // $grey-dark
   --color-text-tertiary:     #7a7a7a; // $text-subdued (replaces "lighten($text-black, 10%)")
@@ -83,5 +88,6 @@
 
   --partner-img-filter:      grayscale(100%);
   --partner-img-opacity:     0.8;
+  --platforms-vcloud-bright: 0;
 }
 }

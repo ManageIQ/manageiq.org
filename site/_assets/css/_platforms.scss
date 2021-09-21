@@ -17,31 +17,60 @@
   width: 8em;
   margin: 0.875em;
 
-  img {
+  img, svg {
     display: block;
     max-width: 100%;
     height: auto;
   }
 }
 
+#platform_ansible_tower {
+  #text { fill: var(--color-text-primary) }
+}
+
 #platform_aws {
   width: 7em;
+
+  #text { fill: var(--color-text-primary) }
+}
+
+#platform_foreman {
+  #linearGradient-text stop[offset="0%"]   { stop-color: var(--color-fill-foreman-1) }
+  #linearGradient-text stop[offset="100%"] { stop-color: var(--color-fill-foreman-2) }
 }
 
 #platform_gcp {
   width: 14em;
+
+  .st24 { opacity: 1 }
+  .st26 { fill: var(--color-text-primary) }
+}
+
+#platform_ibm_cloud {
+  #IBM_Cloud { fill: var(--color-text-primary) }
 }
 
 #platform_kubernetes {
   width: 10em;
 }
 
+#platform_msscvmm {
+  #text { fill: var(--color-text-primary) }
+}
+
 #platform_openshift {
   width: 6em;
 }
 
+#platform_openshift_origin {
+  #text_openshift, #text_origin_black { fill: var(--color-text-primary) }
+}
+
 #platform_openstack {
   width: 4em;
+
+  .text_black { fill: var(--color-fill-openstack-1) }
+  .text_red   { fill: var(--color-fill-openstack-2) }
 }
 
 #platform_ovirt {
@@ -50,6 +79,13 @@
 
 #platform_vmware {
   width: 8em;
+  svg path {
+    fill: var(--color-text-primary);
+  }
+}
+
+#platform_vmware_vcloud {
+  filter: brightness(var(--platforms-vcloud-bright))
 }
 
 @media only screen and (min-width: #{$bp-desk0}) {
