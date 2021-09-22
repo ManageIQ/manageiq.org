@@ -1,0 +1,15 @@
+/* /docs/guides/labels specific styles */
+
+main[data-url="/docs/guides/labels"] {
+  td img {
+    height: 20px;
+    width: 100px;
+    max-width: max-content;
+  }
+
+  td code, td img {
+    display: block;
+    margin-bottom: 5px;
+    line-height: 16px;
+  }
+}
