@@ -55,8 +55,8 @@ $glphy_img: url("/assets/images/logo/banner-glyph.svg") 173% 50% no-repeat;
 @include light_theme;
 
 @media (prefers-color-scheme: dark) {
-	@include light_theme($selector: ".light-theme");
 	@include dark_theme($selector: ":root, .dark-theme");
+	@include light_theme($selector: ".light-theme");
 }
 
 @media (prefers-color-scheme: light) {
