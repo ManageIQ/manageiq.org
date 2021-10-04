@@ -4,6 +4,7 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  transition: background-color 300ms ease 0ms;
 }
 
 main {

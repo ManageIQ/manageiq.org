@@ -51,6 +51,7 @@ $glphy_img: url("/assets/images/logo/banner-glyph.svg") 173% 50% no-repeat;
 
 @import "themes/light";
 @import "themes/dark";
+@import "themes/toggle";
 
 @include light_theme;
 
