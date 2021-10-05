@@ -52,6 +52,7 @@
   --color-text-logo-light:   #292E33;
   --color-text-page:         #00A6E6;
   --color-text-page-hover:   #0490CE;
+  --color-text-site-nav:     #FFFFFF;
   --color-text-solution:     #D2D2D2;
   --color-text-code:         #C7254E;
   --color-text-code-pre:     #F8F8F2;
@@ -89,5 +90,7 @@
   --partner-img-filter:      invert(100%) contrast(.5) saturate(2) brightness(1.5) grayscale(100%);
   --partner-img-opacity:     0.6;
   --platforms-vcloud-bright: 3;
+
+  .theme-toggle::before { content: ""; }
 }
 }
