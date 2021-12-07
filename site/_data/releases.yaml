@@ -5,12 +5,12 @@ stable:
   filename: lasker-1
   branch: lasker
 
-# prerelease:
-#   type: prerelease
-#   name: Lasker-1-Beta1
-#   tag: lasker-1-beta1
-#   filename: lasker-1-beta1
-#   branch: lasker
+prerelease:
+  type: prerelease
+  name: Morphy-1-Beta1
+  tag: morphy-1-beta1
+  filename: morphy-1-beta1
+  branch: morphy
 
 devel:
   type: devel
