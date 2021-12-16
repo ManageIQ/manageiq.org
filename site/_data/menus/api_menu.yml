@@ -253,6 +253,8 @@
       path: "/docs/reference/latest/api/examples/add_lifecycle_event_vm.html"
     - title: Delete a VM
       path: "/docs/reference/latest/api/examples/delete_vm.html"
+    - title: Reconfigure a VM
+      path: "/docs/reference/latest/api/examples/reconfigure_vm.html"
   - title: Tag Management
     children:
     - title: Assign Tags
