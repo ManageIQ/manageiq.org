@@ -13,9 +13,9 @@ The ManageIQ community is picking up where VMware left off and will be providing
 
 Initially the gem maintainers will be [Adam Grare](https://github.com/agrare) and [Jason Frey](https://github.com/Fryguy).  The ManageIQ project has been using RbVmomi for its VMware vSphere provider [manageiq-providers-vmware](https://github.com/ManageIQ/manageiq-providers-vmware) for years. Jason is a staple of the Ruby and Rails communities, and Adam has been an active contributor to RbVmomi since 2016.
 
-The gem is available from rubygems at https://rubygems.org/gems/rbvmomi2. If you are currently using RbVmomi you will need to update your Gemfile or gemspec and replace `rbvmomi` with `rbvmomi2`.
+The gem is available from rubygems at [https://rubygems.org/gems/rbvmomi2](https://rubygems.org/gems/rbvmomi2). If you are currently using RbVmomi you will need to update your Gemfile or gemspec and replace `rbvmomi` with `rbvmomi2`.
 
-The new repository is https://github.com/ManageIQ/rbvmomi2; as always we encourage the community to open issues and contribute code and ideas.  If you are interested in contributing, check out https://github.com/ManageIQ/rbvmomi/blob/master/CONTRIBUTING.md and open an [Issue](https://github.com/ManageIQ/rbvmomi/issues/new/choose) or [Pull Request](https://github.com/ManageIQ/rbvmomi/compare), or just discuss something in the [RbVmomi Gitter room](https://gitter.im/vmware/rbvmomi).
+The new repository is [https://github.com/ManageIQ/rbvmomi2](https://github.com/ManageIQ/rbvmomi2); as always we encourage the community to open issues and contribute code and ideas.  If you are interested in contributing, check out [https://github.com/ManageIQ/rbvmomi/blob/master/CONTRIBUTING.md](https://github.com/ManageIQ/rbvmomi/blob/master/CONTRIBUTING.md) and open an [Issue](https://github.com/ManageIQ/rbvmomi/issues/new/choose) or [Pull Request](https://github.com/ManageIQ/rbvmomi/compare), or just discuss something in the [RbVmomi Gitter room](https://gitter.im/vmware/rbvmomi).
 
 If you're new to ManageIQ, welcome!  Come check out https://manageiq.org, see the [source code](https://github.com/ManageIQ) and chat with us in the [ManageIQ Gitter room](https://gitter.im/ManageIQ/manageiq) !
 
