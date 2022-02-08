@@ -21,4 +21,4 @@ jobs:
           token: ${{ secrets.DEPLOY_TOKEN }}
           repository: ManageIQ/manageiq.github.io
           event-type: deploy
-          client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
+          client-payload: '{"repository": "${{ github.repository }}", "commit_message": "${{ github.event.head_commit.message }}", "ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
