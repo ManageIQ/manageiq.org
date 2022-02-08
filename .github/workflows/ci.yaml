@@ -1,0 +1,24 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '2.5'
+          bundler-cache: true
+      - name: Build
+        run: bundle exec exe/miq build all
+      - name: Notify manageiq.github.io
+        if: ${{ github.event_name == 'push' && github.repository_owner == 'ManageIQ' }}
+        uses: peter-evans/repository-dispatch@v1
+        with:
+          token: ${{ secrets.DEPLOY_TOKEN }}
+          repository: ManageIQ/manageiq.github.io
+          event-type: deploy
+          client-payload: '{"repository": "${{ github.repository }}", "commit_message": "${{ github.event.head_commit.message }}", "ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
