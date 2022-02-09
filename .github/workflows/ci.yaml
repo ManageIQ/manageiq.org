@@ -31,5 +31,5 @@ jobs:
           client-payload: |
             { "repository": "${{ github.repository }}",
               "pr_number": "${{ steps.regex-commit-message.outputs.group1 }}",
-              "ref": "${{ github.ref }}",
+              "ref_name": "${{ github.ref_name }}",
               "sha": "${{ github.sha }}" }
