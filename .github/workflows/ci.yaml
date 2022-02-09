@@ -14,20 +14,14 @@ jobs:
           bundler-cache: true
       - name: Build
         run: bundle exec exe/miq build all
-      - name: Regex Match Commit Message for Push
+      - name: Regex Match Commit Message on Push
         uses: actions-ecosystem/action-regex-match@v2
         if: ${{ github.event_name == 'push' && github.repository_owner == 'ManageIQ' }}
         id: regex-commit-message
         with:
           text: ${{ github.event.head_commit.message }}
           regex: 'Merge pull request #(\d+)'
-      - name: Set PR Number for Push
-        if: ${{ github.event_name == 'push' && github.repository_owner == 'ManageIQ' }}
-        run: echo "PR_NUMBER=\"${{ steps.regex-commit-message.outputs.group1 }}\"" >> $GITHUB_ENV
-      - name: Set PR Number for Pull Request
-        if: ${{ github.event_name == 'pull_request' }}
-        run: echo "PR_NUMBER=\"${{ github.event.number }}\"" >> $GITHUB_ENV
-      - name: Notify manageiq.github.io
+      - name: Notify manageiq.github.io on Push
         if: ${{ github.event_name == 'push' && github.repository_owner == 'ManageIQ' }}
         uses: peter-evans/repository-dispatch@v1
         with:
@@ -36,6 +30,6 @@ jobs:
           event-type: deploy
           client-payload: |
             { "repository": "${{ github.repository }}",
-              "pr_number": "$PR_NUMBER",
+              "pr_number": "${{ steps.regex-commit-message.outputs.group1 }}",
               "ref": "${{ github.ref }}",
               "sha": "${{ github.sha }}" }
