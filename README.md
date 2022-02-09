@@ -1,5 +1,7 @@
 # ManageIQ.org website
 
+[![CI](https://github.com/ManageIQ/manageiq.org/actions/workflows/ci.yaml/badge.svg)](https://github.com/ManageIQ/manageiq.org/actions/workflows/ci.yaml)
+
 This is primarily a [Jekyll](https://github.com/jekyll/jekyll) site, with some tools to collect and pre-process documentation from multiple sources.
 
 ## How To Contribute
