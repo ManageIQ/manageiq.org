@@ -223,3 +223,18 @@ defaults:
     values:
       layout: doc_page
       doc_group: api
+
+  - scope:
+      path: "docs/reference/morphy"
+      type: "pages"
+    values:
+      layout: doc_page
+      permalink: /:path/:basename
+      doc_group: user
+      sitemap: false
+
+  - scope:
+      path: "docs/reference/morphy/api"
+    values:
+      layout: doc_page
+      doc_group: api
