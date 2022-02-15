@@ -16,7 +16,7 @@ module Miq
     end
 
     def paths_for(path)
-      self[path].index_by { |p| path_version(p) }
+      versions.reverse.each.with_index.with_object({}) { |(v, i), h| h[v] = self[path][i] }
     end
 
     def canonical_path_for(path)

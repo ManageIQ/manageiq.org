@@ -31,6 +31,7 @@ class RefVersionsTest < Minitest::Test
     paths = Miq::RefVersions.instance.paths_for("/docs/api")
 
     assert_equal "/docs/api",                                  paths["latest"]
+    assert_equal "/docs/api",                                  paths["morphy"]
     assert_equal "/docs/reference/lasker/rest_api/index.html", paths["lasker"]
     assert_equal "/docs/reference/jansa/rest_api/index.html",  paths["jansa"]
 
