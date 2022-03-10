@@ -17,7 +17,7 @@ jobs:
           ruby-version: '2.5'
           bundler-cache: true
       - name: Build
-        run: bundle exec exe/miq build all
+        run: bundle exec exe/miq build all --trace
       - name: Regex Match Commit Message on Push
         uses: actions-ecosystem/action-regex-match@v2
         if: ${{ github.event_name == 'push' && github.repository_owner == 'ManageIQ' }}
