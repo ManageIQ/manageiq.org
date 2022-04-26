@@ -54,6 +54,6 @@ oc patch deployment httpd -p '{"spec":{"template":{"spec":{"containers":[{"name"
 
 ManageIQ is now up and running at the host provided in the APPLICATION_DOMAIN parameter.
 
-For more detailed installation instructions see the guide in the [manageiq-pods repository](https://github.com/ManageIQ/manageiq-pods/blob/{{release.tag}}/README.md).
+For more detailed installation instructions see the guide in the [manageiq-pods repository](https://github.com/ManageIQ/manageiq-pods/blob/{{release.tag}}/master/README.md).
 
 Next step is to perform some [basic configuration](/docs/get-started/basic-configuration).
