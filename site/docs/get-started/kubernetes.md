@@ -6,7 +6,7 @@ title: Easy Install With Kubernetes
 You can get ManageIQ up and running quickly on a Kubernetes
 cluster using [Minikube](https://kubernetes.io/docs/tasks/tools/install-minikube/)
 
-{% assign release = site.data.releases["prerelease"] %}
+{% assign release = site.data.releases["stable"] %}
 
 Ensure minikube is installed and configured with enough resources:
 
