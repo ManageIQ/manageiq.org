@@ -9,8 +9,7 @@ Many other platforms are available including Amazon Web Services, VMware
 vSphere and OpenStack.
 
 Capabilities between providers can be different
-and evolve with time, so don’t forget to check the [support options
-document](https://manageiq.org/docs/reference/latest/doc-Managing_Providers/miq/)
+and evolve with time, so don’t forget to check the [support options document](https://manageiq.org/docs/reference/latest/capabilities_matrix/index)
 
 ### Create a Google Cloud Platform account (if needed)
 
