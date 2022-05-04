@@ -51,7 +51,8 @@ module Miq
     def run_cmd_with_bundle_env(cmd, clean)
       success =
         if clean || (cmd =~ /cd\ /)
-          Bundler.clean_system(cmd)
+          env = ENV.to_h.slice("BUNDLE_WITHOUT", "MIQ_DEBUG", "MIQ_ENV")
+          Bundler.clean_system(env, cmd)
         else
           system(cmd)
         end
