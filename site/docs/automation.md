@@ -10,4 +10,4 @@ Learn how to work with the Automate feature of ManageIQ, the powerful open-sourc
 
 Throughout the [book]({{ site.book_path }}), author [Peter McGowan](https://github.com/pemcg/) provides a combination of theoretical information and practical coding examples to help you learn the Automate object model. With this ManageIQ feature, you can create auto-scalable cloud applications, eliminate manual decisions and operations when provisioning virtual machines and cloud instances, and manage your complete virtual machine lifecycle.
 
-Please note that the gitbook is a living document and a work in progress, thus its content is subject to updates and improvements without notice.
+Please note that the gitbook is a living document and a work in progress, thus its content is subject to updates and improvements without notice.  There is currently an [addendum]({{ site.book_addendum_path }}) available with some of these notable changes.
