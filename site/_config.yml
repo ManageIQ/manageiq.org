@@ -31,7 +31,8 @@ paginate: 10
 paginate_path: "/blog/page:num/"
 
 image_path: "/assets/images/"
-book_path: https://manageiq.gitbook.io/mastering-cloudforms-automation-addendum/
+book_path: https://pemcg.gitbooks.io/mastering-automation-in-cloudforms-4-2-and-manage/content/
+book_addendum_path: https://manageiq.gitbook.io/mastering-cloudforms-automation-addendum/
 user_docs_path: "/docs/reference"
 
 markdown: kramdown
