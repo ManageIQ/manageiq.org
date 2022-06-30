@@ -20,6 +20,7 @@ jobs:
         with:
           ruby-version: '2.7'
           bundler-cache: true
+        timeout-minutes: 30
       - name: Build
         run: bundle exec exe/miq build all --trace
       - name: Regex Match Commit Message on Push
