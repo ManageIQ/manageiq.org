@@ -1,16 +1,16 @@
 stable:
   type: stable
-  name: Morphy-1
-  tag: morphy-1
-  filename: morphy-1
-  branch: morphy
+  name: Najdorf-1
+  tag: najdorf-1.3
+  filename: najdorf-1.3
+  branch: najdorf
 
 # prerelease:
 #   type: prerelease
-#   name: Morphy-1-Beta1
-#   tag: morphy-1-beta1
-#   filename: morphy-1-beta1
-#   branch: morphy
+#   name: Najdorf-1-Beta1
+#   tag: najdorf-1-beta1
+#   filename: najdorf-1-beta1
+#   branch: najdorf
 
 devel:
   type: devel
