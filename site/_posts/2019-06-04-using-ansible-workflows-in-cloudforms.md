@@ -1,7 +1,7 @@
 ---     
 title: Using Ansible workflows in CloudForms 
 date: 2019-06-04
-tags: ansible cloudforms ansible, cloudforms 
+tags: ansible cloudforms
 author: Conristian Jung
 ---
  

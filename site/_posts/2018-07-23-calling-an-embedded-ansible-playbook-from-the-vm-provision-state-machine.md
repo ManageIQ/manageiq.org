@@ -1,7 +1,7 @@
 ---     
 title: Calling an Embedded Ansible Playbook from the VM Provision State Machine 
 date: 2018-07-23
-tags: ansible cloudforms ansible, automate, cloudforms 
+tags: ansible cloudforms automate
 author: Peter McGowan
 ---
 

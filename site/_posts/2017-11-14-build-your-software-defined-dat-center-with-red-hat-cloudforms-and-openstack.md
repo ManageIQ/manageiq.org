@@ -1,7 +1,7 @@
 ---     
 title: Build your Software Defined Data Center with Red Hat CloudForms and OpenStack 
 date: 2017-11-14
-tags: cloudforms management openstack operations 
+tags: cloudforms management openstack operations
 author: Victor Estival Lopez
 ---
 

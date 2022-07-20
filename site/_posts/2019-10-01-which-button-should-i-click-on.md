@@ -1,7 +1,7 @@
 ---
 title: Which button should I click on? 
 date: 2019-10-01
-tags: cloudformsuxdcloudforms uxd 
+tags: cloudforms uxd
 author: Victor Estival Lopez
 ---
 

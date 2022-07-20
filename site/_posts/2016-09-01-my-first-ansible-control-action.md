@@ -1,7 +1,7 @@
 ---
 title: My First Ansible Control Action (Video) 
 date: 2016-09-01
-tags: ansible cloudforms operations ansible, cloudforms, control, policy 
+tags: ansible cloudforms operations control policy
 author: Victor Estival Lopez
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Managing CloudForms (and ManageIQ) appliances 
 date: 2018-07-26
-tags: cloudformscloudforms
+tags: cloudforms
 author: Jeff Cutter
 ---
 

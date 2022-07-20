@@ -1,7 +1,7 @@
 ---
 title: CloudForms Service Bundle Creation using VM Provisioning and Ansible Tower Automation Job 
 date: 2017-11-02
-tags: ansible cloudforms operations provisioning ansible, cloudforms, provisioning, Services 
+tags: ansible cloudforms operations provisioning services
 author: Peter McGowan
 ---
 

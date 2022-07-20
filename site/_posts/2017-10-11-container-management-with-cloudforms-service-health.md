@@ -1,7 +1,7 @@
 ---     
 title: Container Management with CloudForms – Service Health
 date: 2017-10-11
-tags: cloudforms container management operations cloudforms, container, management, openshift 
+tags: cloudforms container management operations openshift
 author: Jerome Marc
 ---
  

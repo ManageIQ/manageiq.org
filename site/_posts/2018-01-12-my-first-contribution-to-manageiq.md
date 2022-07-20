@@ -1,7 +1,7 @@
 ---     
 title: My First Contribution to ManageIQ
 date: 2018-01-12
-tags: cloudforms operations cloudforms, github, manageiq, pull request, vmware 
+tags: cloudforms operations github manageiq pull-request vmware
 author: Imaanpreet Kaur
 ---
 

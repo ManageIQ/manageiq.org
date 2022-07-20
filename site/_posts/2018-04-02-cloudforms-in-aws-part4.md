@@ -1,7 +1,7 @@
 ---     
 title: CloudForms in AWS part 4 
 date: 2018-04-02
-tags: ansible aws cloudforms ansible, aws, cloudforms, series
+tags: ansible aws cloudforms series
 author: Laurent Domb
 ---
 

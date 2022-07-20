@@ -1,7 +1,7 @@
 ---     
 title: CMDB Integration Architecture Examples for CloudForms 
 date: 2017-11-16
-tags: cloudforms management operations architecture, cloudforms,cmdb, integration, servicenow, ucmdb 
+tags: cloudforms management operations architecture cmdb integration servicenow
 author: John Hardy
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Tips from the tour part 1 - Global dashboard and integrations 
 date: 2018-07-09
-tags: cloudforms management openstack operations cloudforms, osp,rhv 
+tags: cloudforms management openstack operations osp rhv
 author: Rinaldo Bergamini and Michele Naldini
 ---
 

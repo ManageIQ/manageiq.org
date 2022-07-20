@@ -1,7 +1,7 @@
 ---
 title: Creating “Mastering CloudForms Automation”
 date: 2016-07-12
-tags: cloudforms automate 
+tags: cloudforms automate
 author: Peter McGowan, Marty Wesley
 ---
 

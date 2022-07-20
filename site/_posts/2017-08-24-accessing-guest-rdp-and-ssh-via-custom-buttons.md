@@ -1,7 +1,7 @@
 ---
 title: Accessing Guest RDP and SSH via Custom Buttons
 date: 2017-08-24
-tags: cloudforms management operations cloudforms, custom, button, operations, rdp, ssh 
+tags: cloudforms management operations custom-buttons rdp ssh
 author: John Hardy
 ---
  
