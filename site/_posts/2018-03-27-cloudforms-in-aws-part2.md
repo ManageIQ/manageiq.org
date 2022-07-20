@@ -139,4 +139,4 @@ When everything is finished you will see
 
 The next post is going to be for the geeks under us. It will explain what is going on under the hood when smart state happens.
 
-You can check the previous one as well [here] (<https://www.redhat.com/en/blog#more-2351>)
+You can check the previous one as well [here](<https://www.redhat.com/en/blog#more-2351>)

@@ -11,7 +11,7 @@ You can also watch it here:
 
 (<https://www.youtube.com/watch?v=moEfuvck3G0>)
 
-The ansible playbooks and role can be found here: [GitHub – ldomb/rh_summit_2018_sneakpeak] (<https://github.com/ldomb/rh_summit_2018_sneakpeak>)
+The ansible playbooks and role can be found here: [GitHub – ldomb/rh_summit_2018_sneakpeak](<https://github.com/ldomb/rh_summit_2018_sneakpeak>)
 
 In this demonstration, you will see how CloudForms deploys multiple web servers into AWS, reaches out to an F5 load balancer, adds the VIP, Pools, and nodes without writing a single line of Ruby code! Everything you see in the demo was built with Ansible Automation Inside. You will also notice, that we can now track Dynamic Resource Objects in the UI, so you know exactly, what was deployed during the service.
 

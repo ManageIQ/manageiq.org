@@ -26,7 +26,7 @@ Download examples here:
 [< DATASTORE>]       (<https://github.com/jonnyfiveiq/CloudFORMSNOW/blob/master/CFME/inspectXML/datastore.xml>)
 
 Here are the instructions for use.
-Download the automate class here: [cfnow_inspectXML.xml] (<https://github.com/jonnyfiveiq/CloudFORMSNOW/blob/master/CFME/inspectXML/cfnow_inspectXML_v1.xml>)
+Download the automate class here: [cfnow_inspectXML.xml](<https://github.com/jonnyfiveiq/CloudFORMSNOW/blob/master/CFME/inspectXML/cfnow_inspectXML_v1.xml>)
 
 The import includes the following Namespace/Class/Instance/Method – cfnow/methods/inspectXML/inspectXML
 Add a custom button to your desired area of the UI pointing to the inspectXML. When you execute your button you will have dumped to /tmp/ a file named after the object you have executed the button against. Example;

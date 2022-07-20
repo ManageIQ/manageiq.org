@@ -13,11 +13,11 @@ Ansible Tower Workflows are widely used in by the industry to orchestrate and go
 
 CloudForms is using the concept of Providers, to integrate with other systems. Each Provider integration takes care of building and maintaining an up to date inventory, executing operational tasks, listening to events, and some also support features like Metric Collection or more.  
   
-The existing Ansible Tower Provider was extended to include existing Workflows into the inventory. If an Ansible Tower Provider was already configured, CloudForms will automatically add the Workflows to its inventory, after the Upgrade to 4.7 was successfully rolled out. Instructions on how to upgrade CloudForms to 4.7, can be found in the [Migrating to Red Hat CloudForms 4.7] (<https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html/migrating_to_red_hat_cloudforms_4.7/index>) guide.
+The existing Ansible Tower Provider was extended to include existing Workflows into the inventory. If an Ansible Tower Provider was already configured, CloudForms will automatically add the Workflows to its inventory, after the Upgrade to 4.7 was successfully rolled out. Instructions on how to upgrade CloudForms to 4.7, can be found in the [Migrating to Red Hat CloudForms 4.7](<https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/html/migrating_to_red_hat_cloudforms_4.7/index>) guide.
 
 Adding a new Ansible Tower Provider is very simple. Navigate to “Automation”, “Ansible Tower”, “Explorer” and click on “Configuration”, “Add a new Provider”.  
 
-Workflows have been introduced with Ansible Tower 3.1. Instructions on how to create and use Workflows can be found in the [Ansible Tower Documentation] (<https://docs.ansible.com/ansible-tower/latest/html/userguide/workflow_templates.html>).
+Workflows have been introduced with Ansible Tower 3.1. Instructions on how to create and use Workflows can be found in the [Ansible Tower Documentation](<https://docs.ansible.com/ansible-tower/latest/html/userguide/workflow_templates.html>).
 
 ## Ansible Tower Workflows ##
 

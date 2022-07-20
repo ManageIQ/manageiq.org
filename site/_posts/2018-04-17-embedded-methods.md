@@ -9,11 +9,11 @@ One of the exciting new features in CloudForms 4.6 within Automate is Embedd
 
 (In an attempt to maintain some sanity, I’m capitalizing words like Method when in the Automate sense, and leaving them lowercase when referring to the wholly unrelated ruby use).
 
-In my experimentation with [Unit Testing] (<https://github.com/jeffwarnica/manageiq-content-sample-tests>), I’ve developed a reasonable and, I think, future proof process for doing this. The implementation is very flexible, allows for multiple Methods to be embedded in the caller. Otherwise, I think, ad-hoc conventions could cause a lot of trouble if not used with some rigor.
+In my experimentation with [Unit Testing](<https://github.com/jeffwarnica/manageiq-content-sample-tests>), I’ve developed a reasonable and, I think, future proof process for doing this. The implementation is very flexible, allows for multiple Methods to be embedded in the caller. Otherwise, I think, ad-hoc conventions could cause a lot of trouble if not used with some rigor.
 
 From the Calling Method, there is a new area in the UI to load in additional Methods. You may embed multiple Methods, but the embedding is not recursive; that is, if the target Method is configured to embed Methods, those will not be loaded.
 
-The method-to-be-Embedded, which I’ll call the Library Method needs no special configuration, though my strategy does require both methods to be coded in the [new style using classes] (<https://github.com/ManageIQ/manageiq-content/issues/8>).  The Library Method couldhave “bare code”, that is, code not even in a ruby method, but that would almost always be a bad idea, as it would run unconditionally and be nigh impossible to troubleshoot.
+The method-to-be-Embedded, which I’ll call the Library Method needs no special configuration, though my strategy does require both methods to be coded in the [new style using classes](<https://github.com/ManageIQ/manageiq-content/issues/8>).  The Library Method couldhave “bare code”, that is, code not even in a ruby method, but that would almost always be a bad idea, as it would run unconditionally and be nigh impossible to troubleshoot.
 
 The ruby module/module/module namespaces match the Automate Domain/Namespace/Namespace/Class names. The Library Method’s name is not relevant. It is probably a good idea too, when configuring the calling Method, to always include the Domain Prefix in the method.
 

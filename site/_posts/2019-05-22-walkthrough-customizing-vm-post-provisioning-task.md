@@ -97,7 +97,7 @@ Add the new states i.e. AddDisk. Make sure it is added after Post provision stat
 
 ## STEP 4. Add Our New Instance to the Copied State Machine ##
 
-Now we edit our copied Provision VM from Template state machine instance to add the AddDisk instance URIs to the appropriate steps (see [Adding the instance URIs to the provisioning state machine] (<https://pemcg.gitbooks.io/mastering-automation-in-cloudforms-and-manageiq/content/chapter22.html#c22i7>)).
+Now we edit our copied Provision VM from Template state machine instance to add the AddDisk instance URIs to the appropriate steps (see [Adding the instance URIs to the provisioning state machine](<https://pemcg.gitbooks.io/mastering-automation-in-cloudforms-and-manageiq/content/chapter22.html#c22i7>)).
 
 ## STEP 5:  Order a Service Catalog so to provision new vm with additional disk ##
 

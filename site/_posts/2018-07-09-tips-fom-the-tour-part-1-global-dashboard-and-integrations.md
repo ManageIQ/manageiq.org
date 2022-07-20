@@ -42,9 +42,9 @@ The most relevant data shown is:
 
 Downloads link:
 
-[Reports] (<https://gitlab.com/cloudformsredhat/infrastructure-tour-italy-18/blob/master/Single%20Pane%20of%20Glass%20Management/Reports_20170202_110821.yaml>)
+[Reports](<https://gitlab.com/cloudformsredhat/infrastructure-tour-italy-18/blob/master/Single%20Pane%20of%20Glass%20Management/Reports_20170202_110821.yaml>)
 
-[Widget] (<https://gitlab.com/cloudformsredhat/infrastructure-tour-italy-18/blob/master/Single%20Pane%20of%20Glass%20Management/OSD-widget_export_20171102_173332.yml>)
+[Widget](<https://gitlab.com/cloudformsredhat/infrastructure-tour-italy-18/blob/master/Single%20Pane%20of%20Glass%20Management/OSD-widget_export_20171102_173332.yml>)
 
 (<https://drive.google.com/open?id=0B_X4gkJXuSvyRy1KNFA3bm04NTA>)
 

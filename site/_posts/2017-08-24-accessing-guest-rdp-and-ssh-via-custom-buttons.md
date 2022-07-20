@@ -117,11 +117,11 @@ Select the SSH console button, after 2-5 seconds the browser should launch your 
 
 You maybe prompted by your browser as follows;
 
-Terminal is default installed on Mac OS X, CentOS, Red Hat Enterprise Linux but you will need to install a terminal application on Windows machines, such as [PuTTY] (<https://www.putty.org>).
+Terminal is default installed on Mac OS X, CentOS, Red Hat Enterprise Linux but you will need to install a terminal application on Windows machines, such as [PuTTY](<https://www.putty.org>).
 
 ## Summary ##
 
 This concludes how to add custom buttons to CloudForms for SSH and RDP virtual machine access.
-Further information to the actual implementation of “Open URL” in custom buttons can be found in this ManageIQ [Pull Request] (<https://github.com/ManageIQ/manageiq/pull/10118>).
+Further information to the actual implementation of “Open URL” in custom buttons can be found in this ManageIQ [Pull Request](<https://github.com/ManageIQ/manageiq/pull/10118>).
 
 We will improve this blog in time by showing you how you can use wildcard instances and assertions in Automate so that you have “launch_url_console”, and instances and methods automatically select the right scheme based on the operating system type. Also some more robustness around using public or private ip addresses and hostnames.

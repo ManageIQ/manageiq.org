@@ -19,7 +19,7 @@ Specifically, what we show in this video is how to:
 
  (<https://www.youtube.com/watch?v=2Fky4S9hzJw&feature=emb_title>)
   
-The Red Hat Knowledge Base article, including the necessary playbooks to implement this example, are available on this [Red Hat Knowledge Base] (<https://access.redhat.com/articles/3062981>) article.
+The Red Hat Knowledge Base article, including the necessary playbooks to implement this example, are available on this [Red Hat Knowledge Base](<https://access.redhat.com/articles/3062981>) article.
 
 Please note that you need to install pysphere from the appliance console for the playbook to run:
 

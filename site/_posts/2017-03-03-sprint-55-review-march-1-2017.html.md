@@ -119,7 +119,7 @@ On a parting note, have a look at some [moments](https://twitter.com/i/moments/8
   - Add multiselect option to dropdowns [(#10270)](https://github.com/ManageIQ/manageiq/pull/10270)
   - Core changes for Ansible Tower Playbooks & Repositories UI [(#13731)](https://github.com/ManageIQ/manageiq/pull/13731)
   - Core changes for Ansible Credentials UI [(#14020)](https://github.com/ManageIQ/manageiq/pull/14020)
-  - See also [Manageiq/manageiq-ui-classic changelog] (https://github.com/ManageIQ/manageiq-ui-classic/pull/461)
+  - See also [Manageiq/manageiq-ui-classic changelog](https://github.com/ManageIQ/manageiq-ui-classic/pull/461)
 
 #### Changed
 

@@ -20,7 +20,7 @@ It can enforce policies for container hosts, and marks the nodes that are not co
   
 CloudForms also provides reporting for container sources. For example, it can identify containers that come from untrusted registries.
   
-Finally it can scan the content of container images using [OpenSCAP] (<https://www.open-scap.org>) for standardized security checks. When an image is identified as non-compliant, all running containers instantiated from this image can be flagged automatically.
+Finally it can scan the content of container images using [OpenSCAP](<https://www.open-scap.org>) for standardized security checks. When an image is identified as non-compliant, all running containers instantiated from this image can be flagged automatically.
   
 The following video demonstration highlights these capabilities in CloudForms:
 

@@ -120,5 +120,5 @@ There are a few rules we try to follow when we plan tagging:
 
 Tags are a very simple and yet powerful way to manage access control lists. Used properly, they can provide greater flexibility and manageability in CloudForms. For more information on tags and access control, see the following resources:
 
-[Creating and Using Tags in Red Hat CloudForms] (<https://access.redhat.com/articles/421423>)
-[Planning your CloudForms tagging taxonomy] (<https://www.youtube.com/watch?v=C5nBexDu2ug>)
+[Creating and Using Tags in Red Hat CloudForms](<https://access.redhat.com/articles/421423>)
+[Planning your CloudForms tagging taxonomy](<https://www.youtube.com/watch?v=C5nBexDu2ug>)

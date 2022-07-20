@@ -109,4 +109,4 @@ A good place to troubleshoot is to look into standard log files under /var/www/m
 
 ## Conclusion ##
 
-I hope after reading this article you will get basic understanding about how CloudForms can be managed via REST API’s. You can find the full Rest API [documentation] (<https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.6/html/red_hat_cloudforms_rest_api/index>) here.
+I hope after reading this article you will get basic understanding about how CloudForms can be managed via REST API’s. You can find the full Rest API [documentation](<https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.6/html/red_hat_cloudforms_rest_api/index>) here.

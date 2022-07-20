@@ -47,7 +47,7 @@ There are two tags required to be set for the system to work,
   
 ## Implementation ##
 
-Materials and instructions required to implement this solution are available [here] (<https://github.com/jonnyfiveiq/CloudFORMSNOW/tree/master/Billing_Sample>).
+Materials and instructions required to implement this solution are available [here](<https://github.com/jonnyfiveiq/CloudFORMSNOW/tree/master/Billing_Sample>).
 
 Step 0 – Red Hat Consulting Scripts (pre-requirement)
 
