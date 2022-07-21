@@ -29,7 +29,7 @@ The first example playbook uses the CloudForms RESTful API to write the retrieve
   
 ## Using the manageiq-vmdb Ansible Role ##
 
-The second example playbook uses the manageiq-vmdb Ansible role ([GitHub – syncrou/manageiq-vmdb: Manageiq Role to modify / lookup vmdb objects] (<https://github.com/syncrou/manageiq-vmdb>)) to write the retrieved IP details back into the provision task’s options hash. Once again the IP address, netmask and gateway are defined as static vars for simplicity of illustration.
+The second example playbook uses the manageiq-vmdb Ansible role ([GitHub – syncrou/manageiq-vmdb: Manageiq Role to modify / lookup vmdb objects](<https://github.com/syncrou/manageiq-vmdb>)) to write the retrieved IP details back into the provision task’s options hash. Once again the IP address, netmask and gateway are defined as static vars for simplicity of illustration.
   
 ---- name: Acquire and Set an IP Address  hosts: all  gather_facts: no  vars:  - ip_addr: 192.168.1.66  - netmask: 24  - gateway: 192.168.1.254  - auto_commit: true  - manageiq_validate_certs: false        roles:    - syncrou.manageiq-vmdb       tasks:  - debug: var=miq_provision_id  - debug: var=miq_provision_request_id    - name: Get the task vmdb object    manageiq_vmdb:      href: "provision_requests/{{ miq_provision_request_id }}/request_tasks/{{ miq_provision_id }}"    register: task_object      - name: Update Task with new IP and Hostname Information    manageiq_vmdb:      vmdb: "{{ task_object }}"      action: edit      data:        options:          addr_mode: ["static", "Static"]          ip_addr: "{{ ip_addr }}"          subnet_mask: "{{ netmask }}"          gateway: "{{ gateway }}"
   

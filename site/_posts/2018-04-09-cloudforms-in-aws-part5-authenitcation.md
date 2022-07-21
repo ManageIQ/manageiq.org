@@ -18,7 +18,7 @@ Once done create a new user and assign it to the EvmGroup-super_administrator.  
 brad.
 
 Now, this is important. The
-[CloudForms authentication guide] (<https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.6/html-single/managing_authentication_for_cloudforms/index#amazon_settings>)
+[CloudForms authentication guide](<https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.6/html-single/managing_authentication_for_cloudforms/index#amazon_settings>)
 says clearly that the username and password is the user’s Access Key and Secret Key password. This
 means that the user needs programmatic access at creation time.
 

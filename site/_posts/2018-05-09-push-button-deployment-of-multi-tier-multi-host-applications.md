@@ -6,7 +6,7 @@ author: Laurent Domb
 ---
 
 Here is the video of the live demo Maxim Burgerhout and myself performed at
-[Red Hat Summit in San Francisco 2018] (<https://agenda.summit.redhat.com/SessionDetail.aspx?id=153563>).
+[Red Hat Summit in San Francisco 2018](<https://agenda.summit.redhat.com/SessionDetail.aspx?id=153563>).
 
 It shows how you can make use of CloudForms’ ansible inside (zero ruby) to deploy a multitier,
 multihost application across Windows and Linux, interact with F5 load balancers, register to

@@ -16,5 +16,5 @@ In the article, several key topics are discussed, such as:
 * Unit Testing
 * Code Documentation with RDoc
   
-Anyone who works with Automate in CloudForms should review [Christian’s article] (<https://www.jung-christian.de/post/2017/10/automate-best-practice/>).
-Additional documentation on Automation in Red Hat CloudForms can be found on the [product documentation] (<https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/>) as well as on the comprehensive book from Peter McGowan on Mastering Automation in CloudForms.
+Anyone who works with Automate in CloudForms should review [Christian’s article](<https://www.jung-christian.de/post/2017/10/automate-best-practice/>).
+Additional documentation on Automation in Red Hat CloudForms can be found on the [product documentation](<https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.7/>) as well as on the comprehensive book from Peter McGowan on Mastering Automation in CloudForms.

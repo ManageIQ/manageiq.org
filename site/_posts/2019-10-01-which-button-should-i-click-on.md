@@ -18,7 +18,7 @@ We are part of the Red Hat User Experience Design team (UXD team) which is worki
 
 “Design in the open”  
 
-We apply open source ideas to the design, testing, and development of products and technology solutions across our entire portfolio, not just CloudForms. We work in upstream communities, like [ManageIQ] (<https://www.manageiq.org>), where innovation benefits from this open collaboration. We also created [PatternFly] (<https://www.patternfly.org/v4/>), an open-source design system that provides common resources to design and build responsive, accessible user experiences.
+We apply open source ideas to the design, testing, and development of products and technology solutions across our entire portfolio, not just CloudForms. We work in upstream communities, like [ManageIQ](<https://www.manageiq.org>), where innovation benefits from this open collaboration. We also created [PatternFly](<https://www.patternfly.org/v4/>), an open-source design system that provides common resources to design and build responsive, accessible user experiences.
 
 PatternFly design system
 

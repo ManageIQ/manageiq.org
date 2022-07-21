@@ -38,11 +38,11 @@ the areas of operational efficiency, service health, security and compliance, an
 management.
   
 We invite you to try CloudForms in your environment. One of the easier way is to instantiate the
-[CloudForms container image] (<https://catalog.redhat.com/software/containers/registry/registry.access.redhat.com/repository/cloudforms45/cfme-openshift-app?container-tabs=overview>)
+[CloudForms container image](<https://catalog.redhat.com/software/containers/registry/registry.access.redhat.com/repository/cloudforms45/cfme-openshift-app?container-tabs=overview>)
 directly from the Red Hat Container Catalog, and get started in managing your OpenShift container
 environment.
   
 Furthermore, additional resources on Red Hat Management can be found on
-[Accelerate I.T. services delivery] (<https://www.redhat.com/en/solutions/it-automation>)
+[Accelerate I.T. services delivery](<https://www.redhat.com/en/solutions/it-automation>)
 and
-[Automate I.T. Processes] (<https://www.redhat.com/en/solutions/it-automation>).
+[Automate I.T. Processes](<https://www.redhat.com/en/solutions/it-automation>).

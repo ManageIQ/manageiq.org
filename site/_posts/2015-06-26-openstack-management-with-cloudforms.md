@@ -13,7 +13,7 @@ Here are my slides from Red Hat Summit, its a repeat of the OpenStack Summit pre
 2. It now includes the Heat/Cloudformations orchestration demonstration.
 
 Here are the slides, the videos can be found in links after each relevant slide. Enjoy!
-Here is a PDF copy too…[OpenStack Management] (<https://videos.cdn.redhat.com/summit2015/presentations/13795_openstack-infrastructure-management-with-red-hat-cloudforms.pdf>)
+Here is a PDF copy too…[OpenStack Management](<https://videos.cdn.redhat.com/summit2015/presentations/13795_openstack-infrastructure-management-with-red-hat-cloudforms.pdf>)
 
 OpenStack – Power, Provision & Console
 (<https://youtu.be/ByeCXMM-5z4>)

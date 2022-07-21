@@ -33,13 +33,13 @@ cloud-configssh_pwauth: truedisable_root: falseusers: - default - name: ansible-
 
 ## Making the Automate Changes ##
 
-We make the following changes in the automate datastore (or import the [Example automate domain] (<https://github.com/jeromemarc/cloudforms-service-bundle-ansible/blob/master/example_domain.zip]>)):
+We make the following changes in the automate datastore (or import the [Example automate domain](<https://github.com/jeromemarc/cloudforms-service-bundle-ansible/blob/master/example_domain.zip]>)):
   
 1 Copy the /AutomationManagement/AnsibleTower/Service/Provisioning/StateMachines/Provision/CatalogItemInitializationinstance to a new domain, and rename it to provision_from_bundle. This state machine will be the Provisioning Entry Point for the Ansible Tower service item.
   
 2 Edit the pre2 stage of the copied state machine to be Method::preprovision_from_bundle, as follows:
 
-3 Copy the attached [preprovision_from_bundle] (<https://github.com/jeromemarc/cloudforms-service-bundle-ansible/blob/master/preprovision_from_bundle.rb>) method to the /AutomationManagement/AnsibleTower/Service/Provisioning/StateMachines/Provision class. This method is a slightly edited version of the default /AutomationManagement/AnsibleTower/Service/Provisioning/StateMachines/Provision/provision method. It traverses the automate objects to find the :vm_target_name options hash variable that was used in the previous provisioning operation, and it does this by locating a ServiceTemplateProvisionTask with a provision_priority one less than the currently running task. By searching for a relative provision priority in this way the method will work correctly even with more complex multi-item bundles. The following diagram illustrates the objects traversed:
+3 Copy the attached [preprovision_from_bundle](<https://github.com/jeromemarc/cloudforms-service-bundle-ansible/blob/master/preprovision_from_bundle.rb>) method to the /AutomationManagement/AnsibleTower/Service/Provisioning/StateMachines/Provision class. This method is a slightly edited version of the default /AutomationManagement/AnsibleTower/Service/Provisioning/StateMachines/Provision/provision method. It traverses the automate objects to find the :vm_target_name options hash variable that was used in the previous provisioning operation, and it does this by locating a ServiceTemplateProvisionTask with a provision_priority one less than the currently running task. By searching for a relative provision priority in this way the method will work correctly even with more complex multi-item bundles. The following diagram illustrates the objects traversed:
 
 After making these changes the class should look like the following:
 

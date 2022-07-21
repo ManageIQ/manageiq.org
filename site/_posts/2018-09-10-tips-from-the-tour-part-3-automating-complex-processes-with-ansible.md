@@ -37,7 +37,7 @@ After the event as you can imagine, I used the same demo to show to our customer
 
 After few days in my mind comes a new idea: my demo needs to be fully automated!
 
-In the [past] (<https://developers.redhat.com/blog/2017/11/02/build-software-defined-data-center-red-hat-cloudforms-openstack-2/>) I have done something similar in an OpenStack/Cloudforms environment using Heat.
+In the [past](<https://developers.redhat.com/blog/2017/11/02/build-software-defined-data-center-red-hat-cloudforms-openstack-2/>) I have done something similar in an OpenStack/Cloudforms environment using Heat.
 
 I did the same but using a public cloud provider and the power of Ansible
 
@@ -63,7 +63,7 @@ In the main dir there are: 
   
 1. setup.ini file [1] where basically we need to configure some basic stuff in order to configure the environment. There are 3 sections:   [tower], [rhsm], [gce], and we have to write down on the [tower]section,  the version we want to install, the tower’s admin password (tower_password variable), etc.
 
-We need also to declare our Red Hat Customer Portal user in order to register our instances to the Red Hat Portal under the [rhsm] section. The password is not a clear text password, instead, the playbook will use vault. You can refer to [this document] (<https://docs.ansible.com/ansible/latest/user_guide/playbooks_vault.html>) in order to correctly encrypt your password encoding it inside the playbook yaml file.As prerequisites on GCE side, we have to:
+We need also to declare our Red Hat Customer Portal user in order to register our instances to the Red Hat Portal under the [rhsm] section. The password is not a clear text password, instead, the playbook will use vault. You can refer to [this document](<https://docs.ansible.com/ansible/latest/user_guide/playbooks_vault.html>) in order to correctly encrypt your password encoding it inside the playbook yaml file.As prerequisites on GCE side, we have to:
 
 * create two service accounts:
   * the first one called service_account_instance_creation@xxxxx which will be used to create instances on GCE. You need also to download it in JSON format and use it as credentials
@@ -113,7 +113,7 @@ Nagios configured with hostgroups and services
 
 In addition, the Haproxy server will balance the two web servers in a round robin fashion.
 
-Of course during the demo setup (runtime)  we could also execute the template using the available module [tower_job_launch] (<https://docs.ansible.com/ansible/2.6/modules/tower_job_launch_module.>) but in this case I would like to show how quickly this template can avoid spending your time on repetitive and boring tasks executing it manually from the Tower UI
+Of course during the demo setup (runtime)  we could also execute the template using the available module [tower_job_launch](<https://docs.ansible.com/ansible/2.6/modules/tower_job_launch_module.>) but in this case I would like to show how quickly this template can avoid spending your time on repetitive and boring tasks executing it manually from the Tower UI
   
 I have also configured other templates able to:
 
@@ -146,9 +146,9 @@ Then I have configured a workflow to execute those playbooks in a consistent way
   
 The result is a rhel server where the Standard System Security Profile (ssg-rhel7-ds.xml) was used as a baseline and applied to the system.
 
-The report is loaded on git repo automatically by the playbook “UC-8 [Security] – Openscap Security Scan “ and can be viewed [here] (<https://htmlpreview.github.io/?https://raw.githubusercontent.com/MikeNald/ansible-tower-examples/master/security/report/rhel-scap-scan-xccdf-report.html>)
+The report is loaded on git repo automatically by the playbook “UC-8 [Security] – Openscap Security Scan “ and can be viewed [here](<https://htmlpreview.github.io/?https://raw.githubusercontent.com/MikeNald/ansible-tower-examples/master/security/report/rhel-scap-scan-xccdf-report.html>)
 
-Another example is the fully automated [Insight Integration] (<https://docs.ansible.com/ansible-tower/latest/html/userguide/insights.html>) in order to proactively resolve possible wrong configurations or security issues on systems executing pre-configured ansible playbooks made available from Insights.
+Another example is the fully automated [Insight Integration](<https://docs.ansible.com/ansible-tower/latest/html/userguide/insights.html>) in order to proactively resolve possible wrong configurations or security issues on systems executing pre-configured ansible playbooks made available from Insights.
   
 Resources:
   

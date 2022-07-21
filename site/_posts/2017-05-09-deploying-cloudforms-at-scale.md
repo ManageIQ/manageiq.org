@@ -7,7 +7,7 @@ author: Peter McGowan
 
 One of the challenges of deploying CloudForms to manage a large environment is knowing how to tune it – what knobs to turn and dials to watch for.
 
-Red Hat’s Systems Engineering team have just completed a document entitled “[Deploying CloudForms at Scale] (<https://access.redhat.com/documentation/en-us/reference_architectures/2017/html/deploying_cloudforms_at_scale/index>)”. This describes the architectural components that affect large-scale deployment, and details the monitoring, troubleshooting and scaling measures that can be taken to optimally tune each component.
+Red Hat’s Systems Engineering team have just completed a document entitled “[Deploying CloudForms at Scale](<https://access.redhat.com/documentation/en-us/reference_architectures/2017/html/deploying_cloudforms_at_scale/index>)”. This describes the architectural components that affect large-scale deployment, and details the monitoring, troubleshooting and scaling measures that can be taken to optimally tune each component.
 
 The document is divided into three sections:
 
