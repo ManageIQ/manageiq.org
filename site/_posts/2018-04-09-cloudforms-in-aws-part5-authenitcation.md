@@ -1,7 +1,7 @@
 ---
 title: CloudForms in AWS part 5 (authentication)
 date: 2018-04-09
-tags: aws cloudforms aws, cloudforms, series 
+tags: aws cloudforms series
 author: Laurent Domb
 ---
 

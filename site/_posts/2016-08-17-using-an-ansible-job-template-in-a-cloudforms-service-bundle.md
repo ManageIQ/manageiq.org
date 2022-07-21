@@ -1,7 +1,7 @@
 ---
 title: Using an Ansible Job Template in a CloudForms Service Bundle 
 date: 2016-08-17
-tags: ansible cloudforms ansible, cloudforms
+tags: ansible cloudforms
 author: Jerome Marc
 ---
 

@@ -1,7 +1,7 @@
 ---     
 title: Posting CloudForms Notifications to Slack
 date: 2017-04-12
-tags: cloudformscloudforms slack
+tags: cloudforms slack
 author: Nick Catling
 ---
 

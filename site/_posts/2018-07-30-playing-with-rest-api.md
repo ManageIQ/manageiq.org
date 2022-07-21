@@ -1,7 +1,7 @@
 ---
 title: Playing with REST API
 date: 2018-07-30
-tags: cloudforms api, cloudforms, rest api 
+tags: cloudforms api rest
 author: Imaanpreet Kaur
 ---
 

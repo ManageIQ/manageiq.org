@@ -1,7 +1,7 @@
 ---     
 title: Implementing Continuous Integration for CloudForms using Git and Travis
 date: 2017-11-24
-tags: cloudforms management operations show 
+tags: cloudforms management operations show
 author: Victor Estival Lopez
 ---
 

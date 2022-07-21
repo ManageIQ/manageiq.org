@@ -1,7 +1,7 @@
 ---
 title: Configuration of an Ansible Tower provider in CloudForms 
 date: 2016-07-29
-tags: ansible cloudforms ansible
+tags: ansible cloudforms
 author: Jerome Marc
 ---
 

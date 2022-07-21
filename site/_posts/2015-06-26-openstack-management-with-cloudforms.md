@@ -1,7 +1,7 @@
 ---     
 title: OpenStack Management with CloudForms
 date: 2015-06-26
-tags: uncategorized automate, cloud formations, cloud forms, heat, openstack, scale
+tags: automate cloudformation cloudforms heat openstack scale
 author: John Hardy
 ---
 

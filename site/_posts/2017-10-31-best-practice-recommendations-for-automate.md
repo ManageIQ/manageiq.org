@@ -1,7 +1,7 @@
 ---
 title: Best Practice Recommendations for Automate
 date: 2017-10-31
-tags: cloudforms management operations automate, best practices cloudforms 
+tags: cloudforms management operations automate best-practices
 author: Victor Estival Lopez
 ---
  

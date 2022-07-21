@@ -1,7 +1,7 @@
 ---
 title: Embedded Methods 
 date: 2018-04-17
-tags: cloudforms automate, cfme, cloudforms, methods 
+tags: cloudforms automate methods
 author: Jeff Warnica
 ---
 

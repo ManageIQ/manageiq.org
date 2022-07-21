@@ -1,7 +1,7 @@
 ---     
 title: Deploy web servers, update load balancers and more – no Ruby required
 date: 2018-04-24
-tags: ansible cloudforms ansible, cloudforms 
+tags: ansible cloudforms
 author: Laurent Domb
 ---
  

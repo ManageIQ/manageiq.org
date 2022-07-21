@@ -1,7 +1,7 @@
 ---
 title: inspectXML – Dump objects as XML
 date: 2013-11-20
-tags: external operations cloudforms, vmware, rhev, kvm, cluster, vm, datastore, cf2, cf3, cfme, XML, XML format
+tags: external operations cloudforms vmware rhev kvm cluster vm datastore XML
 author: John Hardy
 ---
 

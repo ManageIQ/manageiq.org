@@ -1,7 +1,7 @@
 ---
 title: CloudForms in AWS Summary and Recap
 date: 2018-04-10
-tags: aws cloudforms aws, cfme, cloudforms
+tags: aws cloudforms
 author: Laurent Domb and Victor Estival Lopez
 ---
 

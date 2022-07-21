@@ -1,7 +1,7 @@
 ---
 title: Tips from the tour part 2 - Drift analysis and more integrations 
 date: 2018-07-16
-tags: cloudforms cloudforms
+tags: cloudforms
 author: Rinaldo Bergamini and Michele Naldini
 ---
 
