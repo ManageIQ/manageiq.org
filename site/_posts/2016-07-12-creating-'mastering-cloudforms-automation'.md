@@ -5,7 +5,7 @@ tags: cloudforms automate
 author: Peter McGowan, Marty Wesley
 ---
 
-In this post, we speak with Peter McGowan, author of Mastering CloudForms Automation, to find out about his interest in CloudForms automation and the process behind bringing his book to reality. You can download an electronic copy of the book from the [Red Hat Customer Portal](<https://access.redhat.com/mastering-cloudforms-automation>). ([Addendum for CloudForms 4.5 & 4.6](<https://manageiq.gitbook.io/mastering-cloudforms-automation-addendum/>))
+In this post, we speak with Peter McGowan, author of Mastering CloudForms Automation, to find out about his interest in CloudForms automation and the process behind bringing his book to reality. You can download an electronic copy of the book from the [Red Hat Customer Portal](<https://access.redhat.com/mastering-cloudforms-automation>). ([Addendum for CloudForms 4.5 & 4.6](<https://manageiq.gitbook.io/mastering-cloudforms-automation-addendum/>))
 
 ## How did you get started working on CloudForms? ##
 
@@ -15,13 +15,13 @@ I started working with CloudForms shortly after Red Hat acquired ManageIQ, and w
 
 I think my real interest in the automation side of CloudForms was sparked from an internal course that I attended, taught by two automate gurus: John Hardy and Brad Ascar from Red Hat. It was an introduction that planted the seeds in my mind of what could be done. I could really see the power of the tool.
 
-That gave me enough knowledge to go and work with the product with some customers, but I soon realised what a huge topic CloudForms automation was, and that the course only really scratched the surface. Getting comfortable with the inner workings of the automate model took months. I’m the sort of person that learns by doing and seeing, so I studied a lot of Ruby code and wrote [object_walker](<https://github.com/pemcg/object_walker>) to help me understand how it all works behind the scenes. I also received a lot of help from the CloudForms community and from within Red Hat.
+That gave me enough knowledge to go and work with the product with some customers, but I soon realised what a huge topic CloudForms automation was, and that the course only really scratched the surface. Getting comfortable with the inner workings of the automate model took months. I’m the sort of person that learns by doing and seeing, so I studied a lot of Ruby code and wrote [object_walker](<https://github.com/pemcg/object_walker>) to help me understand how it all works behind the scenes. I also received a lot of help from the CloudForms community and from within Red Hat.
 
 ## Why did you undertake the effort of writing a book? ##
 
 At the time I was incredibly frustrated by the lack of tutorial style documentation out there. The official docs are written in a reference style, but I often wished there was a book that would guide me through the steps of doing something in automate, with a lot of code samples.
 
-One of Red Hat’s EMEA consultants, Adrian Bradshaw, wrote a how-to guide for Red Hat Satellite 6 and published it as an open source GitBook. Inspired by his example, I started writing the [CloudForms & ManageIQ Automation How-To Guide](<https://www.gitbook.com/?utm_source=legacy&utm_medium=redirect&utm_campaign=close_legacy>) on GitBook to pass on the knowledge that I was learning in the format that I thought was missing. It took around 9 months to complete, and ended up covering about 60 topics. A lot of people contributed code and ideas and I kept learning more and discovering additional topics to investigate and write about, so it just grew organically.
+One of Red Hat’s EMEA consultants, Adrian Bradshaw, wrote a how-to guide for Red Hat Satellite 6 and published it as an open source GitBook. Inspired by his example, I started writing the [CloudForms & ManageIQ Automation How-To Guide](<https://www.gitbook.com/?utm_source=legacy&utm_medium=redirect&utm_campaign=close_legacy>) on GitBook to pass on the knowledge that I was learning in the format that I thought was missing. It took around 9 months to complete, and ended up covering about 60 topics. A lot of people contributed code and ideas and I kept learning more and discovering additional topics to investigate and write about, so it just grew organically.
 
 ## What was the hardest part of the effort? ##
 
@@ -58,7 +58,7 @@ From a technical point of view, the more I’ve discovered about Ruby and Rails,
 
 ## Was there a particular highlight that you’d like to share? ##
 
-I think there are probably three that really spring to mind. I’ve read O’Reilly books for many years, and I have a nice little collection on the bookshelf in my study at home. I hadn’t realised quite what a “look and feel” they have from a layout and font point of view until I compiled my first build in O’Reilly’s Atlas build system. Seeing my words in an instantly recognisable O’Reilly format gave me a big grin from ear to ear that lasted the rest of the day. Then, I think finding out what my animal was going to be was exciting. O’Reilly allocated an animal  for the CloudForms book, it’s a Red Breasted Goose. And finally seeing the book in print for the first time at the Red Hat Summit was amazing. It was a very proud moment!
+I think there are probably three that really spring to mind. I’ve read O’Reilly books for many years, and I have a nice little collection on the bookshelf in my study at home. I hadn’t realised quite what a “look and feel” they have from a layout and font point of view until I compiled my first build in O’Reilly’s Atlas build system. Seeing my words in an instantly recognisable O’Reilly format gave me a big grin from ear to ear that lasted the rest of the day. Then, I think finding out what my animal was going to be was exciting. O’Reilly allocated an animal  for the CloudForms book, it’s a Red Breasted Goose. And finally seeing the book in print for the first time at the Red Hat Summit was amazing. It was a very proud moment!
 
 ## How do you feel now that it’s done and published? ##
 

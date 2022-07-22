@@ -20,7 +20,7 @@ The newly added attributes are added to the end of the schema, but they need to 
 
 Next, the vm_retirement_emails instance is modified to set the number of days to warn in the vm_retirement_emails instance. Edit the instance, setting warn_days_1 to 30, warn_days_2 to 7, and warn_days_3 to 1. While editing the instance you may want to also change the from_email_address, to_email_address, and signature.
 
-The vm_retirement_emails method is modified to add the update_retirement_warning function. This function changes the number of warning days for the VM. A call to the function is added to the VM Retirement Warning Email and VM Retirement Extended Email sections. The modified method code can be found at (<https://github.com/branic/cloudforms/blob/master/multiple_retirement_emails/vm_retirement_emails.rb>)
+The vm_retirement_emails method is modified to add the update_retirement_warning function. This function changes the number of warning days for the VM. A call to the function is added to the VM Retirement Warning Email and VM Retirement Extended Email sections. The modified method code can be found at (<https://github.com/branic/cloudforms/blob/master/multiple_retirement_emails/vm_retirement_emails.rb>)
 
 Now that the modified code is in place, plumb in our new method by copying the ManageIQ / System / Event / MiqEvent / Policy Event / vm_retire_warn instance to your domain. This time when copying, leave the “Copy to same path” option selected.
 

@@ -43,4 +43,4 @@ An example of this would be a provisioning workflow:
 ## Conclusion ##
 
 These are just some examples of how CloudForms can be used with ServiceNow. They show how a powerful management system, designed and developed in an open way, can be integrated to provide even more benefit.
-Additional details on the integration between ServiceNow and CloudForms can be found in the [Red Hat CloudForms documentation](<https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.2/html-single/integration_with_servicenow/index>).
+Additional details on the integration between ServiceNow and CloudForms can be found in the [Red Hat CloudForms documentation](<https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.2/html-single/integration_with_servicenow/index>).

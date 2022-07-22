@@ -17,45 +17,45 @@ As a user, I wish to be presented the cost of the service I am ordering, along w
 
 This article describes a possible solution which consists in adding a tab to the service dialog to display required information to the end-user.
 
-You can create a tab for that: the ‘Service Costs’ which contains a number of dynamic elements that retrieve tags from your tenant and service template and calculates the quota status.  
+You can create a tab for that: the ‘Service Costs’ which contains a number of dynamic elements that retrieve tags from your tenant and service template and calculates the quota status.  
 Upon ordering, the Service state machine is updated to call a method that updates the remaining budget tag(s) on the tenant. \
 
 In the state pre3 we have connected to an instance/method called “set_your_budget”. Each time a service is ordered the price of that service is deducted from the existing remaining balance tag on the tenant for the user ordering the service.
-  
+  
 ## Service Dialog Automation ##
 
 The methods behind the service dialog are as follows;
 
-* Cost_of_this_service – This method obtains the cost of the service from a tag assigned to the service.
+* Cost_of_this_service – This method obtains the cost of the service from a tag assigned to the service.
 
 Example Tag: cost_of_this_service_10000 or cost_of_this_service_10
 
-* Remaining_budget_after_this_service – This method calculates the subtracting of the cost_of_this_service from the your_budget value.
-* Set_your_budget – Called from the state machine to maintain the state of the tags assigned at the tenant for the user ordering the service. Only one tag should exist and will contain the value for the remaining budget.
+* Remaining_budget_after_this_service – This method calculates the subtracting of the cost_of_this_service from the your_budget value.
+* Set_your_budget – Called from the state machine to maintain the state of the tags assigned at the tenant for the user ordering the service. Only one tag should exist and will contain the value for the remaining budget.
 
 Example Tag : mycompany_budget_9500 or mycompany_budget_10000
 
-* Your_budget –  Returns the remaining budget from the tag assigned at the tenant level.
-* Status – Returns the status message.
+* Your_budget –  Returns the remaining budget from the tag assigned at the tenant level.
+* Status – Returns the status message.
 
 Or
 
 There are two tags required to be set for the system to work,
 
-* cost_of_this_service_< sum> – This tag you assign to the service template, you can have many of these covering different costs for many services, but only one can exist on any one service at any time. The sum is the cost of that service.
-* < companyname>_budget_< sum> – This tag is the tenant budget, it works by company name that is set in the appliance. Only one tag can exist on any one tenant at any time. The sum is the STARTING budget for the tenant. The solution will dynamically create more tags with the same company prefix, and control the assignment of the tags to the tenant when services are ordered. The budget sum decreases each time a service is ordered by the cost of the service being ordered.
-  
+* cost_of_this_service_< sum> – This tag you assign to the service template, you can have many of these covering different costs for many services, but only one can exist on any one service at any time. The sum is the cost of that service.
+* < companyname>_budget_< sum> – This tag is the tenant budget, it works by company name that is set in the appliance. Only one tag can exist on any one tenant at any time. The sum is the STARTING budget for the tenant. The solution will dynamically create more tags with the same company prefix, and control the assignment of the tags to the tenant when services are ordered. The budget sum decreases each time a service is ordered by the cost of the service being ordered.
+  
 ## Implementation ##
 
-Materials and instructions required to implement this solution are available [here](<https://github.com/jonnyfiveiq/CloudFORMSNOW/tree/master/Billing_Sample>).
+Materials and instructions required to implement this solution are available [here](<https://github.com/jonnyfiveiq/CloudFORMSNOW/tree/master/Billing_Sample>).
 
 Step 0 – Red Hat Consulting Scripts (pre-requirement)
 
-The Red Hat Consulting import/export scripts will be used in this example. They can be installed on the appliance following instructions on (<https://github.com/rhtconsulting/cfme-rhconsulting-scripts>)
+The Red Hat Consulting import/export scripts will be used in this example. They can be installed on the appliance following instructions on (<https://github.com/rhtconsulting/cfme-rhconsulting-scripts>)
 
 Step 1 – Clone the Materials
 
-git clone (<https://github.com/jonnyfiveiq/CloudFORMSNOW.git>)
+git clone (<https://github.com/jonnyfiveiq/CloudFORMSNOW.git>)
 
 Step 2 – Import the Tags
 
@@ -63,7 +63,7 @@ miqimport tags CloudFORMSNOW/Billing_Sample/tags/billing.yaml
 
 Step 3 – Import the Sample Dialog
 
-miqimport service_dialogs CloudFORMSNOW/Billing_Sample/dialogs/Billing_Example.yml  
+miqimport service_dialogs CloudFORMSNOW/Billing_Sample/dialogs/Billing_Example.yml  
 
 Step 4 – Import the Automate domain
 
@@ -90,7 +90,7 @@ then
 
 * Tag name & value = redhat_budget_10000
 
-Select your TENANT and tag it with “mycompany_budget_10000”
+Select your TENANT and tag it with “mycompany_budget_10000”
 
 And with the tag assigned.
 
@@ -102,24 +102,24 @@ As part of the service dialog, we can see all pricing and quota information:
 
 Service Costs
 
-Cost of this Service – Show the cost assigned to the service item.
+Cost of this Service – Show the cost assigned to the service item.
 
 Quota
 
-Current Budget – Shows the Current Budget. If this is the first time Billing is being ran, then the value will be the tag you assigned at the tenant.
+Current Budget – Shows the Current Budget. If this is the first time Billing is being ran, then the value will be the tag you assigned at the tenant.
 
-Remaining Budget – Is the Current budget minus the service cost.
+Remaining Budget – Is the Current budget minus the service cost.
 
 Message
 
-Status –  Plain English text to show status of quota.
-Note: This service item example will not deploy anything, but run the generic state machine and return a success.  
-  
+Status –  Plain English text to show status of quota.
+Note: This service item example will not deploy anything, but run the generic state machine and return a success.  
+  
 ## Debugging examples ##
 
 In the Automation log on the appliance that is processing the request, you will find the following output from the “set_your_budget” method.
 
-It shows the Tenant name, along with the currently assigned tag and what it will be changing it too.  
+It shows the Tenant name, along with the currently assigned tag and what it will be changing it too.  
 
 (<)AEMethod set_your_budget>  STARTED /Billing/Dialogs/DynamicElements/set_your_budget
 
