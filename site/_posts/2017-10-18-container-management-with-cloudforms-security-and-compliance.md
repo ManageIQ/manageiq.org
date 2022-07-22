@@ -1,7 +1,7 @@
 ---     
 title: Container Management with CloudForms – Security & Compliance
 date: 2017-10-18
-tags: cloudforms container management compliance openscap security
+tags: cloudforms containers management compliance openscap security
 author: Jerome Marc
 ---
 
