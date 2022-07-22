@@ -1,7 +1,7 @@
 ---     
 title: Automating CloudForms Appliance Deployment with Ansible
 date: 2018-01-24
-tags: AnsibleCloudFormsDeploymentansible appliance cloudforms configuration deployment
+tags: ansible appliance cloudforms configuration deployment
 author: Adam Goosens
 ---
 

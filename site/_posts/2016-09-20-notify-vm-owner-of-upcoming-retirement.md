@@ -1,7 +1,7 @@
 ---
 title: Notify VM Owner of Upcoming Retirement
 date: 2016-09-20
-tags: cloudformsmanagement
+tags: cloudforms management
 author: Brant Evans
 ---
 
