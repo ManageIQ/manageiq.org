@@ -5,8 +5,8 @@ tags: cloudforms container management operations openshift
 author: Jerome Marc
 ---
 
-This blog is part 5 of our series on Container Management with CloudForms].
-  
+This blog is part 5 of our series on Container Management with CloudForms].
+  
 In this last post, we focus on financial management of container environments for both chargeback
 and for optimizing infrastructure resource usage and spending.
 
@@ -32,16 +32,16 @@ The following video demonstration highlights these capabilities in CloudForms:
 
 ## Conclusion ##
 
-This concludes this series of blogs on managing containers at scale with Red Hat CloudForms. As we
+This concludes this series of blogs on managing containers at scale with Red Hat CloudForms. As we
 have seen, we can use CloudForms to addresses all key challenges of running containers at scale, in
 the areas of operational efficiency, service health, security and compliance, and financial
 management.
-  
+  
 We invite you to try CloudForms in your environment. One of the easier way is to instantiate the
 [CloudForms container image](<https://catalog.redhat.com/software/containers/registry/registry.access.redhat.com/repository/cloudforms45/cfme-openshift-app?container-tabs=overview>)
 directly from the Red Hat Container Catalog, and get started in managing your OpenShift container
 environment.
-  
+  
 Furthermore, additional resources on Red Hat Management can be found on
 [Accelerate I.T. services delivery](<https://www.redhat.com/en/solutions/it-automation>)
 and

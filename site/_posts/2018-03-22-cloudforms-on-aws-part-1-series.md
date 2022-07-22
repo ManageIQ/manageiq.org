@@ -7,7 +7,7 @@ author: Laurent Domb
 
 Ever wondered what CloudForms can do for you in AWS? The next few blog posts will walk you through step by step how to upload the CloudForms image to AWS, how to assign the correct policies and roles and how to configure it correctly so it can discover your environment. Part 1 is dedicated to the import and configuration of the CloudForms image.
 
-With the release of CloudForms 4.6 you also have the ability to scan instances in AWS. These blog series will show you how this can be achieved:
+With the release of CloudForms 4.6 you also have the ability to scan instances in AWS. These blog series will show you how this can be achieved:
 
 First, go to the AWS console and launch a free tier Amazon AMI. We are doing this because it already has the aws cli tools installed.
 
@@ -43,7 +43,7 @@ The next step is to create an S3 bucket where we can upload the VHD to later be 
 
 Before we copy any file it’s important to understand that S3 does not have a private endpoint. Thus you would copy the vhd via the internet. If you want to speed things up you can go to your VPC and create an s3 endpoint or a private link. This will speed up the upload of the VHD to the s3 bucket.
 
-Lets copy the cfme-ec2-5.9.0.22-1.x86_64.vhd to the s3 bucket. If you enabled the endpoint you should see speeds like the following:
+Lets copy the cfme-ec2-5.9.0.22-1.x86_64.vhd to the s3 bucket. If you enabled the endpoint you should see speeds like the following:
 
 Once completed you will see the following:
 
@@ -51,7 +51,7 @@ Once completed you will see the following:
   
 upload: ./cfme-ec2-5.9.0.22-1.x86_64.vhd to s3://awscfme59/cfme-ec2-5.9.0.22-1.x86_64.vhd
 
-If you have never imported a VM in AWS you will need to add the following VM import trust policy. Create a file named vm-import.json with the following content:
+If you have never imported a VM in AWS you will need to add the following VM import trust policy. Create a file named vm-import.json with the following content:
 
 {
  "Version": "2012-10-17",
@@ -101,7 +101,7 @@ Go ahead and create the trust policy for the role vmimport:
 }
 }
 
-Next, we will need to add the role policy to allow s3 to list the buckets as well as create the snapshot, convert and register the CloudForms AMI. Create a file named role-policy.json
+Next, we will need to add the role policy to allow s3 to list the buckets as well as create the snapshot, convert and register the CloudForms AMI. Create a file named role-policy.json
 
 {
 "Version":"2012-10-17",
@@ -132,7 +132,7 @@ Next, we will need to add the role policy to allow s3 to list the buckets as wel
 ]
 }
 
-Create the role policy for vmimport
+Create the role policy for vmimport
 [ec2-user@ip-172-31-16-233 ~]$ aws iam put-role-policy --role-name vmimport --policy-name vmimport --policy-document file://role-policy.json
 
 Before we can import the file we need to create one last file named container.json
@@ -167,7 +167,7 @@ Import CloudForms into your AWS account.
  "ImportTaskId": "import-ami-ffut8pit"
 }
 
-The StatusMessage will go from pending to converting to updating, booting, preparing AMI.
+The StatusMessage will go from pending to converting to updating, booting, preparing AMI.
 
 You can view the status by executing the following command.
 
@@ -201,7 +201,7 @@ You can view the status by executing the following command.
  ]
 }
 
-When the task import is finished you will see the field “ImageId“: “ami-140fc869”, in the task output.
+When the task import is finished you will see the field “ImageId“: “ami-140fc869”, in the task output.
 
 [ec2-user@ip-172-31-14-85 ~]$ aws ec2 describe-import-image-tasks --import-task-ids import-ami-ffut8pit
 {
@@ -256,4 +256,4 @@ remove_bucket: awscfme59
 
 Go back to your AWS console and click on my AMI. You should now see your new CloudForms AMI ready to launch.
 
-Once the AMI is done copying you will see the status to available. You are now ready to launch the CFME instance. As an instance type a t2.xlarge should be enough. This is the most cost-effective instance you can get for CFME. Please follow the [installation guide](<https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.6/html-single/installing_red_hat_cloudforms_on_amazon_elastic_compute_cloud_amazon_ec2/index#Configuring-cloudforms>) for the initial setup once the appliance is imported. The next post will explain how to add the AWS provider correctly and what roles and AWS service will need to be enabled for a Smart State Analysis to work.
+Once the AMI is done copying you will see the status to available. You are now ready to launch the CFME instance. As an instance type a t2.xlarge should be enough. This is the most cost-effective instance you can get for CFME. Please follow the [installation guide](<https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.6/html-single/installing_red_hat_cloudforms_on_amazon_elastic_compute_cloud_amazon_ec2/index#Configuring-cloudforms>) for the initial setup once the appliance is imported. The next post will explain how to add the AWS provider correctly and what roles and AWS service will need to be enabled for a Smart State Analysis to work.

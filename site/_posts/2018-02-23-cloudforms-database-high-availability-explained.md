@@ -16,7 +16,7 @@ In this architecture, server A is the primary VMDB, server B is the standby, and
 workers connected to server A database. The CloudForms HA mechanism is based on two elements:
 repmgr and evm failover monitor.
 
-The repmgr tool (see (<https://repmgr.org/>)) runs on both VMDB appliances to keep the databases
+The repmgr tool (see (<https://repmgr.org/>)) runs on both VMDB appliances to keep the databases
 synchronized.
 
 The evm-failover-monitor tool runs on all workers and identifies when the primary VMDB is down to
