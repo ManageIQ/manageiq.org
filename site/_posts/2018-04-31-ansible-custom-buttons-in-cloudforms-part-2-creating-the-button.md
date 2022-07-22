@@ -1,7 +1,7 @@
 ---     
 title: Ansible Custom Buttons in CloudForms (Part 2 creating the button) 
 date: 2018-04-31
-tags: AnsibleCloudFormsansible cloudforms
+tags: ansible cloudforms
 author: Christian Jung
 ---
 

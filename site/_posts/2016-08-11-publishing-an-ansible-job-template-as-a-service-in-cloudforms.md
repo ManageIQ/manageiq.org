@@ -1,7 +1,7 @@
 ---
 title: Publishing an Ansible Job Template as a Service in CloudForms
 date: 2016-08-11
-tags: ansiblecloudformsansible
+tags: ansible cloudforms
 author: Jerome Marc
 ---
 
