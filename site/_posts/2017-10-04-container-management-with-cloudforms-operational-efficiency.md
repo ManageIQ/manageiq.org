@@ -1,7 +1,7 @@
 ---     
 title: Container Management with CloudForms – Operational Efficiency
 date: 2017-10-04
-tags: cloudforms container management operations containers openshift
+tags: cloudforms management operations containers openshift
 author: Jerome Marc
 ---
 

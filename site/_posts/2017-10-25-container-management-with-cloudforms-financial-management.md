@@ -1,7 +1,7 @@
 ---     
 title: Container Management with CloudForms – Financial Management
 date: 2017-10-25
-tags: cloudforms container management operations openshift
+tags: cloudforms containers management operations openshift
 author: Jerome Marc
 ---
 

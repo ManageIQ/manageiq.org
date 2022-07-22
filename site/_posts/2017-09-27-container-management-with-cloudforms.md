@@ -1,7 +1,7 @@
 ---
 title: Container Management with CloudForms
 date: 2017-09-27
-tags: cloudforms container management operations kubernetes openshift
+tags: cloudforms containers management operations kubernetes openshift
 author: Jerome Marc
 ---
 
