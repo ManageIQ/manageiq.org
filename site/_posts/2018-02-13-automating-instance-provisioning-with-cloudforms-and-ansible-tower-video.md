@@ -1,7 +1,7 @@
 ---     
 title: Automating Instance Provisioning with CloudForms and Ansible Tower (Video) 
 date: 2018-02-13
-tags: ansible cloudforms provisioning automation azure microsoft self-service servicenow tower workflows
+tags: ansible ansible-tower cloudforms provisioning automate azure microsoft self-service servicenow workflows
 author: Justin Burine
 ---
 

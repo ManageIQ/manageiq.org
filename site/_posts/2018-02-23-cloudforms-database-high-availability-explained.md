@@ -1,7 +1,7 @@
 ---
 title: CloudForms Database High Availability Explained 
 date: 2018-02-23
-tags: cloudforms internal
+tags: cloudforms HA
 author: Giovanni Fontana
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: CloudForms blog is moving to ManageIQ 
 date: 2020-06-26
-tags: none
+tags: cloudforms
 author: digitalkeri
 ---
 
