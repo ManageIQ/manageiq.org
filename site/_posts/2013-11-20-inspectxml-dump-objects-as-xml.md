@@ -1,7 +1,7 @@
 ---
 title: inspectXML – Dump objects as XML
 date: 2013-11-20
-tags: external operations cloudforms vmware rhev kvm cluster vm datastore XML
+tags: operations cloudforms automate XML
 author: John Hardy
 ---
 

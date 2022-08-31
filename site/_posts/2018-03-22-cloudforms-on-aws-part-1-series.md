@@ -1,7 +1,7 @@
 ---
 title: CloudForms on AWS Part 1 (Series) 
 date: 2018-03-22
-tags: aws cloudforms series
+tags: aws cloudforms
 author: Laurent Domb
 ---
 
