@@ -1,16 +1,16 @@
 stable:
   type: stable
-  name: Najdorf-1
-  tag: najdorf-1.3
-  filename: najdorf-1.3
-  branch: najdorf
+  name: Oparin-1
+  tag: oparin-1.1
+  filename: oparin-1.1
+  branch: oparin
 
 # prerelease:
 #   type: prerelease
-#   name: Najdorf-1-Beta1
-#   tag: najdorf-1-beta1
-#   filename: najdorf-1-beta1
-#   branch: najdorf
+#   name: Foo-1-Beta1
+#   tag: foo-1-beta1
+#   filename: foo-1-beta1
+#   branch: foo
 
 devel:
   type: devel
