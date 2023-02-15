@@ -20,6 +20,9 @@ module Miq
       # Where do the docs live?
       @repo     = ENV["MIQ_REF_REPO"] || "https://github.com/ManageIQ/manageiq-documentation.git"
 
+      # What branch should we build as the master branch (useful for local development)
+      @master_branch = ENV["MIQ_REF_MASTER"] || "master"
+
       # What branches to copy?
       @branches = Miq.doc_branches
 
@@ -83,7 +86,7 @@ module Miq
         logger.info "Building ref docs for #{branch}"
         shell [
           "cd #{tmp_dir}",
-          "git checkout #{branch}",
+          "git checkout #{branch == "master" ? @master_branch : branch}",
           "#{bundler} exec rake clean build"
         ].join(" && ")
 
