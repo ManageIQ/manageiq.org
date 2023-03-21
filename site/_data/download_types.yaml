@@ -24,10 +24,6 @@
   download_platform: azure
   ext: zip
 
-- name: Microsoft SCVMM
-  download_platform: hyperv
-  ext: zip
-
 - name: OpenShift
   download_platform: podified
 
