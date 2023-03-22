@@ -3,11 +3,6 @@
   name: VMWare vSphere
   img: inline_svg/platforms/vmware.svg
 
-- id: msscvmm
-  inline: true
-  name: Microsoft System Center Virtual Machine Manager
-  img: inline_svg/platforms/msscvmm.svg
-
 - id: ovirt
   inline: true
   name: oVirt
