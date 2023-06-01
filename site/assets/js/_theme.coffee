@@ -1,9 +1,9 @@
-miq.light_theme      = "light-theme"
-miq.dark_theme       = "dark-theme"
+miq.light_theme     = "light-theme"
+miq.dark_theme      = "dark-theme"
 miq.storage_key     = "miq-theme"
 miq.button_selector = "[data-toggle-theme]"
 miq.html_doc        = miq.select("html")
-miq.theme_button    = miq.select(miq.button_selector)
+miq.theme_buttons   = miq.selectAll(miq.button_selector)
 
 miq.set_theme = (was, now) ->
   miq.html_doc.classList.add(now)
@@ -30,4 +30,5 @@ miq.handle_button_click = ->
     else
       miq.set_theme(miq.light_theme, miq.dark_theme)
 
-miq.theme_button.addEventListener("click", miq.handle_button_click)
+for button in miq.theme_buttons
+  button.addEventListener("click", miq.handle_button_click)
