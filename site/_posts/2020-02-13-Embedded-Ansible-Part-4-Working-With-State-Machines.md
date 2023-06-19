@@ -4,14 +4,14 @@ author: Peter McGowan
 date: 2020-02-14
 comments: true
 published: true
-tags: tutorials
+tags: tutorials embedded-ansible automate
 ---
 
 Parts [two](https://www.manageiq.org/blog/2020/02/Embedded-Ansible-Part-2-Passing-Parameters-Into-A-Playbook/) and [three](https://www.manageiq.org/blog/2020/02/Embedded-Ansible-Part-3-Ansible-In-An-Automation-Workflow/) of this series looked at passing input parameters into playbooks, and how to work with the Automate workspace. This article discusses how an Ansible playbook can be effectively used in a state machine.
 
 ## Working with State Machines
 
-A state machine is a specially constructed Automate class that comprises a sequence of states. Each state typically runs a Ruby or Ansible playbook method, and progression through the state machine is only achieved as each state completes successfully. Individual states can be periodically retried, which gives a state machine the ability to initiate a long-running asynchronous task, followed by a retrying check-completed stage to monitor for task completion. 
+A state machine is a specially constructed Automate class that comprises a sequence of states. Each state typically runs a Ruby or Ansible playbook method, and progression through the state machine is only achieved as each state completes successfully. Individual states can be periodically retried, which gives a state machine the ability to initiate a long-running asynchronous task, followed by a retrying check-completed stage to monitor for task completion.
 
 A state machine is the best way to model a workflow in ManageIQ Automate.
 
@@ -155,7 +155,7 @@ A state retry is triggered by the Ruby or Ansible playbook method running in tha
 <br/>
 ### Passing Values Between Successive Playbook or Ruby Methods in ManageIQ Ivanchuk (5.11.0.28)
 
-Ivanchuk has added the capability for values to be saved from a playbook using the `set_stats` module so that any follow-on Ruby or Ansible methods in a state machine can also access them. The following code sample shows a playbook that has retrieved IP details which are in a hash called *ipam_return*. The example shows how the playbook can use *set_stats* to copy the hash keys and their values back to the state machine workspace. 
+Ivanchuk has added the capability for values to be saved from a playbook using the `set_stats` module so that any follow-on Ruby or Ansible methods in a state machine can also access them. The following code sample shows a playbook that has retrieved IP details which are in a hash called *ipam_return*. The example shows how the playbook can use *set_stats* to copy the hash keys and their values back to the state machine workspace.
 
 ```
 - name: Save IPAM detail back to the workspace

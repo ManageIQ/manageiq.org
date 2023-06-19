@@ -4,7 +4,7 @@ author: Peter McGowan
 date: 2020-02-12
 comments: true
 published: true
-tags: tutorials
+tags: tutorials embedded-ansible automate services
 ---
 
 
@@ -27,14 +27,14 @@ For playbook methods one or more target hosts can be specified in the *Hosts* di
 The substitution string enables the target *hosts* value to be dynamically translated at run-time and passed to the playbook, enhancing the flexibility of the playbook method.
 
 ## Ansible Playbook Input Parameters
-To benefit from reusability and flexibility, playbooks are often written to work with *extra_var* variables passed as input parameters. Embedded Ansible playbook services and playbook methods handle input parameters slightly differently. 
+To benefit from reusability and flexibility, playbooks are often written to work with *extra_var* variables passed as input parameters. Embedded Ansible playbook services and playbook methods handle input parameters slightly differently.
 
 ### Playbook Service Input Parameters
 Input parameters for playbook services are defined in the *Variables & Default Values* section of the service definition WebUI page, as follows:
 
 ![vars_and_default_values](/assets/images/blog/vars_and_default_values-embedded-2.3.jpg)
 
-These variables and their string values are passed into the playbook as extra_vars when the playbook is launched. 
+These variables and their string values are passed into the playbook as extra_vars when the playbook is launched.
 
 The default values can optionally be overridden from a service dialog when the service is ordered. Any of the service dialog’s elements that are named with the prefix “param_” will be passed as extra_vars to the playbook (with the string “param_” removed).
 
@@ -47,8 +47,8 @@ TEMPLATE_CLASS   = "ServiceTemplate"
 service_template = $evm.vmdb(TEMPLATE_CLASS).where(:name => 'Install a Package').first
 credential       = $evm.vmdb(CREDENTIAL_CLASS).where(:name => 'Root Password').first
 options          = {
-  "credential"    => credential.id, 
-  "hosts"         => "infra1.cloud.uk.bit63.com", 
+  "credential"    => credential.id,
+  "hosts"         => "infra1.cloud.uk.bit63.com",
   "param_package" => "mlocate"
   }
 $evm.execute('create_service_provision_request', service_template, options)
@@ -60,7 +60,7 @@ The Automate Explorer allows for input parameters (also called method parameters
 ![input_params](/assets/images/blog/input_params-embedded-2.4.jpg)
 
 
-Input parameters are passed to the playbook as extra_vars, so can be referred to in the playbook just as any other variable. As an example the first input parameter in this screenshot can be accessed using the  
+Input parameters are passed to the playbook as extra_vars, so can be referred to in the playbook just as any other variable. As an example the first input parameter in this screenshot can be accessed using the
 <code>{% raw %} "{{ ipam_url }}" {% endraw %} </code> syntax.
 
 As can be seen from the _**ipam_user**_ parameter name, the value of an input parameter for an Ansible playbook *method* can be a dynamic variable read from a substitution string at run-time (this substitution is not available for a playbook service).
@@ -132,17 +132,17 @@ It should be noted that the return from each of these tasks (stored by the *regi
 #### Reading Service Dialog Values as Input Parameters
 It is often the case that the values input into a service dialog should be passed to an Ansible playbook method somewhere in the workflow. A typical example is when calling an Ansible playbook method from the VM Provision state machine, where the VM provision has been initiated from a service catalog.
 
-The service dialog entries are stored in the service request object’s options hash `:dialog` key, the value of which is itself a hash of dialog element name/value pairs. 
+The service dialog entries are stored in the service request object’s options hash `:dialog` key, the value of which is itself a hash of dialog element name/value pairs.
 
 From the VM Provision state machine this is accessible from `$evm.root['miq_provision'].miq_provision_request.options`, for example:
 
 ```
 $evm.root['miq_provision'].miq_provision_request.options[:dialog] = {
-"dialog_service_name" => "New Engineering VM", 
-"dialog_vm_name" => "pemcg-eng-03", 
-"dialog_option_0_cores_per_socket" => 2, 
-"dialog_option_0_vm_memory" => 2048, 
-"dialog_option_0_hostname" => "pemcg-eng-03.lon.redhat.com", "Array::dialog_tag_0_department" => "Classification::1000000000046", 
+"dialog_service_name" => "New Engineering VM",
+"dialog_vm_name" => "pemcg-eng-03",
+"dialog_option_0_cores_per_socket" => 2,
+"dialog_option_0_vm_memory" => 2048,
+"dialog_option_0_hostname" => "pemcg-eng-03.lon.redhat.com", "Array::dialog_tag_0_department" => "Classification::1000000000046",
 "password::dialog_option_0_root_password" => "********"
 }
 ```
@@ -166,12 +166,12 @@ An input parameter can be defined as being of type “password”, for example:
 A parameter of this type is decrypted automatically and is available to the playbook as the named extra variable, for example {% raw %}"{{ scrambled_this }}"{% endraw %}. It should be noted that an input parameter that has the text string “password” anywhere in the name will not be passed as a method parameter, and so will not appear in the list of method parameters returned by the `get_method_parameters` function. The variable will however be available as an extra_var with the password value decrypted correctly.
 
 #### Password Defined Earlier in Workflow
-A variable encrypted earlier in the workflow (for example when input into a service dialog) can generally be identified as having a name prefixed by the string “password::”. This signifies that the object is of type *MiqPassword*. 
+A variable encrypted earlier in the workflow (for example when input into a service dialog) can generally be identified as having a name prefixed by the string “password::”. This signifies that the object is of type *MiqPassword*.
 
 A password object of this type can be used as an input parameter if it is passed as a string data type, also prefixed by the string “password::”. The encrypted value will be automatically decrypted and is usable by the playbook as the named extra variable.
 
 For example, to inject the `root_password` value from the previous service dialog using substitution syntax, an input parameter should be defined with a string data type and the following input parameter value:
- 
+
  ```
  password::${/#miq_provision.miq_provision_request.get_option(:dialog).fetch(password::dialog_option_0_root_password)}
  ```

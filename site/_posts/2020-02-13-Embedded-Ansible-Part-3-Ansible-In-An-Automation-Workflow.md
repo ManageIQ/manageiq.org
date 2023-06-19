@@ -4,7 +4,7 @@ author: Peter McGowan
 date: 2020-02-13
 comments: true
 published: true
-tags: tutorials
+tags: tutorials embedded-ansible automate
 ---
 
 [Part one](https://www.manageiq.org/blog/2020/02/Embedded-Ansible-Part-1-Built-In-Roles/) of this series described the functionality for using built-in roles to perform tasks with Ansible playbooks rather than Ruby methods in Fine. [Part two](https://www.manageiq.org/blog/2020/02/Embedded-Ansible-Part-2-Passing-Parameters-Into-A-Playbook/) of this series looked at how host lists and input parameters can be passed to embedded Ansible playbook services and methods. This article will discuss how a playbook method can form part of a larger automation workflow by interacting with the ManageIQ Automate workspace.
@@ -57,7 +57,7 @@ ok: [localhost]
 
 TASK [debug] *******************************************************************
 ok: [localhost] => {"msg": "Result:[
-u'root', 
+u'root',
 u'/ManageIQ/System/Request/call_instance',
 u'/pemcg/Stuff/StateMachines/Methods/state1',
 u'/Configuration/OpenShift/Parameters/default',
@@ -83,7 +83,7 @@ set_encrypted_attribute
 Their use is illustrated as follows:
 
 ##### get_object_attribute_names
-The `get_object_attribute_names` function lists the readable attributes of any object loaded into the workspace (hint: use `get_object_names` to confirm that the object is loaded first). 
+The `get_object_attribute_names` function lists the readable attributes of any object loaded into the workspace (hint: use `get_object_names` to confirm that the object is loaded first).
 
 This example lists the queryable attributes in the configuration domain `/Configuration/OpenShift/Parameters/default`
 
@@ -132,7 +132,7 @@ ok: [localhost]
 TASK [debug] *******************************************************************
 ok: [localhost] => {
     "msg": "Result:True"
-}   
+}
 ```
 <br/>
 ##### get_attribute
@@ -243,7 +243,7 @@ $evm.log(:info, "ip_address from Ansible = #{$evm.root['ipam_ip_address']}")
 $evm.log(:info, "netmask from Ansible = #{$evm.root['ipam_netmask']}")
 $evm.log(:info, "gateway from Ansible = #{$evm.root['ipam_gateway']}")
 $evm.log(:info, "root_passwd from Ansible = #{$evm.root.decrypt('root_passwd')}")
-  
+
 ...<AEMethod state3> ip_address from Ansible = 192.168.1.23
 ...<AEMethod state3> netmask from Ansible = 255.255.255.0
 ...<AEMethod state3> gateway from Ansible = 192.168.1.254
@@ -257,7 +257,7 @@ The manageiq-vmdb role can be used to update the provisioning task’s options h
   roles:
   - manageiq-core.manageiq-vmdb
 
-  tasks:   
+  tasks:
   - name: Update task with new IP information
     manageiq_vmdb:
       href: {% raw %}"{{ manageiq.request_task }}" {% endraw %}
