@@ -4,7 +4,7 @@ author: Peter McGowan
 date: 2020-02-12
 comments: true
 published: true
-tags: tutorials
+tags: tutorials embedded-ansible
 ---
 
 This is the first of four blog posts in a series written by Peter McGowan about Embedded Ansible capabilities released in ManageIQ Fine.
