@@ -37,7 +37,7 @@ ManageIQ is open source and open for contributions. There are many ways to get i
 
   <div class="col-md-6">
     <h3>Discuss</h3>
-    <p>Join the active ManageIQ community on <a href="http://talk.manageiq.org/">ManageIQ Talk forum</a> with your questions and discussions, or chat with us anytime on <a href="https://gitter.im/ManageIQ/manageiq">Gitter</a> (sign in with your GitHub account).</p>
+    <p>Join the active ManageIQ community on the <a href="https://github.com/orgs/ManageIQ/discussions">ManageIQ Discussions forum</a> with your questions and ideas, or chat with us anytime on <a href="https://gitter.im/ManageIQ/manageiq">Gitter</a> (sign in with your GitHub account).</p>
     <p><button class="btn btn-default js-gitter-toggle-chat-button" data-gitter-toggle-chat-state="true">Open Chat</button>
     <button class="btn btn-default js-gitter-toggle-chat-button" data-gitter-toggle-chat-state="false">Close Chat</button></p>
     <br />
@@ -54,7 +54,7 @@ ManageIQ is open source and open for contributions. There are many ways to get i
     <p>You can import the <a href="https://calendar.google.com/calendar/embed?src=content.admin%40manageiq.org">ManageIQ community calendar</a> to be notified about ManageIQ events and Sprint reviews.</p>
 
     <p>Check out <a href="/sprints/">Sprints</a> for links to previous Sprint Reviews.</p>
-  </div> 
+  </div>
 </div>
 
 <script>

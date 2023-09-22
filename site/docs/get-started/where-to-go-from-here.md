@@ -18,7 +18,7 @@ Check the [API Reference](/docs/api)
 
 Get involved in the  [community](/community)
 
-Ask a question in the [forum](http://talk.manageiq.org/)
+Ask a question in the [forum](https://github.com/orgs/ManageIQ/discussions)
 
 ## Help developing
 
