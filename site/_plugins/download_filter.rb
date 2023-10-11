@@ -48,16 +48,20 @@ module Jekyll
       uri = URI(url)
       Net::HTTP.start(uri.host, uri.port, :use_ssl => uri.scheme == 'https') do |http|
         response = http.request_head(uri.path)
-        if response.code != '200'
+        case response.code
+        when '200'
+          file_size = response['content-length'].to_f
+          {
+            "size" => ActiveSupport::NumberHelper.number_to_human_size(file_size),
+            "md5"  => response['etag'].delete('"')
+          }
+        when '302'
+          Jekyll.logger.info("Following redirect for #{url}...")
+          file_info_from_url(response["location"])
+        else
           Jekyll.logger.error("Jekyll::DownloadFilter.file_info_from_url(#{url})", "code=#{response.code}, message=#{response.message}")
           return no_file_info
         end
-
-        file_size = response['content-length'].to_f
-        return {
-          "size" => ActiveSupport::NumberHelper.number_to_human_size(file_size),
-          "md5"  => response['etag'].delete('"')
-        }
       end
     rescue => error
       Jekyll.logger.error("Jekyll::DownloadFilter.file_info_from_url(#{url})", "error=#{error.message}")
