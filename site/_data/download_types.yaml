@@ -4,6 +4,7 @@
 
 - name: Docker
   download_platform: docker
+  poc: true
 
 - name: Google Cloud Platform
   download_platform: gce
@@ -46,6 +47,7 @@
 - name: Vagrant
   download_platform: vagrant
   ext: box
+  poc: true
 
 - name: VMware vSphere
   download_platform: vsphere
