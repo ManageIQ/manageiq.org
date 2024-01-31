@@ -4,7 +4,7 @@ author: jvlcek
 date: 2018-01-31
 comments: true
 published: true
-tags: tutorials
+tags: ldap, tutorials
 ---
 
 The goal of this blog post is to provide a basic understanding of:
