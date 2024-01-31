@@ -4,7 +4,7 @@ author: jvlcek
 date: 2017-09-29
 comments: true
 published: true
-tags: tutorials
+tags: ldap, tutorials
 ---
 
 How does one use the *miqldap_to_sssd* conversion tool?
