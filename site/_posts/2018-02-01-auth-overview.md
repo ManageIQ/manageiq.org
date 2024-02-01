@@ -4,7 +4,7 @@ author: jvlcek
 date: 2018-02-01
 comments: true
 published: true
-tags: ldap, tutorials
+tags: ldap tutorials
 ---
 
 This blog post provides a high level overview of the ways ManageIQ Authentication can be configured.
