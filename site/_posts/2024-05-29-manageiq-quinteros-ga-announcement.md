@@ -61,6 +61,6 @@ Here are the highlights of the [Quinteros release](https://github.com/orgs/Manag
 - Deprecations
   - CentOS Stream 8 is no longer supported. In the Radjabov release we will be moving completely to CentOS Stream 9 on appliances, and to UBI9 on containers. As such, there will be no direct upgrade path on appliances from the Quinteros release to the Radjabov release, and it will require full appliance replacement. Please take this into consideration when preparing for the next release.
 
-There are many more changes and bug fixes that would be impossible to detail in a single blog post. Many thanks goes to all of the community members for their contributions!
+There are many more changes and bug fixes that would be impossible to detail in a single blog post, but you can read through them all in the [full changelog](/changelog/petrosian-1-to-quinteros-1). Many thanks goes to all of the community members for their contributions!
 
 We are already well underway on the next release of ManageIQ: Radjabov. If you're interested in getting involved, check out our [roadmap](https://manageiq.org/roadmap), check out our [community page](https://manageiq.org/community), ask questions in our [discussions forum](https://github.com/ManageIQ/manageiq/discussions), and chat with us in [Gitter](https://gitter.im/ManageIQ/manageiq). We look forward to hearing from you!
