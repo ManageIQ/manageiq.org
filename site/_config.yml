@@ -284,3 +284,18 @@ defaults:
     values:
       layout: doc_page
       doc_group: api
+
+  - scope:
+      path: "docs/reference/quinteros"
+      type: "pages"
+    values:
+      layout: doc_page
+      permalink: /:path/:basename
+      doc_group: user
+      sitemap: false
+
+  - scope:
+      path: "docs/reference/quinteros/api"
+    values:
+      layout: doc_page
+      doc_group: api
