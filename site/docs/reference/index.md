@@ -6,15 +6,15 @@ doc_group: user
 doc_branch: latest
 ---
 
-## Installation
+## Installing
 
-{% for item in site.data["menus"]["ref_menu_latest"]["installation"]["children"] %}
+{% for item in site.data["menus"]["ref_menu_latest"]["installing"]["children"] %}
 ### [{{item.title}}]({{item.path}})
 {{item.desc}}
 
 {% endfor %}
 
-## Administration
+## Administering
 
 {% for item in site.data["menus"]["ref_menu_latest"]["administration"]["children"] %}
 ### [{{item.title}}]({{item.path}})
@@ -22,22 +22,13 @@ doc_branch: latest
 
 {% endfor %}
 
-## Authentication
+## Integrations
 
-{% for item in site.data["menus"]["ref_menu_latest"]["authentication"]["children"] %}
+{% for item in site.data["menus"]["ref_menu_latest"]["integrations"]["children"] %}
 ### [{{item.title}}]({{item.path}})
 {{item.desc}}
 
 {% endfor %}
-
-## Integration
-
-{% for item in site.data["menus"]["ref_menu_latest"]["integration"]["children"] %}
-### [{{item.title}}]({{item.path}})
-{{item.desc}}
-
-{% endfor %}
-
 
 ## Reference
 
