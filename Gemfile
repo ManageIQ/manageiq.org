@@ -6,7 +6,6 @@ gem "activesupport", ">= 5.2.7", :require => false
 gem "bootstrap-sass", "~> 3.x"
 gem "font-awesome-sass", "~> 4.x"
 gem "jekyll", "~> 4.3"
-gem "jekyll-coffeescript"
 gem "jekyll-paginate"
 gem "jekyll-sass-converter"
 gem "jekyll-sitemap"
