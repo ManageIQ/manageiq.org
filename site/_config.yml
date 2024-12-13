@@ -7,8 +7,8 @@
 
 plugins:
   - jekyll-coffeescript
-  - jekyll-assets
   - jekyll-paginate
+  - jekyll-sass-converter
   - jekyll-sitemap
   - jemoji
 
