@@ -71,10 +71,10 @@
     color: var(--color-text-doc-menu);
 
     &:before {
-      @include fa_type;
-      content: $fa-var-chevron-right;
+      @extend %fa-icon;
+      @extend .fa-solid;
+      content: fa-content($fa-var-chevron-right);
 
-      display: inline-block;
       font-size: 9px;
       color: lighten($grey-dark, 30%);
       margin-left: -1em;
@@ -86,7 +86,7 @@
 
   &.active, &.menu-open {
     > a:before {
-      content: $fa-var-chevron-down;
+      content: fa-content($fa-var-chevron-down);
     }
   }
 }

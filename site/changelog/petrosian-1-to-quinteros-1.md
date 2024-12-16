@@ -3,7 +3,7 @@ layout: page
 title: Changelog from Petrosian-1 to Quinteros-1
 ---
 
-## <i class="fa fa-github"></i> [ManageIQ/manageiq](https://github.com/ManageIQ/manageiq/compare/petrosian-1...quinteros-1)
+## <i class="fa-brands fa-github"></i> [ManageIQ/manageiq](https://github.com/ManageIQ/manageiq/compare/petrosian-1...quinteros-1)
 
 ### Bug
 
@@ -210,7 +210,7 @@ title: Changelog from Petrosian-1 to Quinteros-1
 
 ---
 
-## <i class="fa fa-github"></i> [ManageIQ/amazon_ssa_support](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/amazon_ssa_support)
+## <i class="fa-brands fa-github"></i> [ManageIQ/amazon_ssa_support](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/amazon_ssa_support)
 
 ### Bug
 
@@ -232,7 +232,7 @@ title: Changelog from Petrosian-1 to Quinteros-1
 
 ---
 
-## <i class="fa fa-github"></i> [ManageIQ/manageiq-api](https://github.com/ManageIQ/manageiq-api/compare/petrosian-1...quinteros-1)
+## <i class="fa-brands fa-github"></i> [ManageIQ/manageiq-api](https://github.com/ManageIQ/manageiq-api/compare/petrosian-1...quinteros-1)
 
 ### Bug
 
@@ -259,7 +259,7 @@ title: Changelog from Petrosian-1 to Quinteros-1
 
 ---
 
-## <i class="fa fa-github"></i> [ManageIQ/manageiq-appliance](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-appliance)
+## <i class="fa-brands fa-github"></i> [ManageIQ/manageiq-appliance](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-appliance)
 
 ### Bug
 
@@ -276,7 +276,7 @@ title: Changelog from Petrosian-1 to Quinteros-1
 
 ---
 
-## <i class="fa fa-github"></i> [ManageIQ/manageiq-appliance-build](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-appliance-build)
+## <i class="fa-brands fa-github"></i> [ManageIQ/manageiq-appliance-build](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-appliance-build)
 
 ### Bug
 
@@ -298,7 +298,7 @@ title: Changelog from Petrosian-1 to Quinteros-1
 
 ---
 
-## <i class="fa fa-github"></i> [ManageIQ/manageiq-automation_engine](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-automation_engine)
+## <i class="fa-brands fa-github"></i> [ManageIQ/manageiq-automation_engine](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-automation_engine)
 
 ### Bug
 
@@ -319,7 +319,7 @@ title: Changelog from Petrosian-1 to Quinteros-1
 
 ---
 
-## <i class="fa fa-github"></i> [ManageIQ/manageiq-consumption](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-consumption)
+## <i class="fa-brands fa-github"></i> [ManageIQ/manageiq-consumption](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-consumption)
 
 ### Other
 
@@ -332,7 +332,7 @@ title: Changelog from Petrosian-1 to Quinteros-1
 
 ---
 
-## <i class="fa fa-github"></i> [ManageIQ/manageiq-content](https://github.com/ManageIQ/manageiq-content/compare/petrosian-1...quinteros-1)
+## <i class="fa-brands fa-github"></i> [ManageIQ/manageiq-content](https://github.com/ManageIQ/manageiq-content/compare/petrosian-1...quinteros-1)
 
 ### Other
 
@@ -345,7 +345,7 @@ title: Changelog from Petrosian-1 to Quinteros-1
 
 ---
 
-## <i class="fa fa-github"></i> [ManageIQ/manageiq-decorators](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-decorators)
+## <i class="fa-brands fa-github"></i> [ManageIQ/manageiq-decorators](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-decorators)
 
 ### Enhancement
 
@@ -362,7 +362,7 @@ title: Changelog from Petrosian-1 to Quinteros-1
 
 ---
 
-## <i class="fa fa-github"></i> [ManageIQ/manageiq-documentation](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-documentation)
+## <i class="fa-brands fa-github"></i> [ManageIQ/manageiq-documentation](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-documentation)
 
 ### Bug
 
@@ -420,7 +420,7 @@ title: Changelog from Petrosian-1 to Quinteros-1
 
 ---
 
-## <i class="fa fa-github"></i> [ManageIQ/manageiq-gems-pending](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-gems-pending)
+## <i class="fa-brands fa-github"></i> [ManageIQ/manageiq-gems-pending](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-gems-pending)
 
 ### Bug
 
@@ -443,7 +443,7 @@ title: Changelog from Petrosian-1 to Quinteros-1
 
 ---
 
-## <i class="fa fa-github"></i> [ManageIQ/manageiq-pods](https://github.com/ManageIQ/manageiq-pods/compare/petrosian-1...quinteros-1)
+## <i class="fa-brands fa-github"></i> [ManageIQ/manageiq-pods](https://github.com/ManageIQ/manageiq-pods/compare/petrosian-1...quinteros-1)
 
 ### Bug
 
@@ -513,7 +513,7 @@ title: Changelog from Petrosian-1 to Quinteros-1
 
 ---
 
-## <i class="fa fa-github"></i> [ManageIQ/manageiq-providers-amazon](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-providers-amazon)
+## <i class="fa-brands fa-github"></i> [ManageIQ/manageiq-providers-amazon](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-providers-amazon)
 
 ### Enhancement
 
@@ -548,7 +548,7 @@ title: Changelog from Petrosian-1 to Quinteros-1
 
 ---
 
-## <i class="fa fa-github"></i> [ManageIQ/manageiq-providers-ansible_tower](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-providers-ansible_tower)
+## <i class="fa-brands fa-github"></i> [ManageIQ/manageiq-providers-ansible_tower](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-providers-ansible_tower)
 
 ### Bug
 
@@ -566,7 +566,7 @@ title: Changelog from Petrosian-1 to Quinteros-1
 
 ---
 
-## <i class="fa fa-github"></i> [ManageIQ/manageiq-providers-autosde](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-providers-autosde)
+## <i class="fa-brands fa-github"></i> [ManageIQ/manageiq-providers-autosde](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-providers-autosde)
 
 ### Bug
 
@@ -589,7 +589,7 @@ title: Changelog from Petrosian-1 to Quinteros-1
 
 ---
 
-## <i class="fa fa-github"></i> [ManageIQ/manageiq-providers-awx](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-providers-awx)
+## <i class="fa-brands fa-github"></i> [ManageIQ/manageiq-providers-awx](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-providers-awx)
 
 ### Bug
 
@@ -607,7 +607,7 @@ title: Changelog from Petrosian-1 to Quinteros-1
 
 ---
 
-## <i class="fa fa-github"></i> [ManageIQ/manageiq-providers-azure](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-providers-azure)
+## <i class="fa-brands fa-github"></i> [ManageIQ/manageiq-providers-azure](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-providers-azure)
 
 ### Bug
 
@@ -627,7 +627,7 @@ title: Changelog from Petrosian-1 to Quinteros-1
 
 ---
 
-## <i class="fa fa-github"></i> [ManageIQ/manageiq-providers-azure_stack](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-providers-azure_stack)
+## <i class="fa-brands fa-github"></i> [ManageIQ/manageiq-providers-azure_stack](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-providers-azure_stack)
 
 ### Other
 
@@ -641,7 +641,7 @@ title: Changelog from Petrosian-1 to Quinteros-1
 
 ---
 
-## <i class="fa fa-github"></i> [ManageIQ/manageiq-providers-cisco_intersight](https://github.com/compare/petrosian-1...quinteros-1/ManageIQ/manageiq-providers-cisco_intersight)
+## <i class="fa-brands fa-github"></i> [ManageIQ/manageiq-providers-cisco_intersight](https://github.com/compare/petrosian-1...quinteros-1/ManageIQ/manageiq-providers-cisco_intersight)
 
 ### Bug
 
@@ -661,7 +661,7 @@ title: Changelog from Petrosian-1 to Quinteros-1
 
 ---
 
-## <i class="fa fa-github"></i> [ManageIQ/manageiq-providers-foreman](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-providers-foreman)
+## <i class="fa-brands fa-github"></i> [ManageIQ/manageiq-providers-foreman](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-providers-foreman)
 
 ### Bug
 
@@ -678,7 +678,7 @@ title: Changelog from Petrosian-1 to Quinteros-1
 
 ---
 
-## <i class="fa fa-github"></i> [ManageIQ/manageiq-providers-google](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-providers-google)
+## <i class="fa-brands fa-github"></i> [ManageIQ/manageiq-providers-google](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-providers-google)
 
 ### Bug
 
@@ -697,7 +697,7 @@ title: Changelog from Petrosian-1 to Quinteros-1
 
 ---
 
-## <i class="fa fa-github"></i> [ManageIQ/manageiq-providers-ibm_cic](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-providers-ibm_cic)
+## <i class="fa-brands fa-github"></i> [ManageIQ/manageiq-providers-ibm_cic](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-providers-ibm_cic)
 
 ### Bug
 
@@ -718,7 +718,7 @@ title: Changelog from Petrosian-1 to Quinteros-1
 
 ---
 
-## <i class="fa fa-github"></i> [ManageIQ/manageiq-providers-ibm_cloud](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-providers-ibm_cloud)
+## <i class="fa-brands fa-github"></i> [ManageIQ/manageiq-providers-ibm_cloud](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-providers-ibm_cloud)
 
 ### Bug
 
@@ -755,7 +755,7 @@ title: Changelog from Petrosian-1 to Quinteros-1
 
 ---
 
-## <i class="fa fa-github"></i> [ManageIQ/manageiq-providers-ibm_power_hmc](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-providers-ibm_power_hmc)
+## <i class="fa-brands fa-github"></i> [ManageIQ/manageiq-providers-ibm_power_hmc](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-providers-ibm_power_hmc)
 
 ### Bug
 
@@ -778,7 +778,7 @@ title: Changelog from Petrosian-1 to Quinteros-1
 
 ---
 
-## <i class="fa fa-github"></i> [ManageIQ/manageiq-providers-ibm_power_vc](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-providers-ibm_power_vc)
+## <i class="fa-brands fa-github"></i> [ManageIQ/manageiq-providers-ibm_power_vc](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-providers-ibm_power_vc)
 
 ### Bug
 
@@ -804,7 +804,7 @@ title: Changelog from Petrosian-1 to Quinteros-1
 
 ---
 
-## <i class="fa fa-github"></i> [ManageIQ/manageiq-providers-ibm_terraform](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-providers-ibm_terraform)
+## <i class="fa-brands fa-github"></i> [ManageIQ/manageiq-providers-ibm_terraform](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-providers-ibm_terraform)
 
 ### Other
 
@@ -817,7 +817,7 @@ title: Changelog from Petrosian-1 to Quinteros-1
 
 ---
 
-## <i class="fa fa-github"></i> [ManageIQ/manageiq-providers-kubernetes](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-providers-kubernetes)
+## <i class="fa-brands fa-github"></i> [ManageIQ/manageiq-providers-kubernetes](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-providers-kubernetes)
 
 ### Bug
 
@@ -847,7 +847,7 @@ title: Changelog from Petrosian-1 to Quinteros-1
 
 ---
 
-## <i class="fa fa-github"></i> [ManageIQ/manageiq-providers-kubevirt](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-providers-kubevirt)
+## <i class="fa-brands fa-github"></i> [ManageIQ/manageiq-providers-kubevirt](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-providers-kubevirt)
 
 ### Enhancement
 
@@ -864,7 +864,7 @@ title: Changelog from Petrosian-1 to Quinteros-1
 
 ---
 
-## <i class="fa fa-github"></i> [ManageIQ/manageiq-providers-lenovo](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-providers-lenovo)
+## <i class="fa-brands fa-github"></i> [ManageIQ/manageiq-providers-lenovo](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-providers-lenovo)
 
 ### Bug
 
@@ -885,7 +885,7 @@ title: Changelog from Petrosian-1 to Quinteros-1
 
 ---
 
-## <i class="fa fa-github"></i> [ManageIQ/manageiq-providers-nsxt](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-providers-nsxt)
+## <i class="fa-brands fa-github"></i> [ManageIQ/manageiq-providers-nsxt](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-providers-nsxt)
 
 ### Bug
 
@@ -905,7 +905,7 @@ title: Changelog from Petrosian-1 to Quinteros-1
 
 ---
 
-## <i class="fa fa-github"></i> [ManageIQ/manageiq-providers-nuage](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-providers-nuage)
+## <i class="fa-brands fa-github"></i> [ManageIQ/manageiq-providers-nuage](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-providers-nuage)
 
 ### Bug
 
@@ -932,7 +932,7 @@ title: Changelog from Petrosian-1 to Quinteros-1
 
 ---
 
-## <i class="fa fa-github"></i> [ManageIQ/manageiq-providers-openshift](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-providers-openshift)
+## <i class="fa-brands fa-github"></i> [ManageIQ/manageiq-providers-openshift](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-providers-openshift)
 
 ### Other
 
@@ -945,7 +945,7 @@ title: Changelog from Petrosian-1 to Quinteros-1
 
 ---
 
-## <i class="fa fa-github"></i> [ManageIQ/manageiq-providers-openstack](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-providers-openstack)
+## <i class="fa-brands fa-github"></i> [ManageIQ/manageiq-providers-openstack](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-providers-openstack)
 
 ### Bug
 
@@ -973,7 +973,7 @@ title: Changelog from Petrosian-1 to Quinteros-1
 
 ---
 
-## <i class="fa fa-github"></i> [ManageIQ/manageiq-providers-oracle_cloud](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-providers-oracle_cloud)
+## <i class="fa-brands fa-github"></i> [ManageIQ/manageiq-providers-oracle_cloud](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-providers-oracle_cloud)
 
 ### Bug
 
@@ -990,7 +990,7 @@ title: Changelog from Petrosian-1 to Quinteros-1
 
 ---
 
-## <i class="fa fa-github"></i> [ManageIQ/manageiq-providers-ovirt](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-providers-ovirt)
+## <i class="fa-brands fa-github"></i> [ManageIQ/manageiq-providers-ovirt](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-providers-ovirt)
 
 ### Bug
 
@@ -1014,7 +1014,7 @@ title: Changelog from Petrosian-1 to Quinteros-1
 
 ---
 
-## <i class="fa fa-github"></i> [ManageIQ/manageiq-providers-red_hat_virtualization](https://github.com/compare/petrosian-1...quinteros-1/ManageIQ/manageiq-providers-red_hat_virtualization)
+## <i class="fa-brands fa-github"></i> [ManageIQ/manageiq-providers-red_hat_virtualization](https://github.com/compare/petrosian-1...quinteros-1/ManageIQ/manageiq-providers-red_hat_virtualization)
 
 ### Bug
 
@@ -1038,7 +1038,7 @@ title: Changelog from Petrosian-1 to Quinteros-1
 
 ---
 
-## <i class="fa fa-github"></i> [ManageIQ/manageiq-providers-redfish](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-providers-redfish)
+## <i class="fa-brands fa-github"></i> [ManageIQ/manageiq-providers-redfish](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-providers-redfish)
 
 ### Bug
 
@@ -1058,7 +1058,7 @@ title: Changelog from Petrosian-1 to Quinteros-1
 
 ---
 
-## <i class="fa fa-github"></i> [ManageIQ/manageiq-providers-vmware](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-providers-vmware)
+## <i class="fa-brands fa-github"></i> [ManageIQ/manageiq-providers-vmware](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-providers-vmware)
 
 ### Bug
 
@@ -1089,7 +1089,7 @@ title: Changelog from Petrosian-1 to Quinteros-1
 
 ---
 
-## <i class="fa fa-github"></i> [ManageIQ/manageiq-providers-workflows](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-providers-workflows)
+## <i class="fa-brands fa-github"></i> [ManageIQ/manageiq-providers-workflows](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-providers-workflows)
 
 ### Bug
 
@@ -1141,7 +1141,7 @@ title: Changelog from Petrosian-1 to Quinteros-1
 
 ---
 
-## <i class="fa fa-github"></i> [ManageIQ/manageiq-rpm_build](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-rpm_build)
+## <i class="fa-brands fa-github"></i> [ManageIQ/manageiq-rpm_build](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-rpm_build)
 
 ### Bug
 
@@ -1188,7 +1188,7 @@ title: Changelog from Petrosian-1 to Quinteros-1
 
 ---
 
-## <i class="fa fa-github"></i> [ManageIQ/manageiq-schema](https://github.com/ManageIQ/manageiq-schema/compare/petrosian-1...quinteros-1)
+## <i class="fa-brands fa-github"></i> [ManageIQ/manageiq-schema](https://github.com/ManageIQ/manageiq-schema/compare/petrosian-1...quinteros-1)
 
 ### Bug
 
@@ -1218,7 +1218,7 @@ title: Changelog from Petrosian-1 to Quinteros-1
 
 ---
 
-## <i class="fa fa-github"></i> [ManageIQ/manageiq-ui-classic](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-ui-classic)
+## <i class="fa-brands fa-github"></i> [ManageIQ/manageiq-ui-classic](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-ui-classic)
 
 ### Bug
 
@@ -1385,7 +1385,7 @@ title: Changelog from Petrosian-1 to Quinteros-1
 
 ---
 
-## <i class="fa fa-github"></i> [ManageIQ/manageiq-ui-service](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-ui-service)
+## <i class="fa-brands fa-github"></i> [ManageIQ/manageiq-ui-service](https://github.com/ManageIQ/compare/petrosian-1...quinteros-1/manageiq-ui-service)
 
 ### Bug
 

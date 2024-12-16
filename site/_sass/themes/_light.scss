@@ -91,6 +91,8 @@
   --partner-img-opacity:     0.8;
   --platforms-vcloud-bright: 0;
 
-  .theme-toggle::before { content: ""; }
+  .theme-toggle::before {
+    content: fa-content($fa-var-moon);
+  }
 }
 }
