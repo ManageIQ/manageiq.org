@@ -4,7 +4,7 @@ ruby "~> 3.3.6"
 
 gem "activesupport", ">= 5.2.7", :require => false
 gem "bootstrap-sass", "~> 3.x"
-gem "font-awesome-sass", "~> 4.x"
+gem "font-awesome-sass", "~> 6.5"
 gem "jekyll", "~> 4.3"
 gem "jekyll-paginate"
 gem "jekyll-sass-converter"

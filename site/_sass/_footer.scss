@@ -32,19 +32,6 @@
   }
 }
 
-.fa-gitter {
-  width: 14px;
-
-  svg {
-    max-width: 100%;
-    height: auto;
-
-    g#icon-gitter {
-      fill: var(--color-text-banner);
-    }
-  }
-}
-
 @media only screen and (min-width: #{$bp-desk0}) {
   .site-footer {
     padding: 0;
@@ -72,7 +59,6 @@
     }
 
     .social_link {
-
       svg {
         fill: var(--color-text-footer);
       }
@@ -81,18 +67,14 @@
         fill: var(--color-text-banner);
       }
 
-      i.fa {
+      i.fa-brands {
         font-size: 22px;
         color: var(--color-text-footer);
       }
 
-      i.fa:hover {
+      i.fa-brands:hover {
         color: var(--color-text-banner);
       }
-    }
-
-    .social_link-username {
-      display: none;
     }
   } // .site-footer
 
