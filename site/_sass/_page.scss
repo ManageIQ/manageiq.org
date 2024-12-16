@@ -13,7 +13,7 @@ main {
 
 .home_container {
   max-width: 867px;
-  @include container-fixed(0);
+  @extend .container-md;
 }
 
 .flex_container {
