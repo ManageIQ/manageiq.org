@@ -6,7 +6,6 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 plugins:
-  - jekyll-coffeescript
   - jekyll-paginate
   - jekyll-sass-converter
   - jekyll-sitemap
