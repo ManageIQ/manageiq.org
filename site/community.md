@@ -12,15 +12,29 @@ ManageIQ is open source and open for contributions. There are many ways to get i
   <div class="col-md-6">
     <h3>Connect</h3>
     <p>Find us in your favorite social channel so you can be in the loop with announcements and happenings.</p>
-    <ul style="list-style-type: none;">
-      <li><a href="https://twitter.com/manageiq" class="twitter-follow-button" data-show-screen-name="false" data-show-count="false">Follow @manageiq</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script> <a href="https://twitter.com/manageiq">@manageiq on Twitter</a></li>
-      <li><iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&width=100&layout=button&action=like&size=small&show_faces=true&share=false&height=65&appId" width="65" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe> <a href="https://www.facebook.com/manageiq">ManageIQ on Facebook</a></li>
-      <li><script type="IN/FollowCompany" data-id="56141"></script> <a href="https://www.linkedin.com/company/manageiq">ManageIQ on LinkedIn</a></li>
-
-      <li><a title="View ManageIQ's profile on slideshare" href="http://www.slideshare.net/ManageIQ"><img src="//public.slidesharecdn.com/images/logo/linkedin-ss/SS_Logo_Black_Large.png?ebc847ff10" width="90" height="25" alt="SlideShare" /></a> <a href="http://www.slideshare.net/ManageIQ/presentations"> Sprint Review slides</a></li>
-
-     <li><div class="g-ytsubscribe" data-channel="ManageIQvideo" data-layout="default" data-count="hidden"></div> <a href="https://www.youtube.com/user/ManageIQVideo">Event & Sprint Review videos</a></li>
-    </ul>
+    <p class="community-social">
+      <a href="https://x.com/ManageIQ" title="X / Twitter">
+        <i class="fa-brands fa-x-twitter"></i>
+      </a>
+      <a href="https://bsky.app/profile/manageiq.bsky.social" title="Bluesky">
+        <i class="fa-brands fa-bluesky"></i>
+      </a>
+      <a href="https://fosstodon.org/@manageiq" title="Mastodon">
+        <i class="fa-brands fa-mastodon"></i>
+      </a>
+      <a href="https://www.facebook.com/manageiq/" title="Facebook">
+        <i class="fa-brands fa-facebook"></i>
+      </a>
+      <a href="https://www.linkedin.com/company/manageiq" title="LinkedIn">
+        <i class="fa-brands fa-linkedin"></i>
+      </a>
+      <a href="https://www.slideshare.net/ManageIQ" title="SlideShare">
+        <i class="fa-brands fa-slideshare"></i>
+      </a>
+      <a href="https://www.youtube.com/user/ManageIQVideo" title="YouTube">
+        <i class="fa-brands fa-youtube"></i>
+      </a>
+    </p>
 
     <h3>Collaborate</h3>
     <p>Access the source code and developer guides to get going. Refer to the above engagement channels if you need some assistance!</p>
