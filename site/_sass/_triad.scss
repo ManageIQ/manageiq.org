@@ -1,7 +1,7 @@
 
 .triad {
   max-width: 90%;
-  @include container-fixed(0);
+  @extend .container-md;
 }
 
 .triad-heading {
@@ -64,7 +64,7 @@
   }
 
   .triad-col {
-    @include make-md-column(4, $triad-gutter);
+    @include make-col(4, $triad-gutter);
 
     border-right: 1px solid var(--color-border-primary);
 

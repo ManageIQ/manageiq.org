@@ -28,7 +28,7 @@ $menu-link-color: lighten($grey-dark, 55%);
 
 @mixin banner_grad {
   // from Bootstrap
-  @include gradient-horizontal($banner-grad-dark, $banner-grad-lite, 0, 100%);
+  @include gradient-x($banner-grad-dark, $banner-grad-lite, 0, 100%);
 }
 
 // FIXME: Can ditch bootstrap mixin and simplify,
