@@ -43,11 +43,6 @@
   name: IBM Cloud
   img: inline_svg/platforms/ibm_cloud.svg
 
-- id: ansible_tower
-  inline: true
-  name: Ansible Tower By Red Hat
-  img: inline_svg/platforms/ansible_tower.svg
-
 - id: foreman
   inline: true
   name: Foreman
@@ -58,7 +53,17 @@
   name: Kubernetes
   img: inline_svg/platforms/kubernetes.svg
 
+- id: kubevirt
+  inline: true
+  name: KubeVirt
+  img: inline_svg/platforms/kubevirt.svg
+
 - id: openshift_origin
   inline: true
   name: OpenShift Origin
   img: inline_svg/platforms/openshift_origin.svg
+
+- id: ansible_tower
+  inline: true
+  name: Ansible Tower By Red Hat
+  img: inline_svg/platforms/ansible_tower.svg

@@ -58,6 +58,10 @@
   width: 10em;
 }
 
+#platform_kubevirt {
+  #svg10488 > path { fill: var(--color-text-primary) }
+}
+
 #platform_openshift {
   width: 6em;
 }
