@@ -7,6 +7,7 @@ Gemfile.lock
 
 dest/
 site/_data/menus/ref_menu_latest.yml
+site/_data/menus/ref_menu_radjabov.yml
 site/_data/menus/ref_menu_quinteros.yml
 site/_data/menus/ref_menu_petrosian.yml
 site/_data/menus/ref_menu_oparin.yml
@@ -17,6 +18,7 @@ site/_data/menus/ref_menu_kasparov.yml
 site/_data/menus/ref_menu_jansa.yml
 site/docs/guides
 site/docs/reference/latest/
+site/docs/reference/radjabov/
 site/docs/reference/quinteros/
 site/docs/reference/petrosian/
 site/docs/reference/oparin/
