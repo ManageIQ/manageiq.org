@@ -56,7 +56,7 @@ Here are the highlights of the [Radjabov release](https://github.com/orgs/Manage
 
 - \*\***BREAKING**\*\*
   - CentOS Stream 8 is no longer supported.
-  - Removal of PostgreSQL 13 [[#23065]](https://github.com/ManageIQ/manageiq/pull/23065)
+  - Removal of PostgreSQL 10 [[#23065]](https://github.com/ManageIQ/manageiq/pull/23065)
   - Removal of Ruby 3.0 support, Ruby 3.1 is the minimum
 
 There are many more changes and bug fixes that would be impossible to detail in a single blog post, but you can read through them all in the [full changelog](/changelog/quinteros-2-to-radjabov-1). Many thanks goes to all of the community members for their contributions!
