@@ -67,7 +67,7 @@ task :publish_sprint, [:sprint_number] do |_task, args|
   puts <<~EOS
     Follow these manual steps to prepare for publishing the Sprint:
 
-    Upload the recording to YouTube:
+    Upload the recording to YouTube (https://youtube.com/upload):
     1. Download the cover slide of the Sprint Google Slide deck via
        File -> Download -> PNG image (.png, current slide)
     2. Set the Title to "Sprint #{sprint_number}"
@@ -83,15 +83,14 @@ task :publish_sprint, [:sprint_number] do |_task, args|
   puts
 
   puts <<~EOS
-    Upload the slide deck to SlideShare:
+    Upload the slide deck to SlideShare (https://slideshare.net):
     1. Download the full Sprint Google Slide deck via
        File -> Download -> Microsoft PowerPoint (.pptx)
     2. Click Upload and choose the slide deck downloaded in Step 1
-    3. Set the Title to "ManageIQ - Sprint #{sprint_number} Review - Slide Deck"
-    4. Set the Description to "ManageIQ Sprint #{sprint_number}"
-    5. Set the Category to "Software"
-    6. Click Publish
-    7. Copy the URL
+    3. Set the Title and Description to "ManageIQ - Sprint #{sprint_number} Review - Slide Deck"
+    4. Set the Category to "Software"
+    5. Click Publish
+    6. Copy the URL
   EOS
   puts
   print "Enter the slides link: "
