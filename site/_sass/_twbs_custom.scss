@@ -1,12 +1,15 @@
-
+@import "bootstrap/functions";
 @import "bootstrap/variables";
+@import "bootstrap/maps";
 @import "bootstrap/mixins";
-@import "bootstrap/normalize";
-@import "bootstrap/print";
+@import "bootstrap/reboot";
+// @import "bootstrap/normalize";
+// @import "bootstrap/print";
 // @import "bootstrap/glyphicons";
-@import "bootstrap/scaffolding";
-@import "bootstrap/type";
-@import "bootstrap/code";
+// @import "bootstrap/scaffolding";
+// @import "bootstrap/type";
+// @import "bootstrap/code";
+@import "bootstrap/containers";
 @import "bootstrap/grid";
 @import "bootstrap/tables";
 // @import "bootstrap/forms";
@@ -17,9 +20,9 @@
 // @import "bootstrap/input-groups";
 // @import "bootstrap/navs";
 // @import "bootstrap/navbar";
-@import "bootstrap/breadcrumbs";
+// @import "bootstrap/breadcrumbs";
 @import "bootstrap/pagination";
-@import "bootstrap/pager";
+// @import "bootstrap/pager";
 // @import "bootstrap/labels";
 // @import "bootstrap/badges";
 // @import "bootstrap/jumbotron";
@@ -29,7 +32,7 @@
 // @import "bootstrap/media";
 // @import "bootstrap/list-group";
 // @import "bootstrap/panels";
-@import "bootstrap/responsive-embed";
+// @import "bootstrap/responsive-embed";
 // @import "bootstrap/wells";
 // @import "bootstrap/close";
 // @import "bootstrap/modals";
@@ -37,4 +40,4 @@
 // @import "bootstrap/popovers";
 // @import "bootstrap/carousel";
 @import "bootstrap/utilities";
-@import "bootstrap/responsive-utilities";
+// @import "bootstrap/responsive-utilities";

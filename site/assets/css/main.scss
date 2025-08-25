@@ -3,26 +3,11 @@
 
 @charset "utf-8";
 
-$font-size-base: 16px;
 $fa-font-path: "../fonts/font-awesome";
 
 @import "font-awesome";
 @import "twbs_custom";
 @import "twbs_overrides";
-
-// Undo Bootstrap pixel font-size
-// http://fvsch.com/code/css-locks/#toc-2d
-
-/*
- * Redefine the rem value while keeping it proportional.
- * Useful values, with default font-size of 16px:
- * • 62.5% -> 1rem = 10px, .1rem  = 1px
- * • 125%  -> 1rem = 20px, .05rem = 1px
- */
-html {
-  font-size: 62.5%;
-  overflow-x: hidden; // deals with off-canvas issue
-}
 
 // Breakpoints, mobile first
 
