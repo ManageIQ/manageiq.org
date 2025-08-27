@@ -99,7 +99,7 @@ choose `N` (the default).
 The next prompt will be "Enter the database region number." Any number will do.
 `0` and `99` are common choices. For a vagrant appliance, this number isn't 
 especially important. Refer to the [Deployment Planning
-Guide](.) for information about regions when you're ready to take ManageIQ to
+Guide](/docs/reference/{{site.data.releases["stable"].branch}}/deployment_planning_guide) for information about regions when you're ready to take ManageIQ to
 production.
 
 Next will be a password prompt for the database. It will ask twice.
