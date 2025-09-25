@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ruby "~> 3.3.6"
 
 gem "activesupport", ">= 5.2.7", :require => false
-gem "bootstrap-sass", "~> 3.x"
+gem "bootstrap", "~> 5.3"
 gem "font-awesome-sass", "~> 6.5"
 gem "jekyll", "~> 4.3"
 gem "jekyll-paginate"

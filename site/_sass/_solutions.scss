@@ -3,7 +3,7 @@ $solution_pad: 4em;
 .solutions {}
 
 .solution-container {
-  @include container-fixed(0);
+  @extend .container-md;
   display: flex;
   max-width: 100%;
   justify-content: space-between;
