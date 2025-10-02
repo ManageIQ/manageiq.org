@@ -12,7 +12,7 @@ gem "jekyll-sitemap"
 gem "jemoji"
 gem "kramdown-parser-gfm"
 gem "mini_racer"
-gem "thor"
+gem "thor", ">= 1.4.0"   # CVE-2025-54314: https://github.com/advisories/GHSA-mqcp-p2hv-vw6x
 
 group :test, :development do
   gem "dotenv"
