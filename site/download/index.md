@@ -9,6 +9,15 @@ title: Download ManageIQ
 
 {% include download/release_table.md release=release %}
 
+{% assign release = site.data.releases["stable2"] %}
+{% if release %}
+
+### Previous stable release ({{ release.name }})
+
+{% include download/release_table.md release=release %}
+
+{% endif %}
+
 {% assign release = site.data.releases["prerelease"] %}
 {% if release %}
 

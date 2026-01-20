@@ -1,19 +1,22 @@
 stable:
-  type: stable
-  name: Radjabov-1
-  tag: radjabov-1
-  filename: radjabov-1
+  name: Spassky-1
+  tag: spassky-1
+  filename: spassky-1
+  branch: spassky
+
+stable2:
+  name: Radjabov-2
+  tag: radjabov-2
+  filename: radjabov-2
   branch: radjabov
 
 # prerelease:
-#   type: prerelease
 #   name: Foo-1-Beta1
 #   tag: foo-1-beta1
 #   filename: foo-1-beta1
 #   branch: foo
 
 devel:
-  type: devel
   name: Nightly
   tag: latest
   filename: devel
