@@ -25,7 +25,7 @@ Here are the highlights of the [Spassky release](https://github.com/orgs/ManageI
 
 #### Providers
 - [Ansible Automation Platform] Rename 'Ansible Tower' to 'Ansible Automation Platform' [[#318]](https://github.com/ManageIQ/manageiq-providers-ansible_tower/pull/318)
-- [Embedded Terraform] Support Terraform provisioning via Workflows - [[#23276]](https://github.com/ManageIQ/manageiq/issues/23276)
+- [Embedded Terraform] Support Terraform provisioning via Workflows [[#23276]](https://github.com/ManageIQ/manageiq/issues/23276)
 - [Embedded Terraform] Support reconfigure action for ServiceTerraformTemplate [[#94]](https://github.com/ManageIQ/manageiq-providers-embedded_terraform/pull/94)
 - [Embedded Terraform] Generate dialog fields based on terraform type constraints [[#89]](https://github.com/ManageIQ/manageiq-providers-embedded_terraform/pull/89)
 - [IBM Cloud VPC] Add schedule tab with "Time until Retirement" during provisioning [[#520]](https://github.com/ManageIQ/manageiq-providers-ibm_cloud/pull/520)
@@ -54,7 +54,6 @@ Here are the highlights of the [Spassky release](https://github.com/orgs/ManageI
   - UPGRADE NOTE: Setting credentials via ResultPath now must use `$$.Credentials` instead of `$.Credentials`
 - [Amazon States Language] Add Choice rule payload validation [[#189]](https://github.com/ManageIQ/floe/pull/189)
 - [Amazon States Language] Add Map state ItemBatcher/ItemSelector support [[#294]](https://github.com/ManageIQ/floe/pull/294)
-
 
 #### UI
 - Add columns for payload valid and error for workflows [[#9632]](https://github.com/ManageIQ/manageiq-ui-classic/pull/9632)
