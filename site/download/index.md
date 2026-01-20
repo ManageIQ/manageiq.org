@@ -3,11 +3,20 @@ layout: page
 title: Download ManageIQ
 ---
 
-{% assign release = site.data.releases["stable"] %}
+{% assign release = site.data.releases["current"] %}
 
 ### Current stable release ({{ release.name }})
 
 {% include download/release_table.md release=release %}
+
+{% assign release = site.data.releases["previous"] %}
+{% if release %}
+
+### Previous stable release ({{ release.name }})
+
+{% include download/release_table.md release=release %}
+
+{% endif %}
 
 {% assign release = site.data.releases["prerelease"] %}
 {% if release %}
