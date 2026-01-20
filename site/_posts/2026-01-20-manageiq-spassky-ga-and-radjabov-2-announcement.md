@@ -36,7 +36,7 @@ Here are the highlights of the [Spassky release](https://github.com/orgs/ManageI
 - [KubeVirt / OpenShift Virtualization] Parse Host memory and cpu [[#283]](https://github.com/ManageIQ/manageiq-providers-kubevirt/pull/283)
 - [OpenStack] Fix missing OpenStack VM CPU Usage Metrics [[#923]](https://github.com/ManageIQ/manageiq-providers-openstack/pull/923)
 - [OpenStack] Support nested JSON parsing for Oslo.messaging v2.0 notifications [[#927]](https://github.com/ManageIQ/manageiq-providers-openstack/pull/927)
-- [VmWare] Add v8.0.3 support [[#924]](https://github.com/ManageIQ/manageiq-providers-vmware/pull/924)
+- [VMware] Add v8.0.3 support [[#924]](https://github.com/ManageIQ/manageiq-providers-vmware/pull/924)
 
 #### Core
 - Upgrade to Rails 7.2 [[#23201]](https://github.com/ManageIQ/manageiq/pull/23424), [[#23200]](https://github.com/ManageIQ/manageiq/pull/23200)
