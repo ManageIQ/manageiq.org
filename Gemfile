@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby "~> 3.3"
+ruby "~> 4.0"
 
 gem "activesupport", ">= 5.2.7", :require => false
 gem "bootstrap-sass", "~> 3.x"
