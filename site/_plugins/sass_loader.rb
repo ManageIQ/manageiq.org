@@ -1,5 +1,5 @@
 require "jekyll/converters/scss"
-require "bootstrap-sass"
+require "bootstrap"
 require "font-awesome-sass"
 
 # sass/load_paths configuration in _config.yml only supports hardcoded paths,

@@ -46,7 +46,7 @@ $banner_height_lg: 440px;
 .banner-content {
   // width: 60em;
   max-width: 100%;
-  @include container-fixed(0);
+  @extend .container-md;
 
   z-index: 5;
 }
