@@ -40,6 +40,11 @@ class SprintDetails
   end
 
   def generate_sprint_details
+    if File.exist?(sprint_details_file)
+      $stderr.puts("ERROR: #{sprint_details_file} already exists")
+      exit 1
+    end
+
     details = {
       "title"         => "Sprint #{sprint_number} Details",
       "sprint_number" => sprint_number,
@@ -109,6 +114,8 @@ task :publish_sprint, [:sprint_number] do |_task, args|
   puts
 
   SprintDetails.new(sprint_number, recording, slides).run
+
+  Rake::Task[:generate_sprint_details_template].invoke(sprint_number.to_i + 1)
 end
 
 desc "Generate a sprint details template for the given sprint number"
