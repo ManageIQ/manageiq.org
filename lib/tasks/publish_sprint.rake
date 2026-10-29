@@ -1,3 +1,5 @@
+require "active_support/core_ext/object/blank"
+
 class SprintDetails
   attr_reader :sprint_number, :recording, :slides
 
@@ -48,8 +50,8 @@ class SprintDetails
     details = {
       "title"         => "Sprint #{sprint_number} Details",
       "sprint_number" => sprint_number,
-      "slides"        => slides,
-      "recording"     => recording,
+      "slides"        => slides.presence,
+      "recording"     => recording.presence,
       "start_date"    => sprint_range.begin,
       "end_date"      => sprint_range.end,
       "review_date"   => sprint_range.end + 2.days
